@@ -1,0 +1,153 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_Math.c"
+  14              		.text
+  15              		.section	.text.NOS_Math_NormalizeValue,"ax",%progbits
+  16              		.align	1
+  17              		.global	NOS_Math_NormalizeValue
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	NOS_Math_NormalizeValue:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 00E0     		b	.L2
+  27              	.L3:
+  28 0002 401A     		subs	r0, r0, r1
+  29              	.L2:
+  30 0004 8842     		cmp	r0, r1
+  31 0006 FCDA     		bge	.L3
+  32 0008 7047     		bx	lr
+  34              		.section	.text.NOS_Math_GetNumberPower,"ax",%progbits
+  35              		.align	1
+  36              		.global	NOS_Math_GetNumberPower
+  37              		.syntax unified
+  38              		.thumb
+  39              		.thumb_func
+  41              	NOS_Math_GetNumberPower:
+  42              		@ args = 0, pretend = 0, frame = 0
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              		@ link register save eliminated.
+  45 0000 0246     		mov	r2, r0
+  46 0002 0120     		movs	r0, #1
+  47 0004 0A23     		movs	r3, #10
+  48 0006 03E0     		b	.L5
+  49              	.L6:
+  50 0008 0130     		adds	r0, r0, #1
+  51 000a 03EB8303 		add	r3, r3, r3, lsl #2
+  52 000e 5B00     		lsls	r3, r3, #1
+  53              	.L5:
+  54 0010 9342     		cmp	r3, r2
+  55 0012 F9DD     		ble	.L6
+  56 0014 7047     		bx	lr
+  58              		.section	.text.NOS_Math_GetSinValue,"ax",%progbits
+  59              		.align	1
+  60              		.global	NOS_Math_GetSinValue
+  61              		.syntax unified
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s 			page 2
+
+
+  62              		.thumb
+  63              		.thumb_func
+  65              	NOS_Math_GetSinValue:
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69 0000 0068     		ldr	r0, [r0]
+  70 0002 7047     		bx	lr
+  72              		.section	.text.NOS_Math_SinValue_Handler,"ax",%progbits
+  73              		.align	1
+  74              		.global	NOS_Math_SinValue_Handler
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  79              	NOS_Math_SinValue_Handler:
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  83 0000 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+  84 0002 63B1     		cbz	r3, .L9
+  85 0004 0368     		ldr	r3, [r0]
+  86 0006 C268     		ldr	r2, [r0, #12]
+  87 0008 1344     		add	r3, r3, r2
+  88 000a 0360     		str	r3, [r0]
+  89 000c 8268     		ldr	r2, [r0, #8]
+  90 000e 9342     		cmp	r3, r2
+  91 0010 13DD     		ble	.L8
+  92 0012 0260     		str	r2, [r0]
+  93 0014 0023     		movs	r3, #0
+  94 0016 0374     		strb	r3, [r0, #16]
+  95 0018 0123     		movs	r3, #1
+  96 001a 4374     		strb	r3, [r0, #17]
+  97 001c 7047     		bx	lr
+  98              	.L9:
+  99 001e 437C     		ldrb	r3, [r0, #17]	@ zero_extendqisi2
+ 100 0020 5BB1     		cbz	r3, .L8
+ 101 0022 0368     		ldr	r3, [r0]
+ 102 0024 C268     		ldr	r2, [r0, #12]
+ 103 0026 9B1A     		subs	r3, r3, r2
+ 104 0028 0360     		str	r3, [r0]
+ 105 002a 4268     		ldr	r2, [r0, #4]
+ 106 002c 9342     		cmp	r3, r2
+ 107 002e 04DA     		bge	.L8
+ 108 0030 0260     		str	r2, [r0]
+ 109 0032 0023     		movs	r3, #0
+ 110 0034 4374     		strb	r3, [r0, #17]
+ 111 0036 0123     		movs	r3, #1
+ 112 0038 0374     		strb	r3, [r0, #16]
+ 113              	.L8:
+ 114 003a 7047     		bx	lr
+ 116              		.section	.text.NOS_Math_SinValue_Init,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	NOS_Math_SinValue_Init
+ 119              		.syntax unified
+ 120              		.thumb
+ 121              		.thumb_func
+ 123              	NOS_Math_SinValue_Init:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s 			page 3
+
+
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 127 0000 0160     		str	r1, [r0]
+ 128 0002 4160     		str	r1, [r0, #4]
+ 129 0004 8260     		str	r2, [r0, #8]
+ 130 0006 0122     		movs	r2, #1
+ 131 0008 0274     		strb	r2, [r0, #16]
+ 132 000a 0022     		movs	r2, #0
+ 133 000c 4274     		strb	r2, [r0, #17]
+ 134 000e C360     		str	r3, [r0, #12]
+ 135 0010 7047     		bx	lr
+ 137              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_Math.c
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:16     .text.NOS_Math_NormalizeValue:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:22     .text.NOS_Math_NormalizeValue:00000000 NOS_Math_NormalizeValue
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:35     .text.NOS_Math_GetNumberPower:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:41     .text.NOS_Math_GetNumberPower:00000000 NOS_Math_GetNumberPower
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:59     .text.NOS_Math_GetSinValue:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:65     .text.NOS_Math_GetSinValue:00000000 NOS_Math_GetSinValue
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:73     .text.NOS_Math_SinValue_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:79     .text.NOS_Math_SinValue_Handler:00000000 NOS_Math_SinValue_Handler
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:117    .text.NOS_Math_SinValue_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc2Q3n1Z.s:123    .text.NOS_Math_SinValue_Init:00000000 NOS_Math_SinValue_Init
+
+NO UNDEFINED SYMBOLS

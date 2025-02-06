@@ -1,0 +1,1093 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f1xx_hal_dma.c"
+  14              		.text
+  15              		.section	.text.DMA_SetConfig,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  21              	DMA_SetConfig:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 30B4     		push	{r4, r5}
+  26 0002 0124     		movs	r4, #1
+  27 0004 056C     		ldr	r5, [r0, #64]
+  28 0006 AC40     		lsls	r4, r4, r5
+  29 0008 C56B     		ldr	r5, [r0, #60]
+  30 000a 6C60     		str	r4, [r5, #4]
+  31 000c 0468     		ldr	r4, [r0]
+  32 000e 6360     		str	r3, [r4, #4]
+  33 0010 4368     		ldr	r3, [r0, #4]
+  34 0012 102B     		cmp	r3, #16
+  35 0014 05D0     		beq	.L5
+  36 0016 0368     		ldr	r3, [r0]
+  37 0018 9960     		str	r1, [r3, #8]
+  38 001a 0368     		ldr	r3, [r0]
+  39 001c DA60     		str	r2, [r3, #12]
+  40              	.L1:
+  41 001e 30BC     		pop	{r4, r5}
+  42 0020 7047     		bx	lr
+  43              	.L5:
+  44 0022 0368     		ldr	r3, [r0]
+  45 0024 9A60     		str	r2, [r3, #8]
+  46 0026 0368     		ldr	r3, [r0]
+  47 0028 D960     		str	r1, [r3, #12]
+  48 002a F8E7     		b	.L1
+  50              		.section	.text.HAL_DMA_Init,"ax",%progbits
+  51              		.align	1
+  52              		.global	HAL_DMA_Init
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	HAL_DMA_Init:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 2
+
+
+  61 0000 60B3     		cbz	r0, .L8
+  62 0002 10B4     		push	{r4}
+  63 0004 0246     		mov	r2, r0
+  64 0006 0168     		ldr	r1, [r0]
+  65 0008 154B     		ldr	r3, .L13
+  66 000a 0B44     		add	r3, r3, r1
+  67 000c 1548     		ldr	r0, .L13+4
+  68 000e A0FB0303 		umull	r0, r3, r0, r3
+  69 0012 1B09     		lsrs	r3, r3, #4
+  70 0014 9B00     		lsls	r3, r3, #2
+  71 0016 1364     		str	r3, [r2, #64]
+  72 0018 134B     		ldr	r3, .L13+8
+  73 001a D363     		str	r3, [r2, #60]
+  74 001c 0223     		movs	r3, #2
+  75 001e 82F82130 		strb	r3, [r2, #33]
+  76 0022 0868     		ldr	r0, [r1]
+  77 0024 20F47F50 		bic	r0, r0, #16320
+  78 0028 20F03000 		bic	r0, r0, #48
+  79 002c 5368     		ldr	r3, [r2, #4]
+  80 002e 9468     		ldr	r4, [r2, #8]
+  81 0030 2343     		orrs	r3, r3, r4
+  82 0032 D468     		ldr	r4, [r2, #12]
+  83 0034 2343     		orrs	r3, r3, r4
+  84 0036 1469     		ldr	r4, [r2, #16]
+  85 0038 2343     		orrs	r3, r3, r4
+  86 003a 5469     		ldr	r4, [r2, #20]
+  87 003c 2343     		orrs	r3, r3, r4
+  88 003e 9469     		ldr	r4, [r2, #24]
+  89 0040 2343     		orrs	r3, r3, r4
+  90 0042 D469     		ldr	r4, [r2, #28]
+  91 0044 2343     		orrs	r3, r3, r4
+  92 0046 0343     		orrs	r3, r3, r0
+  93 0048 0B60     		str	r3, [r1]
+  94 004a 0020     		movs	r0, #0
+  95 004c 9063     		str	r0, [r2, #56]
+  96 004e 0123     		movs	r3, #1
+  97 0050 82F82130 		strb	r3, [r2, #33]
+  98 0054 82F82000 		strb	r0, [r2, #32]
+  99 0058 10BC     		pop	{r4}
+ 100 005a 7047     		bx	lr
+ 101              	.L8:
+ 102 005c 0120     		movs	r0, #1
+ 103 005e 7047     		bx	lr
+ 104              	.L14:
+ 105              		.align	2
+ 106              	.L13:
+ 107 0060 F8FFFDBF 		.word	-1073872904
+ 108 0064 CDCCCCCC 		.word	-858993459
+ 109 0068 00000240 		.word	1073872896
+ 111              		.section	.text.HAL_DMA_DeInit,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	HAL_DMA_DeInit
+ 114              		.syntax unified
+ 115              		.thumb
+ 116              		.thumb_func
+ 118              	HAL_DMA_DeInit:
+ 119              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 3
+
+
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121              		@ link register save eliminated.
+ 122 0000 0028     		cmp	r0, #0
+ 123 0002 29D0     		beq	.L17
+ 124 0004 10B4     		push	{r4}
+ 125 0006 0346     		mov	r3, r0
+ 126 0008 0168     		ldr	r1, [r0]
+ 127 000a 0A68     		ldr	r2, [r1]
+ 128 000c 22F00102 		bic	r2, r2, #1
+ 129 0010 0A60     		str	r2, [r1]
+ 130 0012 0268     		ldr	r2, [r0]
+ 131 0014 0020     		movs	r0, #0
+ 132 0016 1060     		str	r0, [r2]
+ 133 0018 1A68     		ldr	r2, [r3]
+ 134 001a 5060     		str	r0, [r2, #4]
+ 135 001c 1A68     		ldr	r2, [r3]
+ 136 001e 9060     		str	r0, [r2, #8]
+ 137 0020 1A68     		ldr	r2, [r3]
+ 138 0022 D060     		str	r0, [r2, #12]
+ 139 0024 1968     		ldr	r1, [r3]
+ 140 0026 0D4A     		ldr	r2, .L22
+ 141 0028 0A44     		add	r2, r2, r1
+ 142 002a 0D49     		ldr	r1, .L22+4
+ 143 002c A1FB0212 		umull	r1, r2, r1, r2
+ 144 0030 1209     		lsrs	r2, r2, #4
+ 145 0032 9200     		lsls	r2, r2, #2
+ 146 0034 1A64     		str	r2, [r3, #64]
+ 147 0036 0B4C     		ldr	r4, .L22+8
+ 148 0038 DC63     		str	r4, [r3, #60]
+ 149 003a 0121     		movs	r1, #1
+ 150 003c 01FA02F2 		lsl	r2, r1, r2
+ 151 0040 6260     		str	r2, [r4, #4]
+ 152 0042 9862     		str	r0, [r3, #40]
+ 153 0044 D862     		str	r0, [r3, #44]
+ 154 0046 1863     		str	r0, [r3, #48]
+ 155 0048 5863     		str	r0, [r3, #52]
+ 156 004a 9863     		str	r0, [r3, #56]
+ 157 004c 83F82100 		strb	r0, [r3, #33]
+ 158 0050 83F82000 		strb	r0, [r3, #32]
+ 159 0054 10BC     		pop	{r4}
+ 160 0056 7047     		bx	lr
+ 161              	.L17:
+ 162 0058 0120     		movs	r0, #1
+ 163 005a 7047     		bx	lr
+ 164              	.L23:
+ 165              		.align	2
+ 166              	.L22:
+ 167 005c F8FFFDBF 		.word	-1073872904
+ 168 0060 CDCCCCCC 		.word	-858993459
+ 169 0064 00000240 		.word	1073872896
+ 171              		.section	.text.HAL_DMA_Start,"ax",%progbits
+ 172              		.align	1
+ 173              		.global	HAL_DMA_Start
+ 174              		.syntax unified
+ 175              		.thumb
+ 176              		.thumb_func
+ 178              	HAL_DMA_Start:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 4
+
+
+ 179              		@ args = 0, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 70B5     		push	{r4, r5, r6, lr}
+ 182 0002 0446     		mov	r4, r0
+ 183 0004 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 184 0008 0128     		cmp	r0, #1
+ 185 000a 20D0     		beq	.L27
+ 186 000c 0120     		movs	r0, #1
+ 187 000e 84F82000 		strb	r0, [r4, #32]
+ 188 0012 94F82100 		ldrb	r0, [r4, #33]	@ zero_extendqisi2
+ 189 0016 C0B2     		uxtb	r0, r0
+ 190 0018 0128     		cmp	r0, #1
+ 191 001a 04D0     		beq	.L29
+ 192 001c 0023     		movs	r3, #0
+ 193 001e 84F82030 		strb	r3, [r4, #32]
+ 194 0022 0220     		movs	r0, #2
+ 195              	.L25:
+ 196 0024 70BD     		pop	{r4, r5, r6, pc}
+ 197              	.L29:
+ 198 0026 0220     		movs	r0, #2
+ 199 0028 84F82100 		strb	r0, [r4, #33]
+ 200 002c 0025     		movs	r5, #0
+ 201 002e A563     		str	r5, [r4, #56]
+ 202 0030 2668     		ldr	r6, [r4]
+ 203 0032 3068     		ldr	r0, [r6]
+ 204 0034 20F00100 		bic	r0, r0, #1
+ 205 0038 3060     		str	r0, [r6]
+ 206 003a 2046     		mov	r0, r4
+ 207 003c FFF7FEFF 		bl	DMA_SetConfig
+ 208 0040 2268     		ldr	r2, [r4]
+ 209 0042 1368     		ldr	r3, [r2]
+ 210 0044 43F00103 		orr	r3, r3, #1
+ 211 0048 1360     		str	r3, [r2]
+ 212 004a 2846     		mov	r0, r5
+ 213 004c EAE7     		b	.L25
+ 214              	.L27:
+ 215 004e 0220     		movs	r0, #2
+ 216 0050 E8E7     		b	.L25
+ 218              		.section	.text.HAL_DMA_Start_IT,"ax",%progbits
+ 219              		.align	1
+ 220              		.global	HAL_DMA_Start_IT
+ 221              		.syntax unified
+ 222              		.thumb
+ 223              		.thumb_func
+ 225              	HAL_DMA_Start_IT:
+ 226              		@ args = 0, pretend = 0, frame = 0
+ 227              		@ frame_needed = 0, uses_anonymous_args = 0
+ 228 0000 38B5     		push	{r3, r4, r5, lr}
+ 229 0002 0446     		mov	r4, r0
+ 230 0004 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 231 0008 0128     		cmp	r0, #1
+ 232 000a 32D0     		beq	.L35
+ 233 000c 0120     		movs	r0, #1
+ 234 000e 84F82000 		strb	r0, [r4, #32]
+ 235 0012 94F82100 		ldrb	r0, [r4, #33]	@ zero_extendqisi2
+ 236 0016 C0B2     		uxtb	r0, r0
+ 237 0018 0128     		cmp	r0, #1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 5
+
+
+ 238 001a 04D0     		beq	.L37
+ 239 001c 0023     		movs	r3, #0
+ 240 001e 84F82030 		strb	r3, [r4, #32]
+ 241 0022 0220     		movs	r0, #2
+ 242              	.L31:
+ 243 0024 38BD     		pop	{r3, r4, r5, pc}
+ 244              	.L37:
+ 245 0026 0220     		movs	r0, #2
+ 246 0028 84F82100 		strb	r0, [r4, #33]
+ 247 002c 0020     		movs	r0, #0
+ 248 002e A063     		str	r0, [r4, #56]
+ 249 0030 2568     		ldr	r5, [r4]
+ 250 0032 2868     		ldr	r0, [r5]
+ 251 0034 20F00100 		bic	r0, r0, #1
+ 252 0038 2860     		str	r0, [r5]
+ 253 003a 2046     		mov	r0, r4
+ 254 003c FFF7FEFF 		bl	DMA_SetConfig
+ 255 0040 E36A     		ldr	r3, [r4, #44]
+ 256 0042 5BB1     		cbz	r3, .L33
+ 257 0044 2268     		ldr	r2, [r4]
+ 258 0046 1368     		ldr	r3, [r2]
+ 259 0048 43F00E03 		orr	r3, r3, #14
+ 260 004c 1360     		str	r3, [r2]
+ 261              	.L34:
+ 262 004e 2268     		ldr	r2, [r4]
+ 263 0050 1368     		ldr	r3, [r2]
+ 264 0052 43F00103 		orr	r3, r3, #1
+ 265 0056 1360     		str	r3, [r2]
+ 266 0058 0020     		movs	r0, #0
+ 267 005a E3E7     		b	.L31
+ 268              	.L33:
+ 269 005c 2268     		ldr	r2, [r4]
+ 270 005e 1368     		ldr	r3, [r2]
+ 271 0060 23F00403 		bic	r3, r3, #4
+ 272 0064 1360     		str	r3, [r2]
+ 273 0066 2268     		ldr	r2, [r4]
+ 274 0068 1368     		ldr	r3, [r2]
+ 275 006a 43F00A03 		orr	r3, r3, #10
+ 276 006e 1360     		str	r3, [r2]
+ 277 0070 EDE7     		b	.L34
+ 278              	.L35:
+ 279 0072 0220     		movs	r0, #2
+ 280 0074 D6E7     		b	.L31
+ 282              		.section	.text.HAL_DMA_Abort,"ax",%progbits
+ 283              		.align	1
+ 284              		.global	HAL_DMA_Abort
+ 285              		.syntax unified
+ 286              		.thumb
+ 287              		.thumb_func
+ 289              	HAL_DMA_Abort:
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292              		@ link register save eliminated.
+ 293 0000 0346     		mov	r3, r0
+ 294 0002 90F82120 		ldrb	r2, [r0, #33]	@ zero_extendqisi2
+ 295 0006 D2B2     		uxtb	r2, r2
+ 296 0008 022A     		cmp	r2, #2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 6
+
+
+ 297 000a 06D0     		beq	.L39
+ 298 000c 0422     		movs	r2, #4
+ 299 000e 8263     		str	r2, [r0, #56]
+ 300 0010 0022     		movs	r2, #0
+ 301 0012 80F82020 		strb	r2, [r0, #32]
+ 302 0016 0120     		movs	r0, #1
+ 303 0018 7047     		bx	lr
+ 304              	.L39:
+ 305 001a 0168     		ldr	r1, [r0]
+ 306 001c 0A68     		ldr	r2, [r1]
+ 307 001e 22F00E02 		bic	r2, r2, #14
+ 308 0022 0A60     		str	r2, [r1]
+ 309 0024 0168     		ldr	r1, [r0]
+ 310 0026 0A68     		ldr	r2, [r1]
+ 311 0028 22F00102 		bic	r2, r2, #1
+ 312 002c 0A60     		str	r2, [r1]
+ 313 002e 026C     		ldr	r2, [r0, #64]
+ 314 0030 C06B     		ldr	r0, [r0, #60]
+ 315 0032 0121     		movs	r1, #1
+ 316 0034 01FA02F2 		lsl	r2, r1, r2
+ 317 0038 4260     		str	r2, [r0, #4]
+ 318 003a 83F82110 		strb	r1, [r3, #33]
+ 319 003e 0020     		movs	r0, #0
+ 320 0040 83F82000 		strb	r0, [r3, #32]
+ 321 0044 7047     		bx	lr
+ 323              		.section	.text.HAL_DMA_Abort_IT,"ax",%progbits
+ 324              		.align	1
+ 325              		.global	HAL_DMA_Abort_IT
+ 326              		.syntax unified
+ 327              		.thumb
+ 328              		.thumb_func
+ 330              	HAL_DMA_Abort_IT:
+ 331              		@ args = 0, pretend = 0, frame = 0
+ 332              		@ frame_needed = 0, uses_anonymous_args = 0
+ 333 0000 08B5     		push	{r3, lr}
+ 334 0002 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 335 0006 DBB2     		uxtb	r3, r3
+ 336 0008 022B     		cmp	r3, #2
+ 337 000a 03D0     		beq	.L42
+ 338 000c 0423     		movs	r3, #4
+ 339 000e 8363     		str	r3, [r0, #56]
+ 340 0010 0120     		movs	r0, #1
+ 341              	.L43:
+ 342 0012 08BD     		pop	{r3, pc}
+ 343              	.L42:
+ 344 0014 0268     		ldr	r2, [r0]
+ 345 0016 1368     		ldr	r3, [r2]
+ 346 0018 23F00E03 		bic	r3, r3, #14
+ 347 001c 1360     		str	r3, [r2]
+ 348 001e 0268     		ldr	r2, [r0]
+ 349 0020 1368     		ldr	r3, [r2]
+ 350 0022 23F00103 		bic	r3, r3, #1
+ 351 0026 1360     		str	r3, [r2]
+ 352 0028 0368     		ldr	r3, [r0]
+ 353 002a 194A     		ldr	r2, .L54
+ 354 002c 9342     		cmp	r3, r2
+ 355 002e 14D0     		beq	.L45
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 7
+
+
+ 356 0030 1432     		adds	r2, r2, #20
+ 357 0032 9342     		cmp	r3, r2
+ 358 0034 1FD0     		beq	.L46
+ 359 0036 1432     		adds	r2, r2, #20
+ 360 0038 9342     		cmp	r3, r2
+ 361 003a 1ED0     		beq	.L47
+ 362 003c 1432     		adds	r2, r2, #20
+ 363 003e 9342     		cmp	r3, r2
+ 364 0040 1ED0     		beq	.L48
+ 365 0042 1432     		adds	r2, r2, #20
+ 366 0044 9342     		cmp	r3, r2
+ 367 0046 1ED0     		beq	.L49
+ 368 0048 1432     		adds	r2, r2, #20
+ 369 004a 9342     		cmp	r3, r2
+ 370 004c 02D0     		beq	.L53
+ 371 004e 4FF08072 		mov	r2, #16777216
+ 372 0052 03E0     		b	.L44
+ 373              	.L53:
+ 374 0054 4FF48012 		mov	r2, #1048576
+ 375 0058 00E0     		b	.L44
+ 376              	.L45:
+ 377 005a 0122     		movs	r2, #1
+ 378              	.L44:
+ 379 005c 0D4B     		ldr	r3, .L54+4
+ 380 005e 5A60     		str	r2, [r3, #4]
+ 381 0060 0123     		movs	r3, #1
+ 382 0062 80F82130 		strb	r3, [r0, #33]
+ 383 0066 0023     		movs	r3, #0
+ 384 0068 80F82030 		strb	r3, [r0, #32]
+ 385 006c 436B     		ldr	r3, [r0, #52]
+ 386 006e 6BB1     		cbz	r3, .L51
+ 387 0070 9847     		blx	r3
+ 388 0072 0020     		movs	r0, #0
+ 389 0074 CDE7     		b	.L43
+ 390              	.L46:
+ 391 0076 1022     		movs	r2, #16
+ 392 0078 F0E7     		b	.L44
+ 393              	.L47:
+ 394 007a 4FF48072 		mov	r2, #256
+ 395 007e EDE7     		b	.L44
+ 396              	.L48:
+ 397 0080 4FF48052 		mov	r2, #4096
+ 398 0084 EAE7     		b	.L44
+ 399              	.L49:
+ 400 0086 4FF48032 		mov	r2, #65536
+ 401 008a E7E7     		b	.L44
+ 402              	.L51:
+ 403 008c 0020     		movs	r0, #0
+ 404 008e C0E7     		b	.L43
+ 405              	.L55:
+ 406              		.align	2
+ 407              	.L54:
+ 408 0090 08000240 		.word	1073872904
+ 409 0094 00000240 		.word	1073872896
+ 411              		.section	.text.HAL_DMA_PollForTransfer,"ax",%progbits
+ 412              		.align	1
+ 413              		.global	HAL_DMA_PollForTransfer
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 8
+
+
+ 414              		.syntax unified
+ 415              		.thumb
+ 416              		.thumb_func
+ 418              	HAL_DMA_PollForTransfer:
+ 419              		@ args = 0, pretend = 0, frame = 0
+ 420              		@ frame_needed = 0, uses_anonymous_args = 0
+ 421 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 422 0004 0446     		mov	r4, r0
+ 423 0006 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 424 000a DBB2     		uxtb	r3, r3
+ 425 000c 022B     		cmp	r3, #2
+ 426 000e 07D0     		beq	.L57
+ 427 0010 0423     		movs	r3, #4
+ 428 0012 8363     		str	r3, [r0, #56]
+ 429 0014 0023     		movs	r3, #0
+ 430 0016 80F82030 		strb	r3, [r0, #32]
+ 431 001a 0120     		movs	r0, #1
+ 432              	.L58:
+ 433 001c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 434              	.L57:
+ 435 0020 0F46     		mov	r7, r1
+ 436 0022 1546     		mov	r5, r2
+ 437 0024 0368     		ldr	r3, [r0]
+ 438 0026 1A68     		ldr	r2, [r3]
+ 439 0028 12F0200F 		tst	r2, #32
+ 440 002c 15D1     		bne	.L103
+ 441 002e E1B9     		cbnz	r1, .L60
+ 442 0030 7C4A     		ldr	r2, .L112
+ 443 0032 9342     		cmp	r3, r2
+ 444 0034 31D0     		beq	.L72
+ 445 0036 1432     		adds	r2, r2, #20
+ 446 0038 9342     		cmp	r3, r2
+ 447 003a 33D0     		beq	.L73
+ 448 003c 1432     		adds	r2, r2, #20
+ 449 003e 9342     		cmp	r3, r2
+ 450 0040 32D0     		beq	.L74
+ 451 0042 1432     		adds	r2, r2, #20
+ 452 0044 9342     		cmp	r3, r2
+ 453 0046 32D0     		beq	.L75
+ 454 0048 1432     		adds	r2, r2, #20
+ 455 004a 9342     		cmp	r3, r2
+ 456 004c 32D0     		beq	.L76
+ 457 004e 1432     		adds	r2, r2, #20
+ 458 0050 9342     		cmp	r3, r2
+ 459 0052 07D0     		beq	.L104
+ 460 0054 4FF00076 		mov	r6, #33554432
+ 461 0058 20E0     		b	.L61
+ 462              	.L103:
+ 463 005a 4FF48073 		mov	r3, #256
+ 464 005e 8363     		str	r3, [r0, #56]
+ 465 0060 0120     		movs	r0, #1
+ 466 0062 DBE7     		b	.L58
+ 467              	.L104:
+ 468 0064 4FF40016 		mov	r6, #2097152
+ 469 0068 18E0     		b	.L61
+ 470              	.L60:
+ 471 006a 6E4A     		ldr	r2, .L112
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 9
+
+
+ 472 006c 9342     		cmp	r3, r2
+ 473 006e 24D0     		beq	.L78
+ 474 0070 1432     		adds	r2, r2, #20
+ 475 0072 9342     		cmp	r3, r2
+ 476 0074 23D0     		beq	.L79
+ 477 0076 1432     		adds	r2, r2, #20
+ 478 0078 9342     		cmp	r3, r2
+ 479 007a 22D0     		beq	.L80
+ 480 007c 1432     		adds	r2, r2, #20
+ 481 007e 9342     		cmp	r3, r2
+ 482 0080 22D0     		beq	.L81
+ 483 0082 1432     		adds	r2, r2, #20
+ 484 0084 9342     		cmp	r3, r2
+ 485 0086 22D0     		beq	.L82
+ 486 0088 1432     		adds	r2, r2, #20
+ 487 008a 9342     		cmp	r3, r2
+ 488 008c 02D0     		beq	.L105
+ 489 008e 4FF08066 		mov	r6, #67108864
+ 490 0092 03E0     		b	.L61
+ 491              	.L105:
+ 492 0094 4FF48006 		mov	r6, #4194304
+ 493 0098 00E0     		b	.L61
+ 494              	.L72:
+ 495 009a 0226     		movs	r6, #2
+ 496              	.L61:
+ 497 009c FFF7FEFF 		bl	HAL_GetTick
+ 498 00a0 8046     		mov	r8, r0
+ 499 00a2 20E0     		b	.L65
+ 500              	.L73:
+ 501 00a4 2026     		movs	r6, #32
+ 502 00a6 F9E7     		b	.L61
+ 503              	.L74:
+ 504 00a8 4FF40076 		mov	r6, #512
+ 505 00ac F6E7     		b	.L61
+ 506              	.L75:
+ 507 00ae 4FF40056 		mov	r6, #8192
+ 508 00b2 F3E7     		b	.L61
+ 509              	.L76:
+ 510 00b4 4FF40036 		mov	r6, #131072
+ 511 00b8 F0E7     		b	.L61
+ 512              	.L78:
+ 513 00ba 0426     		movs	r6, #4
+ 514 00bc EEE7     		b	.L61
+ 515              	.L79:
+ 516 00be 4026     		movs	r6, #64
+ 517 00c0 ECE7     		b	.L61
+ 518              	.L80:
+ 519 00c2 4FF48066 		mov	r6, #1024
+ 520 00c6 E9E7     		b	.L61
+ 521              	.L81:
+ 522 00c8 4FF48046 		mov	r6, #16384
+ 523 00cc E6E7     		b	.L61
+ 524              	.L82:
+ 525 00ce 4FF48026 		mov	r6, #262144
+ 526 00d2 E3E7     		b	.L61
+ 527              	.L109:
+ 528 00d4 4FF40003 		mov	r3, #8388608
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 10
+
+
+ 529 00d8 00E0     		b	.L63
+ 530              	.L84:
+ 531 00da 0823     		movs	r3, #8
+ 532              	.L63:
+ 533 00dc 1A42     		tst	r2, r3
+ 534 00de 29D1     		bne	.L106
+ 535 00e0 B5F1FF3F 		cmp	r5, #-1
+ 536 00e4 35D1     		bne	.L107
+ 537              	.L65:
+ 538 00e6 504B     		ldr	r3, .L112+4
+ 539 00e8 1B68     		ldr	r3, [r3]
+ 540 00ea 3342     		tst	r3, r6
+ 541 00ec 43D1     		bne	.L108
+ 542 00ee 4E4B     		ldr	r3, .L112+4
+ 543 00f0 1A68     		ldr	r2, [r3]
+ 544 00f2 2368     		ldr	r3, [r4]
+ 545 00f4 4B49     		ldr	r1, .L112
+ 546 00f6 8B42     		cmp	r3, r1
+ 547 00f8 EFD0     		beq	.L84
+ 548 00fa 1431     		adds	r1, r1, #20
+ 549 00fc 8B42     		cmp	r3, r1
+ 550 00fe 0ED0     		beq	.L85
+ 551 0100 1431     		adds	r1, r1, #20
+ 552 0102 8B42     		cmp	r3, r1
+ 553 0104 0DD0     		beq	.L86
+ 554 0106 1431     		adds	r1, r1, #20
+ 555 0108 8B42     		cmp	r3, r1
+ 556 010a 0DD0     		beq	.L87
+ 557 010c 1431     		adds	r1, r1, #20
+ 558 010e 8B42     		cmp	r3, r1
+ 559 0110 0DD0     		beq	.L88
+ 560 0112 1431     		adds	r1, r1, #20
+ 561 0114 8B42     		cmp	r3, r1
+ 562 0116 DDD0     		beq	.L109
+ 563 0118 4FF00063 		mov	r3, #134217728
+ 564 011c DEE7     		b	.L63
+ 565              	.L85:
+ 566 011e 8023     		movs	r3, #128
+ 567 0120 DCE7     		b	.L63
+ 568              	.L86:
+ 569 0122 4FF40063 		mov	r3, #2048
+ 570 0126 D9E7     		b	.L63
+ 571              	.L87:
+ 572 0128 4FF40043 		mov	r3, #32768
+ 573 012c D6E7     		b	.L63
+ 574              	.L88:
+ 575 012e 4FF40023 		mov	r3, #524288
+ 576 0132 D3E7     		b	.L63
+ 577              	.L106:
+ 578 0134 236C     		ldr	r3, [r4, #64]
+ 579 0136 E26B     		ldr	r2, [r4, #60]
+ 580 0138 0120     		movs	r0, #1
+ 581 013a 00FA03F3 		lsl	r3, r0, r3
+ 582 013e 5360     		str	r3, [r2, #4]
+ 583 0140 A36B     		ldr	r3, [r4, #56]
+ 584 0142 0343     		orrs	r3, r3, r0
+ 585 0144 A363     		str	r3, [r4, #56]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 11
+
+
+ 586 0146 84F82100 		strb	r0, [r4, #33]
+ 587 014a 0023     		movs	r3, #0
+ 588 014c 84F82030 		strb	r3, [r4, #32]
+ 589 0150 64E7     		b	.L58
+ 590              	.L107:
+ 591 0152 2DB1     		cbz	r5, .L66
+ 592 0154 FFF7FEFF 		bl	HAL_GetTick
+ 593 0158 A0EB0800 		sub	r0, r0, r8
+ 594 015c A842     		cmp	r0, r5
+ 595 015e C2D9     		bls	.L65
+ 596              	.L66:
+ 597 0160 A36B     		ldr	r3, [r4, #56]
+ 598 0162 43F02003 		orr	r3, r3, #32
+ 599 0166 A363     		str	r3, [r4, #56]
+ 600 0168 0120     		movs	r0, #1
+ 601 016a 84F82100 		strb	r0, [r4, #33]
+ 602 016e 0023     		movs	r3, #0
+ 603 0170 84F82030 		strb	r3, [r4, #32]
+ 604 0174 52E7     		b	.L58
+ 605              	.L108:
+ 606 0176 6FBB     		cbnz	r7, .L68
+ 607 0178 2368     		ldr	r3, [r4]
+ 608 017a 2A4A     		ldr	r2, .L112
+ 609 017c 9342     		cmp	r3, r2
+ 610 017e 14D0     		beq	.L90
+ 611 0180 1432     		adds	r2, r2, #20
+ 612 0182 9342     		cmp	r3, r2
+ 613 0184 1BD0     		beq	.L91
+ 614 0186 1432     		adds	r2, r2, #20
+ 615 0188 9342     		cmp	r3, r2
+ 616 018a 1AD0     		beq	.L92
+ 617 018c 1432     		adds	r2, r2, #20
+ 618 018e 9342     		cmp	r3, r2
+ 619 0190 1AD0     		beq	.L93
+ 620 0192 1432     		adds	r2, r2, #20
+ 621 0194 9342     		cmp	r3, r2
+ 622 0196 1AD0     		beq	.L94
+ 623 0198 1432     		adds	r2, r2, #20
+ 624 019a 9342     		cmp	r3, r2
+ 625 019c 02D0     		beq	.L110
+ 626 019e 4FF00072 		mov	r2, #33554432
+ 627 01a2 03E0     		b	.L69
+ 628              	.L110:
+ 629 01a4 4FF40012 		mov	r2, #2097152
+ 630 01a8 00E0     		b	.L69
+ 631              	.L90:
+ 632 01aa 0222     		movs	r2, #2
+ 633              	.L69:
+ 634 01ac 1E4B     		ldr	r3, .L112+4
+ 635 01ae 5A60     		str	r2, [r3, #4]
+ 636 01b0 0123     		movs	r3, #1
+ 637 01b2 84F82130 		strb	r3, [r4, #33]
+ 638              	.L70:
+ 639 01b6 0020     		movs	r0, #0
+ 640 01b8 84F82000 		strb	r0, [r4, #32]
+ 641 01bc 2EE7     		b	.L58
+ 642              	.L91:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 12
+
+
+ 643 01be 2022     		movs	r2, #32
+ 644 01c0 F4E7     		b	.L69
+ 645              	.L92:
+ 646 01c2 4FF40072 		mov	r2, #512
+ 647 01c6 F1E7     		b	.L69
+ 648              	.L93:
+ 649 01c8 4FF40052 		mov	r2, #8192
+ 650 01cc EEE7     		b	.L69
+ 651              	.L94:
+ 652 01ce 4FF40032 		mov	r2, #131072
+ 653 01d2 EBE7     		b	.L69
+ 654              	.L68:
+ 655 01d4 2368     		ldr	r3, [r4]
+ 656 01d6 134A     		ldr	r2, .L112
+ 657 01d8 9342     		cmp	r3, r2
+ 658 01da 14D0     		beq	.L96
+ 659 01dc 1432     		adds	r2, r2, #20
+ 660 01de 9342     		cmp	r3, r2
+ 661 01e0 15D0     		beq	.L97
+ 662 01e2 1432     		adds	r2, r2, #20
+ 663 01e4 9342     		cmp	r3, r2
+ 664 01e6 14D0     		beq	.L98
+ 665 01e8 1432     		adds	r2, r2, #20
+ 666 01ea 9342     		cmp	r3, r2
+ 667 01ec 14D0     		beq	.L99
+ 668 01ee 1432     		adds	r2, r2, #20
+ 669 01f0 9342     		cmp	r3, r2
+ 670 01f2 14D0     		beq	.L100
+ 671 01f4 1432     		adds	r2, r2, #20
+ 672 01f6 9342     		cmp	r3, r2
+ 673 01f8 02D0     		beq	.L111
+ 674 01fa 4FF08062 		mov	r2, #67108864
+ 675 01fe 03E0     		b	.L71
+ 676              	.L111:
+ 677 0200 4FF48002 		mov	r2, #4194304
+ 678 0204 00E0     		b	.L71
+ 679              	.L96:
+ 680 0206 0422     		movs	r2, #4
+ 681              	.L71:
+ 682 0208 074B     		ldr	r3, .L112+4
+ 683 020a 5A60     		str	r2, [r3, #4]
+ 684 020c D3E7     		b	.L70
+ 685              	.L97:
+ 686 020e 4022     		movs	r2, #64
+ 687 0210 FAE7     		b	.L71
+ 688              	.L98:
+ 689 0212 4FF48062 		mov	r2, #1024
+ 690 0216 F7E7     		b	.L71
+ 691              	.L99:
+ 692 0218 4FF48042 		mov	r2, #16384
+ 693 021c F4E7     		b	.L71
+ 694              	.L100:
+ 695 021e 4FF48022 		mov	r2, #262144
+ 696 0222 F1E7     		b	.L71
+ 697              	.L113:
+ 698              		.align	2
+ 699              	.L112:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 13
+
+
+ 700 0224 08000240 		.word	1073872904
+ 701 0228 00000240 		.word	1073872896
+ 703              		.section	.text.HAL_DMA_IRQHandler,"ax",%progbits
+ 704              		.align	1
+ 705              		.global	HAL_DMA_IRQHandler
+ 706              		.syntax unified
+ 707              		.thumb
+ 708              		.thumb_func
+ 710              	HAL_DMA_IRQHandler:
+ 711              		@ args = 0, pretend = 0, frame = 0
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713 0000 38B5     		push	{r3, r4, r5, lr}
+ 714 0002 C36B     		ldr	r3, [r0, #60]
+ 715 0004 1A68     		ldr	r2, [r3]
+ 716 0006 0468     		ldr	r4, [r0]
+ 717 0008 2568     		ldr	r5, [r4]
+ 718 000a 016C     		ldr	r1, [r0, #64]
+ 719 000c 0423     		movs	r3, #4
+ 720 000e 8B40     		lsls	r3, r3, r1
+ 721 0010 1342     		tst	r3, r2
+ 722 0012 35D0     		beq	.L115
+ 723 0014 15F0040F 		tst	r5, #4
+ 724 0018 32D0     		beq	.L115
+ 725 001a 2368     		ldr	r3, [r4]
+ 726 001c 13F0200F 		tst	r3, #32
+ 727 0020 03D1     		bne	.L116
+ 728 0022 2368     		ldr	r3, [r4]
+ 729 0024 23F00403 		bic	r3, r3, #4
+ 730 0028 2360     		str	r3, [r4]
+ 731              	.L116:
+ 732 002a 0368     		ldr	r3, [r0]
+ 733 002c 434A     		ldr	r2, .L137
+ 734 002e 9342     		cmp	r3, r2
+ 735 0030 14D0     		beq	.L122
+ 736 0032 1432     		adds	r2, r2, #20
+ 737 0034 9342     		cmp	r3, r2
+ 738 0036 18D0     		beq	.L123
+ 739 0038 1432     		adds	r2, r2, #20
+ 740 003a 9342     		cmp	r3, r2
+ 741 003c 17D0     		beq	.L124
+ 742 003e 1432     		adds	r2, r2, #20
+ 743 0040 9342     		cmp	r3, r2
+ 744 0042 17D0     		beq	.L125
+ 745 0044 1432     		adds	r2, r2, #20
+ 746 0046 9342     		cmp	r3, r2
+ 747 0048 17D0     		beq	.L126
+ 748 004a 1432     		adds	r2, r2, #20
+ 749 004c 9342     		cmp	r3, r2
+ 750 004e 02D0     		beq	.L135
+ 751 0050 4FF08062 		mov	r2, #67108864
+ 752 0054 03E0     		b	.L117
+ 753              	.L135:
+ 754 0056 4FF48002 		mov	r2, #4194304
+ 755 005a 00E0     		b	.L117
+ 756              	.L122:
+ 757 005c 0422     		movs	r2, #4
+ 758              	.L117:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 14
+
+
+ 759 005e 384B     		ldr	r3, .L137+4
+ 760 0060 5A60     		str	r2, [r3, #4]
+ 761 0062 C36A     		ldr	r3, [r0, #44]
+ 762 0064 03B1     		cbz	r3, .L114
+ 763 0066 9847     		blx	r3
+ 764              	.L114:
+ 765 0068 38BD     		pop	{r3, r4, r5, pc}
+ 766              	.L123:
+ 767 006a 4022     		movs	r2, #64
+ 768 006c F7E7     		b	.L117
+ 769              	.L124:
+ 770 006e 4FF48062 		mov	r2, #1024
+ 771 0072 F4E7     		b	.L117
+ 772              	.L125:
+ 773 0074 4FF48042 		mov	r2, #16384
+ 774 0078 F1E7     		b	.L117
+ 775              	.L126:
+ 776 007a 4FF48022 		mov	r2, #262144
+ 777 007e EEE7     		b	.L117
+ 778              	.L115:
+ 779 0080 0223     		movs	r3, #2
+ 780 0082 8B40     		lsls	r3, r3, r1
+ 781 0084 1342     		tst	r3, r2
+ 782 0086 3CD0     		beq	.L119
+ 783 0088 15F0020F 		tst	r5, #2
+ 784 008c 39D0     		beq	.L119
+ 785 008e 2368     		ldr	r3, [r4]
+ 786 0090 13F0200F 		tst	r3, #32
+ 787 0094 06D1     		bne	.L120
+ 788 0096 2368     		ldr	r3, [r4]
+ 789 0098 23F00A03 		bic	r3, r3, #10
+ 790 009c 2360     		str	r3, [r4]
+ 791 009e 0123     		movs	r3, #1
+ 792 00a0 80F82130 		strb	r3, [r0, #33]
+ 793              	.L120:
+ 794 00a4 0368     		ldr	r3, [r0]
+ 795 00a6 254A     		ldr	r2, .L137
+ 796 00a8 9342     		cmp	r3, r2
+ 797 00aa 14D0     		beq	.L128
+ 798 00ac 1432     		adds	r2, r2, #20
+ 799 00ae 9342     		cmp	r3, r2
+ 800 00b0 1CD0     		beq	.L129
+ 801 00b2 1432     		adds	r2, r2, #20
+ 802 00b4 9342     		cmp	r3, r2
+ 803 00b6 1BD0     		beq	.L130
+ 804 00b8 1432     		adds	r2, r2, #20
+ 805 00ba 9342     		cmp	r3, r2
+ 806 00bc 1BD0     		beq	.L131
+ 807 00be 1432     		adds	r2, r2, #20
+ 808 00c0 9342     		cmp	r3, r2
+ 809 00c2 1BD0     		beq	.L132
+ 810 00c4 1432     		adds	r2, r2, #20
+ 811 00c6 9342     		cmp	r3, r2
+ 812 00c8 02D0     		beq	.L136
+ 813 00ca 4FF00072 		mov	r2, #33554432
+ 814 00ce 03E0     		b	.L121
+ 815              	.L136:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 15
+
+
+ 816 00d0 4FF40012 		mov	r2, #2097152
+ 817 00d4 00E0     		b	.L121
+ 818              	.L128:
+ 819 00d6 0222     		movs	r2, #2
+ 820              	.L121:
+ 821 00d8 194B     		ldr	r3, .L137+4
+ 822 00da 5A60     		str	r2, [r3, #4]
+ 823 00dc 0023     		movs	r3, #0
+ 824 00de 80F82030 		strb	r3, [r0, #32]
+ 825 00e2 836A     		ldr	r3, [r0, #40]
+ 826 00e4 002B     		cmp	r3, #0
+ 827 00e6 BFD0     		beq	.L114
+ 828 00e8 9847     		blx	r3
+ 829 00ea BDE7     		b	.L114
+ 830              	.L129:
+ 831 00ec 2022     		movs	r2, #32
+ 832 00ee F3E7     		b	.L121
+ 833              	.L130:
+ 834 00f0 4FF40072 		mov	r2, #512
+ 835 00f4 F0E7     		b	.L121
+ 836              	.L131:
+ 837 00f6 4FF40052 		mov	r2, #8192
+ 838 00fa EDE7     		b	.L121
+ 839              	.L132:
+ 840 00fc 4FF40032 		mov	r2, #131072
+ 841 0100 EAE7     		b	.L121
+ 842              	.L119:
+ 843 0102 0823     		movs	r3, #8
+ 844 0104 8B40     		lsls	r3, r3, r1
+ 845 0106 1342     		tst	r3, r2
+ 846 0108 AED0     		beq	.L114
+ 847 010a 15F0080F 		tst	r5, #8
+ 848 010e ABD0     		beq	.L114
+ 849 0110 2368     		ldr	r3, [r4]
+ 850 0112 23F00E03 		bic	r3, r3, #14
+ 851 0116 2360     		str	r3, [r4]
+ 852 0118 026C     		ldr	r2, [r0, #64]
+ 853 011a C16B     		ldr	r1, [r0, #60]
+ 854 011c 0123     		movs	r3, #1
+ 855 011e 03FA02F2 		lsl	r2, r3, r2
+ 856 0122 4A60     		str	r2, [r1, #4]
+ 857 0124 8363     		str	r3, [r0, #56]
+ 858 0126 80F82130 		strb	r3, [r0, #33]
+ 859 012a 0023     		movs	r3, #0
+ 860 012c 80F82030 		strb	r3, [r0, #32]
+ 861 0130 036B     		ldr	r3, [r0, #48]
+ 862 0132 002B     		cmp	r3, #0
+ 863 0134 98D0     		beq	.L114
+ 864 0136 9847     		blx	r3
+ 865 0138 96E7     		b	.L114
+ 866              	.L138:
+ 867 013a 00BF     		.align	2
+ 868              	.L137:
+ 869 013c 08000240 		.word	1073872904
+ 870 0140 00000240 		.word	1073872896
+ 872              		.section	.text.HAL_DMA_RegisterCallback,"ax",%progbits
+ 873              		.align	1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 16
+
+
+ 874              		.global	HAL_DMA_RegisterCallback
+ 875              		.syntax unified
+ 876              		.thumb
+ 877              		.thumb_func
+ 879              	HAL_DMA_RegisterCallback:
+ 880              		@ args = 0, pretend = 0, frame = 0
+ 881              		@ frame_needed = 0, uses_anonymous_args = 0
+ 882              		@ link register save eliminated.
+ 883 0000 0346     		mov	r3, r0
+ 884 0002 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 885 0006 0128     		cmp	r0, #1
+ 886 0008 1ED0     		beq	.L147
+ 887 000a 0120     		movs	r0, #1
+ 888 000c 83F82000 		strb	r0, [r3, #32]
+ 889 0010 93F82100 		ldrb	r0, [r3, #33]	@ zero_extendqisi2
+ 890 0014 C0B2     		uxtb	r0, r0
+ 891 0016 0128     		cmp	r0, #1
+ 892 0018 04D0     		beq	.L150
+ 893 001a 0120     		movs	r0, #1
+ 894              	.L141:
+ 895 001c 0022     		movs	r2, #0
+ 896 001e 83F82020 		strb	r2, [r3, #32]
+ 897 0022 7047     		bx	lr
+ 898              	.L150:
+ 899 0024 0329     		cmp	r1, #3
+ 900 0026 F9D8     		bhi	.L141
+ 901 0028 DFE801F0 		tbb	[pc, r1]
+ 902              	.L143:
+ 903 002c 02       		.byte	(.L146-.L143)/2
+ 904 002d 05       		.byte	(.L145-.L143)/2
+ 905 002e 08       		.byte	(.L144-.L143)/2
+ 906 002f 0B       		.byte	(.L142-.L143)/2
+ 907              		.p2align 1
+ 908              	.L146:
+ 909 0030 9A62     		str	r2, [r3, #40]
+ 910 0032 0846     		mov	r0, r1
+ 911 0034 F2E7     		b	.L141
+ 912              	.L145:
+ 913 0036 DA62     		str	r2, [r3, #44]
+ 914 0038 0020     		movs	r0, #0
+ 915 003a EFE7     		b	.L141
+ 916              	.L144:
+ 917 003c 1A63     		str	r2, [r3, #48]
+ 918 003e 0020     		movs	r0, #0
+ 919 0040 ECE7     		b	.L141
+ 920              	.L142:
+ 921 0042 5A63     		str	r2, [r3, #52]
+ 922 0044 0020     		movs	r0, #0
+ 923 0046 E9E7     		b	.L141
+ 924              	.L147:
+ 925 0048 0220     		movs	r0, #2
+ 926 004a 7047     		bx	lr
+ 928              		.section	.text.HAL_DMA_UnRegisterCallback,"ax",%progbits
+ 929              		.align	1
+ 930              		.global	HAL_DMA_UnRegisterCallback
+ 931              		.syntax unified
+ 932              		.thumb
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 17
+
+
+ 933              		.thumb_func
+ 935              	HAL_DMA_UnRegisterCallback:
+ 936              		@ args = 0, pretend = 0, frame = 0
+ 937              		@ frame_needed = 0, uses_anonymous_args = 0
+ 938              		@ link register save eliminated.
+ 939 0000 0346     		mov	r3, r0
+ 940 0002 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 941 0006 012A     		cmp	r2, #1
+ 942 0008 26D0     		beq	.L160
+ 943 000a 0122     		movs	r2, #1
+ 944 000c 80F82020 		strb	r2, [r0, #32]
+ 945 0010 90F82100 		ldrb	r0, [r0, #33]	@ zero_extendqisi2
+ 946 0014 C0B2     		uxtb	r0, r0
+ 947 0016 9042     		cmp	r0, r2
+ 948 0018 04D0     		beq	.L163
+ 949 001a 0120     		movs	r0, #1
+ 950              	.L153:
+ 951 001c 0022     		movs	r2, #0
+ 952 001e 83F82020 		strb	r2, [r3, #32]
+ 953 0022 7047     		bx	lr
+ 954              	.L163:
+ 955 0024 0429     		cmp	r1, #4
+ 956 0026 F9D8     		bhi	.L153
+ 957 0028 DFE801F0 		tbb	[pc, r1]
+ 958              	.L155:
+ 959 002c 03       		.byte	(.L159-.L155)/2
+ 960 002d 07       		.byte	(.L158-.L155)/2
+ 961 002e 0A       		.byte	(.L157-.L155)/2
+ 962 002f 0D       		.byte	(.L156-.L155)/2
+ 963 0030 10       		.byte	(.L154-.L155)/2
+ 964 0031 00       		.p2align 1
+ 965              	.L159:
+ 966 0032 0022     		movs	r2, #0
+ 967 0034 9A62     		str	r2, [r3, #40]
+ 968 0036 0846     		mov	r0, r1
+ 969 0038 F0E7     		b	.L153
+ 970              	.L158:
+ 971 003a 0020     		movs	r0, #0
+ 972 003c D862     		str	r0, [r3, #44]
+ 973 003e EDE7     		b	.L153
+ 974              	.L157:
+ 975 0040 0020     		movs	r0, #0
+ 976 0042 1863     		str	r0, [r3, #48]
+ 977 0044 EAE7     		b	.L153
+ 978              	.L156:
+ 979 0046 0020     		movs	r0, #0
+ 980 0048 5863     		str	r0, [r3, #52]
+ 981 004a E7E7     		b	.L153
+ 982              	.L154:
+ 983 004c 0020     		movs	r0, #0
+ 984 004e 9862     		str	r0, [r3, #40]
+ 985 0050 D862     		str	r0, [r3, #44]
+ 986 0052 1863     		str	r0, [r3, #48]
+ 987 0054 5863     		str	r0, [r3, #52]
+ 988 0056 E1E7     		b	.L153
+ 989              	.L160:
+ 990 0058 0220     		movs	r0, #2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 18
+
+
+ 991 005a 7047     		bx	lr
+ 993              		.section	.text.HAL_DMA_GetState,"ax",%progbits
+ 994              		.align	1
+ 995              		.global	HAL_DMA_GetState
+ 996              		.syntax unified
+ 997              		.thumb
+ 998              		.thumb_func
+ 1000              	HAL_DMA_GetState:
+ 1001              		@ args = 0, pretend = 0, frame = 0
+ 1002              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1003              		@ link register save eliminated.
+ 1004 0000 90F82100 		ldrb	r0, [r0, #33]	@ zero_extendqisi2
+ 1005 0004 7047     		bx	lr
+ 1007              		.section	.text.HAL_DMA_GetError,"ax",%progbits
+ 1008              		.align	1
+ 1009              		.global	HAL_DMA_GetError
+ 1010              		.syntax unified
+ 1011              		.thumb
+ 1012              		.thumb_func
+ 1014              	HAL_DMA_GetError:
+ 1015              		@ args = 0, pretend = 0, frame = 0
+ 1016              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1017              		@ link register save eliminated.
+ 1018 0000 806B     		ldr	r0, [r0, #56]
+ 1019 0002 7047     		bx	lr
+ 1021              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f1xx_hal_dma.c
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:16     .text.DMA_SetConfig:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:21     .text.DMA_SetConfig:00000000 DMA_SetConfig
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:51     .text.HAL_DMA_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:57     .text.HAL_DMA_Init:00000000 HAL_DMA_Init
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:107    .text.HAL_DMA_Init:00000060 $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:112    .text.HAL_DMA_DeInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:118    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:167    .text.HAL_DMA_DeInit:0000005c $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:172    .text.HAL_DMA_Start:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:178    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:219    .text.HAL_DMA_Start_IT:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:225    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:283    .text.HAL_DMA_Abort:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:289    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:324    .text.HAL_DMA_Abort_IT:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:330    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:408    .text.HAL_DMA_Abort_IT:00000090 $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:412    .text.HAL_DMA_PollForTransfer:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:418    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:700    .text.HAL_DMA_PollForTransfer:00000224 $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:704    .text.HAL_DMA_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:710    .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:869    .text.HAL_DMA_IRQHandler:0000013c $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:873    .text.HAL_DMA_RegisterCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:879    .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:903    .text.HAL_DMA_RegisterCallback:0000002c $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:907    .text.HAL_DMA_RegisterCallback:00000030 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:929    .text.HAL_DMA_UnRegisterCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:935    .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:959    .text.HAL_DMA_UnRegisterCallback:0000002c $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:994    .text.HAL_DMA_GetState:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:1000   .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:1008   .text.HAL_DMA_GetError:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:1014   .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:964    .text.HAL_DMA_UnRegisterCallback:00000031 $d
+C:\Users\igorn\AppData\Local\Temp\cc78LsrB.s:964    .text.HAL_DMA_UnRegisterCallback:00000032 $t
+
+UNDEFINED SYMBOLS
+HAL_GetTick

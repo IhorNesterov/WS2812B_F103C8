@@ -1,0 +1,220 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccka1W15.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_Time.c"
+  14              		.text
+  15              		.section	.text.NOS_RealTime_Handler,"ax",%progbits
+  16              		.align	1
+  17              		.global	NOS_RealTime_Handler
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	NOS_RealTime_Handler:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 0368     		ldr	r3, [r0]
+  27 0002 0133     		adds	r3, r3, #1
+  28 0004 0360     		str	r3, [r0]
+  29 0006 B3F57A7F 		cmp	r3, #1000
+  30 000a 19D3     		bcc	.L1
+  31 000c 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+  32 000e 0133     		adds	r3, r3, #1
+  33 0010 DBB2     		uxtb	r3, r3
+  34 0012 8371     		strb	r3, [r0, #6]
+  35 0014 3B2B     		cmp	r3, #59
+  36 0016 04D9     		bls	.L3
+  37 0018 0023     		movs	r3, #0
+  38 001a 8371     		strb	r3, [r0, #6]
+  39 001c 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  40 001e 0133     		adds	r3, r3, #1
+  41 0020 4371     		strb	r3, [r0, #5]
+  42              	.L3:
+  43 0022 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  44 0024 3B2B     		cmp	r3, #59
+  45 0026 04D9     		bls	.L4
+  46 0028 0023     		movs	r3, #0
+  47 002a 4371     		strb	r3, [r0, #5]
+  48 002c 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+  49 002e 0133     		adds	r3, r3, #1
+  50 0030 0371     		strb	r3, [r0, #4]
+  51              	.L4:
+  52 0032 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+  53 0034 172B     		cmp	r3, #23
+  54 0036 01D9     		bls	.L5
+  55 0038 0023     		movs	r3, #0
+  56 003a 0371     		strb	r3, [r0, #4]
+  57              	.L5:
+  58 003c 0023     		movs	r3, #0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccka1W15.s 			page 2
+
+
+  59 003e 0360     		str	r3, [r0]
+  60              	.L1:
+  61 0040 7047     		bx	lr
+  63              		.section	.text.NOS_RealTime_SetTime,"ax",%progbits
+  64              		.align	1
+  65              		.global	NOS_RealTime_SetTime
+  66              		.syntax unified
+  67              		.thumb
+  68              		.thumb_func
+  70              	NOS_RealTime_SetTime:
+  71              		@ args = 4, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74 0000 1729     		cmp	r1, #23
+  75 0002 09D8     		bhi	.L6
+  76 0004 3B2A     		cmp	r2, #59
+  77 0006 07D8     		bhi	.L6
+  78 0008 3B2B     		cmp	r3, #59
+  79 000a 05D8     		bhi	.L6
+  80 000c 0171     		strb	r1, [r0, #4]
+  81 000e 4271     		strb	r2, [r0, #5]
+  82 0010 8371     		strb	r3, [r0, #6]
+  83 0012 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+  84 0016 C371     		strb	r3, [r0, #7]
+  85              	.L6:
+  86 0018 7047     		bx	lr
+  88              		.section	.text.NOS_TimeEvent_Init,"ax",%progbits
+  89              		.align	1
+  90              		.global	NOS_TimeEvent_Init
+  91              		.syntax unified
+  92              		.thumb
+  93              		.thumb_func
+  95              	NOS_TimeEvent_Init:
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+  99 0000 20B1     		cbz	r0, .L8
+ 100 0002 0022     		movs	r2, #0
+ 101 0004 4271     		strb	r2, [r0, #5]
+ 102 0006 0271     		strb	r2, [r0, #4]
+ 103 0008 0160     		str	r1, [r0]
+ 104 000a 8260     		str	r2, [r0, #8]
+ 105              	.L8:
+ 106 000c 7047     		bx	lr
+ 108              		.section	.text.NOS_TimeEvent_Stop,"ax",%progbits
+ 109              		.align	1
+ 110              		.global	NOS_TimeEvent_Stop
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	NOS_TimeEvent_Stop:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+ 119 0000 0123     		movs	r3, #1
+ 120 0002 0371     		strb	r3, [r0, #4]
+ 121 0004 0023     		movs	r3, #0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccka1W15.s 			page 3
+
+
+ 122 0006 8360     		str	r3, [r0, #8]
+ 123 0008 7047     		bx	lr
+ 125              		.section	.text.NOS_TimeEvent_Resume,"ax",%progbits
+ 126              		.align	1
+ 127              		.global	NOS_TimeEvent_Resume
+ 128              		.syntax unified
+ 129              		.thumb
+ 130              		.thumb_func
+ 132              	NOS_TimeEvent_Resume:
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              		@ link register save eliminated.
+ 136 0000 0023     		movs	r3, #0
+ 137 0002 0371     		strb	r3, [r0, #4]
+ 138 0004 8360     		str	r3, [r0, #8]
+ 139 0006 7047     		bx	lr
+ 141              		.section	.text.NOS_TimeEvent_TickHandler,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	NOS_TimeEvent_TickHandler
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	NOS_TimeEvent_TickHandler:
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151              		@ link register save eliminated.
+ 152 0000 8368     		ldr	r3, [r0, #8]
+ 153 0002 0133     		adds	r3, r3, #1
+ 154 0004 8360     		str	r3, [r0, #8]
+ 155 0006 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ 156 0008 22B9     		cbnz	r2, .L12
+ 157 000a 0268     		ldr	r2, [r0]
+ 158 000c 9342     		cmp	r3, r2
+ 159 000e 01D3     		bcc	.L12
+ 160 0010 0123     		movs	r3, #1
+ 161 0012 4371     		strb	r3, [r0, #5]
+ 162              	.L12:
+ 163 0014 7047     		bx	lr
+ 165              		.section	.text.NOS_TimeEvent_Check,"ax",%progbits
+ 166              		.align	1
+ 167              		.global	NOS_TimeEvent_Check
+ 168              		.syntax unified
+ 169              		.thumb
+ 170              		.thumb_func
+ 172              	NOS_TimeEvent_Check:
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175              		@ link register save eliminated.
+ 176 0000 0346     		mov	r3, r0
+ 177 0002 4079     		ldrb	r0, [r0, #5]	@ zero_extendqisi2
+ 178 0004 10B1     		cbz	r0, .L15
+ 179 0006 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 180 0008 03B1     		cbz	r3, .L15
+ 181 000a 0020     		movs	r0, #0
+ 182              	.L15:
+ 183 000c 7047     		bx	lr
+ 185              		.section	.text.NOS_TimeEvent_FinishEvent,"ax",%progbits
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccka1W15.s 			page 4
+
+
+ 186              		.align	1
+ 187              		.global	NOS_TimeEvent_FinishEvent
+ 188              		.syntax unified
+ 189              		.thumb
+ 190              		.thumb_func
+ 192              	NOS_TimeEvent_FinishEvent:
+ 193              		@ args = 0, pretend = 0, frame = 0
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195              		@ link register save eliminated.
+ 196 0000 0023     		movs	r3, #0
+ 197 0002 4371     		strb	r3, [r0, #5]
+ 198 0004 8360     		str	r3, [r0, #8]
+ 199 0006 7047     		bx	lr
+ 201              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccka1W15.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_Time.c
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:16     .text.NOS_RealTime_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:22     .text.NOS_RealTime_Handler:00000000 NOS_RealTime_Handler
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:64     .text.NOS_RealTime_SetTime:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:70     .text.NOS_RealTime_SetTime:00000000 NOS_RealTime_SetTime
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:89     .text.NOS_TimeEvent_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:95     .text.NOS_TimeEvent_Init:00000000 NOS_TimeEvent_Init
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:109    .text.NOS_TimeEvent_Stop:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:115    .text.NOS_TimeEvent_Stop:00000000 NOS_TimeEvent_Stop
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:126    .text.NOS_TimeEvent_Resume:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:132    .text.NOS_TimeEvent_Resume:00000000 NOS_TimeEvent_Resume
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:142    .text.NOS_TimeEvent_TickHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:148    .text.NOS_TimeEvent_TickHandler:00000000 NOS_TimeEvent_TickHandler
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:166    .text.NOS_TimeEvent_Check:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:172    .text.NOS_TimeEvent_Check:00000000 NOS_TimeEvent_Check
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:186    .text.NOS_TimeEvent_FinishEvent:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccka1W15.s:192    .text.NOS_TimeEvent_FinishEvent:00000000 NOS_TimeEvent_FinishEvent
+
+NO UNDEFINED SYMBOLS

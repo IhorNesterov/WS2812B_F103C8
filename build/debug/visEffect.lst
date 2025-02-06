@@ -1,0 +1,827 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"visEffect.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/visEffect.c"
+  18              		.section	.text.Wheel,"ax",%progbits
+  19              		.align	1
+  20              		.global	Wheel
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	Wheel:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/visEffect.c **** /*
+   2:Core/Src/visEffect.c **** 
+   3:Core/Src/visEffect.c ****   WS2812B CPU and memory efficient library
+   4:Core/Src/visEffect.c **** 
+   5:Core/Src/visEffect.c ****   Date: 28.9.2016
+   6:Core/Src/visEffect.c **** 
+   7:Core/Src/visEffect.c ****   Author: Martin Hubacek
+   8:Core/Src/visEffect.c ****   	  	  http://www.martinhubacek.cz
+   9:Core/Src/visEffect.c ****   	  	  @hubmartin
+  10:Core/Src/visEffect.c **** 
+  11:Core/Src/visEffect.c ****   Licence: MIT License
+  12:Core/Src/visEffect.c **** 
+  13:Core/Src/visEffect.c **** */
+  14:Core/Src/visEffect.c **** 
+  15:Core/Src/visEffect.c **** #include <stdint.h>
+  16:Core/Src/visEffect.c **** 
+  17:Core/Src/visEffect.c **** #include "stm32f1xx_hal.h"
+  18:Core/Src/visEffect.c **** #include "ws2812b.h"
+  19:Core/Src/visEffect.c **** #include <stdlib.h>
+  20:Core/Src/visEffect.c **** extern WS2812_Struct ws2812b;
+  21:Core/Src/visEffect.c **** // RGB Framebuffers
+  22:Core/Src/visEffect.c **** uint8_t frameBuffer[3*60];
+  23:Core/Src/visEffect.c **** uint8_t frameBuffer2[3*20];
+  24:Core/Src/visEffect.c **** 
+  25:Core/Src/visEffect.c **** // Helper defines
+  26:Core/Src/visEffect.c **** #define newColor(r, g, b) (((uint32_t)(r) << 16) | ((uint32_t)(g) <<  8) | (b))
+  27:Core/Src/visEffect.c **** #define Red(c) ((uint8_t)((c >> 16) & 0xFF))
+  28:Core/Src/visEffect.c **** #define Green(c) ((uint8_t)((c >> 8) & 0xFF))
+  29:Core/Src/visEffect.c **** #define Blue(c) ((uint8_t)(c & 0xFF))
+  30:Core/Src/visEffect.c **** 
+  31:Core/Src/visEffect.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 2
+
+
+  32:Core/Src/visEffect.c **** uint32_t Wheel(uint8_t WheelPos) {
+  28              		.loc 1 32 34 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33:Core/Src/visEffect.c ****   WheelPos = 255 - WheelPos;
+  33              		.loc 1 33 3 view .LVU1
+  34              		.loc 1 33 12 is_stmt 0 view .LVU2
+  35 0000 C343     		mvns	r3, r0
+  36 0002 DBB2     		uxtb	r3, r3
+  37              	.LVL1:
+  34:Core/Src/visEffect.c ****   if(WheelPos < 85) {
+  38              		.loc 1 34 3 is_stmt 1 view .LVU3
+  39              		.loc 1 34 5 is_stmt 0 view .LVU4
+  40 0004 542B     		cmp	r3, #84
+  41 0006 0CD9     		bls	.L5
+  35:Core/Src/visEffect.c ****     return newColor(255 - WheelPos * 3, 0, WheelPos * 3);
+  36:Core/Src/visEffect.c ****   }
+  37:Core/Src/visEffect.c ****   if(WheelPos < 170) {
+  42              		.loc 1 37 3 is_stmt 1 view .LVU5
+  43              		.loc 1 37 5 is_stmt 0 view .LVU6
+  44 0008 A92B     		cmp	r3, #169
+  45 000a 12D9     		bls	.L6
+  38:Core/Src/visEffect.c ****     WheelPos -= 85;
+  39:Core/Src/visEffect.c ****     return newColor(0, WheelPos * 3, 255 - WheelPos * 3);
+  40:Core/Src/visEffect.c ****   }
+  41:Core/Src/visEffect.c ****   WheelPos -= 170;
+  46              		.loc 1 41 3 is_stmt 1 view .LVU7
+  47              		.loc 1 41 12 is_stmt 0 view .LVU8
+  48 000c C0F15503 		rsb	r3, r0, #85
+  49              	.LVL2:
+  50              		.loc 1 41 12 view .LVU9
+  51 0010 DBB2     		uxtb	r3, r3
+  52              	.LVL3:
+  42:Core/Src/visEffect.c ****   return newColor(WheelPos * 3, 255 - WheelPos * 3, 0);
+  53              		.loc 1 42 3 is_stmt 1 view .LVU10
+  54              		.loc 1 42 10 is_stmt 0 view .LVU11
+  55 0012 03EB4303 		add	r3, r3, r3, lsl #1
+  56              	.LVL4:
+  57              		.loc 1 42 10 view .LVU12
+  58 0016 C3F1FF00 		rsb	r0, r3, #255
+  59              	.LVL5:
+  60              		.loc 1 42 10 view .LVU13
+  61 001a 0002     		lsls	r0, r0, #8
+  62 001c 40EA0340 		orr	r0, r0, r3, lsl #16
+  43:Core/Src/visEffect.c **** }
+  63              		.loc 1 43 1 view .LVU14
+  64 0020 7047     		bx	lr
+  65              	.LVL6:
+  66              	.L5:
+  35:Core/Src/visEffect.c ****   }
+  67              		.loc 1 35 5 is_stmt 1 view .LVU15
+  35:Core/Src/visEffect.c ****   }
+  68              		.loc 1 35 12 is_stmt 0 view .LVU16
+  69 0022 A3EB8303 		sub	r3, r3, r3, lsl #2
+  70              	.LVL7:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 3
+
+
+  35:Core/Src/visEffect.c ****   }
+  71              		.loc 1 35 12 view .LVU17
+  72 0026 03F1FF02 		add	r2, r3, #255
+  73 002a 5B42     		rsbs	r3, r3, #0
+  74 002c 43EA0240 		orr	r0, r3, r2, lsl #16
+  75              	.LVL8:
+  35:Core/Src/visEffect.c ****   }
+  76              		.loc 1 35 12 view .LVU18
+  77 0030 7047     		bx	lr
+  78              	.LVL9:
+  79              	.L6:
+  38:Core/Src/visEffect.c ****     return newColor(0, WheelPos * 3, 255 - WheelPos * 3);
+  80              		.loc 1 38 5 is_stmt 1 view .LVU19
+  38:Core/Src/visEffect.c ****     return newColor(0, WheelPos * 3, 255 - WheelPos * 3);
+  81              		.loc 1 38 14 is_stmt 0 view .LVU20
+  82 0032 C0F1AA03 		rsb	r3, r0, #170
+  83              	.LVL10:
+  38:Core/Src/visEffect.c ****     return newColor(0, WheelPos * 3, 255 - WheelPos * 3);
+  84              		.loc 1 38 14 view .LVU21
+  85 0036 DBB2     		uxtb	r3, r3
+  86              	.LVL11:
+  39:Core/Src/visEffect.c ****   }
+  87              		.loc 1 39 5 is_stmt 1 view .LVU22
+  39:Core/Src/visEffect.c ****   }
+  88              		.loc 1 39 12 is_stmt 0 view .LVU23
+  89 0038 03EB4303 		add	r3, r3, r3, lsl #1
+  90              	.LVL12:
+  39:Core/Src/visEffect.c ****   }
+  91              		.loc 1 39 12 view .LVU24
+  92 003c C3F1FF00 		rsb	r0, r3, #255
+  93              	.LVL13:
+  39:Core/Src/visEffect.c ****   }
+  94              		.loc 1 39 12 view .LVU25
+  95 0040 40EA0320 		orr	r0, r0, r3, lsl #8
+  96 0044 7047     		bx	lr
+  97              		.cfi_endproc
+  98              	.LFE65:
+ 100              		.section	.text.visRainbow,"ax",%progbits
+ 101              		.align	1
+ 102              		.global	visRainbow
+ 103              		.syntax unified
+ 104              		.thumb
+ 105              		.thumb_func
+ 107              	visRainbow:
+ 108              	.LVL14:
+ 109              	.LFB66:
+  44:Core/Src/visEffect.c **** 
+  45:Core/Src/visEffect.c **** 
+  46:Core/Src/visEffect.c **** 
+  47:Core/Src/visEffect.c **** 
+  48:Core/Src/visEffect.c **** void visRainbow(uint8_t *frameBuffer, uint32_t frameBufferSize, uint32_t effectLength)
+  49:Core/Src/visEffect.c **** {
+ 110              		.loc 1 49 1 is_stmt 1 view -0
+ 111              		.cfi_startproc
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114              		.loc 1 49 1 is_stmt 0 view .LVU27
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 4
+
+
+ 115 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 116              		.cfi_def_cfa_offset 24
+ 117              		.cfi_offset 4, -24
+ 118              		.cfi_offset 5, -20
+ 119              		.cfi_offset 6, -16
+ 120              		.cfi_offset 7, -12
+ 121              		.cfi_offset 8, -8
+ 122              		.cfi_offset 14, -4
+ 123 0004 0546     		mov	r5, r0
+ 124 0006 0F46     		mov	r7, r1
+ 125 0008 9046     		mov	r8, r2
+  50:Core/Src/visEffect.c **** 	uint32_t i;
+ 126              		.loc 1 50 2 is_stmt 1 view .LVU28
+  51:Core/Src/visEffect.c **** 	static uint8_t x = 0;
+ 127              		.loc 1 51 2 view .LVU29
+  52:Core/Src/visEffect.c **** 
+  53:Core/Src/visEffect.c **** 	x += 1;
+ 128              		.loc 1 53 2 view .LVU30
+ 129              		.loc 1 53 4 is_stmt 0 view .LVU31
+ 130 000a 104B     		ldr	r3, .L11
+ 131 000c 1E78     		ldrb	r6, [r3]	@ zero_extendqisi2
+ 132 000e 0136     		adds	r6, r6, #1
+ 133 0010 F6B2     		uxtb	r6, r6
+ 134 0012 1E70     		strb	r6, [r3]
+  54:Core/Src/visEffect.c **** 
+  55:Core/Src/visEffect.c **** 	if(x == 256*5)
+ 135              		.loc 1 55 2 is_stmt 1 view .LVU32
+  56:Core/Src/visEffect.c **** 		x = 0;
+  57:Core/Src/visEffect.c **** 
+  58:Core/Src/visEffect.c **** 	for( i = 0; i < frameBufferSize / 3; i++)
+ 136              		.loc 1 58 2 view .LVU33
+ 137              	.LVL15:
+ 138              		.loc 1 58 9 is_stmt 0 view .LVU34
+ 139 0014 0024     		movs	r4, #0
+ 140              		.loc 1 58 2 view .LVU35
+ 141 0016 10E0     		b	.L8
+ 142              	.LVL16:
+ 143              	.L9:
+ 144              	.LBB2:
+  59:Core/Src/visEffect.c **** 	{
+  60:Core/Src/visEffect.c **** 		uint32_t color = Wheel(((i * 256) / effectLength + x) & 0xFF);
+ 145              		.loc 1 60 3 is_stmt 1 discriminator 3 view .LVU36
+ 146              		.loc 1 60 30 is_stmt 0 discriminator 3 view .LVU37
+ 147 0018 2002     		lsls	r0, r4, #8
+ 148              		.loc 1 60 37 discriminator 3 view .LVU38
+ 149 001a B0FBF8F0 		udiv	r0, r0, r8
+ 150              		.loc 1 60 20 discriminator 3 view .LVU39
+ 151 001e 3044     		add	r0, r0, r6
+ 152 0020 C0B2     		uxtb	r0, r0
+ 153 0022 FFF7FEFF 		bl	Wheel
+ 154              	.LVL17:
+  61:Core/Src/visEffect.c **** 
+  62:Core/Src/visEffect.c **** 		frameBuffer[i*3 + 0] = color & 0xFF;
+ 155              		.loc 1 62 3 is_stmt 1 discriminator 3 view .LVU40
+ 156              		.loc 1 62 16 is_stmt 0 discriminator 3 view .LVU41
+ 157 0026 04EB4403 		add	r3, r4, r4, lsl #1
+ 158              		.loc 1 62 24 discriminator 3 view .LVU42
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 5
+
+
+ 159 002a E854     		strb	r0, [r5, r3]
+  63:Core/Src/visEffect.c **** 		frameBuffer[i*3 + 1] = color >> 8 & 0xFF;
+ 160              		.loc 1 63 3 is_stmt 1 discriminator 3 view .LVU43
+ 161              		.loc 1 63 32 is_stmt 0 discriminator 3 view .LVU44
+ 162 002c 010A     		lsrs	r1, r0, #8
+ 163              		.loc 1 63 14 discriminator 3 view .LVU45
+ 164 002e 5A1C     		adds	r2, r3, #1
+ 165              		.loc 1 63 24 discriminator 3 view .LVU46
+ 166 0030 A954     		strb	r1, [r5, r2]
+  64:Core/Src/visEffect.c **** 		frameBuffer[i*3 + 2] = color >> 16 & 0xFF;
+ 167              		.loc 1 64 3 is_stmt 1 discriminator 3 view .LVU47
+ 168              		.loc 1 64 32 is_stmt 0 discriminator 3 view .LVU48
+ 169 0032 000C     		lsrs	r0, r0, #16
+ 170              	.LVL18:
+ 171              		.loc 1 64 14 discriminator 3 view .LVU49
+ 172 0034 0233     		adds	r3, r3, #2
+ 173              		.loc 1 64 24 discriminator 3 view .LVU50
+ 174 0036 E854     		strb	r0, [r5, r3]
+ 175              	.LBE2:
+  58:Core/Src/visEffect.c **** 	{
+ 176              		.loc 1 58 40 is_stmt 1 discriminator 3 view .LVU51
+ 177 0038 0134     		adds	r4, r4, #1
+ 178              	.LVL19:
+ 179              	.L8:
+  58:Core/Src/visEffect.c **** 	{
+ 180              		.loc 1 58 16 discriminator 1 view .LVU52
+  58:Core/Src/visEffect.c **** 	{
+ 181              		.loc 1 58 34 is_stmt 0 discriminator 1 view .LVU53
+ 182 003a 054B     		ldr	r3, .L11+4
+ 183 003c A3FB0723 		umull	r2, r3, r3, r7
+  58:Core/Src/visEffect.c **** 	{
+ 184              		.loc 1 58 16 discriminator 1 view .LVU54
+ 185 0040 B4EB530F 		cmp	r4, r3, lsr #1
+ 186 0044 E8D3     		bcc	.L9
+  65:Core/Src/visEffect.c **** 	}
+  66:Core/Src/visEffect.c **** }
+ 187              		.loc 1 66 1 view .LVU55
+ 188 0046 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 189              	.LVL20:
+ 190              	.L12:
+ 191              		.loc 1 66 1 view .LVU56
+ 192 004a 00BF     		.align	2
+ 193              	.L11:
+ 194 004c 00000000 		.word	x.1
+ 195 0050 ABAAAAAA 		.word	-1431655765
+ 196              		.cfi_endproc
+ 197              	.LFE66:
+ 199              		.section	.text.visDots,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	visDots
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 206              	visDots:
+ 207              	.LVL21:
+ 208              	.LFB67:
+  67:Core/Src/visEffect.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 6
+
+
+  68:Core/Src/visEffect.c **** 
+  69:Core/Src/visEffect.c **** void visDots(uint8_t *frameBuffer, uint32_t frameBufferSize, uint32_t random, uint32_t fadeOutFacto
+  70:Core/Src/visEffect.c **** {
+ 209              		.loc 1 70 1 is_stmt 1 view -0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		.loc 1 70 1 is_stmt 0 view .LVU58
+ 214 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 215              		.cfi_def_cfa_offset 24
+ 216              		.cfi_offset 4, -24
+ 217              		.cfi_offset 5, -20
+ 218              		.cfi_offset 6, -16
+ 219              		.cfi_offset 7, -12
+ 220              		.cfi_offset 8, -8
+ 221              		.cfi_offset 14, -4
+ 222 0004 0446     		mov	r4, r0
+ 223 0006 8846     		mov	r8, r1
+ 224 0008 1746     		mov	r7, r2
+ 225 000a 1E46     		mov	r6, r3
+  71:Core/Src/visEffect.c **** 	uint32_t i;
+ 226              		.loc 1 71 2 is_stmt 1 view .LVU59
+  72:Core/Src/visEffect.c **** 
+  73:Core/Src/visEffect.c **** 	for( i = 0; i < frameBufferSize / 3; i++)
+ 227              		.loc 1 73 2 view .LVU60
+ 228              	.LVL22:
+ 229              		.loc 1 73 9 is_stmt 0 view .LVU61
+ 230 000c 0025     		movs	r5, #0
+ 231              		.loc 1 73 2 view .LVU62
+ 232 000e 0AE0     		b	.L14
+ 233              	.LVL23:
+ 234              	.L16:
+  74:Core/Src/visEffect.c **** 	{
+  75:Core/Src/visEffect.c **** 
+  76:Core/Src/visEffect.c **** 		if(rand() % random == 0)
+  77:Core/Src/visEffect.c **** 		{
+  78:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] = 255;
+  79:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] = 255;
+  80:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] = 255;
+  81:Core/Src/visEffect.c **** 		}
+  82:Core/Src/visEffect.c **** 
+  83:Core/Src/visEffect.c **** 
+  84:Core/Src/visEffect.c **** 		if(frameBuffer[i*3 + 0] > fadeOutFactor)
+  85:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] -= frameBuffer[i*3 + 0]/fadeOutFactor;
+  86:Core/Src/visEffect.c **** 		else
+  87:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] = 0;
+ 235              		.loc 1 87 4 is_stmt 1 view .LVU63
+ 236              		.loc 1 87 25 is_stmt 0 view .LVU64
+ 237 0010 0023     		movs	r3, #0
+ 238 0012 04F80C30 		strb	r3, [r4, ip]
+ 239 0016 26E0     		b	.L17
+ 240              	.L18:
+  88:Core/Src/visEffect.c **** 
+  89:Core/Src/visEffect.c **** 		if(frameBuffer[i*3 + 1] > fadeOutFactor)
+  90:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] -= frameBuffer[i*3 + 1]/fadeOutFactor;
+  91:Core/Src/visEffect.c **** 		else
+  92:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] = 0;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 7
+
+
+ 241              		.loc 1 92 4 is_stmt 1 view .LVU65
+ 242              		.loc 1 92 25 is_stmt 0 view .LVU66
+ 243 0018 0023     		movs	r3, #0
+ 244 001a A354     		strb	r3, [r4, r2]
+ 245 001c 2CE0     		b	.L19
+ 246              	.L20:
+  93:Core/Src/visEffect.c **** 
+  94:Core/Src/visEffect.c **** 		if(frameBuffer[i*3 + 2] > fadeOutFactor)
+  95:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] -= frameBuffer[i*3 + 2]/fadeOutFactor;
+  96:Core/Src/visEffect.c **** 		else
+  97:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] = 0;
+ 247              		.loc 1 97 4 is_stmt 1 view .LVU67
+ 248              		.loc 1 97 25 is_stmt 0 view .LVU68
+ 249 001e 0023     		movs	r3, #0
+ 250 0020 04F80C30 		strb	r3, [r4, ip]
+ 251              	.L21:
+  73:Core/Src/visEffect.c **** 	{
+ 252              		.loc 1 73 40 is_stmt 1 discriminator 2 view .LVU69
+ 253 0024 0135     		adds	r5, r5, #1
+ 254              	.LVL24:
+ 255              	.L14:
+  73:Core/Src/visEffect.c **** 	{
+ 256              		.loc 1 73 16 discriminator 1 view .LVU70
+  73:Core/Src/visEffect.c **** 	{
+ 257              		.loc 1 73 34 is_stmt 0 discriminator 1 view .LVU71
+ 258 0026 1B4B     		ldr	r3, .L25
+ 259 0028 A3FB0823 		umull	r2, r3, r3, r8
+  73:Core/Src/visEffect.c **** 	{
+ 260              		.loc 1 73 16 discriminator 1 view .LVU72
+ 261 002c B5EB530F 		cmp	r5, r3, lsr #1
+ 262 0030 2ED2     		bcs	.L24
+  76:Core/Src/visEffect.c **** 		{
+ 263              		.loc 1 76 3 is_stmt 1 view .LVU73
+  76:Core/Src/visEffect.c **** 		{
+ 264              		.loc 1 76 6 is_stmt 0 view .LVU74
+ 265 0032 FFF7FEFF 		bl	rand
+ 266              	.LVL25:
+  76:Core/Src/visEffect.c **** 		{
+ 267              		.loc 1 76 13 view .LVU75
+ 268 0036 B0FBF7F3 		udiv	r3, r0, r7
+ 269 003a 07FB1300 		mls	r0, r7, r3, r0
+  76:Core/Src/visEffect.c **** 		{
+ 270              		.loc 1 76 5 view .LVU76
+ 271 003e 38B9     		cbnz	r0, .L15
+  78:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] = 255;
+ 272              		.loc 1 78 4 is_stmt 1 view .LVU77
+  78:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] = 255;
+ 273              		.loc 1 78 17 is_stmt 0 view .LVU78
+ 274 0040 05EB4503 		add	r3, r5, r5, lsl #1
+  78:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] = 255;
+ 275              		.loc 1 78 25 view .LVU79
+ 276 0044 FF22     		movs	r2, #255
+ 277 0046 E254     		strb	r2, [r4, r3]
+  79:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] = 255;
+ 278              		.loc 1 79 4 is_stmt 1 view .LVU80
+  79:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] = 255;
+ 279              		.loc 1 79 15 is_stmt 0 view .LVU81
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 8
+
+
+ 280 0048 591C     		adds	r1, r3, #1
+  79:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] = 255;
+ 281              		.loc 1 79 25 view .LVU82
+ 282 004a 6254     		strb	r2, [r4, r1]
+  80:Core/Src/visEffect.c **** 		}
+ 283              		.loc 1 80 4 is_stmt 1 view .LVU83
+  80:Core/Src/visEffect.c **** 		}
+ 284              		.loc 1 80 15 is_stmt 0 view .LVU84
+ 285 004c 0233     		adds	r3, r3, #2
+  80:Core/Src/visEffect.c **** 		}
+ 286              		.loc 1 80 25 view .LVU85
+ 287 004e E254     		strb	r2, [r4, r3]
+ 288              	.L15:
+  84:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] -= frameBuffer[i*3 + 0]/fadeOutFactor;
+ 289              		.loc 1 84 3 is_stmt 1 view .LVU86
+  84:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] -= frameBuffer[i*3 + 0]/fadeOutFactor;
+ 290              		.loc 1 84 19 is_stmt 0 view .LVU87
+ 291 0050 05EB450C 		add	ip, r5, r5, lsl #1
+  84:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] -= frameBuffer[i*3 + 0]/fadeOutFactor;
+ 292              		.loc 1 84 17 view .LVU88
+ 293 0054 14F80C30 		ldrb	r3, [r4, ip]	@ zero_extendqisi2
+  84:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 0] -= frameBuffer[i*3 + 0]/fadeOutFactor;
+ 294              		.loc 1 84 5 view .LVU89
+ 295 0058 B342     		cmp	r3, r6
+ 296 005a D9D9     		bls	.L16
+  85:Core/Src/visEffect.c **** 		else
+ 297              		.loc 1 85 4 is_stmt 1 view .LVU90
+  85:Core/Src/visEffect.c **** 		else
+ 298              		.loc 1 85 48 is_stmt 0 view .LVU91
+ 299 005c B3FBF6F2 		udiv	r2, r3, r6
+  85:Core/Src/visEffect.c **** 		else
+ 300              		.loc 1 85 25 view .LVU92
+ 301 0060 9B1A     		subs	r3, r3, r2
+ 302 0062 04F80C30 		strb	r3, [r4, ip]
+ 303              	.L17:
+  89:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] -= frameBuffer[i*3 + 1]/fadeOutFactor;
+ 304              		.loc 1 89 3 is_stmt 1 view .LVU93
+  89:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] -= frameBuffer[i*3 + 1]/fadeOutFactor;
+ 305              		.loc 1 89 17 is_stmt 0 view .LVU94
+ 306 0066 0CF10102 		add	r2, ip, #1
+ 307 006a A35C     		ldrb	r3, [r4, r2]	@ zero_extendqisi2
+  89:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 1] -= frameBuffer[i*3 + 1]/fadeOutFactor;
+ 308              		.loc 1 89 5 view .LVU95
+ 309 006c B342     		cmp	r3, r6
+ 310 006e D3D9     		bls	.L18
+  90:Core/Src/visEffect.c **** 		else
+ 311              		.loc 1 90 4 is_stmt 1 view .LVU96
+  90:Core/Src/visEffect.c **** 		else
+ 312              		.loc 1 90 48 is_stmt 0 view .LVU97
+ 313 0070 B3FBF6F1 		udiv	r1, r3, r6
+  90:Core/Src/visEffect.c **** 		else
+ 314              		.loc 1 90 25 view .LVU98
+ 315 0074 5B1A     		subs	r3, r3, r1
+ 316 0076 A354     		strb	r3, [r4, r2]
+ 317              	.L19:
+  94:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] -= frameBuffer[i*3 + 2]/fadeOutFactor;
+ 318              		.loc 1 94 3 is_stmt 1 view .LVU99
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 9
+
+
+  94:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] -= frameBuffer[i*3 + 2]/fadeOutFactor;
+ 319              		.loc 1 94 17 is_stmt 0 view .LVU100
+ 320 0078 0CF1020C 		add	ip, ip, #2
+ 321 007c 14F80C30 		ldrb	r3, [r4, ip]	@ zero_extendqisi2
+  94:Core/Src/visEffect.c **** 			frameBuffer[i*3 + 2] -= frameBuffer[i*3 + 2]/fadeOutFactor;
+ 322              		.loc 1 94 5 view .LVU101
+ 323 0080 B342     		cmp	r3, r6
+ 324 0082 CCD9     		bls	.L20
+  95:Core/Src/visEffect.c **** 		else
+ 325              		.loc 1 95 4 is_stmt 1 view .LVU102
+  95:Core/Src/visEffect.c **** 		else
+ 326              		.loc 1 95 48 is_stmt 0 view .LVU103
+ 327 0084 B3FBF6F2 		udiv	r2, r3, r6
+  95:Core/Src/visEffect.c **** 		else
+ 328              		.loc 1 95 25 view .LVU104
+ 329 0088 9B1A     		subs	r3, r3, r2
+ 330 008a 04F80C30 		strb	r3, [r4, ip]
+ 331 008e C9E7     		b	.L21
+ 332              	.L24:
+  98:Core/Src/visEffect.c **** 	}
+  99:Core/Src/visEffect.c **** }
+ 333              		.loc 1 99 1 view .LVU105
+ 334 0090 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 335              	.LVL26:
+ 336              	.L26:
+ 337              		.loc 1 99 1 view .LVU106
+ 338              		.align	2
+ 339              	.L25:
+ 340 0094 ABAAAAAA 		.word	-1431655765
+ 341              		.cfi_endproc
+ 342              	.LFE67:
+ 344              		.section	.text.visHandle2,"ax",%progbits
+ 345              		.align	1
+ 346              		.global	visHandle2
+ 347              		.syntax unified
+ 348              		.thumb
+ 349              		.thumb_func
+ 351              	visHandle2:
+ 352              	.LFB68:
+ 100:Core/Src/visEffect.c **** 
+ 101:Core/Src/visEffect.c **** 
+ 102:Core/Src/visEffect.c **** 
+ 103:Core/Src/visEffect.c **** void visHandle2()
+ 104:Core/Src/visEffect.c **** {
+ 353              		.loc 1 104 1 is_stmt 1 view -0
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357 0000 08B5     		push	{r3, lr}
+ 358              		.cfi_def_cfa_offset 8
+ 359              		.cfi_offset 3, -8
+ 360              		.cfi_offset 14, -4
+ 105:Core/Src/visEffect.c **** 	static uint32_t timestamp;
+ 361              		.loc 1 105 2 view .LVU108
+ 106:Core/Src/visEffect.c **** 
+ 107:Core/Src/visEffect.c **** 	if(HAL_GetTick() - timestamp > 10)
+ 362              		.loc 1 107 2 view .LVU109
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 10
+
+
+ 363              		.loc 1 107 5 is_stmt 0 view .LVU110
+ 364 0002 FFF7FEFF 		bl	HAL_GetTick
+ 365              	.LVL27:
+ 366              		.loc 1 107 19 view .LVU111
+ 367 0006 0B4B     		ldr	r3, .L31
+ 368 0008 1B68     		ldr	r3, [r3]
+ 369 000a C01A     		subs	r0, r0, r3
+ 370              		.loc 1 107 4 view .LVU112
+ 371 000c 0A28     		cmp	r0, #10
+ 372 000e 00D8     		bhi	.L30
+ 373              	.L27:
+ 108:Core/Src/visEffect.c **** 	{
+ 109:Core/Src/visEffect.c **** 		timestamp = HAL_GetTick();
+ 110:Core/Src/visEffect.c **** 
+ 111:Core/Src/visEffect.c **** 		visRainbow(frameBuffer, sizeof(frameBuffer), 15);
+ 112:Core/Src/visEffect.c **** 		visDots(frameBuffer2, sizeof(frameBuffer2), 50, 40);
+ 113:Core/Src/visEffect.c **** /*
+ 114:Core/Src/visEffect.c **** 		switch(visSelect)
+ 115:Core/Src/visEffect.c **** 		{
+ 116:Core/Src/visEffect.c **** 			case 0:
+ 117:Core/Src/visEffect.c **** 				visRainbow(frameBuffer, sizeof(frameBuffer), 15);
+ 118:Core/Src/visEffect.c **** 				break;
+ 119:Core/Src/visEffect.c **** 
+ 120:Core/Src/visEffect.c **** 
+ 121:Core/Src/visEffect.c **** 			case 1:
+ 122:Core/Src/visEffect.c **** 				visDots(frameBuffer, sizeof(frameBuffer), 50, 40);
+ 123:Core/Src/visEffect.c **** 				break;
+ 124:Core/Src/visEffect.c **** 
+ 125:Core/Src/visEffect.c **** 		}*/
+ 126:Core/Src/visEffect.c **** 	}
+ 127:Core/Src/visEffect.c **** }
+ 374              		.loc 1 127 1 view .LVU113
+ 375 0010 08BD     		pop	{r3, pc}
+ 376              	.L30:
+ 109:Core/Src/visEffect.c **** 
+ 377              		.loc 1 109 3 is_stmt 1 view .LVU114
+ 109:Core/Src/visEffect.c **** 
+ 378              		.loc 1 109 15 is_stmt 0 view .LVU115
+ 379 0012 FFF7FEFF 		bl	HAL_GetTick
+ 380              	.LVL28:
+ 109:Core/Src/visEffect.c **** 
+ 381              		.loc 1 109 13 view .LVU116
+ 382 0016 074B     		ldr	r3, .L31
+ 383 0018 1860     		str	r0, [r3]
+ 111:Core/Src/visEffect.c **** 		visDots(frameBuffer2, sizeof(frameBuffer2), 50, 40);
+ 384              		.loc 1 111 3 is_stmt 1 view .LVU117
+ 385 001a 0F22     		movs	r2, #15
+ 386 001c B421     		movs	r1, #180
+ 387 001e 0648     		ldr	r0, .L31+4
+ 388 0020 FFF7FEFF 		bl	visRainbow
+ 389              	.LVL29:
+ 112:Core/Src/visEffect.c **** /*
+ 390              		.loc 1 112 3 view .LVU118
+ 391 0024 2823     		movs	r3, #40
+ 392 0026 3222     		movs	r2, #50
+ 393 0028 3C21     		movs	r1, #60
+ 394 002a 0448     		ldr	r0, .L31+8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 11
+
+
+ 395 002c FFF7FEFF 		bl	visDots
+ 396              	.LVL30:
+ 397              		.loc 1 127 1 is_stmt 0 view .LVU119
+ 398 0030 EEE7     		b	.L27
+ 399              	.L32:
+ 400 0032 00BF     		.align	2
+ 401              	.L31:
+ 402 0034 00000000 		.word	timestamp.0
+ 403 0038 00000000 		.word	frameBuffer
+ 404 003c 00000000 		.word	frameBuffer2
+ 405              		.cfi_endproc
+ 406              	.LFE68:
+ 408              		.section	.text.visInit,"ax",%progbits
+ 409              		.align	1
+ 410              		.global	visInit
+ 411              		.syntax unified
+ 412              		.thumb
+ 413              		.thumb_func
+ 415              	visInit:
+ 416              	.LFB69:
+ 128:Core/Src/visEffect.c **** 
+ 129:Core/Src/visEffect.c **** 
+ 130:Core/Src/visEffect.c **** void visInit()
+ 131:Core/Src/visEffect.c **** {
+ 417              		.loc 1 131 1 is_stmt 1 view -0
+ 418              		.cfi_startproc
+ 419              		@ args = 0, pretend = 0, frame = 0
+ 420              		@ frame_needed = 0, uses_anonymous_args = 0
+ 421 0000 08B5     		push	{r3, lr}
+ 422              		.cfi_def_cfa_offset 8
+ 423              		.cfi_offset 3, -8
+ 424              		.cfi_offset 14, -4
+ 132:Core/Src/visEffect.c **** 	// Set output channel/pin, GPIO_PIN_0 = 0, for GPIO_PIN_5 = 5 - this has to correspond to WS2812B_
+ 133:Core/Src/visEffect.c **** 	ws2812b.item[0].channel = 2;
+ 425              		.loc 1 133 2 view .LVU121
+ 426              		.loc 1 133 26 is_stmt 0 view .LVU122
+ 427 0002 084B     		ldr	r3, .L35
+ 428 0004 0222     		movs	r2, #2
+ 429 0006 1A73     		strb	r2, [r3, #12]
+ 134:Core/Src/visEffect.c **** 	// Your RGB framebuffer
+ 135:Core/Src/visEffect.c **** 	ws2812b.item[0].frameBufferPointer = frameBuffer;
+ 430              		.loc 1 135 2 is_stmt 1 view .LVU123
+ 431              		.loc 1 135 37 is_stmt 0 view .LVU124
+ 432 0008 074A     		ldr	r2, .L35+4
+ 433 000a 1A60     		str	r2, [r3]
+ 136:Core/Src/visEffect.c **** 	// RAW size of framebuffer
+ 137:Core/Src/visEffect.c **** 	ws2812b.item[0].frameBufferSize = sizeof(frameBuffer);
+ 434              		.loc 1 137 2 is_stmt 1 view .LVU125
+ 435              		.loc 1 137 34 is_stmt 0 view .LVU126
+ 436 000c B422     		movs	r2, #180
+ 437 000e 5A60     		str	r2, [r3, #4]
+ 138:Core/Src/visEffect.c **** 
+ 139:Core/Src/visEffect.c **** 
+ 140:Core/Src/visEffect.c **** 	// If you need more parallel LED strips, increase the WS2812_BUFFER_COUNT value
+ 141:Core/Src/visEffect.c **** 	ws2812b.item[1].channel = 3;
+ 438              		.loc 1 141 2 is_stmt 1 view .LVU127
+ 439              		.loc 1 141 26 is_stmt 0 view .LVU128
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 12
+
+
+ 440 0010 0322     		movs	r2, #3
+ 441 0012 1A77     		strb	r2, [r3, #28]
+ 142:Core/Src/visEffect.c **** 	ws2812b.item[1].frameBufferPointer = frameBuffer2;
+ 442              		.loc 1 142 2 is_stmt 1 view .LVU129
+ 443              		.loc 1 142 37 is_stmt 0 view .LVU130
+ 444 0014 054A     		ldr	r2, .L35+8
+ 445 0016 1A61     		str	r2, [r3, #16]
+ 143:Core/Src/visEffect.c **** 	ws2812b.item[1].frameBufferSize = sizeof(frameBuffer2);
+ 446              		.loc 1 143 2 is_stmt 1 view .LVU131
+ 447              		.loc 1 143 34 is_stmt 0 view .LVU132
+ 448 0018 3C22     		movs	r2, #60
+ 449 001a 5A61     		str	r2, [r3, #20]
+ 144:Core/Src/visEffect.c **** 
+ 145:Core/Src/visEffect.c **** 
+ 146:Core/Src/visEffect.c **** 	ws2812b_init();
+ 450              		.loc 1 146 2 is_stmt 1 view .LVU133
+ 451 001c FFF7FEFF 		bl	ws2812b_init
+ 452              	.LVL31:
+ 147:Core/Src/visEffect.c **** }
+ 453              		.loc 1 147 1 is_stmt 0 view .LVU134
+ 454 0020 08BD     		pop	{r3, pc}
+ 455              	.L36:
+ 456 0022 00BF     		.align	2
+ 457              	.L35:
+ 458 0024 00000000 		.word	ws2812b
+ 459 0028 00000000 		.word	frameBuffer
+ 460 002c 00000000 		.word	frameBuffer2
+ 461              		.cfi_endproc
+ 462              	.LFE69:
+ 464              		.section	.text.visHandle,"ax",%progbits
+ 465              		.align	1
+ 466              		.global	visHandle
+ 467              		.syntax unified
+ 468              		.thumb
+ 469              		.thumb_func
+ 471              	visHandle:
+ 472              	.LFB70:
+ 148:Core/Src/visEffect.c **** 
+ 149:Core/Src/visEffect.c **** 
+ 150:Core/Src/visEffect.c **** void visHandle()
+ 151:Core/Src/visEffect.c **** {
+ 473              		.loc 1 151 1 is_stmt 1 view -0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477 0000 08B5     		push	{r3, lr}
+ 478              		.cfi_def_cfa_offset 8
+ 479              		.cfi_offset 3, -8
+ 480              		.cfi_offset 14, -4
+ 152:Core/Src/visEffect.c **** 
+ 153:Core/Src/visEffect.c **** 	if(ws2812b.transferComplete)
+ 481              		.loc 1 153 2 view .LVU136
+ 482              		.loc 1 153 12 is_stmt 0 view .LVU137
+ 483 0002 064B     		ldr	r3, .L41
+ 484 0004 93F82030 		ldrb	r3, [r3, #32]	@ zero_extendqisi2
+ 485              		.loc 1 153 4 view .LVU138
+ 486 0008 03B9     		cbnz	r3, .L40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 13
+
+
+ 487              	.L37:
+ 154:Core/Src/visEffect.c **** 	{
+ 155:Core/Src/visEffect.c **** 		// Update your framebuffer here or swap buffers
+ 156:Core/Src/visEffect.c **** 		//visHandle2();
+ 157:Core/Src/visEffect.c **** 
+ 158:Core/Src/visEffect.c **** 		// Signal that buffer is changed and transfer new data
+ 159:Core/Src/visEffect.c **** 		ws2812b.startTransfer = 1;
+ 160:Core/Src/visEffect.c **** 		ws2812b_handle();
+ 161:Core/Src/visEffect.c **** 	}
+ 162:Core/Src/visEffect.c **** }
+ 488              		.loc 1 162 1 view .LVU139
+ 489 000a 08BD     		pop	{r3, pc}
+ 490              	.L40:
+ 159:Core/Src/visEffect.c **** 		ws2812b_handle();
+ 491              		.loc 1 159 3 is_stmt 1 view .LVU140
+ 159:Core/Src/visEffect.c **** 		ws2812b_handle();
+ 492              		.loc 1 159 25 is_stmt 0 view .LVU141
+ 493 000c 034B     		ldr	r3, .L41
+ 494 000e 0122     		movs	r2, #1
+ 495 0010 83F82120 		strb	r2, [r3, #33]
+ 160:Core/Src/visEffect.c **** 	}
+ 496              		.loc 1 160 3 is_stmt 1 view .LVU142
+ 497 0014 FFF7FEFF 		bl	ws2812b_handle
+ 498              	.LVL32:
+ 499              		.loc 1 162 1 is_stmt 0 view .LVU143
+ 500 0018 F7E7     		b	.L37
+ 501              	.L42:
+ 502 001a 00BF     		.align	2
+ 503              	.L41:
+ 504 001c 00000000 		.word	ws2812b
+ 505              		.cfi_endproc
+ 506              	.LFE70:
+ 508              		.section	.bss.timestamp.0,"aw",%nobits
+ 509              		.align	2
+ 512              	timestamp.0:
+ 513 0000 00000000 		.space	4
+ 514              		.section	.bss.x.1,"aw",%nobits
+ 517              	x.1:
+ 518 0000 00       		.space	1
+ 519              		.global	frameBuffer2
+ 520              		.section	.bss.frameBuffer2,"aw",%nobits
+ 521              		.align	2
+ 524              	frameBuffer2:
+ 525 0000 00000000 		.space	60
+ 525      00000000 
+ 525      00000000 
+ 525      00000000 
+ 525      00000000 
+ 526              		.global	frameBuffer
+ 527              		.section	.bss.frameBuffer,"aw",%nobits
+ 528              		.align	2
+ 531              	frameBuffer:
+ 532 0000 00000000 		.space	180
+ 532      00000000 
+ 532      00000000 
+ 532      00000000 
+ 532      00000000 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 14
+
+
+ 533              		.text
+ 534              	.Letext0:
+ 535              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 536              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 537              		.file 4 "Core/Inc/ws2812b.h"
+ 538              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 539              		.file 6 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 visEffect.c
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:19     .text.Wheel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:25     .text.Wheel:00000000 Wheel
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:101    .text.visRainbow:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:107    .text.visRainbow:00000000 visRainbow
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:194    .text.visRainbow:0000004c $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:517    .bss.x.1:00000000 x.1
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:200    .text.visDots:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:206    .text.visDots:00000000 visDots
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:340    .text.visDots:00000094 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:345    .text.visHandle2:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:351    .text.visHandle2:00000000 visHandle2
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:402    .text.visHandle2:00000034 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:512    .bss.timestamp.0:00000000 timestamp.0
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:531    .bss.frameBuffer:00000000 frameBuffer
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:524    .bss.frameBuffer2:00000000 frameBuffer2
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:409    .text.visInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:415    .text.visInit:00000000 visInit
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:458    .text.visInit:00000024 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:465    .text.visHandle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:471    .text.visHandle:00000000 visHandle
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:504    .text.visHandle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:509    .bss.timestamp.0:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:518    .bss.x.1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:521    .bss.frameBuffer2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccMQosNG.s:528    .bss.frameBuffer:00000000 $d
+
+UNDEFINED SYMBOLS
+rand
+HAL_GetTick
+ws2812b_init
+ws2812b
+ws2812b_handle

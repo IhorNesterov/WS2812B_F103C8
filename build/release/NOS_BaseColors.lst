@@ -1,0 +1,181 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_BaseColors.c"
+  14              		.text
+  15              		.section	.text.NOS_PixelColor_SetColor,"ax",%progbits
+  16              		.align	1
+  17              		.global	NOS_PixelColor_SetColor
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	NOS_PixelColor_SetColor:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 0170     		strb	r1, [r0]
+  27 0002 4270     		strb	r2, [r0, #1]
+  28 0004 8370     		strb	r3, [r0, #2]
+  29 0006 7047     		bx	lr
+  31              		.section	.text.NOS_GetBaseColor,"ax",%progbits
+  32              		.align	1
+  33              		.global	NOS_GetBaseColor
+  34              		.syntax unified
+  35              		.thumb
+  36              		.thumb_func
+  38              	NOS_GetBaseColor:
+  39              		@ args = 0, pretend = 0, frame = 8
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41 0000 00B5     		push	{lr}
+  42 0002 83B0     		sub	sp, sp, #12
+  43 0004 0023     		movs	r3, #0
+  44 0006 8DF80030 		strb	r3, [sp]
+  45 000a 8DF80130 		strb	r3, [sp, #1]
+  46 000e 8DF80230 		strb	r3, [sp, #2]
+  47 0012 0B28     		cmp	r0, #11
+  48 0014 0DD8     		bhi	.L3
+  49 0016 DFE800F0 		tbb	[pc, r0]
+  50              	.L5:
+  51 001a 06       		.byte	(.L16-.L5)/2
+  52 001b 22       		.byte	(.L15-.L5)/2
+  53 001c 29       		.byte	(.L14-.L5)/2
+  54 001d 30       		.byte	(.L13-.L5)/2
+  55 001e 37       		.byte	(.L12-.L5)/2
+  56 001f 3E       		.byte	(.L11-.L5)/2
+  57 0020 45       		.byte	(.L10-.L5)/2
+  58 0021 4C       		.byte	(.L9-.L5)/2
+  59 0022 53       		.byte	(.L8-.L5)/2
+  60 0023 5A       		.byte	(.L7-.L5)/2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s 			page 2
+
+
+  61 0024 61       		.byte	(.L6-.L5)/2
+  62 0025 68       		.byte	(.L4-.L5)/2
+  63              		.p2align 1
+  64              	.L16:
+  65 0026 FF23     		movs	r3, #255
+  66 0028 0022     		movs	r2, #0
+  67 002a 1146     		mov	r1, r2
+  68 002c 6846     		mov	r0, sp
+  69 002e FFF7FEFF 		bl	NOS_PixelColor_SetColor
+  70              	.L3:
+  71 0032 009B     		ldr	r3, [sp]
+  72 0034 ADF80430 		strh	r3, [sp, #4]	@ movhi
+  73 0038 1B0C     		lsrs	r3, r3, #16
+  74 003a 8DF80630 		strb	r3, [sp, #6]
+  75 003e 0020     		movs	r0, #0
+  76 0040 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+  77 0044 63F30700 		bfi	r0, r3, #0, #8
+  78 0048 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+  79 004c 63F30F20 		bfi	r0, r3, #8, #8
+  80 0050 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+  81 0054 63F31740 		bfi	r0, r3, #16, #8
+  82 0058 03B0     		add	sp, sp, #12
+  83              		@ sp needed
+  84 005a 5DF804FB 		ldr	pc, [sp], #4
+  85              	.L15:
+  86 005e FF23     		movs	r3, #255
+  87 0060 7F22     		movs	r2, #127
+  88 0062 0021     		movs	r1, #0
+  89 0064 6846     		mov	r0, sp
+  90 0066 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+  91 006a E2E7     		b	.L3
+  92              	.L14:
+  93 006c FF23     		movs	r3, #255
+  94 006e 1A46     		mov	r2, r3
+  95 0070 0021     		movs	r1, #0
+  96 0072 6846     		mov	r0, sp
+  97 0074 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+  98 0078 DBE7     		b	.L3
+  99              	.L13:
+ 100 007a 7F23     		movs	r3, #127
+ 101 007c FF22     		movs	r2, #255
+ 102 007e 0021     		movs	r1, #0
+ 103 0080 6846     		mov	r0, sp
+ 104 0082 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 105 0086 D4E7     		b	.L3
+ 106              	.L12:
+ 107 0088 0023     		movs	r3, #0
+ 108 008a FF22     		movs	r2, #255
+ 109 008c 1946     		mov	r1, r3
+ 110 008e 6846     		mov	r0, sp
+ 111 0090 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 112 0094 CDE7     		b	.L3
+ 113              	.L11:
+ 114 0096 0023     		movs	r3, #0
+ 115 0098 FF22     		movs	r2, #255
+ 116 009a 7F21     		movs	r1, #127
+ 117 009c 6846     		mov	r0, sp
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s 			page 3
+
+
+ 118 009e FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 119 00a2 C6E7     		b	.L3
+ 120              	.L10:
+ 121 00a4 0023     		movs	r3, #0
+ 122 00a6 FF22     		movs	r2, #255
+ 123 00a8 1146     		mov	r1, r2
+ 124 00aa 6846     		mov	r0, sp
+ 125 00ac FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 126 00b0 BFE7     		b	.L3
+ 127              	.L9:
+ 128 00b2 0023     		movs	r3, #0
+ 129 00b4 7F22     		movs	r2, #127
+ 130 00b6 FF21     		movs	r1, #255
+ 131 00b8 6846     		mov	r0, sp
+ 132 00ba FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 133 00be B8E7     		b	.L3
+ 134              	.L8:
+ 135 00c0 0023     		movs	r3, #0
+ 136 00c2 1A46     		mov	r2, r3
+ 137 00c4 FF21     		movs	r1, #255
+ 138 00c6 6846     		mov	r0, sp
+ 139 00c8 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 140 00cc B1E7     		b	.L3
+ 141              	.L7:
+ 142 00ce 7F23     		movs	r3, #127
+ 143 00d0 0022     		movs	r2, #0
+ 144 00d2 FF21     		movs	r1, #255
+ 145 00d4 6846     		mov	r0, sp
+ 146 00d6 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 147 00da AAE7     		b	.L3
+ 148              	.L6:
+ 149 00dc FF23     		movs	r3, #255
+ 150 00de 0022     		movs	r2, #0
+ 151 00e0 1946     		mov	r1, r3
+ 152 00e2 6846     		mov	r0, sp
+ 153 00e4 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 154 00e8 A3E7     		b	.L3
+ 155              	.L4:
+ 156 00ea FF23     		movs	r3, #255
+ 157 00ec 0022     		movs	r2, #0
+ 158 00ee 7F21     		movs	r1, #127
+ 159 00f0 6846     		mov	r0, sp
+ 160 00f2 FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 161 00f6 9CE7     		b	.L3
+ 163              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_BaseColors.c
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:16     .text.NOS_PixelColor_SetColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:22     .text.NOS_PixelColor_SetColor:00000000 NOS_PixelColor_SetColor
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:32     .text.NOS_GetBaseColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:38     .text.NOS_GetBaseColor:00000000 NOS_GetBaseColor
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:51     .text.NOS_GetBaseColor:0000001a $d
+C:\Users\igorn\AppData\Local\Temp\ccSvyLP1.s:63     .text.NOS_GetBaseColor:00000026 $t
+
+NO UNDEFINED SYMBOLS

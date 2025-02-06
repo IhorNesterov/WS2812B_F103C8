@@ -1,0 +1,1066 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"WS2812b_Core.c"
+  14              		.text
+  15              		.section	.text.ws2812b_set_pixel,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  21              	ws2812b_set_pixel:
+  22              		@ args = 4, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 70B4     		push	{r4, r5, r6}
+  26 0002 2E4E     		ldr	r6, .L3
+  27 0004 B45C     		ldrb	r4, [r6, r2]	@ zero_extendqisi2
+  28 0006 F55C     		ldrb	r5, [r6, r3]	@ zero_extendqisi2
+  29 0008 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+  30 000c F25C     		ldrb	r2, [r6, r3]	@ zero_extendqisi2
+  31 000e 01EB4103 		add	r3, r1, r1, lsl #1
+  32 0012 E443     		mvns	r4, r4
+  33 0014 ED43     		mvns	r5, r5
+  34 0016 D243     		mvns	r2, r2
+  35 0018 2949     		ldr	r1, .L3+4
+  36 001a 01EB0311 		add	r1, r1, r3, lsl #4
+  37 001e 01F16141 		add	r1, r1, #-520093696
+  38 0022 01F58011 		add	r1, r1, #1048576
+  39 0026 4E01     		lsls	r6, r1, #5
+  40 0028 8300     		lsls	r3, r0, #2
+  41 002a 03EB4113 		add	r3, r3, r1, lsl #5
+  42 002e E909     		lsrs	r1, r5, #7
+  43 0030 46F82010 		str	r1, [r6, r0, lsl #2]
+  44 0034 A909     		lsrs	r1, r5, #6
+  45 0036 1964     		str	r1, [r3, #64]
+  46 0038 6909     		lsrs	r1, r5, #5
+  47 003a C3F88010 		str	r1, [r3, #128]
+  48 003e 2909     		lsrs	r1, r5, #4
+  49 0040 C3F8C010 		str	r1, [r3, #192]
+  50 0044 E908     		lsrs	r1, r5, #3
+  51 0046 C3F80011 		str	r1, [r3, #256]
+  52 004a A908     		lsrs	r1, r5, #2
+  53 004c C3F84011 		str	r1, [r3, #320]
+  54 0050 6908     		lsrs	r1, r5, #1
+  55 0052 C3F88011 		str	r1, [r3, #384]
+  56 0056 C3F8C051 		str	r5, [r3, #448]
+  57 005a E109     		lsrs	r1, r4, #7
+  58 005c C3F80012 		str	r1, [r3, #512]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 2
+
+
+  59 0060 A109     		lsrs	r1, r4, #6
+  60 0062 C3F84012 		str	r1, [r3, #576]
+  61 0066 6109     		lsrs	r1, r4, #5
+  62 0068 C3F88012 		str	r1, [r3, #640]
+  63 006c 2109     		lsrs	r1, r4, #4
+  64 006e C3F8C012 		str	r1, [r3, #704]
+  65 0072 E108     		lsrs	r1, r4, #3
+  66 0074 C3F80013 		str	r1, [r3, #768]
+  67 0078 A108     		lsrs	r1, r4, #2
+  68 007a C3F84013 		str	r1, [r3, #832]
+  69 007e 6108     		lsrs	r1, r4, #1
+  70 0080 C3F88013 		str	r1, [r3, #896]
+  71 0084 C3F8C043 		str	r4, [r3, #960]
+  72 0088 D109     		lsrs	r1, r2, #7
+  73 008a C3F80014 		str	r1, [r3, #1024]
+  74 008e 9109     		lsrs	r1, r2, #6
+  75 0090 C3F84014 		str	r1, [r3, #1088]
+  76 0094 5109     		lsrs	r1, r2, #5
+  77 0096 C3F88014 		str	r1, [r3, #1152]
+  78 009a 1109     		lsrs	r1, r2, #4
+  79 009c C3F8C014 		str	r1, [r3, #1216]
+  80 00a0 D108     		lsrs	r1, r2, #3
+  81 00a2 C3F80015 		str	r1, [r3, #1280]
+  82 00a6 9108     		lsrs	r1, r2, #2
+  83 00a8 C3F84015 		str	r1, [r3, #1344]
+  84 00ac 5108     		lsrs	r1, r2, #1
+  85 00ae C3F88015 		str	r1, [r3, #1408]
+  86 00b2 C3F8C025 		str	r2, [r3, #1472]
+  87 00b6 70BC     		pop	{r4, r5, r6}
+  88 00b8 7047     		bx	lr
+  89              	.L4:
+  90 00ba 00BF     		.align	2
+  91              	.L3:
+  92 00bc 00000000 		.word	gammaTable
+  93 00c0 00000000 		.word	ws2812bDmaBitBuffer
+  95              		.section	.text.loadNextFramebufferData,"ax",%progbits
+  96              		.align	1
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	loadNextFramebufferData:
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 70B5     		push	{r4, r5, r6, lr}
+ 105 0002 82B0     		sub	sp, sp, #8
+ 106 0004 0568     		ldr	r5, [r0]
+ 107 0006 8468     		ldr	r4, [r0, #8]
+ 108 0008 631C     		adds	r3, r4, #1
+ 109 000a 8360     		str	r3, [r0, #8]
+ 110 000c 2A5D     		ldrb	r2, [r5, r4]	@ zero_extendqisi2
+ 111 000e A61C     		adds	r6, r4, #2
+ 112 0010 8660     		str	r6, [r0, #8]
+ 113 0012 EB5C     		ldrb	r3, [r5, r3]	@ zero_extendqisi2
+ 114 0014 0334     		adds	r4, r4, #3
+ 115 0016 8460     		str	r4, [r0, #8]
+ 116 0018 AD5D     		ldrb	r5, [r5, r6]	@ zero_extendqisi2
+ 117 001a 4668     		ldr	r6, [r0, #4]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 3
+
+
+ 118 001c B442     		cmp	r4, r6
+ 119 001e 06D0     		beq	.L8
+ 120              	.L6:
+ 121 0020 0095     		str	r5, [sp]
+ 122 0022 89B2     		uxth	r1, r1
+ 123 0024 007B     		ldrb	r0, [r0, #12]	@ zero_extendqisi2
+ 124 0026 FFF7FEFF 		bl	ws2812b_set_pixel
+ 125 002a 02B0     		add	sp, sp, #8
+ 126              		@ sp needed
+ 127 002c 70BD     		pop	{r4, r5, r6, pc}
+ 128              	.L8:
+ 129 002e 0024     		movs	r4, #0
+ 130 0030 8460     		str	r4, [r0, #8]
+ 131 0032 F5E7     		b	.L6
+ 133              		.section	.text.DMA_TransferCompleteHandler,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	DMA_TransferCompleteHandler
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 140              	DMA_TransferCompleteHandler:
+ 141              		@ args = 0, pretend = 0, frame = 0
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143 0000 244B     		ldr	r3, .L18
+ 144 0002 0222     		movs	r2, #2
+ 145 0004 1A61     		str	r2, [r3, #16]
+ 146 0006 244A     		ldr	r2, .L18+4
+ 147 0008 936B     		ldr	r3, [r2, #56]
+ 148 000a 0133     		adds	r3, r3, #1
+ 149 000c 9363     		str	r3, [r2, #56]
+ 150 000e B3F5C07F 		cmp	r3, #384
+ 151 0012 02D0     		beq	.L17
+ 152 0014 10B5     		push	{r4, lr}
+ 153 0016 0024     		movs	r4, #0
+ 154 0018 36E0     		b	.L10
+ 155              	.L17:
+ 156 001a 1346     		mov	r3, r2
+ 157 001c 0022     		movs	r2, #0
+ 158 001e 9A63     		str	r2, [r3, #56]
+ 159 0020 1E4A     		ldr	r2, .L18+8
+ 160 0022 1168     		ldr	r1, [r2]
+ 161 0024 CB68     		ldr	r3, [r1, #12]
+ 162 0026 43F00103 		orr	r3, r3, #1
+ 163 002a CB60     		str	r3, [r1, #12]
+ 164 002c 1C4B     		ldr	r3, .L18+12
+ 165 002e 1968     		ldr	r1, [r3]
+ 166 0030 0B68     		ldr	r3, [r1]
+ 167 0032 23F00103 		bic	r3, r3, #1
+ 168 0036 0B60     		str	r3, [r1]
+ 169 0038 1A4B     		ldr	r3, .L18+16
+ 170 003a 1968     		ldr	r1, [r3]
+ 171 003c 0B68     		ldr	r3, [r1]
+ 172 003e 23F00103 		bic	r3, r3, #1
+ 173 0042 0B60     		str	r3, [r1]
+ 174 0044 184B     		ldr	r3, .L18+20
+ 175 0046 1968     		ldr	r1, [r3]
+ 176 0048 0B68     		ldr	r3, [r1]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 4
+
+
+ 177 004a 23F00103 		bic	r3, r3, #1
+ 178 004e 0B60     		str	r3, [r1]
+ 179 0050 1368     		ldr	r3, [r2]
+ 180 0052 DA68     		ldr	r2, [r3, #12]
+ 181 0054 22F48072 		bic	r2, r2, #256
+ 182 0058 DA60     		str	r2, [r3, #12]
+ 183 005a DA68     		ldr	r2, [r3, #12]
+ 184 005c 22F40072 		bic	r2, r2, #512
+ 185 0060 DA60     		str	r2, [r3, #12]
+ 186 0062 DA68     		ldr	r2, [r3, #12]
+ 187 0064 22F48062 		bic	r2, r2, #1024
+ 188 0068 DA60     		str	r2, [r3, #12]
+ 189 006a 104B     		ldr	r3, .L18+24
+ 190 006c 1A68     		ldr	r2, [r3]
+ 191 006e 094B     		ldr	r3, .L18
+ 192 0070 1A61     		str	r2, [r3, #16]
+ 193 0072 084B     		ldr	r3, .L18
+ 194 0074 0222     		movs	r2, #2
+ 195 0076 5A61     		str	r2, [r3, #20]
+ 196 0078 7047     		bx	lr
+ 197              	.L12:
+ 198 007a 0121     		movs	r1, #1
+ 199 007c 0648     		ldr	r0, .L18+4
+ 200 007e 00EB0410 		add	r0, r0, r4, lsl #4
+ 201 0082 FFF7FEFF 		bl	loadNextFramebufferData
+ 202 0086 0134     		adds	r4, r4, #1
+ 203              	.L10:
+ 204 0088 022C     		cmp	r4, #2
+ 205 008a F6D9     		bls	.L12
+ 206 008c 014B     		ldr	r3, .L18
+ 207 008e 0222     		movs	r2, #2
+ 208 0090 5A61     		str	r2, [r3, #20]
+ 209 0092 10BD     		pop	{r4, pc}
+ 210              	.L19:
+ 211              		.align	2
+ 212              	.L18:
+ 213 0094 00080140 		.word	1073809408
+ 214 0098 00000000 		.word	ws2812b
+ 215 009c 00000000 		.word	Tim2Handle
+ 216 00a0 00000000 		.word	dmaUpdate
+ 217 00a4 00000000 		.word	dmaCC1
+ 218 00a8 00000000 		.word	dmaCC2
+ 219 00ac 00000000 		.word	WS2812_IO_Low
+ 221              		.section	.text.WS2812_sendbuf,"ax",%progbits
+ 222              		.align	1
+ 223              		.syntax unified
+ 224              		.thumb
+ 225              		.thumb_func
+ 227              	WS2812_sendbuf:
+ 228              		@ args = 0, pretend = 0, frame = 0
+ 229              		@ frame_needed = 0, uses_anonymous_args = 0
+ 230 0000 38B5     		push	{r3, r4, r5, lr}
+ 231 0002 0025     		movs	r5, #0
+ 232 0004 284B     		ldr	r3, .L24
+ 233 0006 83F83050 		strb	r5, [r3, #48]
+ 234 000a 0CE0     		b	.L21
+ 235              	.L22:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 5
+
+
+ 236 000c 264C     		ldr	r4, .L24
+ 237 000e 04EB0514 		add	r4, r4, r5, lsl #4
+ 238 0012 0021     		movs	r1, #0
+ 239 0014 A160     		str	r1, [r4, #8]
+ 240 0016 2046     		mov	r0, r4
+ 241 0018 FFF7FEFF 		bl	loadNextFramebufferData
+ 242 001c 0121     		movs	r1, #1
+ 243 001e 2046     		mov	r0, r4
+ 244 0020 FFF7FEFF 		bl	loadNextFramebufferData
+ 245 0024 0135     		adds	r5, r5, #1
+ 246              	.L21:
+ 247 0026 022D     		cmp	r5, #2
+ 248 0028 F0D9     		bls	.L22
+ 249 002a 204B     		ldr	r3, .L24+4
+ 250 002c E022     		movs	r2, #224
+ 251 002e 5A60     		str	r2, [r3, #4]
+ 252 0030 4FF46022 		mov	r2, #917504
+ 253 0034 5A60     		str	r2, [r3, #4]
+ 254 0036 4FF06062 		mov	r2, #234881024
+ 255 003a 5A60     		str	r2, [r3, #4]
+ 256 003c 1C4B     		ldr	r3, .L24+8
+ 257 003e 1B68     		ldr	r3, [r3]
+ 258 0040 3022     		movs	r2, #48
+ 259 0042 5A60     		str	r2, [r3, #4]
+ 260 0044 1B4C     		ldr	r4, .L24+12
+ 261 0046 2168     		ldr	r1, [r4]
+ 262 0048 4A60     		str	r2, [r1, #4]
+ 263 004a 1B48     		ldr	r0, .L24+16
+ 264 004c 0168     		ldr	r1, [r0]
+ 265 004e 4A60     		str	r2, [r1, #4]
+ 266 0050 1A49     		ldr	r1, .L24+20
+ 267 0052 0A68     		ldr	r2, [r1]
+ 268 0054 6FF01F05 		mvn	r5, #31
+ 269 0058 1561     		str	r5, [r2, #16]
+ 270 005a 1A68     		ldr	r2, [r3]
+ 271 005c 42F00102 		orr	r2, r2, #1
+ 272 0060 1A60     		str	r2, [r3]
+ 273 0062 2268     		ldr	r2, [r4]
+ 274 0064 1368     		ldr	r3, [r2]
+ 275 0066 43F00103 		orr	r3, r3, #1
+ 276 006a 1360     		str	r3, [r2]
+ 277 006c 0268     		ldr	r2, [r0]
+ 278 006e 1368     		ldr	r3, [r2]
+ 279 0070 43F00103 		orr	r3, r3, #1
+ 280 0074 1360     		str	r3, [r2]
+ 281 0076 0B68     		ldr	r3, [r1]
+ 282 0078 DA68     		ldr	r2, [r3, #12]
+ 283 007a 42F48072 		orr	r2, r2, #256
+ 284 007e DA60     		str	r2, [r3, #12]
+ 285 0080 DA68     		ldr	r2, [r3, #12]
+ 286 0082 42F40072 		orr	r2, r2, #512
+ 287 0086 DA60     		str	r2, [r3, #12]
+ 288 0088 DA68     		ldr	r2, [r3, #12]
+ 289 008a 42F48062 		orr	r2, r2, #1024
+ 290 008e DA60     		str	r2, [r3, #12]
+ 291 0090 0B4A     		ldr	r2, .L24+24
+ 292 0092 1268     		ldr	r2, [r2]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 6
+
+
+ 293 0094 013A     		subs	r2, r2, #1
+ 294 0096 4FF08041 		mov	r1, #1073741824
+ 295 009a 4A62     		str	r2, [r1, #36]
+ 296 009c 1A68     		ldr	r2, [r3]
+ 297 009e 42F00102 		orr	r2, r2, #1
+ 298 00a2 1A60     		str	r2, [r3]
+ 299 00a4 38BD     		pop	{r3, r4, r5, pc}
+ 300              	.L25:
+ 301 00a6 00BF     		.align	2
+ 302              	.L24:
+ 303 00a8 00000000 		.word	ws2812b
+ 304 00ac 00000240 		.word	1073872896
+ 305 00b0 00000000 		.word	dmaUpdate
+ 306 00b4 00000000 		.word	dmaCC1
+ 307 00b8 00000000 		.word	dmaCC2
+ 308 00bc 00000000 		.word	Tim2Handle
+ 309 00c0 00000000 		.word	tim_period
+ 311              		.section	.text.DMA_TransferHalfHandler,"ax",%progbits
+ 312              		.align	1
+ 313              		.global	DMA_TransferHalfHandler
+ 314              		.syntax unified
+ 315              		.thumb
+ 316              		.thumb_func
+ 318              	DMA_TransferHalfHandler:
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321 0000 10B5     		push	{r4, lr}
+ 322 0002 82B0     		sub	sp, sp, #8
+ 323 0004 104B     		ldr	r3, .L35
+ 324 0006 0122     		movs	r2, #1
+ 325 0008 1A61     		str	r2, [r3, #16]
+ 326 000a 104B     		ldr	r3, .L35+4
+ 327 000c 9A6B     		ldr	r2, [r3, #56]
+ 328 000e 40F27F13 		movw	r3, #383
+ 329 0012 9A42     		cmp	r2, r3
+ 330 0014 0FD0     		beq	.L34
+ 331 0016 0024     		movs	r4, #0
+ 332 0018 06E0     		b	.L27
+ 333              	.L29:
+ 334 001a 0021     		movs	r1, #0
+ 335 001c 0B48     		ldr	r0, .L35+4
+ 336 001e 00EB0410 		add	r0, r0, r4, lsl #4
+ 337 0022 FFF7FEFF 		bl	loadNextFramebufferData
+ 338 0026 0134     		adds	r4, r4, #1
+ 339              	.L27:
+ 340 0028 022C     		cmp	r4, #2
+ 341 002a F6D9     		bls	.L29
+ 342              	.L30:
+ 343 002c 064B     		ldr	r3, .L35
+ 344 002e 0122     		movs	r2, #1
+ 345 0030 5A61     		str	r2, [r3, #20]
+ 346 0032 02B0     		add	sp, sp, #8
+ 347              		@ sp needed
+ 348 0034 10BD     		pop	{r4, pc}
+ 349              	.L34:
+ 350 0036 0020     		movs	r0, #0
+ 351 0038 0090     		str	r0, [sp]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 7
+
+
+ 352 003a 0346     		mov	r3, r0
+ 353 003c 0246     		mov	r2, r0
+ 354 003e 0146     		mov	r1, r0
+ 355 0040 FFF7FEFF 		bl	ws2812b_set_pixel
+ 356 0044 F2E7     		b	.L30
+ 357              	.L36:
+ 358 0046 00BF     		.align	2
+ 359              	.L35:
+ 360 0048 00080140 		.word	1073809408
+ 361 004c 00000000 		.word	ws2812b
+ 363              		.section	.text.ws2812b_gpio_init,"ax",%progbits
+ 364              		.align	1
+ 365              		.syntax unified
+ 366              		.thumb
+ 367              		.thumb_func
+ 369              	ws2812b_gpio_init:
+ 370              		@ args = 0, pretend = 0, frame = 24
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 372 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 373 0002 87B0     		sub	sp, sp, #28
+ 374 0004 134B     		ldr	r3, .L39
+ 375 0006 9A69     		ldr	r2, [r3, #24]
+ 376 0008 42F00402 		orr	r2, r2, #4
+ 377 000c 9A61     		str	r2, [r3, #24]
+ 378 000e 9B69     		ldr	r3, [r3, #24]
+ 379 0010 03F00403 		and	r3, r3, #4
+ 380 0014 0193     		str	r3, [sp, #4]
+ 381 0016 019B     		ldr	r3, [sp, #4]
+ 382 0018 7023     		movs	r3, #112
+ 383 001a 0293     		str	r3, [sp, #8]
+ 384 001c 0125     		movs	r5, #1
+ 385 001e 0395     		str	r5, [sp, #12]
+ 386 0020 0027     		movs	r7, #0
+ 387 0022 0497     		str	r7, [sp, #16]
+ 388 0024 0226     		movs	r6, #2
+ 389 0026 0596     		str	r6, [sp, #20]
+ 390 0028 0B4C     		ldr	r4, .L39+4
+ 391 002a 02A9     		add	r1, sp, #8
+ 392 002c 2046     		mov	r0, r4
+ 393 002e FFF7FEFF 		bl	HAL_GPIO_Init
+ 394 0032 0395     		str	r5, [sp, #12]
+ 395 0034 0497     		str	r7, [sp, #16]
+ 396 0036 0323     		movs	r3, #3
+ 397 0038 0593     		str	r3, [sp, #20]
+ 398 003a 0295     		str	r5, [sp, #8]
+ 399 003c 02A9     		add	r1, sp, #8
+ 400 003e 2046     		mov	r0, r4
+ 401 0040 FFF7FEFF 		bl	HAL_GPIO_Init
+ 402 0044 0296     		str	r6, [sp, #8]
+ 403 0046 02A9     		add	r1, sp, #8
+ 404 0048 2046     		mov	r0, r4
+ 405 004a FFF7FEFF 		bl	HAL_GPIO_Init
+ 406 004e 07B0     		add	sp, sp, #28
+ 407              		@ sp needed
+ 408 0050 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 409              	.L40:
+ 410 0052 00BF     		.align	2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 8
+
+
+ 411              	.L39:
+ 412 0054 00100240 		.word	1073876992
+ 413 0058 00080140 		.word	1073809408
+ 415              		.section	.text.DMA_init,"ax",%progbits
+ 416              		.align	1
+ 417              		.syntax unified
+ 418              		.thumb
+ 419              		.thumb_func
+ 421              	DMA_init:
+ 422              		@ args = 0, pretend = 0, frame = 8
+ 423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 424 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 425 0004 83B0     		sub	sp, sp, #12
+ 426 0006 344B     		ldr	r3, .L43
+ 427 0008 5A69     		ldr	r2, [r3, #20]
+ 428 000a 42F00102 		orr	r2, r2, #1
+ 429 000e 5A61     		str	r2, [r3, #20]
+ 430 0010 5B69     		ldr	r3, [r3, #20]
+ 431 0012 03F00103 		and	r3, r3, #1
+ 432 0016 0193     		str	r3, [sp, #4]
+ 433 0018 019B     		ldr	r3, [sp, #4]
+ 434 001a 304C     		ldr	r4, .L43+4
+ 435 001c 4FF01009 		mov	r9, #16
+ 436 0020 C4F80490 		str	r9, [r4, #4]
+ 437 0024 0025     		movs	r5, #0
+ 438 0026 A560     		str	r5, [r4, #8]
+ 439 0028 E560     		str	r5, [r4, #12]
+ 440 002a 4FF40078 		mov	r8, #512
+ 441 002e C4F81080 		str	r8, [r4, #16]
+ 442 0032 4FF4006B 		mov	fp, #2048
+ 443 0036 C4F814B0 		str	fp, [r4, #20]
+ 444 003a 2027     		movs	r7, #32
+ 445 003c A761     		str	r7, [r4, #24]
+ 446 003e 4FF44056 		mov	r6, #12288
+ 447 0042 E661     		str	r6, [r4, #28]
+ 448 0044 264B     		ldr	r3, .L43+8
+ 449 0046 2360     		str	r3, [r4]
+ 450 0048 2046     		mov	r0, r4
+ 451 004a FFF7FEFF 		bl	HAL_DMA_Init
+ 452 004e DFF894A0 		ldr	r10, .L43+12
+ 453 0052 3023     		movs	r3, #48
+ 454 0054 5246     		mov	r2, r10
+ 455 0056 2449     		ldr	r1, .L43+16
+ 456 0058 2046     		mov	r0, r4
+ 457 005a FFF7FEFF 		bl	HAL_DMA_Start
+ 458 005e 234C     		ldr	r4, .L43+20
+ 459 0060 C4F80490 		str	r9, [r4, #4]
+ 460 0064 A560     		str	r5, [r4, #8]
+ 461 0066 8023     		movs	r3, #128
+ 462 0068 E360     		str	r3, [r4, #12]
+ 463 006a C4F81080 		str	r8, [r4, #16]
+ 464 006e 4FF48063 		mov	r3, #1024
+ 465 0072 6361     		str	r3, [r4, #20]
+ 466 0074 A761     		str	r7, [r4, #24]
+ 467 0076 E661     		str	r6, [r4, #28]
+ 468 0078 1D4B     		ldr	r3, .L43+24
+ 469 007a 2360     		str	r3, [r4]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 9
+
+
+ 470 007c 2046     		mov	r0, r4
+ 471 007e FFF7FEFF 		bl	HAL_DMA_Init
+ 472 0082 3023     		movs	r3, #48
+ 473 0084 1B4A     		ldr	r2, .L43+28
+ 474 0086 1C49     		ldr	r1, .L43+32
+ 475 0088 2046     		mov	r0, r4
+ 476 008a FFF7FEFF 		bl	HAL_DMA_Start
+ 477 008e 1B4C     		ldr	r4, .L43+36
+ 478 0090 C4F80490 		str	r9, [r4, #4]
+ 479 0094 A560     		str	r5, [r4, #8]
+ 480 0096 E560     		str	r5, [r4, #12]
+ 481 0098 C4F81080 		str	r8, [r4, #16]
+ 482 009c C4F814B0 		str	fp, [r4, #20]
+ 483 00a0 A761     		str	r7, [r4, #24]
+ 484 00a2 E661     		str	r6, [r4, #28]
+ 485 00a4 164B     		ldr	r3, .L43+40
+ 486 00a6 2360     		str	r3, [r4]
+ 487 00a8 2046     		mov	r0, r4
+ 488 00aa FFF7FEFF 		bl	HAL_DMA_Init
+ 489 00ae 154B     		ldr	r3, .L43+44
+ 490 00b0 A362     		str	r3, [r4, #40]
+ 491 00b2 154B     		ldr	r3, .L43+48
+ 492 00b4 E362     		str	r3, [r4, #44]
+ 493 00b6 2A46     		mov	r2, r5
+ 494 00b8 2946     		mov	r1, r5
+ 495 00ba 1120     		movs	r0, #17
+ 496 00bc FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 497 00c0 1120     		movs	r0, #17
+ 498 00c2 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 499 00c6 3023     		movs	r3, #48
+ 500 00c8 5246     		mov	r2, r10
+ 501 00ca 1049     		ldr	r1, .L43+52
+ 502 00cc 2046     		mov	r0, r4
+ 503 00ce FFF7FEFF 		bl	HAL_DMA_Start_IT
+ 504 00d2 03B0     		add	sp, sp, #12
+ 505              		@ sp needed
+ 506 00d4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 507              	.L44:
+ 508              		.align	2
+ 509              	.L43:
+ 510 00d8 00100240 		.word	1073876992
+ 511 00dc 00000000 		.word	dmaUpdate
+ 512 00e0 1C000240 		.word	1073872924
+ 513 00e4 10080140 		.word	1073809424
+ 514 00e8 00000000 		.word	WS2812_IO_High
+ 515 00ec 00000000 		.word	dmaCC1
+ 516 00f0 58000240 		.word	1073872984
+ 517 00f4 14080140 		.word	1073809428
+ 518 00f8 00000000 		.word	ws2812bDmaBitBuffer
+ 519 00fc 00000000 		.word	dmaCC2
+ 520 0100 80000240 		.word	1073873024
+ 521 0104 00000000 		.word	DMA_TransferCompleteHandler
+ 522 0108 00000000 		.word	DMA_TransferHalfHandler
+ 523 010c 00000000 		.word	WS2812_IO_Low
+ 525              		.section	.text.TIM2_init,"ax",%progbits
+ 526              		.align	1
+ 527              		.syntax unified
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 10
+
+
+ 528              		.thumb
+ 529              		.thumb_func
+ 531              	TIM2_init:
+ 532              		@ args = 0, pretend = 0, frame = 8
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 535 0004 82B0     		sub	sp, sp, #8
+ 536 0006 2B4B     		ldr	r3, .L47
+ 537 0008 DA69     		ldr	r2, [r3, #28]
+ 538 000a 42F00102 		orr	r2, r2, #1
+ 539 000e DA61     		str	r2, [r3, #28]
+ 540 0010 DB69     		ldr	r3, [r3, #28]
+ 541 0012 03F00103 		and	r3, r3, #1
+ 542 0016 0193     		str	r3, [sp, #4]
+ 543 0018 019B     		ldr	r3, [sp, #4]
+ 544 001a 274B     		ldr	r3, .L47+4
+ 545 001c 1B68     		ldr	r3, [r3]
+ 546 001e 1B0A     		lsrs	r3, r3, #8
+ 547 0020 264A     		ldr	r2, .L47+8
+ 548 0022 A2FB0323 		umull	r2, r3, r2, r3
+ 549 0026 1B09     		lsrs	r3, r3, #4
+ 550 0028 254A     		ldr	r2, .L47+12
+ 551 002a 1360     		str	r3, [r2]
+ 552 002c 03EB8301 		add	r1, r3, r3, lsl #2
+ 553 0030 4A00     		lsls	r2, r1, #1
+ 554 0032 244F     		ldr	r7, .L47+16
+ 555 0034 A7FB0217 		umull	r1, r7, r7, r2
+ 556 0038 FF08     		lsrs	r7, r7, #3
+ 557 003a 2349     		ldr	r1, .L47+20
+ 558 003c A1FB0212 		umull	r1, r2, r1, r2
+ 559 0040 D608     		lsrs	r6, r2, #3
+ 560 0042 224D     		ldr	r5, .L47+24
+ 561 0044 4FF08042 		mov	r2, #1073741824
+ 562 0048 2A60     		str	r2, [r5]
+ 563 004a EB60     		str	r3, [r5, #12]
+ 564 004c 0024     		movs	r4, #0
+ 565 004e 6C61     		str	r4, [r5, #20]
+ 566 0050 6C60     		str	r4, [r5, #4]
+ 567 0052 2C61     		str	r4, [r5, #16]
+ 568 0054 AC60     		str	r4, [r5, #8]
+ 569 0056 2846     		mov	r0, r5
+ 570 0058 FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 571 005c 2246     		mov	r2, r4
+ 572 005e 2146     		mov	r1, r4
+ 573 0060 1C20     		movs	r0, #28
+ 574 0062 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 575 0066 1C20     		movs	r0, #28
+ 576 0068 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 577 006c 1849     		ldr	r1, .L47+28
+ 578 006e 4FF06008 		mov	r8, #96
+ 579 0072 C1F80080 		str	r8, [r1]
+ 580 0076 8C60     		str	r4, [r1, #8]
+ 581 0078 4F60     		str	r7, [r1, #4]
+ 582 007a CC60     		str	r4, [r1, #12]
+ 583 007c 0C61     		str	r4, [r1, #16]
+ 584 007e 2246     		mov	r2, r4
+ 585 0080 2846     		mov	r0, r5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 11
+
+
+ 586 0082 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 587 0086 1349     		ldr	r1, .L47+32
+ 588 0088 C1F80080 		str	r8, [r1]
+ 589 008c 8C60     		str	r4, [r1, #8]
+ 590 008e 4E60     		str	r6, [r1, #4]
+ 591 0090 CC60     		str	r4, [r1, #12]
+ 592 0092 0C61     		str	r4, [r1, #16]
+ 593 0094 4C61     		str	r4, [r1, #20]
+ 594 0096 8C61     		str	r4, [r1, #24]
+ 595 0098 0422     		movs	r2, #4
+ 596 009a 2846     		mov	r0, r5
+ 597 009c FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 598 00a0 2846     		mov	r0, r5
+ 599 00a2 FFF7FEFF 		bl	HAL_TIM_Base_Start
+ 600 00a6 2146     		mov	r1, r4
+ 601 00a8 2846     		mov	r0, r5
+ 602 00aa FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 603 00ae 02B0     		add	sp, sp, #8
+ 604              		@ sp needed
+ 605 00b0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 606              	.L48:
+ 607              		.align	2
+ 608              	.L47:
+ 609 00b4 00100240 		.word	1073876992
+ 610 00b8 00000000 		.word	SystemCoreClock
+ 611 00bc 598B4F01 		.word	21990233
+ 612 00c0 00000000 		.word	tim_period
+ 613 00c4 398EE338 		.word	954437177
+ 614 00c8 89888888 		.word	-2004318071
+ 615 00cc 00000000 		.word	Tim2Handle
+ 616 00d0 00000000 		.word	tim2OC1
+ 617 00d4 00000000 		.word	tim2OC2
+ 619              		.section	.text.DMA1_Channel2_IRQHandler,"ax",%progbits
+ 620              		.align	1
+ 621              		.global	DMA1_Channel2_IRQHandler
+ 622              		.syntax unified
+ 623              		.thumb
+ 624              		.thumb_func
+ 626              	DMA1_Channel2_IRQHandler:
+ 627              		@ args = 0, pretend = 0, frame = 0
+ 628              		@ frame_needed = 0, uses_anonymous_args = 0
+ 629 0000 08B5     		push	{r3, lr}
+ 630 0002 0248     		ldr	r0, .L51
+ 631 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 632 0008 08BD     		pop	{r3, pc}
+ 633              	.L52:
+ 634 000a 00BF     		.align	2
+ 635              	.L51:
+ 636 000c 00000000 		.word	dmaUpdate
+ 638              		.section	.text.DMA1_Channel5_IRQHandler,"ax",%progbits
+ 639              		.align	1
+ 640              		.global	DMA1_Channel5_IRQHandler
+ 641              		.syntax unified
+ 642              		.thumb
+ 643              		.thumb_func
+ 645              	DMA1_Channel5_IRQHandler:
+ 646              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 12
+
+
+ 647              		@ frame_needed = 0, uses_anonymous_args = 0
+ 648 0000 08B5     		push	{r3, lr}
+ 649 0002 0248     		ldr	r0, .L55
+ 650 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 651 0008 08BD     		pop	{r3, pc}
+ 652              	.L56:
+ 653 000a 00BF     		.align	2
+ 654              	.L55:
+ 655 000c 00000000 		.word	dmaCC1
+ 657              		.section	.text.DMA1_Channel7_IRQHandler,"ax",%progbits
+ 658              		.align	1
+ 659              		.global	DMA1_Channel7_IRQHandler
+ 660              		.syntax unified
+ 661              		.thumb
+ 662              		.thumb_func
+ 664              	DMA1_Channel7_IRQHandler:
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667 0000 08B5     		push	{r3, lr}
+ 668 0002 0248     		ldr	r0, .L59
+ 669 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 670 0008 08BD     		pop	{r3, pc}
+ 671              	.L60:
+ 672 000a 00BF     		.align	2
+ 673              	.L59:
+ 674 000c 00000000 		.word	dmaCC2
+ 676              		.section	.text.TIM2_IRQHandler,"ax",%progbits
+ 677              		.align	1
+ 678              		.global	TIM2_IRQHandler
+ 679              		.syntax unified
+ 680              		.thumb
+ 681              		.thumb_func
+ 683              	TIM2_IRQHandler:
+ 684              		@ args = 0, pretend = 0, frame = 0
+ 685              		@ frame_needed = 0, uses_anonymous_args = 0
+ 686 0000 08B5     		push	{r3, lr}
+ 687 0002 0248     		ldr	r0, .L63
+ 688 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 689 0008 08BD     		pop	{r3, pc}
+ 690              	.L64:
+ 691 000a 00BF     		.align	2
+ 692              	.L63:
+ 693 000c 00000000 		.word	Tim2Handle
+ 695              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 696              		.align	1
+ 697              		.global	HAL_TIM_PeriodElapsedCallback
+ 698              		.syntax unified
+ 699              		.thumb
+ 700              		.thumb_func
+ 702              	HAL_TIM_PeriodElapsedCallback:
+ 703              		@ args = 0, pretend = 0, frame = 0
+ 704              		@ frame_needed = 0, uses_anonymous_args = 0
+ 705              		@ link register save eliminated.
+ 706 0000 144B     		ldr	r3, .L69
+ 707 0002 5B6B     		ldr	r3, [r3, #52]
+ 708 0004 0B2B     		cmp	r3, #11
+ 709 0006 03D8     		bhi	.L66
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 13
+
+
+ 710 0008 0133     		adds	r3, r3, #1
+ 711 000a 124A     		ldr	r2, .L69
+ 712 000c 5363     		str	r3, [r2, #52]
+ 713 000e 7047     		bx	lr
+ 714              	.L66:
+ 715 0010 104B     		ldr	r3, .L69
+ 716 0012 0022     		movs	r2, #0
+ 717 0014 5A63     		str	r2, [r3, #52]
+ 718 0016 104B     		ldr	r3, .L69+4
+ 719 0018 1B68     		ldr	r3, [r3]
+ 720 001a 196A     		ldr	r1, [r3, #32]
+ 721 001c 41F21112 		movw	r2, #4369
+ 722 0020 1142     		tst	r1, r2
+ 723 0022 08D1     		bne	.L68
+ 724 0024 196A     		ldr	r1, [r3, #32]
+ 725 0026 40F24442 		movw	r2, #1092
+ 726 002a 1142     		tst	r1, r2
+ 727 002c 03D1     		bne	.L68
+ 728 002e 1A68     		ldr	r2, [r3]
+ 729 0030 22F00102 		bic	r2, r2, #1
+ 730 0034 1A60     		str	r2, [r3]
+ 731              	.L68:
+ 732 0036 4FF08043 		mov	r3, #1073741824
+ 733 003a 0022     		movs	r2, #0
+ 734 003c 1A60     		str	r2, [r3]
+ 735 003e 064B     		ldr	r3, .L69+4
+ 736 0040 1A68     		ldr	r2, [r3]
+ 737 0042 D368     		ldr	r3, [r2, #12]
+ 738 0044 23F00103 		bic	r3, r3, #1
+ 739 0048 D360     		str	r3, [r2, #12]
+ 740 004a 024B     		ldr	r3, .L69
+ 741 004c 0122     		movs	r2, #1
+ 742 004e 83F83020 		strb	r2, [r3, #48]
+ 743 0052 7047     		bx	lr
+ 744              	.L70:
+ 745              		.align	2
+ 746              	.L69:
+ 747 0054 00000000 		.word	ws2812b
+ 748 0058 00000000 		.word	Tim2Handle
+ 750              		.section	.text.ws2812b_init,"ax",%progbits
+ 751              		.align	1
+ 752              		.global	ws2812b_init
+ 753              		.syntax unified
+ 754              		.thumb
+ 755              		.thumb_func
+ 757              	ws2812b_init:
+ 758              		@ args = 0, pretend = 0, frame = 0
+ 759              		@ frame_needed = 0, uses_anonymous_args = 0
+ 760 0000 08B5     		push	{r3, lr}
+ 761 0002 FFF7FEFF 		bl	ws2812b_gpio_init
+ 762 0006 FFF7FEFF 		bl	DMA_init
+ 763 000a FFF7FEFF 		bl	TIM2_init
+ 764 000e 024B     		ldr	r3, .L73
+ 765 0010 0122     		movs	r2, #1
+ 766 0012 83F83020 		strb	r2, [r3, #48]
+ 767 0016 08BD     		pop	{r3, pc}
+ 768              	.L74:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 14
+
+
+ 769              		.align	2
+ 770              	.L73:
+ 771 0018 00000000 		.word	ws2812b
+ 773              		.section	.text.ws2812b_handle,"ax",%progbits
+ 774              		.align	1
+ 775              		.global	ws2812b_handle
+ 776              		.syntax unified
+ 777              		.thumb
+ 778              		.thumb_func
+ 780              	ws2812b_handle:
+ 781              		@ args = 0, pretend = 0, frame = 0
+ 782              		@ frame_needed = 0, uses_anonymous_args = 0
+ 783 0000 08B5     		push	{r3, lr}
+ 784 0002 064B     		ldr	r3, .L79
+ 785 0004 93F83130 		ldrb	r3, [r3, #49]	@ zero_extendqisi2
+ 786 0008 03B9     		cbnz	r3, .L78
+ 787              	.L75:
+ 788 000a 08BD     		pop	{r3, pc}
+ 789              	.L78:
+ 790 000c 034B     		ldr	r3, .L79
+ 791 000e 0022     		movs	r2, #0
+ 792 0010 83F83120 		strb	r2, [r3, #49]
+ 793 0014 FFF7FEFF 		bl	WS2812_sendbuf
+ 794 0018 F7E7     		b	.L75
+ 795              	.L80:
+ 796 001a 00BF     		.align	2
+ 797              	.L79:
+ 798 001c 00000000 		.word	ws2812b
+ 800              		.global	dmaCC2
+ 801              		.section	.bss.dmaCC2,"aw",%nobits
+ 802              		.align	2
+ 805              	dmaCC2:
+ 806 0000 00000000 		.space	68
+ 806      00000000 
+ 806      00000000 
+ 806      00000000 
+ 806      00000000 
+ 807              		.global	dmaCC1
+ 808              		.section	.bss.dmaCC1,"aw",%nobits
+ 809              		.align	2
+ 812              	dmaCC1:
+ 813 0000 00000000 		.space	68
+ 813      00000000 
+ 813      00000000 
+ 813      00000000 
+ 813      00000000 
+ 814              		.global	dmaUpdate
+ 815              		.section	.bss.dmaUpdate,"aw",%nobits
+ 816              		.align	2
+ 819              	dmaUpdate:
+ 820 0000 00000000 		.space	68
+ 820      00000000 
+ 820      00000000 
+ 820      00000000 
+ 820      00000000 
+ 821              		.global	tim_period
+ 822              		.section	.bss.tim_period,"aw",%nobits
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 15
+
+
+ 823              		.align	2
+ 826              	tim_period:
+ 827 0000 00000000 		.space	4
+ 828              		.global	tim2OC2
+ 829              		.section	.bss.tim2OC2,"aw",%nobits
+ 830              		.align	2
+ 833              	tim2OC2:
+ 834 0000 00000000 		.space	28
+ 834      00000000 
+ 834      00000000 
+ 834      00000000 
+ 834      00000000 
+ 835              		.global	tim2OC1
+ 836              		.section	.bss.tim2OC1,"aw",%nobits
+ 837              		.align	2
+ 840              	tim2OC1:
+ 841 0000 00000000 		.space	28
+ 841      00000000 
+ 841      00000000 
+ 841      00000000 
+ 841      00000000 
+ 842              		.global	Tim2Handle
+ 843              		.section	.bss.Tim2Handle,"aw",%nobits
+ 844              		.align	2
+ 847              	Tim2Handle:
+ 848 0000 00000000 		.space	72
+ 848      00000000 
+ 848      00000000 
+ 848      00000000 
+ 848      00000000 
+ 849              		.global	gammaTable
+ 850              		.section	.rodata.gammaTable,"a"
+ 851              		.align	2
+ 854              	gammaTable:
+ 855 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 855      00000000 
+ 855      00000000 
+ 855      00
+ 856 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 856      00000000 
+ 856      00000000 
+ 856      00
+ 857 001a 00000101 		.ascii	"\000\000\001\001\001\001\001\001\001\001\001\001\001"
+ 857      01010101 
+ 857      01010101 
+ 857      01
+ 858 0027 01010202 		.ascii	"\001\001\002\002\002\002\002\002\002\002\003\003\003"
+ 858      02020202 
+ 858      02020303 
+ 858      03
+ 859 0034 03030303 		.ascii	"\003\003\003\003\004\004\004\004\004\005\005\005\005"
+ 859      04040404 
+ 859      04050505 
+ 859      05
+ 860 0041 06060606 		.ascii	"\006\006\006\006\007\007\007\007\010\010\010\011\011"
+ 860      07070707 
+ 860      08080809 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 16
+
+
+ 860      09
+ 861 004e 090A0A0A 		.ascii	"\011\012\012\012\013\013\013\014\014\015\015\015\016"
+ 861      0B0B0B0C 
+ 861      0C0D0D0D 
+ 861      0E
+ 862 005b 0E0F0F10 		.ascii	"\016\017\017\020\020\021\021\022\022\023\023\024\024"
+ 862      10111112 
+ 862      12131314 
+ 862      14
+ 863 0068 15151616 		.ascii	"\025\025\026\026\027\030\030\031\031\032\033\033\034"
+ 863      17181819 
+ 863      191A1B1B 
+ 863      1C
+ 864 0075 1D1D1E1F 		.ascii	"\035\035\036\037  !\"##$%&''()*+,-./0122346789:;<=>"
+ 864      20202122 
+ 864      23232425 
+ 864      26272728 
+ 864      292A2B2C 
+ 865 009b 3F404243 		.ascii	"?@BCDEFHIJKMNOQRSUVWYZ\\]_`bcefhikmnprsuwxz|~\177\201"
+ 865      44454648 
+ 865      494A4B4D 
+ 865      4E4F5152 
+ 865      53555657 
+ 866 00c9 83858789 		.ascii	"\203\205\207\211\212\214\216\220\222\224\226\230\232"
+ 866      8A8C8E90 
+ 866      92949698 
+ 866      9A
+ 867 00d6 9C9EA0A2 		.ascii	"\234\236\240\242\244\247\251\253\255\257\261\264\266"
+ 867      A4A7A9AB 
+ 867      ADAFB1B4 
+ 867      B6
+ 868 00e3 B8BABDBF 		.ascii	"\270\272\275\277\301\304\306\310\313\315\320\322\325"
+ 868      C1C4C6C8 
+ 868      CBCDD0D2 
+ 868      D5
+ 869 00f0 D7DADCDF 		.ascii	"\327\332\334\337\341\344\347\351\354\357\361\364\367"
+ 869      E1E4E7E9 
+ 869      ECEFF1F4 
+ 869      F7
+ 870 00fd F9FCFF   		.ascii	"\371\374\377"
+ 871              		.global	ws2812bDmaBitBuffer
+ 872              		.section	.bss.ws2812bDmaBitBuffer,"aw",%nobits
+ 873              		.align	2
+ 876              	ws2812bDmaBitBuffer:
+ 877 0000 00000000 		.space	96
+ 877      00000000 
+ 877      00000000 
+ 877      00000000 
+ 877      00000000 
+ 878              		.global	WS2812_IO_Low
+ 879              		.section	.data.WS2812_IO_Low,"aw"
+ 880              		.align	2
+ 883              	WS2812_IO_Low:
+ 884 0000 00007000 		.word	7340032
+ 885              		.global	WS2812_IO_High
+ 886              		.section	.data.WS2812_IO_High,"aw"
+ 887              		.align	2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 17
+
+
+ 890              	WS2812_IO_High:
+ 891 0000 70000000 		.word	112
+ 892              		.global	ws2812b
+ 893              		.section	.bss.ws2812b,"aw",%nobits
+ 894              		.align	2
+ 897              	ws2812b:
+ 898 0000 00000000 		.space	60
+ 898      00000000 
+ 898      00000000 
+ 898      00000000 
+ 898      00000000 
+ 899              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 WS2812b_Core.c
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:16     .text.ws2812b_set_pixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:21     .text.ws2812b_set_pixel:00000000 ws2812b_set_pixel
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:92     .text.ws2812b_set_pixel:000000bc $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:854    .rodata.gammaTable:00000000 gammaTable
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:876    .bss.ws2812bDmaBitBuffer:00000000 ws2812bDmaBitBuffer
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:96     .text.loadNextFramebufferData:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:101    .text.loadNextFramebufferData:00000000 loadNextFramebufferData
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:134    .text.DMA_TransferCompleteHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:140    .text.DMA_TransferCompleteHandler:00000000 DMA_TransferCompleteHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:213    .text.DMA_TransferCompleteHandler:00000094 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:897    .bss.ws2812b:00000000 ws2812b
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:847    .bss.Tim2Handle:00000000 Tim2Handle
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:819    .bss.dmaUpdate:00000000 dmaUpdate
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:812    .bss.dmaCC1:00000000 dmaCC1
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:805    .bss.dmaCC2:00000000 dmaCC2
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:883    .data.WS2812_IO_Low:00000000 WS2812_IO_Low
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:222    .text.WS2812_sendbuf:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:227    .text.WS2812_sendbuf:00000000 WS2812_sendbuf
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:303    .text.WS2812_sendbuf:000000a8 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:826    .bss.tim_period:00000000 tim_period
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:312    .text.DMA_TransferHalfHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:318    .text.DMA_TransferHalfHandler:00000000 DMA_TransferHalfHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:360    .text.DMA_TransferHalfHandler:00000048 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:364    .text.ws2812b_gpio_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:369    .text.ws2812b_gpio_init:00000000 ws2812b_gpio_init
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:412    .text.ws2812b_gpio_init:00000054 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:416    .text.DMA_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:421    .text.DMA_init:00000000 DMA_init
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:510    .text.DMA_init:000000d8 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:890    .data.WS2812_IO_High:00000000 WS2812_IO_High
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:526    .text.TIM2_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:531    .text.TIM2_init:00000000 TIM2_init
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:609    .text.TIM2_init:000000b4 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:840    .bss.tim2OC1:00000000 tim2OC1
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:833    .bss.tim2OC2:00000000 tim2OC2
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:620    .text.DMA1_Channel2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:626    .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:636    .text.DMA1_Channel2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:639    .text.DMA1_Channel5_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:645    .text.DMA1_Channel5_IRQHandler:00000000 DMA1_Channel5_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:655    .text.DMA1_Channel5_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:658    .text.DMA1_Channel7_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:664    .text.DMA1_Channel7_IRQHandler:00000000 DMA1_Channel7_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:674    .text.DMA1_Channel7_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:677    .text.TIM2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:683    .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:693    .text.TIM2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:696    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:702    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:747    .text.HAL_TIM_PeriodElapsedCallback:00000054 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:751    .text.ws2812b_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:757    .text.ws2812b_init:00000000 ws2812b_init
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:771    .text.ws2812b_init:00000018 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:774    .text.ws2812b_handle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:780    .text.ws2812b_handle:00000000 ws2812b_handle
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s 			page 19
+
+
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:798    .text.ws2812b_handle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:802    .bss.dmaCC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:809    .bss.dmaCC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:816    .bss.dmaUpdate:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:823    .bss.tim_period:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:830    .bss.tim2OC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:837    .bss.tim2OC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:844    .bss.Tim2Handle:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:851    .rodata.gammaTable:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:873    .bss.ws2812bDmaBitBuffer:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:880    .data.WS2812_IO_Low:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:887    .data.WS2812_IO_High:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccZyS1sc.s:894    .bss.ws2812b:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_DMA_Init
+HAL_DMA_Start
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_DMA_Start_IT
+HAL_TIM_PWM_Init
+HAL_TIM_PWM_ConfigChannel
+HAL_TIM_Base_Start
+HAL_TIM_PWM_Start
+SystemCoreClock
+HAL_DMA_IRQHandler
+HAL_TIM_IRQHandler

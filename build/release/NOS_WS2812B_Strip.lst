@@ -1,0 +1,837 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_WS2812B_Strip.c"
+  14              		.text
+  15              		.section	.text.NOS_WS2812B_Strip_FullInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	NOS_WS2812B_Strip_FullInit
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	NOS_WS2812B_Strip_FullInit:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 4260     		str	r2, [r0, #4]
+  27 0002 0160     		str	r1, [r0]
+  28 0004 8360     		str	r3, [r0, #8]
+  29 0006 6423     		movs	r3, #100
+  30 0008 C360     		str	r3, [r0, #12]
+  31 000a 0023     		movs	r3, #0
+  32 000c 80F85031 		strb	r3, [r0, #336]
+  33 0010 7047     		bx	lr
+  35              		.section	.text.NOS_WS2812B_Strip_CoreSetPixel,"ax",%progbits
+  36              		.align	1
+  37              		.global	NOS_WS2812B_Strip_CoreSetPixel
+  38              		.syntax unified
+  39              		.thumb
+  40              		.thumb_func
+  42              	NOS_WS2812B_Strip_CoreSetPixel:
+  43              		@ args = 4, pretend = 0, frame = 0
+  44              		@ frame_needed = 0, uses_anonymous_args = 0
+  45              		@ link register save eliminated.
+  46 0000 10B4     		push	{r4}
+  47 0002 0468     		ldr	r4, [r0]
+  48 0004 74B1     		cbz	r4, .L2
+  49 0006 D0F808C0 		ldr	ip, [r0, #8]
+  50 000a 8C45     		cmp	ip, r1
+  51 000c 0ADB     		blt	.L2
+  52 000e 01EB4101 		add	r1, r1, r1, lsl #1
+  53 0012 6254     		strb	r2, [r4, r1]
+  54 0014 0468     		ldr	r4, [r0]
+  55 0016 4A1C     		adds	r2, r1, #1
+  56 0018 A354     		strb	r3, [r4, r2]
+  57 001a 0368     		ldr	r3, [r0]
+  58 001c 0231     		adds	r1, r1, #2
+  59 001e 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
+  60 0022 5A54     		strb	r2, [r3, r1]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 2
+
+
+  61              	.L2:
+  62 0024 10BC     		pop	{r4}
+  63 0026 7047     		bx	lr
+  65              		.section	.text.NOS_WS2812B_Strip_SetPixel,"ax",%progbits
+  66              		.align	1
+  67              		.global	NOS_WS2812B_Strip_SetPixel
+  68              		.syntax unified
+  69              		.thumb
+  70              		.thumb_func
+  72              	NOS_WS2812B_Strip_SetPixel:
+  73              		@ args = 4, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0000 10B4     		push	{r4}
+  77 0002 4468     		ldr	r4, [r0, #4]
+  78 0004 74B1     		cbz	r4, .L5
+  79 0006 D0F808C0 		ldr	ip, [r0, #8]
+  80 000a 8C45     		cmp	ip, r1
+  81 000c 0ADB     		blt	.L5
+  82 000e 01EB4101 		add	r1, r1, r1, lsl #1
+  83 0012 6254     		strb	r2, [r4, r1]
+  84 0014 4268     		ldr	r2, [r0, #4]
+  85 0016 0A44     		add	r2, r2, r1
+  86 0018 5370     		strb	r3, [r2, #1]
+  87 001a 4368     		ldr	r3, [r0, #4]
+  88 001c 0B44     		add	r3, r3, r1
+  89 001e 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
+  90 0022 9A70     		strb	r2, [r3, #2]
+  91              	.L5:
+  92 0024 10BC     		pop	{r4}
+  93 0026 7047     		bx	lr
+  95              		.section	.text.NOS_WS2812B_Strip_Clear,"ax",%progbits
+  96              		.align	1
+  97              		.global	NOS_WS2812B_Strip_Clear
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	NOS_WS2812B_Strip_Clear:
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 30B5     		push	{r4, r5, lr}
+ 106 0002 83B0     		sub	sp, sp, #12
+ 107 0004 0546     		mov	r5, r0
+ 108 0006 0024     		movs	r4, #0
+ 109 0008 07E0     		b	.L9
+ 110              	.L10:
+ 111 000a 0022     		movs	r2, #0
+ 112 000c 0092     		str	r2, [sp]
+ 113 000e 1346     		mov	r3, r2
+ 114 0010 2146     		mov	r1, r4
+ 115 0012 2846     		mov	r0, r5
+ 116 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 117 0018 0134     		adds	r4, r4, #1
+ 118              	.L9:
+ 119 001a AB68     		ldr	r3, [r5, #8]
+ 120 001c A342     		cmp	r3, r4
+ 121 001e F4DC     		bgt	.L10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 3
+
+
+ 122 0020 03B0     		add	sp, sp, #12
+ 123              		@ sp needed
+ 124 0022 30BD     		pop	{r4, r5, pc}
+ 126              		.global	__aeabi_i2f
+ 127              		.global	__aeabi_fdiv
+ 128              		.global	__aeabi_ui2f
+ 129              		.global	__aeabi_fmul
+ 130              		.global	__aeabi_f2uiz
+ 131              		.section	.text.NOS_WS2812B_Strip_Update,"ax",%progbits
+ 132              		.align	1
+ 133              		.global	NOS_WS2812B_Strip_Update
+ 134              		.syntax unified
+ 135              		.thumb
+ 136              		.thumb_func
+ 138              	NOS_WS2812B_Strip_Update:
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 142 0004 83B0     		sub	sp, sp, #12
+ 143 0006 0746     		mov	r7, r0
+ 144 0008 C068     		ldr	r0, [r0, #12]
+ 145 000a FFF7FEFF 		bl	__aeabi_i2f
+ 146 000e 1B49     		ldr	r1, .L16
+ 147 0010 FFF7FEFF 		bl	__aeabi_fdiv
+ 148 0014 8046     		mov	r8, r0
+ 149 0016 0024     		movs	r4, #0
+ 150 0018 29E0     		b	.L13
+ 151              	.L14:
+ 152 001a 7A68     		ldr	r2, [r7, #4]
+ 153 001c 04EB4403 		add	r3, r4, r4, lsl #1
+ 154 0020 02EB0309 		add	r9, r2, r3
+ 155 0024 D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
+ 156 0026 FFF7FEFF 		bl	__aeabi_ui2f
+ 157 002a 4146     		mov	r1, r8
+ 158 002c FFF7FEFF 		bl	__aeabi_fmul
+ 159 0030 FFF7FEFF 		bl	__aeabi_f2uiz
+ 160 0034 C5B2     		uxtb	r5, r0
+ 161 0036 99F80100 		ldrb	r0, [r9, #1]	@ zero_extendqisi2
+ 162 003a FFF7FEFF 		bl	__aeabi_ui2f
+ 163 003e 4146     		mov	r1, r8
+ 164 0040 FFF7FEFF 		bl	__aeabi_fmul
+ 165 0044 FFF7FEFF 		bl	__aeabi_f2uiz
+ 166 0048 C6B2     		uxtb	r6, r0
+ 167 004a 99F80200 		ldrb	r0, [r9, #2]	@ zero_extendqisi2
+ 168 004e FFF7FEFF 		bl	__aeabi_ui2f
+ 169 0052 4146     		mov	r1, r8
+ 170 0054 FFF7FEFF 		bl	__aeabi_fmul
+ 171 0058 FFF7FEFF 		bl	__aeabi_f2uiz
+ 172 005c C0B2     		uxtb	r0, r0
+ 173 005e 0090     		str	r0, [sp]
+ 174 0060 3346     		mov	r3, r6
+ 175 0062 2A46     		mov	r2, r5
+ 176 0064 2146     		mov	r1, r4
+ 177 0066 3846     		mov	r0, r7
+ 178 0068 FFF7FEFF 		bl	NOS_WS2812B_Strip_CoreSetPixel
+ 179 006c 0134     		adds	r4, r4, #1
+ 180              	.L13:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 4
+
+
+ 181 006e BB68     		ldr	r3, [r7, #8]
+ 182 0070 A342     		cmp	r3, r4
+ 183 0072 D2DC     		bgt	.L14
+ 184 0074 03B0     		add	sp, sp, #12
+ 185              		@ sp needed
+ 186 0076 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 187              	.L17:
+ 188 007a 00BF     		.align	2
+ 189              	.L16:
+ 190 007c 0000C842 		.word	1120403456
+ 192              		.section	.text.NOS_WS2812B_Strip_ColorFill,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	NOS_WS2812B_Strip_ColorFill
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 199              	NOS_WS2812B_Strip_ColorFill:
+ 200              		@ args = 0, pretend = 0, frame = 8
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202 0000 30B5     		push	{r4, r5, lr}
+ 203 0002 85B0     		sub	sp, sp, #20
+ 204 0004 0546     		mov	r5, r0
+ 205 0006 0391     		str	r1, [sp, #12]
+ 206 0008 0024     		movs	r4, #0
+ 207 000a 0BE0     		b	.L19
+ 208              	.L20:
+ 209 000c 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
+ 210 0010 0093     		str	r3, [sp]
+ 211 0012 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 212 0016 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+ 213 001a 2146     		mov	r1, r4
+ 214 001c 2846     		mov	r0, r5
+ 215 001e FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 216 0022 0134     		adds	r4, r4, #1
+ 217              	.L19:
+ 218 0024 AB68     		ldr	r3, [r5, #8]
+ 219 0026 A342     		cmp	r3, r4
+ 220 0028 F0DC     		bgt	.L20
+ 221 002a 05B0     		add	sp, sp, #20
+ 222              		@ sp needed
+ 223 002c 30BD     		pop	{r4, r5, pc}
+ 225              		.section	.text.NOS_WS2812B_Strip_SetPixelByRGB,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	NOS_WS2812B_Strip_SetPixelByRGB
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	NOS_WS2812B_Strip_SetPixelByRGB:
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 00B5     		push	{lr}
+ 236 0002 83B0     		sub	sp, sp, #12
+ 237 0004 D3B2     		uxtb	r3, r2
+ 238 0006 0093     		str	r3, [sp]
+ 239 0008 C2F30723 		ubfx	r3, r2, #8, #8
+ 240 000c C2F30742 		ubfx	r2, r2, #16, #8
+ 241 0010 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 5
+
+
+ 242 0014 03B0     		add	sp, sp, #12
+ 243              		@ sp needed
+ 244 0016 5DF804FB 		ldr	pc, [sp], #4
+ 246              		.section	.text.NOS_WS2812B_Strip_SetPixelByPixelColor,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	NOS_WS2812B_Strip_SetPixelByPixelColor:
+ 254              		@ args = 0, pretend = 0, frame = 8
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256 0000 00B5     		push	{lr}
+ 257 0002 85B0     		sub	sp, sp, #20
+ 258 0004 0392     		str	r2, [sp, #12]
+ 259 0006 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
+ 260 000a 0093     		str	r3, [sp]
+ 261 000c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 262 0010 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+ 263 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 264 0018 05B0     		add	sp, sp, #20
+ 265              		@ sp needed
+ 266 001a 5DF804FB 		ldr	pc, [sp], #4
+ 268              		.section	.text.NOS_WS2812B_Strip_TestFill,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	NOS_WS2812B_Strip_TestFill
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 275              	NOS_WS2812B_Strip_TestFill:
+ 276              		@ args = 0, pretend = 0, frame = 8
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278 0000 70B5     		push	{r4, r5, r6, lr}
+ 279 0002 82B0     		sub	sp, sp, #8
+ 280 0004 0646     		mov	r6, r0
+ 281 0006 0024     		movs	r4, #0
+ 282 0008 2546     		mov	r5, r4
+ 283 000a 00E0     		b	.L27
+ 284              	.L28:
+ 285 000c 0135     		adds	r5, r5, #1
+ 286              	.L27:
+ 287 000e B368     		ldr	r3, [r6, #8]
+ 288 0010 AB42     		cmp	r3, r5
+ 289 0012 16DD     		ble	.L32
+ 290 0014 E0B2     		uxtb	r0, r4
+ 291 0016 FFF7FEFF 		bl	NOS_GetBaseColor
+ 292 001a 8DF80400 		strb	r0, [sp, #4]
+ 293 001e C0F30723 		ubfx	r3, r0, #8, #8
+ 294 0022 8DF80530 		strb	r3, [sp, #5]
+ 295 0026 C0F30740 		ubfx	r0, r0, #16, #8
+ 296 002a 8DF80600 		strb	r0, [sp, #6]
+ 297 002e 019A     		ldr	r2, [sp, #4]
+ 298 0030 2946     		mov	r1, r5
+ 299 0032 3046     		mov	r0, r6
+ 300 0034 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 301 0038 0134     		adds	r4, r4, #1
+ 302 003a 0B2C     		cmp	r4, #11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 6
+
+
+ 303 003c E6DD     		ble	.L28
+ 304 003e 0024     		movs	r4, #0
+ 305 0040 E4E7     		b	.L28
+ 306              	.L32:
+ 307 0042 02B0     		add	sp, sp, #8
+ 308              		@ sp needed
+ 309 0044 70BD     		pop	{r4, r5, r6, pc}
+ 311              		.section	.text.NOS_WS2812B_Strip_SetBright,"ax",%progbits
+ 312              		.align	1
+ 313              		.global	NOS_WS2812B_Strip_SetBright
+ 314              		.syntax unified
+ 315              		.thumb
+ 316              		.thumb_func
+ 318              	NOS_WS2812B_Strip_SetBright:
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321              		@ link register save eliminated.
+ 322 0000 C160     		str	r1, [r0, #12]
+ 323 0002 7047     		bx	lr
+ 325              		.section	.text.NOS_WS2812B_Strip_Effect_Breathe_Init,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	NOS_WS2812B_Strip_Effect_Breathe_Init
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 332              	NOS_WS2812B_Strip_Effect_Breathe_Init:
+ 333              		@ args = 4, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 336 0004 0446     		mov	r4, r0
+ 337 0006 0F46     		mov	r7, r1
+ 338 0008 1546     		mov	r5, r2
+ 339 000a 1E46     		mov	r6, r3
+ 340 000c BDF81880 		ldrh	r8, [sp, #24]
+ 341 0010 1346     		mov	r3, r2
+ 342 0012 4246     		mov	r2, r8
+ 343 0014 3146     		mov	r1, r6
+ 344 0016 FFF7FEFF 		bl	NOS_Math_SinValue_Init
+ 345 001a 6683     		strh	r6, [r4, #26]	@ movhi
+ 346 001c A4F81C80 		strh	r8, [r4, #28]	@ movhi
+ 347 0020 A782     		strh	r7, [r4, #20]	@ movhi
+ 348 0022 E582     		strh	r5, [r4, #22]	@ movhi
+ 349 0024 0123     		movs	r3, #1
+ 350 0026 A377     		strb	r3, [r4, #30]
+ 351 0028 2023     		movs	r3, #32
+ 352 002a E377     		strb	r3, [r4, #31]
+ 353 002c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 355              		.section	.text.NOS_WS2812B_Strip_Effect_Breathe_Handler,"ax",%progbits
+ 356              		.align	1
+ 357              		.global	NOS_WS2812B_Strip_Effect_Breathe_Handler
+ 358              		.syntax unified
+ 359              		.thumb
+ 360              		.thumb_func
+ 362              	NOS_WS2812B_Strip_Effect_Breathe_Handler:
+ 363              		@ args = 0, pretend = 0, frame = 0
+ 364              		@ frame_needed = 0, uses_anonymous_args = 0
+ 365 0000 D0B1     		cbz	r0, .L40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 7
+
+
+ 366 0002 38B5     		push	{r3, r4, r5, lr}
+ 367 0004 0C46     		mov	r4, r1
+ 368 0006 0546     		mov	r5, r0
+ 369 0008 41B1     		cbz	r1, .L36
+ 370 000a 8B7F     		ldrb	r3, [r1, #30]	@ zero_extendqisi2
+ 371 000c 33B1     		cbz	r3, .L36
+ 372 000e 0A8B     		ldrh	r2, [r1, #24]
+ 373 0010 8B8A     		ldrh	r3, [r1, #20]
+ 374 0012 9A42     		cmp	r2, r3
+ 375 0014 03D8     		bhi	.L43
+ 376              	.L38:
+ 377 0016 238B     		ldrh	r3, [r4, #24]
+ 378 0018 0133     		adds	r3, r3, #1
+ 379 001a 2383     		strh	r3, [r4, #24]	@ movhi
+ 380              	.L36:
+ 381 001c 38BD     		pop	{r3, r4, r5, pc}
+ 382              	.L43:
+ 383 001e 0846     		mov	r0, r1
+ 384 0020 FFF7FEFF 		bl	NOS_Math_SinValue_Handler
+ 385 0024 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 386 0026 2846     		mov	r0, r5
+ 387 0028 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetBright
+ 388 002c 2846     		mov	r0, r5
+ 389 002e FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 390 0032 0023     		movs	r3, #0
+ 391 0034 2383     		strh	r3, [r4, #24]	@ movhi
+ 392 0036 EEE7     		b	.L38
+ 393              	.L40:
+ 394 0038 7047     		bx	lr
+ 396              		.section	.text.NOS_WS2812B_Strip_Effect_Rainbow_Init,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	NOS_WS2812B_Strip_Effect_Rainbow_Init
+ 399              		.syntax unified
+ 400              		.thumb
+ 401              		.thumb_func
+ 403              	NOS_WS2812B_Strip_Effect_Rainbow_Init:
+ 404              		@ args = 4, pretend = 0, frame = 0
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 407 0004 0446     		mov	r4, r0
+ 408 0006 0F46     		mov	r7, r1
+ 409 0008 1546     		mov	r5, r2
+ 410 000a 1E46     		mov	r6, r3
+ 411 000c BDF81880 		ldrh	r8, [sp, #24]
+ 412 0010 1346     		mov	r3, r2
+ 413 0012 4246     		mov	r2, r8
+ 414 0014 3146     		mov	r1, r6
+ 415 0016 FFF7FEFF 		bl	NOS_Math_SinValue_Init
+ 416 001a 6683     		strh	r6, [r4, #26]	@ movhi
+ 417 001c A4F81C80 		strh	r8, [r4, #28]	@ movhi
+ 418 0020 A782     		strh	r7, [r4, #20]	@ movhi
+ 419 0022 E582     		strh	r5, [r4, #22]	@ movhi
+ 420 0024 0123     		movs	r3, #1
+ 421 0026 A377     		strb	r3, [r4, #30]
+ 422 0028 2123     		movs	r3, #33
+ 423 002a E377     		strb	r3, [r4, #31]
+ 424 002c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 8
+
+
+ 426              		.section	.text.NOS_WS2812B_Strip_Effects_AddEffect,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	NOS_WS2812B_Strip_Effects_AddEffect
+ 429              		.syntax unified
+ 430              		.thumb
+ 431              		.thumb_func
+ 433              	NOS_WS2812B_Strip_Effects_AddEffect:
+ 434              		@ args = 36, pretend = 16, frame = 0
+ 435              		@ frame_needed = 0, uses_anonymous_args = 0
+ 436 0000 84B0     		sub	sp, sp, #16
+ 437 0002 10B5     		push	{r4, lr}
+ 438 0004 82B0     		sub	sp, sp, #8
+ 439 0006 0446     		mov	r4, r0
+ 440 0008 05A8     		add	r0, sp, #20
+ 441 000a 80E80E00 		stm	r0, {r1, r2, r3}
+ 442 000e 94F85001 		ldrb	r0, [r4, #336]	@ zero_extendqisi2
+ 443 0012 0928     		cmp	r0, #9
+ 444 0014 0AD8     		bhi	.L46
+ 445 0016 9DF83330 		ldrb	r3, [sp, #51]	@ zero_extendqisi2
+ 446 001a 202B     		cmp	r3, #32
+ 447 001c 0BD0     		beq	.L48
+ 448 001e 212B     		cmp	r3, #33
+ 449 0020 18D0     		beq	.L49
+ 450              	.L50:
+ 451 0022 94F85031 		ldrb	r3, [r4, #336]	@ zero_extendqisi2
+ 452 0026 0133     		adds	r3, r3, #1
+ 453 0028 84F85031 		strb	r3, [r4, #336]
+ 454              	.L46:
+ 455 002c 02B0     		add	sp, sp, #8
+ 456              		@ sp needed
+ 457 002e BDE81040 		pop	{r4, lr}
+ 458 0032 04B0     		add	sp, sp, #16
+ 459 0034 7047     		bx	lr
+ 460              	.L48:
+ 461 0036 4001     		lsls	r0, r0, #5
+ 462 0038 1030     		adds	r0, r0, #16
+ 463 003a BDF83030 		ldrh	r3, [sp, #48]
+ 464 003e 0093     		str	r3, [sp]
+ 465 0040 BDF82E30 		ldrh	r3, [sp, #46]
+ 466 0044 BDF82A20 		ldrh	r2, [sp, #42]
+ 467 0048 BDF82810 		ldrh	r1, [sp, #40]
+ 468 004c 2044     		add	r0, r0, r4
+ 469 004e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Init
+ 470 0052 E6E7     		b	.L50
+ 471              	.L49:
+ 472 0054 4001     		lsls	r0, r0, #5
+ 473 0056 1030     		adds	r0, r0, #16
+ 474 0058 BDF83030 		ldrh	r3, [sp, #48]
+ 475 005c 0093     		str	r3, [sp]
+ 476 005e BDF82E30 		ldrh	r3, [sp, #46]
+ 477 0062 BDF82A20 		ldrh	r2, [sp, #42]
+ 478 0066 BDF82810 		ldrh	r1, [sp, #40]
+ 479 006a 2044     		add	r0, r0, r4
+ 480 006c FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Init
+ 481 0070 D7E7     		b	.L50
+ 483              		.section	.text.NOS_WS2812B_Strip_Effects_UpdateEffect,"ax",%progbits
+ 484              		.align	1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 9
+
+
+ 485              		.global	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 486              		.syntax unified
+ 487              		.thumb
+ 488              		.thumb_func
+ 490              	NOS_WS2812B_Strip_Effects_UpdateEffect:
+ 491              		@ args = 40, pretend = 16, frame = 0
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493 0000 84B0     		sub	sp, sp, #16
+ 494 0002 00B5     		push	{lr}
+ 495 0004 83B0     		sub	sp, sp, #12
+ 496 0006 0DF1140C 		add	ip, sp, #20
+ 497 000a 8CE80E00 		stm	ip, {r1, r2, r3}
+ 498 000e 9DF83430 		ldrb	r3, [sp, #52]	@ zero_extendqisi2
+ 499 0012 092B     		cmp	r3, #9
+ 500 0014 05D8     		bhi	.L52
+ 501 0016 9DF83320 		ldrb	r2, [sp, #51]	@ zero_extendqisi2
+ 502 001a 202A     		cmp	r2, #32
+ 503 001c 06D0     		beq	.L54
+ 504 001e 212A     		cmp	r2, #33
+ 505 0020 14D0     		beq	.L55
+ 506              	.L52:
+ 507 0022 03B0     		add	sp, sp, #12
+ 508              		@ sp needed
+ 509 0024 5DF804EB 		ldr	lr, [sp], #4
+ 510 0028 04B0     		add	sp, sp, #16
+ 511 002a 7047     		bx	lr
+ 512              	.L54:
+ 513 002c 5B01     		lsls	r3, r3, #5
+ 514 002e 03F1100C 		add	ip, r3, #16
+ 515 0032 BDF83030 		ldrh	r3, [sp, #48]
+ 516 0036 0093     		str	r3, [sp]
+ 517 0038 BDF82E30 		ldrh	r3, [sp, #46]
+ 518 003c BDF82A20 		ldrh	r2, [sp, #42]
+ 519 0040 BDF82810 		ldrh	r1, [sp, #40]
+ 520 0044 6044     		add	r0, r0, ip
+ 521 0046 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Init
+ 522 004a EAE7     		b	.L52
+ 523              	.L55:
+ 524 004c 5B01     		lsls	r3, r3, #5
+ 525 004e 03F1100C 		add	ip, r3, #16
+ 526 0052 BDF83030 		ldrh	r3, [sp, #48]
+ 527 0056 0093     		str	r3, [sp]
+ 528 0058 BDF82E30 		ldrh	r3, [sp, #46]
+ 529 005c BDF82A20 		ldrh	r2, [sp, #42]
+ 530 0060 BDF82810 		ldrh	r1, [sp, #40]
+ 531 0064 6044     		add	r0, r0, ip
+ 532 0066 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Init
+ 533 006a DAE7     		b	.L52
+ 535              		.section	.text.NOS_WS2812B_Strip_Effect_Rainbow_Handler,"ax",%progbits
+ 536              		.align	1
+ 537              		.global	NOS_WS2812B_Strip_Effect_Rainbow_Handler
+ 538              		.syntax unified
+ 539              		.thumb
+ 540              		.thumb_func
+ 542              	NOS_WS2812B_Strip_Effect_Rainbow_Handler:
+ 543              		@ args = 0, pretend = 0, frame = 8
+ 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 10
+
+
+ 545 0000 0028     		cmp	r0, #0
+ 546 0002 00F00181 		beq	.L76
+ 547 0006 70B5     		push	{r4, r5, r6, lr}
+ 548 0008 82B0     		sub	sp, sp, #8
+ 549 000a 0C46     		mov	r4, r1
+ 550 000c 0546     		mov	r5, r0
+ 551 000e 41B1     		cbz	r1, .L57
+ 552 0010 8B7F     		ldrb	r3, [r1, #30]	@ zero_extendqisi2
+ 553 0012 33B1     		cbz	r3, .L57
+ 554 0014 0A8B     		ldrh	r2, [r1, #24]
+ 555 0016 8B8A     		ldrh	r3, [r1, #20]
+ 556 0018 9A42     		cmp	r2, r3
+ 557 001a 04D8     		bhi	.L79
+ 558              	.L59:
+ 559 001c 238B     		ldrh	r3, [r4, #24]
+ 560 001e 0133     		adds	r3, r3, #1
+ 561 0020 2383     		strh	r3, [r4, #24]	@ movhi
+ 562              	.L57:
+ 563 0022 02B0     		add	sp, sp, #8
+ 564              		@ sp needed
+ 565 0024 70BD     		pop	{r4, r5, r6, pc}
+ 566              	.L79:
+ 567 0026 0846     		mov	r0, r1
+ 568 0028 FFF7FEFF 		bl	NOS_Math_SinValue_Handler
+ 569 002c 2046     		mov	r0, r4
+ 570 002e FFF7FEFF 		bl	NOS_Math_GetSinValue
+ 571 0032 82B2     		uxth	r2, r0
+ 572 0034 754B     		ldr	r3, .L80
+ 573 0036 A3FB0213 		umull	r1, r3, r3, r2
+ 574 003a D11A     		subs	r1, r2, r3
+ 575 003c 03EB5100 		add	r0, r3, r1, lsr #1
+ 576 0040 C0F38710 		ubfx	r0, r0, #6, #8
+ 577 0044 0023     		movs	r3, #0
+ 578 0046 8DF80430 		strb	r3, [sp, #4]
+ 579 004a 8DF80530 		strb	r3, [sp, #5]
+ 580 004e 8DF80630 		strb	r3, [sp, #6]
+ 581 0052 A0EBC013 		sub	r3, r0, r0, lsl #7
+ 582 0056 9BB2     		uxth	r3, r3
+ 583 0058 1344     		add	r3, r3, r2
+ 584 005a 9EB2     		uxth	r6, r3
+ 585 005c 0B28     		cmp	r0, #11
+ 586 005e 15D8     		bhi	.L60
+ 587 0060 DFE800F0 		tbb	[pc, r0]
+ 588              	.L62:
+ 589 0064 06       		.byte	(.L73-.L62)/2
+ 590 0065 1E       		.byte	(.L72-.L62)/2
+ 591 0066 2F       		.byte	(.L71-.L62)/2
+ 592 0067 3F       		.byte	(.L70-.L62)/2
+ 593 0068 50       		.byte	(.L69-.L62)/2
+ 594 0069 5F       		.byte	(.L68-.L62)/2
+ 595 006a 70       		.byte	(.L67-.L62)/2
+ 596 006b 80       		.byte	(.L66-.L62)/2
+ 597 006c 91       		.byte	(.L65-.L62)/2
+ 598 006d A0       		.byte	(.L64-.L62)/2
+ 599 006e B1       		.byte	(.L63-.L62)/2
+ 600 006f C1       		.byte	(.L61-.L62)/2
+ 601              		.p2align 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 11
+
+
+ 602              	.L73:
+ 603 0070 FFF7FEFF 		bl	NOS_GetBaseColor
+ 604 0074 8DF80400 		strb	r0, [sp, #4]
+ 605 0078 C0F30723 		ubfx	r3, r0, #8, #8
+ 606 007c 8DF80530 		strb	r3, [sp, #5]
+ 607 0080 C0F30740 		ubfx	r0, r0, #16, #8
+ 608 0084 8DF80600 		strb	r0, [sp, #6]
+ 609 0088 8DF80560 		strb	r6, [sp, #5]
+ 610              	.L60:
+ 611 008c 0199     		ldr	r1, [sp, #4]
+ 612 008e 2846     		mov	r0, r5
+ 613 0090 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 614 0094 2846     		mov	r0, r5
+ 615 0096 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 616 009a 0023     		movs	r3, #0
+ 617 009c 2383     		strh	r3, [r4, #24]	@ movhi
+ 618 009e BDE7     		b	.L59
+ 619              	.L72:
+ 620 00a0 FFF7FEFF 		bl	NOS_GetBaseColor
+ 621 00a4 8DF80400 		strb	r0, [sp, #4]
+ 622 00a8 C0F30723 		ubfx	r3, r0, #8, #8
+ 623 00ac 8DF80530 		strb	r3, [sp, #5]
+ 624 00b0 C0F30740 		ubfx	r0, r0, #16, #8
+ 625 00b4 8DF80600 		strb	r0, [sp, #6]
+ 626 00b8 06F17F03 		add	r3, r6, #127
+ 627 00bc 8DF80530 		strb	r3, [sp, #5]
+ 628 00c0 E4E7     		b	.L60
+ 629              	.L71:
+ 630 00c2 FFF7FEFF 		bl	NOS_GetBaseColor
+ 631 00c6 8DF80400 		strb	r0, [sp, #4]
+ 632 00ca C0F30723 		ubfx	r3, r0, #8, #8
+ 633 00ce 8DF80530 		strb	r3, [sp, #5]
+ 634 00d2 C0F30740 		ubfx	r0, r0, #16, #8
+ 635 00d6 8DF80600 		strb	r0, [sp, #6]
+ 636 00da F343     		mvns	r3, r6
+ 637 00dc 8DF80630 		strb	r3, [sp, #6]
+ 638 00e0 D4E7     		b	.L60
+ 639              	.L70:
+ 640 00e2 FFF7FEFF 		bl	NOS_GetBaseColor
+ 641 00e6 8DF80400 		strb	r0, [sp, #4]
+ 642 00ea C0F30723 		ubfx	r3, r0, #8, #8
+ 643 00ee 8DF80530 		strb	r3, [sp, #5]
+ 644 00f2 C0F30740 		ubfx	r0, r0, #16, #8
+ 645 00f6 8DF80600 		strb	r0, [sp, #6]
+ 646 00fa C6F17F03 		rsb	r3, r6, #127
+ 647 00fe 8DF80630 		strb	r3, [sp, #6]
+ 648 0102 C3E7     		b	.L60
+ 649              	.L69:
+ 650 0104 FFF7FEFF 		bl	NOS_GetBaseColor
+ 651 0108 8DF80400 		strb	r0, [sp, #4]
+ 652 010c C0F30723 		ubfx	r3, r0, #8, #8
+ 653 0110 8DF80530 		strb	r3, [sp, #5]
+ 654 0114 C0F30740 		ubfx	r0, r0, #16, #8
+ 655 0118 8DF80600 		strb	r0, [sp, #6]
+ 656 011c 8DF80460 		strb	r6, [sp, #4]
+ 657 0120 B4E7     		b	.L60
+ 658              	.L68:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 12
+
+
+ 659 0122 FFF7FEFF 		bl	NOS_GetBaseColor
+ 660 0126 8DF80400 		strb	r0, [sp, #4]
+ 661 012a C0F30723 		ubfx	r3, r0, #8, #8
+ 662 012e 8DF80530 		strb	r3, [sp, #5]
+ 663 0132 C0F30740 		ubfx	r0, r0, #16, #8
+ 664 0136 8DF80600 		strb	r0, [sp, #6]
+ 665 013a 06F17F03 		add	r3, r6, #127
+ 666 013e 8DF80430 		strb	r3, [sp, #4]
+ 667 0142 A3E7     		b	.L60
+ 668              	.L67:
+ 669 0144 FFF7FEFF 		bl	NOS_GetBaseColor
+ 670 0148 8DF80400 		strb	r0, [sp, #4]
+ 671 014c C0F30723 		ubfx	r3, r0, #8, #8
+ 672 0150 8DF80530 		strb	r3, [sp, #5]
+ 673 0154 C0F30740 		ubfx	r0, r0, #16, #8
+ 674 0158 8DF80600 		strb	r0, [sp, #6]
+ 675 015c F343     		mvns	r3, r6
+ 676 015e 8DF80530 		strb	r3, [sp, #5]
+ 677 0162 93E7     		b	.L60
+ 678              	.L66:
+ 679 0164 FFF7FEFF 		bl	NOS_GetBaseColor
+ 680 0168 8DF80400 		strb	r0, [sp, #4]
+ 681 016c C0F30723 		ubfx	r3, r0, #8, #8
+ 682 0170 8DF80530 		strb	r3, [sp, #5]
+ 683 0174 C0F30740 		ubfx	r0, r0, #16, #8
+ 684 0178 8DF80600 		strb	r0, [sp, #6]
+ 685 017c C6F17F03 		rsb	r3, r6, #127
+ 686 0180 8DF80530 		strb	r3, [sp, #5]
+ 687 0184 82E7     		b	.L60
+ 688              	.L65:
+ 689 0186 FFF7FEFF 		bl	NOS_GetBaseColor
+ 690 018a 8DF80400 		strb	r0, [sp, #4]
+ 691 018e C0F30723 		ubfx	r3, r0, #8, #8
+ 692 0192 8DF80530 		strb	r3, [sp, #5]
+ 693 0196 C0F30740 		ubfx	r0, r0, #16, #8
+ 694 019a 8DF80600 		strb	r0, [sp, #6]
+ 695 019e 8DF80660 		strb	r6, [sp, #6]
+ 696 01a2 73E7     		b	.L60
+ 697              	.L64:
+ 698 01a4 FFF7FEFF 		bl	NOS_GetBaseColor
+ 699 01a8 8DF80400 		strb	r0, [sp, #4]
+ 700 01ac C0F30723 		ubfx	r3, r0, #8, #8
+ 701 01b0 8DF80530 		strb	r3, [sp, #5]
+ 702 01b4 C0F30740 		ubfx	r0, r0, #16, #8
+ 703 01b8 8DF80600 		strb	r0, [sp, #6]
+ 704 01bc 06F17F03 		add	r3, r6, #127
+ 705 01c0 8DF80630 		strb	r3, [sp, #6]
+ 706 01c4 62E7     		b	.L60
+ 707              	.L63:
+ 708 01c6 FFF7FEFF 		bl	NOS_GetBaseColor
+ 709 01ca 8DF80400 		strb	r0, [sp, #4]
+ 710 01ce C0F30723 		ubfx	r3, r0, #8, #8
+ 711 01d2 8DF80530 		strb	r3, [sp, #5]
+ 712 01d6 C0F30740 		ubfx	r0, r0, #16, #8
+ 713 01da 8DF80600 		strb	r0, [sp, #6]
+ 714 01de F343     		mvns	r3, r6
+ 715 01e0 8DF80430 		strb	r3, [sp, #4]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 13
+
+
+ 716 01e4 52E7     		b	.L60
+ 717              	.L61:
+ 718 01e6 FFF7FEFF 		bl	NOS_GetBaseColor
+ 719 01ea 8DF80400 		strb	r0, [sp, #4]
+ 720 01ee C0F30723 		ubfx	r3, r0, #8, #8
+ 721 01f2 8DF80530 		strb	r3, [sp, #5]
+ 722 01f6 C0F30740 		ubfx	r0, r0, #16, #8
+ 723 01fa 8DF80600 		strb	r0, [sp, #6]
+ 724 01fe C6F17F03 		rsb	r3, r6, #127
+ 725 0202 8DF80430 		strb	r3, [sp, #4]
+ 726 0206 41E7     		b	.L60
+ 727              	.L76:
+ 728 0208 7047     		bx	lr
+ 729              	.L81:
+ 730 020a 00BF     		.align	2
+ 731              	.L80:
+ 732 020c 11080402 		.word	33818641
+ 734              		.section	.text.NOS_WS2812B_Strip_Effects_Handler,"ax",%progbits
+ 735              		.align	1
+ 736              		.global	NOS_WS2812B_Strip_Effects_Handler
+ 737              		.syntax unified
+ 738              		.thumb
+ 739              		.thumb_func
+ 741              	NOS_WS2812B_Strip_Effects_Handler:
+ 742              		@ args = 0, pretend = 0, frame = 0
+ 743              		@ frame_needed = 0, uses_anonymous_args = 0
+ 744 0000 38B5     		push	{r3, r4, r5, lr}
+ 745 0002 0546     		mov	r5, r0
+ 746 0004 0024     		movs	r4, #0
+ 747 0006 06E0     		b	.L83
+ 748              	.L84:
+ 749 0008 6101     		lsls	r1, r4, #5
+ 750 000a 1031     		adds	r1, r1, #16
+ 751 000c 2944     		add	r1, r1, r5
+ 752 000e 2846     		mov	r0, r5
+ 753 0010 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Handler
+ 754              	.L86:
+ 755 0014 0134     		adds	r4, r4, #1
+ 756              	.L83:
+ 757 0016 95F85031 		ldrb	r3, [r5, #336]	@ zero_extendqisi2
+ 758 001a A342     		cmp	r3, r4
+ 759 001c 0EDD     		ble	.L89
+ 760 001e 05EB4413 		add	r3, r5, r4, lsl #5
+ 761 0022 93F82F30 		ldrb	r3, [r3, #47]	@ zero_extendqisi2
+ 762 0026 202B     		cmp	r3, #32
+ 763 0028 EED0     		beq	.L84
+ 764 002a 212B     		cmp	r3, #33
+ 765 002c F2D1     		bne	.L86
+ 766 002e 6101     		lsls	r1, r4, #5
+ 767 0030 1031     		adds	r1, r1, #16
+ 768 0032 2944     		add	r1, r1, r5
+ 769 0034 2846     		mov	r0, r5
+ 770 0036 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Handler
+ 771 003a EBE7     		b	.L86
+ 772              	.L89:
+ 773 003c 38BD     		pop	{r3, r4, r5, pc}
+ 775              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 14
+
+
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_WS2812B_Strip.c
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:16     .text.NOS_WS2812B_Strip_FullInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:22     .text.NOS_WS2812B_Strip_FullInit:00000000 NOS_WS2812B_Strip_FullInit
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:36     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:42     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 NOS_WS2812B_Strip_CoreSetPixel
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:66     .text.NOS_WS2812B_Strip_SetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:72     .text.NOS_WS2812B_Strip_SetPixel:00000000 NOS_WS2812B_Strip_SetPixel
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:96     .text.NOS_WS2812B_Strip_Clear:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:102    .text.NOS_WS2812B_Strip_Clear:00000000 NOS_WS2812B_Strip_Clear
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:132    .text.NOS_WS2812B_Strip_Update:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:138    .text.NOS_WS2812B_Strip_Update:00000000 NOS_WS2812B_Strip_Update
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:190    .text.NOS_WS2812B_Strip_Update:0000007c $d
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:193    .text.NOS_WS2812B_Strip_ColorFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:199    .text.NOS_WS2812B_Strip_ColorFill:00000000 NOS_WS2812B_Strip_ColorFill
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:226    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:232    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 NOS_WS2812B_Strip_SetPixelByRGB
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:247    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:253    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 NOS_WS2812B_Strip_SetPixelByPixelColor
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:269    .text.NOS_WS2812B_Strip_TestFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:275    .text.NOS_WS2812B_Strip_TestFill:00000000 NOS_WS2812B_Strip_TestFill
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:312    .text.NOS_WS2812B_Strip_SetBright:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:318    .text.NOS_WS2812B_Strip_SetBright:00000000 NOS_WS2812B_Strip_SetBright
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:326    .text.NOS_WS2812B_Strip_Effect_Breathe_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:332    .text.NOS_WS2812B_Strip_Effect_Breathe_Init:00000000 NOS_WS2812B_Strip_Effect_Breathe_Init
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:356    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:362    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 NOS_WS2812B_Strip_Effect_Breathe_Handler
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:397    .text.NOS_WS2812B_Strip_Effect_Rainbow_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:403    .text.NOS_WS2812B_Strip_Effect_Rainbow_Init:00000000 NOS_WS2812B_Strip_Effect_Rainbow_Init
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:427    .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:433    .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 NOS_WS2812B_Strip_Effects_AddEffect
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:484    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:490    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 NOS_WS2812B_Strip_Effects_UpdateEffect
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:536    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:542    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 NOS_WS2812B_Strip_Effect_Rainbow_Handler
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:589    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000064 $d
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:601    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000070 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:732    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:0000020c $d
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:735    .text.NOS_WS2812B_Strip_Effects_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccaJV5bb.s:741    .text.NOS_WS2812B_Strip_Effects_Handler:00000000 NOS_WS2812B_Strip_Effects_Handler
+
+UNDEFINED SYMBOLS
+__aeabi_i2f
+__aeabi_fdiv
+__aeabi_ui2f
+__aeabi_fmul
+__aeabi_f2uiz
+NOS_GetBaseColor
+NOS_Math_SinValue_Init
+NOS_Math_SinValue_Handler
+NOS_Math_GetSinValue

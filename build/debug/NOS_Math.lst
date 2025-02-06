@@ -1,0 +1,344 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_Math.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/NOS_Math.c"
+  18              		.section	.text.NOS_Math_NormalizeValue,"ax",%progbits
+  19              		.align	1
+  20              		.global	NOS_Math_NormalizeValue
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	NOS_Math_NormalizeValue:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/NOS_Math.c **** #include "NOS_Math.h"
+   2:Core/Src/NOS_Math.c **** 
+   3:Core/Src/NOS_Math.c **** int NOS_Math_NormalizeValue(int value,int maxValue)
+   4:Core/Src/NOS_Math.c **** {
+  28              		.loc 1 4 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   5:Core/Src/NOS_Math.c ****     while(value >= maxValue)
+  33              		.loc 1 5 5 view .LVU1
+  34              		.loc 1 5 10 is_stmt 0 view .LVU2
+  35 0000 00E0     		b	.L2
+  36              	.L3:
+   6:Core/Src/NOS_Math.c ****     {
+   7:Core/Src/NOS_Math.c ****         value = value - maxValue;
+  37              		.loc 1 7 9 is_stmt 1 view .LVU3
+  38              		.loc 1 7 15 is_stmt 0 view .LVU4
+  39 0002 401A     		subs	r0, r0, r1
+  40              	.LVL1:
+  41              	.L2:
+   5:Core/Src/NOS_Math.c ****     while(value >= maxValue)
+  42              		.loc 1 5 17 is_stmt 1 view .LVU5
+  43 0004 8842     		cmp	r0, r1
+  44 0006 FCDA     		bge	.L3
+   8:Core/Src/NOS_Math.c ****     }
+   9:Core/Src/NOS_Math.c ****     
+  10:Core/Src/NOS_Math.c ****     return value;
+  45              		.loc 1 10 5 view .LVU6
+  11:Core/Src/NOS_Math.c **** }
+  46              		.loc 1 11 1 is_stmt 0 view .LVU7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 2
+
+
+  47 0008 7047     		bx	lr
+  48              		.cfi_endproc
+  49              	.LFE65:
+  51              		.section	.text.NOS_Math_GetNumberPower,"ax",%progbits
+  52              		.align	1
+  53              		.global	NOS_Math_GetNumberPower
+  54              		.syntax unified
+  55              		.thumb
+  56              		.thumb_func
+  58              	NOS_Math_GetNumberPower:
+  59              	.LVL2:
+  60              	.LFB66:
+  12:Core/Src/NOS_Math.c **** 
+  13:Core/Src/NOS_Math.c **** int NOS_Math_GetNumberPower(int value)
+  14:Core/Src/NOS_Math.c **** {
+  61              		.loc 1 14 1 is_stmt 1 view -0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66              		.loc 1 14 1 is_stmt 0 view .LVU9
+  67 0000 0246     		mov	r2, r0
+  15:Core/Src/NOS_Math.c ****     int probe = 10;
+  68              		.loc 1 15 5 is_stmt 1 view .LVU10
+  69              	.LVL3:
+  16:Core/Src/NOS_Math.c ****     int power = 1;
+  70              		.loc 1 16 5 view .LVU11
+  17:Core/Src/NOS_Math.c ****     while (value >= probe)
+  71              		.loc 1 17 5 view .LVU12
+  16:Core/Src/NOS_Math.c ****     int power = 1;
+  72              		.loc 1 16 9 is_stmt 0 view .LVU13
+  73 0002 0120     		movs	r0, #1
+  74              	.LVL4:
+  15:Core/Src/NOS_Math.c ****     int probe = 10;
+  75              		.loc 1 15 9 view .LVU14
+  76 0004 0A23     		movs	r3, #10
+  77              		.loc 1 17 11 view .LVU15
+  78 0006 03E0     		b	.L5
+  79              	.LVL5:
+  80              	.L6:
+  18:Core/Src/NOS_Math.c ****     {
+  19:Core/Src/NOS_Math.c ****         power++;
+  81              		.loc 1 19 9 is_stmt 1 view .LVU16
+  82              		.loc 1 19 14 is_stmt 0 view .LVU17
+  83 0008 0130     		adds	r0, r0, #1
+  84              	.LVL6:
+  20:Core/Src/NOS_Math.c ****         probe = probe * 10;
+  85              		.loc 1 20 9 is_stmt 1 view .LVU18
+  86              		.loc 1 20 15 is_stmt 0 view .LVU19
+  87 000a 03EB8303 		add	r3, r3, r3, lsl #2
+  88              	.LVL7:
+  89              		.loc 1 20 15 view .LVU20
+  90 000e 5B00     		lsls	r3, r3, #1
+  91              	.LVL8:
+  92              	.L5:
+  17:Core/Src/NOS_Math.c ****     while (value >= probe)
+  93              		.loc 1 17 18 is_stmt 1 view .LVU21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 3
+
+
+  94 0010 9342     		cmp	r3, r2
+  95 0012 F9DD     		ble	.L6
+  21:Core/Src/NOS_Math.c ****     }
+  22:Core/Src/NOS_Math.c ****     return power;
+  96              		.loc 1 22 5 view .LVU22
+  23:Core/Src/NOS_Math.c **** }
+  97              		.loc 1 23 1 is_stmt 0 view .LVU23
+  98 0014 7047     		bx	lr
+  99              		.cfi_endproc
+ 100              	.LFE66:
+ 102              		.section	.text.NOS_Math_GetSinValue,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	NOS_Math_GetSinValue
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 109              	NOS_Math_GetSinValue:
+ 110              	.LVL9:
+ 111              	.LFB67:
+  24:Core/Src/NOS_Math.c **** 
+  25:Core/Src/NOS_Math.c **** int NOS_Math_GetSinValue(SinValue* value)
+  26:Core/Src/NOS_Math.c **** {
+ 112              		.loc 1 26 1 is_stmt 1 view -0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+  27:Core/Src/NOS_Math.c ****     return value->value;
+ 117              		.loc 1 27 5 view .LVU25
+  28:Core/Src/NOS_Math.c **** }
+ 118              		.loc 1 28 1 is_stmt 0 view .LVU26
+ 119 0000 0068     		ldr	r0, [r0]
+ 120              	.LVL10:
+ 121              		.loc 1 28 1 view .LVU27
+ 122 0002 7047     		bx	lr
+ 123              		.cfi_endproc
+ 124              	.LFE67:
+ 126              		.section	.text.NOS_Math_SinValue_Handler,"ax",%progbits
+ 127              		.align	1
+ 128              		.global	NOS_Math_SinValue_Handler
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 133              	NOS_Math_SinValue_Handler:
+ 134              	.LVL11:
+ 135              	.LFB68:
+  29:Core/Src/NOS_Math.c **** 
+  30:Core/Src/NOS_Math.c **** void NOS_Math_SinValue_Handler(SinValue* value)
+  31:Core/Src/NOS_Math.c **** {
+ 136              		.loc 1 31 1 is_stmt 1 view -0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140              		@ link register save eliminated.
+  32:Core/Src/NOS_Math.c ****     if(value->rise)
+ 141              		.loc 1 32 5 view .LVU29
+ 142              		.loc 1 32 13 is_stmt 0 view .LVU30
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 4
+
+
+ 143 0000 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 144              		.loc 1 32 7 view .LVU31
+ 145 0002 63B1     		cbz	r3, .L9
+  33:Core/Src/NOS_Math.c ****     {
+  34:Core/Src/NOS_Math.c ****         value->value += value->increment;
+ 146              		.loc 1 34 9 is_stmt 1 view .LVU32
+ 147              		.loc 1 34 14 is_stmt 0 view .LVU33
+ 148 0004 0368     		ldr	r3, [r0]
+ 149              		.loc 1 34 30 view .LVU34
+ 150 0006 C268     		ldr	r2, [r0, #12]
+ 151              		.loc 1 34 22 view .LVU35
+ 152 0008 1344     		add	r3, r3, r2
+ 153 000a 0360     		str	r3, [r0]
+  35:Core/Src/NOS_Math.c ****         if(value->value > value->maxValue)
+ 154              		.loc 1 35 9 is_stmt 1 view .LVU36
+ 155              		.loc 1 35 32 is_stmt 0 view .LVU37
+ 156 000c 8268     		ldr	r2, [r0, #8]
+ 157              		.loc 1 35 11 view .LVU38
+ 158 000e 9342     		cmp	r3, r2
+ 159 0010 13DD     		ble	.L8
+  36:Core/Src/NOS_Math.c ****         {
+  37:Core/Src/NOS_Math.c ****             value->value = value->maxValue;
+ 160              		.loc 1 37 13 is_stmt 1 view .LVU39
+ 161              		.loc 1 37 26 is_stmt 0 view .LVU40
+ 162 0012 0260     		str	r2, [r0]
+  38:Core/Src/NOS_Math.c ****             value->rise = false;
+ 163              		.loc 1 38 13 is_stmt 1 view .LVU41
+ 164              		.loc 1 38 25 is_stmt 0 view .LVU42
+ 165 0014 0023     		movs	r3, #0
+ 166 0016 0374     		strb	r3, [r0, #16]
+  39:Core/Src/NOS_Math.c ****             value->fall = true;
+ 167              		.loc 1 39 13 is_stmt 1 view .LVU43
+ 168              		.loc 1 39 25 is_stmt 0 view .LVU44
+ 169 0018 0123     		movs	r3, #1
+ 170 001a 4374     		strb	r3, [r0, #17]
+ 171 001c 7047     		bx	lr
+ 172              	.L9:
+  40:Core/Src/NOS_Math.c ****         }
+  41:Core/Src/NOS_Math.c ****     }
+  42:Core/Src/NOS_Math.c ****     else if(value->fall)
+ 173              		.loc 1 42 10 is_stmt 1 view .LVU45
+ 174              		.loc 1 42 18 is_stmt 0 view .LVU46
+ 175 001e 437C     		ldrb	r3, [r0, #17]	@ zero_extendqisi2
+ 176              		.loc 1 42 12 view .LVU47
+ 177 0020 5BB1     		cbz	r3, .L8
+  43:Core/Src/NOS_Math.c ****     {
+  44:Core/Src/NOS_Math.c ****         value->value -= value->increment;
+ 178              		.loc 1 44 9 is_stmt 1 view .LVU48
+ 179              		.loc 1 44 14 is_stmt 0 view .LVU49
+ 180 0022 0368     		ldr	r3, [r0]
+ 181              		.loc 1 44 30 view .LVU50
+ 182 0024 C268     		ldr	r2, [r0, #12]
+ 183              		.loc 1 44 22 view .LVU51
+ 184 0026 9B1A     		subs	r3, r3, r2
+ 185 0028 0360     		str	r3, [r0]
+  45:Core/Src/NOS_Math.c ****         if(value->value < value->minValue)
+ 186              		.loc 1 45 9 is_stmt 1 view .LVU52
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 5
+
+
+ 187              		.loc 1 45 32 is_stmt 0 view .LVU53
+ 188 002a 4268     		ldr	r2, [r0, #4]
+ 189              		.loc 1 45 11 view .LVU54
+ 190 002c 9342     		cmp	r3, r2
+ 191 002e 04DA     		bge	.L8
+  46:Core/Src/NOS_Math.c ****         {
+  47:Core/Src/NOS_Math.c ****             value->value = value->minValue;
+ 192              		.loc 1 47 13 is_stmt 1 view .LVU55
+ 193              		.loc 1 47 26 is_stmt 0 view .LVU56
+ 194 0030 0260     		str	r2, [r0]
+  48:Core/Src/NOS_Math.c ****             value->fall = false;
+ 195              		.loc 1 48 13 is_stmt 1 view .LVU57
+ 196              		.loc 1 48 25 is_stmt 0 view .LVU58
+ 197 0032 0023     		movs	r3, #0
+ 198 0034 4374     		strb	r3, [r0, #17]
+  49:Core/Src/NOS_Math.c ****             value->rise = true;
+ 199              		.loc 1 49 13 is_stmt 1 view .LVU59
+ 200              		.loc 1 49 25 is_stmt 0 view .LVU60
+ 201 0036 0123     		movs	r3, #1
+ 202 0038 0374     		strb	r3, [r0, #16]
+ 203              	.L8:
+  50:Core/Src/NOS_Math.c ****         }
+  51:Core/Src/NOS_Math.c ****     }
+  52:Core/Src/NOS_Math.c **** }
+ 204              		.loc 1 52 1 view .LVU61
+ 205 003a 7047     		bx	lr
+ 206              		.cfi_endproc
+ 207              	.LFE68:
+ 209              		.section	.text.NOS_Math_SinValue_Init,"ax",%progbits
+ 210              		.align	1
+ 211              		.global	NOS_Math_SinValue_Init
+ 212              		.syntax unified
+ 213              		.thumb
+ 214              		.thumb_func
+ 216              	NOS_Math_SinValue_Init:
+ 217              	.LVL12:
+ 218              	.LFB69:
+  53:Core/Src/NOS_Math.c **** 
+  54:Core/Src/NOS_Math.c **** void NOS_Math_SinValue_Init(SinValue* value,int minValue,int maxValue,int increment)
+  55:Core/Src/NOS_Math.c **** {
+ 219              		.loc 1 55 1 is_stmt 1 view -0
+ 220              		.cfi_startproc
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223              		@ link register save eliminated.
+  56:Core/Src/NOS_Math.c ****     value->value = minValue;
+ 224              		.loc 1 56 5 view .LVU63
+ 225              		.loc 1 56 18 is_stmt 0 view .LVU64
+ 226 0000 0160     		str	r1, [r0]
+  57:Core/Src/NOS_Math.c ****     value->minValue = minValue;
+ 227              		.loc 1 57 5 is_stmt 1 view .LVU65
+ 228              		.loc 1 57 21 is_stmt 0 view .LVU66
+ 229 0002 4160     		str	r1, [r0, #4]
+  58:Core/Src/NOS_Math.c ****     value->maxValue = maxValue;
+ 230              		.loc 1 58 5 is_stmt 1 view .LVU67
+ 231              		.loc 1 58 21 is_stmt 0 view .LVU68
+ 232 0004 8260     		str	r2, [r0, #8]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 6
+
+
+  59:Core/Src/NOS_Math.c ****     value->rise = true;
+ 233              		.loc 1 59 5 is_stmt 1 view .LVU69
+ 234              		.loc 1 59 17 is_stmt 0 view .LVU70
+ 235 0006 0122     		movs	r2, #1
+ 236              	.LVL13:
+ 237              		.loc 1 59 17 view .LVU71
+ 238 0008 0274     		strb	r2, [r0, #16]
+  60:Core/Src/NOS_Math.c ****     value->fall = false;
+ 239              		.loc 1 60 5 is_stmt 1 view .LVU72
+ 240              		.loc 1 60 17 is_stmt 0 view .LVU73
+ 241 000a 0022     		movs	r2, #0
+ 242 000c 4274     		strb	r2, [r0, #17]
+  61:Core/Src/NOS_Math.c ****     value->increment = increment;
+ 243              		.loc 1 61 5 is_stmt 1 view .LVU74
+ 244              		.loc 1 61 22 is_stmt 0 view .LVU75
+ 245 000e C360     		str	r3, [r0, #12]
+  62:Core/Src/NOS_Math.c **** }...
+ 246              		.loc 1 62 1 view .LVU76
+ 247 0010 7047     		bx	lr
+ 248              		.cfi_endproc
+ 249              	.LFE69:
+ 251              		.text
+ 252              	.Letext0:
+ 253              		.file 2 "Core/Inc/NOS_Typedefs.h"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_Math.c
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:19     .text.NOS_Math_NormalizeValue:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:25     .text.NOS_Math_NormalizeValue:00000000 NOS_Math_NormalizeValue
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:52     .text.NOS_Math_GetNumberPower:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:58     .text.NOS_Math_GetNumberPower:00000000 NOS_Math_GetNumberPower
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:103    .text.NOS_Math_GetSinValue:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:109    .text.NOS_Math_GetSinValue:00000000 NOS_Math_GetSinValue
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:127    .text.NOS_Math_SinValue_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:133    .text.NOS_Math_SinValue_Handler:00000000 NOS_Math_SinValue_Handler
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:210    .text.NOS_Math_SinValue_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccpZW4xh.s:216    .text.NOS_Math_SinValue_Init:00000000 NOS_Math_SinValue_Init
+
+NO UNDEFINED SYMBOLS

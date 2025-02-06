@@ -1,0 +1,312 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"WS2812B_Effects.c"
+  14              		.text
+  15              		.section	.text.Wheel,"ax",%progbits
+  16              		.align	1
+  17              		.global	Wheel
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	Wheel:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 C343     		mvns	r3, r0
+  27 0002 DBB2     		uxtb	r3, r3
+  28 0004 542B     		cmp	r3, #84
+  29 0006 0CD9     		bls	.L5
+  30 0008 A92B     		cmp	r3, #169
+  31 000a 12D9     		bls	.L6
+  32 000c C0F15503 		rsb	r3, r0, #85
+  33 0010 DBB2     		uxtb	r3, r3
+  34 0012 03EB4303 		add	r3, r3, r3, lsl #1
+  35 0016 C3F1FF00 		rsb	r0, r3, #255
+  36 001a 0002     		lsls	r0, r0, #8
+  37 001c 40EA0340 		orr	r0, r0, r3, lsl #16
+  38 0020 7047     		bx	lr
+  39              	.L5:
+  40 0022 A3EB8303 		sub	r3, r3, r3, lsl #2
+  41 0026 03F1FF02 		add	r2, r3, #255
+  42 002a 5B42     		rsbs	r3, r3, #0
+  43 002c 43EA0240 		orr	r0, r3, r2, lsl #16
+  44 0030 7047     		bx	lr
+  45              	.L6:
+  46 0032 C0F1AA03 		rsb	r3, r0, #170
+  47 0036 DBB2     		uxtb	r3, r3
+  48 0038 03EB4303 		add	r3, r3, r3, lsl #1
+  49 003c C3F1FF00 		rsb	r0, r3, #255
+  50 0040 40EA0320 		orr	r0, r0, r3, lsl #8
+  51 0044 7047     		bx	lr
+  53              		.section	.text.visRainbow,"ax",%progbits
+  54              		.align	1
+  55              		.global	visRainbow
+  56              		.syntax unified
+  57              		.thumb
+  58              		.thumb_func
+  60              	visRainbow:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 2
+
+
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  64 0004 0546     		mov	r5, r0
+  65 0006 0F46     		mov	r7, r1
+  66 0008 9046     		mov	r8, r2
+  67 000a 104B     		ldr	r3, .L11
+  68 000c 1E78     		ldrb	r6, [r3]	@ zero_extendqisi2
+  69 000e 0136     		adds	r6, r6, #1
+  70 0010 F6B2     		uxtb	r6, r6
+  71 0012 1E70     		strb	r6, [r3]
+  72 0014 0024     		movs	r4, #0
+  73 0016 10E0     		b	.L8
+  74              	.L9:
+  75 0018 2002     		lsls	r0, r4, #8
+  76 001a B0FBF8F0 		udiv	r0, r0, r8
+  77 001e 3044     		add	r0, r0, r6
+  78 0020 C0B2     		uxtb	r0, r0
+  79 0022 FFF7FEFF 		bl	Wheel
+  80 0026 04EB4403 		add	r3, r4, r4, lsl #1
+  81 002a E854     		strb	r0, [r5, r3]
+  82 002c 010A     		lsrs	r1, r0, #8
+  83 002e 5A1C     		adds	r2, r3, #1
+  84 0030 A954     		strb	r1, [r5, r2]
+  85 0032 000C     		lsrs	r0, r0, #16
+  86 0034 0233     		adds	r3, r3, #2
+  87 0036 E854     		strb	r0, [r5, r3]
+  88 0038 0134     		adds	r4, r4, #1
+  89              	.L8:
+  90 003a 054B     		ldr	r3, .L11+4
+  91 003c A3FB0723 		umull	r2, r3, r3, r7
+  92 0040 B4EB530F 		cmp	r4, r3, lsr #1
+  93 0044 E8D3     		bcc	.L9
+  94 0046 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  95              	.L12:
+  96 004a 00BF     		.align	2
+  97              	.L11:
+  98 004c 00000000 		.word	x.0
+  99 0050 ABAAAAAA 		.word	-1431655765
+ 101              		.section	.text.visDots,"ax",%progbits
+ 102              		.align	1
+ 103              		.global	visDots
+ 104              		.syntax unified
+ 105              		.thumb
+ 106              		.thumb_func
+ 108              	visDots:
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 112 0004 0446     		mov	r4, r0
+ 113 0006 8846     		mov	r8, r1
+ 114 0008 1746     		mov	r7, r2
+ 115 000a 1E46     		mov	r6, r3
+ 116 000c 0025     		movs	r5, #0
+ 117 000e 0AE0     		b	.L14
+ 118              	.L16:
+ 119 0010 0023     		movs	r3, #0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 3
+
+
+ 120 0012 04F80C30 		strb	r3, [r4, ip]
+ 121 0016 26E0     		b	.L17
+ 122              	.L18:
+ 123 0018 0023     		movs	r3, #0
+ 124 001a A354     		strb	r3, [r4, r2]
+ 125 001c 2CE0     		b	.L19
+ 126              	.L20:
+ 127 001e 0023     		movs	r3, #0
+ 128 0020 04F80C30 		strb	r3, [r4, ip]
+ 129              	.L21:
+ 130 0024 0135     		adds	r5, r5, #1
+ 131              	.L14:
+ 132 0026 1B4B     		ldr	r3, .L25
+ 133 0028 A3FB0823 		umull	r2, r3, r3, r8
+ 134 002c B5EB530F 		cmp	r5, r3, lsr #1
+ 135 0030 2ED2     		bcs	.L24
+ 136 0032 FFF7FEFF 		bl	rand
+ 137 0036 B0FBF7F3 		udiv	r3, r0, r7
+ 138 003a 07FB1300 		mls	r0, r7, r3, r0
+ 139 003e 38B9     		cbnz	r0, .L15
+ 140 0040 05EB4503 		add	r3, r5, r5, lsl #1
+ 141 0044 FF22     		movs	r2, #255
+ 142 0046 E254     		strb	r2, [r4, r3]
+ 143 0048 591C     		adds	r1, r3, #1
+ 144 004a 6254     		strb	r2, [r4, r1]
+ 145 004c 0233     		adds	r3, r3, #2
+ 146 004e E254     		strb	r2, [r4, r3]
+ 147              	.L15:
+ 148 0050 05EB450C 		add	ip, r5, r5, lsl #1
+ 149 0054 14F80C30 		ldrb	r3, [r4, ip]	@ zero_extendqisi2
+ 150 0058 B342     		cmp	r3, r6
+ 151 005a D9D9     		bls	.L16
+ 152 005c B3FBF6F2 		udiv	r2, r3, r6
+ 153 0060 9B1A     		subs	r3, r3, r2
+ 154 0062 04F80C30 		strb	r3, [r4, ip]
+ 155              	.L17:
+ 156 0066 0CF10102 		add	r2, ip, #1
+ 157 006a A35C     		ldrb	r3, [r4, r2]	@ zero_extendqisi2
+ 158 006c B342     		cmp	r3, r6
+ 159 006e D3D9     		bls	.L18
+ 160 0070 B3FBF6F1 		udiv	r1, r3, r6
+ 161 0074 5B1A     		subs	r3, r3, r1
+ 162 0076 A354     		strb	r3, [r4, r2]
+ 163              	.L19:
+ 164 0078 0CF1020C 		add	ip, ip, #2
+ 165 007c 14F80C30 		ldrb	r3, [r4, ip]	@ zero_extendqisi2
+ 166 0080 B342     		cmp	r3, r6
+ 167 0082 CCD9     		bls	.L20
+ 168 0084 B3FBF6F2 		udiv	r2, r3, r6
+ 169 0088 9B1A     		subs	r3, r3, r2
+ 170 008a 04F80C30 		strb	r3, [r4, ip]
+ 171 008e C9E7     		b	.L21
+ 172              	.L24:
+ 173 0090 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 174              	.L26:
+ 175              		.align	2
+ 176              	.L25:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 4
+
+
+ 177 0094 ABAAAAAA 		.word	-1431655765
+ 179              		.section	.text.visInit,"ax",%progbits
+ 180              		.align	1
+ 181              		.global	visInit
+ 182              		.syntax unified
+ 183              		.thumb
+ 184              		.thumb_func
+ 186              	visInit:
+ 187              		@ args = 0, pretend = 0, frame = 0
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189 0000 08B5     		push	{r3, lr}
+ 190 0002 0B4B     		ldr	r3, .L29
+ 191 0004 0422     		movs	r2, #4
+ 192 0006 1A73     		strb	r2, [r3, #12]
+ 193 0008 0A4A     		ldr	r2, .L29+4
+ 194 000a 1A60     		str	r2, [r3]
+ 195 000c 4FF44072 		mov	r2, #768
+ 196 0010 5A60     		str	r2, [r3, #4]
+ 197 0012 0521     		movs	r1, #5
+ 198 0014 1977     		strb	r1, [r3, #28]
+ 199 0016 0849     		ldr	r1, .L29+8
+ 200 0018 1961     		str	r1, [r3, #16]
+ 201 001a 5A61     		str	r2, [r3, #20]
+ 202 001c 0621     		movs	r1, #6
+ 203 001e 83F82C10 		strb	r1, [r3, #44]
+ 204 0022 0649     		ldr	r1, .L29+12
+ 205 0024 1962     		str	r1, [r3, #32]
+ 206 0026 5A62     		str	r2, [r3, #36]
+ 207 0028 FFF7FEFF 		bl	ws2812b_init
+ 208 002c 08BD     		pop	{r3, pc}
+ 209              	.L30:
+ 210 002e 00BF     		.align	2
+ 211              	.L29:
+ 212 0030 00000000 		.word	ws2812b
+ 213 0034 00000000 		.word	frameBuffer1
+ 214 0038 00000000 		.word	frameBuffer2
+ 215 003c 00000000 		.word	frameBuffer3
+ 217              		.section	.text.visHandle,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	visHandle
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	visHandle:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 08B5     		push	{r3, lr}
+ 228 0002 064B     		ldr	r3, .L35
+ 229 0004 93F83030 		ldrb	r3, [r3, #48]	@ zero_extendqisi2
+ 230 0008 03B9     		cbnz	r3, .L34
+ 231              	.L31:
+ 232 000a 08BD     		pop	{r3, pc}
+ 233              	.L34:
+ 234 000c 034B     		ldr	r3, .L35
+ 235 000e 0122     		movs	r2, #1
+ 236 0010 83F83120 		strb	r2, [r3, #49]
+ 237 0014 FFF7FEFF 		bl	ws2812b_handle
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 5
+
+
+ 238 0018 F7E7     		b	.L31
+ 239              	.L36:
+ 240 001a 00BF     		.align	2
+ 241              	.L35:
+ 242 001c 00000000 		.word	ws2812b
+ 244              		.section	.bss.x.0,"aw",%nobits
+ 247              	x.0:
+ 248 0000 00       		.space	1
+ 249              		.global	frameBuffer3
+ 250              		.section	.bss.frameBuffer3,"aw",%nobits
+ 251              		.align	2
+ 254              	frameBuffer3:
+ 255 0000 00000000 		.space	768
+ 255      00000000 
+ 255      00000000 
+ 255      00000000 
+ 255      00000000 
+ 256              		.global	frameBuffer2
+ 257              		.section	.bss.frameBuffer2,"aw",%nobits
+ 258              		.align	2
+ 261              	frameBuffer2:
+ 262 0000 00000000 		.space	768
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 263              		.global	frameBuffer1
+ 264              		.section	.bss.frameBuffer1,"aw",%nobits
+ 265              		.align	2
+ 268              	frameBuffer1:
+ 269 0000 00000000 		.space	768
+ 269      00000000 
+ 269      00000000 
+ 269      00000000 
+ 269      00000000 
+ 270              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 12.3.1 20230626"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 WS2812B_Effects.c
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:16     .text.Wheel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:22     .text.Wheel:00000000 Wheel
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:54     .text.visRainbow:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:60     .text.visRainbow:00000000 visRainbow
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:98     .text.visRainbow:0000004c $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:247    .bss.x.0:00000000 x.0
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:102    .text.visDots:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:108    .text.visDots:00000000 visDots
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:177    .text.visDots:00000094 $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:180    .text.visInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:186    .text.visInit:00000000 visInit
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:212    .text.visInit:00000030 $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:268    .bss.frameBuffer1:00000000 frameBuffer1
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:261    .bss.frameBuffer2:00000000 frameBuffer2
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:254    .bss.frameBuffer3:00000000 frameBuffer3
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:218    .text.visHandle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:224    .text.visHandle:00000000 visHandle
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:242    .text.visHandle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:248    .bss.x.0:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:251    .bss.frameBuffer3:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:258    .bss.frameBuffer2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqFTKOc.s:265    .bss.frameBuffer1:00000000 $d
+
+UNDEFINED SYMBOLS
+rand
+ws2812b_init
+ws2812b
+ws2812b_handle

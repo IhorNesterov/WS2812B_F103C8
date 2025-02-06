@@ -1,0 +1,471 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_Time.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/NOS_Time.c"
+  18              		.section	.text.NOS_RealTime_Handler,"ax",%progbits
+  19              		.align	1
+  20              		.global	NOS_RealTime_Handler
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	NOS_RealTime_Handler:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/NOS_Time.c **** #include "NOS_Time.h"
+   2:Core/Src/NOS_Time.c **** 
+   3:Core/Src/NOS_Time.c **** void NOS_RealTime_Handler(RealTime *rt)
+   4:Core/Src/NOS_Time.c **** {
+  28              		.loc 1 4 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   5:Core/Src/NOS_Time.c ****     rt->milliseconds++;
+  33              		.loc 1 5 5 view .LVU1
+  34              		.loc 1 5 7 is_stmt 0 view .LVU2
+  35 0000 0368     		ldr	r3, [r0]
+  36              		.loc 1 5 21 view .LVU3
+  37 0002 0133     		adds	r3, r3, #1
+  38 0004 0360     		str	r3, [r0]
+   6:Core/Src/NOS_Time.c ****     if (rt->milliseconds > 999)
+  39              		.loc 1 6 5 is_stmt 1 view .LVU4
+  40              		.loc 1 6 8 is_stmt 0 view .LVU5
+  41 0006 B3F57A7F 		cmp	r3, #1000
+  42 000a 19D3     		bcc	.L1
+   7:Core/Src/NOS_Time.c ****     {
+   8:Core/Src/NOS_Time.c ****         rt->sec++;
+  43              		.loc 1 8 9 is_stmt 1 view .LVU6
+  44              		.loc 1 8 11 is_stmt 0 view .LVU7
+  45 000c 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+  46              		.loc 1 8 16 view .LVU8
+  47 000e 0133     		adds	r3, r3, #1
+  48 0010 DBB2     		uxtb	r3, r3
+  49 0012 8371     		strb	r3, [r0, #6]
+   9:Core/Src/NOS_Time.c ****         if (rt->sec > 59)
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 2
+
+
+  50              		.loc 1 9 9 is_stmt 1 view .LVU9
+  51              		.loc 1 9 12 is_stmt 0 view .LVU10
+  52 0014 3B2B     		cmp	r3, #59
+  53 0016 04D9     		bls	.L3
+  10:Core/Src/NOS_Time.c ****         {
+  11:Core/Src/NOS_Time.c ****             rt->sec = 0;
+  54              		.loc 1 11 13 is_stmt 1 view .LVU11
+  55              		.loc 1 11 21 is_stmt 0 view .LVU12
+  56 0018 0023     		movs	r3, #0
+  57 001a 8371     		strb	r3, [r0, #6]
+  12:Core/Src/NOS_Time.c ****             rt->min++;
+  58              		.loc 1 12 13 is_stmt 1 view .LVU13
+  59              		.loc 1 12 15 is_stmt 0 view .LVU14
+  60 001c 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  61              		.loc 1 12 20 view .LVU15
+  62 001e 0133     		adds	r3, r3, #1
+  63 0020 4371     		strb	r3, [r0, #5]
+  64              	.L3:
+  13:Core/Src/NOS_Time.c ****         }
+  14:Core/Src/NOS_Time.c **** 
+  15:Core/Src/NOS_Time.c ****         if (rt->min > 59)
+  65              		.loc 1 15 9 is_stmt 1 view .LVU16
+  66              		.loc 1 15 15 is_stmt 0 view .LVU17
+  67 0022 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  68              		.loc 1 15 12 view .LVU18
+  69 0024 3B2B     		cmp	r3, #59
+  70 0026 04D9     		bls	.L4
+  16:Core/Src/NOS_Time.c ****         {
+  17:Core/Src/NOS_Time.c ****             rt->min = 0;
+  71              		.loc 1 17 13 is_stmt 1 view .LVU19
+  72              		.loc 1 17 21 is_stmt 0 view .LVU20
+  73 0028 0023     		movs	r3, #0
+  74 002a 4371     		strb	r3, [r0, #5]
+  18:Core/Src/NOS_Time.c ****             rt->hour++;
+  75              		.loc 1 18 13 is_stmt 1 view .LVU21
+  76              		.loc 1 18 15 is_stmt 0 view .LVU22
+  77 002c 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+  78              		.loc 1 18 21 view .LVU23
+  79 002e 0133     		adds	r3, r3, #1
+  80 0030 0371     		strb	r3, [r0, #4]
+  81              	.L4:
+  19:Core/Src/NOS_Time.c ****         }
+  20:Core/Src/NOS_Time.c **** 
+  21:Core/Src/NOS_Time.c ****         if (rt->hour > 23)
+  82              		.loc 1 21 9 is_stmt 1 view .LVU24
+  83              		.loc 1 21 15 is_stmt 0 view .LVU25
+  84 0032 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+  85              		.loc 1 21 12 view .LVU26
+  86 0034 172B     		cmp	r3, #23
+  87 0036 01D9     		bls	.L5
+  22:Core/Src/NOS_Time.c ****         {
+  23:Core/Src/NOS_Time.c ****             rt->hour = 0;
+  88              		.loc 1 23 13 is_stmt 1 view .LVU27
+  89              		.loc 1 23 22 is_stmt 0 view .LVU28
+  90 0038 0023     		movs	r3, #0
+  91 003a 0371     		strb	r3, [r0, #4]
+  92              	.L5:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 3
+
+
+  24:Core/Src/NOS_Time.c ****         }
+  25:Core/Src/NOS_Time.c **** 
+  26:Core/Src/NOS_Time.c ****         rt->milliseconds = 0;
+  93              		.loc 1 26 9 is_stmt 1 view .LVU29
+  94              		.loc 1 26 26 is_stmt 0 view .LVU30
+  95 003c 0023     		movs	r3, #0
+  96 003e 0360     		str	r3, [r0]
+  97              	.L1:
+  27:Core/Src/NOS_Time.c ****     }
+  28:Core/Src/NOS_Time.c **** }
+  98              		.loc 1 28 1 view .LVU31
+  99 0040 7047     		bx	lr
+ 100              		.cfi_endproc
+ 101              	.LFE65:
+ 103              		.section	.text.NOS_RealTime_SetTime,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	NOS_RealTime_SetTime
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 110              	NOS_RealTime_SetTime:
+ 111              	.LVL1:
+ 112              	.LFB66:
+  29:Core/Src/NOS_Time.c **** 
+  30:Core/Src/NOS_Time.c **** void NOS_RealTime_SetTime(RealTime *rt, uint8_t _hour, uint8_t _min, uint8_t _sec, TimeFormat _form
+  31:Core/Src/NOS_Time.c **** {
+ 113              		.loc 1 31 1 is_stmt 1 view -0
+ 114              		.cfi_startproc
+ 115              		@ args = 4, pretend = 0, frame = 0
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117              		@ link register save eliminated.
+  32:Core/Src/NOS_Time.c ****     if (_hour < 24 && _min < 60 && _sec < 60)
+ 118              		.loc 1 32 5 view .LVU33
+ 119              		.loc 1 32 8 is_stmt 0 view .LVU34
+ 120 0000 1729     		cmp	r1, #23
+ 121 0002 09D8     		bhi	.L6
+ 122              		.loc 1 32 20 discriminator 1 view .LVU35
+ 123 0004 3B2A     		cmp	r2, #59
+ 124 0006 07D8     		bhi	.L6
+ 125              		.loc 1 32 33 discriminator 2 view .LVU36
+ 126 0008 3B2B     		cmp	r3, #59
+ 127 000a 05D8     		bhi	.L6
+  33:Core/Src/NOS_Time.c ****     {
+  34:Core/Src/NOS_Time.c ****         rt->hour = _hour;
+ 128              		.loc 1 34 9 is_stmt 1 view .LVU37
+ 129              		.loc 1 34 18 is_stmt 0 view .LVU38
+ 130 000c 0171     		strb	r1, [r0, #4]
+  35:Core/Src/NOS_Time.c ****         rt->min = _min;
+ 131              		.loc 1 35 9 is_stmt 1 view .LVU39
+ 132              		.loc 1 35 17 is_stmt 0 view .LVU40
+ 133 000e 4271     		strb	r2, [r0, #5]
+  36:Core/Src/NOS_Time.c ****         rt->sec = _sec;
+ 134              		.loc 1 36 9 is_stmt 1 view .LVU41
+ 135              		.loc 1 36 17 is_stmt 0 view .LVU42
+ 136 0010 8371     		strb	r3, [r0, #6]
+  37:Core/Src/NOS_Time.c ****         rt->format = _format;
+ 137              		.loc 1 37 9 is_stmt 1 view .LVU43
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 4
+
+
+ 138              		.loc 1 37 20 is_stmt 0 view .LVU44
+ 139 0012 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 140              	.LVL2:
+ 141              		.loc 1 37 20 view .LVU45
+ 142 0016 C371     		strb	r3, [r0, #7]
+ 143              	.LVL3:
+ 144              	.L6:
+  38:Core/Src/NOS_Time.c ****     }
+  39:Core/Src/NOS_Time.c **** }
+ 145              		.loc 1 39 1 view .LVU46
+ 146 0018 7047     		bx	lr
+ 147              		.cfi_endproc
+ 148              	.LFE66:
+ 150              		.section	.text.NOS_TimeEvent_Init,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	NOS_TimeEvent_Init
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 157              	NOS_TimeEvent_Init:
+ 158              	.LVL4:
+ 159              	.LFB67:
+  40:Core/Src/NOS_Time.c **** 
+  41:Core/Src/NOS_Time.c **** void NOS_TimeEvent_Init(NOS_TimeEvent *timeEvent, uint32_t ticksToEnable)
+  42:Core/Src/NOS_Time.c **** {
+ 160              		.loc 1 42 1 is_stmt 1 view -0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+  43:Core/Src/NOS_Time.c ****     if (timeEvent != NULL)
+ 165              		.loc 1 43 5 view .LVU48
+ 166              		.loc 1 43 8 is_stmt 0 view .LVU49
+ 167 0000 20B1     		cbz	r0, .L8
+  44:Core/Src/NOS_Time.c ****     {
+  45:Core/Src/NOS_Time.c ****         timeEvent->enabled = false;
+ 168              		.loc 1 45 9 is_stmt 1 view .LVU50
+ 169              		.loc 1 45 28 is_stmt 0 view .LVU51
+ 170 0002 0022     		movs	r2, #0
+ 171 0004 4271     		strb	r2, [r0, #5]
+  46:Core/Src/NOS_Time.c ****         timeEvent->stopped = false;
+ 172              		.loc 1 46 9 is_stmt 1 view .LVU52
+ 173              		.loc 1 46 28 is_stmt 0 view .LVU53
+ 174 0006 0271     		strb	r2, [r0, #4]
+  47:Core/Src/NOS_Time.c ****         timeEvent->ticksToEnable = ticksToEnable;
+ 175              		.loc 1 47 9 is_stmt 1 view .LVU54
+ 176              		.loc 1 47 34 is_stmt 0 view .LVU55
+ 177 0008 0160     		str	r1, [r0]
+  48:Core/Src/NOS_Time.c ****         timeEvent->ticks = 0;
+ 178              		.loc 1 48 9 is_stmt 1 view .LVU56
+ 179              		.loc 1 48 26 is_stmt 0 view .LVU57
+ 180 000a 8260     		str	r2, [r0, #8]
+ 181              	.L8:
+  49:Core/Src/NOS_Time.c ****     }
+  50:Core/Src/NOS_Time.c **** }
+ 182              		.loc 1 50 1 view .LVU58
+ 183 000c 7047     		bx	lr
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 5
+
+
+ 184              		.cfi_endproc
+ 185              	.LFE67:
+ 187              		.section	.text.NOS_TimeEvent_Stop,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	NOS_TimeEvent_Stop
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 194              	NOS_TimeEvent_Stop:
+ 195              	.LVL5:
+ 196              	.LFB68:
+  51:Core/Src/NOS_Time.c **** 
+  52:Core/Src/NOS_Time.c **** void NOS_TimeEvent_Stop(NOS_TimeEvent *timeEvent)
+  53:Core/Src/NOS_Time.c **** {
+ 197              		.loc 1 53 1 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+  54:Core/Src/NOS_Time.c ****     timeEvent->stopped = true;
+ 202              		.loc 1 54 5 view .LVU60
+ 203              		.loc 1 54 24 is_stmt 0 view .LVU61
+ 204 0000 0123     		movs	r3, #1
+ 205 0002 0371     		strb	r3, [r0, #4]
+  55:Core/Src/NOS_Time.c ****     timeEvent->ticks = 0;
+ 206              		.loc 1 55 5 is_stmt 1 view .LVU62
+ 207              		.loc 1 55 22 is_stmt 0 view .LVU63
+ 208 0004 0023     		movs	r3, #0
+ 209 0006 8360     		str	r3, [r0, #8]
+  56:Core/Src/NOS_Time.c **** }
+ 210              		.loc 1 56 1 view .LVU64
+ 211 0008 7047     		bx	lr
+ 212              		.cfi_endproc
+ 213              	.LFE68:
+ 215              		.section	.text.NOS_TimeEvent_Resume,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	NOS_TimeEvent_Resume
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 222              	NOS_TimeEvent_Resume:
+ 223              	.LVL6:
+ 224              	.LFB69:
+  57:Core/Src/NOS_Time.c **** 
+  58:Core/Src/NOS_Time.c **** void NOS_TimeEvent_Resume(NOS_TimeEvent *timeEvent)
+  59:Core/Src/NOS_Time.c **** {
+ 225              		.loc 1 59 1 is_stmt 1 view -0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+  60:Core/Src/NOS_Time.c ****     timeEvent->stopped = false;
+ 230              		.loc 1 60 5 view .LVU66
+ 231              		.loc 1 60 24 is_stmt 0 view .LVU67
+ 232 0000 0023     		movs	r3, #0
+ 233 0002 0371     		strb	r3, [r0, #4]
+  61:Core/Src/NOS_Time.c ****     timeEvent->ticks = 0;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 6
+
+
+ 234              		.loc 1 61 5 is_stmt 1 view .LVU68
+ 235              		.loc 1 61 22 is_stmt 0 view .LVU69
+ 236 0004 8360     		str	r3, [r0, #8]
+  62:Core/Src/NOS_Time.c **** }
+ 237              		.loc 1 62 1 view .LVU70
+ 238 0006 7047     		bx	lr
+ 239              		.cfi_endproc
+ 240              	.LFE69:
+ 242              		.section	.text.NOS_TimeEvent_TickHandler,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	NOS_TimeEvent_TickHandler
+ 245              		.syntax unified
+ 246              		.thumb
+ 247              		.thumb_func
+ 249              	NOS_TimeEvent_TickHandler:
+ 250              	.LVL7:
+ 251              	.LFB70:
+  63:Core/Src/NOS_Time.c **** 
+  64:Core/Src/NOS_Time.c **** void NOS_TimeEvent_TickHandler(NOS_TimeEvent *timeEvent)
+  65:Core/Src/NOS_Time.c **** {
+ 252              		.loc 1 65 1 is_stmt 1 view -0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+  66:Core/Src/NOS_Time.c ****     timeEvent->ticks++;
+ 257              		.loc 1 66 5 view .LVU72
+ 258              		.loc 1 66 14 is_stmt 0 view .LVU73
+ 259 0000 8368     		ldr	r3, [r0, #8]
+ 260              		.loc 1 66 21 view .LVU74
+ 261 0002 0133     		adds	r3, r3, #1
+ 262 0004 8360     		str	r3, [r0, #8]
+  67:Core/Src/NOS_Time.c ****     if (!timeEvent->stopped)
+ 263              		.loc 1 67 5 is_stmt 1 view .LVU75
+ 264              		.loc 1 67 19 is_stmt 0 view .LVU76
+ 265 0006 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ 266              		.loc 1 67 8 view .LVU77
+ 267 0008 22B9     		cbnz	r2, .L12
+  68:Core/Src/NOS_Time.c ****     {
+  69:Core/Src/NOS_Time.c ****         if (timeEvent->ticks >= timeEvent->ticksToEnable)
+ 268              		.loc 1 69 9 is_stmt 1 view .LVU78
+ 269              		.loc 1 69 42 is_stmt 0 view .LVU79
+ 270 000a 0268     		ldr	r2, [r0]
+ 271              		.loc 1 69 12 view .LVU80
+ 272 000c 9342     		cmp	r3, r2
+ 273 000e 01D3     		bcc	.L12
+  70:Core/Src/NOS_Time.c ****         {
+  71:Core/Src/NOS_Time.c ****             timeEvent->enabled = true;
+ 274              		.loc 1 71 13 is_stmt 1 view .LVU81
+ 275              		.loc 1 71 32 is_stmt 0 view .LVU82
+ 276 0010 0123     		movs	r3, #1
+ 277 0012 4371     		strb	r3, [r0, #5]
+ 278              	.L12:
+  72:Core/Src/NOS_Time.c ****         }
+  73:Core/Src/NOS_Time.c ****     }
+  74:Core/Src/NOS_Time.c **** }
+ 279              		.loc 1 74 1 view .LVU83
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 7
+
+
+ 280 0014 7047     		bx	lr
+ 281              		.cfi_endproc
+ 282              	.LFE70:
+ 284              		.section	.text.NOS_TimeEvent_Check,"ax",%progbits
+ 285              		.align	1
+ 286              		.global	NOS_TimeEvent_Check
+ 287              		.syntax unified
+ 288              		.thumb
+ 289              		.thumb_func
+ 291              	NOS_TimeEvent_Check:
+ 292              	.LVL8:
+ 293              	.LFB71:
+  75:Core/Src/NOS_Time.c **** 
+  76:Core/Src/NOS_Time.c **** bool NOS_TimeEvent_Check(NOS_TimeEvent *timeEvent)
+  77:Core/Src/NOS_Time.c **** {
+ 294              		.loc 1 77 1 is_stmt 1 view -0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299              		.loc 1 77 1 is_stmt 0 view .LVU85
+ 300 0000 0346     		mov	r3, r0
+  78:Core/Src/NOS_Time.c ****     if (timeEvent->enabled && !timeEvent->stopped)
+ 301              		.loc 1 78 5 is_stmt 1 view .LVU86
+ 302              		.loc 1 78 18 is_stmt 0 view .LVU87
+ 303 0002 4079     		ldrb	r0, [r0, #5]	@ zero_extendqisi2
+ 304              	.LVL9:
+ 305              		.loc 1 78 8 view .LVU88
+ 306 0004 10B1     		cbz	r0, .L15
+ 307              		.loc 1 78 41 discriminator 1 view .LVU89
+ 308 0006 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 309              	.LVL10:
+ 310              		.loc 1 78 28 discriminator 1 view .LVU90
+ 311 0008 03B1     		cbz	r3, .L15
+  79:Core/Src/NOS_Time.c ****     {
+  80:Core/Src/NOS_Time.c ****         return true;
+  81:Core/Src/NOS_Time.c ****     }
+  82:Core/Src/NOS_Time.c ****     return false;
+ 312              		.loc 1 82 12 view .LVU91
+ 313 000a 0020     		movs	r0, #0
+ 314              	.L15:
+  83:Core/Src/NOS_Time.c **** }
+ 315              		.loc 1 83 1 view .LVU92
+ 316 000c 7047     		bx	lr
+ 317              		.cfi_endproc
+ 318              	.LFE71:
+ 320              		.section	.text.NOS_TimeEvent_FinishEvent,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	NOS_TimeEvent_FinishEvent
+ 323              		.syntax unified
+ 324              		.thumb
+ 325              		.thumb_func
+ 327              	NOS_TimeEvent_FinishEvent:
+ 328              	.LVL11:
+ 329              	.LFB72:
+  84:Core/Src/NOS_Time.c **** 
+  85:Core/Src/NOS_Time.c **** void NOS_TimeEvent_FinishEvent(NOS_TimeEvent *timeEvent)
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 8
+
+
+  86:Core/Src/NOS_Time.c **** {
+ 330              		.loc 1 86 1 is_stmt 1 view -0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+  87:Core/Src/NOS_Time.c ****     timeEvent->enabled = false;
+ 335              		.loc 1 87 5 view .LVU94
+ 336              		.loc 1 87 24 is_stmt 0 view .LVU95
+ 337 0000 0023     		movs	r3, #0
+ 338 0002 4371     		strb	r3, [r0, #5]
+  88:Core/Src/NOS_Time.c ****     timeEvent->ticks = 0;
+ 339              		.loc 1 88 5 is_stmt 1 view .LVU96
+ 340              		.loc 1 88 22 is_stmt 0 view .LVU97
+ 341 0004 8360     		str	r3, [r0, #8]
+  89:Core/Src/NOS_Time.c **** }...
+ 342              		.loc 1 89 1 view .LVU98
+ 343 0006 7047     		bx	lr
+ 344              		.cfi_endproc
+ 345              	.LFE72:
+ 347              		.text
+ 348              	.Letext0:
+ 349              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 350              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 351              		.file 4 "Core/Inc/NOS_Typedefs.h"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_Time.c
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:19     .text.NOS_RealTime_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:25     .text.NOS_RealTime_Handler:00000000 NOS_RealTime_Handler
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:104    .text.NOS_RealTime_SetTime:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:110    .text.NOS_RealTime_SetTime:00000000 NOS_RealTime_SetTime
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:151    .text.NOS_TimeEvent_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:157    .text.NOS_TimeEvent_Init:00000000 NOS_TimeEvent_Init
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:188    .text.NOS_TimeEvent_Stop:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:194    .text.NOS_TimeEvent_Stop:00000000 NOS_TimeEvent_Stop
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:216    .text.NOS_TimeEvent_Resume:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:222    .text.NOS_TimeEvent_Resume:00000000 NOS_TimeEvent_Resume
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:243    .text.NOS_TimeEvent_TickHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:249    .text.NOS_TimeEvent_TickHandler:00000000 NOS_TimeEvent_TickHandler
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:285    .text.NOS_TimeEvent_Check:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:291    .text.NOS_TimeEvent_Check:00000000 NOS_TimeEvent_Check
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:321    .text.NOS_TimeEvent_FinishEvent:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccvCIn8m.s:327    .text.NOS_TimeEvent_FinishEvent:00000000 NOS_TimeEvent_FinishEvent
+
+NO UNDEFINED SYMBOLS

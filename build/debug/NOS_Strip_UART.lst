@@ -1,0 +1,728 @@
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOS_Strip_UART.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/NOS_Strip_UART.c"
+  18              		.section	.text.NOS_Strip_UART_ParseCommand,"ax",%progbits
+  19              		.align	1
+  20              		.global	NOS_Strip_UART_ParseCommand
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	NOS_Strip_UART_ParseCommand:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/NOS_Strip_UART.c **** #include "NOS_Strip_UART.h"
+   2:Core/Src/NOS_Strip_UART.c **** #include "NOS_WS2812B_Strip.h"
+   3:Core/Src/NOS_Strip_UART.c **** 
+   4:Core/Src/NOS_Strip_UART.c **** /*
+   5:Core/Src/NOS_Strip_UART.c **** const char* NOS_Strip_Uart_ParseCommand(WS2812B_Strip* strip,uint8_t* command)
+   6:Core/Src/NOS_Strip_UART.c **** {
+   7:Core/Src/NOS_Strip_UART.c ****     NOS_Short tempShort;
+   8:Core/Src/NOS_Strip_UART.c ****     int currPos = 4;
+   9:Core/Src/NOS_Strip_UART.c ****     int tempInt1,tempInt2;
+  10:Core/Src/NOS_Strip_UART.c ****     uint8_t r,g,b;
+  11:Core/Src/NOS_Strip_UART.c **** 
+  12:Core/Src/NOS_Strip_UART.c ****     if(command != NULL)
+  13:Core/Src/NOS_Strip_UART.c ****     {
+  14:Core/Src/NOS_Strip_UART.c ****             switch (command[3])
+  15:Core/Src/NOS_Strip_UART.c ****             {
+  16:Core/Src/NOS_Strip_UART.c ****             case CHECK_CONNECTION:
+  17:Core/Src/NOS_Strip_UART.c ****                 return "ready!";
+  18:Core/Src/NOS_Strip_UART.c ****             
+  19:Core/Src/NOS_Strip_UART.c ****             case SET_ONE_PIXEL_COLOR_COMMAND:
+  20:Core/Src/NOS_Strip_UART.c **** 
+  21:Core/Src/NOS_Strip_UART.c ****                 //pixelPos 
+  22:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[4];
+  23:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[5];
+  24:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
+  25:Core/Src/NOS_Strip_UART.c **** 
+  26:Core/Src/NOS_Strip_UART.c ****                 //color
+  27:Core/Src/NOS_Strip_UART.c ****                 r = command[6];
+  28:Core/Src/NOS_Strip_UART.c ****                 g = command[7];
+  29:Core/Src/NOS_Strip_UART.c ****                 b = command[8];
+  30:Core/Src/NOS_Strip_UART.c **** 
+  31:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_SetPixel(strip,tempInt1,r,g,b);
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 2
+
+
+  32:Core/Src/NOS_Strip_UART.c ****                 break;
+  33:Core/Src/NOS_Strip_UART.c **** 
+  34:Core/Src/NOS_Strip_UART.c ****             case SET_ROW_PIXEL_COLOR_COMMAND:
+  35:Core/Src/NOS_Strip_UART.c **** 
+  36:Core/Src/NOS_Strip_UART.c ****                 //pixelPos
+  37:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+  38:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+  39:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
+  40:Core/Src/NOS_Strip_UART.c **** 
+  41:Core/Src/NOS_Strip_UART.c ****                 //pixelCount
+  42:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+  43:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+  44:Core/Src/NOS_Strip_UART.c ****                 tempInt2 = tempShort.data;
+  45:Core/Src/NOS_Strip_UART.c **** 
+  46:Core/Src/NOS_Strip_UART.c ****                 //color
+  47:Core/Src/NOS_Strip_UART.c ****                 r = command[currPos++];
+  48:Core/Src/NOS_Strip_UART.c ****                 g = command[currPos++];
+  49:Core/Src/NOS_Strip_UART.c ****                 b = command[currPos++];
+  50:Core/Src/NOS_Strip_UART.c **** 
+  51:Core/Src/NOS_Strip_UART.c ****                 //fill in row
+  52:Core/Src/NOS_Strip_UART.c ****                 for(int i = tempInt1; i < tempInt2; i++)
+  53:Core/Src/NOS_Strip_UART.c ****                 {
+  54:Core/Src/NOS_Strip_UART.c ****                     NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+  55:Core/Src/NOS_Strip_UART.c ****                 }
+  56:Core/Src/NOS_Strip_UART.c **** 
+  57:Core/Src/NOS_Strip_UART.c ****                 break;
+  58:Core/Src/NOS_Strip_UART.c **** 
+  59:Core/Src/NOS_Strip_UART.c ****             case SET_ALL_PIXEL_ONE_COLOR_COMMAND:
+  60:Core/Src/NOS_Strip_UART.c **** 
+  61:Core/Src/NOS_Strip_UART.c ****                 //color
+  62:Core/Src/NOS_Strip_UART.c ****                 r = command[currPos++];
+  63:Core/Src/NOS_Strip_UART.c ****                 g = command[currPos++];
+  64:Core/Src/NOS_Strip_UART.c ****                 b = command[currPos++];
+  65:Core/Src/NOS_Strip_UART.c **** 
+  66:Core/Src/NOS_Strip_UART.c ****                 //fill all pixels
+  67:Core/Src/NOS_Strip_UART.c ****                 for(int i = 0; i < strip->pixelCount; i++)
+  68:Core/Src/NOS_Strip_UART.c ****                 {
+  69:Core/Src/NOS_Strip_UART.c ****                     NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+  70:Core/Src/NOS_Strip_UART.c ****                 }
+  71:Core/Src/NOS_Strip_UART.c **** 
+  72:Core/Src/NOS_Strip_UART.c ****                 break;
+  73:Core/Src/NOS_Strip_UART.c **** 
+  74:Core/Src/NOS_Strip_UART.c ****             case SET_BRIGHT_COMMAND:
+  75:Core/Src/NOS_Strip_UART.c **** 
+  76:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_SetBright(strip,command[currPos++]);
+  77:Core/Src/NOS_Strip_UART.c **** 
+  78:Core/Src/NOS_Strip_UART.c ****                 break;
+  79:Core/Src/NOS_Strip_UART.c **** 
+  80:Core/Src/NOS_Strip_UART.c ****             case SET_ALL_PIXEL_COMMAND:
+  81:Core/Src/NOS_Strip_UART.c **** 
+  82:Core/Src/NOS_Strip_UART.c ****                 strip->bright = 100;
+  83:Core/Src/NOS_Strip_UART.c ****                 strip->effects[0].enabled = false;
+  84:Core/Src/NOS_Strip_UART.c ****                 strip->effects[1].enabled = false;
+  85:Core/Src/NOS_Strip_UART.c ****                 //Pixel count
+  86:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+  87:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+  88:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 3
+
+
+  89:Core/Src/NOS_Strip_UART.c **** 
+  90:Core/Src/NOS_Strip_UART.c ****                 if(tempInt1 <= strip->pixelCount)
+  91:Core/Src/NOS_Strip_UART.c ****                 {
+  92:Core/Src/NOS_Strip_UART.c ****                     for(int i = 0; i < tempInt1; i++)
+  93:Core/Src/NOS_Strip_UART.c ****                     {
+  94:Core/Src/NOS_Strip_UART.c ****                         r = command[currPos++];
+  95:Core/Src/NOS_Strip_UART.c ****                         g = command[currPos++];
+  96:Core/Src/NOS_Strip_UART.c ****                         b = command[currPos++];
+  97:Core/Src/NOS_Strip_UART.c **** 
+  98:Core/Src/NOS_Strip_UART.c ****                         NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+  99:Core/Src/NOS_Strip_UART.c ****                     }
+ 100:Core/Src/NOS_Strip_UART.c ****                 }
+ 101:Core/Src/NOS_Strip_UART.c **** 
+ 102:Core/Src/NOS_Strip_UART.c ****             case SET_BREATHE_EFFECT_COMMAND:
+ 103:Core/Src/NOS_Strip_UART.c **** 
+ 104:Core/Src/NOS_Strip_UART.c ****                 uint8_t pos = command[currPos++];
+ 105:Core/Src/NOS_Strip_UART.c **** 
+ 106:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 107:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 108:Core/Src/NOS_Strip_UART.c ****                 uint16_t speed = tempShort.data;
+ 109:Core/Src/NOS_Strip_UART.c **** 
+ 110:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 111:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 112:Core/Src/NOS_Strip_UART.c ****                 uint16_t step = tempShort.data;
+ 113:Core/Src/NOS_Strip_UART.c **** 
+ 114:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 115:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 116:Core/Src/NOS_Strip_UART.c ****                 uint16_t min = tempShort.data;
+ 117:Core/Src/NOS_Strip_UART.c **** 
+ 118:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 119:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 120:Core/Src/NOS_Strip_UART.c ****                 uint16_t max = tempShort.data;
+ 121:Core/Src/NOS_Strip_UART.c **** 
+ 122:Core/Src/NOS_Strip_UART.c ****                 Effect_Struct tempEffect = {0};
+ 123:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_BREATHE_ID;
+ 124:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_Effect_Breathe_Init(&tempEffect,speed,step,min,max);
+ 125:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 126:Core/Src/NOS_Strip_UART.c **** 
+ 127:Core/Src/NOS_Strip_UART.c ****                 break;
+ 128:Core/Src/NOS_Strip_UART.c **** 
+ 129:Core/Src/NOS_Strip_UART.c ****                 case SET_RAINBOW_EFFECT_COMMAND:
+ 130:Core/Src/NOS_Strip_UART.c **** 
+ 131:Core/Src/NOS_Strip_UART.c ****                 pos = command[currPos++];
+ 132:Core/Src/NOS_Strip_UART.c **** 
+ 133:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 134:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 135:Core/Src/NOS_Strip_UART.c ****                 speed = tempShort.data;
+ 136:Core/Src/NOS_Strip_UART.c **** 
+ 137:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 138:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 139:Core/Src/NOS_Strip_UART.c ****                 step = tempShort.data;
+ 140:Core/Src/NOS_Strip_UART.c **** 
+ 141:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ 142:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 143:Core/Src/NOS_Strip_UART.c ****                 min = tempShort.data;
+ 144:Core/Src/NOS_Strip_UART.c **** 
+ 145:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 4
+
+
+ 146:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
+ 147:Core/Src/NOS_Strip_UART.c ****                 max = tempShort.data;
+ 148:Core/Src/NOS_Strip_UART.c **** 
+ 149:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_RAINBOW_ID;
+ 150:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_Effect_Rainbow_Init(&tempEffect,speed,step,min,max);
+ 151:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 152:Core/Src/NOS_Strip_UART.c **** 
+ 153:Core/Src/NOS_Strip_UART.c ****                 break;
+ 154:Core/Src/NOS_Strip_UART.c **** 
+ 155:Core/Src/NOS_Strip_UART.c ****                 case SET_EFFECT_ACTIVE:
+ 156:Core/Src/NOS_Strip_UART.c **** 
+ 157:Core/Src/NOS_Strip_UART.c ****                 pos = command[currPos++];
+ 158:Core/Src/NOS_Strip_UART.c **** 
+ 159:Core/Src/NOS_Strip_UART.c ****                 uint8_t state = command[currPos++];
+ 160:Core/Src/NOS_Strip_UART.c **** 
+ 161:Core/Src/NOS_Strip_UART.c ****                 if(state == 0xFF)
+ 162:Core/Src/NOS_Strip_UART.c ****                 {
+ 163:Core/Src/NOS_Strip_UART.c ****                     strip->effects[pos].enabled = true;
+ 164:Core/Src/NOS_Strip_UART.c ****                 }
+ 165:Core/Src/NOS_Strip_UART.c ****                 else
+ 166:Core/Src/NOS_Strip_UART.c ****                 {
+ 167:Core/Src/NOS_Strip_UART.c ****                     strip->effects[pos].enabled = false;
+ 168:Core/Src/NOS_Strip_UART.c ****                 }
+ 169:Core/Src/NOS_Strip_UART.c **** 
+ 170:Core/Src/NOS_Strip_UART.c ****                 break;
+ 171:Core/Src/NOS_Strip_UART.c ****                       
+ 172:Core/Src/NOS_Strip_UART.c ****             default:
+ 173:Core/Src/NOS_Strip_UART.c ****                 return false;
+ 174:Core/Src/NOS_Strip_UART.c ****                 break;
+ 175:Core/Src/NOS_Strip_UART.c ****             }
+ 176:Core/Src/NOS_Strip_UART.c **** 
+ 177:Core/Src/NOS_Strip_UART.c **** 
+ 178:Core/Src/NOS_Strip_UART.c ****         }
+ 179:Core/Src/NOS_Strip_UART.c **** }
+ 180:Core/Src/NOS_Strip_UART.c **** */
+ 181:Core/Src/NOS_Strip_UART.c **** 
+ 182:Core/Src/NOS_Strip_UART.c **** bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
+ 183:Core/Src/NOS_Strip_UART.c **** {
+  28              		.loc 1 183 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 32
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 183 1 is_stmt 0 view .LVU1
+  33 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  34              		.cfi_def_cfa_offset 36
+  35              		.cfi_offset 4, -36
+  36              		.cfi_offset 5, -32
+  37              		.cfi_offset 6, -28
+  38              		.cfi_offset 7, -24
+  39              		.cfi_offset 8, -20
+  40              		.cfi_offset 9, -16
+  41              		.cfi_offset 10, -12
+  42              		.cfi_offset 11, -8
+  43              		.cfi_offset 14, -4
+  44 0004 8FB0     		sub	sp, sp, #60
+  45              		.cfi_def_cfa_offset 96
+  46 0006 0546     		mov	r5, r0
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 5
+
+
+  47 0008 0C46     		mov	r4, r1
+ 184:Core/Src/NOS_Strip_UART.c ****     int currPos = 0;
+  48              		.loc 1 184 5 is_stmt 1 view .LVU2
+  49              	.LVL1:
+ 185:Core/Src/NOS_Strip_UART.c ****     NOS_Short tempShort;
+  50              		.loc 1 185 5 view .LVU3
+ 186:Core/Src/NOS_Strip_UART.c ****     
+ 187:Core/Src/NOS_Strip_UART.c ****     switch (message->command.data)
+  51              		.loc 1 187 5 view .LVU4
+  52              		.loc 1 187 29 is_stmt 0 view .LVU5
+  53 000a CB68     		ldr	r3, [r1, #12]
+  54              		.loc 1 187 5 view .LVU6
+  55 000c 502B     		cmp	r3, #80
+  56 000e 03D0     		beq	.L2
+  57 0010 512B     		cmp	r3, #81
+  58 0012 50D0     		beq	.L3
+  59              	.LBB2:
+ 188:Core/Src/NOS_Strip_UART.c ****     {
+ 189:Core/Src/NOS_Strip_UART.c ****     case SET_BREATHE_EFFECT_COMMAND:
+ 190:Core/Src/NOS_Strip_UART.c **** 
+ 191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 192:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 193:Core/Src/NOS_Strip_UART.c ****             uint16_t pos = tempShort.data;
+ 194:Core/Src/NOS_Strip_UART.c **** 
+ 195:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 196:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 197:Core/Src/NOS_Strip_UART.c ****             uint16_t speed = tempShort.data;
+ 198:Core/Src/NOS_Strip_UART.c **** 
+ 199:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 200:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 201:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
+ 202:Core/Src/NOS_Strip_UART.c **** 
+ 203:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 204:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 205:Core/Src/NOS_Strip_UART.c ****             uint16_t min = tempShort.data;
+ 206:Core/Src/NOS_Strip_UART.c **** 
+ 207:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 208:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 209:Core/Src/NOS_Strip_UART.c ****             uint16_t max = tempShort.data;
+ 210:Core/Src/NOS_Strip_UART.c **** 
+ 211:Core/Src/NOS_Strip_UART.c ****             Effect_Struct tempEffect = {0};
+ 212:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
+ 213:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Breathe_Init(&tempEffect,speed,step,min,max);
+ 214:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 215:Core/Src/NOS_Strip_UART.c ****         return true;       
+ 216:Core/Src/NOS_Strip_UART.c ****         break;
+ 217:Core/Src/NOS_Strip_UART.c ****     
+ 218:Core/Src/NOS_Strip_UART.c ****         case SET_RAINBOW_EFFECT_COMMAND:
+ 219:Core/Src/NOS_Strip_UART.c **** 
+ 220:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 221:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 222:Core/Src/NOS_Strip_UART.c ****             pos = tempShort.data;
+ 223:Core/Src/NOS_Strip_UART.c **** 
+ 224:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 225:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 226:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
+ 227:Core/Src/NOS_Strip_UART.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 6
+
+
+ 228:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 229:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 230:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
+ 231:Core/Src/NOS_Strip_UART.c **** 
+ 232:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 233:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 234:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
+ 235:Core/Src/NOS_Strip_UART.c **** 
+ 236:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 237:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 238:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
+ 239:Core/Src/NOS_Strip_UART.c **** 
+ 240:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_RAINBOW_ID;
+ 241:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Rainbow_Init(&tempEffect,speed,step,min,max);
+ 242:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 243:Core/Src/NOS_Strip_UART.c ****             return true;
+ 244:Core/Src/NOS_Strip_UART.c ****             break;
+  60              		.loc 1 244 13 is_stmt 1 view .LVU7
+ 245:Core/Src/NOS_Strip_UART.c **** 
+ 246:Core/Src/NOS_Strip_UART.c ****     default:
+ 247:Core/Src/NOS_Strip_UART.c **** 
+ 248:Core/Src/NOS_Strip_UART.c ****         break;
+  61              		.loc 1 248 9 view .LVU8
+  62              	.LBE2:
+ 249:Core/Src/NOS_Strip_UART.c ****     }
+ 250:Core/Src/NOS_Strip_UART.c **** 
+ 251:Core/Src/NOS_Strip_UART.c ****     return false;
+  63              		.loc 1 251 5 view .LVU9
+  64              		.loc 1 251 12 is_stmt 0 view .LVU10
+  65 0014 0020     		movs	r0, #0
+  66              	.LVL2:
+  67              		.loc 1 251 12 view .LVU11
+  68 0016 4BE0     		b	.L6
+  69              	.LVL3:
+  70              	.L2:
+  71              	.LBB3:
+ 191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  72              		.loc 1 191 13 is_stmt 1 view .LVU12
+ 191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  73              		.loc 1 191 47 is_stmt 0 view .LVU13
+  74 0018 0B7C     		ldrb	r3, [r1, #16]	@ zero_extendqisi2
+ 191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  75              		.loc 1 191 32 view .LVU14
+  76 001a 4FF0000C 		mov	ip, #0	@ movhi
+  77              	.LVL4:
+ 191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  78              		.loc 1 191 32 view .LVU15
+  79 001e 63F30F2C 		bfi	ip, r3, #8, #8
+  80              	.LVL5:
+ 192:Core/Src/NOS_Strip_UART.c ****             uint16_t pos = tempShort.data;
+  81              		.loc 1 192 13 is_stmt 1 view .LVU16
+ 192:Core/Src/NOS_Strip_UART.c ****             uint16_t pos = tempShort.data;
+  82              		.loc 1 192 47 is_stmt 0 view .LVU17
+  83 0022 4B7C     		ldrb	r3, [r1, #17]	@ zero_extendqisi2
+ 192:Core/Src/NOS_Strip_UART.c ****             uint16_t pos = tempShort.data;
+  84              		.loc 1 192 32 view .LVU18
+  85 0024 63F3070C 		bfi	ip, r3, #0, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 7
+
+
+ 193:Core/Src/NOS_Strip_UART.c **** 
+  86              		.loc 1 193 13 is_stmt 1 view .LVU19
+ 193:Core/Src/NOS_Strip_UART.c **** 
+  87              		.loc 1 193 22 is_stmt 0 view .LVU20
+  88 0028 1FFA8CF7 		uxth	r7, ip
+  89              	.LVL6:
+ 195:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  90              		.loc 1 195 13 is_stmt 1 view .LVU21
+ 195:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  91              		.loc 1 195 47 is_stmt 0 view .LVU22
+  92 002c 8B7C     		ldrb	r3, [r1, #18]	@ zero_extendqisi2
+ 195:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+  93              		.loc 1 195 32 view .LVU23
+  94 002e 63F30F2C 		bfi	ip, r3, #8, #8
+  95              	.LVL7:
+ 196:Core/Src/NOS_Strip_UART.c ****             uint16_t speed = tempShort.data;
+  96              		.loc 1 196 13 is_stmt 1 view .LVU24
+ 196:Core/Src/NOS_Strip_UART.c ****             uint16_t speed = tempShort.data;
+  97              		.loc 1 196 47 is_stmt 0 view .LVU25
+  98 0032 CB7C     		ldrb	r3, [r1, #19]	@ zero_extendqisi2
+ 196:Core/Src/NOS_Strip_UART.c ****             uint16_t speed = tempShort.data;
+  99              		.loc 1 196 32 view .LVU26
+ 100 0034 63F3070C 		bfi	ip, r3, #0, #8
+ 197:Core/Src/NOS_Strip_UART.c **** 
+ 101              		.loc 1 197 13 is_stmt 1 view .LVU27
+ 197:Core/Src/NOS_Strip_UART.c **** 
+ 102              		.loc 1 197 22 is_stmt 0 view .LVU28
+ 103 0038 1FFA8CF8 		uxth	r8, ip
+ 104              	.LVL8:
+ 199:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 105              		.loc 1 199 13 is_stmt 1 view .LVU29
+ 199:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 106              		.loc 1 199 47 is_stmt 0 view .LVU30
+ 107 003c 0B7D     		ldrb	r3, [r1, #20]	@ zero_extendqisi2
+ 199:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 108              		.loc 1 199 32 view .LVU31
+ 109 003e 63F30F2C 		bfi	ip, r3, #8, #8
+ 110              	.LVL9:
+ 200:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
+ 111              		.loc 1 200 13 is_stmt 1 view .LVU32
+ 200:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
+ 112              		.loc 1 200 47 is_stmt 0 view .LVU33
+ 113 0042 4B7D     		ldrb	r3, [r1, #21]	@ zero_extendqisi2
+ 200:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
+ 114              		.loc 1 200 32 view .LVU34
+ 115 0044 63F3070C 		bfi	ip, r3, #0, #8
+ 201:Core/Src/NOS_Strip_UART.c **** 
+ 116              		.loc 1 201 13 is_stmt 1 view .LVU35
+ 201:Core/Src/NOS_Strip_UART.c **** 
+ 117              		.loc 1 201 22 is_stmt 0 view .LVU36
+ 118 0048 1FFA8CF9 		uxth	r9, ip
+ 119              	.LVL10:
+ 203:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 120              		.loc 1 203 13 is_stmt 1 view .LVU37
+ 203:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 121              		.loc 1 203 47 is_stmt 0 view .LVU38
+ 122 004c 8B7D     		ldrb	r3, [r1, #22]	@ zero_extendqisi2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 8
+
+
+ 203:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 123              		.loc 1 203 32 view .LVU39
+ 124 004e 63F30F2C 		bfi	ip, r3, #8, #8
+ 125              	.LVL11:
+ 204:Core/Src/NOS_Strip_UART.c ****             uint16_t min = tempShort.data;
+ 126              		.loc 1 204 13 is_stmt 1 view .LVU40
+ 204:Core/Src/NOS_Strip_UART.c ****             uint16_t min = tempShort.data;
+ 127              		.loc 1 204 47 is_stmt 0 view .LVU41
+ 128 0052 CB7D     		ldrb	r3, [r1, #23]	@ zero_extendqisi2
+ 204:Core/Src/NOS_Strip_UART.c ****             uint16_t min = tempShort.data;
+ 129              		.loc 1 204 32 view .LVU42
+ 130 0054 63F3070C 		bfi	ip, r3, #0, #8
+ 205:Core/Src/NOS_Strip_UART.c **** 
+ 131              		.loc 1 205 13 is_stmt 1 view .LVU43
+ 205:Core/Src/NOS_Strip_UART.c **** 
+ 132              		.loc 1 205 22 is_stmt 0 view .LVU44
+ 133 0058 1FFA8CFA 		uxth	r10, ip
+ 134              	.LVL12:
+ 207:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 135              		.loc 1 207 13 is_stmt 1 view .LVU45
+ 207:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 136              		.loc 1 207 47 is_stmt 0 view .LVU46
+ 137 005c 0B7E     		ldrb	r3, [r1, #24]	@ zero_extendqisi2
+ 207:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 138              		.loc 1 207 32 view .LVU47
+ 139 005e 63F30F2C 		bfi	ip, r3, #8, #8
+ 140              	.LVL13:
+ 208:Core/Src/NOS_Strip_UART.c ****             uint16_t max = tempShort.data;
+ 141              		.loc 1 208 13 is_stmt 1 view .LVU48
+ 208:Core/Src/NOS_Strip_UART.c ****             uint16_t max = tempShort.data;
+ 142              		.loc 1 208 47 is_stmt 0 view .LVU49
+ 143 0062 4B7E     		ldrb	r3, [r1, #25]	@ zero_extendqisi2
+ 208:Core/Src/NOS_Strip_UART.c ****             uint16_t max = tempShort.data;
+ 144              		.loc 1 208 32 view .LVU50
+ 145 0064 63F3070C 		bfi	ip, r3, #0, #8
+ 209:Core/Src/NOS_Strip_UART.c **** 
+ 146              		.loc 1 209 13 is_stmt 1 view .LVU51
+ 209:Core/Src/NOS_Strip_UART.c **** 
+ 147              		.loc 1 209 22 is_stmt 0 view .LVU52
+ 148 0068 1FFA8CFB 		uxth	fp, ip
+ 149              	.LVL14:
+ 211:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
+ 150              		.loc 1 211 13 is_stmt 1 view .LVU53
+ 211:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
+ 151              		.loc 1 211 27 is_stmt 0 view .LVU54
+ 152 006c 06AE     		add	r6, sp, #24
+ 153 006e 2024     		movs	r4, #32
+ 154 0070 2246     		mov	r2, r4
+ 155 0072 0021     		movs	r1, #0
+ 156              	.LVL15:
+ 211:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
+ 157              		.loc 1 211 27 view .LVU55
+ 158 0074 3046     		mov	r0, r6
+ 159              	.LVL16:
+ 211:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
+ 160              		.loc 1 211 27 view .LVU56
+ 161 0076 FFF7FEFF 		bl	memset
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 9
+
+
+ 162              	.LVL17:
+ 212:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Breathe_Init(&tempEffect,speed,step,min,max);
+ 163              		.loc 1 212 13 is_stmt 1 view .LVU57
+ 212:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Breathe_Init(&tempEffect,speed,step,min,max);
+ 164              		.loc 1 212 33 is_stmt 0 view .LVU58
+ 165 007a 8DF83740 		strb	r4, [sp, #55]
+ 213:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 166              		.loc 1 213 13 is_stmt 1 view .LVU59
+ 167 007e CDF800B0 		str	fp, [sp]
+ 168 0082 5346     		mov	r3, r10
+ 169 0084 4A46     		mov	r2, r9
+ 170 0086 4146     		mov	r1, r8
+ 171 0088 3046     		mov	r0, r6
+ 172 008a FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Init
+ 173              	.LVL18:
+ 214:Core/Src/NOS_Strip_UART.c ****         return true;       
+ 174              		.loc 1 214 13 view .LVU60
+ 175 008e FFB2     		uxtb	r7, r7
+ 176              	.LVL19:
+ 214:Core/Src/NOS_Strip_UART.c ****         return true;       
+ 177              		.loc 1 214 13 is_stmt 0 view .LVU61
+ 178 0090 0597     		str	r7, [sp, #20]
+ 179 0092 6C46     		mov	r4, sp
+ 180 0094 0DF1240C 		add	ip, sp, #36
+ 181 0098 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 182 009c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 183 009e DCF80030 		ldr	r3, [ip]
+ 184 00a2 2360     		str	r3, [r4]
+ 185 00a4 96E80E00 		ldm	r6, {r1, r2, r3}
+ 186 00a8 2846     		mov	r0, r5
+ 187 00aa FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 188              	.LVL20:
+ 215:Core/Src/NOS_Strip_UART.c ****         break;
+ 189              		.loc 1 215 9 is_stmt 1 view .LVU62
+ 190              	.L5:
+ 215:Core/Src/NOS_Strip_UART.c ****         break;
+ 191              		.loc 1 215 16 is_stmt 0 discriminator 1 view .LVU63
+ 192 00ae 0120     		movs	r0, #1
+ 193              	.LVL21:
+ 194              	.L6:
+ 215:Core/Src/NOS_Strip_UART.c ****         break;
+ 195              		.loc 1 215 16 discriminator 1 view .LVU64
+ 196              	.LBE3:
+ 252:Core/Src/NOS_Strip_UART.c **** }
+ 197              		.loc 1 252 1 view .LVU65
+ 198 00b0 0FB0     		add	sp, sp, #60
+ 199              		.cfi_remember_state
+ 200              		.cfi_def_cfa_offset 36
+ 201              		@ sp needed
+ 202 00b2 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 203              	.LVL22:
+ 204              	.L3:
+ 205              		.cfi_restore_state
+ 206              	.LBB4:
+ 216:Core/Src/NOS_Strip_UART.c ****     
+ 207              		.loc 1 216 9 is_stmt 1 view .LVU66
+ 220:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 10
+
+
+ 208              		.loc 1 220 13 view .LVU67
+ 220:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 209              		.loc 1 220 47 is_stmt 0 view .LVU68
+ 210 00b6 0B7C     		ldrb	r3, [r1, #16]	@ zero_extendqisi2
+ 220:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 211              		.loc 1 220 32 view .LVU69
+ 212 00b8 4FF0000C 		mov	ip, #0	@ movhi
+ 220:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 213              		.loc 1 220 32 view .LVU70
+ 214 00bc 63F30F2C 		bfi	ip, r3, #8, #8
+ 215              	.LVL23:
+ 221:Core/Src/NOS_Strip_UART.c ****             pos = tempShort.data;
+ 216              		.loc 1 221 13 is_stmt 1 view .LVU71
+ 221:Core/Src/NOS_Strip_UART.c ****             pos = tempShort.data;
+ 217              		.loc 1 221 47 is_stmt 0 view .LVU72
+ 218 00c0 4B7C     		ldrb	r3, [r1, #17]	@ zero_extendqisi2
+ 221:Core/Src/NOS_Strip_UART.c ****             pos = tempShort.data;
+ 219              		.loc 1 221 32 view .LVU73
+ 220 00c2 63F3070C 		bfi	ip, r3, #0, #8
+ 222:Core/Src/NOS_Strip_UART.c **** 
+ 221              		.loc 1 222 13 is_stmt 1 view .LVU74
+ 222:Core/Src/NOS_Strip_UART.c **** 
+ 222              		.loc 1 222 17 is_stmt 0 view .LVU75
+ 223 00c6 1FFA8CF7 		uxth	r7, ip
+ 224              	.LVL24:
+ 224:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 225              		.loc 1 224 13 is_stmt 1 view .LVU76
+ 224:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 226              		.loc 1 224 47 is_stmt 0 view .LVU77
+ 227 00ca 8B7C     		ldrb	r3, [r1, #18]	@ zero_extendqisi2
+ 224:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 228              		.loc 1 224 32 view .LVU78
+ 229 00cc 63F30F2C 		bfi	ip, r3, #8, #8
+ 230              	.LVL25:
+ 225:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
+ 231              		.loc 1 225 13 is_stmt 1 view .LVU79
+ 225:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
+ 232              		.loc 1 225 47 is_stmt 0 view .LVU80
+ 233 00d0 CB7C     		ldrb	r3, [r1, #19]	@ zero_extendqisi2
+ 225:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
+ 234              		.loc 1 225 32 view .LVU81
+ 235 00d2 63F3070C 		bfi	ip, r3, #0, #8
+ 226:Core/Src/NOS_Strip_UART.c **** 
+ 236              		.loc 1 226 13 is_stmt 1 view .LVU82
+ 226:Core/Src/NOS_Strip_UART.c **** 
+ 237              		.loc 1 226 19 is_stmt 0 view .LVU83
+ 238 00d6 1FFA8CF1 		uxth	r1, ip
+ 239              	.LVL26:
+ 228:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 240              		.loc 1 228 13 is_stmt 1 view .LVU84
+ 228:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 241              		.loc 1 228 47 is_stmt 0 view .LVU85
+ 242 00da 237D     		ldrb	r3, [r4, #20]	@ zero_extendqisi2
+ 228:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 243              		.loc 1 228 32 view .LVU86
+ 244 00dc 63F30F2C 		bfi	ip, r3, #8, #8
+ 245              	.LVL27:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 11
+
+
+ 229:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
+ 246              		.loc 1 229 13 is_stmt 1 view .LVU87
+ 229:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
+ 247              		.loc 1 229 47 is_stmt 0 view .LVU88
+ 248 00e0 637D     		ldrb	r3, [r4, #21]	@ zero_extendqisi2
+ 229:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
+ 249              		.loc 1 229 32 view .LVU89
+ 250 00e2 63F3070C 		bfi	ip, r3, #0, #8
+ 230:Core/Src/NOS_Strip_UART.c **** 
+ 251              		.loc 1 230 13 is_stmt 1 view .LVU90
+ 230:Core/Src/NOS_Strip_UART.c **** 
+ 252              		.loc 1 230 18 is_stmt 0 view .LVU91
+ 253 00e6 1FFA8CF2 		uxth	r2, ip
+ 254              	.LVL28:
+ 232:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 255              		.loc 1 232 13 is_stmt 1 view .LVU92
+ 232:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 256              		.loc 1 232 47 is_stmt 0 view .LVU93
+ 257 00ea A37D     		ldrb	r3, [r4, #22]	@ zero_extendqisi2
+ 232:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 258              		.loc 1 232 32 view .LVU94
+ 259 00ec 63F30F2C 		bfi	ip, r3, #8, #8
+ 260              	.LVL29:
+ 233:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
+ 261              		.loc 1 233 13 is_stmt 1 view .LVU95
+ 233:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
+ 262              		.loc 1 233 47 is_stmt 0 view .LVU96
+ 263 00f0 E37D     		ldrb	r3, [r4, #23]	@ zero_extendqisi2
+ 233:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
+ 264              		.loc 1 233 32 view .LVU97
+ 265 00f2 63F3070C 		bfi	ip, r3, #0, #8
+ 234:Core/Src/NOS_Strip_UART.c **** 
+ 266              		.loc 1 234 13 is_stmt 1 view .LVU98
+ 234:Core/Src/NOS_Strip_UART.c **** 
+ 267              		.loc 1 234 17 is_stmt 0 view .LVU99
+ 268 00f6 1FFA8CF3 		uxth	r3, ip
+ 269              	.LVL30:
+ 236:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 270              		.loc 1 236 13 is_stmt 1 view .LVU100
+ 236:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 271              		.loc 1 236 47 is_stmt 0 view .LVU101
+ 272 00fa 207E     		ldrb	r0, [r4, #24]	@ zero_extendqisi2
+ 273              	.LVL31:
+ 236:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 274              		.loc 1 236 32 view .LVU102
+ 275 00fc 60F30F2C 		bfi	ip, r0, #8, #8
+ 276              	.LVL32:
+ 237:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
+ 277              		.loc 1 237 13 is_stmt 1 view .LVU103
+ 237:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
+ 278              		.loc 1 237 47 is_stmt 0 view .LVU104
+ 279 0100 607E     		ldrb	r0, [r4, #25]	@ zero_extendqisi2
+ 237:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
+ 280              		.loc 1 237 32 view .LVU105
+ 281 0102 60F3070C 		bfi	ip, r0, #0, #8
+ 238:Core/Src/NOS_Strip_UART.c **** 
+ 282              		.loc 1 238 13 is_stmt 1 view .LVU106
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 12
+
+
+ 238:Core/Src/NOS_Strip_UART.c **** 
+ 283              		.loc 1 238 17 is_stmt 0 view .LVU107
+ 284 0106 1FFA8CF4 		uxth	r4, ip
+ 285              	.LVL33:
+ 240:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Rainbow_Init(&tempEffect,speed,step,min,max);
+ 286              		.loc 1 240 13 is_stmt 1 view .LVU108
+ 240:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Rainbow_Init(&tempEffect,speed,step,min,max);
+ 287              		.loc 1 240 33 is_stmt 0 view .LVU109
+ 288 010a 2120     		movs	r0, #33
+ 289 010c 8DF83700 		strb	r0, [sp, #55]
+ 241:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect,pos);
+ 290              		.loc 1 241 13 is_stmt 1 view .LVU110
+ 291 0110 06AE     		add	r6, sp, #24
+ 292 0112 0094     		str	r4, [sp]
+ 293 0114 3046     		mov	r0, r6
+ 294 0116 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Init
+ 295              	.LVL34:
+ 242:Core/Src/NOS_Strip_UART.c ****             return true;
+ 296              		.loc 1 242 13 view .LVU111
+ 297 011a FFB2     		uxtb	r7, r7
+ 298              	.LVL35:
+ 242:Core/Src/NOS_Strip_UART.c ****             return true;
+ 299              		.loc 1 242 13 is_stmt 0 view .LVU112
+ 300 011c 0597     		str	r7, [sp, #20]
+ 301 011e 6C46     		mov	r4, sp
+ 302              	.LVL36:
+ 242:Core/Src/NOS_Strip_UART.c ****             return true;
+ 303              		.loc 1 242 13 view .LVU113
+ 304 0120 0DF1240C 		add	ip, sp, #36
+ 305 0124 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 306 0128 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 307 012a DCF80030 		ldr	r3, [ip]
+ 308 012e 2360     		str	r3, [r4]
+ 309 0130 96E80E00 		ldm	r6, {r1, r2, r3}
+ 310 0134 2846     		mov	r0, r5
+ 311 0136 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 312              	.LVL37:
+ 243:Core/Src/NOS_Strip_UART.c ****             break;
+ 313              		.loc 1 243 13 is_stmt 1 view .LVU114
+ 243:Core/Src/NOS_Strip_UART.c ****             break;
+ 314              		.loc 1 243 20 is_stmt 0 view .LVU115
+ 315 013a B8E7     		b	.L5
+ 316              	.LBE4:
+ 317              		.cfi_endproc
+ 318              	.LFE65:
+ 320              		.text
+ 321              	.Letext0:
+ 322              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 323              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 324              		.file 4 "Core/Inc/NOS_Typedefs.h"
+ 325              		.file 5 "Core/Inc/NOS_WS2812B_Strip.h"
+ 326              		.file 6 "<built-in>"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOS_Strip_UART.c
+C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s:19     .text.NOS_Strip_UART_ParseCommand:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccKGcMm9.s:25     .text.NOS_Strip_UART_ParseCommand:00000000 NOS_Strip_UART_ParseCommand
+
+UNDEFINED SYMBOLS
+memset
+NOS_WS2812B_Strip_Effect_Breathe_Init
+NOS_WS2812B_Strip_Effects_UpdateEffect
+NOS_WS2812B_Strip_Effect_Rainbow_Init
