@@ -165,7 +165,7 @@ typedef struct
     NOS_Short byteCount;
     NOS_Long packetId;
     NOS_Long command;
-    uint8_t data[16];
+    uint8_t data[512];
     NOS_Short CRC16;
 } UART_Message;
 

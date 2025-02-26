@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****                    
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****      -@-   In Memory-to-Memory transfer mode, Circular mode is not allowed.
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****      *** Polling mode IO operation ***
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 2
 
 
   33:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****      =================================
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   * @{
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   */
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 3
 
 
   90:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** /** @defgroup DMA DMA
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  144:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   uint32_t tmp = 0U;
  145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  146:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   /* Check the DMA handle allocation */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 4
 
 
  147:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   if(hdma == NULL)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  201:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  202:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   /* Initialise the error code */
  203:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   hdma->ErrorCode = HAL_DMA_ERROR_NONE;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 5
 
 
  204:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  258:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   }
  259:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** #else
  260:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   /* DMA1 */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 6
 
 
  261:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   hdma->ChannelIndex = (((uint32_t)hdma->Instance - (uint32_t)DMA1_Channel1) / ((uint32_t)DMA1_Chan
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  315:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   * @param  DataLength: The length of data to be transferred from source to destination
  316:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   * @retval HAL status
  317:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 7
 
 
  318:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** HAL_StatusTypeDef HAL_DMA_Start(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  372:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   {
  373:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     /* Change DMA peripheral state */
  374:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     hdma->State = HAL_DMA_STATE_BUSY;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 8
 
 
  375:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     hdma->ErrorCode = HAL_DMA_ERROR_NONE;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  429:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   else
  430:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  431:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 9
 
 
  432:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     /* Disable DMA IT */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  486:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     {
  487:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferAbortCallback(hdma);
  488:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     } 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 10
 
 
  489:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  543:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->DmaBaseAddress->IFCR = (DMA_ISR_GIF1 << hdma->ChannelIndex);
  544:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  545:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       /* Update error code */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 11
 
 
  546:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       SET_BIT(hdma->ErrorCode, HAL_DMA_ERROR_TE);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  600:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   * @retval None
  601:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   */
  602:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** void HAL_DMA_IRQHandler(DMA_HandleTypeDef *hdma)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 12
 
 
  603:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  657:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     /* A hardware clear of its EN bits is performed */
  658:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     /* Disable ALL DMA IT */
  659:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     __HAL_DMA_DISABLE_IT(hdma, (DMA_IT_TC | DMA_IT_HT | DMA_IT_TE));
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 13
 
 
  660:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  714:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       
  715:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     case  HAL_DMA_XFER_ABORT_CB_ID:
  716:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferAbortCallback = pCallback;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 14
 
 
  717:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       break; 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  771:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferCpltCallback = NULL;
  772:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferHalfCpltCallback = NULL;
  773:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferErrorCallback = NULL;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 15
 
 
  774:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       hdma->XferAbortCallback = NULL;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  828:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   *              the configuration information for the specified DMA Channel.
  829:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   * @retval DMA Error Code
  830:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 16
 
 
  831:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** uint32_t HAL_DMA_GetError(DMA_HandleTypeDef *hdma)
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
   48              		.loc 1 863 25 view .LVU7
   49 000e 6360     		str	r3, [r4, #4]
  864:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 17
 
 
  865:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   /* Memory to Peripheral */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
   82              		.loc 1 869 26 view .LVU20
   83 0024 9A60     		str	r2, [r3, #8]
   84              	.LVL4:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 18
 
 
  872:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  125              		.loc 1 160 3 view .LVU36
  178:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   hdma->DmaBaseAddress = DMA1;
  126              		.loc 1 178 3 view .LVU37
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 19
 
 
  178:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   hdma->DmaBaseAddress = DMA1;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  194:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****           hdma->Init.PeriphInc           | hdma->Init.MemInc           |
  164              		.loc 1 194 39 view .LVU55
  165 002e 9468     		ldr	r4, [r2, #8]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 20
 
 
  166 0030 2343     		orrs	r3, r3, r4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  203 0058 10BC     		pop	{r4}
  204              		.cfi_restore 4
  205              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 21
 
 
  206 005a 7047     		bx	lr
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  253              		.loc 1 234 3 view .LVU81
  234:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  254              		.loc 1 234 7 is_stmt 0 view .LVU82
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 22
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 22
 
 
  255 0012 0268     		ldr	r2, [r0]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  262:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** #endif /* DMA2 */
  291              		.loc 1 262 24 is_stmt 0 view .LVU101
  292 0036 0B4C     		ldr	r4, .L22+8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 23
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 23
 
 
  293 0038 DC63     		str	r4, [r3, #60]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  327 0056 7047     		bx	lr
  328              	.LVL16:
  329              	.L17:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 24
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 24
 
 
  224:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   }
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  376              		.loc 1 326 3 is_stmt 1 discriminator 2 view .LVU131
  377 000c 0120     		movs	r0, #1
  378 000e 84F82000 		strb	r0, [r4, #32]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 25
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 25
 
 
  326:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  338:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     
  417              		.loc 1 338 5 view .LVU148
  418 003a 2046     		mov	r0, r4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 26
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 26
 
 
  419 003c FFF7FEFF 		bl	DMA_SetConfig
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  369:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   
  466              		.loc 1 369 3 is_stmt 0 view .LVU158
  467 0008 0128     		cmp	r0, #1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 27
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 27
 
 
  468 000a 32D0     		beq	.L35
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  505              		.loc 1 378 5 is_stmt 1 view .LVU175
  506 0030 2568     		ldr	r5, [r4]
  507 0032 2868     		ldr	r0, [r5]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 28
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 28
 
 
  508 0034 20F00100 		bic	r0, r0, #1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  553              		.section	.text.HAL_DMA_Abort,"ax",%progbits
  554              		.align	1
  555              		.global	HAL_DMA_Abort
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 29
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 29
 
 
  556              		.syntax unified
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  596              		.loc 1 433 5 is_stmt 1 view .LVU200
  597 001a 0168     		ldr	r1, [r0]
  598 001c 0A68     		ldr	r2, [r1]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 30
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 30
 
 
  599 001e 22F00E02 		bic	r2, r2, #14
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  641              		.loc 1 457 1 is_stmt 1 view -0
  642              		.cfi_startproc
  643              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 31
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 31
 
 
  644              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  684              		.loc 1 476 5 view .LVU228
  685 0028 0368     		ldr	r3, [r0]
  686 002a 194A     		ldr	r2, .L54
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 32
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 32
 
 
  687 002c 9342     		cmp	r3, r2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  729              		.loc 1 482 5 discriminator 24 view .LVU240
  485:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     {
  730              		.loc 1 485 5 discriminator 24 view .LVU241
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 33
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 33
 
 
  485:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     {
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  779              		.loc 1 502 1 is_stmt 1 view -0
  780              		.cfi_startproc
  781              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 34
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 34
 
 
  782              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  821              		.loc 1 594 1 view .LVU264
  822 0020 0F46     		mov	r7, r1
  823 0022 1546     		mov	r5, r2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 35
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 35
 
 
  515:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   {
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  864              	.L103:
  517:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     return HAL_ERROR;
  865              		.loc 1 517 5 is_stmt 1 view .LVU279
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 36
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 36
 
 
  517:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     return HAL_ERROR;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  907 008e 4FF08066 		mov	r6, #67108864
  908 0092 03E0     		b	.L61
  909              	.L105:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 37
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 37
 
 
  910 0094 4FF48006 		mov	r6, #4194304
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  956 00d2 E3E7     		b	.L61
  957              	.LVL60:
  958              	.L109:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 38
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 38
 
 
  538:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     {
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1000              		.loc 1 538 9 discriminator 7 view .LVU313
  1001 010c 1431     		adds	r1, r1, #20
  1002 010e 8B42     		cmp	r3, r1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 39
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 39
 
 
  1003 0110 0DD0     		beq	.L88
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  552:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  1045              		.loc 1 552 7 view .LVU326
  554:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     }
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 40
 
 
  1046              		.loc 1 554 7 view .LVU327
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1083 0178 2368     		ldr	r3, [r4]
  1084 017a 2A4A     		ldr	r2, .L112
  1085 017c 9342     		cmp	r3, r2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 41
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 41
 
 
  1086 017e 14D0     		beq	.L90
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1128              		.loc 1 591 3 view .LVU356
  593:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** }
  1129              		.loc 1 593 3 view .LVU357
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 42
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 42
 
 
  593:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1175 0200 4FF48002 		mov	r2, #4194304
  1176 0204 00E0     		b	.L71
  1177              	.L96:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 43
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 43
 
 
  1178 0206 0422     		movs	r2, #4
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1228 0002 C36B     		ldr	r3, [r0, #60]
  604:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   uint32_t source_it = hdma->Instance->CCR;
  1229              		.loc 1 604 12 view .LVU373
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 44
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 44
 
 
  1230 0004 1A68     		ldr	r2, [r3]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1269 0032 1432     		adds	r2, r2, #20
  1270 0034 9342     		cmp	r3, r2
  1271 0036 18D0     		beq	.L123
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 45
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 45
 
 
  617:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1314 006a 4022     		movs	r2, #64
  1315 006c F7E7     		b	.L117
  1316              	.L124:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 46
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 46
 
 
  1317 006e 4FF48062 		mov	r2, #1024
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  641:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  1359              		.loc 1 641 7 discriminator 1 view .LVU413
  1360 00ac 1432     		adds	r2, r2, #20
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 47
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 47
 
 
  1361 00ae 9342     		cmp	r3, r2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1402              		.loc 1 649 7 is_stmt 1 view .LVU426
  1403 00e8 9847     		blx	r3
  1404              	.LVL70:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 48
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 48
 
 
  649:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****     }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1447 0122 4A60     		str	r2, [r1, #4]
  665:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
  1448              		.loc 1 665 5 is_stmt 1 view .LVU439
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 49
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 49
 
 
  665:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  693:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   HAL_StatusTypeDef status = HAL_OK;
  1493              		.loc 1 693 1 is_stmt 0 view .LVU452
  1494 0000 0346     		mov	r3, r0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 50
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 50
 
 
  694:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1532 0024 0329     		cmp	r1, #3
  1533 0026 F9D8     		bhi	.L141
  1534 0028 DFE801F0 		tbb	[pc, r1]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 51
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 51
 
 
  1535              	.L143:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  717:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       
  1572              		.loc 1 717 7 is_stmt 1 view .LVU487
  694:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 52
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 52
 
 
  1573              		.loc 1 694 21 is_stmt 0 view .LVU488
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  750:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   {
  1617              		.loc 1 750 33 discriminator 2 view .LVU501
  1618 0014 C0B2     		uxtb	r0, r0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 53
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 53
 
 
  750:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   {
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  759:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****       break;         
  1659              		.loc 1 759 34 is_stmt 0 view .LVU516
  1660 003a 0020     		movs	r0, #0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 54
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 54
 
 
  1661 003c D862     		str	r0, [r3, #44]
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1698              	.LVL87:
  791:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ****   
  1699              		.loc 1 791 1 view .LVU534
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 55
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 55
 
 
  1700 005a 7047     		bx	lr
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1750              	.LFE76:
  1752              		.text
  1753              	.Letext0:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 56
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 56
 
 
  1754              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
@@ -3308,47 +3308,47 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 1
  1758              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
  1759              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
  1760              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s 			page 57
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s 			page 57
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_dma.c
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:19     .text.DMA_SetConfig:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:24     .text.DMA_SetConfig:00000000 DMA_SetConfig
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:95     .text.HAL_DMA_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:101    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:217    .text.HAL_DMA_Init:00000060 $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:224    .text.HAL_DMA_DeInit:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:230    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:338    .text.HAL_DMA_DeInit:0000005c $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:345    .text.HAL_DMA_Start:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:351    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:438    .text.HAL_DMA_Start_IT:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:444    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:554    .text.HAL_DMA_Abort:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:560    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:632    .text.HAL_DMA_Abort_IT:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:638    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:764    .text.HAL_DMA_Abort_IT:00000090 $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:770    .text.HAL_DMA_PollForTransfer:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:776    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1200   .text.HAL_DMA_PollForTransfer:00000224 $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1206   .text.HAL_DMA_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1212   .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1473   .text.HAL_DMA_IRQHandler:0000013c $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1479   .text.HAL_DMA_RegisterCallback:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1485   .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1536   .text.HAL_DMA_RegisterCallback:0000002c $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1540   .text.HAL_DMA_RegisterCallback:00000030 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1586   .text.HAL_DMA_UnRegisterCallback:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1592   .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1641   .text.HAL_DMA_UnRegisterCallback:0000002c $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1705   .text.HAL_DMA_GetState:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1711   .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1729   .text.HAL_DMA_GetError:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1735   .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1646   .text.HAL_DMA_UnRegisterCallback:00000031 $d
-C:\Users\igorn\AppData\Local\Temp\cc4WSTTX.s:1646   .text.HAL_DMA_UnRegisterCallback:00000032 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:19     .text.DMA_SetConfig:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:24     .text.DMA_SetConfig:00000000 DMA_SetConfig
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:95     .text.HAL_DMA_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:101    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:217    .text.HAL_DMA_Init:00000060 $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:224    .text.HAL_DMA_DeInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:230    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:338    .text.HAL_DMA_DeInit:0000005c $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:345    .text.HAL_DMA_Start:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:351    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:438    .text.HAL_DMA_Start_IT:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:444    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:554    .text.HAL_DMA_Abort:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:560    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:632    .text.HAL_DMA_Abort_IT:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:638    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:764    .text.HAL_DMA_Abort_IT:00000090 $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:770    .text.HAL_DMA_PollForTransfer:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:776    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1200   .text.HAL_DMA_PollForTransfer:00000224 $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1206   .text.HAL_DMA_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1212   .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1473   .text.HAL_DMA_IRQHandler:0000013c $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1479   .text.HAL_DMA_RegisterCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1485   .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1536   .text.HAL_DMA_RegisterCallback:0000002c $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1540   .text.HAL_DMA_RegisterCallback:00000030 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1586   .text.HAL_DMA_UnRegisterCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1592   .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1641   .text.HAL_DMA_UnRegisterCallback:0000002c $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1705   .text.HAL_DMA_GetState:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1711   .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1729   .text.HAL_DMA_GetError:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1735   .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1646   .text.HAL_DMA_UnRegisterCallback:00000031 $d
+C:\Users\igorn\AppData\Local\Temp\ccIQmqp0.s:1646   .text.HAL_DMA_UnRegisterCallback:00000032 $t
 
 UNDEFINED SYMBOLS
 HAL_GetTick

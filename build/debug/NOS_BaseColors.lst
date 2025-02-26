@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
   49              		.global	NOS_GetBaseColor
   50              		.syntax unified
   51              		.thumb
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 2
 
 
   52              		.thumb_func
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
   98              		.loc 1 17 13 is_stmt 0 view .LVU14
   99 002e FFF7FEFF 		bl	NOS_PixelColor_SetColor
  100              	.LVL3:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 3
 
 
   18:Core/Src/NOS_BaseColors.c ****         break;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
  107 0038 1B0C     		lsrs	r3, r3, #16
  108 003a 8DF80630 		strb	r3, [sp, #6]
  109 003e 0020     		movs	r0, #0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 4
 
 
  110 0040 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
  156              	.LVL11:
   29:Core/Src/NOS_BaseColors.c ****             NOS_PixelColor_SetColor(&result,0x00,0xFF,0x7F);
  157              		.loc 1 29 13 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 5
 
 
  158 0082 FFF7FEFF 		bl	NOS_PixelColor_SetColor
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
  202              	.L9:
   45:Core/Src/NOS_BaseColors.c ****             NOS_PixelColor_SetColor(&result,0xFF,0x7F,0x00);
  203              		.loc 1 45 13 view .LVU37
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 6
 
 
  204 00b2 0023     		movs	r3, #0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
  248              		.loc 1 57 13 is_stmt 0 view .LVU47
  249 00e4 FFF7FEFF 		bl	NOS_PixelColor_SetColor
  250              	.LVL33:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 7
 
 
   58:Core/Src/NOS_BaseColors.c ****         break;
@@ -388,16 +388,16 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 1
  272              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  273              		.file 4 "Core/Inc/NOS_Typedefs.h"
  274              		.file 5 "Core/Inc/NOS_BaseColors.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_BaseColors.c
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:19     .text.NOS_PixelColor_SetColor:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:25     .text.NOS_PixelColor_SetColor:00000000 NOS_PixelColor_SetColor
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:48     .text.NOS_GetBaseColor:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:54     .text.NOS_GetBaseColor:00000000 NOS_GetBaseColor
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:78     .text.NOS_GetBaseColor:0000001a $d
-C:\Users\igorn\AppData\Local\Temp\ccHkyHoh.s:90     .text.NOS_GetBaseColor:00000026 $t
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:19     .text.NOS_PixelColor_SetColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:25     .text.NOS_PixelColor_SetColor:00000000 NOS_PixelColor_SetColor
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:48     .text.NOS_GetBaseColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:54     .text.NOS_GetBaseColor:00000000 NOS_GetBaseColor
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:78     .text.NOS_GetBaseColor:0000001a $d
+C:\Users\igorn\AppData\Local\Temp\ccA8v2ip.s:90     .text.NOS_GetBaseColor:00000026 $t
 
 NO UNDEFINED SYMBOLS

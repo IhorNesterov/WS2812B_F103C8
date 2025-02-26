@@ -109,6 +109,17 @@ void NOS_WS2812B_Strip_Effect_Breathe_Init(Effect_Struct* effect,uint16_t speed,
         effect->effectId = 0x20;   
 }
 
+void NOS_WS2812B_Strip_Effect_Breathe_Copy(Effect_Struct* destination,Effect_Struct* source)
+{
+    NOS_Math_SinValue_Init(&destination->value,source->minValue,source->maxValue,source->step.data);
+    destination->minValue = source->minValue;
+    destination->maxValue = source->maxValue;
+    destination->speed.data = source->speed.data;
+    destination->step.data = source->step.data;
+    destination->enabled = true;
+    destination->effectId = 0x20;   
+}
+
 void NOS_WS2812B_Strip_Effects_AddEffect(WS2812B_Strip* strip,Effect_Struct effect)
 {
     if(strip->effectsCounter < 10)
@@ -189,6 +200,17 @@ void NOS_WS2812B_Strip_Effect_Rainbow_Init(Effect_Struct* effect,uint16_t speed,
         effect->step.data = step;
         effect->enabled = true;
         effect->effectId = 0x21;  
+}
+
+void NOS_WS2812B_Strip_Effect_Rainbow_Copy(Effect_Struct* destination,Effect_Struct* source)
+{
+    NOS_Math_SinValue_Init(&destination->value,source->minValue,source->maxValue,source->step.data);
+    destination->minValue = source->minValue;
+    destination->maxValue = source->maxValue;
+    destination->speed.data = source->speed.data;
+    destination->step.data = source->step.data;
+    destination->enabled = true;
+    destination->effectId = 0x21;  
 }
 
 void NOS_WS2812B_Strip_Effect_Rainbow_Handler(WS2812B_Strip* strip,Effect_Struct* effect)

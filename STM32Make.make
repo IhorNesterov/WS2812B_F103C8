@@ -76,6 +76,7 @@ endif
 # C sources
 C_SOURCES =  \
 Core/Src/NOS_BaseColors.c \
+Core/Src/NOS_Flash.c \
 Core/Src/NOS_Math.c \
 Core/Src/NOS_Strip_UART.c \
 Core/Src/NOS_Time.c \

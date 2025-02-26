@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
   29:Core/Src/WS2812B_Effects.c **** #define Red(c) ((uint8_t)((c >> 16) & 0xFF))
   30:Core/Src/WS2812B_Effects.c **** #define Green(c) ((uint8_t)((c >> 8) & 0xFF))
   31:Core/Src/WS2812B_Effects.c **** #define Blue(c) ((uint8_t)(c & 0xFF))
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 2
 
 
   32:Core/Src/WS2812B_Effects.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
   67              		.loc 1 37 5 is_stmt 1 view .LVU15
   37:Core/Src/WS2812B_Effects.c ****   }
   68              		.loc 1 37 12 is_stmt 0 view .LVU16
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 3
 
 
   69 0022 A3EB8303 		sub	r3, r3, r3, lsl #2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  110              		.loc 1 51 1 is_stmt 1 view -0
  111              		.cfi_startproc
  112              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 4
 
 
  113              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
   64:Core/Src/WS2812B_Effects.c **** 		frameBuffer[i*3 + 0] = color & 0xFF;
  155              		.loc 1 64 3 is_stmt 1 discriminator 3 view .LVU40
  156              		.loc 1 64 16 is_stmt 0 discriminator 3 view .LVU41
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 5
 
 
  157 0026 04EB4403 		add	r3, r4, r4, lsl #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  204              		.thumb_func
  206              	visDots:
  207              	.LVL21:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 6
 
 
  208              	.LFB67:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
   90:Core/Src/WS2812B_Effects.c **** 
   91:Core/Src/WS2812B_Effects.c **** 		if(frameBuffer[i*3 + 1] > fadeOutFactor)
   92:Core/Src/WS2812B_Effects.c **** 			frameBuffer[i*3 + 1] -= frameBuffer[i*3 + 1]/fadeOutFactor;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 7
 
 
   93:Core/Src/WS2812B_Effects.c **** 		else
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  277 0046 E254     		strb	r2, [r4, r3]
   81:Core/Src/WS2812B_Effects.c **** 			frameBuffer[i*3 + 2] = 255;
  278              		.loc 1 81 4 is_stmt 1 view .LVU80
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 8
 
 
   81:Core/Src/WS2812B_Effects.c **** 			frameBuffer[i*3 + 2] = 255;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  315 0074 5B1A     		subs	r3, r3, r1
  316 0076 A354     		strb	r3, [r4, r2]
  317              	.L19:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 9
 
 
   96:Core/Src/WS2812B_Effects.c **** 			frameBuffer[i*3 + 2] -= frameBuffer[i*3 + 2]/fadeOutFactor;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  361              		.loc 1 106 3 view .LVU108
  362              		.loc 1 106 27 is_stmt 0 view .LVU109
  363 0002 0B4B     		ldr	r3, .L29
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 10
 
 
  364 0004 0422     		movs	r2, #4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  408              		.cfi_endproc
  409              	.LFE68:
  411              		.section	.text.visHandle,"ax",%progbits
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 11
 
 
  412              		.align	1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  449 001a 00BF     		.align	2
  450              	.L35:
  451 001c 00000000 		.word	ws2812b
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 12
 
 
  452              		.cfi_endproc
@@ -699,33 +699,33 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 1
  484              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  485              		.file 4 "Core/Inc/WS2812B_Core.h"
  486              		.file 5 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 WS2812B_Effects.c
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:19     .text.Wheel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:25     .text.Wheel:00000000 Wheel
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:101    .text.visRainbow:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:107    .text.visRainbow:00000000 visRainbow
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:194    .text.visRainbow:0000004c $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:458    .bss.x.0:00000000 x.0
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:200    .text.visDots:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:206    .text.visDots:00000000 visDots
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:340    .text.visDots:00000094 $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:345    .text.visInit:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:351    .text.visInit:00000000 visInit
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:404    .text.visInit:00000030 $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:479    .bss.frameBuffer1:00000000 frameBuffer1
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:472    .bss.frameBuffer2:00000000 frameBuffer2
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:465    .bss.frameBuffer3:00000000 frameBuffer3
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:412    .text.visHandle:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:418    .text.visHandle:00000000 visHandle
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:451    .text.visHandle:0000001c $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:459    .bss.x.0:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:462    .bss.frameBuffer3:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:469    .bss.frameBuffer2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccAFai4B.s:476    .bss.frameBuffer1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:19     .text.Wheel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:25     .text.Wheel:00000000 Wheel
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:101    .text.visRainbow:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:107    .text.visRainbow:00000000 visRainbow
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:194    .text.visRainbow:0000004c $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:458    .bss.x.0:00000000 x.0
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:200    .text.visDots:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:206    .text.visDots:00000000 visDots
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:340    .text.visDots:00000094 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:345    .text.visInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:351    .text.visInit:00000000 visInit
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:404    .text.visInit:00000030 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:479    .bss.frameBuffer1:00000000 frameBuffer1
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:472    .bss.frameBuffer2:00000000 frameBuffer2
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:465    .bss.frameBuffer3:00000000 frameBuffer3
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:412    .text.visHandle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:418    .text.visHandle:00000000 visHandle
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:451    .text.visHandle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:459    .bss.x.0:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:462    .bss.frameBuffer3:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:469    .bss.frameBuffer2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccCzUKZG.s:476    .bss.frameBuffer1:00000000 $d
 
 UNDEFINED SYMBOLS
 rand

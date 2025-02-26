@@ -4,4 +4,5 @@
 #include "stdint.h"
 #include "stdbool.h"
 #include "stm32f1xx.h"
+#include <string.h>
 #endif

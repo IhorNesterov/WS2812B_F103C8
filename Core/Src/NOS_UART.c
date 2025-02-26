@@ -161,19 +161,23 @@ void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
 void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
 {
     data->fuckBuff[data->fuckIndex] = *data->rx_buff_ptr;
+    
     data->fuckIndex++;
+
+    if(data->fuckIndex > 2048)
+    {
+        data->fuckIndex = 0;
+    }
 
     data->startReceive = true;
 
     data->lastReceivedByteTime = 0; 
     data->currMessageLenght++;
     
-
     data->rx_buff[data->index] = *data->rx_buff_ptr;
     ++data->index;
     ++data->rx_buff_ptr;
     
-
     HAL_UART_Receive_IT (uart, data->rx_buff_ptr, 1); 
 }
 
@@ -182,34 +186,41 @@ void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
     NOS_Short currCRC;
 bool NOS_UART_ParsePacket(NOS_UART_Struct* data,UART_Message* message)
 {
-    message->address.bytes[1] = data->rx_buff[0];
-    message->address.bytes[0] = data->rx_buff[1];
+    int currPos = 0;
 
-    message->channel.bytes[1] = data->rx_buff[2];
-    message->channel.bytes[0] = data->rx_buff[3];
+    message->address.bytes[1] = data->rx_buff[currPos++];
+    message->address.bytes[0] = data->rx_buff[currPos++];
 
-    message->byteCount.bytes[1] = data->rx_buff[4];
-    message->byteCount.bytes[0] = data->rx_buff[5];
+    message->channel.bytes[1] = data->rx_buff[currPos++];
+    message->channel.bytes[0] = data->rx_buff[currPos++];
 
-    message->packetId.bytes[3] = data->rx_buff[6];
-    message->packetId.bytes[2] = data->rx_buff[7];
-    message->packetId.bytes[1] = data->rx_buff[8];
-    message->packetId.bytes[0] = data->rx_buff[9];
+    message->byteCount.bytes[1] = data->rx_buff[currPos++];
+    message->byteCount.bytes[0] = data->rx_buff[currPos++];
 
-    message->command.bytes[3] = data->rx_buff[10];
-    message->command.bytes[2] = data->rx_buff[11];
-    message->command.bytes[1] = data->rx_buff[12];
-    message->command.bytes[0] = data->rx_buff[13];
-
-    for(int i = 0; i < 16; i++)
+    if(message->byteCount.data > 1024)
     {
-        message->data[i] = data->rx_buff[14 + i];
+        return false;
     }
 
-    message->CRC16.bytes[1] = data->rx_buff[30];
-    message->CRC16.bytes[0] = data->rx_buff[31];
+    message->packetId.bytes[3] = data->rx_buff[currPos++];
+    message->packetId.bytes[2] = data->rx_buff[currPos++];
+    message->packetId.bytes[1] = data->rx_buff[currPos++];
+    message->packetId.bytes[0] = data->rx_buff[currPos++];
 
-    data->value.data = GetCRC16(&data->rx_buff,30);
+    message->command.bytes[3] = data->rx_buff[currPos++];
+    message->command.bytes[2] = data->rx_buff[currPos++];
+    message->command.bytes[1] = data->rx_buff[currPos++];
+    message->command.bytes[0] = data->rx_buff[currPos++];
+
+    for(int i = 0; i < message->byteCount.data - 16; i++)
+    {
+        message->data[i] = data->rx_buff[currPos++];
+    }
+
+    message->CRC16.bytes[1] = data->rx_buff[currPos++];
+    message->CRC16.bytes[0] = data->rx_buff[currPos++];
+
+    data->value.data = GetCRC16(&data->rx_buff,message->byteCount.data - 2);
 
     if(data->value.data == message->CRC16.data)
     {
@@ -231,26 +242,35 @@ bool NOS_UART_ParsePacket(NOS_UART_Struct* data,UART_Message* message)
 
 bool NOS_UART_PacketApprovedNotice(UART_Message* message,UART_HandleTypeDef* uart)
 {
-    UART_Message approvalMessage;
+    uint8_t buff[32];
+    int currPos = 0;
 
-    approvalMessage.address.data = message->address.data;
-    approvalMessage.byteCount.data = message->address.data;
-    approvalMessage.channel.data = message->address.data;
-    approvalMessage.command.data = message->address.data;
-    approvalMessage.packetId.data = message->packetId.data;
+    buff[currPos++] = message->address.bytes[1];
+    buff[currPos++] = message->address.bytes[0];
+
+    buff[currPos++] = message->channel.bytes[1];
+    buff[currPos++] = message->channel.bytes[0];
+
+    buff[currPos++] = message->byteCount.bytes[1];
+    buff[currPos++] = message->byteCount.bytes[0];
+
+    buff[currPos++] = message->packetId.bytes[3];
+    buff[currPos++] = message->packetId.bytes[2];
+    buff[currPos++] = message->packetId.bytes[1];
+    buff[currPos++] = message->packetId.bytes[0];
+
+    buff[currPos++] = message->command.bytes[3];
+    buff[currPos++] = message->command.bytes[2];
+    buff[currPos++] = message->command.bytes[1];
+    buff[currPos++] = message->command.bytes[0];
+
     for(int i = 0; i < 16; i++)
     {
-        approvalMessage.data[i] = message->data[i];
+        buff[currPos++] = 0xFF;
     }
 
-    uint8_t buff[32];
-    uint8_t* ptr = &approvalMessage;
-
-    for(int i = 0; i < 32; i++)
-    {
-        buff[i] = *ptr;
-        ptr++;
-    }
+    buff[currPos++] = message->CRC16.bytes[1];
+    buff[currPos++] = message->CRC16.bytes[0];
 
     HAL_UART_Transmit(uart,buff,32,1000);
 
