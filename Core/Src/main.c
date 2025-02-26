@@ -178,8 +178,8 @@ int main(void)
 
   if(NOS_Flash_Validate_Block(FLASH_STORAGE_A,32))
   {
-    NOS_Flash_Load_Block(&test1.data,FLASH_STORAGE_A,sizeof(Effect_Struct));
-    NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
+    NOS_Flash_Load_Block(&breatheA,FLASH_STORAGE_A,0,sizeof(Effect_Struct));
+    //NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
   }
   else
   {
@@ -188,15 +188,15 @@ int main(void)
 
   if(NOS_Flash_Validate_Block(FLASH_STORAGE_B,32))
   {
-    NOS_Flash_Load_Block(&test2.data,FLASH_STORAGE_B,sizeof(Effect_Struct));
-    NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
+    NOS_Flash_Load_Block(&rainbowA,FLASH_STORAGE_B,0,sizeof(Effect_Struct));
+    //NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
   }
   else
   {
     NOS_WS2812B_Strip_Effect_Rainbow_Init(&rainbowA,1000,1,200,800);
   }
 
-  
+
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,breatheA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,breatheA);
@@ -257,8 +257,8 @@ int main(void)
           NOS_Strip_UART_ParseCommand(&stripB,&lastMessage);
           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
 
-          NOS_Flash_Save_Block(&stripA.effects[0],FLASH_STORAGE_A,32);
-          NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,32);
+          NOS_Flash_Save_Block(&stripA.effects[0],FLASH_STORAGE_A,0,32);
+          NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,0,32);
 
         break;
 

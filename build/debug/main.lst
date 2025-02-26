@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
   33:Core/Src/main.c **** /* USER CODE BEGIN PD */
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 2
 
 
   34:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
   88:Core/Src/main.c **** UART_Message lastMessage;
   89:Core/Src/main.c **** 
   90:Core/Src/main.c **** typedef union
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 3
 
 
   91:Core/Src/main.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  145:Core/Src/main.c **** 
  146:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
  147:Core/Src/main.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 4
 
 
  148:Core/Src/main.c ****   /* USER CODE END SysInit */
@@ -214,8 +214,8 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  178:Core/Src/main.c **** 
  179:Core/Src/main.c ****   if(NOS_Flash_Validate_Block(FLASH_STORAGE_A,32))
  180:Core/Src/main.c ****   {
- 181:Core/Src/main.c ****     NOS_Flash_Load_Block(&test1.data,FLASH_STORAGE_A,sizeof(Effect_Struct));
- 182:Core/Src/main.c ****     NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
+ 181:Core/Src/main.c ****     NOS_Flash_Load_Block(&breatheA,FLASH_STORAGE_A,0,sizeof(Effect_Struct));
+ 182:Core/Src/main.c ****     //NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
  183:Core/Src/main.c ****   }
  184:Core/Src/main.c ****   else
  185:Core/Src/main.c ****   {
@@ -224,21 +224,21 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  188:Core/Src/main.c **** 
  189:Core/Src/main.c ****   if(NOS_Flash_Validate_Block(FLASH_STORAGE_B,32))
  190:Core/Src/main.c ****   {
- 191:Core/Src/main.c ****     NOS_Flash_Load_Block(&test2.data,FLASH_STORAGE_B,sizeof(Effect_Struct));
- 192:Core/Src/main.c ****     NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
+ 191:Core/Src/main.c ****     NOS_Flash_Load_Block(&rainbowA,FLASH_STORAGE_B,0,sizeof(Effect_Struct));
+ 192:Core/Src/main.c ****     //NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
  193:Core/Src/main.c ****   }
  194:Core/Src/main.c ****   else
  195:Core/Src/main.c ****   {
  196:Core/Src/main.c ****     NOS_WS2812B_Strip_Effect_Rainbow_Init(&rainbowA,1000,1,200,800);
  197:Core/Src/main.c ****   }
  198:Core/Src/main.c **** 
- 199:Core/Src/main.c ****   
+ 199:Core/Src/main.c **** 
  200:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
  201:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,breatheA);
  202:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,breatheA);
  203:Core/Src/main.c **** 
  204:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,rainbowA);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 5
 
 
  205:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,rainbowA);
@@ -296,9 +296,9 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  257:Core/Src/main.c ****           NOS_Strip_UART_ParseCommand(&stripB,&lastMessage);
  258:Core/Src/main.c ****           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
  259:Core/Src/main.c **** 
- 260:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[0],FLASH_STORAGE_A,32);
- 261:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,32);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 6
+ 260:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[0],FLASH_STORAGE_A,0,32);
+ 261:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,0,32);
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 6
 
 
  262:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  316:Core/Src/main.c ****               if(NOS_Strip_Uart_ParseCommand(&stripC,NOS_UART_GetReceivedData(&UART2)) == "ready!")
  317:Core/Src/main.c ****               {
  318:Core/Src/main.c ****                  //HAL_UART_Transmit(&huart2,"ready!",7,1000);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 7
 
 
  319:Core/Src/main.c ****               }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  373:Core/Src/main.c **** 
  374:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
  375:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 8
 
 
  376:Core/Src/main.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  430:Core/Src/main.c ****   }
  431:Core/Src/main.c ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
  432:Core/Src/main.c ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 9
 
 
  433:Core/Src/main.c ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  487:Core/Src/main.c ****   * @retval None
  488:Core/Src/main.c ****   */
  489:Core/Src/main.c **** static void MX_GPIO_Init(void)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 10
 
 
  490:Core/Src/main.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
   72 0032 019B     		ldr	r3, [sp, #4]
   73              	.LBE5:
   74              		.loc 1 497 3 view .LVU14
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 11
 
 
  498:Core/Src/main.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  116              		.align	1
  117              		.global	HAL_UART_RxCpltCallback
  118              		.syntax unified
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 12
 
 
  119              		.thumb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  165              		.loc 1 515 1 is_stmt 1 view -0
  166              		.cfi_startproc
  167              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 13
 
 
  168              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  205              		.loc 1 534 3 view .LVU39
  206              	.LBB6:
  207              	.LBI6:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 14
 
 
  208              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
   54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 15
 
 
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 16
 
 
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  231              		.thumb
  232              		.thumb_func
  234              	MX_USART2_UART_Init:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 17
 
 
  235              	.LFB69:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  272 001c C361     		str	r3, [r0, #28]
  474:Core/Src/main.c ****   {
  273              		.loc 1 474 3 is_stmt 1 view .LVU62
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 18
 
 
  474:Core/Src/main.c ****   {
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  321 0010 0193     		str	r3, [sp, #4]
  322 0012 0293     		str	r3, [sp, #8]
  323 0014 0393     		str	r3, [sp, #12]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 19
 
 
  324 0016 0493     		str	r3, [sp, #16]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  360 003c 0291     		str	r1, [sp, #8]
  393:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
  361              		.loc 1 393 3 is_stmt 1 view .LVU90
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 20
 
 
  393:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  405              		.thumb
  406              		.thumb_func
  408              	main:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 21
 
 
  409              	.LFB66:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  454 0038 BE49     		ldr	r1, .L50+16
  455 003a BF48     		ldr	r0, .L50+20
  456 003c FFF7FEFF 		bl	NOS_WS2812B_Strip_FullInit
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 22
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 22
 
 
  457              	.LVL20:
@@ -1318,487 +1318,487 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  502 0088 B648     		ldr	r0, .L50+64
  503 008a FFF7FEFF 		bl	NOS_Flash_Validate_Block
  504              	.LVL28:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 23
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 23
 
 
  179:Core/Src/main.c ****   {
  505              		.loc 1 179 5 view .LVU120
  506 008e 0028     		cmp	r0, #0
- 507 0090 00F0B780 		beq	.L28
- 181:Core/Src/main.c ****     NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
+ 507 0090 00F0AF80 		beq	.L28
+ 181:Core/Src/main.c ****     //NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
  508              		.loc 1 181 5 is_stmt 1 view .LVU121
- 509 0094 B44C     		ldr	r4, .L50+68
- 510 0096 2022     		movs	r2, #32
+ 509 0094 2023     		movs	r3, #32
+ 510 0096 0022     		movs	r2, #0
  511 0098 B249     		ldr	r1, .L50+64
- 512 009a 2046     		mov	r0, r4
+ 512 009a B348     		ldr	r0, .L50+68
  513 009c FFF7FEFF 		bl	NOS_Flash_Load_Block
  514              	.LVL29:
- 182:Core/Src/main.c ****   }
- 515              		.loc 1 182 5 view .LVU122
- 516 00a0 2146     		mov	r1, r4
- 517 00a2 B248     		ldr	r0, .L50+72
- 518 00a4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Copy
- 519              	.LVL30:
- 520              	.L29:
+ 515              	.L29:
  189:Core/Src/main.c ****   {
- 521              		.loc 1 189 3 view .LVU123
+ 516              		.loc 1 189 3 view .LVU122
  189:Core/Src/main.c ****   {
- 522              		.loc 1 189 6 is_stmt 0 view .LVU124
- 523 00a8 2021     		movs	r1, #32
- 524 00aa B148     		ldr	r0, .L50+76
- 525 00ac FFF7FEFF 		bl	NOS_Flash_Validate_Block
- 526              	.LVL31:
+ 517              		.loc 1 189 6 is_stmt 0 view .LVU123
+ 518 00a0 2021     		movs	r1, #32
+ 519 00a2 B248     		ldr	r0, .L50+72
+ 520 00a4 FFF7FEFF 		bl	NOS_Flash_Validate_Block
+ 521              	.LVL30:
  189:Core/Src/main.c ****   {
- 527              		.loc 1 189 5 view .LVU125
- 528 00b0 0028     		cmp	r0, #0
- 529 00b2 00F0AF80 		beq	.L30
- 191:Core/Src/main.c ****     NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
- 530              		.loc 1 191 5 is_stmt 1 view .LVU126
- 531 00b6 AF4C     		ldr	r4, .L50+80
- 532 00b8 2022     		movs	r2, #32
- 533 00ba AD49     		ldr	r1, .L50+76
- 534 00bc 2046     		mov	r0, r4
- 535 00be FFF7FEFF 		bl	NOS_Flash_Load_Block
- 536              	.LVL32:
- 192:Core/Src/main.c ****   }
- 537              		.loc 1 192 5 view .LVU127
- 538 00c2 2146     		mov	r1, r4
- 539 00c4 AC48     		ldr	r0, .L50+84
- 540 00c6 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Copy
- 541              	.LVL33:
- 542              	.L31:
+ 522              		.loc 1 189 5 view .LVU124
+ 523 00a8 0028     		cmp	r0, #0
+ 524 00aa 00F0AB80 		beq	.L30
+ 191:Core/Src/main.c ****     //NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
+ 525              		.loc 1 191 5 is_stmt 1 view .LVU125
+ 526 00ae 2023     		movs	r3, #32
+ 527 00b0 0022     		movs	r2, #0
+ 528 00b2 AE49     		ldr	r1, .L50+72
+ 529 00b4 AE48     		ldr	r0, .L50+76
+ 530 00b6 FFF7FEFF 		bl	NOS_Flash_Load_Block
+ 531              	.LVL31:
+ 532              	.L31:
  200:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,breatheA);
- 543              		.loc 1 200 3 view .LVU128
- 544 00ca A84C     		ldr	r4, .L50+72
- 545 00cc 9A4F     		ldr	r7, .L50+20
- 546 00ce 6D46     		mov	r5, sp
- 547 00d0 04F10C06 		add	r6, r4, #12
- 548 00d4 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
- 549 00d6 0FC5     		stmia	r5!, {r0, r1, r2, r3}
- 550 00d8 3368     		ldr	r3, [r6]
- 551 00da 2B60     		str	r3, [r5]
- 552 00dc 94E80E00 		ldm	r4, {r1, r2, r3}
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 24
-
-
- 553 00e0 3846     		mov	r0, r7
- 554 00e2 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 555              	.LVL34:
+ 533              		.loc 1 200 3 view .LVU126
+ 534 00ba AB4C     		ldr	r4, .L50+68
+ 535 00bc 9E4F     		ldr	r7, .L50+20
+ 536 00be 6D46     		mov	r5, sp
+ 537 00c0 04F10C06 		add	r6, r4, #12
+ 538 00c4 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
+ 539 00c6 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+ 540 00c8 3368     		ldr	r3, [r6]
+ 541 00ca 2B60     		str	r3, [r5]
+ 542 00cc 94E80E00 		ldm	r4, {r1, r2, r3}
+ 543 00d0 3846     		mov	r0, r7
+ 544 00d2 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 545              	.LVL32:
  201:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,breatheA);
- 556              		.loc 1 201 3 view .LVU129
- 557 00e6 974E     		ldr	r6, .L50+32
- 558 00e8 6D46     		mov	r5, sp
- 559 00ea 04F10C0C 		add	ip, r4, #12
- 560 00ee BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 561 00f2 0FC5     		stmia	r5!, {r0, r1, r2, r3}
- 562 00f4 DCF80030 		ldr	r3, [ip]
- 563 00f8 2B60     		str	r3, [r5]
- 564 00fa 94E80E00 		ldm	r4, {r1, r2, r3}
- 565 00fe 3046     		mov	r0, r6
- 566 0100 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 567              	.LVL35:
+ 546              		.loc 1 201 3 view .LVU127
+ 547 00d6 9B4E     		ldr	r6, .L50+32
+ 548 00d8 6D46     		mov	r5, sp
+ 549 00da 04F10C0C 		add	ip, r4, #12
+ 550 00de BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 551 00e2 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+ 552 00e4 DCF80030 		ldr	r3, [ip]
+ 553 00e8 2B60     		str	r3, [r5]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 24
+
+
+ 554 00ea 94E80E00 		ldm	r4, {r1, r2, r3}
+ 555 00ee 3046     		mov	r0, r6
+ 556 00f0 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 557              	.LVL33:
  202:Core/Src/main.c **** 
- 568              		.loc 1 202 3 view .LVU130
- 569 0104 924D     		ldr	r5, .L50+44
- 570 0106 EC46     		mov	ip, sp
- 571 0108 04F10C0E 		add	lr, r4, #12
- 572 010c BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
- 573 0110 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 574 0114 DEF80030 		ldr	r3, [lr]
- 575 0118 CCF80030 		str	r3, [ip]
- 576 011c 94E80E00 		ldm	r4, {r1, r2, r3}
- 577 0120 2846     		mov	r0, r5
- 578 0122 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 579              	.LVL36:
+ 558              		.loc 1 202 3 view .LVU128
+ 559 00f4 964D     		ldr	r5, .L50+44
+ 560 00f6 EC46     		mov	ip, sp
+ 561 00f8 04F10C0E 		add	lr, r4, #12
+ 562 00fc BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 563 0100 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 564 0104 DEF80030 		ldr	r3, [lr]
+ 565 0108 CCF80030 		str	r3, [ip]
+ 566 010c 94E80E00 		ldm	r4, {r1, r2, r3}
+ 567 0110 2846     		mov	r0, r5
+ 568 0112 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 569              	.LVL34:
  204:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,rainbowA);
- 580              		.loc 1 204 3 view .LVU131
- 581 0126 944C     		ldr	r4, .L50+84
- 582 0128 EC46     		mov	ip, sp
- 583 012a 04F10C0E 		add	lr, r4, #12
- 584 012e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
- 585 0132 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 586 0136 DEF80030 		ldr	r3, [lr]
- 587 013a CCF80030 		str	r3, [ip]
- 588 013e 94E80E00 		ldm	r4, {r1, r2, r3}
- 589 0142 3846     		mov	r0, r7
- 590 0144 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 591              	.LVL37:
+ 570              		.loc 1 204 3 view .LVU129
+ 571 0116 964C     		ldr	r4, .L50+76
+ 572 0118 EC46     		mov	ip, sp
+ 573 011a 04F10C0E 		add	lr, r4, #12
+ 574 011e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 575 0122 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 576 0126 DEF80030 		ldr	r3, [lr]
+ 577 012a CCF80030 		str	r3, [ip]
+ 578 012e 94E80E00 		ldm	r4, {r1, r2, r3}
+ 579 0132 3846     		mov	r0, r7
+ 580 0134 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 581              	.LVL35:
  205:Core/Src/main.c ****   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,rainbowA);
- 592              		.loc 1 205 3 view .LVU132
- 593 0148 EC46     		mov	ip, sp
- 594 014a 04F10C0E 		add	lr, r4, #12
- 595 014e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
- 596 0152 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 597 0156 DEF80030 		ldr	r3, [lr]
- 598 015a CCF80030 		str	r3, [ip]
- 599 015e 94E80E00 		ldm	r4, {r1, r2, r3}
- 600 0162 3046     		mov	r0, r6
- 601 0164 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 602              	.LVL38:
+ 582              		.loc 1 205 3 view .LVU130
+ 583 0138 EC46     		mov	ip, sp
+ 584 013a 04F10C0E 		add	lr, r4, #12
+ 585 013e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 586 0142 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 587 0146 DEF80030 		ldr	r3, [lr]
+ 588 014a CCF80030 		str	r3, [ip]
+ 589 014e 94E80E00 		ldm	r4, {r1, r2, r3}
+ 590 0152 3046     		mov	r0, r6
+ 591 0154 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 592              	.LVL36:
  206:Core/Src/main.c **** 
- 603              		.loc 1 206 3 view .LVU133
- 604 0168 EC46     		mov	ip, sp
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 25
-
-
- 605 016a 04F10C0E 		add	lr, r4, #12
- 606 016e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
- 607 0172 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 608 0176 DEF80030 		ldr	r3, [lr]
- 609 017a CCF80030 		str	r3, [ip]
- 610 017e 94E80E00 		ldm	r4, {r1, r2, r3}
- 611 0182 2846     		mov	r0, r5
- 612 0184 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
- 613              	.LVL39:
+ 593              		.loc 1 206 3 view .LVU131
+ 594 0158 EC46     		mov	ip, sp
+ 595 015a 04F10C0E 		add	lr, r4, #12
+ 596 015e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 597 0162 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 598 0166 DEF80030 		ldr	r3, [lr]
+ 599 016a CCF80030 		str	r3, [ip]
+ 600 016e 94E80E00 		ldm	r4, {r1, r2, r3}
+ 601 0172 2846     		mov	r0, r5
+ 602 0174 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_AddEffect
+ 603              	.LVL37:
  208:Core/Src/main.c ****   NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
- 614              		.loc 1 208 3 view .LVU134
- 615 0188 0820     		movs	r0, #8
- 616 018a FFF7FEFF 		bl	NOS_GetBaseColor
- 617              	.LVL40:
- 618 018e 8DF81C00 		strb	r0, [sp, #28]
- 619 0192 C0F30723 		ubfx	r3, r0, #8, #8
- 620 0196 8DF81D30 		strb	r3, [sp, #29]
- 621 019a C0F30740 		ubfx	r0, r0, #16, #8
- 622 019e 8DF81E00 		strb	r0, [sp, #30]
- 623 01a2 0799     		ldr	r1, [sp, #28]
- 624 01a4 3846     		mov	r0, r7
- 625 01a6 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
- 626              	.LVL41:
+ 604              		.loc 1 208 3 view .LVU132
+ 605 0178 0820     		movs	r0, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 25
+
+
+ 606 017a FFF7FEFF 		bl	NOS_GetBaseColor
+ 607              	.LVL38:
+ 608 017e 8DF81C00 		strb	r0, [sp, #28]
+ 609 0182 C0F30723 		ubfx	r3, r0, #8, #8
+ 610 0186 8DF81D30 		strb	r3, [sp, #29]
+ 611 018a C0F30740 		ubfx	r0, r0, #16, #8
+ 612 018e 8DF81E00 		strb	r0, [sp, #30]
+ 613 0192 0799     		ldr	r1, [sp, #28]
+ 614 0194 3846     		mov	r0, r7
+ 615 0196 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 616              	.LVL39:
  209:Core/Src/main.c ****   NOS_WS2812B_Strip_ColorFill(&stripC,NOS_GetBaseColor(RED));  
- 627              		.loc 1 209 3 view .LVU135
- 628 01aa 0820     		movs	r0, #8
- 629 01ac FFF7FEFF 		bl	NOS_GetBaseColor
- 630              	.LVL42:
- 631 01b0 8DF82000 		strb	r0, [sp, #32]
- 632 01b4 C0F30723 		ubfx	r3, r0, #8, #8
- 633 01b8 8DF82130 		strb	r3, [sp, #33]
- 634 01bc C0F30740 		ubfx	r0, r0, #16, #8
- 635 01c0 8DF82200 		strb	r0, [sp, #34]
- 636 01c4 0899     		ldr	r1, [sp, #32]
- 637 01c6 3046     		mov	r0, r6
- 638 01c8 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
- 639              	.LVL43:
+ 617              		.loc 1 209 3 view .LVU133
+ 618 019a 0820     		movs	r0, #8
+ 619 019c FFF7FEFF 		bl	NOS_GetBaseColor
+ 620              	.LVL40:
+ 621 01a0 8DF82000 		strb	r0, [sp, #32]
+ 622 01a4 C0F30723 		ubfx	r3, r0, #8, #8
+ 623 01a8 8DF82130 		strb	r3, [sp, #33]
+ 624 01ac C0F30740 		ubfx	r0, r0, #16, #8
+ 625 01b0 8DF82200 		strb	r0, [sp, #34]
+ 626 01b4 0899     		ldr	r1, [sp, #32]
+ 627 01b6 3046     		mov	r0, r6
+ 628 01b8 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 629              	.LVL41:
  210:Core/Src/main.c **** 
- 640              		.loc 1 210 3 view .LVU136
- 641 01cc 0820     		movs	r0, #8
- 642 01ce FFF7FEFF 		bl	NOS_GetBaseColor
- 643              	.LVL44:
- 644 01d2 8DF82400 		strb	r0, [sp, #36]
- 645 01d6 C0F30723 		ubfx	r3, r0, #8, #8
- 646 01da 8DF82530 		strb	r3, [sp, #37]
- 647 01de C0F30740 		ubfx	r0, r0, #16, #8
- 648 01e2 8DF82600 		strb	r0, [sp, #38]
- 649 01e6 0999     		ldr	r1, [sp, #36]
- 650 01e8 2846     		mov	r0, r5
- 651 01ea FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
- 652              	.LVL45:
+ 630              		.loc 1 210 3 view .LVU134
+ 631 01bc 0820     		movs	r0, #8
+ 632 01be FFF7FEFF 		bl	NOS_GetBaseColor
+ 633              	.LVL42:
+ 634 01c2 8DF82400 		strb	r0, [sp, #36]
+ 635 01c6 C0F30723 		ubfx	r3, r0, #8, #8
+ 636 01ca 8DF82530 		strb	r3, [sp, #37]
+ 637 01ce C0F30740 		ubfx	r0, r0, #16, #8
+ 638 01d2 8DF82600 		strb	r0, [sp, #38]
+ 639 01d6 0999     		ldr	r1, [sp, #36]
+ 640 01d8 2846     		mov	r0, r5
+ 641 01da FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 642              	.LVL43:
  212:Core/Src/main.c ****   NOS_WS2812B_Strip_Update(&stripB);
- 653              		.loc 1 212 3 view .LVU137
- 654 01ee 3846     		mov	r0, r7
- 655 01f0 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 656              	.LVL46:
+ 643              		.loc 1 212 3 view .LVU135
+ 644 01de 3846     		mov	r0, r7
+ 645 01e0 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 646              	.LVL44:
  213:Core/Src/main.c ****   NOS_WS2812B_Strip_Update(&stripC);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 26
-
-
- 657              		.loc 1 213 3 view .LVU138
- 658 01f4 3046     		mov	r0, r6
- 659 01f6 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 660              	.LVL47:
+ 647              		.loc 1 213 3 view .LVU136
+ 648 01e4 3046     		mov	r0, r6
+ 649 01e6 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 650              	.LVL45:
  214:Core/Src/main.c ****   /* USER CODE END 2 */
- 661              		.loc 1 214 3 view .LVU139
- 662 01fa 2846     		mov	r0, r5
- 663 01fc FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 664              	.LVL48:
- 665 0200 35E0     		b	.L43
- 666              	.L28:
+ 651              		.loc 1 214 3 view .LVU137
+ 652 01ea 2846     		mov	r0, r5
+ 653 01ec FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 654              	.LVL46:
+ 655 01f0 35E0     		b	.L43
+ 656              	.L28:
  186:Core/Src/main.c ****   }
- 667              		.loc 1 186 5 view .LVU140
- 668 0202 5023     		movs	r3, #80
- 669 0204 0093     		str	r3, [sp]
- 670 0206 3C23     		movs	r3, #60
- 671 0208 0122     		movs	r2, #1
- 672 020a 6421     		movs	r1, #100
- 673 020c 5748     		ldr	r0, .L50+72
- 674 020e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Init
- 675              	.LVL49:
- 676 0212 49E7     		b	.L29
- 677              	.L30:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 26
+
+
+ 657              		.loc 1 186 5 view .LVU138
+ 658 01f2 5023     		movs	r3, #80
+ 659 01f4 0093     		str	r3, [sp]
+ 660 01f6 3C23     		movs	r3, #60
+ 661 01f8 0122     		movs	r2, #1
+ 662 01fa 6421     		movs	r1, #100
+ 663 01fc 5A48     		ldr	r0, .L50+68
+ 664 01fe FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Init
+ 665              	.LVL47:
+ 666 0202 4DE7     		b	.L29
+ 667              	.L30:
  196:Core/Src/main.c ****   }
- 678              		.loc 1 196 5 view .LVU141
- 679 0214 4FF44873 		mov	r3, #800
- 680 0218 0093     		str	r3, [sp]
- 681 021a C823     		movs	r3, #200
- 682 021c 0122     		movs	r2, #1
- 683 021e 4FF47A71 		mov	r1, #1000
- 684 0222 5548     		ldr	r0, .L50+84
- 685 0224 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Init
- 686              	.LVL50:
- 687 0228 4FE7     		b	.L31
- 688              	.L34:
+ 668              		.loc 1 196 5 view .LVU139
+ 669 0204 4FF44873 		mov	r3, #800
+ 670 0208 0093     		str	r3, [sp]
+ 671 020a C823     		movs	r3, #200
+ 672 020c 0122     		movs	r2, #1
+ 673 020e 4FF47A71 		mov	r1, #1000
+ 674 0212 5748     		ldr	r0, .L50+76
+ 675 0214 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Init
+ 676              	.LVL48:
+ 677 0218 4FE7     		b	.L31
+ 678              	.L34:
  237:Core/Src/main.c ****           NOS_TimeEvent_TickHandler(&tetrisUpdateEvent);
- 689              		.loc 1 237 11 view .LVU142
- 690 022a 4B48     		ldr	r0, .L50+52
- 691 022c FFF7FEFF 		bl	NOS_TimeEvent_TickHandler
- 692              	.LVL51:
+ 679              		.loc 1 237 11 view .LVU140
+ 680 021a 4F48     		ldr	r0, .L50+52
+ 681 021c FFF7FEFF 		bl	NOS_TimeEvent_TickHandler
+ 682              	.LVL49:
  238:Core/Src/main.c **** 
- 693              		.loc 1 238 11 view .LVU143
- 694 0230 4848     		ldr	r0, .L50+48
- 695 0232 FFF7FEFF 		bl	NOS_TimeEvent_TickHandler
- 696              	.LVL52:
+ 683              		.loc 1 238 11 view .LVU141
+ 684 0220 4C48     		ldr	r0, .L50+48
+ 685 0222 FFF7FEFF 		bl	NOS_TimeEvent_TickHandler
+ 686              	.LVL50:
  240:Core/Src/main.c ****           NOS_WS2812B_Strip_Effects_Handler(&stripB);
- 697              		.loc 1 240 11 view .LVU144
- 698 0236 4048     		ldr	r0, .L50+20
- 699 0238 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
- 700              	.LVL53:
+ 687              		.loc 1 240 11 view .LVU142
+ 688 0226 4448     		ldr	r0, .L50+20
+ 689 0228 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
+ 690              	.LVL51:
  241:Core/Src/main.c ****           NOS_WS2812B_Strip_Effects_Handler(&stripC);
- 701              		.loc 1 241 11 view .LVU145
- 702 023c 4148     		ldr	r0, .L50+32
- 703 023e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
- 704              	.LVL54:
+ 691              		.loc 1 241 11 view .LVU143
+ 692 022c 4548     		ldr	r0, .L50+32
+ 693 022e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
+ 694              	.LVL52:
  242:Core/Src/main.c ****           tick = false;
- 705              		.loc 1 242 11 view .LVU146
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 27
+ 695              		.loc 1 242 11 view .LVU144
+ 696 0232 4748     		ldr	r0, .L50+44
+ 697 0234 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
+ 698              	.LVL53:
+ 243:Core/Src/main.c ****     }
+ 699              		.loc 1 243 11 view .LVU145
+ 243:Core/Src/main.c ****     }
+ 700              		.loc 1 243 16 is_stmt 0 view .LVU146
+ 701 0238 4E4B     		ldr	r3, .L50+80
+ 702 023a 0022     		movs	r2, #0
+ 703 023c 1A70     		strb	r2, [r3]
+ 704              	.L32:
+ 246:Core/Src/main.c ****     {
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 27
 
 
- 706 0242 4348     		ldr	r0, .L50+44
- 707 0244 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Handler
- 708              	.LVL55:
- 243:Core/Src/main.c ****     }
- 709              		.loc 1 243 11 view .LVU147
- 243:Core/Src/main.c ****     }
- 710              		.loc 1 243 16 is_stmt 0 view .LVU148
- 711 0248 4C4B     		ldr	r3, .L50+88
- 712 024a 0022     		movs	r2, #0
- 713 024c 1A70     		strb	r2, [r3]
- 714              	.L32:
+ 705              		.loc 1 246 5 is_stmt 1 view .LVU147
  246:Core/Src/main.c ****     {
- 715              		.loc 1 246 5 is_stmt 1 view .LVU149
+ 706              		.loc 1 246 8 is_stmt 0 view .LVU148
+ 707 023e 3948     		ldr	r0, .L50
+ 708 0240 FFF7FEFF 		bl	NOS_UART_CheckReceive
+ 709              	.LVL54:
  246:Core/Src/main.c ****     {
- 716              		.loc 1 246 8 is_stmt 0 view .LVU150
- 717 024e 3548     		ldr	r0, .L50
- 718 0250 FFF7FEFF 		bl	NOS_UART_CheckReceive
- 719              	.LVL56:
- 246:Core/Src/main.c ****     {
- 720              		.loc 1 246 7 view .LVU151
- 721 0254 30BB     		cbnz	r0, .L47
- 722              	.L35:
+ 710              		.loc 1 246 7 view .LVU149
+ 711 0244 30BB     		cbnz	r0, .L47
+ 712              	.L35:
  340:Core/Src/main.c ****     { 
- 723              		.loc 1 340 5 is_stmt 1 view .LVU152
+ 713              		.loc 1 340 5 is_stmt 1 view .LVU150
  340:Core/Src/main.c ****     { 
- 724              		.loc 1 340 9 is_stmt 0 view .LVU153
- 725 0256 3F48     		ldr	r0, .L50+48
- 726 0258 FFF7FEFF 		bl	NOS_TimeEvent_Check
- 727              	.LVL57:
+ 714              		.loc 1 340 9 is_stmt 0 view .LVU151
+ 715 0246 4348     		ldr	r0, .L50+48
+ 716 0248 FFF7FEFF 		bl	NOS_TimeEvent_Check
+ 717              	.LVL55:
  340:Core/Src/main.c ****     { 
- 728              		.loc 1 340 8 view .LVU154
- 729 025c 0028     		cmp	r0, #0
- 730 025e 40F0A480 		bne	.L48
- 731              	.L42:
+ 718              		.loc 1 340 8 view .LVU152
+ 719 024c 0028     		cmp	r0, #0
+ 720 024e 40F0A380 		bne	.L48
+ 721              	.L42:
  347:Core/Src/main.c ****     {
- 732              		.loc 1 347 5 is_stmt 1 view .LVU155
+ 722              		.loc 1 347 5 is_stmt 1 view .LVU153
  347:Core/Src/main.c ****     {
- 733              		.loc 1 347 9 is_stmt 0 view .LVU156
- 734 0262 3D48     		ldr	r0, .L50+52
- 735 0264 FFF7FEFF 		bl	NOS_TimeEvent_Check
- 736              	.LVL58:
+ 723              		.loc 1 347 9 is_stmt 0 view .LVU154
+ 724 0252 4148     		ldr	r0, .L50+52
+ 725 0254 FFF7FEFF 		bl	NOS_TimeEvent_Check
+ 726              	.LVL56:
  347:Core/Src/main.c ****     {
- 737              		.loc 1 347 8 view .LVU157
- 738 0268 0028     		cmp	r0, #0
- 739 026a 40F0A280 		bne	.L49
- 740              	.L43:
+ 727              		.loc 1 347 8 view .LVU155
+ 728 0258 0028     		cmp	r0, #0
+ 729 025a 40F0A180 		bne	.L49
+ 730              	.L43:
  218:Core/Src/main.c ****   {    
- 741              		.loc 1 218 3 is_stmt 1 view .LVU158
+ 731              		.loc 1 218 3 is_stmt 1 view .LVU156
  221:Core/Src/main.c ****     {
- 742              		.loc 1 221 5 view .LVU159
+ 732              		.loc 1 221 5 view .LVU157
  221:Core/Src/main.c ****     {
- 743              		.loc 1 221 8 is_stmt 0 view .LVU160
- 744 026e 434B     		ldr	r3, .L50+88
- 745 0270 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 733              		.loc 1 221 8 is_stmt 0 view .LVU158
+ 734 025e 454B     		ldr	r3, .L50+80
+ 735 0260 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  221:Core/Src/main.c ****     {
- 746              		.loc 1 221 7 view .LVU161
- 747 0272 002B     		cmp	r3, #0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 28
+ 736              		.loc 1 221 7 view .LVU159
+ 737 0262 002B     		cmp	r3, #0
+ 738 0264 EBD0     		beq	.L32
+ 223:Core/Src/main.c **** 
+ 739              		.loc 1 223 11 is_stmt 1 view .LVU160
+ 223:Core/Src/main.c **** 
+ 740              		.loc 1 223 16 is_stmt 0 view .LVU161
+ 741 0266 444A     		ldr	r2, .L50+84
+ 742 0268 536A     		ldr	r3, [r2, #36]
+ 223:Core/Src/main.c **** 
+ 743              		.loc 1 223 37 view .LVU162
+ 744 026a 0133     		adds	r3, r3, #1
+ 745 026c 5362     		str	r3, [r2, #36]
+ 225:Core/Src/main.c ****           {
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 28
 
 
- 748 0274 EBD0     		beq	.L32
- 223:Core/Src/main.c **** 
- 749              		.loc 1 223 11 is_stmt 1 view .LVU162
- 223:Core/Src/main.c **** 
- 750              		.loc 1 223 16 is_stmt 0 view .LVU163
- 751 0276 424A     		ldr	r2, .L50+92
- 752 0278 536A     		ldr	r3, [r2, #36]
- 223:Core/Src/main.c **** 
- 753              		.loc 1 223 37 view .LVU164
- 754 027a 0133     		adds	r3, r3, #1
- 755 027c 5362     		str	r3, [r2, #36]
+ 746              		.loc 1 225 11 is_stmt 1 view .LVU163
  225:Core/Src/main.c ****           {
- 756              		.loc 1 225 11 is_stmt 1 view .LVU165
+ 747              		.loc 1 225 19 is_stmt 0 view .LVU164
+ 748 026e 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
  225:Core/Src/main.c ****           {
- 757              		.loc 1 225 19 is_stmt 0 view .LVU166
- 758 027e 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
- 225:Core/Src/main.c ****           {
- 759              		.loc 1 225 13 view .LVU167
- 760 0280 1AB1     		cbz	r2, .L33
+ 749              		.loc 1 225 13 view .LVU165
+ 750 0270 1AB1     		cbz	r2, .L33
  227:Core/Src/main.c ****           }
- 761              		.loc 1 227 13 is_stmt 1 view .LVU168
+ 751              		.loc 1 227 13 is_stmt 1 view .LVU166
  227:Core/Src/main.c ****           }
- 762              		.loc 1 227 18 is_stmt 0 view .LVU169
- 763 0282 3F48     		ldr	r0, .L50+92
- 764 0284 C169     		ldr	r1, [r0, #28]
+ 752              		.loc 1 227 18 is_stmt 0 view .LVU167
+ 753 0272 4148     		ldr	r0, .L50+84
+ 754 0274 C169     		ldr	r1, [r0, #28]
  227:Core/Src/main.c ****           }
- 765              		.loc 1 227 30 view .LVU170
- 766 0286 0131     		adds	r1, r1, #1
- 767 0288 C161     		str	r1, [r0, #28]
- 768              	.L33:
+ 755              		.loc 1 227 30 view .LVU168
+ 756 0276 0131     		adds	r1, r1, #1
+ 757 0278 C161     		str	r1, [r0, #28]
+ 758              	.L33:
  230:Core/Src/main.c ****           {
- 769              		.loc 1 230 11 is_stmt 1 view .LVU171
+ 759              		.loc 1 230 11 is_stmt 1 view .LVU169
  230:Core/Src/main.c ****           {
- 770              		.loc 1 230 13 is_stmt 0 view .LVU172
- 771 028a 002A     		cmp	r2, #0
- 772 028c CDD0     		beq	.L34
+ 760              		.loc 1 230 13 is_stmt 0 view .LVU170
+ 761 027a 002A     		cmp	r2, #0
+ 762 027c CDD0     		beq	.L34
  230:Core/Src/main.c ****           {
- 773              		.loc 1 230 33 discriminator 1 view .LVU173
- 774 028e 052B     		cmp	r3, #5
- 775 0290 CBDD     		ble	.L34
+ 763              		.loc 1 230 33 discriminator 1 view .LVU171
+ 764 027e 052B     		cmp	r3, #5
+ 765 0280 CBDD     		ble	.L34
  232:Core/Src/main.c ****                 UART2.receiveTime = 0;
- 776              		.loc 1 232 17 is_stmt 1 view .LVU174
+ 766              		.loc 1 232 17 is_stmt 1 view .LVU172
  232:Core/Src/main.c ****                 UART2.receiveTime = 0;
- 777              		.loc 1 232 29 is_stmt 0 view .LVU175
- 778 0292 2448     		ldr	r0, .L50
- 779 0294 00F58053 		add	r3, r0, #4096
- 780 0298 0022     		movs	r2, #0
- 781 029a 1A60     		str	r2, [r3]
+ 767              		.loc 1 232 29 is_stmt 0 view .LVU173
+ 768 0282 2848     		ldr	r0, .L50
+ 769 0284 00F58053 		add	r3, r0, #4096
+ 770 0288 0022     		movs	r2, #0
+ 771 028a 1A60     		str	r2, [r3]
  233:Core/Src/main.c ****                 NOS_UART_ReceiveReset(&UART2);
- 782              		.loc 1 233 17 is_stmt 1 view .LVU176
+ 772              		.loc 1 233 17 is_stmt 1 view .LVU174
  233:Core/Src/main.c ****                 NOS_UART_ReceiveReset(&UART2);
- 783              		.loc 1 233 35 is_stmt 0 view .LVU177
- 784 029c DA61     		str	r2, [r3, #28]
+ 773              		.loc 1 233 35 is_stmt 0 view .LVU175
+ 774 028c DA61     		str	r2, [r3, #28]
  234:Core/Src/main.c ****           }
- 785              		.loc 1 234 17 is_stmt 1 view .LVU178
- 786 029e FFF7FEFF 		bl	NOS_UART_ReceiveReset
- 787              	.LVL59:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 29
+ 775              		.loc 1 234 17 is_stmt 1 view .LVU176
+ 776 028e FFF7FEFF 		bl	NOS_UART_ReceiveReset
+ 777              	.LVL57:
+ 778 0292 C2E7     		b	.L34
+ 779              	.L47:
+ 248:Core/Src/main.c ****       {
+ 780              		.loc 1 248 7 view .LVU177
+ 248:Core/Src/main.c ****       {
+ 781              		.loc 1 248 10 is_stmt 0 view .LVU178
+ 782 0294 3949     		ldr	r1, .L50+88
+ 783 0296 2348     		ldr	r0, .L50
+ 784 0298 FFF7FEFF 		bl	NOS_UART_ParsePacket
+ 785              	.LVL58:
+ 248:Core/Src/main.c ****       {
+ 786              		.loc 1 248 9 view .LVU179
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 29
 
 
- 788 02a2 C2E7     		b	.L34
- 789              	.L47:
- 248:Core/Src/main.c ****       {
- 790              		.loc 1 248 7 view .LVU179
- 248:Core/Src/main.c ****       {
- 791              		.loc 1 248 10 is_stmt 0 view .LVU180
- 792 02a4 3749     		ldr	r1, .L50+96
- 793 02a6 1F48     		ldr	r0, .L50
- 794 02a8 FFF7FEFF 		bl	NOS_UART_ParsePacket
- 795              	.LVL60:
- 248:Core/Src/main.c ****       {
- 796              		.loc 1 248 9 view .LVU181
- 797 02ac 10B3     		cbz	r0, .L36
+ 787 029c 20B3     		cbz	r0, .L36
  251:Core/Src/main.c ****       {
- 798              		.loc 1 251 7 is_stmt 1 view .LVU182
+ 788              		.loc 1 251 7 is_stmt 1 view .LVU180
  251:Core/Src/main.c ****       {
- 799              		.loc 1 251 34 is_stmt 0 view .LVU183
- 800 02ae 354B     		ldr	r3, .L50+96
- 801 02b0 5B88     		ldrh	r3, [r3, #2]
+ 789              		.loc 1 251 34 is_stmt 0 view .LVU181
+ 790 029e 374B     		ldr	r3, .L50+88
+ 791 02a0 5B88     		ldrh	r3, [r3, #2]
  251:Core/Src/main.c ****       {
- 802              		.loc 1 251 7 view .LVU184
- 803 02b2 013B     		subs	r3, r3, #1
- 804 02b4 032B     		cmp	r3, #3
- 805 02b6 1DD8     		bhi	.L36
- 806 02b8 DFE803F0 		tbb	[pc, r3]
- 807              	.L38:
- 808 02bc 02       		.byte	(.L41-.L38)/2
- 809 02bd 68       		.byte	(.L40-.L38)/2
- 810 02be 6D       		.byte	(.L39-.L38)/2
- 811 02bf 72       		.byte	(.L37-.L38)/2
- 812              		.p2align 1
- 813              	.L41:
+ 792              		.loc 1 251 7 view .LVU182
+ 793 02a2 013B     		subs	r3, r3, #1
+ 794 02a4 032B     		cmp	r3, #3
+ 795 02a6 1FD8     		bhi	.L36
+ 796 02a8 DFE803F0 		tbb	[pc, r3]
+ 797              	.L38:
+ 798 02ac 02       		.byte	(.L41-.L38)/2
+ 799 02ad 36       		.byte	(.L40-.L38)/2
+ 800 02ae 6C       		.byte	(.L39-.L38)/2
+ 801 02af 71       		.byte	(.L37-.L38)/2
+ 802              		.p2align 1
+ 803              	.L41:
  256:Core/Src/main.c ****           NOS_Strip_UART_ParseCommand(&stripB,&lastMessage);
- 814              		.loc 1 256 11 is_stmt 1 view .LVU185
- 815 02c0 304D     		ldr	r5, .L50+96
- 816 02c2 1D4C     		ldr	r4, .L50+20
+ 804              		.loc 1 256 11 is_stmt 1 view .LVU183
+ 805 02b0 324D     		ldr	r5, .L50+88
+ 806 02b2 214C     		ldr	r4, .L50+20
+ 807 02b4 2946     		mov	r1, r5
+ 808 02b6 2046     		mov	r0, r4
+ 809 02b8 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
+ 810              	.LVL59:
+ 257:Core/Src/main.c ****           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
+ 811              		.loc 1 257 11 view .LVU184
+ 812 02bc 2946     		mov	r1, r5
+ 813 02be 2148     		ldr	r0, .L50+32
+ 814 02c0 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
+ 815              	.LVL60:
+ 258:Core/Src/main.c **** 
+ 816              		.loc 1 258 11 view .LVU185
  817 02c4 2946     		mov	r1, r5
- 818 02c6 2046     		mov	r0, r4
+ 818 02c6 2248     		ldr	r0, .L50+44
  819 02c8 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
  820              	.LVL61:
- 257:Core/Src/main.c ****           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
- 821              		.loc 1 257 11 view .LVU186
- 822 02cc 2946     		mov	r1, r5
- 823 02ce 1D48     		ldr	r0, .L50+32
- 824 02d0 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
- 825              	.LVL62:
- 258:Core/Src/main.c **** 
- 826              		.loc 1 258 11 view .LVU187
- 827 02d4 2946     		mov	r1, r5
- 828 02d6 1E48     		ldr	r0, .L50+44
- 829 02d8 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
- 830              	.LVL63:
- 260:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,32);
- 831              		.loc 1 260 11 view .LVU188
- 832 02dc 2022     		movs	r2, #32
- 833 02de 2149     		ldr	r1, .L50+64
- 834 02e0 04F11000 		add	r0, r4, #16
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 30
-
-
- 835 02e4 FFF7FEFF 		bl	NOS_Flash_Save_Block
- 836              	.LVL64:
+ 260:Core/Src/main.c ****           NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,0,32);
+ 821              		.loc 1 260 11 view .LVU186
+ 822 02cc 2023     		movs	r3, #32
+ 823 02ce 0022     		movs	r2, #0
+ 824 02d0 2449     		ldr	r1, .L50+64
+ 825 02d2 04F11000 		add	r0, r4, #16
+ 826 02d6 FFF7FEFF 		bl	NOS_Flash_Save_Block
+ 827              	.LVL62:
  261:Core/Src/main.c **** 
- 837              		.loc 1 261 11 view .LVU189
- 838 02e8 2022     		movs	r2, #32
- 839 02ea 2149     		ldr	r1, .L50+76
- 840 02ec 04F13000 		add	r0, r4, #48
- 841 02f0 FFF7FEFF 		bl	NOS_Flash_Save_Block
- 842              	.LVL65:
+ 828              		.loc 1 261 11 view .LVU187
+ 829 02da 2023     		movs	r3, #32
+ 830 02dc 0022     		movs	r2, #0
+ 831 02de 2349     		ldr	r1, .L50+72
+ 832 02e0 04F13000 		add	r0, r4, #48
+ 833 02e4 FFF7FEFF 		bl	NOS_Flash_Save_Block
+ 834              	.LVL63:
  263:Core/Src/main.c **** 
- 843              		.loc 1 263 9 view .LVU190
- 844              	.L36:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 30
+
+
+ 835              		.loc 1 263 9 view .LVU188
+ 836              	.L36:
  328:Core/Src/main.c ****       HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
- 845              		.loc 1 328 7 view .LVU191
- 846 02f4 0B48     		ldr	r0, .L50
- 847 02f6 FFF7FEFF 		bl	NOS_UART_EndReceive
- 848              	.LVL66:
+ 837              		.loc 1 328 7 view .LVU189
+ 838 02e8 0E48     		ldr	r0, .L50
+ 839 02ea FFF7FEFF 		bl	NOS_UART_EndReceive
+ 840              	.LVL64:
  329:Core/Src/main.c ****       
- 849              		.loc 1 329 7 view .LVU192
- 850 02fa 4FF40051 		mov	r1, #8192
- 851 02fe 2248     		ldr	r0, .L50+100
- 852 0300 FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 853              	.LVL67:
+ 841              		.loc 1 329 7 view .LVU190
+ 842 02ee 4FF40051 		mov	r1, #8192
+ 843 02f2 2348     		ldr	r0, .L50+92
+ 844 02f4 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 845              	.LVL65:
  331:Core/Src/main.c ****       
- 854              		.loc 1 331 7 view .LVU193
- 855 0304 0849     		ldr	r1, .L50+4
- 856 0306 1F48     		ldr	r0, .L50+96
- 857 0308 FFF7FEFF 		bl	NOS_UART_PacketApprovedNotice
- 858              	.LVL68:
+ 846              		.loc 1 331 7 view .LVU191
+ 847 02f8 0B49     		ldr	r1, .L50+4
+ 848 02fa 2048     		ldr	r0, .L50+88
+ 849 02fc FFF7FEFF 		bl	NOS_UART_PacketApprovedNotice
+ 850              	.LVL66:
  333:Core/Src/main.c ****       NOS_WS2812B_Strip_Update(&stripB);
- 859              		.loc 1 333 7 view .LVU194
- 860 030c 0A48     		ldr	r0, .L50+20
+ 851              		.loc 1 333 7 view .LVU192
+ 852 0300 0D48     		ldr	r0, .L50+20
+ 853 0302 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 854              	.LVL67:
+ 334:Core/Src/main.c ****       NOS_WS2812B_Strip_Update(&stripC);
+ 855              		.loc 1 334 7 view .LVU193
+ 856 0306 0F48     		ldr	r0, .L50+32
+ 857 0308 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 858              	.LVL68:
+ 335:Core/Src/main.c ****       visHandle();
+ 859              		.loc 1 335 7 view .LVU194
+ 860 030c 1048     		ldr	r0, .L50+44
  861 030e FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
  862              	.LVL69:
- 334:Core/Src/main.c ****       NOS_WS2812B_Strip_Update(&stripC);
- 863              		.loc 1 334 7 view .LVU195
- 864 0312 0C48     		ldr	r0, .L50+32
- 865 0314 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 866              	.LVL70:
- 335:Core/Src/main.c ****       visHandle();
- 867              		.loc 1 335 7 view .LVU196
- 868 0318 0D48     		ldr	r0, .L50+44
- 869 031a FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 870              	.LVL71:
  336:Core/Src/main.c ****       
- 871              		.loc 1 336 7 view .LVU197
- 872 031e FFF7FEFF 		bl	visHandle
- 873              	.LVL72:
- 874 0322 98E7     		b	.L35
+ 863              		.loc 1 336 7 view .LVU195
+ 864 0312 FFF7FEFF 		bl	visHandle
+ 865              	.LVL70:
+ 866 0316 96E7     		b	.L35
+ 867              	.L40:
+ 268:Core/Src/main.c ****         
+ 868              		.loc 1 268 11 view .LVU196
+ 869 0318 1849     		ldr	r1, .L50+88
+ 870 031a 0748     		ldr	r0, .L50+20
+ 871 031c FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
+ 872              	.LVL71:
+ 270:Core/Src/main.c **** 
+ 873              		.loc 1 270 9 view .LVU197
+ 874 0320 E2E7     		b	.L36
  875              	.L51:
- 876              		.align	2
+ 876 0322 00BF     		.align	2
  877              	.L50:
  878 0324 00000000 		.word	UART2
  879 0328 00000000 		.word	huart2
  880 032c 00000000 		.word	.LC0
  881 0330 00000000 		.word	pixelsA
  882 0334 00000000 		.word	frameBuffer1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 31
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 31
 
 
  883 0338 00000000 		.word	stripA
@@ -1813,451 +1813,436 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 1
  892 035c 00000000 		.word	uartTestEvent
  893 0360 00000000 		.word	bright
  894 0364 00500008 		.word	134238208
- 895 0368 00000000 		.word	test1
- 896 036c 00000000 		.word	breatheA
- 897 0370 00550008 		.word	134239488
- 898 0374 00000000 		.word	test2
- 899 0378 00000000 		.word	rainbowA
- 900 037c 00000000 		.word	tick
- 901 0380 00100000 		.word	UART2+4096
- 902 0384 00000000 		.word	lastMessage
- 903 0388 00100140 		.word	1073811456
- 904              	.L40:
- 268:Core/Src/main.c ****         
- 905              		.loc 1 268 11 view .LVU198
- 906 038c 1049     		ldr	r1, .L52
- 907 038e 1148     		ldr	r0, .L52+4
- 908 0390 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
- 909              	.LVL73:
- 270:Core/Src/main.c **** 
- 910              		.loc 1 270 9 view .LVU199
- 911 0394 AEE7     		b	.L36
- 912              	.L39:
+ 895 0368 00000000 		.word	breatheA
+ 896 036c 00550008 		.word	134239488
+ 897 0370 00000000 		.word	rainbowA
+ 898 0374 00000000 		.word	tick
+ 899 0378 00100000 		.word	UART2+4096
+ 900 037c 00000000 		.word	lastMessage
+ 901 0380 00100140 		.word	1073811456
+ 902              	.L39:
  276:Core/Src/main.c ****               
- 913              		.loc 1 276 11 view .LVU200
- 914 0396 0E49     		ldr	r1, .L52
- 915 0398 0F48     		ldr	r0, .L52+8
- 916 039a FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
- 917              	.LVL74:
+ 903              		.loc 1 276 11 view .LVU198
+ 904 0384 0E49     		ldr	r1, .L52
+ 905 0386 0F48     		ldr	r0, .L52+4
+ 906 0388 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
+ 907              	.LVL72:
  278:Core/Src/main.c **** 
- 918              		.loc 1 278 9 view .LVU201
- 919 039e A9E7     		b	.L36
- 920              	.L37:
+ 908              		.loc 1 278 9 view .LVU199
+ 909 038c ACE7     		b	.L36
+ 910              	.L37:
  283:Core/Src/main.c ****       
- 921              		.loc 1 283 9 view .LVU202
- 922 03a0 0B49     		ldr	r1, .L52
- 923 03a2 0E48     		ldr	r0, .L52+12
- 924 03a4 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
- 925              	.LVL75:
+ 911              		.loc 1 283 9 view .LVU200
+ 912 038e 0C49     		ldr	r1, .L52
+ 913 0390 0D48     		ldr	r0, .L52+8
+ 914 0392 FFF7FEFF 		bl	NOS_Strip_UART_ParseCommand
+ 915              	.LVL73:
  285:Core/Src/main.c **** 
- 926              		.loc 1 285 9 view .LVU203
- 927 03a8 A4E7     		b	.L36
- 928              	.L48:
+ 916              		.loc 1 285 9 view .LVU201
+ 917 0396 A7E7     		b	.L36
+ 918              	.L48:
  344:Core/Src/main.c ****     }
- 929              		.loc 1 344 7 view .LVU204
- 930 03aa 0D48     		ldr	r0, .L52+16
- 931 03ac FFF7FEFF 		bl	NOS_TimeEvent_FinishEvent
- 932              	.LVL76:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 32
-
-
- 933 03b0 57E7     		b	.L42
- 934              	.L49:
+ 919              		.loc 1 344 7 view .LVU202
+ 920 0398 0C48     		ldr	r0, .L52+12
+ 921 039a FFF7FEFF 		bl	NOS_TimeEvent_FinishEvent
+ 922              	.LVL74:
+ 923 039e 58E7     		b	.L42
+ 924              	.L49:
  350:Core/Src/main.c ****       NOS_WS2812B_Strip_Update(&stripB);
- 935              		.loc 1 350 7 view .LVU205
- 936 03b2 0848     		ldr	r0, .L52+4
- 937 03b4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 938              	.LVL77:
+ 925              		.loc 1 350 7 view .LVU203
+ 926 03a0 0B48     		ldr	r0, .L52+16
+ 927 03a2 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 928              	.LVL75:
  351:Core/Src/main.c ****       NOS_WS2812B_Strip_Update(&stripC);
- 939              		.loc 1 351 7 view .LVU206
- 940 03b8 0748     		ldr	r0, .L52+8
- 941 03ba FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 942              	.LVL78:
+ 929              		.loc 1 351 7 view .LVU204
+ 930 03a6 0748     		ldr	r0, .L52+4
+ 931 03a8 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 932              	.LVL76:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 32
+
+
  352:Core/Src/main.c ****       visHandle();
- 943              		.loc 1 352 7 view .LVU207
- 944 03be 0748     		ldr	r0, .L52+12
- 945 03c0 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 946              	.LVL79:
+ 933              		.loc 1 352 7 view .LVU205
+ 934 03ac 0648     		ldr	r0, .L52+8
+ 935 03ae FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 936              	.LVL77:
  353:Core/Src/main.c ****       
- 947              		.loc 1 353 7 view .LVU208
- 948 03c4 FFF7FEFF 		bl	visHandle
- 949              	.LVL80:
+ 937              		.loc 1 353 7 view .LVU206
+ 938 03b2 FFF7FEFF 		bl	visHandle
+ 939              	.LVL78:
  356:Core/Src/main.c ****     }
- 950              		.loc 1 356 7 view .LVU209
- 951 03c8 0648     		ldr	r0, .L52+20
- 952 03ca FFF7FEFF 		bl	NOS_TimeEvent_FinishEvent
- 953              	.LVL81:
- 954 03ce 4EE7     		b	.L43
- 955              	.L53:
- 956              		.align	2
- 957              	.L52:
- 958 03d0 00000000 		.word	lastMessage
- 959 03d4 00000000 		.word	stripA
- 960 03d8 00000000 		.word	stripB
- 961 03dc 00000000 		.word	stripC
- 962 03e0 00000000 		.word	tetrisUpdateEvent
- 963 03e4 00000000 		.word	screenUpdateEvent
- 964              		.cfi_endproc
- 965              	.LFE66:
- 967              		.global	screenUpdate
- 968              		.section	.bss.screenUpdate,"aw",%nobits
- 971              	screenUpdate:
- 972 0000 00       		.space	1
- 973              		.global	tick
- 974              		.section	.bss.tick,"aw",%nobits
- 977              	tick:
- 978 0000 00       		.space	1
- 979              		.global	receive
- 980              		.section	.bss.receive,"aw",%nobits
- 983              	receive:
- 984 0000 00       		.space	1
- 985              		.global	test2
- 986              		.section	.bss.test2,"aw",%nobits
- 987              		.align	2
- 990              	test2:
- 991 0000 00000000 		.space	32
- 991      00000000 
- 991      00000000 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 33
+ 940              		.loc 1 356 7 view .LVU207
+ 941 03b6 0748     		ldr	r0, .L52+20
+ 942 03b8 FFF7FEFF 		bl	NOS_TimeEvent_FinishEvent
+ 943              	.LVL79:
+ 944 03bc 4FE7     		b	.L43
+ 945              	.L53:
+ 946 03be 00BF     		.align	2
+ 947              	.L52:
+ 948 03c0 00000000 		.word	lastMessage
+ 949 03c4 00000000 		.word	stripB
+ 950 03c8 00000000 		.word	stripC
+ 951 03cc 00000000 		.word	tetrisUpdateEvent
+ 952 03d0 00000000 		.word	stripA
+ 953 03d4 00000000 		.word	screenUpdateEvent
+ 954              		.cfi_endproc
+ 955              	.LFE66:
+ 957              		.global	screenUpdate
+ 958              		.section	.bss.screenUpdate,"aw",%nobits
+ 961              	screenUpdate:
+ 962 0000 00       		.space	1
+ 963              		.global	tick
+ 964              		.section	.bss.tick,"aw",%nobits
+ 967              	tick:
+ 968 0000 00       		.space	1
+ 969              		.global	receive
+ 970              		.section	.bss.receive,"aw",%nobits
+ 973              	receive:
+ 974 0000 00       		.space	1
+ 975              		.global	test2
+ 976              		.section	.bss.test2,"aw",%nobits
+ 977              		.align	2
+ 980              	test2:
+ 981 0000 00000000 		.space	32
+ 981      00000000 
+ 981      00000000 
+ 981      00000000 
+ 981      00000000 
+ 982              		.global	test1
+ 983              		.section	.bss.test1,"aw",%nobits
+ 984              		.align	2
+ 987              	test1:
+ 988 0000 00000000 		.space	32
+ 988      00000000 
+ 988      00000000 
+ 988      00000000 
+ 988      00000000 
+ 989              		.global	lastMessage
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 33
 
 
- 991      00000000 
- 991      00000000 
- 992              		.global	test1
- 993              		.section	.bss.test1,"aw",%nobits
- 994              		.align	2
- 997              	test1:
- 998 0000 00000000 		.space	32
- 998      00000000 
- 998      00000000 
- 998      00000000 
- 998      00000000 
- 999              		.global	lastMessage
- 1000              		.section	.bss.lastMessage,"aw",%nobits
- 1001              		.align	2
- 1004              	lastMessage:
- 1005 0000 00000000 		.space	532
- 1005      00000000 
- 1005      00000000 
- 1005      00000000 
- 1005      00000000 
- 1006              		.global	value
- 1007              		.section	.bss.value,"aw",%nobits
- 1008              		.align	2
- 1011              	value:
- 1012 0000 0000     		.space	2
- 1013              		.global	rainbowA
- 1014              		.section	.bss.rainbowA,"aw",%nobits
- 1015              		.align	2
- 1018              	rainbowA:
- 1019 0000 00000000 		.space	32
- 1019      00000000 
- 1019      00000000 
- 1019      00000000 
- 1019      00000000 
- 1020              		.global	breatheA
- 1021              		.section	.bss.breatheA,"aw",%nobits
- 1022              		.align	2
- 1025              	breatheA:
- 1026 0000 00000000 		.space	32
- 1026      00000000 
- 1026      00000000 
- 1026      00000000 
- 1026      00000000 
- 1027              		.global	buttonDelay
- 1028              		.section	.bss.buttonDelay,"aw",%nobits
- 1029              		.align	2
- 1032              	buttonDelay:
- 1033 0000 00000000 		.space	4
- 1034              		.global	currColor
- 1035              		.section	.bss.currColor,"aw",%nobits
- 1036              		.align	2
- 1039              	currColor:
- 1040 0000 00000000 		.space	4
- 1041              		.global	uartPixelCount
- 1042              		.section	.bss.uartPixelCount,"aw",%nobits
- 1043              		.align	2
- 1046              	uartPixelCount:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 34
+ 990              		.section	.bss.lastMessage,"aw",%nobits
+ 991              		.align	2
+ 994              	lastMessage:
+ 995 0000 00000000 		.space	532
+ 995      00000000 
+ 995      00000000 
+ 995      00000000 
+ 995      00000000 
+ 996              		.global	value
+ 997              		.section	.bss.value,"aw",%nobits
+ 998              		.align	2
+ 1001              	value:
+ 1002 0000 0000     		.space	2
+ 1003              		.global	rainbowA
+ 1004              		.section	.bss.rainbowA,"aw",%nobits
+ 1005              		.align	2
+ 1008              	rainbowA:
+ 1009 0000 00000000 		.space	32
+ 1009      00000000 
+ 1009      00000000 
+ 1009      00000000 
+ 1009      00000000 
+ 1010              		.global	breatheA
+ 1011              		.section	.bss.breatheA,"aw",%nobits
+ 1012              		.align	2
+ 1015              	breatheA:
+ 1016 0000 00000000 		.space	32
+ 1016      00000000 
+ 1016      00000000 
+ 1016      00000000 
+ 1016      00000000 
+ 1017              		.global	buttonDelay
+ 1018              		.section	.bss.buttonDelay,"aw",%nobits
+ 1019              		.align	2
+ 1022              	buttonDelay:
+ 1023 0000 00000000 		.space	4
+ 1024              		.global	currColor
+ 1025              		.section	.bss.currColor,"aw",%nobits
+ 1026              		.align	2
+ 1029              	currColor:
+ 1030 0000 00000000 		.space	4
+ 1031              		.global	uartPixelCount
+ 1032              		.section	.bss.uartPixelCount,"aw",%nobits
+ 1033              		.align	2
+ 1036              	uartPixelCount:
+ 1037 0000 00000000 		.space	4
+ 1038              		.global	PE4
+ 1039              		.section	.bss.PE4,"aw",%nobits
+ 1040              		.align	2
+ 1043              	PE4:
+ 1044 0000 00000000 		.space	8
+ 1044      00000000 
+ 1045              		.global	PE3
+ 1046              		.section	.bss.PE3,"aw",%nobits
+ 1047              		.align	2
+ 1050              	PE3:
+ 1051 0000 00000000 		.space	8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 34
 
 
- 1047 0000 00000000 		.space	4
- 1048              		.global	PE4
- 1049              		.section	.bss.PE4,"aw",%nobits
- 1050              		.align	2
- 1053              	PE4:
- 1054 0000 00000000 		.space	8
- 1054      00000000 
- 1055              		.global	PE3
- 1056              		.section	.bss.PE3,"aw",%nobits
- 1057              		.align	2
- 1060              	PE3:
- 1061 0000 00000000 		.space	8
- 1061      00000000 
- 1062              		.global	PA7
- 1063              		.section	.bss.PA7,"aw",%nobits
- 1064              		.align	2
- 1067              	PA7:
- 1068 0000 00000000 		.space	8
- 1068      00000000 
- 1069              		.global	PA6
- 1070              		.section	.bss.PA6,"aw",%nobits
- 1071              		.align	2
- 1074              	PA6:
- 1075 0000 00000000 		.space	8
- 1075      00000000 
- 1076              		.global	button
- 1077              		.section	.bss.button,"aw",%nobits
- 1078              		.align	2
- 1081              	button:
- 1082 0000 00000000 		.space	32
- 1082      00000000 
- 1082      00000000 
- 1082      00000000 
- 1082      00000000 
- 1083              		.global	bright
- 1084              		.section	.bss.bright,"aw",%nobits
- 1085              		.align	2
- 1088              	bright:
- 1089 0000 00000000 		.space	20
- 1089      00000000 
- 1089      00000000 
- 1089      00000000 
- 1089      00000000 
- 1090              		.global	receiveTime
- 1091              		.section	.bss.receiveTime,"aw",%nobits
- 1092              		.align	2
- 1095              	receiveTime:
- 1096 0000 00000000 		.space	4
- 1097              		.global	UART2
- 1098              		.section	.bss.UART2,"aw",%nobits
- 1099              		.align	2
- 1102              	UART2:
- 1103 0000 00000000 		.space	4676
- 1103      00000000 
- 1103      00000000 
- 1103      00000000 
- 1103      00000000 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 35
+ 1051      00000000 
+ 1052              		.global	PA7
+ 1053              		.section	.bss.PA7,"aw",%nobits
+ 1054              		.align	2
+ 1057              	PA7:
+ 1058 0000 00000000 		.space	8
+ 1058      00000000 
+ 1059              		.global	PA6
+ 1060              		.section	.bss.PA6,"aw",%nobits
+ 1061              		.align	2
+ 1064              	PA6:
+ 1065 0000 00000000 		.space	8
+ 1065      00000000 
+ 1066              		.global	button
+ 1067              		.section	.bss.button,"aw",%nobits
+ 1068              		.align	2
+ 1071              	button:
+ 1072 0000 00000000 		.space	32
+ 1072      00000000 
+ 1072      00000000 
+ 1072      00000000 
+ 1072      00000000 
+ 1073              		.global	bright
+ 1074              		.section	.bss.bright,"aw",%nobits
+ 1075              		.align	2
+ 1078              	bright:
+ 1079 0000 00000000 		.space	20
+ 1079      00000000 
+ 1079      00000000 
+ 1079      00000000 
+ 1079      00000000 
+ 1080              		.global	receiveTime
+ 1081              		.section	.bss.receiveTime,"aw",%nobits
+ 1082              		.align	2
+ 1085              	receiveTime:
+ 1086 0000 00000000 		.space	4
+ 1087              		.global	UART2
+ 1088              		.section	.bss.UART2,"aw",%nobits
+ 1089              		.align	2
+ 1092              	UART2:
+ 1093 0000 00000000 		.space	4676
+ 1093      00000000 
+ 1093      00000000 
+ 1093      00000000 
+ 1093      00000000 
+ 1094              		.global	pixelsC
+ 1095              		.section	.bss.pixelsC,"aw",%nobits
+ 1096              		.align	2
+ 1099              	pixelsC:
+ 1100 0000 00000000 		.space	384
+ 1100      00000000 
+ 1100      00000000 
+ 1100      00000000 
+ 1100      00000000 
+ 1101              		.global	pixelsB
+ 1102              		.section	.bss.pixelsB,"aw",%nobits
+ 1103              		.align	2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 35
 
 
- 1104              		.global	pixelsC
- 1105              		.section	.bss.pixelsC,"aw",%nobits
- 1106              		.align	2
- 1109              	pixelsC:
- 1110 0000 00000000 		.space	384
- 1110      00000000 
- 1110      00000000 
- 1110      00000000 
- 1110      00000000 
- 1111              		.global	pixelsB
- 1112              		.section	.bss.pixelsB,"aw",%nobits
- 1113              		.align	2
- 1116              	pixelsB:
- 1117 0000 00000000 		.space	384
- 1117      00000000 
- 1117      00000000 
- 1117      00000000 
- 1117      00000000 
- 1118              		.global	pixelsA
- 1119              		.section	.bss.pixelsA,"aw",%nobits
- 1120              		.align	2
- 1123              	pixelsA:
- 1124 0000 00000000 		.space	384
- 1124      00000000 
- 1124      00000000 
- 1124      00000000 
- 1124      00000000 
- 1125              		.global	stripC
- 1126              		.section	.bss.stripC,"aw",%nobits
- 1127              		.align	2
- 1130              	stripC:
- 1131 0000 00000000 		.space	340
- 1131      00000000 
- 1131      00000000 
- 1131      00000000 
- 1131      00000000 
- 1132              		.global	stripB
- 1133              		.section	.bss.stripB,"aw",%nobits
- 1134              		.align	2
- 1137              	stripB:
- 1138 0000 00000000 		.space	340
- 1138      00000000 
- 1138      00000000 
- 1138      00000000 
- 1138      00000000 
- 1139              		.global	stripA
- 1140              		.section	.bss.stripA,"aw",%nobits
- 1141              		.align	2
- 1144              	stripA:
- 1145 0000 00000000 		.space	340
- 1145      00000000 
- 1145      00000000 
- 1145      00000000 
- 1145      00000000 
- 1146              		.global	uartTestEvent
- 1147              		.section	.bss.uartTestEvent,"aw",%nobits
- 1148              		.align	2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 36
+ 1106              	pixelsB:
+ 1107 0000 00000000 		.space	384
+ 1107      00000000 
+ 1107      00000000 
+ 1107      00000000 
+ 1107      00000000 
+ 1108              		.global	pixelsA
+ 1109              		.section	.bss.pixelsA,"aw",%nobits
+ 1110              		.align	2
+ 1113              	pixelsA:
+ 1114 0000 00000000 		.space	384
+ 1114      00000000 
+ 1114      00000000 
+ 1114      00000000 
+ 1114      00000000 
+ 1115              		.global	stripC
+ 1116              		.section	.bss.stripC,"aw",%nobits
+ 1117              		.align	2
+ 1120              	stripC:
+ 1121 0000 00000000 		.space	340
+ 1121      00000000 
+ 1121      00000000 
+ 1121      00000000 
+ 1121      00000000 
+ 1122              		.global	stripB
+ 1123              		.section	.bss.stripB,"aw",%nobits
+ 1124              		.align	2
+ 1127              	stripB:
+ 1128 0000 00000000 		.space	340
+ 1128      00000000 
+ 1128      00000000 
+ 1128      00000000 
+ 1128      00000000 
+ 1129              		.global	stripA
+ 1130              		.section	.bss.stripA,"aw",%nobits
+ 1131              		.align	2
+ 1134              	stripA:
+ 1135 0000 00000000 		.space	340
+ 1135      00000000 
+ 1135      00000000 
+ 1135      00000000 
+ 1135      00000000 
+ 1136              		.global	uartTestEvent
+ 1137              		.section	.bss.uartTestEvent,"aw",%nobits
+ 1138              		.align	2
+ 1141              	uartTestEvent:
+ 1142 0000 00000000 		.space	12
+ 1142      00000000 
+ 1142      00000000 
+ 1143              		.global	screenUpdateEvent
+ 1144              		.section	.bss.screenUpdateEvent,"aw",%nobits
+ 1145              		.align	2
+ 1148              	screenUpdateEvent:
+ 1149 0000 00000000 		.space	12
+ 1149      00000000 
+ 1149      00000000 
+ 1150              		.global	tetrisUpdateEvent
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 36
 
 
- 1151              	uartTestEvent:
- 1152 0000 00000000 		.space	12
- 1152      00000000 
- 1152      00000000 
- 1153              		.global	screenUpdateEvent
- 1154              		.section	.bss.screenUpdateEvent,"aw",%nobits
- 1155              		.align	2
- 1158              	screenUpdateEvent:
- 1159 0000 00000000 		.space	12
- 1159      00000000 
- 1159      00000000 
- 1160              		.global	tetrisUpdateEvent
- 1161              		.section	.bss.tetrisUpdateEvent,"aw",%nobits
- 1162              		.align	2
- 1165              	tetrisUpdateEvent:
- 1166 0000 00000000 		.space	12
- 1166      00000000 
- 1166      00000000 
- 1167              		.global	huart2
- 1168              		.section	.bss.huart2,"aw",%nobits
- 1169              		.align	2
- 1172              	huart2:
- 1173 0000 00000000 		.space	72
- 1173      00000000 
- 1173      00000000 
- 1173      00000000 
- 1173      00000000 
- 1174              		.global	htim4
- 1175              		.section	.bss.htim4,"aw",%nobits
- 1176              		.align	2
- 1179              	htim4:
- 1180 0000 00000000 		.space	72
- 1180      00000000 
- 1180      00000000 
- 1180      00000000 
- 1180      00000000 
- 1181              		.text
- 1182              	.Letext0:
- 1183              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1184              		.file 4 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1185              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 1186              		.file 6 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1187              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 1188              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
- 1189              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
- 1190              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 1191              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 1192              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 1193              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 1194              		.file 14 "Core/Inc/NOS_Typedefs.h"
- 1195              		.file 15 "Core/Inc/NOS_BaseColors.h"
- 1196              		.file 16 "Core/Inc/NOS_UART.h"
- 1197              		.file 17 "Core/Inc/NOS_Time.h"
- 1198              		.file 18 "Core/Inc/NOS_Flash.h"
- 1199              		.file 19 "Core/Inc/NOS_Strip_UART.h"
- 1200              		.file 20 "Core/Inc/NOS_WS2812B_Strip.h"
- 1201              		.file 21 "Core/Inc/NOS_Math.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 37
-
-
- 1202              		.file 22 "Core/Inc/WS2812B_Effects.h"
- 1203              		.file 23 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 1204              		.file 24 "<built-in>"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 38
+ 1151              		.section	.bss.tetrisUpdateEvent,"aw",%nobits
+ 1152              		.align	2
+ 1155              	tetrisUpdateEvent:
+ 1156 0000 00000000 		.space	12
+ 1156      00000000 
+ 1156      00000000 
+ 1157              		.global	huart2
+ 1158              		.section	.bss.huart2,"aw",%nobits
+ 1159              		.align	2
+ 1162              	huart2:
+ 1163 0000 00000000 		.space	72
+ 1163      00000000 
+ 1163      00000000 
+ 1163      00000000 
+ 1163      00000000 
+ 1164              		.global	htim4
+ 1165              		.section	.bss.htim4,"aw",%nobits
+ 1166              		.align	2
+ 1169              	htim4:
+ 1170 0000 00000000 		.space	72
+ 1170      00000000 
+ 1170      00000000 
+ 1170      00000000 
+ 1170      00000000 
+ 1171              		.text
+ 1172              	.Letext0:
+ 1173              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1174              		.file 4 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1175              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1176              		.file 6 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1177              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1178              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 1179              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 1180              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1181              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1182              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1183              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 1184              		.file 14 "Core/Inc/NOS_Typedefs.h"
+ 1185              		.file 15 "Core/Inc/NOS_BaseColors.h"
+ 1186              		.file 16 "Core/Inc/NOS_UART.h"
+ 1187              		.file 17 "Core/Inc/NOS_Time.h"
+ 1188              		.file 18 "Core/Inc/NOS_Flash.h"
+ 1189              		.file 19 "Core/Inc/NOS_Strip_UART.h"
+ 1190              		.file 20 "Core/Inc/NOS_WS2812B_Strip.h"
+ 1191              		.file 21 "Core/Inc/NOS_Math.h"
+ 1192              		.file 22 "Core/Inc/WS2812B_Effects.h"
+ 1193              		.file 23 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 1194              		.file 24 "<built-in>"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:110    .text.MX_GPIO_Init:00000060 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:116    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:122    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:151    .text.HAL_UART_RxCpltCallback:00000014 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1102   .bss.UART2:00000000 UART2
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:983    .bss.receive:00000000 receive
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:157    .text.SysTick_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:163    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:186    .text.SysTick_Handler:00000010 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:977    .bss.tick:00000000 tick
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:191    .text.Error_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:197    .text.Error_Handler:00000000 Error_Handler
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:229    .text.MX_USART2_UART_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:234    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:288    .text.MX_USART2_UART_Init:0000002c $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1172   .bss.huart2:00000000 huart2
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:294    .text.SystemClock_Config:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:300    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:398    .rodata.main.str1.4:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:402    .text.main:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:408    .text.main:00000000 main
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:808    .text.main:000002bc $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:812    .text.main:000002c0 $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:878    .text.main:00000324 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1123   .bss.pixelsA:00000000 pixelsA
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1144   .bss.stripA:00000000 stripA
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1116   .bss.pixelsB:00000000 pixelsB
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1137   .bss.stripB:00000000 stripB
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1109   .bss.pixelsC:00000000 pixelsC
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1130   .bss.stripC:00000000 stripC
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1165   .bss.tetrisUpdateEvent:00000000 tetrisUpdateEvent
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1158   .bss.screenUpdateEvent:00000000 screenUpdateEvent
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1151   .bss.uartTestEvent:00000000 uartTestEvent
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1088   .bss.bright:00000000 bright
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:997    .bss.test1:00000000 test1
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1025   .bss.breatheA:00000000 breatheA
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:990    .bss.test2:00000000 test2
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1018   .bss.rainbowA:00000000 rainbowA
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1004   .bss.lastMessage:00000000 lastMessage
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:906    .text.main:0000038c $t
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:958    .text.main:000003d0 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:971    .bss.screenUpdate:00000000 screenUpdate
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:972    .bss.screenUpdate:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:978    .bss.tick:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:984    .bss.receive:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:987    .bss.test2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:994    .bss.test1:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1001   .bss.lastMessage:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1011   .bss.value:00000000 value
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1008   .bss.value:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1015   .bss.rainbowA:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1022   .bss.breatheA:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1032   .bss.buttonDelay:00000000 buttonDelay
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 39
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:110    .text.MX_GPIO_Init:00000060 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:116    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:122    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:151    .text.HAL_UART_RxCpltCallback:00000014 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1092   .bss.UART2:00000000 UART2
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:973    .bss.receive:00000000 receive
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:157    .text.SysTick_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:163    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:186    .text.SysTick_Handler:00000010 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:967    .bss.tick:00000000 tick
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:191    .text.Error_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:197    .text.Error_Handler:00000000 Error_Handler
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:229    .text.MX_USART2_UART_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:234    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:288    .text.MX_USART2_UART_Init:0000002c $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1162   .bss.huart2:00000000 huart2
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:294    .text.SystemClock_Config:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:300    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:398    .rodata.main.str1.4:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:402    .text.main:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:408    .text.main:00000000 main
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:798    .text.main:000002ac $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:802    .text.main:000002b0 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:878    .text.main:00000324 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1113   .bss.pixelsA:00000000 pixelsA
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1134   .bss.stripA:00000000 stripA
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1106   .bss.pixelsB:00000000 pixelsB
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1127   .bss.stripB:00000000 stripB
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1099   .bss.pixelsC:00000000 pixelsC
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1120   .bss.stripC:00000000 stripC
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1155   .bss.tetrisUpdateEvent:00000000 tetrisUpdateEvent
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1148   .bss.screenUpdateEvent:00000000 screenUpdateEvent
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1141   .bss.uartTestEvent:00000000 uartTestEvent
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1078   .bss.bright:00000000 bright
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1015   .bss.breatheA:00000000 breatheA
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1008   .bss.rainbowA:00000000 rainbowA
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:994    .bss.lastMessage:00000000 lastMessage
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:904    .text.main:00000384 $t
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:948    .text.main:000003c0 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:961    .bss.screenUpdate:00000000 screenUpdate
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:962    .bss.screenUpdate:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:968    .bss.tick:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:974    .bss.receive:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:980    .bss.test2:00000000 test2
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:977    .bss.test2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:987    .bss.test1:00000000 test1
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:984    .bss.test1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:991    .bss.lastMessage:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1001   .bss.value:00000000 value
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:998    .bss.value:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1005   .bss.rainbowA:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1012   .bss.breatheA:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1022   .bss.buttonDelay:00000000 buttonDelay
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 38
 
 
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1029   .bss.buttonDelay:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1039   .bss.currColor:00000000 currColor
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1036   .bss.currColor:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1046   .bss.uartPixelCount:00000000 uartPixelCount
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1043   .bss.uartPixelCount:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1053   .bss.PE4:00000000 PE4
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1050   .bss.PE4:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1060   .bss.PE3:00000000 PE3
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1057   .bss.PE3:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1067   .bss.PA7:00000000 PA7
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1064   .bss.PA7:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1074   .bss.PA6:00000000 PA6
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1071   .bss.PA6:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1081   .bss.button:00000000 button
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1078   .bss.button:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1085   .bss.bright:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1095   .bss.receiveTime:00000000 receiveTime
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1092   .bss.receiveTime:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1099   .bss.UART2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1106   .bss.pixelsC:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1113   .bss.pixelsB:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1120   .bss.pixelsA:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1127   .bss.stripC:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1134   .bss.stripB:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1141   .bss.stripA:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1148   .bss.uartTestEvent:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1155   .bss.screenUpdateEvent:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1162   .bss.tetrisUpdateEvent:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1169   .bss.huart2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1179   .bss.htim4:00000000 htim4
-C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s:1176   .bss.htim4:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1019   .bss.buttonDelay:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1029   .bss.currColor:00000000 currColor
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1026   .bss.currColor:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1036   .bss.uartPixelCount:00000000 uartPixelCount
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1033   .bss.uartPixelCount:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1043   .bss.PE4:00000000 PE4
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1040   .bss.PE4:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1050   .bss.PE3:00000000 PE3
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1047   .bss.PE3:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1057   .bss.PA7:00000000 PA7
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1054   .bss.PA7:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1064   .bss.PA6:00000000 PA6
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1061   .bss.PA6:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1071   .bss.button:00000000 button
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1068   .bss.button:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1075   .bss.bright:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1085   .bss.receiveTime:00000000 receiveTime
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1082   .bss.receiveTime:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1089   .bss.UART2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1096   .bss.pixelsC:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1103   .bss.pixelsB:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1110   .bss.pixelsA:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1117   .bss.stripC:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1124   .bss.stripB:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1131   .bss.stripA:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1138   .bss.uartTestEvent:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1145   .bss.screenUpdateEvent:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1152   .bss.tetrisUpdateEvent:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1159   .bss.huart2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1169   .bss.htim4:00000000 htim4
+C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s:1166   .bss.htim4:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
@@ -2278,17 +2263,15 @@ NOS_Math_SinValue_Init
 NOS_UART_ReceiveAbort
 NOS_Flash_Validate_Block
 NOS_Flash_Load_Block
-NOS_WS2812B_Strip_Effect_Breathe_Copy
-NOS_WS2812B_Strip_Effect_Rainbow_Copy
 NOS_WS2812B_Strip_Effects_AddEffect
 NOS_GetBaseColor
 NOS_WS2812B_Strip_ColorFill
 NOS_WS2812B_Strip_Update
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccjMgUt5.s 			page 40
-
-
 NOS_WS2812B_Strip_Effect_Breathe_Init
 NOS_WS2812B_Strip_Effect_Rainbow_Init
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccqt0OSV.s 			page 39
+
+
 NOS_TimeEvent_TickHandler
 NOS_WS2812B_Strip_Effects_Handler
 NOS_UART_CheckReceive
