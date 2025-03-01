@@ -87,15 +87,22 @@ NOS_Short value;
 
 UART_Message lastMessage;
 
-typedef union
+NOS_Flash_Chunk breatheChunk = {0};
+NOS_Flash_Chunk rainbowChunk = {0};
+
+NOS_Flash_Memory_Struct flashMemoryStruct = {0};
+
+int testProgram()
 {
-  Effect_Struct effect;
-  uint32_t data[8];
-}Effect_Wrap;
+  int x = 10;
 
-
-Effect_Wrap test1;
-Effect_Wrap test2;
+  while(x > 0)
+  {
+    HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+    HAL_Delay(500);
+    x--;
+  }
+}
 
 /* USER CODE END PV */
 
@@ -120,6 +127,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart) {
 bool tick = false;
 bool screenUpdate = false;
 /* USER CODE END 0 */
+
+int(*testPtr)(void) = &testProgram;
 
 /**
   * @brief  The application entry point.
@@ -152,6 +161,7 @@ int main(void)
   //MX_TIM4_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+
   HAL_UART_Receive_IT(&huart2,UART2.rx_buff,1);
   HAL_UART_Transmit(&huart2,"HELLO",sizeof("HELLO"),1000);
   visInit();
@@ -168,33 +178,40 @@ int main(void)
   NOS_Math_SinValue_Init(&bright,65,75,1);
 
   NOS_UART_ReceiveAbort(&UART2,&huart2);
-
   //NOS_WS2812B_Strip_ColorFill(&stripA,red);
 
   //addr count1 count0 0x50 speed1 speed0 step1 step0 min1 min0 max1 max0 
 
   //addr1 addr0 channel1 channel0 count1 count0 packetId3 packetId2 packetId1 packetId0 command3 command2 command1 command0 /* data (16 - 1008) */ crc16_1 crc16_0 / 
   //maxLenght 1024B  minLenght 32B packetInfo 16B
+  NOS_Flash_Chunk_Init(&breatheChunk,&breatheA,sizeof(Effect_Struct),0);
+  NOS_Flash_Chunk_Init(&rainbowChunk,&rainbowA,sizeof(Effect_Struct),32);
+  NOS_FlashMemory_Struct_Init(&flashMemoryStruct,FLASH_STORAGE_A);
 
-  if(NOS_Flash_Validate_Block(FLASH_STORAGE_A,32))
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&breatheChunk);
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&rainbowChunk);
+  
+  if(NOS_Flash_Validate_Block(flashMemoryStruct.baseAddress,64))
   {
-    NOS_Flash_Load_Block(&breatheA,FLASH_STORAGE_A,0,sizeof(Effect_Struct));
-    //NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&test1.effect);
+    //NOS_Flash_Load_Block(&breatheA,FLASH_STORAGE_A,0,sizeof(Effect_Struct));
+    NOS_Flash_Memory_Struct_Load(&flashMemoryStruct);
   }
   else
   {
     NOS_WS2812B_Strip_Effect_Breathe_Init(&breatheA,100,1,60,80);
+    NOS_WS2812B_Strip_Effect_Rainbow_Init(&rainbowA,1000,1,200,800);
   }
 
+/*
   if(NOS_Flash_Validate_Block(FLASH_STORAGE_B,32))
   {
     NOS_Flash_Load_Block(&rainbowA,FLASH_STORAGE_B,0,sizeof(Effect_Struct));
-    //NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&test2.effect);
   }
   else
   {
     NOS_WS2812B_Strip_Effect_Rainbow_Init(&rainbowA,1000,1,200,800);
   }
+*/
 
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
@@ -204,6 +221,8 @@ int main(void)
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,rainbowA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,rainbowA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,rainbowA);
+
+
 
   NOS_WS2812B_Strip_ColorFill(&stripA,NOS_GetBaseColor(RED));
   NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
@@ -257,9 +276,13 @@ int main(void)
           NOS_Strip_UART_ParseCommand(&stripB,&lastMessage);
           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
 
+          /*
           NOS_Flash_Save_Block(&stripA.effects[0],FLASH_STORAGE_A,0,32);
           NOS_Flash_Save_Block(&stripA.effects[1],FLASH_STORAGE_B,0,32);
-
+          */
+          NOS_WS2812B_Strip_Effect_Breathe_Copy(&breatheA,&stripA.effects[0]);
+          NOS_WS2812B_Strip_Effect_Rainbow_Copy(&rainbowA,&stripA.effects[1]);
+          NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
         break;
 
         //stripA commands

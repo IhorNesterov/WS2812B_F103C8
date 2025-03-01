@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
   48 000e 1A74     		strb	r2, [r3, #16]
    9:Core/Src/NOS_UART.c ****     data->rx_flag = true;
   49              		.loc 1 9 5 is_stmt 1 view .LVU10
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 2
 
 
   50              		.loc 1 9 19 is_stmt 0 view .LVU11
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
   98              		.thumb
   99              		.thumb_func
  101              	NOS_UART_ReceiveAbort:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 3
 
 
  102              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  144              		.loc 1 28 17 is_stmt 0 view .LVU37
  145 001c 0022     		movs	r2, #0
  146 001e 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 4
 
 
   29:Core/Src/NOS_UART.c ****     data->currMessageLenght = 0;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
   40:Core/Src/NOS_UART.c **** {
  192              		.loc 1 40 1 is_stmt 1 view -0
  193              		.cfi_startproc
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 5
 
 
  194              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  238              		.loc 1 50 32 is_stmt 0 view .LVU75
  239 003e 83F82920 		strb	r2, [r3, #41]
  240              	.L10:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 6
 
 
   51:Core/Src/NOS_UART.c ****             //NOS_UART_ReceiveAbort(uart,hua);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
   83:Core/Src/NOS_UART.c ****     {
   84:Core/Src/NOS_UART.c ****         data->value.bytes[0] = *data->rx_buff_ptr;
   85:Core/Src/NOS_UART.c ****         data->expectedMessageLenght = data->value.data;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 7
 
 
   86:Core/Src/NOS_UART.c ****         data->bufferCommand = true;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  115:Core/Src/NOS_UART.c ****   {
  116:Core/Src/NOS_UART.c ****   crc ^= (unsigned int)buf[pos];    // XOR byte into least sig. byte of crc
  117:Core/Src/NOS_UART.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 8
 
 
  118:Core/Src/NOS_UART.c ****   for (int i = 8; i != 0; i--) {    // Loop over each bit
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  116:Core/Src/NOS_UART.c **** 
  324              		.loc 1 116 27 is_stmt 0 view .LVU103
  325 002a 10F80E20 		ldrb	r2, [r0, lr]	@ zero_extendqisi2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 9
 
 
  116:Core/Src/NOS_UART.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  141:Core/Src/NOS_UART.c ****     
  142:Core/Src/NOS_UART.c ****     if(data->currMessageLenght == 32)
  143:Core/Src/NOS_UART.c ****     {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 10
 
 
  144:Core/Src/NOS_UART.c ****         data->rx_buff[data->index] = *data->rx_buff_ptr;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  390              		.loc 1 167 7 is_stmt 0 view .LVU123
  391 0020 B3F5006F 		cmp	r3, #2048
  392 0024 02D9     		bls	.L22
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 11
 
 
  168:Core/Src/NOS_UART.c ****     {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  432              	.LFE70:
  434              		.section	.text.NOS_UART_ParsePacket,"ax",%progbits
  435              		.align	1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 12
 
 
  436              		.global	NOS_UART_ParsePacket
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  478 0010 C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
  479              		.loc 1 195 31 view .LVU155
  480 0012 8B70     		strb	r3, [r1, #2]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 13
 
 
  196:Core/Src/NOS_UART.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  522 0032 437A     		ldrb	r3, [r0, #9]	@ zero_extendqisi2
  523              		.loc 1 208 32 view .LVU176
  524 0034 2B72     		strb	r3, [r5, #8]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 14
 
 
  209:Core/Src/NOS_UART.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  215:Core/Src/NOS_UART.c ****     {
  569              		.loc 1 215 55 is_stmt 1 discriminator 3 view .LVU197
  570 0056 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 15
 
 
  571              	.LVL44:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  226:Core/Src/NOS_UART.c ****     {
  227:Core/Src/NOS_UART.c ****         return true;
  228:Core/Src/NOS_UART.c ****     }
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 16
 
 
  229:Core/Src/NOS_UART.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  655              	NOS_UART_PacketApprovedNotice:
  656              	.LVL53:
  657              	.LFB72:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 17
 
 
  242:Core/Src/NOS_UART.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  699              		.loc 1 254 47 is_stmt 0 view .LVU246
  700 0020 6379     		ldrb	r3, [r4, #5]	@ zero_extendqisi2
  701              		.loc 1 254 21 view .LVU247
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 18
 
 
  702 0022 8DF80430 		strb	r3, [sp, #4]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  746              	.LVL66:
  747              		.loc 1 264 45 is_stmt 0 view .LVU270
  748 0050 637B     		ldrb	r3, [r4, #13]	@ zero_extendqisi2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 19
 
 
  749              		.loc 1 264 21 view .LVU271
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  792              		.loc 1 272 43 view .LVU287
  793 007c 94F81112 		ldrb	r1, [r4, #529]	@ zero_extendqisi2
  794              		.loc 1 272 21 view .LVU288
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 20
 
 
  795 0080 2033     		adds	r3, r3, #32
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  840              		.loc 1 283 1 view .LVU298
  841 0004 8079     		ldrb	r0, [r0, #6]	@ zero_extendqisi2
  842              	.LVL77:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 21
 
 
  843              		.loc 1 283 1 view .LVU299
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  892 0004 0023     		movs	r3, #0
  893 0006 8371     		strb	r3, [r0, #6]
  293:Core/Src/NOS_UART.c **** }
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 22
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 22
 
 
  894              		.loc 1 293 1 view .LVU308
@@ -1280,35 +1280,35 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 1
  913              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
  914              		.file 8 "Core/Inc/NOS_Typedefs.h"
  915              		.file 9 "Core/Inc/NOS_UART.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s 			page 23
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_UART.c
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:19     .text.NOS_UART_ReceiveReset:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:25     .text.NOS_UART_ReceiveReset:00000000 NOS_UART_ReceiveReset
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:60     .text.NOS_UART_ContinueReceive:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:66     .text.NOS_UART_ContinueReceive:00000000 NOS_UART_ContinueReceive
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:95     .text.NOS_UART_ReceiveAbort:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:101    .text.NOS_UART_ReceiveAbort:00000000 NOS_UART_ReceiveAbort
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:183    .text.NOS_UART_Timer_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:189    .text.NOS_UART_Timer_Handler:00000000 NOS_UART_Timer_Handler
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:256    .text.GetCRC16:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:262    .text.GetCRC16:00000000 GetCRC16
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:351    .text.NOS_UART_ReceiveHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:357    .text.NOS_UART_ReceiveHandler:00000000 NOS_UART_ReceiveHandler
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:435    .text.NOS_UART_ParsePacket:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:441    .text.NOS_UART_ParsePacket:00000000 NOS_UART_ParsePacket
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:649    .text.NOS_UART_PacketApprovedNotice:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:655    .text.NOS_UART_PacketApprovedNotice:00000000 NOS_UART_PacketApprovedNotice
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:822    .text.NOS_UART_CheckReceive:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:828    .text.NOS_UART_CheckReceive:00000000 NOS_UART_CheckReceive
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:849    .text.NOS_UART_GetReceivedData:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:855    .text.NOS_UART_GetReceivedData:00000000 NOS_UART_GetReceivedData
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:873    .text.NOS_UART_EndReceive:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:879    .text.NOS_UART_EndReceive:00000000 NOS_UART_EndReceive
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:904    .bss.currCRC:00000000 currCRC
-C:\Users\igorn\AppData\Local\Temp\ccWr8jzE.s:901    .bss.currCRC:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:19     .text.NOS_UART_ReceiveReset:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:25     .text.NOS_UART_ReceiveReset:00000000 NOS_UART_ReceiveReset
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:60     .text.NOS_UART_ContinueReceive:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:66     .text.NOS_UART_ContinueReceive:00000000 NOS_UART_ContinueReceive
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:95     .text.NOS_UART_ReceiveAbort:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:101    .text.NOS_UART_ReceiveAbort:00000000 NOS_UART_ReceiveAbort
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:183    .text.NOS_UART_Timer_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:189    .text.NOS_UART_Timer_Handler:00000000 NOS_UART_Timer_Handler
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:256    .text.GetCRC16:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:262    .text.GetCRC16:00000000 GetCRC16
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:351    .text.NOS_UART_ReceiveHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:357    .text.NOS_UART_ReceiveHandler:00000000 NOS_UART_ReceiveHandler
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:435    .text.NOS_UART_ParsePacket:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:441    .text.NOS_UART_ParsePacket:00000000 NOS_UART_ParsePacket
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:649    .text.NOS_UART_PacketApprovedNotice:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:655    .text.NOS_UART_PacketApprovedNotice:00000000 NOS_UART_PacketApprovedNotice
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:822    .text.NOS_UART_CheckReceive:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:828    .text.NOS_UART_CheckReceive:00000000 NOS_UART_CheckReceive
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:849    .text.NOS_UART_GetReceivedData:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:855    .text.NOS_UART_GetReceivedData:00000000 NOS_UART_GetReceivedData
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:873    .text.NOS_UART_EndReceive:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:879    .text.NOS_UART_EndReceive:00000000 NOS_UART_EndReceive
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:904    .bss.currCRC:00000000 currCRC
+C:\Users\igorn\AppData\Local\Temp\cc1aEKfo.s:901    .bss.currCRC:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Receive_IT

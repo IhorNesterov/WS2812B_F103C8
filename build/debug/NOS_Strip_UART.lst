@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
   29:Core/Src/NOS_Strip_UART.c ****                 b = command[8];
   30:Core/Src/NOS_Strip_UART.c **** 
   31:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_SetPixel(strip,tempInt1,r,g,b);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 2
 
 
   32:Core/Src/NOS_Strip_UART.c ****                 break;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
   86:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
   87:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
   88:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 3
 
 
   89:Core/Src/NOS_Strip_UART.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  143:Core/Src/NOS_Strip_UART.c ****                 min = tempShort.data;
  144:Core/Src/NOS_Strip_UART.c **** 
  145:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = command[currPos++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 4
 
 
  146:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = command[currPos++];
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
   44 0004 8FB0     		sub	sp, sp, #60
   45              		.cfi_def_cfa_offset 96
   46 0006 0646     		mov	r6, r0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 5
 
 
   47 0008 0C46     		mov	r4, r1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  188:Core/Src/NOS_Strip_UART.c ****     {
  189:Core/Src/NOS_Strip_UART.c ****     case SET_BREATHE_EFFECT_COMMAND:
  190:Core/Src/NOS_Strip_UART.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 6
 
 
  191:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  141 0088 63F3070B 		bfi	fp, r3, #0, #8
  201:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
  142              		.loc 1 201 13 is_stmt 1 view .LVU30
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 7
 
 
  143              		.loc 1 201 22 is_stmt 0 view .LVU31
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  187 00ba FFF7FEFF 		bl	memset
  188              	.LVL16:
  212:Core/Src/NOS_Strip_UART.c ****             tempEffect.effectId = EFFECT_BREATHE_ID;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 8
 
 
  189              		.loc 1 212 13 is_stmt 1 view .LVU52
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  235:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
  236:Core/Src/NOS_Strip_UART.c **** 
  237:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 9
 
 
  238:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  292:Core/Src/NOS_Strip_UART.c ****             //color
  293:Core/Src/NOS_Strip_UART.c ****             r = message->data[currPos++];
  294:Core/Src/NOS_Strip_UART.c ****             g = message->data[currPos++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 10
 
 
  295:Core/Src/NOS_Strip_UART.c ****             b = message->data[currPos++];
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  231              		.loc 1 217 13 is_stmt 1 view .LVU60
  221:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
  232              		.loc 1 221 13 view .LVU61
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 11
 
 
  221:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  268 011a 63F30F2B 		bfi	fp, r3, #8, #8
  269              	.LVL25:
  230:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 12
 
 
  270              		.loc 1 230 13 is_stmt 1 view .LVU81
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  239:Core/Src/NOS_Strip_UART.c **** 
  306              		.loc 1 239 13 is_stmt 1 view .LVU100
  239:Core/Src/NOS_Strip_UART.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 13
 
 
  307              		.loc 1 239 17 is_stmt 0 view .LVU101
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  348              		.loc 1 251 32 view .LVU114
  349 017a 63F30F2B 		bfi	fp, r3, #8, #8
  350              	.LVL37:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 14
 
 
  252:Core/Src/NOS_Strip_UART.c ****             int tempInt1 = tempShort.data;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  387 0198 4FF0000B 		mov	fp, #0	@ movhi
  267:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
  388              		.loc 1 267 32 view .LVU133
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 15
 
 
  389 019c 63F30F2B 		bfi	fp, r3, #8, #8
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  424              		.loc 1 279 15 is_stmt 0 view .LVU152
  425 01c2 8C7D     		ldrb	r4, [r1, #22]	@ zero_extendqisi2
  426              	.LVL51:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 16
 
 
  282:Core/Src/NOS_Strip_UART.c ****             {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  466 01e2 8D7C     		ldrb	r5, [r1, #18]	@ zero_extendqisi2
  467              	.LVL58:
  298:Core/Src/NOS_Strip_UART.c ****             {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 17
 
 
  468              		.loc 1 298 13 is_stmt 1 view .LVU168
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  508 0206 80F82E30 		strb	r3, [r0, #46]
  309:Core/Src/NOS_Strip_UART.c ****                 //Pixel count
  509              		.loc 1 309 17 is_stmt 1 view .LVU183
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 18
 
 
  309:Core/Src/NOS_Strip_UART.c ****                 //Pixel count
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  547              		.loc 1 319 50 is_stmt 0 discriminator 3 view .LVU200
  548 0232 791C     		adds	r1, r7, #1
  549              	.LVL67:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 19
 
 
  319:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  591              	.LBE6:
  328:Core/Src/NOS_Strip_UART.c **** 
  592              		.loc 1 328 13 is_stmt 1 view .LVU214
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 20
 
 
  333:Core/Src/NOS_Strip_UART.c ****     }
@@ -1162,15 +1162,15 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 1
  608              		.file 4 "Core/Inc/NOS_Typedefs.h"
  609              		.file 5 "Core/Inc/NOS_WS2812B_Strip.h"
  610              		.file 6 "<built-in>"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_Strip_UART.c
-C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s:19     .text.NOS_Strip_UART_ParseCommand:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s:25     .text.NOS_Strip_UART_ParseCommand:00000000 NOS_Strip_UART_ParseCommand
-C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s:60     .text.NOS_Strip_UART_ParseCommand:00000018 $d
-C:\Users\igorn\AppData\Local\Temp\ccSw6G5B.s:94     .text.NOS_Strip_UART_ParseCommand:0000005c $t
+C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s:19     .text.NOS_Strip_UART_ParseCommand:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s:25     .text.NOS_Strip_UART_ParseCommand:00000000 NOS_Strip_UART_ParseCommand
+C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s:60     .text.NOS_Strip_UART_ParseCommand:00000018 $d
+C:\Users\igorn\AppData\Local\Temp\ccLYZlwk.s:94     .text.NOS_Strip_UART_ParseCommand:0000005c $t
 
 UNDEFINED SYMBOLS
 memset

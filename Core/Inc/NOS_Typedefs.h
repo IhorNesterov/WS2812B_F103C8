@@ -189,6 +189,24 @@ typedef struct NOS_WS2812B_STRIP_t
     uint8_t effectsCounter;
 }WS2812B_Strip;
 
+
+typedef struct NOS_Flash_Chunk_t
+{
+  void* dataPointer;
+  uint32_t offset;
+  size_t size;
+}NOS_Flash_Chunk;
+
+#define FLASH_CHUNKS_MAX_COUNTER 32
+
+typedef struct NOS_Flash_Memory_Struct_t
+{
+  uint32_t baseAddress;
+  NOS_Flash_Chunk chunks[FLASH_CHUNKS_MAX_COUNTER];
+  uint32_t chunksCounter;
+  size_t totalSize;
+}NOS_Flash_Memory_Struct;
+
 /* STM32 Core structures begin*/
 
 
