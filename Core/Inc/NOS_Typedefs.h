@@ -69,9 +69,9 @@ typedef struct WS2812B_Matrix_t
     uint8_t* buffer;
     uint8_t bright;
     NOS_Short ledsCount;
-    MatrixSize* size;
-    PixelColor* textColor;
-    PixelColor* foneColor;
+    MatrixSize size;
+    PixelColor textColor;
+    PixelColor foneColor;
     Symvol* symvols;
 } WS2812B_Matrix;
 
@@ -105,7 +105,6 @@ typedef struct GPIO_PIN_t
   uint16_t Pin;
 } GPIO_PIN;
 
-//typedef enum TemperatureFormat_t{Celcium,Farengheit} TempFormat;
 typedef enum Language_e{English,Ukrainian} Language;
 typedef enum MoveDirection_e {UP,DOWN,RIGHT,LEFT} MoveDirection;
 
@@ -154,6 +153,8 @@ typedef struct Effect_Struct_t
   uint16_t minValue;
   uint16_t maxValue;
 
+  PixelColor color;
+
   bool enabled;
   uint8_t effectId;
 } Effect_Struct;
@@ -193,7 +194,7 @@ typedef struct NOS_WS2812B_STRIP_t
 typedef struct NOS_Flash_Chunk_t
 {
   void* dataPointer;
-  uint32_t offset;
+  uint32_t flashAddress;
   size_t size;
 }NOS_Flash_Chunk;
 
@@ -201,7 +202,7 @@ typedef struct NOS_Flash_Chunk_t
 
 typedef struct NOS_Flash_Memory_Struct_t
 {
-  uint32_t baseAddress;
+  uint32_t baseFlashAddress;
   NOS_Flash_Chunk chunks[FLASH_CHUNKS_MAX_COUNTER];
   uint32_t chunksCounter;
   size_t totalSize;

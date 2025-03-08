@@ -15,18 +15,19 @@
 #ifndef WS2812B_H_
 #define WS2812B_H_
 #include "stdint.h"
-#include "stm32f1xx.h"
+#include "NOS_Includes.h"
+
 // GPIO enable command
 #define WS2812B_GPIO_CLK_ENABLE() __HAL_RCC_GPIOA_CLK_ENABLE()
 // LED output port
 #define WS2812B_PORT GPIOA
 // LED output pins
-#define WS2812B_PINS (GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6)
+#define WS2812B_PINS (GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7)
 // How many LEDs are in the series
-#define WS2812B_NUMBER_OF_LEDS 768
+#define WS2812B_NUMBER_OF_LEDS 512
 
 // Number of output LED strips. Each has its own buffer.
-#define WS2812_BUFFER_COUNT 3
+#define WS2812_BUFFER_COUNT 4
 
 // Choose one of the bit-juggling setpixel implementation
 // *******************************************************
@@ -39,12 +40,13 @@
 
 // DEBUG OUTPUT
 // ********************
+/*
 #define LED4_PORT GPIOA
 #define LED4_PIN GPIO_PIN_0
 
 #define LED5_PORT GPIOA
 #define LED5_PIN GPIO_PIN_1
-
+*/
 
 // Public functions
 // ****************

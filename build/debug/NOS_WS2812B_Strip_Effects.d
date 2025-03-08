@@ -1,5 +1,6 @@
-build/debug/NOS_Strip_UART.o: Core/Src/NOS_Strip_UART.c \
- Core/Inc/NOS_Strip_UART.h Core/Inc/NOS_Includes.h \
+build/debug/NOS_WS2812B_Strip_Effects.o: \
+ Core/Src/NOS_WS2812B_Strip_Effects.c \
+ Core/Inc/NOS_WS2812B_Strip_Effects.h Core/Inc/NOS_Includes.h \
  Core/Inc/NOS_Typedefs.h \
  Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
  Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
@@ -24,10 +25,10 @@ build/debug/NOS_Strip_UART.o: Core/Src/NOS_Strip_UART.c \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- Core/Inc/NOS_Config.h Core/Inc/NOS_Math.h Core/Inc/NOS_WS2812B_Strip.h \
- Core/Inc/WS2812B_Core.h Core/Inc/NOS_WS2812B_Strip_Effects.h \
- Core/Inc/NOS_BaseColors.h
-Core/Inc/NOS_Strip_UART.h:
+ Core/Inc/NOS_Config.h Core/Inc/NOS_Math.h Core/Inc/NOS_BaseColors.h \
+ Core/Inc/NOS_WS2812B_Strip.h Core/Inc/WS2812B_Core.h \
+ Core/Inc/NOS_WS2812B_Strip_Effects.h
+Core/Inc/NOS_WS2812B_Strip_Effects.h:
 Core/Inc/NOS_Includes.h:
 Core/Inc/NOS_Typedefs.h:
 Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
@@ -57,7 +58,7 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 Core/Inc/NOS_Config.h:
 Core/Inc/NOS_Math.h:
+Core/Inc/NOS_BaseColors.h:
 Core/Inc/NOS_WS2812B_Strip.h:
 Core/Inc/WS2812B_Core.h:
 Core/Inc/NOS_WS2812B_Strip_Effects.h:
-Core/Inc/NOS_BaseColors.h:

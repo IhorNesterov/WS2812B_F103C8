@@ -4,31 +4,33 @@
 #include "NOS_Typedefs.h"
 
 #define UART_ADDRESS 0x65
-#define BUFFER_SIZE 2048
+#define BUFFER_SIZE 1024
 
 typedef struct NOS_UART_Struct_t
 {
+    UART_Message message;
+
     uint8_t rx_buff[BUFFER_SIZE];
-    uint8_t fuckBuff[BUFFER_SIZE];
-    int index;
-    uint16_t fuckIndex;
+    uint8_t* rx_buff_ptr;
+
+    uint32_t receiveTime;
+    uint32_t receiveTimeAbort;
+    uint32_t lastReceivedByteTime;
+
+    NOS_Short value;
+
+    uint16_t index;
+    uint16_t currMessageLenght;
+    uint16_t lastMessageSize;
+    uint16_t bytesToRead;
+    
     bool rx_flag;
     bool tx_flag;
-    int currMessageLenght;
-    int expectedMessageLenght;
     bool startReceive;
     bool endReceive;
     bool bufferCommand;
-    NOS_Short value;
-    uint8_t* rx_buff_ptr;
-    int receiveTime;
-    int receiveTimeAbort;
-    int lastReceivedByteTime;
     bool receiveAbort;
     bool receiveCheck;
-    uint16_t lastMessageSize;
-    int bytesToRead;
-    UART_Message message;
     
 }NOS_UART_Struct;
 

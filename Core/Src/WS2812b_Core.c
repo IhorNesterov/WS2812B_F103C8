@@ -12,7 +12,6 @@
 
 */
 
-#include "stm32f1xx_hal.h"
 #include "WS2812B_Core.h"
 
 WS2812_Struct ws2812b;

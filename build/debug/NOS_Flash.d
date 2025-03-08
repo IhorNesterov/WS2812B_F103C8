@@ -22,7 +22,8 @@ build/debug/NOS_Flash.o: Core/Src/NOS_Flash.c Core/Inc/NOS_Flash.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ Core/Inc/NOS_Config.h Core/Inc/NOS_Math.h
 Core/Inc/NOS_Flash.h:
 Core/Inc/NOS_Includes.h:
 Core/Inc/NOS_Typedefs.h:
@@ -51,3 +52,5 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+Core/Inc/NOS_Config.h:
+Core/Inc/NOS_Math.h:

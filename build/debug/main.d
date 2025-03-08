@@ -22,11 +22,12 @@ build/debug/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Core/Inc/NOS_Lib.h \
- Core/Inc/NOS_Includes.h Core/Inc/NOS_Typedefs.h \
- Core/Inc/WS2812B_Effects.h Core/Inc/NOS_WS2812B_Strip.h \
- Core/Inc/WS2812B_Core.h Core/Inc/NOS_Math.h Core/Inc/NOS_Time.h \
- Core/Inc/NOS_Strip_UART.h Core/Inc/NOS_BaseColors.h Core/Inc/NOS_UART.h \
- Core/Inc/NOS_Flash.h
+ Core/Inc/NOS_Includes.h Core/Inc/NOS_Typedefs.h Core/Inc/NOS_Config.h \
+ Core/Inc/NOS_Math.h Core/Inc/WS2812B_Effects.h \
+ Core/Inc/NOS_WS2812B_Strip.h Core/Inc/WS2812B_Core.h \
+ Core/Inc/NOS_WS2812B_Strip_Effects.h Core/Inc/NOS_BaseColors.h \
+ Core/Inc/NOS_Strip_UART.h Core/Inc/NOS_UART.h Core/Inc/NOS_Flash.h \
+ Core/Inc/NOS_RAM.h Core/Inc/NOS_Time.h
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
@@ -56,12 +57,15 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 Core/Inc/NOS_Lib.h:
 Core/Inc/NOS_Includes.h:
 Core/Inc/NOS_Typedefs.h:
+Core/Inc/NOS_Config.h:
+Core/Inc/NOS_Math.h:
 Core/Inc/WS2812B_Effects.h:
 Core/Inc/NOS_WS2812B_Strip.h:
 Core/Inc/WS2812B_Core.h:
-Core/Inc/NOS_Math.h:
-Core/Inc/NOS_Time.h:
-Core/Inc/NOS_Strip_UART.h:
+Core/Inc/NOS_WS2812B_Strip_Effects.h:
 Core/Inc/NOS_BaseColors.h:
+Core/Inc/NOS_Strip_UART.h:
 Core/Inc/NOS_UART.h:
 Core/Inc/NOS_Flash.h:
+Core/Inc/NOS_RAM.h:
+Core/Inc/NOS_Time.h:

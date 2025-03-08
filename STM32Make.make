@@ -82,6 +82,7 @@ Core/Src/NOS_Strip_UART.c \
 Core/Src/NOS_Time.c \
 Core/Src/NOS_UART.c \
 Core/Src/NOS_WS2812B_Strip.c \
+Core/Src/NOS_WS2812B_Strip_Effects.c \
 Core/Src/WS2812B_Effects.c \
 Core/Src/WS2812b_Core.c \
 Core/Src/main.c \

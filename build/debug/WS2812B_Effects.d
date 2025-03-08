@@ -22,7 +22,8 @@ build/debug/WS2812B_Effects.o: Core/Src/WS2812B_Effects.c \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- Core/Inc/WS2812B_Core.h
+ Core/Inc/WS2812B_Core.h Core/Inc/NOS_Includes.h Core/Inc/NOS_Typedefs.h \
+ Core/Inc/NOS_Config.h Core/Inc/NOS_Math.h
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -49,3 +50,7 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 Core/Inc/WS2812B_Core.h:
+Core/Inc/NOS_Includes.h:
+Core/Inc/NOS_Typedefs.h:
+Core/Inc/NOS_Config.h:
+Core/Inc/NOS_Math.h:

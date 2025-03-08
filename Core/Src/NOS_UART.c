@@ -27,7 +27,6 @@ void NOS_UART_ReceiveAbort(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
     data->rx_buff_ptr = data->rx_buff;
     data->index = 0;
     data->currMessageLenght = 0;
-    data->expectedMessageLenght = 0;
     data->startReceive = false;
     data->endReceive = false;
     data->bufferCommand = false;
@@ -38,137 +37,43 @@ void NOS_UART_ReceiveAbort(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
 
 void NOS_UART_Timer_Handler(NOS_UART_Struct* uart)
 {
-        if(uart->startReceive && !uart->receiveCheck)
-        {
-            uart->receiveTime = 0;
-            uart->receiveCheck = true;
-        }
+    uart->lastReceivedByteTime++;
 
-        if(uart->receiveCheck && uart->receiveTime > uart->receiveTimeAbort)
-        {
-            uart->receiveTime = 0;
-            uart->receiveCheck = false;
-            //NOS_UART_ReceiveAbort(uart,hua);
-        }
-        
+    if(uart->startReceive)
+    {
         uart->receiveTime++;
+    }
+
+    if(uart->startReceive && uart->lastReceivedByteTime > 5)
+    {
+        uart->index = 0;
+        uart->receiveTime = 0;
+        NOS_UART_ReceiveReset(uart);
+    }
 }
-/*
-void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
-{
-
-    data->rx_buff_ptr = &data->rx_buff[data->currMessageLenght];
-    data->fuckBuff[data->fuckIndex] = *data->rx_buff_ptr;
-    data->fuckIndex++;
-
-    if((*data->rx_buff_ptr == UART_ADDRESS || *data->rx_buff_ptr == 0x66 || *data->rx_buff_ptr == 0x67 || *data->rx_buff_ptr == 0x64) && !data->startReceive)
-    {
-        data->startReceive = true;
-        data->currMessageLenght = 0;
-
-        data->fuckIndex = 1;
-        for(int i = 0; i < BUFFER_SIZE; i++)
-        {
-            data->fuckBuff[i] = 0;
-        }
-        data->fuckBuff[0] = *data->rx_buff_ptr; 
-    }
-
-    if(data->startReceive && data->currMessageLenght == 1 && !data->bufferCommand)
-    {
-        data->value.bytes[1] = *data->rx_buff_ptr;
-    }
-
-    if(data->startReceive && data->currMessageLenght == 2 && !data->bufferCommand)
-    {
-        data->value.bytes[0] = *data->rx_buff_ptr;
-        data->expectedMessageLenght = data->value.data;
-        data->bufferCommand = true;
-    }
-
-    if(data->fuckIndex > BUFFER_SIZE)
-    {
-        data->fuckIndex = 0;
-    }
-
-    data->currMessageLenght++;
-
-    if(data->startReceive && (data->currMessageLenght == data->expectedMessageLenght) && data->bufferCommand)
-    {
-        data = NOS_UART_ReceiveReset(data);
-        data->bufferCommand = false;
-        data->startReceive = false;
-    }
-    else
-    {
-        data = NOS_UART_ContinueReceive(data);
-    }
-    HAL_UART_Receive_IT (uart, data->rx_buff_ptr, 1); 
-    
-}
-*/
 
 uint16_t GetCRC16(uint8_t *buf, int len)
 {  
   unsigned int crc = 0xFFFF;
   for (int pos = 0; pos < len; pos++)
   {
-  crc ^= (unsigned int)buf[pos];    // XOR byte into least sig. byte of crc
+  crc ^= (unsigned int)buf[pos];  
 
-  for (int i = 8; i != 0; i--) {    // Loop over each bit
-    if ((crc & 0x0001) != 0) {      // If the LSB is set
-      crc >>= 1;                    // Shift right and XOR 0xA001
+  for (int i = 8; i != 0; i--) {    
+    if ((crc & 0x0001) != 0) {      
+      crc >>= 1;                    
       crc ^= 0xA001;
     }
-    else                            // Else LSB is not set
-      crc >>= 1;                    // Just shift right
+    else                            
+      crc >>= 1;                    
     }
   }
 
   return crc;
 }
-/*
-void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
-{
-    //data->rx_buff_ptr = &data->rx_buff[data->currMessageLenght];
-    data->fuckBuff[data->fuckIndex] = *data->rx_buff_ptr;
-    data->fuckIndex++;
-
-    data->startReceive = true;
-
-    data->lastReceivedByteTime = 0; 
-    data->currMessageLenght++;
-    
-    if(data->currMessageLenght == 32)
-    {
-        data->rx_buff[data->index] = *data->rx_buff_ptr;
-        ++data->index;
-        ++data->rx_buff_ptr;
-        data->index = 0;
-        data = NOS_UART_ReceiveReset(data);
-    }
-    else
-    {
-        data->rx_buff[data->index] = *data->rx_buff_ptr;
-        ++data->index;
-        ++data->rx_buff_ptr;
-    }
-
-    HAL_UART_Receive_IT (uart, data->rx_buff_ptr, 1); 
-}
-*/
 
 void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
 {
-    data->fuckBuff[data->fuckIndex] = *data->rx_buff_ptr;
-    
-    data->fuckIndex++;
-
-    if(data->fuckIndex > 2048)
-    {
-        data->fuckIndex = 0;
-    }
-
     data->startReceive = true;
 
     data->lastReceivedByteTime = 0; 
@@ -183,7 +88,8 @@ void NOS_UART_ReceiveHandler(NOS_UART_Struct* data,UART_HandleTypeDef* uart)
 
 //addr1 addr0 channel1 channel0 count1 count0 packetId3 packetId2 packetId1 packetId0 command3 command2 command1 command0 /* data (16 - 1008) */ crc16_1 crc16_0 / 
 //maxLenght 1024B  minLenght 32B packetInfo 16B
-    NOS_Short currCRC;
+NOS_Short currCRC;
+
 bool NOS_UART_ParsePacket(NOS_UART_Struct* data,UART_Message* message)
 {
     int currPos = 0;
@@ -284,7 +190,7 @@ bool NOS_UART_CheckReceive(NOS_UART_Struct* data)
 
 uint8_t* NOS_UART_GetReceivedData(NOS_UART_Struct* data)
 {
-    return data->fuckBuff;
+    return data->rx_buff;
 }
 
 void NOS_UART_EndReceive(NOS_UART_Struct* data)
