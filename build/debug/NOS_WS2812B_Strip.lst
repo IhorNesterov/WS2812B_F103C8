@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
   46              		.loc 1 10 19 view .LVU9
   47 0008 C360     		str	r3, [r0, #12]
   11:Core/Src/NOS_WS2812B_Strip.c ****     strip->effectsCounter = 0;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 2
 
 
   48              		.loc 1 11 5 is_stmt 1 view .LVU10
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
   96              	.LVL4:
   97              		.loc 1 19 46 view .LVU25
   98 0018 A354     		strb	r3, [r4, r2]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 3
 
 
   20:Core/Src/NOS_WS2812B_Strip.c ****         strip->frameBuffer[pixelPos * 3 + 2] = b;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  148 000a 8C45     		cmp	ip, r1
  149 000c 0ADB     		blt	.L5
   27:Core/Src/NOS_WS2812B_Strip.c ****     {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 4
 
 
   28:Core/Src/NOS_WS2812B_Strip.c ****         strip->pixels[pixelPos].R = r;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  198              		.cfi_startproc
  199              		@ args = 0, pretend = 0, frame = 0
  200              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 5
 
 
  201              		.loc 1 35 1 is_stmt 0 view .LVU54
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  246              	.LFE68:
  248              		.global	__aeabi_i2f
  249              		.global	__aeabi_fdiv
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 6
 
 
  250              		.global	__aeabi_ui2f
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  300              	.LVL26:
  301              	.L14:
  302              	.LBB4:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 7
 
 
   46:Core/Src/NOS_WS2812B_Strip.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  352 0060 3346     		mov	r3, r6
  353 0062 2A46     		mov	r2, r5
  354 0064 2146     		mov	r1, r4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 8
 
 
  355 0066 3846     		mov	r0, r7
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
   61:Core/Src/NOS_WS2812B_Strip.c ****     {
   62:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixelByPixelColor(strip,currPixel,NOS_GetBaseColor(currColor));
   63:Core/Src/NOS_WS2812B_Strip.c ****         
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 9
 
 
   64:Core/Src/NOS_WS2812B_Strip.c ****         currColor++;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  434              		.loc 1 76 22 discriminator 1 view .LVU107
   76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
  435              		.loc 1 76 29 is_stmt 0 discriminator 1 view .LVU108
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 10
 
 
  436 0024 AB68     		ldr	r3, [r5, #8]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  481              		.loc 1 88 5 is_stmt 0 view .LVU119
  482 000c C2F30742 		ubfx	r2, r2, #16, #8
  483              	.LVL52:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 11
 
 
  484              		.loc 1 88 5 view .LVU120
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  535              		.thumb
  536              		.thumb_func
  538              	NOS_WS2812B_Strip_TestFill:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 12
 
 
  539              	.LVL56:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  579 0014 E0B2     		uxtb	r0, r4
  580 0016 FFF7FEFF 		bl	NOS_GetBaseColor
  581              	.LVL60:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 13
 
 
  582 001a 8DF80400 		strb	r0, [sp, #4]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  627              		.cfi_startproc
  628              		@ args = 0, pretend = 0, frame = 0
  629              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 14
 
 
  630              		@ link register save eliminated.
@@ -797,32 +797,32 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 1
  642              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  643              		.file 4 "Core/Inc/NOS_Typedefs.h"
  644              		.file 5 "Core/Inc/NOS_BaseColors.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_WS2812B_Strip.c
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:19     .text.NOS_WS2812B_Strip_FullInit:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:25     .text.NOS_WS2812B_Strip_FullInit:00000000 NOS_WS2812B_Strip_FullInit
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:58     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:64     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 NOS_WS2812B_Strip_CoreSetPixel
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:123    .text.NOS_WS2812B_Strip_SetPixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:129    .text.NOS_WS2812B_Strip_SetPixel:00000000 NOS_WS2812B_Strip_SetPixel
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:188    .text.NOS_WS2812B_Strip_Clear:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:194    .text.NOS_WS2812B_Strip_Clear:00000000 NOS_WS2812B_Strip_Clear
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:254    .text.NOS_WS2812B_Strip_Update:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:260    .text.NOS_WS2812B_Strip_Update:00000000 NOS_WS2812B_Strip_Update
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:383    .text.NOS_WS2812B_Strip_Update:0000007c $d
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:388    .text.NOS_WS2812B_Strip_ColorFill:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:394    .text.NOS_WS2812B_Strip_ColorFill:00000000 NOS_WS2812B_Strip_ColorFill
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:451    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:457    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 NOS_WS2812B_Strip_SetPixelByRGB
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:496    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:502    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 NOS_WS2812B_Strip_SetPixelByPixelColor
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:532    .text.NOS_WS2812B_Strip_TestFill:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:538    .text.NOS_WS2812B_Strip_TestFill:00000000 NOS_WS2812B_Strip_TestFill
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:617    .text.NOS_WS2812B_Strip_SetBright:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccoopoEJ.s:623    .text.NOS_WS2812B_Strip_SetBright:00000000 NOS_WS2812B_Strip_SetBright
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:19     .text.NOS_WS2812B_Strip_FullInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:25     .text.NOS_WS2812B_Strip_FullInit:00000000 NOS_WS2812B_Strip_FullInit
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:58     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:64     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 NOS_WS2812B_Strip_CoreSetPixel
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:123    .text.NOS_WS2812B_Strip_SetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:129    .text.NOS_WS2812B_Strip_SetPixel:00000000 NOS_WS2812B_Strip_SetPixel
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:188    .text.NOS_WS2812B_Strip_Clear:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:194    .text.NOS_WS2812B_Strip_Clear:00000000 NOS_WS2812B_Strip_Clear
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:254    .text.NOS_WS2812B_Strip_Update:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:260    .text.NOS_WS2812B_Strip_Update:00000000 NOS_WS2812B_Strip_Update
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:383    .text.NOS_WS2812B_Strip_Update:0000007c $d
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:388    .text.NOS_WS2812B_Strip_ColorFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:394    .text.NOS_WS2812B_Strip_ColorFill:00000000 NOS_WS2812B_Strip_ColorFill
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:451    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:457    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 NOS_WS2812B_Strip_SetPixelByRGB
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:496    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:502    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 NOS_WS2812B_Strip_SetPixelByPixelColor
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:532    .text.NOS_WS2812B_Strip_TestFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:538    .text.NOS_WS2812B_Strip_TestFill:00000000 NOS_WS2812B_Strip_TestFill
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:617    .text.NOS_WS2812B_Strip_SetBright:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:623    .text.NOS_WS2812B_Strip_SetBright:00000000 NOS_WS2812B_Strip_SetBright
 
 UNDEFINED SYMBOLS
 __aeabi_i2f

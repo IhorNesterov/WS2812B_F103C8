@@ -93,7 +93,7 @@ uint8_t* checkData[16];
 NOS_RAM_Struct ramStruct = {0};
 
 PixelColor nullColor = {0,0,0};
-PixelColor white = {255,255,0};
+PixelColor white = {255,0,255};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -174,32 +174,30 @@ int main(void)
   
   if(NOS_FlashMemory_Struct_Validate(&flashMemoryStruct))
   {
-    //NOS_Flash_Memory_Struct_Load(&flashMemoryStruct);
+    NOS_Flash_Memory_Struct_Load(&flashMemoryStruct);
   }
   else
   {
-    //NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID);
-    //NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID);
+    NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID,true);
   }
 
-  NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID);
-  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID);
-  NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,EFFECT_DOTS_ID);
+  NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,EFFECT_DOTS_ID,true);
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,breatheA);
-  //NOS_WS2812B_Strip_Effects_AddEffect(&stripC,breatheA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripC,breatheA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripD,breatheA);
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,rainbowA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,rainbowA);
-  //NOS_WS2812B_Strip_Effects_AddEffect(&stripC,rainbowA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripC,rainbowA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripD,rainbowA);
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,dotsA);
-
   
-
   NOS_WS2812B_Strip_ColorFill(&stripA,NOS_GetBaseColor(RED));
   NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
   //NOS_WS2812B_Strip_ColorFill(&stripC,NOS_GetBaseColor(RED));  

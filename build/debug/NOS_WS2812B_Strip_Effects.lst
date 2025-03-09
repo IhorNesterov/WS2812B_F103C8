@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,15 +18,15 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              		.file 1 "Core/Src/NOS_WS2812B_Strip_Effects.c"
-  18              		.section	.text.NOS_WS2812B_Strip_Effect_Init,"ax",%progbits
+  18              		.section	.text.NOS_WS2812B_Strip_Effects_Check_Conflicts,"ax",%progbits
   19              		.align	1
-  20              		.global	NOS_WS2812B_Strip_Effect_Init
+  20              		.global	NOS_WS2812B_Strip_Effects_Check_Conflicts
   21              		.syntax unified
   22              		.thumb
   23              		.thumb_func
-  25              	NOS_WS2812B_Strip_Effect_Init:
+  25              	NOS_WS2812B_Strip_Effects_Check_Conflicts:
   26              	.LVL0:
-  27              	.LFB68:
+  27              	.LFB67:
    1:Core/Src/NOS_WS2812B_Strip_Effects.c **** #include "NOS_WS2812B_Strip_Effects.h"
    2:Core/Src/NOS_WS2812B_Strip_Effects.c **** #include "NOS_WS2812B_Strip.h"
    3:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
@@ -37,14 +37,14 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 1
    8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
    9:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
   10:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x20:
-  11:Core/Src/NOS_WS2812B_Strip_Effects.c ****             NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effe
+  11:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,
   12:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
   13:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
-  14:Core/Src/NOS_WS2812B_Strip_Effects.c ****             NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effe
+  14:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,
   15:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
-  16:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 case 0x22:
+  16:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x22:
   17:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,
-  18:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     break;
+  18:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
   19:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
   20:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
   21:Core/Src/NOS_WS2812B_Strip_Effects.c ****         strip->effectsCounter++;
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 1
   29:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(strip->effects[i].effectId)
   30:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
   31:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x20:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 2
 
 
   32:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Breathe_Handler(strip,&strip->effects[i]);
@@ -73,1793 +73,1953 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 1
   41:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
   42:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
   43:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
-  44:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effects_UpdateEffect(WS2812B_Strip* strip,Effect_Struct effect,uint8_t pos)
+  44:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effects_Check_Conflicts(WS2812B_Strip* strip,Effect_Struct effect)
   45:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
-  46:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(pos < 10)
-  47:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
-  48:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
-  49:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
-  50:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x20:
-  51:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[pos],&effect.color,effect.speed.data,
-  52:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
-  53:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
-  54:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[pos],&effect.color,effect.speed.data,
-  55:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
-  56:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x22:
-  57:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[pos],&effect.color,effect.speed.data,
-  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
-  59:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
-  60:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
-  61:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
-  62:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
-  63:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Init(Effect_Struct* effect,PixelColor* color,uint16_t speed,uint16_t 
-  64:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
-  28              		.loc 1 64 1 view -0
+  28              		.loc 1 45 1 view -0
   29              		.cfi_startproc
-  30              		@ args = 12, pretend = 0, frame = 0
+  30              		@ args = 40, pretend = 16, frame = 8
   31              		@ frame_needed = 0, uses_anonymous_args = 0
-  32              		.loc 1 64 1 is_stmt 0 view .LVU1
-  33 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
-  34              		.cfi_def_cfa_offset 32
-  35              		.cfi_offset 3, -32
-  36              		.cfi_offset 4, -28
-  37              		.cfi_offset 5, -24
-  38              		.cfi_offset 6, -20
-  39              		.cfi_offset 7, -16
-  40              		.cfi_offset 8, -12
-  41              		.cfi_offset 9, -8
-  42              		.cfi_offset 14, -4
-  43 0004 0446     		mov	r4, r0
-  44 0006 0D46     		mov	r5, r1
-  45 0008 1746     		mov	r7, r2
-  46 000a 1E46     		mov	r6, r3
-  47 000c BDF82090 		ldrh	r9, [sp, #32]
-  48 0010 BDF82480 		ldrh	r8, [sp, #36]
-  65:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_Math_SinValue_Init(&effect->value,minValue,maxValue,step);
-  49              		.loc 1 65 9 is_stmt 1 view .LVU2
-  50 0014 4246     		mov	r2, r8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 3
+  32              		.loc 1 45 1 is_stmt 0 view .LVU1
+  33 0000 84B0     		sub	sp, sp, #16
+  34              		.cfi_def_cfa_offset 16
+  35 0002 00B5     		push	{lr}
+  36              		.cfi_def_cfa_offset 20
+  37              		.cfi_offset 14, -20
+  38 0004 83B0     		sub	sp, sp, #12
+  39              		.cfi_def_cfa_offset 32
+  40 0006 0DF1140C 		add	ip, sp, #20
+  41 000a 8CE80E00 		stm	ip, {r1, r2, r3}
+  46:Core/Src/NOS_WS2812B_Strip_Effects.c ****     PixelColor color = {0,0,0};
+  42              		.loc 1 46 5 is_stmt 1 view .LVU2
+  43              		.loc 1 46 16 is_stmt 0 view .LVU3
+  44 000e 0023     		movs	r3, #0
+  45 0010 8DF80430 		strb	r3, [sp, #4]
+  46 0014 8DF80530 		strb	r3, [sp, #5]
+  47 0018 8DF80630 		strb	r3, [sp, #6]
+  47:Core/Src/NOS_WS2812B_Strip_Effects.c ****     switch(effect.effectId)
+  48              		.loc 1 47 5 is_stmt 1 view .LVU4
+  49              		.loc 1 47 18 is_stmt 0 view .LVU5
+  50 001c 9DF83630 		ldrb	r3, [sp, #54]	@ zero_extendqisi2
+  51              		.loc 1 47 5 view .LVU6
+  52 0020 212B     		cmp	r3, #33
+  53 0022 06D0     		beq	.L2
+  54 0024 222B     		cmp	r3, #34
+  55 0026 0ED0     		beq	.L3
+  56              	.LVL1:
+  57              	.L1:
+  48:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+  49:Core/Src/NOS_WS2812B_Strip_Effects.c ****         case EFFECT_RAINBOW_ID:
+  50:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(strip->effects[1].enabled)
+  51:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  52:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 strip->effects[2].enabled = false;
+  53:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+  54:Core/Src/NOS_WS2812B_Strip_Effects.c ****             NOS_WS2812B_Strip_ColorFill(strip,color);
+  55:Core/Src/NOS_WS2812B_Strip_Effects.c ****             break;
+  56:Core/Src/NOS_WS2812B_Strip_Effects.c ****         
+  57:Core/Src/NOS_WS2812B_Strip_Effects.c ****         case EFFECT_DOTS_ID:
+  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(strip->effects[2].enabled)
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 3
 
 
-  51              	.LVL1:
-  52              		.loc 1 65 9 is_stmt 0 view .LVU3
-  53 0016 4946     		mov	r1, r9
-  54              	.LVL2:
-  55              		.loc 1 65 9 view .LVU4
-  56 0018 FFF7FEFF 		bl	NOS_Math_SinValue_Init
-  57              	.LVL3:
-  66:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->minValue = minValue;
-  58              		.loc 1 66 9 is_stmt 1 view .LVU5
-  59              		.loc 1 66 26 is_stmt 0 view .LVU6
-  60 001c A4F81A90 		strh	r9, [r4, #26]	@ movhi
-  67:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->maxValue = maxValue;
-  61              		.loc 1 67 9 is_stmt 1 view .LVU7
-  62              		.loc 1 67 26 is_stmt 0 view .LVU8
-  63 0020 A4F81C80 		strh	r8, [r4, #28]	@ movhi
-  68:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->speed.data = speed;
-  64              		.loc 1 68 9 is_stmt 1 view .LVU9
-  65              		.loc 1 68 28 is_stmt 0 view .LVU10
-  66 0024 A782     		strh	r7, [r4, #20]	@ movhi
-  69:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->step.data = step;
-  67              		.loc 1 69 9 is_stmt 1 view .LVU11
-  68              		.loc 1 69 27 is_stmt 0 view .LVU12
-  69 0026 E682     		strh	r6, [r4, #22]	@ movhi
-  70:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->enabled = true;
-  70              		.loc 1 70 9 is_stmt 1 view .LVU13
-  71              		.loc 1 70 25 is_stmt 0 view .LVU14
-  72 0028 0123     		movs	r3, #1
-  73 002a 84F82130 		strb	r3, [r4, #33]
-  71:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_PixelColor_SetColor(&effect->color,color->R,color->G,color->B);
-  74              		.loc 1 71 9 is_stmt 1 view .LVU15
-  75 002e AB78     		ldrb	r3, [r5, #2]	@ zero_extendqisi2
-  76 0030 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
-  77 0032 2978     		ldrb	r1, [r5]	@ zero_extendqisi2
-  78 0034 04F11E00 		add	r0, r4, #30
-  79 0038 FFF7FEFF 		bl	NOS_PixelColor_SetColor
-  80              	.LVL4:
-  72:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->effectId = effectID;   
-  81              		.loc 1 72 9 view .LVU16
-  82              		.loc 1 72 26 is_stmt 0 view .LVU17
-  83 003c 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
-  84 0040 84F82230 		strb	r3, [r4, #34]
-  73:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
-  85              		.loc 1 73 1 view .LVU18
-  86 0044 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
-  87              		.loc 1 73 1 view .LVU19
-  88              		.cfi_endproc
-  89              	.LFE68:
-  91              		.section	.text.NOS_WS2812B_Strip_Effects_AddEffect,"ax",%progbits
-  92              		.align	1
-  93              		.global	NOS_WS2812B_Strip_Effects_AddEffect
-  94              		.syntax unified
-  95              		.thumb
-  96              		.thumb_func
-  98              	NOS_WS2812B_Strip_Effects_AddEffect:
-  99              	.LVL5:
- 100              	.LFB65:
-   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 4
+  59:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  60:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 strip->effects[1].enabled = false;
+  61:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+  62:Core/Src/NOS_WS2812B_Strip_Effects.c ****             NOS_WS2812B_Strip_ColorFill(strip,color);
+  63:Core/Src/NOS_WS2812B_Strip_Effects.c ****         break;
+  64:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+  65:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+  58              		.loc 1 65 1 view .LVU7
+  59 0028 03B0     		add	sp, sp, #12
+  60              		.cfi_remember_state
+  61              		.cfi_def_cfa_offset 20
+  62              		@ sp needed
+  63 002a 5DF804EB 		ldr	lr, [sp], #4
+  64              		.cfi_restore 14
+  65              		.cfi_def_cfa_offset 16
+  66 002e 04B0     		add	sp, sp, #16
+  67              		.cfi_def_cfa_offset 0
+  68 0030 7047     		bx	lr
+  69              	.LVL2:
+  70              	.L2:
+  71              		.cfi_restore_state
+  50:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  72              		.loc 1 50 13 is_stmt 1 view .LVU8
+  50:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  73              		.loc 1 50 33 is_stmt 0 view .LVU9
+  74 0032 90F85530 		ldrb	r3, [r0, #85]	@ zero_extendqisi2
+  50:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  75              		.loc 1 50 15 view .LVU10
+  76 0036 13B1     		cbz	r3, .L5
+  52:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+  77              		.loc 1 52 17 is_stmt 1 view .LVU11
+  52:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+  78              		.loc 1 52 43 is_stmt 0 view .LVU12
+  79 0038 0023     		movs	r3, #0
+  80 003a 80F87930 		strb	r3, [r0, #121]
+  81              	.L5:
+  54:Core/Src/NOS_WS2812B_Strip_Effects.c ****             break;
+  82              		.loc 1 54 13 is_stmt 1 view .LVU13
+  83 003e 0199     		ldr	r1, [sp, #4]
+  84 0040 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+  85              	.LVL3:
+  55:Core/Src/NOS_WS2812B_Strip_Effects.c ****         
+  86              		.loc 1 55 13 view .LVU14
+  87 0044 F0E7     		b	.L1
+  88              	.LVL4:
+  89              	.L3:
+  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  90              		.loc 1 58 13 view .LVU15
+  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  91              		.loc 1 58 33 is_stmt 0 view .LVU16
+  92 0046 90F87930 		ldrb	r3, [r0, #121]	@ zero_extendqisi2
+  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+  93              		.loc 1 58 15 view .LVU17
+  94 004a 13B1     		cbz	r3, .L6
+  60:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+  95              		.loc 1 60 17 is_stmt 1 view .LVU18
+  60:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 4
 
 
- 101              		.loc 1 5 1 is_stmt 1 view -0
- 102              		.cfi_startproc
- 103              		@ args = 40, pretend = 16, frame = 0
- 104              		@ frame_needed = 0, uses_anonymous_args = 0
-   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
- 105              		.loc 1 5 1 is_stmt 0 view .LVU21
- 106 0000 84B0     		sub	sp, sp, #16
- 107              		.cfi_def_cfa_offset 16
- 108 0002 10B5     		push	{r4, lr}
- 109              		.cfi_def_cfa_offset 24
- 110              		.cfi_offset 4, -24
- 111              		.cfi_offset 14, -20
- 112 0004 84B0     		sub	sp, sp, #16
- 113              		.cfi_def_cfa_offset 40
- 114 0006 0446     		mov	r4, r0
- 115 0008 07A8     		add	r0, sp, #28
- 116              	.LVL6:
-   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
- 117              		.loc 1 5 1 view .LVU22
- 118 000a 80E80E00 		stm	r0, {r1, r2, r3}
-   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 119              		.loc 1 6 5 is_stmt 1 view .LVU23
-   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 120              		.loc 1 6 13 is_stmt 0 view .LVU24
- 121 000e 94F87831 		ldrb	r3, [r4, #376]	@ zero_extendqisi2
-   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 122              		.loc 1 6 7 view .LVU25
- 123 0012 092B     		cmp	r3, #9
- 124 0014 0CD8     		bhi	.L3
-   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 125              		.loc 1 8 9 is_stmt 1 view .LVU26
-   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 126              		.loc 1 8 22 is_stmt 0 view .LVU27
- 127 0016 9DF83E20 		ldrb	r2, [sp, #62]	@ zero_extendqisi2
-   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 128              		.loc 1 8 9 view .LVU28
- 129 001a 212A     		cmp	r2, #33
- 130 001c 22D0     		beq	.L5
- 131 001e 222A     		cmp	r2, #34
- 132 0020 35D0     		beq	.L6
- 133 0022 202A     		cmp	r2, #32
- 134 0024 09D0     		beq	.L9
- 135              	.L7:
-  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
- 136              		.loc 1 21 9 is_stmt 1 view .LVU29
-  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
- 137              		.loc 1 21 14 is_stmt 0 view .LVU30
- 138 0026 94F87831 		ldrb	r3, [r4, #376]	@ zero_extendqisi2
-  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
- 139              		.loc 1 21 30 view .LVU31
- 140 002a 0133     		adds	r3, r3, #1
- 141 002c 84F87831 		strb	r3, [r4, #376]
- 142              	.L3:
-  23:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 143              		.loc 1 23 1 view .LVU32
- 144 0030 04B0     		add	sp, sp, #16
- 145              		.cfi_remember_state
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 5
-
-
- 146              		.cfi_def_cfa_offset 24
- 147              		@ sp needed
- 148 0032 BDE81040 		pop	{r4, lr}
- 149              		.cfi_restore 14
- 150              		.cfi_restore 4
- 151              		.cfi_def_cfa_offset 16
- 152              	.LVL7:
-  23:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 153              		.loc 1 23 1 view .LVU33
- 154 0036 04B0     		add	sp, sp, #16
- 155              		.cfi_def_cfa_offset 0
- 156 0038 7047     		bx	lr
- 157              	.LVL8:
- 158              	.L9:
- 159              		.cfi_restore_state
-  11:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 160              		.loc 1 11 13 is_stmt 1 view .LVU34
- 161 003a 03EBC300 		add	r0, r3, r3, lsl #3
- 162 003e 8000     		lsls	r0, r0, #2
- 163 0040 1030     		adds	r0, r0, #16
- 164 0042 0292     		str	r2, [sp, #8]
- 165 0044 BDF83830 		ldrh	r3, [sp, #56]
- 166 0048 0193     		str	r3, [sp, #4]
- 167 004a BDF83630 		ldrh	r3, [sp, #54]
- 168 004e 0093     		str	r3, [sp]
- 169 0050 BDF83230 		ldrh	r3, [sp, #50]
- 170 0054 BDF83020 		ldrh	r2, [sp, #48]
- 171 0058 0DF13A01 		add	r1, sp, #58
- 172 005c 2044     		add	r0, r0, r4
- 173 005e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 174              	.LVL9:
-  12:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
- 175              		.loc 1 12 17 view .LVU35
- 176 0062 E0E7     		b	.L7
- 177              	.L5:
-  14:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 178              		.loc 1 14 13 view .LVU36
- 179 0064 03EBC300 		add	r0, r3, r3, lsl #3
- 180 0068 8000     		lsls	r0, r0, #2
- 181 006a 1030     		adds	r0, r0, #16
- 182 006c 0292     		str	r2, [sp, #8]
- 183 006e BDF83830 		ldrh	r3, [sp, #56]
- 184 0072 0193     		str	r3, [sp, #4]
- 185 0074 BDF83630 		ldrh	r3, [sp, #54]
- 186 0078 0093     		str	r3, [sp]
- 187 007a BDF83230 		ldrh	r3, [sp, #50]
- 188 007e BDF83020 		ldrh	r2, [sp, #48]
- 189 0082 0DF13A01 		add	r1, sp, #58
- 190 0086 2044     		add	r0, r0, r4
- 191 0088 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 192              	.LVL10:
-  15:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 case 0x22:
- 193              		.loc 1 15 17 view .LVU37
- 194 008c CBE7     		b	.L7
- 195              	.L6:
-  17:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     break;
- 196              		.loc 1 17 17 view .LVU38
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 6
-
-
- 197 008e 03EBC300 		add	r0, r3, r3, lsl #3
- 198 0092 8000     		lsls	r0, r0, #2
- 199 0094 1030     		adds	r0, r0, #16
- 200 0096 0292     		str	r2, [sp, #8]
- 201 0098 BDF83830 		ldrh	r3, [sp, #56]
- 202 009c 0193     		str	r3, [sp, #4]
- 203 009e BDF83630 		ldrh	r3, [sp, #54]
- 204 00a2 0093     		str	r3, [sp]
- 205 00a4 BDF83230 		ldrh	r3, [sp, #50]
- 206 00a8 BDF83020 		ldrh	r2, [sp, #48]
- 207 00ac 0DF13A01 		add	r1, sp, #58
- 208 00b0 2044     		add	r0, r0, r4
- 209 00b2 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 210              	.LVL11:
-  18:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 211              		.loc 1 18 21 view .LVU39
- 212 00b6 B6E7     		b	.L7
- 213              		.cfi_endproc
- 214              	.LFE65:
- 216              		.section	.text.NOS_WS2812B_Strip_Effects_UpdateEffect,"ax",%progbits
- 217              		.align	1
- 218              		.global	NOS_WS2812B_Strip_Effects_UpdateEffect
- 219              		.syntax unified
- 220              		.thumb
- 221              		.thumb_func
- 223              	NOS_WS2812B_Strip_Effects_UpdateEffect:
- 224              	.LVL12:
- 225              	.LFB67:
-  45:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(pos < 10)
- 226              		.loc 1 45 1 view -0
- 227              		.cfi_startproc
- 228              		@ args = 44, pretend = 16, frame = 0
- 229              		@ frame_needed = 0, uses_anonymous_args = 0
-  45:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(pos < 10)
- 230              		.loc 1 45 1 is_stmt 0 view .LVU41
- 231 0000 84B0     		sub	sp, sp, #16
- 232              		.cfi_def_cfa_offset 16
- 233 0002 00B5     		push	{lr}
- 234              		.cfi_def_cfa_offset 20
- 235              		.cfi_offset 14, -20
- 236 0004 85B0     		sub	sp, sp, #20
- 237              		.cfi_def_cfa_offset 40
- 238 0006 0DF11C0C 		add	ip, sp, #28
- 239 000a 8CE80E00 		stm	ip, {r1, r2, r3}
- 240 000e 9DF84030 		ldrb	r3, [sp, #64]	@ zero_extendqisi2
-  46:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 241              		.loc 1 46 5 is_stmt 1 view .LVU42
-  46:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 242              		.loc 1 46 7 is_stmt 0 view .LVU43
- 243 0012 092B     		cmp	r3, #9
- 244 0014 07D8     		bhi	.L10
-  48:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 245              		.loc 1 48 9 is_stmt 1 view .LVU44
-  48:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 246              		.loc 1 48 22 is_stmt 0 view .LVU45
- 247 0016 9DF83E20 		ldrb	r2, [sp, #62]	@ zero_extendqisi2
-  48:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 7
-
-
- 248              		.loc 1 48 9 view .LVU46
- 249 001a 212A     		cmp	r2, #33
- 250 001c 1FD0     		beq	.L12
- 251 001e 222A     		cmp	r2, #34
- 252 0020 34D0     		beq	.L13
- 253 0022 202A     		cmp	r2, #32
- 254 0024 04D0     		beq	.L15
- 255              	.LVL13:
- 256              	.L10:
-  61:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 257              		.loc 1 61 1 view .LVU47
- 258 0026 05B0     		add	sp, sp, #20
- 259              		.cfi_remember_state
- 260              		.cfi_def_cfa_offset 20
- 261              		@ sp needed
- 262 0028 5DF804EB 		ldr	lr, [sp], #4
- 263              		.cfi_restore 14
- 264              		.cfi_def_cfa_offset 16
- 265 002c 04B0     		add	sp, sp, #16
- 266              		.cfi_def_cfa_offset 0
- 267 002e 7047     		bx	lr
- 268              	.LVL14:
- 269              	.L15:
- 270              		.cfi_restore_state
-  51:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 271              		.loc 1 51 17 is_stmt 1 view .LVU48
- 272 0030 03EBC303 		add	r3, r3, r3, lsl #3
- 273 0034 4FEA830C 		lsl	ip, r3, #2
- 274 0038 0CF1100C 		add	ip, ip, #16
- 275 003c 0292     		str	r2, [sp, #8]
- 276 003e BDF83830 		ldrh	r3, [sp, #56]
- 277 0042 0193     		str	r3, [sp, #4]
- 278 0044 BDF83630 		ldrh	r3, [sp, #54]
- 279 0048 0093     		str	r3, [sp]
- 280 004a BDF83230 		ldrh	r3, [sp, #50]
- 281 004e BDF83020 		ldrh	r2, [sp, #48]
- 282 0052 0DF13A01 		add	r1, sp, #58
- 283 0056 6044     		add	r0, r0, ip
- 284              	.LVL15:
-  51:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 285              		.loc 1 51 17 is_stmt 0 view .LVU49
- 286 0058 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 287              	.LVL16:
-  52:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
- 288              		.loc 1 52 17 is_stmt 1 view .LVU50
- 289 005c E3E7     		b	.L10
- 290              	.LVL17:
- 291              	.L12:
-  54:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 292              		.loc 1 54 17 view .LVU51
- 293 005e 03EBC303 		add	r3, r3, r3, lsl #3
- 294 0062 4FEA830C 		lsl	ip, r3, #2
- 295 0066 0CF1100C 		add	ip, ip, #16
- 296 006a 0292     		str	r2, [sp, #8]
- 297 006c BDF83830 		ldrh	r3, [sp, #56]
- 298 0070 0193     		str	r3, [sp, #4]
- 299 0072 BDF83630 		ldrh	r3, [sp, #54]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 8
-
-
- 300 0076 0093     		str	r3, [sp]
- 301 0078 BDF83230 		ldrh	r3, [sp, #50]
- 302 007c BDF83020 		ldrh	r2, [sp, #48]
- 303 0080 0DF13A01 		add	r1, sp, #58
- 304 0084 6044     		add	r0, r0, ip
- 305              	.LVL18:
-  54:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 306              		.loc 1 54 17 is_stmt 0 view .LVU52
- 307 0086 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 308              	.LVL19:
-  55:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x22:
- 309              		.loc 1 55 17 is_stmt 1 view .LVU53
- 310 008a CCE7     		b	.L10
- 311              	.LVL20:
- 312              	.L13:
-  57:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 313              		.loc 1 57 17 view .LVU54
- 314 008c 03EBC303 		add	r3, r3, r3, lsl #3
- 315 0090 4FEA830C 		lsl	ip, r3, #2
- 316 0094 0CF1100C 		add	ip, ip, #16
- 317 0098 0292     		str	r2, [sp, #8]
- 318 009a BDF83830 		ldrh	r3, [sp, #56]
- 319 009e 0193     		str	r3, [sp, #4]
- 320 00a0 BDF83630 		ldrh	r3, [sp, #54]
- 321 00a4 0093     		str	r3, [sp]
- 322 00a6 BDF83230 		ldrh	r3, [sp, #50]
- 323 00aa BDF83020 		ldrh	r2, [sp, #48]
- 324 00ae 0DF13A01 		add	r1, sp, #58
- 325 00b2 6044     		add	r0, r0, ip
- 326              	.LVL21:
-  57:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 327              		.loc 1 57 17 is_stmt 0 view .LVU55
- 328 00b4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 329              	.LVL22:
-  58:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 330              		.loc 1 58 17 is_stmt 1 view .LVU56
-  61:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 331              		.loc 1 61 1 is_stmt 0 view .LVU57
- 332 00b8 B5E7     		b	.L10
- 333              		.cfi_endproc
- 334              	.LFE67:
- 336              		.section	.text.NOS_WS2812B_Strip_Effect_Copy,"ax",%progbits
- 337              		.align	1
- 338              		.global	NOS_WS2812B_Strip_Effect_Copy
- 339              		.syntax unified
- 340              		.thumb
- 341              		.thumb_func
- 343              	NOS_WS2812B_Strip_Effect_Copy:
- 344              	.LVL23:
- 345              	.LFB69:
-  74:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
-  75:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Copy(Effect_Struct* destination,Effect_Struct* source)
-  76:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
- 346              		.loc 1 76 1 is_stmt 1 view -0
- 347              		.cfi_startproc
- 348              		@ args = 0, pretend = 0, frame = 0
- 349              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 9
-
-
- 350              		.loc 1 76 1 is_stmt 0 view .LVU59
- 351 0000 38B5     		push	{r3, r4, r5, lr}
- 352              		.cfi_def_cfa_offset 16
- 353              		.cfi_offset 3, -16
- 354              		.cfi_offset 4, -12
- 355              		.cfi_offset 5, -8
- 356              		.cfi_offset 14, -4
- 357 0002 0546     		mov	r5, r0
- 358 0004 0C46     		mov	r4, r1
-  77:Core/Src/NOS_WS2812B_Strip_Effects.c ****     NOS_Math_SinValue_Init(&destination->value,source->minValue,source->maxValue,source->step.data)
- 359              		.loc 1 77 5 is_stmt 1 view .LVU60
- 360 0006 CB8A     		ldrh	r3, [r1, #22]
- 361 0008 8A8B     		ldrh	r2, [r1, #28]
- 362 000a 498B     		ldrh	r1, [r1, #26]
- 363              	.LVL24:
- 364              		.loc 1 77 5 is_stmt 0 view .LVU61
- 365 000c FFF7FEFF 		bl	NOS_Math_SinValue_Init
- 366              	.LVL25:
-  78:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->minValue = source->minValue;
- 367              		.loc 1 78 5 is_stmt 1 view .LVU62
- 368              		.loc 1 78 35 is_stmt 0 view .LVU63
- 369 0010 638B     		ldrh	r3, [r4, #26]
- 370              		.loc 1 78 27 view .LVU64
- 371 0012 6B83     		strh	r3, [r5, #26]	@ movhi
-  79:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->maxValue = source->maxValue;
- 372              		.loc 1 79 5 is_stmt 1 view .LVU65
- 373              		.loc 1 79 35 is_stmt 0 view .LVU66
- 374 0014 A38B     		ldrh	r3, [r4, #28]
- 375              		.loc 1 79 27 view .LVU67
- 376 0016 AB83     		strh	r3, [r5, #28]	@ movhi
-  80:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->speed.data = source->speed.data;
- 377              		.loc 1 80 5 is_stmt 1 view .LVU68
- 378              		.loc 1 80 44 is_stmt 0 view .LVU69
- 379 0018 A38A     		ldrh	r3, [r4, #20]
- 380              		.loc 1 80 29 view .LVU70
- 381 001a AB82     		strh	r3, [r5, #20]	@ movhi
-  81:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->step.data = source->step.data;
- 382              		.loc 1 81 5 is_stmt 1 view .LVU71
- 383              		.loc 1 81 42 is_stmt 0 view .LVU72
- 384 001c E38A     		ldrh	r3, [r4, #22]
- 385              		.loc 1 81 28 view .LVU73
- 386 001e EB82     		strh	r3, [r5, #22]	@ movhi
-  82:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->enabled = true;
- 387              		.loc 1 82 5 is_stmt 1 view .LVU74
- 388              		.loc 1 82 26 is_stmt 0 view .LVU75
- 389 0020 0123     		movs	r3, #1
- 390 0022 85F82130 		strb	r3, [r5, #33]
-  83:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->effectId = source->effectId;   
- 391              		.loc 1 83 5 is_stmt 1 view .LVU76
- 392              		.loc 1 83 35 is_stmt 0 view .LVU77
- 393 0026 94F82230 		ldrb	r3, [r4, #34]	@ zero_extendqisi2
- 394              		.loc 1 83 27 view .LVU78
- 395 002a 85F82230 		strb	r3, [r5, #34]
+  96              		.loc 1 60 43 is_stmt 0 view .LVU19
+  97 004c 0023     		movs	r3, #0
+  98 004e 80F85530 		strb	r3, [r0, #85]
+  99              	.L6:
+  62:Core/Src/NOS_WS2812B_Strip_Effects.c ****         break;
+ 100              		.loc 1 62 13 is_stmt 1 view .LVU20
+ 101 0052 0199     		ldr	r1, [sp, #4]
+ 102 0054 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 103              	.LVL5:
+  63:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ 104              		.loc 1 63 9 view .LVU21
+ 105              		.loc 1 65 1 is_stmt 0 view .LVU22
+ 106 0058 E6E7     		b	.L1
+ 107              		.cfi_endproc
+ 108              	.LFE67:
+ 110              		.section	.text.NOS_WS2812B_Strip_Effect_Init,"ax",%progbits
+ 111              		.align	1
+ 112              		.global	NOS_WS2812B_Strip_Effect_Init
+ 113              		.syntax unified
+ 114              		.thumb
+ 115              		.thumb_func
+ 117              	NOS_WS2812B_Strip_Effect_Init:
+ 118              	.LVL6:
+ 119              	.LFB69:
+  66:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+  67:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effects_UpdateEffect(WS2812B_Strip* strip,Effect_Struct effect)
+  68:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
+  69:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
+  70:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+  71:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case EFFECT_BREATHE_ID:
+  72:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[0],&effect.color,effect.speed.data,ef
+  73:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+  74:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case EFFECT_RAINBOW_ID:
+  75:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[1],&effect.color,effect.speed.data,ef
+  76:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+  77:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+  78:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case EFFECT_DOTS_ID:
+  79:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[2],&effect.color,effect.speed.data,ef
+  80:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+  81:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+  82:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
+  83:Core/Src/NOS_WS2812B_Strip_Effects.c ****     
   84:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
- 396              		.loc 1 84 1 view .LVU79
- 397 002e 38BD     		pop	{r3, r4, r5, pc}
- 398              		.loc 1 84 1 view .LVU80
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 10
-
-
- 399              		.cfi_endproc
- 400              	.LFE69:
- 402              		.section	.text.NOS_WS2812B_Strip_Effect_Breathe_Handler,"ax",%progbits
- 403              		.align	1
- 404              		.global	NOS_WS2812B_Strip_Effect_Breathe_Handler
- 405              		.syntax unified
- 406              		.thumb
- 407              		.thumb_func
- 409              	NOS_WS2812B_Strip_Effect_Breathe_Handler:
- 410              	.LVL26:
- 411              	.LFB70:
   85:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
-  86:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Breathe_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
+  86:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Init(Effect_Struct* effect,PixelColor* color,uint16_t speed,uint16_t 
   87:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
- 412              		.loc 1 87 1 is_stmt 1 view -0
- 413              		.cfi_startproc
- 414              		@ args = 0, pretend = 0, frame = 0
- 415              		@ frame_needed = 0, uses_anonymous_args = 0
-  88:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
- 416              		.loc 1 88 5 view .LVU82
- 417              		.loc 1 88 7 is_stmt 0 view .LVU83
- 418 0000 D8B1     		cbz	r0, .L22
-  87:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
- 419              		.loc 1 87 1 view .LVU84
- 420 0002 38B5     		push	{r3, r4, r5, lr}
- 421              		.cfi_def_cfa_offset 16
- 422              		.cfi_offset 3, -16
- 423              		.cfi_offset 4, -12
- 424              		.cfi_offset 5, -8
- 425              		.cfi_offset 14, -4
- 426 0004 0C46     		mov	r4, r1
- 427 0006 0546     		mov	r5, r0
-  89:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
-  90:Core/Src/NOS_WS2812B_Strip_Effects.c ****         if(effect != NULL)
- 428              		.loc 1 90 9 is_stmt 1 view .LVU85
- 429              		.loc 1 90 11 is_stmt 0 view .LVU86
- 430 0008 49B1     		cbz	r1, .L18
-  91:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
-  92:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(effect->enabled)
- 431              		.loc 1 92 13 is_stmt 1 view .LVU87
- 432              		.loc 1 92 22 is_stmt 0 view .LVU88
- 433 000a 91F82130 		ldrb	r3, [r1, #33]	@ zero_extendqisi2
- 434              		.loc 1 92 15 view .LVU89
- 435 000e 33B1     		cbz	r3, .L18
-  93:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
-  94:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 if(effect->timer > effect->speed.data)
- 436              		.loc 1 94 17 is_stmt 1 view .LVU90
- 437              		.loc 1 94 26 is_stmt 0 view .LVU91
- 438 0010 0A8B     		ldrh	r2, [r1, #24]
- 439              		.loc 1 94 49 view .LVU92
- 440 0012 8B8A     		ldrh	r3, [r1, #20]
- 441              		.loc 1 94 19 view .LVU93
- 442 0014 9A42     		cmp	r2, r3
- 443 0016 03D8     		bhi	.L25
- 444              	.LVL27:
- 445              	.L20:
-  95:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 11
+ 120              		.loc 1 87 1 is_stmt 1 view -0
+ 121              		.cfi_startproc
+ 122              		@ args = 16, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		.loc 1 87 1 is_stmt 0 view .LVU24
+ 125 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 126              		.cfi_def_cfa_offset 32
+ 127              		.cfi_offset 3, -32
+ 128              		.cfi_offset 4, -28
+ 129              		.cfi_offset 5, -24
+ 130              		.cfi_offset 6, -20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 5
 
 
-  96:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_Math_SinValue_Handler(&effect->value);
-  97:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
-  98:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
-  99:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
- 100:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 101:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 effect->timer++;
- 446              		.loc 1 101 17 is_stmt 1 view .LVU94
- 447              		.loc 1 101 23 is_stmt 0 view .LVU95
- 448 0018 238B     		ldrh	r3, [r4, #24]
- 449              		.loc 1 101 30 view .LVU96
- 450 001a 0133     		adds	r3, r3, #1
- 451 001c 2383     		strh	r3, [r4, #24]	@ movhi
- 452              	.L18:
- 102:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
- 103:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 104:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
- 105:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
- 453              		.loc 1 105 1 view .LVU97
- 454 001e 38BD     		pop	{r3, r4, r5, pc}
- 455              	.LVL28:
- 456              	.L25:
-  96:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
- 457              		.loc 1 96 21 is_stmt 1 view .LVU98
- 458 0020 0846     		mov	r0, r1
- 459              	.LVL29:
-  96:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
- 460              		.loc 1 96 21 is_stmt 0 view .LVU99
- 461 0022 FFF7FEFF 		bl	NOS_Math_SinValue_Handler
- 462              	.LVL30:
-  97:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
- 463              		.loc 1 97 21 is_stmt 1 view .LVU100
- 464 0026 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
- 465 0028 2846     		mov	r0, r5
- 466 002a FFF7FEFF 		bl	NOS_WS2812B_Strip_SetBright
- 467              	.LVL31:
-  98:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
- 468              		.loc 1 98 21 view .LVU101
- 469 002e 2846     		mov	r0, r5
- 470 0030 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 471              	.LVL32:
-  99:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 472              		.loc 1 99 21 view .LVU102
-  99:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 473              		.loc 1 99 35 is_stmt 0 view .LVU103
- 474 0034 0023     		movs	r3, #0
- 475 0036 2383     		strh	r3, [r4, #24]	@ movhi
- 476 0038 EEE7     		b	.L20
- 477              	.LVL33:
- 478              	.L22:
- 479              		.cfi_def_cfa_offset 0
- 480              		.cfi_restore 3
- 481              		.cfi_restore 4
- 482              		.cfi_restore 5
- 483              		.cfi_restore 14
-  99:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 484              		.loc 1 99 35 view .LVU104
- 485 003a 7047     		bx	lr
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 12
+ 131              		.cfi_offset 7, -16
+ 132              		.cfi_offset 8, -12
+ 133              		.cfi_offset 9, -8
+ 134              		.cfi_offset 14, -4
+ 135 0004 0446     		mov	r4, r0
+ 136 0006 0D46     		mov	r5, r1
+ 137 0008 1746     		mov	r7, r2
+ 138 000a 1E46     		mov	r6, r3
+ 139 000c BDF82090 		ldrh	r9, [sp, #32]
+ 140 0010 BDF82480 		ldrh	r8, [sp, #36]
+  88:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_Math_SinValue_Init(&effect->value,minValue,maxValue,step);
+ 141              		.loc 1 88 9 is_stmt 1 view .LVU25
+ 142 0014 4246     		mov	r2, r8
+ 143              	.LVL7:
+ 144              		.loc 1 88 9 is_stmt 0 view .LVU26
+ 145 0016 4946     		mov	r1, r9
+ 146              	.LVL8:
+ 147              		.loc 1 88 9 view .LVU27
+ 148 0018 FFF7FEFF 		bl	NOS_Math_SinValue_Init
+ 149              	.LVL9:
+  89:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->minValue = minValue;
+ 150              		.loc 1 89 9 is_stmt 1 view .LVU28
+ 151              		.loc 1 89 26 is_stmt 0 view .LVU29
+ 152 001c A4F81A90 		strh	r9, [r4, #26]	@ movhi
+  90:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->maxValue = maxValue;
+ 153              		.loc 1 90 9 is_stmt 1 view .LVU30
+ 154              		.loc 1 90 26 is_stmt 0 view .LVU31
+ 155 0020 A4F81C80 		strh	r8, [r4, #28]	@ movhi
+  91:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->speed.data = speed;
+ 156              		.loc 1 91 9 is_stmt 1 view .LVU32
+ 157              		.loc 1 91 28 is_stmt 0 view .LVU33
+ 158 0024 A782     		strh	r7, [r4, #20]	@ movhi
+  92:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->step.data = step;
+ 159              		.loc 1 92 9 is_stmt 1 view .LVU34
+ 160              		.loc 1 92 27 is_stmt 0 view .LVU35
+ 161 0026 E682     		strh	r6, [r4, #22]	@ movhi
+  93:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->enabled = enabled;
+ 162              		.loc 1 93 9 is_stmt 1 view .LVU36
+ 163              		.loc 1 93 25 is_stmt 0 view .LVU37
+ 164 0028 9DF82C30 		ldrb	r3, [sp, #44]	@ zero_extendqisi2
+ 165 002c 84F82130 		strb	r3, [r4, #33]
+  94:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_PixelColor_SetColor(&effect->color,color->R,color->G,color->B);
+ 166              		.loc 1 94 9 is_stmt 1 view .LVU38
+ 167 0030 AB78     		ldrb	r3, [r5, #2]	@ zero_extendqisi2
+ 168 0032 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
+ 169 0034 2978     		ldrb	r1, [r5]	@ zero_extendqisi2
+ 170 0036 04F11E00 		add	r0, r4, #30
+ 171 003a FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 172              	.LVL10:
+  95:Core/Src/NOS_WS2812B_Strip_Effects.c ****         effect->effectId = effectID;   
+ 173              		.loc 1 95 9 view .LVU39
+ 174              		.loc 1 95 26 is_stmt 0 view .LVU40
+ 175 003e 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
+ 176 0042 84F82230 		strb	r3, [r4, #34]
+  96:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 177              		.loc 1 96 1 view .LVU41
+ 178 0046 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 6
 
 
- 486              		.cfi_endproc
- 487              	.LFE70:
- 489              		.section	.text.NOS_WS2812B_Strip_Effect_Rainbow_Handler,"ax",%progbits
- 490              		.align	1
- 491              		.global	NOS_WS2812B_Strip_Effect_Rainbow_Handler
- 492              		.syntax unified
- 493              		.thumb
- 494              		.thumb_func
- 496              	NOS_WS2812B_Strip_Effect_Rainbow_Handler:
- 497              	.LVL34:
- 498              	.LFB71:
- 106:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 107:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Rainbow_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
- 108:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
- 499              		.loc 1 108 1 is_stmt 1 view -0
- 500              		.cfi_startproc
- 501              		@ args = 0, pretend = 0, frame = 8
- 502              		@ frame_needed = 0, uses_anonymous_args = 0
- 109:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
- 503              		.loc 1 109 5 view .LVU106
- 504              		.loc 1 109 7 is_stmt 0 view .LVU107
- 505 0000 0028     		cmp	r0, #0
- 506 0002 00F00281 		beq	.L45
- 108:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
- 507              		.loc 1 108 1 view .LVU108
- 508 0006 70B5     		push	{r4, r5, r6, lr}
- 509              		.cfi_def_cfa_offset 16
- 510              		.cfi_offset 4, -16
- 511              		.cfi_offset 5, -12
- 512              		.cfi_offset 6, -8
- 513              		.cfi_offset 14, -4
- 514 0008 82B0     		sub	sp, sp, #8
- 515              		.cfi_def_cfa_offset 24
- 516 000a 0C46     		mov	r4, r1
- 517 000c 0546     		mov	r5, r0
- 110:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 111:Core/Src/NOS_WS2812B_Strip_Effects.c ****         if(effect != NULL)
- 518              		.loc 1 111 9 is_stmt 1 view .LVU109
- 519              		.loc 1 111 11 is_stmt 0 view .LVU110
- 520 000e 49B1     		cbz	r1, .L26
- 112:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 113:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(effect->enabled)
- 521              		.loc 1 113 13 is_stmt 1 view .LVU111
- 522              		.loc 1 113 22 is_stmt 0 view .LVU112
- 523 0010 91F82130 		ldrb	r3, [r1, #33]	@ zero_extendqisi2
- 524              		.loc 1 113 15 view .LVU113
- 525 0014 33B1     		cbz	r3, .L26
- 114:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
- 115:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 if(effect->timer > effect->speed.data)
- 526              		.loc 1 115 17 is_stmt 1 view .LVU114
- 527              		.loc 1 115 26 is_stmt 0 view .LVU115
- 528 0016 0A8B     		ldrh	r2, [r1, #24]
- 529              		.loc 1 115 49 view .LVU116
- 530 0018 8B8A     		ldrh	r3, [r1, #20]
- 531              		.loc 1 115 19 view .LVU117
- 532 001a 9A42     		cmp	r2, r3
- 533 001c 04D8     		bhi	.L48
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 13
+ 179              		.loc 1 96 1 view .LVU42
+ 180              		.cfi_endproc
+ 181              	.LFE69:
+ 183              		.section	.text.NOS_WS2812B_Strip_Effects_AddEffect,"ax",%progbits
+ 184              		.align	1
+ 185              		.global	NOS_WS2812B_Strip_Effects_AddEffect
+ 186              		.syntax unified
+ 187              		.thumb
+ 188              		.thumb_func
+ 190              	NOS_WS2812B_Strip_Effects_AddEffect:
+ 191              	.LVL11:
+ 192              	.LFB65:
+   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
+ 193              		.loc 1 5 1 is_stmt 1 view -0
+ 194              		.cfi_startproc
+ 195              		@ args = 40, pretend = 16, frame = 0
+ 196              		@ frame_needed = 0, uses_anonymous_args = 0
+   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
+ 197              		.loc 1 5 1 is_stmt 0 view .LVU44
+ 198 0000 84B0     		sub	sp, sp, #16
+ 199              		.cfi_def_cfa_offset 16
+ 200 0002 10B5     		push	{r4, lr}
+ 201              		.cfi_def_cfa_offset 24
+ 202              		.cfi_offset 4, -24
+ 203              		.cfi_offset 14, -20
+ 204 0004 84B0     		sub	sp, sp, #16
+ 205              		.cfi_def_cfa_offset 40
+ 206 0006 0446     		mov	r4, r0
+ 207 0008 07A8     		add	r0, sp, #28
+ 208              	.LVL12:
+   5:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip->effectsCounter < 10)
+ 209              		.loc 1 5 1 view .LVU45
+ 210 000a 80E80E00 		stm	r0, {r1, r2, r3}
+   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 211              		.loc 1 6 5 is_stmt 1 view .LVU46
+   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 212              		.loc 1 6 13 is_stmt 0 view .LVU47
+ 213 000e 94F87831 		ldrb	r3, [r4, #376]	@ zero_extendqisi2
+   6:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 214              		.loc 1 6 7 view .LVU48
+ 215 0012 092B     		cmp	r3, #9
+ 216 0014 0CD8     		bhi	.L10
+   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 217              		.loc 1 8 9 is_stmt 1 view .LVU49
+   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 218              		.loc 1 8 22 is_stmt 0 view .LVU50
+ 219 0016 9DF83E20 		ldrb	r2, [sp, #62]	@ zero_extendqisi2
+   8:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 220              		.loc 1 8 9 view .LVU51
+ 221 001a 212A     		cmp	r2, #33
+ 222 001c 25D0     		beq	.L12
+ 223 001e 222A     		cmp	r2, #34
+ 224 0020 3BD0     		beq	.L13
+ 225 0022 202A     		cmp	r2, #32
+ 226 0024 09D0     		beq	.L16
+ 227              	.L14:
+  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 7
 
 
- 534              	.LVL35:
- 535              	.L28:
- 116:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 {
- 117:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_Math_SinValue_Handler(&effect->value);
- 118:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint16_t number = NOS_Math_GetSinValue(&effect->value);
- 120:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
- 121:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     PixelColor curr = { 0,0,0 };
- 123:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
- 124:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 125:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     switch (iteration)
- 126:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     {
- 127:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 0:
- 128:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 129:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
- 130:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 131:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 132:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 1:
- 133:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 134:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
- 135:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 136:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 137:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 2:
- 138:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 139:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
- 140:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 228              		.loc 1 21 9 is_stmt 1 view .LVU52
+  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ 229              		.loc 1 21 14 is_stmt 0 view .LVU53
+ 230 0026 94F87831 		ldrb	r3, [r4, #376]	@ zero_extendqisi2
+  21:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ 231              		.loc 1 21 30 view .LVU54
+ 232 002a 0133     		adds	r3, r3, #1
+ 233 002c 84F87831 		strb	r3, [r4, #376]
+ 234              	.L10:
+  23:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 235              		.loc 1 23 1 view .LVU55
+ 236 0030 04B0     		add	sp, sp, #16
+ 237              		.cfi_remember_state
+ 238              		.cfi_def_cfa_offset 24
+ 239              		@ sp needed
+ 240 0032 BDE81040 		pop	{r4, lr}
+ 241              		.cfi_restore 14
+ 242              		.cfi_restore 4
+ 243              		.cfi_def_cfa_offset 16
+ 244              	.LVL13:
+  23:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 245              		.loc 1 23 1 view .LVU56
+ 246 0036 04B0     		add	sp, sp, #16
+ 247              		.cfi_def_cfa_offset 0
+ 248 0038 7047     		bx	lr
+ 249              	.LVL14:
+ 250              	.L16:
+ 251              		.cfi_restore_state
+  11:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ 252              		.loc 1 11 17 is_stmt 1 view .LVU57
+ 253 003a 03EBC300 		add	r0, r3, r3, lsl #3
+ 254 003e 8000     		lsls	r0, r0, #2
+ 255 0040 1030     		adds	r0, r0, #16
+ 256 0042 9DF83D30 		ldrb	r3, [sp, #61]	@ zero_extendqisi2
+ 257 0046 0393     		str	r3, [sp, #12]
+ 258 0048 0292     		str	r2, [sp, #8]
+ 259 004a BDF83830 		ldrh	r3, [sp, #56]
+ 260 004e 0193     		str	r3, [sp, #4]
+ 261 0050 BDF83630 		ldrh	r3, [sp, #54]
+ 262 0054 0093     		str	r3, [sp]
+ 263 0056 BDF83230 		ldrh	r3, [sp, #50]
+ 264 005a BDF83020 		ldrh	r2, [sp, #48]
+ 265 005e 0DF13A01 		add	r1, sp, #58
+ 266 0062 2044     		add	r0, r0, r4
+ 267 0064 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 268              	.LVL15:
+  12:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
+ 269              		.loc 1 12 17 view .LVU58
+ 270 0068 DDE7     		b	.L14
+ 271              	.L12:
+  14:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ 272              		.loc 1 14 17 view .LVU59
+ 273 006a 03EBC300 		add	r0, r3, r3, lsl #3
+ 274 006e 8000     		lsls	r0, r0, #2
+ 275 0070 1030     		adds	r0, r0, #16
+ 276 0072 9DF83D30 		ldrb	r3, [sp, #61]	@ zero_extendqisi2
+ 277 0076 0393     		str	r3, [sp, #12]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 8
+
+
+ 278 0078 0292     		str	r2, [sp, #8]
+ 279 007a BDF83830 		ldrh	r3, [sp, #56]
+ 280 007e 0193     		str	r3, [sp, #4]
+ 281 0080 BDF83630 		ldrh	r3, [sp, #54]
+ 282 0084 0093     		str	r3, [sp]
+ 283 0086 BDF83230 		ldrh	r3, [sp, #50]
+ 284 008a BDF83020 		ldrh	r2, [sp, #48]
+ 285 008e 0DF13A01 		add	r1, sp, #58
+ 286 0092 2044     		add	r0, r0, r4
+ 287 0094 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 288              	.LVL16:
+  15:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x22:
+ 289              		.loc 1 15 17 view .LVU60
+ 290 0098 C5E7     		b	.L14
+ 291              	.L13:
+  17:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ 292              		.loc 1 17 17 view .LVU61
+ 293 009a 03EBC300 		add	r0, r3, r3, lsl #3
+ 294 009e 8000     		lsls	r0, r0, #2
+ 295 00a0 1030     		adds	r0, r0, #16
+ 296 00a2 9DF83D30 		ldrb	r3, [sp, #61]	@ zero_extendqisi2
+ 297 00a6 0393     		str	r3, [sp, #12]
+ 298 00a8 0292     		str	r2, [sp, #8]
+ 299 00aa BDF83830 		ldrh	r3, [sp, #56]
+ 300 00ae 0193     		str	r3, [sp, #4]
+ 301 00b0 BDF83630 		ldrh	r3, [sp, #54]
+ 302 00b4 0093     		str	r3, [sp]
+ 303 00b6 BDF83230 		ldrh	r3, [sp, #50]
+ 304 00ba BDF83020 		ldrh	r2, [sp, #48]
+ 305 00be 0DF13A01 		add	r1, sp, #58
+ 306 00c2 2044     		add	r0, r0, r4
+ 307 00c4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 308              	.LVL17:
+  18:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
+ 309              		.loc 1 18 17 view .LVU62
+ 310 00c8 ADE7     		b	.L14
+ 311              		.cfi_endproc
+ 312              	.LFE65:
+ 314              		.section	.text.NOS_WS2812B_Strip_Effects_UpdateEffect,"ax",%progbits
+ 315              		.align	1
+ 316              		.global	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 317              		.syntax unified
+ 318              		.thumb
+ 319              		.thumb_func
+ 321              	NOS_WS2812B_Strip_Effects_UpdateEffect:
+ 322              	.LVL18:
+ 323              	.LFB68:
+  68:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
+ 324              		.loc 1 68 1 view -0
+ 325              		.cfi_startproc
+ 326              		@ args = 40, pretend = 16, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+  68:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
+ 328              		.loc 1 68 1 is_stmt 0 view .LVU64
+ 329 0000 84B0     		sub	sp, sp, #16
+ 330              		.cfi_def_cfa_offset 16
+ 331 0002 30B5     		push	{r4, r5, lr}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 9
+
+
+ 332              		.cfi_def_cfa_offset 28
+ 333              		.cfi_offset 4, -28
+ 334              		.cfi_offset 5, -24
+ 335              		.cfi_offset 14, -20
+ 336 0004 87B0     		sub	sp, sp, #28
+ 337              		.cfi_def_cfa_offset 56
+ 338 0006 0446     		mov	r4, r0
+ 339 0008 0BA8     		add	r0, sp, #44
+ 340              	.LVL19:
+  68:Core/Src/NOS_WS2812B_Strip_Effects.c ****         switch(effect.effectId)
+ 341              		.loc 1 68 1 view .LVU65
+ 342 000a 80E80E00 		stm	r0, {r1, r2, r3}
+  69:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 343              		.loc 1 69 9 is_stmt 1 view .LVU66
+  69:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 344              		.loc 1 69 22 is_stmt 0 view .LVU67
+ 345 000e 9DF84E30 		ldrb	r3, [sp, #78]	@ zero_extendqisi2
+  69:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 346              		.loc 1 69 9 view .LVU68
+ 347 0012 212B     		cmp	r3, #33
+ 348 0014 1DD0     		beq	.L18
+ 349 0016 222B     		cmp	r3, #34
+ 350 0018 41D0     		beq	.L19
+ 351 001a 202B     		cmp	r3, #32
+ 352 001c 04D0     		beq	.L22
+ 353              	.L17:
+  84:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 354              		.loc 1 84 1 view .LVU69
+ 355 001e 07B0     		add	sp, sp, #28
+ 356              		.cfi_remember_state
+ 357              		.cfi_def_cfa_offset 28
+ 358              		@ sp needed
+ 359 0020 BDE83040 		pop	{r4, r5, lr}
+ 360              		.cfi_restore 14
+ 361              		.cfi_restore 5
+ 362              		.cfi_restore 4
+ 363              		.cfi_def_cfa_offset 16
+ 364              	.LVL20:
+  84:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 365              		.loc 1 84 1 view .LVU70
+ 366 0024 04B0     		add	sp, sp, #16
+ 367              		.cfi_def_cfa_offset 0
+ 368 0026 7047     		bx	lr
+ 369              	.LVL21:
+ 370              	.L22:
+ 371              		.cfi_restore_state
+  72:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ 372              		.loc 1 72 17 is_stmt 1 view .LVU71
+ 373 0028 9DF84D20 		ldrb	r2, [sp, #77]	@ zero_extendqisi2
+ 374 002c 0392     		str	r2, [sp, #12]
+ 375 002e 0293     		str	r3, [sp, #8]
+ 376 0030 BDF84830 		ldrh	r3, [sp, #72]
+ 377 0034 0193     		str	r3, [sp, #4]
+ 378 0036 BDF84630 		ldrh	r3, [sp, #70]
+ 379 003a 0093     		str	r3, [sp]
+ 380 003c BDF84230 		ldrh	r3, [sp, #66]
+ 381 0040 BDF84020 		ldrh	r2, [sp, #64]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 10
+
+
+ 382 0044 0DF14A01 		add	r1, sp, #74
+ 383 0048 04F11000 		add	r0, r4, #16
+ 384 004c FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 385              	.LVL22:
+  73:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case EFFECT_RAINBOW_ID:
+ 386              		.loc 1 73 17 view .LVU72
+ 387 0050 E5E7     		b	.L17
+ 388              	.L18:
+  75:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+ 389              		.loc 1 75 17 view .LVU73
+ 390 0052 0BAD     		add	r5, sp, #44
+ 391 0054 9DF84D20 		ldrb	r2, [sp, #77]	@ zero_extendqisi2
+ 392 0058 0392     		str	r2, [sp, #12]
+ 393 005a 0293     		str	r3, [sp, #8]
+ 394 005c BDF84830 		ldrh	r3, [sp, #72]
+ 395 0060 0193     		str	r3, [sp, #4]
+ 396 0062 BDF84630 		ldrh	r3, [sp, #70]
+ 397 0066 0093     		str	r3, [sp]
+ 398 0068 BDF84230 		ldrh	r3, [sp, #66]
+ 399 006c BDF84020 		ldrh	r2, [sp, #64]
+ 400 0070 0DF14A01 		add	r1, sp, #74
+ 401 0074 04F13400 		add	r0, r4, #52
+ 402 0078 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 403              	.LVL23:
+  76:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ 404              		.loc 1 76 17 view .LVU74
+ 405 007c EC46     		mov	ip, sp
+ 406 007e 0DF1380E 		add	lr, sp, #56
+ 407 0082 BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 408 0086 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 409 008a 9EE80300 		ldm	lr, {r0, r1}
+ 410 008e 8CE80300 		stm	ip, {r0, r1}
+ 411 0092 95E80E00 		ldm	r5, {r1, r2, r3}
+ 412 0096 2046     		mov	r0, r4
+ 413 0098 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Check_Conflicts
+ 414              	.LVL24:
+  77:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case EFFECT_DOTS_ID:
+ 415              		.loc 1 77 17 view .LVU75
+ 416 009c BFE7     		b	.L17
+ 417              	.L19:
+  79:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+ 418              		.loc 1 79 17 view .LVU76
+ 419 009e 0BAD     		add	r5, sp, #44
+ 420 00a0 9DF84D20 		ldrb	r2, [sp, #77]	@ zero_extendqisi2
+ 421 00a4 0392     		str	r2, [sp, #12]
+ 422 00a6 0293     		str	r3, [sp, #8]
+ 423 00a8 BDF84830 		ldrh	r3, [sp, #72]
+ 424 00ac 0193     		str	r3, [sp, #4]
+ 425 00ae BDF84630 		ldrh	r3, [sp, #70]
+ 426 00b2 0093     		str	r3, [sp]
+ 427 00b4 BDF84230 		ldrh	r3, [sp, #66]
+ 428 00b8 BDF84020 		ldrh	r2, [sp, #64]
+ 429 00bc 0DF14A01 		add	r1, sp, #74
+ 430 00c0 04F15800 		add	r0, r4, #88
+ 431 00c4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 432              	.LVL25:
+  80:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 11
+
+
+ 433              		.loc 1 80 17 view .LVU77
+ 434 00c8 EC46     		mov	ip, sp
+ 435 00ca 0DF1380E 		add	lr, sp, #56
+ 436 00ce BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 437 00d2 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 438 00d6 9EE80300 		ldm	lr, {r0, r1}
+ 439 00da 8CE80300 		stm	ip, {r0, r1}
+ 440 00de 95E80E00 		ldm	r5, {r1, r2, r3}
+ 441 00e2 2046     		mov	r0, r4
+ 442 00e4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_Check_Conflicts
+ 443              	.LVL26:
+  81:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
+ 444              		.loc 1 81 17 view .LVU78
+  84:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 445              		.loc 1 84 1 is_stmt 0 view .LVU79
+ 446 00e8 99E7     		b	.L17
+ 447              		.cfi_endproc
+ 448              	.LFE68:
+ 450              		.section	.text.NOS_WS2812B_Strip_Effect_Copy,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	NOS_WS2812B_Strip_Effect_Copy
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	NOS_WS2812B_Strip_Effect_Copy:
+ 458              	.LVL27:
+ 459              	.LFB70:
+  97:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+  98:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Copy(Effect_Struct* destination,Effect_Struct* source)
+  99:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
+ 460              		.loc 1 99 1 is_stmt 1 view -0
+ 461              		.cfi_startproc
+ 462              		@ args = 0, pretend = 0, frame = 0
+ 463              		@ frame_needed = 0, uses_anonymous_args = 0
+ 464              		.loc 1 99 1 is_stmt 0 view .LVU81
+ 465 0000 38B5     		push	{r3, r4, r5, lr}
+ 466              		.cfi_def_cfa_offset 16
+ 467              		.cfi_offset 3, -16
+ 468              		.cfi_offset 4, -12
+ 469              		.cfi_offset 5, -8
+ 470              		.cfi_offset 14, -4
+ 471 0002 0546     		mov	r5, r0
+ 472 0004 0C46     		mov	r4, r1
+ 100:Core/Src/NOS_WS2812B_Strip_Effects.c ****     NOS_Math_SinValue_Init(&destination->value,source->minValue,source->maxValue,source->step.data)
+ 473              		.loc 1 100 5 is_stmt 1 view .LVU82
+ 474 0006 CB8A     		ldrh	r3, [r1, #22]
+ 475 0008 8A8B     		ldrh	r2, [r1, #28]
+ 476 000a 498B     		ldrh	r1, [r1, #26]
+ 477              	.LVL28:
+ 478              		.loc 1 100 5 is_stmt 0 view .LVU83
+ 479 000c FFF7FEFF 		bl	NOS_Math_SinValue_Init
+ 480              	.LVL29:
+ 101:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->minValue = source->minValue;
+ 481              		.loc 1 101 5 is_stmt 1 view .LVU84
+ 482              		.loc 1 101 35 is_stmt 0 view .LVU85
+ 483 0010 638B     		ldrh	r3, [r4, #26]
+ 484              		.loc 1 101 27 view .LVU86
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 12
+
+
+ 485 0012 6B83     		strh	r3, [r5, #26]	@ movhi
+ 102:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->maxValue = source->maxValue;
+ 486              		.loc 1 102 5 is_stmt 1 view .LVU87
+ 487              		.loc 1 102 35 is_stmt 0 view .LVU88
+ 488 0014 A38B     		ldrh	r3, [r4, #28]
+ 489              		.loc 1 102 27 view .LVU89
+ 490 0016 AB83     		strh	r3, [r5, #28]	@ movhi
+ 103:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->speed.data = source->speed.data;
+ 491              		.loc 1 103 5 is_stmt 1 view .LVU90
+ 492              		.loc 1 103 44 is_stmt 0 view .LVU91
+ 493 0018 A38A     		ldrh	r3, [r4, #20]
+ 494              		.loc 1 103 29 view .LVU92
+ 495 001a AB82     		strh	r3, [r5, #20]	@ movhi
+ 104:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->step.data = source->step.data;
+ 496              		.loc 1 104 5 is_stmt 1 view .LVU93
+ 497              		.loc 1 104 42 is_stmt 0 view .LVU94
+ 498 001c E38A     		ldrh	r3, [r4, #22]
+ 499              		.loc 1 104 28 view .LVU95
+ 500 001e EB82     		strh	r3, [r5, #22]	@ movhi
+ 105:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->enabled = true;
+ 501              		.loc 1 105 5 is_stmt 1 view .LVU96
+ 502              		.loc 1 105 26 is_stmt 0 view .LVU97
+ 503 0020 0123     		movs	r3, #1
+ 504 0022 85F82130 		strb	r3, [r5, #33]
+ 106:Core/Src/NOS_WS2812B_Strip_Effects.c ****     destination->effectId = source->effectId;   
+ 505              		.loc 1 106 5 is_stmt 1 view .LVU98
+ 506              		.loc 1 106 35 is_stmt 0 view .LVU99
+ 507 0026 94F82230 		ldrb	r3, [r4, #34]	@ zero_extendqisi2
+ 508              		.loc 1 106 27 view .LVU100
+ 509 002a 85F82230 		strb	r3, [r5, #34]
+ 107:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 510              		.loc 1 107 1 view .LVU101
+ 511 002e 38BD     		pop	{r3, r4, r5, pc}
+ 512              		.loc 1 107 1 view .LVU102
+ 513              		.cfi_endproc
+ 514              	.LFE70:
+ 516              		.section	.text.NOS_WS2812B_Strip_Effect_Breathe_Handler,"ax",%progbits
+ 517              		.align	1
+ 518              		.global	NOS_WS2812B_Strip_Effect_Breathe_Handler
+ 519              		.syntax unified
+ 520              		.thumb
+ 521              		.thumb_func
+ 523              	NOS_WS2812B_Strip_Effect_Breathe_Handler:
+ 524              	.LVL30:
+ 525              	.LFB71:
+ 108:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 109:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Breathe_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
+ 110:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
+ 526              		.loc 1 110 1 is_stmt 1 view -0
+ 527              		.cfi_startproc
+ 528              		@ args = 0, pretend = 0, frame = 0
+ 529              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
+ 530              		.loc 1 111 5 view .LVU104
+ 531              		.loc 1 111 7 is_stmt 0 view .LVU105
+ 532 0000 D8B1     		cbz	r0, .L29
+ 110:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 13
+
+
+ 533              		.loc 1 110 1 view .LVU106
+ 534 0002 38B5     		push	{r3, r4, r5, lr}
+ 535              		.cfi_def_cfa_offset 16
+ 536              		.cfi_offset 3, -16
+ 537              		.cfi_offset 4, -12
+ 538              		.cfi_offset 5, -8
+ 539              		.cfi_offset 14, -4
+ 540 0004 0C46     		mov	r4, r1
+ 541 0006 0546     		mov	r5, r0
+ 112:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 113:Core/Src/NOS_WS2812B_Strip_Effects.c ****         if(effect != NULL)
+ 542              		.loc 1 113 9 is_stmt 1 view .LVU107
+ 543              		.loc 1 113 11 is_stmt 0 view .LVU108
+ 544 0008 49B1     		cbz	r1, .L25
+ 114:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 115:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(effect->enabled)
+ 545              		.loc 1 115 13 is_stmt 1 view .LVU109
+ 546              		.loc 1 115 22 is_stmt 0 view .LVU110
+ 547 000a 91F82130 		ldrb	r3, [r1, #33]	@ zero_extendqisi2
+ 548              		.loc 1 115 15 view .LVU111
+ 549 000e 33B1     		cbz	r3, .L25
+ 116:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+ 117:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 if(effect->timer > effect->speed.data)
+ 550              		.loc 1 117 17 is_stmt 1 view .LVU112
+ 551              		.loc 1 117 26 is_stmt 0 view .LVU113
+ 552 0010 0A8B     		ldrh	r2, [r1, #24]
+ 553              		.loc 1 117 49 view .LVU114
+ 554 0012 8B8A     		ldrh	r3, [r1, #20]
+ 555              		.loc 1 117 19 view .LVU115
+ 556 0014 9A42     		cmp	r2, r3
+ 557 0016 03D8     		bhi	.L32
+ 558              	.LVL31:
+ 559              	.L27:
+ 118:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 {
+ 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_Math_SinValue_Handler(&effect->value);
+ 120:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
+ 121:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
+ 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
+ 123:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 124:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 effect->timer++;
+ 560              		.loc 1 124 17 is_stmt 1 view .LVU116
+ 561              		.loc 1 124 23 is_stmt 0 view .LVU117
+ 562 0018 238B     		ldrh	r3, [r4, #24]
+ 563              		.loc 1 124 30 view .LVU118
+ 564 001a 0133     		adds	r3, r3, #1
+ 565 001c 2383     		strh	r3, [r4, #24]	@ movhi
+ 566              	.L25:
+ 125:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+ 126:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
+ 127:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ 128:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 567              		.loc 1 128 1 view .LVU119
+ 568 001e 38BD     		pop	{r3, r4, r5, pc}
+ 569              	.LVL32:
+ 570              	.L32:
+ 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
+ 571              		.loc 1 119 21 is_stmt 1 view .LVU120
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 14
+
+
+ 572 0020 0846     		mov	r0, r1
+ 573              	.LVL33:
+ 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_SetBright(strip,effect->value.value);
+ 574              		.loc 1 119 21 is_stmt 0 view .LVU121
+ 575 0022 FFF7FEFF 		bl	NOS_Math_SinValue_Handler
+ 576              	.LVL34:
+ 120:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
+ 577              		.loc 1 120 21 is_stmt 1 view .LVU122
+ 578 0026 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 579 0028 2846     		mov	r0, r5
+ 580 002a FFF7FEFF 		bl	NOS_WS2812B_Strip_SetBright
+ 581              	.LVL35:
+ 121:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
+ 582              		.loc 1 121 21 view .LVU123
+ 583 002e 2846     		mov	r0, r5
+ 584 0030 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 585              	.LVL36:
+ 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 586              		.loc 1 122 21 view .LVU124
+ 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 587              		.loc 1 122 35 is_stmt 0 view .LVU125
+ 588 0034 0023     		movs	r3, #0
+ 589 0036 2383     		strh	r3, [r4, #24]	@ movhi
+ 590 0038 EEE7     		b	.L27
+ 591              	.LVL37:
+ 592              	.L29:
+ 593              		.cfi_def_cfa_offset 0
+ 594              		.cfi_restore 3
+ 595              		.cfi_restore 4
+ 596              		.cfi_restore 5
+ 597              		.cfi_restore 14
+ 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 598              		.loc 1 122 35 view .LVU126
+ 599 003a 7047     		bx	lr
+ 600              		.cfi_endproc
+ 601              	.LFE71:
+ 603              		.section	.text.NOS_WS2812B_Strip_Effect_Rainbow_Handler,"ax",%progbits
+ 604              		.align	1
+ 605              		.global	NOS_WS2812B_Strip_Effect_Rainbow_Handler
+ 606              		.syntax unified
+ 607              		.thumb
+ 608              		.thumb_func
+ 610              	NOS_WS2812B_Strip_Effect_Rainbow_Handler:
+ 611              	.LVL38:
+ 612              	.LFB72:
+ 129:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 130:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Rainbow_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
+ 131:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
+ 613              		.loc 1 131 1 is_stmt 1 view -0
+ 614              		.cfi_startproc
+ 615              		@ args = 0, pretend = 0, frame = 8
+ 616              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
+ 617              		.loc 1 132 5 view .LVU128
+ 618              		.loc 1 132 7 is_stmt 0 view .LVU129
+ 619 0000 0028     		cmp	r0, #0
+ 620 0002 00F00281 		beq	.L52
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 15
+
+
+ 131:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(strip != NULL)
+ 621              		.loc 1 131 1 view .LVU130
+ 622 0006 70B5     		push	{r4, r5, r6, lr}
+ 623              		.cfi_def_cfa_offset 16
+ 624              		.cfi_offset 4, -16
+ 625              		.cfi_offset 5, -12
+ 626              		.cfi_offset 6, -8
+ 627              		.cfi_offset 14, -4
+ 628 0008 82B0     		sub	sp, sp, #8
+ 629              		.cfi_def_cfa_offset 24
+ 630 000a 0C46     		mov	r4, r1
+ 631 000c 0546     		mov	r5, r0
+ 133:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 134:Core/Src/NOS_WS2812B_Strip_Effects.c ****         if(effect != NULL)
+ 632              		.loc 1 134 9 is_stmt 1 view .LVU131
+ 633              		.loc 1 134 11 is_stmt 0 view .LVU132
+ 634 000e 49B1     		cbz	r1, .L33
+ 135:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
+ 136:Core/Src/NOS_WS2812B_Strip_Effects.c ****             if(effect->enabled)
+ 635              		.loc 1 136 13 is_stmt 1 view .LVU133
+ 636              		.loc 1 136 22 is_stmt 0 view .LVU134
+ 637 0010 91F82130 		ldrb	r3, [r1, #33]	@ zero_extendqisi2
+ 638              		.loc 1 136 15 view .LVU135
+ 639 0014 33B1     		cbz	r3, .L33
+ 137:Core/Src/NOS_WS2812B_Strip_Effects.c ****             {
+ 138:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 if(effect->timer > effect->speed.data)
+ 640              		.loc 1 138 17 is_stmt 1 view .LVU136
+ 641              		.loc 1 138 26 is_stmt 0 view .LVU137
+ 642 0016 0A8B     		ldrh	r2, [r1, #24]
+ 643              		.loc 1 138 49 view .LVU138
+ 644 0018 8B8A     		ldrh	r3, [r1, #20]
+ 645              		.loc 1 138 19 view .LVU139
+ 646 001a 9A42     		cmp	r2, r3
+ 647 001c 04D8     		bhi	.L55
+ 648              	.LVL39:
+ 649              	.L35:
+ 139:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 {
+ 140:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_Math_SinValue_Handler(&effect->value);
  141:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 142:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 3:
- 143:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 144:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
- 145:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 146:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 147:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 4:
- 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 149:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
- 150:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 151:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 152:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 5:
- 153:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 154:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
- 155:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 156:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 157:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 6:
- 158:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 159:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
- 160:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 161:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 162:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 7:
- 163:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 164:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
- 165:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 166:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 167:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 8:
- 168:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 169:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
- 170:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 14
+ 142:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint16_t number = NOS_Math_GetSinValue(&effect->value);
+ 143:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
+ 144:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 145:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     PixelColor curr = { 0,0,0 };
+ 146:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
+ 147:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     switch (iteration)
+ 149:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     {
+ 150:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 0:
+ 151:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 152:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
+ 153:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 154:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 155:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 1:
+ 156:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 157:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
+ 158:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 159:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 16
 
 
- 171:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 172:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 9:
- 173:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 174:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
- 175:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 176:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 177:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 10:
- 178:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 179:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
- 180:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 181:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 182:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 11:
- 183:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
- 184:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
- 185:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 186:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 187:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         default:
+ 160:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 2:
+ 161:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 162:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
+ 163:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 164:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 165:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 3:
+ 166:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 167:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
+ 168:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 169:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 170:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 4:
+ 171:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 172:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
+ 173:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 174:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 175:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 5:
+ 176:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 177:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
+ 178:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 179:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 180:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 6:
+ 181:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 182:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
+ 183:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 184:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 185:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 7:
+ 186:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 187:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
  188:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 189:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     }
- 190:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     
- 191:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 192:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_ColorFill(strip,curr);
- 193:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
- 194:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
- 195:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 196:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 effect->timer++;
- 536              		.loc 1 196 17 is_stmt 1 view .LVU118
- 537              		.loc 1 196 23 is_stmt 0 view .LVU119
- 538 001e 238B     		ldrh	r3, [r4, #24]
- 539              		.loc 1 196 30 view .LVU120
- 540 0020 0133     		adds	r3, r3, #1
- 541 0022 2383     		strh	r3, [r4, #24]	@ movhi
- 542              	.L26:
- 197:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
- 198:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 199:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
- 200:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
- 543              		.loc 1 200 1 view .LVU121
- 544 0024 02B0     		add	sp, sp, #8
- 545              		.cfi_remember_state
- 546              		.cfi_def_cfa_offset 16
- 547              		@ sp needed
- 548 0026 70BD     		pop	{r4, r5, r6, pc}
- 549              	.LVL36:
- 550              	.L48:
- 551              		.cfi_restore_state
- 552              	.LBB2:
- 117:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 553              		.loc 1 117 21 is_stmt 1 view .LVU122
- 554 0028 0846     		mov	r0, r1
- 555              	.LVL37:
- 117:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 556              		.loc 1 117 21 is_stmt 0 view .LVU123
- 557 002a FFF7FEFF 		bl	NOS_Math_SinValue_Handler
- 558              	.LVL38:
- 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
- 559              		.loc 1 119 21 is_stmt 1 view .LVU124
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 15
-
-
- 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
- 560              		.loc 1 119 39 is_stmt 0 view .LVU125
- 561 002e 2046     		mov	r0, r4
- 562 0030 FFF7FEFF 		bl	NOS_Math_GetSinValue
- 563              	.LVL39:
- 119:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
- 564              		.loc 1 119 30 view .LVU126
- 565 0034 82B2     		uxth	r2, r0
- 566              	.LVL40:
- 120:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 567              		.loc 1 120 21 is_stmt 1 view .LVU127
- 120:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 568              		.loc 1 120 29 is_stmt 0 view .LVU128
- 569 0036 754B     		ldr	r3, .L49
- 570 0038 A3FB0213 		umull	r1, r3, r3, r2
- 571 003c D11A     		subs	r1, r2, r3
- 572 003e 03EB5100 		add	r0, r3, r1, lsr #1
- 573 0042 C0F38710 		ubfx	r0, r0, #6, #8
- 574              	.LVL41:
- 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
- 575              		.loc 1 122 21 is_stmt 1 view .LVU129
- 122:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
- 576              		.loc 1 122 32 is_stmt 0 view .LVU130
- 577 0046 0023     		movs	r3, #0
- 578 0048 8DF80430 		strb	r3, [sp, #4]
- 579 004c 8DF80530 		strb	r3, [sp, #5]
- 580 0050 8DF80630 		strb	r3, [sp, #6]
- 123:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 581              		.loc 1 123 21 is_stmt 1 view .LVU131
- 123:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 582              		.loc 1 123 37 is_stmt 0 view .LVU132
- 583 0054 A0EBC013 		sub	r3, r0, r0, lsl #7
- 584 0058 9BB2     		uxth	r3, r3
- 123:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 585              		.loc 1 123 28 view .LVU133
- 586 005a 1344     		add	r3, r3, r2
- 587 005c 9EB2     		uxth	r6, r3
- 588              	.LVL42:
- 125:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     {
- 589              		.loc 1 125 21 is_stmt 1 view .LVU134
- 590 005e 0B28     		cmp	r0, #11
- 591 0060 15D8     		bhi	.L29
- 592 0062 DFE800F0 		tbb	[pc, r0]
- 593              	.L31:
- 594 0066 06       		.byte	(.L42-.L31)/2
- 595 0067 1E       		.byte	(.L41-.L31)/2
- 596 0068 2F       		.byte	(.L40-.L31)/2
- 597 0069 3F       		.byte	(.L39-.L31)/2
- 598 006a 50       		.byte	(.L38-.L31)/2
- 599 006b 5F       		.byte	(.L37-.L31)/2
- 600 006c 70       		.byte	(.L36-.L31)/2
- 601 006d 80       		.byte	(.L35-.L31)/2
- 602 006e 91       		.byte	(.L34-.L31)/2
- 603 006f A0       		.byte	(.L33-.L31)/2
- 604 0070 B1       		.byte	(.L32-.L31)/2
- 605 0071 C1       		.byte	(.L30-.L31)/2
- 606              		.p2align 1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 16
-
-
- 607              	.L42:
- 128:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
- 608              		.loc 1 128 25 view .LVU135
- 128:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
- 609              		.loc 1 128 32 is_stmt 0 view .LVU136
- 610 0072 FFF7FEFF 		bl	NOS_GetBaseColor
- 611              	.LVL43:
- 128:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
- 612              		.loc 1 128 32 view .LVU137
- 613 0076 8DF80400 		strb	r0, [sp, #4]
- 614 007a C0F30723 		ubfx	r3, r0, #8, #8
- 615 007e 8DF80530 		strb	r3, [sp, #5]
- 616 0082 C0F30740 		ubfx	r0, r0, #16, #8
- 617 0086 8DF80600 		strb	r0, [sp, #6]
- 129:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 618              		.loc 1 129 25 is_stmt 1 view .LVU138
- 129:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 619              		.loc 1 129 32 is_stmt 0 view .LVU139
- 620 008a 8DF80560 		strb	r6, [sp, #5]
- 130:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 621              		.loc 1 130 25 is_stmt 1 view .LVU140
- 622              	.L29:
- 192:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
- 623              		.loc 1 192 21 view .LVU141
- 624 008e 0199     		ldr	r1, [sp, #4]
- 625 0090 2846     		mov	r0, r5
- 626 0092 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
- 627              	.LVL44:
- 193:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
- 628              		.loc 1 193 21 view .LVU142
- 629 0096 2846     		mov	r0, r5
- 630 0098 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
- 631              	.LVL45:
- 194:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 632              		.loc 1 194 21 view .LVU143
- 194:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
- 633              		.loc 1 194 35 is_stmt 0 view .LVU144
- 634 009c 0023     		movs	r3, #0
- 635 009e 2383     		strh	r3, [r4, #24]	@ movhi
- 636 00a0 BDE7     		b	.L28
- 637              	.LVL46:
- 638              	.L41:
- 133:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
- 639              		.loc 1 133 25 is_stmt 1 view .LVU145
- 133:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
- 640              		.loc 1 133 32 is_stmt 0 view .LVU146
- 641 00a2 FFF7FEFF 		bl	NOS_GetBaseColor
- 642              	.LVL47:
- 133:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
- 643              		.loc 1 133 32 view .LVU147
- 644 00a6 8DF80400 		strb	r0, [sp, #4]
- 645 00aa C0F30723 		ubfx	r3, r0, #8, #8
- 646 00ae 8DF80530 		strb	r3, [sp, #5]
- 647 00b2 C0F30740 		ubfx	r0, r0, #16, #8
- 648 00b6 8DF80600 		strb	r0, [sp, #6]
- 134:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 649              		.loc 1 134 25 is_stmt 1 view .LVU148
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 17
-
-
- 134:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 650              		.loc 1 134 39 is_stmt 0 view .LVU149
- 651 00ba 06F17F03 		add	r3, r6, #127
- 134:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 652              		.loc 1 134 32 view .LVU150
- 653 00be 8DF80530 		strb	r3, [sp, #5]
- 135:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 654              		.loc 1 135 25 is_stmt 1 view .LVU151
- 655 00c2 E4E7     		b	.L29
- 656              	.LVL48:
- 657              	.L40:
- 138:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
- 658              		.loc 1 138 25 view .LVU152
- 138:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
- 659              		.loc 1 138 32 is_stmt 0 view .LVU153
- 660 00c4 FFF7FEFF 		bl	NOS_GetBaseColor
- 661              	.LVL49:
- 138:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
- 662              		.loc 1 138 32 view .LVU154
- 663 00c8 8DF80400 		strb	r0, [sp, #4]
- 664 00cc C0F30723 		ubfx	r3, r0, #8, #8
- 665 00d0 8DF80530 		strb	r3, [sp, #5]
- 666 00d4 C0F30740 		ubfx	r0, r0, #16, #8
- 667 00d8 8DF80600 		strb	r0, [sp, #6]
- 139:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 668              		.loc 1 139 25 is_stmt 1 view .LVU155
- 139:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 669              		.loc 1 139 39 is_stmt 0 view .LVU156
- 670 00dc F343     		mvns	r3, r6
- 139:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 671              		.loc 1 139 32 view .LVU157
- 672 00de 8DF80630 		strb	r3, [sp, #6]
- 140:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 673              		.loc 1 140 25 is_stmt 1 view .LVU158
- 674 00e2 D4E7     		b	.L29
- 675              	.LVL50:
- 676              	.L39:
- 143:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
- 677              		.loc 1 143 25 view .LVU159
- 143:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
- 678              		.loc 1 143 32 is_stmt 0 view .LVU160
- 679 00e4 FFF7FEFF 		bl	NOS_GetBaseColor
- 680              	.LVL51:
- 143:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
- 681              		.loc 1 143 32 view .LVU161
- 682 00e8 8DF80400 		strb	r0, [sp, #4]
- 683 00ec C0F30723 		ubfx	r3, r0, #8, #8
- 684 00f0 8DF80530 		strb	r3, [sp, #5]
- 685 00f4 C0F30740 		ubfx	r0, r0, #16, #8
- 686 00f8 8DF80600 		strb	r0, [sp, #6]
- 144:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 687              		.loc 1 144 25 is_stmt 1 view .LVU162
- 144:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 688              		.loc 1 144 39 is_stmt 0 view .LVU163
- 689 00fc C6F17F03 		rsb	r3, r6, #127
- 144:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 690              		.loc 1 144 32 view .LVU164
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 18
-
-
- 691 0100 8DF80630 		strb	r3, [sp, #6]
- 145:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 692              		.loc 1 145 25 is_stmt 1 view .LVU165
- 693 0104 C3E7     		b	.L29
- 694              	.LVL52:
- 695              	.L38:
- 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
- 696              		.loc 1 148 25 view .LVU166
- 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
- 697              		.loc 1 148 32 is_stmt 0 view .LVU167
- 698 0106 FFF7FEFF 		bl	NOS_GetBaseColor
- 699              	.LVL53:
- 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
- 700              		.loc 1 148 32 view .LVU168
- 701 010a 8DF80400 		strb	r0, [sp, #4]
- 702 010e C0F30723 		ubfx	r3, r0, #8, #8
- 703 0112 8DF80530 		strb	r3, [sp, #5]
- 704 0116 C0F30740 		ubfx	r0, r0, #16, #8
- 705 011a 8DF80600 		strb	r0, [sp, #6]
- 149:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 706              		.loc 1 149 25 is_stmt 1 view .LVU169
- 149:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 707              		.loc 1 149 32 is_stmt 0 view .LVU170
- 708 011e 8DF80460 		strb	r6, [sp, #4]
- 150:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 709              		.loc 1 150 25 is_stmt 1 view .LVU171
- 710 0122 B4E7     		b	.L29
- 711              	.LVL54:
- 712              	.L37:
- 153:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
- 713              		.loc 1 153 25 view .LVU172
- 153:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
- 714              		.loc 1 153 32 is_stmt 0 view .LVU173
- 715 0124 FFF7FEFF 		bl	NOS_GetBaseColor
- 716              	.LVL55:
- 153:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
- 717              		.loc 1 153 32 view .LVU174
- 718 0128 8DF80400 		strb	r0, [sp, #4]
- 719 012c C0F30723 		ubfx	r3, r0, #8, #8
- 720 0130 8DF80530 		strb	r3, [sp, #5]
- 721 0134 C0F30740 		ubfx	r0, r0, #16, #8
- 722 0138 8DF80600 		strb	r0, [sp, #6]
- 154:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 723              		.loc 1 154 25 is_stmt 1 view .LVU175
- 154:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 724              		.loc 1 154 39 is_stmt 0 view .LVU176
- 725 013c 06F17F03 		add	r3, r6, #127
- 154:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 726              		.loc 1 154 32 view .LVU177
- 727 0140 8DF80430 		strb	r3, [sp, #4]
- 155:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 728              		.loc 1 155 25 is_stmt 1 view .LVU178
- 729 0144 A3E7     		b	.L29
- 730              	.LVL56:
- 731              	.L36:
- 158:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
- 732              		.loc 1 158 25 view .LVU179
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 19
-
-
- 158:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
- 733              		.loc 1 158 32 is_stmt 0 view .LVU180
- 734 0146 FFF7FEFF 		bl	NOS_GetBaseColor
- 735              	.LVL57:
- 158:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
- 736              		.loc 1 158 32 view .LVU181
- 737 014a 8DF80400 		strb	r0, [sp, #4]
- 738 014e C0F30723 		ubfx	r3, r0, #8, #8
- 739 0152 8DF80530 		strb	r3, [sp, #5]
- 740 0156 C0F30740 		ubfx	r0, r0, #16, #8
- 741 015a 8DF80600 		strb	r0, [sp, #6]
- 159:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 742              		.loc 1 159 25 is_stmt 1 view .LVU182
- 159:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 743              		.loc 1 159 39 is_stmt 0 view .LVU183
- 744 015e F343     		mvns	r3, r6
- 159:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 745              		.loc 1 159 32 view .LVU184
- 746 0160 8DF80530 		strb	r3, [sp, #5]
- 160:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 747              		.loc 1 160 25 is_stmt 1 view .LVU185
- 748 0164 93E7     		b	.L29
- 749              	.LVL58:
- 750              	.L35:
- 163:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
- 751              		.loc 1 163 25 view .LVU186
- 163:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
- 752              		.loc 1 163 32 is_stmt 0 view .LVU187
- 753 0166 FFF7FEFF 		bl	NOS_GetBaseColor
- 754              	.LVL59:
- 163:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
- 755              		.loc 1 163 32 view .LVU188
- 756 016a 8DF80400 		strb	r0, [sp, #4]
- 757 016e C0F30723 		ubfx	r3, r0, #8, #8
- 758 0172 8DF80530 		strb	r3, [sp, #5]
- 759 0176 C0F30740 		ubfx	r0, r0, #16, #8
- 760 017a 8DF80600 		strb	r0, [sp, #6]
- 164:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 761              		.loc 1 164 25 is_stmt 1 view .LVU189
- 164:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 762              		.loc 1 164 39 is_stmt 0 view .LVU190
- 763 017e C6F17F03 		rsb	r3, r6, #127
- 164:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 764              		.loc 1 164 32 view .LVU191
- 765 0182 8DF80530 		strb	r3, [sp, #5]
- 165:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 766              		.loc 1 165 25 is_stmt 1 view .LVU192
- 767 0186 82E7     		b	.L29
- 768              	.LVL60:
- 769              	.L34:
- 168:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
- 770              		.loc 1 168 25 view .LVU193
- 168:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
- 771              		.loc 1 168 32 is_stmt 0 view .LVU194
- 772 0188 FFF7FEFF 		bl	NOS_GetBaseColor
- 773              	.LVL61:
- 168:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 20
-
-
- 774              		.loc 1 168 32 view .LVU195
- 775 018c 8DF80400 		strb	r0, [sp, #4]
- 776 0190 C0F30723 		ubfx	r3, r0, #8, #8
- 777 0194 8DF80530 		strb	r3, [sp, #5]
- 778 0198 C0F30740 		ubfx	r0, r0, #16, #8
- 779 019c 8DF80600 		strb	r0, [sp, #6]
- 169:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 780              		.loc 1 169 25 is_stmt 1 view .LVU196
- 169:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 781              		.loc 1 169 32 is_stmt 0 view .LVU197
- 782 01a0 8DF80660 		strb	r6, [sp, #6]
- 170:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 783              		.loc 1 170 25 is_stmt 1 view .LVU198
- 784 01a4 73E7     		b	.L29
- 785              	.LVL62:
- 786              	.L33:
- 173:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
- 787              		.loc 1 173 25 view .LVU199
- 173:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
- 788              		.loc 1 173 32 is_stmt 0 view .LVU200
- 789 01a6 FFF7FEFF 		bl	NOS_GetBaseColor
- 790              	.LVL63:
- 173:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
- 791              		.loc 1 173 32 view .LVU201
- 792 01aa 8DF80400 		strb	r0, [sp, #4]
- 793 01ae C0F30723 		ubfx	r3, r0, #8, #8
- 794 01b2 8DF80530 		strb	r3, [sp, #5]
- 795 01b6 C0F30740 		ubfx	r0, r0, #16, #8
- 796 01ba 8DF80600 		strb	r0, [sp, #6]
- 174:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 797              		.loc 1 174 25 is_stmt 1 view .LVU202
- 174:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 798              		.loc 1 174 39 is_stmt 0 view .LVU203
- 799 01be 06F17F03 		add	r3, r6, #127
- 174:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 800              		.loc 1 174 32 view .LVU204
- 801 01c2 8DF80630 		strb	r3, [sp, #6]
- 175:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 802              		.loc 1 175 25 is_stmt 1 view .LVU205
- 803 01c6 62E7     		b	.L29
- 804              	.LVL64:
- 805              	.L32:
- 178:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
- 806              		.loc 1 178 25 view .LVU206
- 178:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
- 807              		.loc 1 178 32 is_stmt 0 view .LVU207
- 808 01c8 FFF7FEFF 		bl	NOS_GetBaseColor
- 809              	.LVL65:
- 178:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
- 810              		.loc 1 178 32 view .LVU208
- 811 01cc 8DF80400 		strb	r0, [sp, #4]
- 812 01d0 C0F30723 		ubfx	r3, r0, #8, #8
- 813 01d4 8DF80530 		strb	r3, [sp, #5]
- 814 01d8 C0F30740 		ubfx	r0, r0, #16, #8
- 815 01dc 8DF80600 		strb	r0, [sp, #6]
- 179:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 816              		.loc 1 179 25 is_stmt 1 view .LVU209
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 21
-
-
- 179:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 817              		.loc 1 179 39 is_stmt 0 view .LVU210
- 818 01e0 F343     		mvns	r3, r6
- 179:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 819              		.loc 1 179 32 view .LVU211
- 820 01e2 8DF80430 		strb	r3, [sp, #4]
- 180:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 821              		.loc 1 180 25 is_stmt 1 view .LVU212
- 822 01e6 52E7     		b	.L29
- 823              	.LVL66:
- 824              	.L30:
- 183:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
- 825              		.loc 1 183 25 view .LVU213
- 183:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
- 826              		.loc 1 183 32 is_stmt 0 view .LVU214
- 827 01e8 FFF7FEFF 		bl	NOS_GetBaseColor
- 828              	.LVL67:
- 183:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
- 829              		.loc 1 183 32 view .LVU215
- 830 01ec 8DF80400 		strb	r0, [sp, #4]
- 831 01f0 C0F30723 		ubfx	r3, r0, #8, #8
- 832 01f4 8DF80530 		strb	r3, [sp, #5]
- 833 01f8 C0F30740 		ubfx	r0, r0, #16, #8
- 834 01fc 8DF80600 		strb	r0, [sp, #6]
- 184:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 835              		.loc 1 184 25 is_stmt 1 view .LVU216
- 184:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 836              		.loc 1 184 39 is_stmt 0 view .LVU217
- 837 0200 C6F17F03 		rsb	r3, r6, #127
- 184:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
- 838              		.loc 1 184 32 view .LVU218
- 839 0204 8DF80430 		strb	r3, [sp, #4]
- 185:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 840              		.loc 1 185 25 is_stmt 1 view .LVU219
- 841 0208 41E7     		b	.L29
- 842              	.LVL68:
- 843              	.L45:
- 844              		.cfi_def_cfa_offset 0
- 845              		.cfi_restore 4
- 846              		.cfi_restore 5
- 847              		.cfi_restore 6
- 848              		.cfi_restore 14
- 185:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 849              		.loc 1 185 25 is_stmt 0 view .LVU220
- 850 020a 7047     		bx	lr
- 851              	.L50:
- 852              		.align	2
- 853              	.L49:
- 854 020c 11080402 		.word	33818641
- 855              	.LBE2:
- 856              		.cfi_endproc
- 857              	.LFE71:
- 859              		.section	.text.NOS_WS2812B_Strip_Effect_Dots_Handler,"ax",%progbits
- 860              		.align	1
- 861              		.global	NOS_WS2812B_Strip_Effect_Dots_Handler
- 862              		.syntax unified
- 863              		.thumb
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 22
-
-
- 864              		.thumb_func
- 866              	NOS_WS2812B_Strip_Effect_Dots_Handler:
- 867              	.LVL69:
- 868              	.LFB72:
- 201:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 202:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Dots_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
- 203:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
- 869              		.loc 1 203 1 is_stmt 1 view -0
- 870              		.cfi_startproc
- 871              		@ args = 0, pretend = 0, frame = 8
- 872              		@ frame_needed = 0, uses_anonymous_args = 0
- 873              		.loc 1 203 1 is_stmt 0 view .LVU222
- 874 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 875              		.cfi_def_cfa_offset 28
- 876              		.cfi_offset 4, -28
- 877              		.cfi_offset 5, -24
- 878              		.cfi_offset 6, -20
- 879              		.cfi_offset 7, -16
- 880              		.cfi_offset 8, -12
- 881              		.cfi_offset 9, -8
- 882              		.cfi_offset 14, -4
- 883 0004 83B0     		sub	sp, sp, #12
- 884              		.cfi_def_cfa_offset 40
- 885 0006 0546     		mov	r5, r0
- 886 0008 0E46     		mov	r6, r1
- 204:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	uint32_t i;
- 887              		.loc 1 204 2 is_stmt 1 view .LVU223
- 205:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	PixelColor temp = {0,0,0};
- 888              		.loc 1 205 2 view .LVU224
- 889              		.loc 1 205 13 is_stmt 0 view .LVU225
- 890 000a 0023     		movs	r3, #0
- 891 000c 8DF80430 		strb	r3, [sp, #4]
- 892 0010 8DF80530 		strb	r3, [sp, #5]
- 893 0014 8DF80630 		strb	r3, [sp, #6]
- 206:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isR;
- 894              		.loc 1 206 2 is_stmt 1 view .LVU226
- 207:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isG;
- 895              		.loc 1 207 2 view .LVU227
- 208:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isB;
- 896              		.loc 1 208 2 view .LVU228
- 209:Core/Src/NOS_WS2812B_Strip_Effects.c ****     uint32_t random = 50;
- 897              		.loc 1 209 5 view .LVU229
- 898              	.LVL70:
- 210:Core/Src/NOS_WS2812B_Strip_Effects.c ****     uint32_t fadeOutFactor = 40;
- 899              		.loc 1 210 5 view .LVU230
- 211:Core/Src/NOS_WS2812B_Strip_Effects.c ****     PixelColor color = {0,0,0};
- 900              		.loc 1 211 5 view .LVU231
- 901              		.loc 1 211 16 is_stmt 0 view .LVU232
- 902 0018 8DF80030 		strb	r3, [sp]
- 903 001c 8DF80130 		strb	r3, [sp, #1]
- 904 0020 8DF80230 		strb	r3, [sp, #2]
- 212:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 213:Core/Src/NOS_WS2812B_Strip_Effects.c ****     NOS_PixelColor_SetColor(&color,effect->color.R,effect->color.G,effect->color.B);
- 905              		.loc 1 213 5 is_stmt 1 view .LVU233
- 906 0024 91F82030 		ldrb	r3, [r1, #32]	@ zero_extendqisi2
- 907 0028 CA7F     		ldrb	r2, [r1, #31]	@ zero_extendqisi2
- 908 002a 897F     		ldrb	r1, [r1, #30]	@ zero_extendqisi2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 23
-
-
- 909              	.LVL71:
- 910              		.loc 1 213 5 is_stmt 0 view .LVU234
- 911 002c 6846     		mov	r0, sp
- 912              	.LVL72:
- 913              		.loc 1 213 5 view .LVU235
- 914 002e FFF7FEFF 		bl	NOS_PixelColor_SetColor
- 915              	.LVL73:
+ 189:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 190:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 8:
+ 191:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 192:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
+ 193:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 194:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 195:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 9:
+ 196:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 197:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
+ 198:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 199:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 200:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 10:
+ 201:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 202:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
+ 203:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 204:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 205:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         case 11:
+ 206:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr = NOS_GetBaseColor((NOS_BaseColors)iteration);
+ 207:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
+ 208:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 209:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 210:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         default:
+ 211:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 212:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     }
+ 213:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     
  214:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 215:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(effect->timer >= effect->speed.data)
- 916              		.loc 1 215 5 is_stmt 1 view .LVU236
- 917              		.loc 1 215 14 is_stmt 0 view .LVU237
- 918 0032 328B     		ldrh	r2, [r6, #24]
- 919              		.loc 1 215 38 view .LVU238
- 920 0034 B38A     		ldrh	r3, [r6, #20]
- 921              		.loc 1 215 7 view .LVU239
- 922 0036 9A42     		cmp	r2, r3
- 923 0038 C0F08380 		bcc	.L52
- 216:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 217:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 218:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.R == 0xFF)
- 924              		.loc 1 218 2 is_stmt 1 view .LVU240
- 925              		.loc 1 218 10 is_stmt 0 view .LVU241
- 926 003c 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
- 927              		.loc 1 218 4 view .LVU242
- 928 0040 FF2B     		cmp	r3, #255
- 929 0042 0ED0     		beq	.L71
- 219:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 220:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isR = true;
- 221:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 222:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
- 223:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 224:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isR = false;
- 930              		.loc 1 224 7 view .LVU243
- 931 0044 0027     		movs	r7, #0
- 932              	.L53:
- 933              	.LVL74:
- 225:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 226:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 227:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.G == 0xFF)
- 934              		.loc 1 227 2 is_stmt 1 view .LVU244
- 935              		.loc 1 227 10 is_stmt 0 view .LVU245
- 936 0046 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
- 937              		.loc 1 227 4 view .LVU246
- 938 004a FF2B     		cmp	r3, #255
- 939 004c 0BD0     		beq	.L72
- 228:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 229:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isG = true;
- 230:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 231:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
- 232:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 233:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isG = false;
- 940              		.loc 1 233 7 view .LVU247
- 941 004e 4FF00008 		mov	r8, #0
- 942              	.L54:
- 943              	.LVL75:
- 234:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 235:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.B == 0xFF)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 24
+ 215:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_ColorFill(strip,curr);
+ 216:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 17
 
 
- 944              		.loc 1 235 2 is_stmt 1 view .LVU248
- 945              		.loc 1 235 10 is_stmt 0 view .LVU249
- 946 0052 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
- 947              		.loc 1 235 4 view .LVU250
- 948 0056 FF2B     		cmp	r3, #255
- 949 0058 08D0     		beq	.L73
- 236:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 237:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isB = true;
- 238:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 239:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
- 240:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 241:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isB = false;
- 950              		.loc 1 241 7 view .LVU251
- 951 005a 4FF00009 		mov	r9, #0
- 952              	.L55:
- 953              	.LVL76:
- 242:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 243:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	for( i = 0; i < strip->pixelCount; i++)
- 954              		.loc 1 244 2 is_stmt 1 view .LVU252
- 955              		.loc 1 244 9 is_stmt 0 view .LVU253
- 956 005e 0024     		movs	r4, #0
- 957              		.loc 1 244 2 view .LVU254
- 958 0060 35E0     		b	.L56
- 959              	.LVL77:
- 960              	.L71:
- 220:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 961              		.loc 1 220 7 view .LVU255
- 962 0062 0127     		movs	r7, #1
- 963 0064 EFE7     		b	.L53
- 964              	.LVL78:
- 965              	.L72:
- 229:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 966              		.loc 1 229 7 view .LVU256
- 967 0066 4FF00108 		mov	r8, #1
- 968 006a F2E7     		b	.L54
- 969              	.LVL79:
- 970              	.L73:
- 237:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 971              		.loc 1 237 7 view .LVU257
- 972 006c 4FF00109 		mov	r9, #1
- 973 0070 F5E7     		b	.L55
- 974              	.LVL80:
- 975              	.L57:
- 245:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.R = strip->pixels[i].R;
- 247:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
- 248:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
+ 217:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
+ 218:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 219:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 effect->timer++;
+ 650              		.loc 1 219 17 is_stmt 1 view .LVU140
+ 651              		.loc 1 219 23 is_stmt 0 view .LVU141
+ 652 001e 238B     		ldrh	r3, [r4, #24]
+ 653              		.loc 1 219 30 view .LVU142
+ 654 0020 0133     		adds	r3, r3, #1
+ 655 0022 2383     		strh	r3, [r4, #24]	@ movhi
+ 656              	.L33:
+ 220:Core/Src/NOS_WS2812B_Strip_Effects.c ****             }
+ 221:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
+ 222:Core/Src/NOS_WS2812B_Strip_Effects.c ****     }
+ 223:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 657              		.loc 1 223 1 view .LVU143
+ 658 0024 02B0     		add	sp, sp, #8
+ 659              		.cfi_remember_state
+ 660              		.cfi_def_cfa_offset 16
+ 661              		@ sp needed
+ 662 0026 70BD     		pop	{r4, r5, r6, pc}
+ 663              	.LVL40:
+ 664              	.L55:
+ 665              		.cfi_restore_state
+ 666              	.LBB2:
+ 140:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 667              		.loc 1 140 21 is_stmt 1 view .LVU144
+ 668 0028 0846     		mov	r0, r1
+ 669              	.LVL41:
+ 140:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 670              		.loc 1 140 21 is_stmt 0 view .LVU145
+ 671 002a FFF7FEFF 		bl	NOS_Math_SinValue_Handler
+ 672              	.LVL42:
+ 142:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
+ 673              		.loc 1 142 21 is_stmt 1 view .LVU146
+ 142:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
+ 674              		.loc 1 142 39 is_stmt 0 view .LVU147
+ 675 002e 2046     		mov	r0, r4
+ 676 0030 FFF7FEFF 		bl	NOS_Math_GetSinValue
+ 677              	.LVL43:
+ 142:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     uint8_t iteration = number / 0x7F;
+ 678              		.loc 1 142 30 view .LVU148
+ 679 0034 82B2     		uxth	r2, r0
+ 680              	.LVL44:
+ 143:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 681              		.loc 1 143 21 is_stmt 1 view .LVU149
+ 143:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 682              		.loc 1 143 29 is_stmt 0 view .LVU150
+ 683 0036 754B     		ldr	r3, .L56
+ 684 0038 A3FB0213 		umull	r1, r3, r3, r2
+ 685 003c D11A     		subs	r1, r2, r3
+ 686 003e 03EB5100 		add	r0, r3, r1, lsr #1
+ 687 0042 C0F38710 		ubfx	r0, r0, #6, #8
+ 688              	.LVL45:
+ 145:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
+ 689              		.loc 1 145 21 is_stmt 1 view .LVU151
+ 145:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     number = number - 0x7F * iteration;
+ 690              		.loc 1 145 32 is_stmt 0 view .LVU152
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 18
+
+
+ 691 0046 0023     		movs	r3, #0
+ 692 0048 8DF80430 		strb	r3, [sp, #4]
+ 693 004c 8DF80530 		strb	r3, [sp, #5]
+ 694 0050 8DF80630 		strb	r3, [sp, #6]
+ 146:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 695              		.loc 1 146 21 is_stmt 1 view .LVU153
+ 146:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 696              		.loc 1 146 37 is_stmt 0 view .LVU154
+ 697 0054 A0EBC013 		sub	r3, r0, r0, lsl #7
+ 698 0058 9BB2     		uxth	r3, r3
+ 146:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 699              		.loc 1 146 28 view .LVU155
+ 700 005a 1344     		add	r3, r3, r2
+ 701 005c 9EB2     		uxth	r6, r3
+ 702              	.LVL46:
+ 148:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     {
+ 703              		.loc 1 148 21 is_stmt 1 view .LVU156
+ 704 005e 0B28     		cmp	r0, #11
+ 705 0060 15D8     		bhi	.L36
+ 706 0062 DFE800F0 		tbb	[pc, r0]
+ 707              	.L38:
+ 708 0066 06       		.byte	(.L49-.L38)/2
+ 709 0067 1E       		.byte	(.L48-.L38)/2
+ 710 0068 2F       		.byte	(.L47-.L38)/2
+ 711 0069 3F       		.byte	(.L46-.L38)/2
+ 712 006a 50       		.byte	(.L45-.L38)/2
+ 713 006b 5F       		.byte	(.L44-.L38)/2
+ 714 006c 70       		.byte	(.L43-.L38)/2
+ 715 006d 80       		.byte	(.L42-.L38)/2
+ 716 006e 91       		.byte	(.L41-.L38)/2
+ 717 006f A0       		.byte	(.L40-.L38)/2
+ 718 0070 B1       		.byte	(.L39-.L38)/2
+ 719 0071 C1       		.byte	(.L37-.L38)/2
+ 720              		.p2align 1
+ 721              	.L49:
+ 151:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
+ 722              		.loc 1 151 25 view .LVU157
+ 151:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
+ 723              		.loc 1 151 32 is_stmt 0 view .LVU158
+ 724 0072 FFF7FEFF 		bl	NOS_GetBaseColor
+ 725              	.LVL47:
+ 151:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = number;
+ 726              		.loc 1 151 32 view .LVU159
+ 727 0076 8DF80400 		strb	r0, [sp, #4]
+ 728 007a C0F30723 		ubfx	r3, r0, #8, #8
+ 729 007e 8DF80530 		strb	r3, [sp, #5]
+ 730 0082 C0F30740 		ubfx	r0, r0, #16, #8
+ 731 0086 8DF80600 		strb	r0, [sp, #6]
+ 152:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 732              		.loc 1 152 25 is_stmt 1 view .LVU160
+ 152:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 733              		.loc 1 152 32 is_stmt 0 view .LVU161
+ 734 008a 8DF80560 		strb	r6, [sp, #5]
+ 153:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 735              		.loc 1 153 25 is_stmt 1 view .LVU162
+ 736              	.L36:
+ 215:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     NOS_WS2812B_Strip_Update(strip);
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 19
+
+
+ 737              		.loc 1 215 21 view .LVU163
+ 738 008e 0199     		ldr	r1, [sp, #4]
+ 739 0090 2846     		mov	r0, r5
+ 740 0092 FFF7FEFF 		bl	NOS_WS2812B_Strip_ColorFill
+ 741              	.LVL48:
+ 216:Core/Src/NOS_WS2812B_Strip_Effects.c ****                     effect->timer = 0;
+ 742              		.loc 1 216 21 view .LVU164
+ 743 0096 2846     		mov	r0, r5
+ 744 0098 FFF7FEFF 		bl	NOS_WS2812B_Strip_Update
+ 745              	.LVL49:
+ 217:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 746              		.loc 1 217 21 view .LVU165
+ 217:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 }
+ 747              		.loc 1 217 35 is_stmt 0 view .LVU166
+ 748 009c 0023     		movs	r3, #0
+ 749 009e 2383     		strh	r3, [r4, #24]	@ movhi
+ 750 00a0 BDE7     		b	.L35
+ 751              	.LVL50:
+ 752              	.L48:
+ 156:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
+ 753              		.loc 1 156 25 is_stmt 1 view .LVU167
+ 156:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
+ 754              		.loc 1 156 32 is_stmt 0 view .LVU168
+ 755 00a2 FFF7FEFF 		bl	NOS_GetBaseColor
+ 756              	.LVL51:
+ 156:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F + number;
+ 757              		.loc 1 156 32 view .LVU169
+ 758 00a6 8DF80400 		strb	r0, [sp, #4]
+ 759 00aa C0F30723 		ubfx	r3, r0, #8, #8
+ 760 00ae 8DF80530 		strb	r3, [sp, #5]
+ 761 00b2 C0F30740 		ubfx	r0, r0, #16, #8
+ 762 00b6 8DF80600 		strb	r0, [sp, #6]
+ 157:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 763              		.loc 1 157 25 is_stmt 1 view .LVU170
+ 157:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 764              		.loc 1 157 39 is_stmt 0 view .LVU171
+ 765 00ba 06F17F03 		add	r3, r6, #127
+ 157:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 766              		.loc 1 157 32 view .LVU172
+ 767 00be 8DF80530 		strb	r3, [sp, #5]
+ 158:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 768              		.loc 1 158 25 is_stmt 1 view .LVU173
+ 769 00c2 E4E7     		b	.L36
+ 770              	.LVL52:
+ 771              	.L47:
+ 161:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
+ 772              		.loc 1 161 25 view .LVU174
+ 161:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
+ 773              		.loc 1 161 32 is_stmt 0 view .LVU175
+ 774 00c4 FFF7FEFF 		bl	NOS_GetBaseColor
+ 775              	.LVL53:
+ 161:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0xFF - number;
+ 776              		.loc 1 161 32 view .LVU176
+ 777 00c8 8DF80400 		strb	r0, [sp, #4]
+ 778 00cc C0F30723 		ubfx	r3, r0, #8, #8
+ 779 00d0 8DF80530 		strb	r3, [sp, #5]
+ 780 00d4 C0F30740 		ubfx	r0, r0, #16, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 20
+
+
+ 781 00d8 8DF80600 		strb	r0, [sp, #6]
+ 162:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 782              		.loc 1 162 25 is_stmt 1 view .LVU177
+ 162:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 783              		.loc 1 162 39 is_stmt 0 view .LVU178
+ 784 00dc F343     		mvns	r3, r6
+ 162:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 785              		.loc 1 162 32 view .LVU179
+ 786 00de 8DF80630 		strb	r3, [sp, #6]
+ 163:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 787              		.loc 1 163 25 is_stmt 1 view .LVU180
+ 788 00e2 D4E7     		b	.L36
+ 789              	.LVL54:
+ 790              	.L46:
+ 166:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
+ 791              		.loc 1 166 25 view .LVU181
+ 166:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
+ 792              		.loc 1 166 32 is_stmt 0 view .LVU182
+ 793 00e4 FFF7FEFF 		bl	NOS_GetBaseColor
+ 794              	.LVL55:
+ 166:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F - number;
+ 795              		.loc 1 166 32 view .LVU183
+ 796 00e8 8DF80400 		strb	r0, [sp, #4]
+ 797 00ec C0F30723 		ubfx	r3, r0, #8, #8
+ 798 00f0 8DF80530 		strb	r3, [sp, #5]
+ 799 00f4 C0F30740 		ubfx	r0, r0, #16, #8
+ 800 00f8 8DF80600 		strb	r0, [sp, #6]
+ 167:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 801              		.loc 1 167 25 is_stmt 1 view .LVU184
+ 167:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 802              		.loc 1 167 39 is_stmt 0 view .LVU185
+ 803 00fc C6F17F03 		rsb	r3, r6, #127
+ 167:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 804              		.loc 1 167 32 view .LVU186
+ 805 0100 8DF80630 		strb	r3, [sp, #6]
+ 168:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 806              		.loc 1 168 25 is_stmt 1 view .LVU187
+ 807 0104 C3E7     		b	.L36
+ 808              	.LVL56:
+ 809              	.L45:
+ 171:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
+ 810              		.loc 1 171 25 view .LVU188
+ 171:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
+ 811              		.loc 1 171 32 is_stmt 0 view .LVU189
+ 812 0106 FFF7FEFF 		bl	NOS_GetBaseColor
+ 813              	.LVL57:
+ 171:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = number;
+ 814              		.loc 1 171 32 view .LVU190
+ 815 010a 8DF80400 		strb	r0, [sp, #4]
+ 816 010e C0F30723 		ubfx	r3, r0, #8, #8
+ 817 0112 8DF80530 		strb	r3, [sp, #5]
+ 818 0116 C0F30740 		ubfx	r0, r0, #16, #8
+ 819 011a 8DF80600 		strb	r0, [sp, #6]
+ 172:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 820              		.loc 1 172 25 is_stmt 1 view .LVU191
+ 172:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 821              		.loc 1 172 32 is_stmt 0 view .LVU192
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 21
+
+
+ 822 011e 8DF80460 		strb	r6, [sp, #4]
+ 173:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 823              		.loc 1 173 25 is_stmt 1 view .LVU193
+ 824 0122 B4E7     		b	.L36
+ 825              	.LVL58:
+ 826              	.L44:
+ 176:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
+ 827              		.loc 1 176 25 view .LVU194
+ 176:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
+ 828              		.loc 1 176 32 is_stmt 0 view .LVU195
+ 829 0124 FFF7FEFF 		bl	NOS_GetBaseColor
+ 830              	.LVL59:
+ 176:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F + number;
+ 831              		.loc 1 176 32 view .LVU196
+ 832 0128 8DF80400 		strb	r0, [sp, #4]
+ 833 012c C0F30723 		ubfx	r3, r0, #8, #8
+ 834 0130 8DF80530 		strb	r3, [sp, #5]
+ 835 0134 C0F30740 		ubfx	r0, r0, #16, #8
+ 836 0138 8DF80600 		strb	r0, [sp, #6]
+ 177:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 837              		.loc 1 177 25 is_stmt 1 view .LVU197
+ 177:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 838              		.loc 1 177 39 is_stmt 0 view .LVU198
+ 839 013c 06F17F03 		add	r3, r6, #127
+ 177:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 840              		.loc 1 177 32 view .LVU199
+ 841 0140 8DF80430 		strb	r3, [sp, #4]
+ 178:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 842              		.loc 1 178 25 is_stmt 1 view .LVU200
+ 843 0144 A3E7     		b	.L36
+ 844              	.LVL60:
+ 845              	.L43:
+ 181:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
+ 846              		.loc 1 181 25 view .LVU201
+ 181:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
+ 847              		.loc 1 181 32 is_stmt 0 view .LVU202
+ 848 0146 FFF7FEFF 		bl	NOS_GetBaseColor
+ 849              	.LVL61:
+ 181:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0xFF - number;
+ 850              		.loc 1 181 32 view .LVU203
+ 851 014a 8DF80400 		strb	r0, [sp, #4]
+ 852 014e C0F30723 		ubfx	r3, r0, #8, #8
+ 853 0152 8DF80530 		strb	r3, [sp, #5]
+ 854 0156 C0F30740 		ubfx	r0, r0, #16, #8
+ 855 015a 8DF80600 		strb	r0, [sp, #6]
+ 182:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 856              		.loc 1 182 25 is_stmt 1 view .LVU204
+ 182:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 857              		.loc 1 182 39 is_stmt 0 view .LVU205
+ 858 015e F343     		mvns	r3, r6
+ 182:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 859              		.loc 1 182 32 view .LVU206
+ 860 0160 8DF80530 		strb	r3, [sp, #5]
+ 183:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 861              		.loc 1 183 25 is_stmt 1 view .LVU207
+ 862 0164 93E7     		b	.L36
+ 863              	.LVL62:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 22
+
+
+ 864              	.L42:
+ 186:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
+ 865              		.loc 1 186 25 view .LVU208
+ 186:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
+ 866              		.loc 1 186 32 is_stmt 0 view .LVU209
+ 867 0166 FFF7FEFF 		bl	NOS_GetBaseColor
+ 868              	.LVL63:
+ 186:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.G = 0x7F - number;
+ 869              		.loc 1 186 32 view .LVU210
+ 870 016a 8DF80400 		strb	r0, [sp, #4]
+ 871 016e C0F30723 		ubfx	r3, r0, #8, #8
+ 872 0172 8DF80530 		strb	r3, [sp, #5]
+ 873 0176 C0F30740 		ubfx	r0, r0, #16, #8
+ 874 017a 8DF80600 		strb	r0, [sp, #6]
+ 187:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 875              		.loc 1 187 25 is_stmt 1 view .LVU211
+ 187:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 876              		.loc 1 187 39 is_stmt 0 view .LVU212
+ 877 017e C6F17F03 		rsb	r3, r6, #127
+ 187:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 878              		.loc 1 187 32 view .LVU213
+ 879 0182 8DF80530 		strb	r3, [sp, #5]
+ 188:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 880              		.loc 1 188 25 is_stmt 1 view .LVU214
+ 881 0186 82E7     		b	.L36
+ 882              	.LVL64:
+ 883              	.L41:
+ 191:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
+ 884              		.loc 1 191 25 view .LVU215
+ 191:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
+ 885              		.loc 1 191 32 is_stmt 0 view .LVU216
+ 886 0188 FFF7FEFF 		bl	NOS_GetBaseColor
+ 887              	.LVL65:
+ 191:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = number;
+ 888              		.loc 1 191 32 view .LVU217
+ 889 018c 8DF80400 		strb	r0, [sp, #4]
+ 890 0190 C0F30723 		ubfx	r3, r0, #8, #8
+ 891 0194 8DF80530 		strb	r3, [sp, #5]
+ 892 0198 C0F30740 		ubfx	r0, r0, #16, #8
+ 893 019c 8DF80600 		strb	r0, [sp, #6]
+ 192:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 894              		.loc 1 192 25 is_stmt 1 view .LVU218
+ 192:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 895              		.loc 1 192 32 is_stmt 0 view .LVU219
+ 896 01a0 8DF80660 		strb	r6, [sp, #6]
+ 193:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 897              		.loc 1 193 25 is_stmt 1 view .LVU220
+ 898 01a4 73E7     		b	.L36
+ 899              	.LVL66:
+ 900              	.L40:
+ 196:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
+ 901              		.loc 1 196 25 view .LVU221
+ 196:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
+ 902              		.loc 1 196 32 is_stmt 0 view .LVU222
+ 903 01a6 FFF7FEFF 		bl	NOS_GetBaseColor
+ 904              	.LVL67:
+ 196:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.B = 0x7F + number;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 23
+
+
+ 905              		.loc 1 196 32 view .LVU223
+ 906 01aa 8DF80400 		strb	r0, [sp, #4]
+ 907 01ae C0F30723 		ubfx	r3, r0, #8, #8
+ 908 01b2 8DF80530 		strb	r3, [sp, #5]
+ 909 01b6 C0F30740 		ubfx	r0, r0, #16, #8
+ 910 01ba 8DF80600 		strb	r0, [sp, #6]
+ 197:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 911              		.loc 1 197 25 is_stmt 1 view .LVU224
+ 197:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 912              		.loc 1 197 39 is_stmt 0 view .LVU225
+ 913 01be 06F17F03 		add	r3, r6, #127
+ 197:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 914              		.loc 1 197 32 view .LVU226
+ 915 01c2 8DF80630 		strb	r3, [sp, #6]
+ 198:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 916              		.loc 1 198 25 is_stmt 1 view .LVU227
+ 917 01c6 62E7     		b	.L36
+ 918              	.LVL68:
+ 919              	.L39:
+ 201:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
+ 920              		.loc 1 201 25 view .LVU228
+ 201:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
+ 921              		.loc 1 201 32 is_stmt 0 view .LVU229
+ 922 01c8 FFF7FEFF 		bl	NOS_GetBaseColor
+ 923              	.LVL69:
+ 201:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0xFF - number;
+ 924              		.loc 1 201 32 view .LVU230
+ 925 01cc 8DF80400 		strb	r0, [sp, #4]
+ 926 01d0 C0F30723 		ubfx	r3, r0, #8, #8
+ 927 01d4 8DF80530 		strb	r3, [sp, #5]
+ 928 01d8 C0F30740 		ubfx	r0, r0, #16, #8
+ 929 01dc 8DF80600 		strb	r0, [sp, #6]
+ 202:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 930              		.loc 1 202 25 is_stmt 1 view .LVU231
+ 202:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 931              		.loc 1 202 39 is_stmt 0 view .LVU232
+ 932 01e0 F343     		mvns	r3, r6
+ 202:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 933              		.loc 1 202 32 view .LVU233
+ 934 01e2 8DF80430 		strb	r3, [sp, #4]
+ 203:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 935              		.loc 1 203 25 is_stmt 1 view .LVU234
+ 936 01e6 52E7     		b	.L36
+ 937              	.LVL70:
+ 938              	.L37:
+ 206:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
+ 939              		.loc 1 206 25 view .LVU235
+ 206:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
+ 940              		.loc 1 206 32 is_stmt 0 view .LVU236
+ 941 01e8 FFF7FEFF 		bl	NOS_GetBaseColor
+ 942              	.LVL71:
+ 206:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         curr.R = 0x7F - number;
+ 943              		.loc 1 206 32 view .LVU237
+ 944 01ec 8DF80400 		strb	r0, [sp, #4]
+ 945 01f0 C0F30723 		ubfx	r3, r0, #8, #8
+ 946 01f4 8DF80530 		strb	r3, [sp, #5]
+ 947 01f8 C0F30740 		ubfx	r0, r0, #16, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 24
+
+
+ 948 01fc 8DF80600 		strb	r0, [sp, #6]
+ 207:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 949              		.loc 1 207 25 is_stmt 1 view .LVU238
+ 207:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 950              		.loc 1 207 39 is_stmt 0 view .LVU239
+ 951 0200 C6F17F03 		rsb	r3, r6, #127
+ 207:Core/Src/NOS_WS2812B_Strip_Effects.c ****                         break;
+ 952              		.loc 1 207 32 view .LVU240
+ 953 0204 8DF80430 		strb	r3, [sp, #4]
+ 208:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 954              		.loc 1 208 25 is_stmt 1 view .LVU241
+ 955 0208 41E7     		b	.L36
+ 956              	.LVL72:
+ 957              	.L52:
+ 958              		.cfi_def_cfa_offset 0
+ 959              		.cfi_restore 4
+ 960              		.cfi_restore 5
+ 961              		.cfi_restore 6
+ 962              		.cfi_restore 14
+ 208:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 963              		.loc 1 208 25 is_stmt 0 view .LVU242
+ 964 020a 7047     		bx	lr
+ 965              	.L57:
+ 966              		.align	2
+ 967              	.L56:
+ 968 020c 11080402 		.word	33818641
+ 969              	.LBE2:
+ 970              		.cfi_endproc
+ 971              	.LFE72:
+ 973              		.section	.text.NOS_WS2812B_Strip_Effect_Dots_Handler,"ax",%progbits
+ 974              		.align	1
+ 975              		.global	NOS_WS2812B_Strip_Effect_Dots_Handler
+ 976              		.syntax unified
+ 977              		.thumb
+ 978              		.thumb_func
+ 980              	NOS_WS2812B_Strip_Effect_Dots_Handler:
+ 981              	.LVL73:
+ 982              	.LFB73:
+ 224:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 225:Core/Src/NOS_WS2812B_Strip_Effects.c **** void NOS_WS2812B_Strip_Effect_Dots_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
+ 226:Core/Src/NOS_WS2812B_Strip_Effects.c **** {
+ 983              		.loc 1 226 1 is_stmt 1 view -0
+ 984              		.cfi_startproc
+ 985              		@ args = 0, pretend = 0, frame = 8
+ 986              		@ frame_needed = 0, uses_anonymous_args = 0
+ 987              		.loc 1 226 1 is_stmt 0 view .LVU244
+ 988 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 989              		.cfi_def_cfa_offset 28
+ 990              		.cfi_offset 4, -28
+ 991              		.cfi_offset 5, -24
+ 992              		.cfi_offset 6, -20
+ 993              		.cfi_offset 7, -16
+ 994              		.cfi_offset 8, -12
+ 995              		.cfi_offset 9, -8
+ 996              		.cfi_offset 14, -4
+ 997 0004 83B0     		sub	sp, sp, #12
+ 998              		.cfi_def_cfa_offset 40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 25
+
+
+ 999 0006 0546     		mov	r5, r0
+ 1000 0008 0E46     		mov	r6, r1
+ 227:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	uint32_t i;
+ 1001              		.loc 1 227 2 is_stmt 1 view .LVU245
+ 228:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	PixelColor temp = {0,0,0};
+ 1002              		.loc 1 228 2 view .LVU246
+ 1003              		.loc 1 228 13 is_stmt 0 view .LVU247
+ 1004 000a 0023     		movs	r3, #0
+ 1005 000c 8DF80430 		strb	r3, [sp, #4]
+ 1006 0010 8DF80530 		strb	r3, [sp, #5]
+ 1007 0014 8DF80630 		strb	r3, [sp, #6]
+ 229:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isR;
+ 1008              		.loc 1 229 2 is_stmt 1 view .LVU248
+ 230:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isG;
+ 1009              		.loc 1 230 2 view .LVU249
+ 231:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	bool isB;
+ 1010              		.loc 1 231 2 view .LVU250
+ 232:Core/Src/NOS_WS2812B_Strip_Effects.c ****     uint32_t random = 50;
+ 1011              		.loc 1 232 5 view .LVU251
+ 1012              	.LVL74:
+ 233:Core/Src/NOS_WS2812B_Strip_Effects.c ****     uint32_t fadeOutFactor = 40;
+ 1013              		.loc 1 233 5 view .LVU252
+ 234:Core/Src/NOS_WS2812B_Strip_Effects.c ****     PixelColor color = {0,0,0};
+ 1014              		.loc 1 234 5 view .LVU253
+ 1015              		.loc 1 234 16 is_stmt 0 view .LVU254
+ 1016 0018 8DF80030 		strb	r3, [sp]
+ 1017 001c 8DF80130 		strb	r3, [sp, #1]
+ 1018 0020 8DF80230 		strb	r3, [sp, #2]
+ 235:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 236:Core/Src/NOS_WS2812B_Strip_Effects.c ****     NOS_PixelColor_SetColor(&color,effect->color.R,effect->color.G,effect->color.B);
+ 1019              		.loc 1 236 5 is_stmt 1 view .LVU255
+ 1020 0024 91F82030 		ldrb	r3, [r1, #32]	@ zero_extendqisi2
+ 1021 0028 CA7F     		ldrb	r2, [r1, #31]	@ zero_extendqisi2
+ 1022 002a 897F     		ldrb	r1, [r1, #30]	@ zero_extendqisi2
+ 1023              	.LVL75:
+ 1024              		.loc 1 236 5 is_stmt 0 view .LVU256
+ 1025 002c 6846     		mov	r0, sp
+ 1026              	.LVL76:
+ 1027              		.loc 1 236 5 view .LVU257
+ 1028 002e FFF7FEFF 		bl	NOS_PixelColor_SetColor
+ 1029              	.LVL77:
+ 237:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 238:Core/Src/NOS_WS2812B_Strip_Effects.c ****     if(effect->timer >= effect->speed.data)
+ 1030              		.loc 1 238 5 is_stmt 1 view .LVU258
+ 1031              		.loc 1 238 14 is_stmt 0 view .LVU259
+ 1032 0032 328B     		ldrh	r2, [r6, #24]
+ 1033              		.loc 1 238 38 view .LVU260
+ 1034 0034 B38A     		ldrh	r3, [r6, #20]
+ 1035              		.loc 1 238 7 view .LVU261
+ 1036 0036 9A42     		cmp	r2, r3
+ 1037 0038 C0F08380 		bcc	.L59
+ 239:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
+ 240:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 241:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.R == 0xFF)
+ 1038              		.loc 1 241 2 is_stmt 1 view .LVU262
+ 1039              		.loc 1 241 10 is_stmt 0 view .LVU263
+ 1040 003c 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 26
+
+
+ 1041              		.loc 1 241 4 view .LVU264
+ 1042 0040 FF2B     		cmp	r3, #255
+ 1043 0042 0ED0     		beq	.L78
+ 242:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 243:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isR = true;
+ 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 245:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
+ 246:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 247:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isR = false;
+ 1044              		.loc 1 247 7 view .LVU265
+ 1045 0044 0027     		movs	r7, #0
+ 1046              	.L60:
+ 1047              	.LVL78:
+ 248:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
  249:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(rand() % random == 0)
- 251:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
- 252:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isR)
- 253:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 254:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.R = 255;
- 255:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 256:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			
- 257:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isG)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 25
+ 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.G == 0xFF)
+ 1048              		.loc 1 250 2 is_stmt 1 view .LVU266
+ 1049              		.loc 1 250 10 is_stmt 0 view .LVU267
+ 1050 0046 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
+ 1051              		.loc 1 250 4 view .LVU268
+ 1052 004a FF2B     		cmp	r3, #255
+ 1053 004c 0BD0     		beq	.L79
+ 251:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 252:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isG = true;
+ 253:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 254:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
+ 255:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 256:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isG = false;
+ 1054              		.loc 1 256 7 view .LVU269
+ 1055 004e 4FF00008 		mov	r8, #0
+ 1056              	.L61:
+ 1057              	.LVL79:
+ 257:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 258:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	if(color.B == 0xFF)
+ 1058              		.loc 1 258 2 is_stmt 1 view .LVU270
+ 1059              		.loc 1 258 10 is_stmt 0 view .LVU271
+ 1060 0052 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 1061              		.loc 1 258 4 view .LVU272
+ 1062 0056 FF2B     		cmp	r3, #255
+ 1063 0058 08D0     		beq	.L80
+ 259:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 260:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isB = true;
+ 261:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 262:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	else
+ 263:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 264:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		isB = false;
+ 1064              		.loc 1 264 7 view .LVU273
+ 1065 005a 4FF00009 		mov	r9, #0
+ 1066              	.L62:
+ 1067              	.LVL80:
+ 265:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 266:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	for( i = 0; i < strip->pixelCount; i++)
+ 1068              		.loc 1 267 2 is_stmt 1 view .LVU274
+ 1069              		.loc 1 267 9 is_stmt 0 view .LVU275
+ 1070 005e 0024     		movs	r4, #0
+ 1071              		.loc 1 267 2 view .LVU276
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 27
 
 
- 258:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 259:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.G = 255;
- 260:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 261:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 262:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isB)
- 263:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 264:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.B = 255;
- 265:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 266:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 268:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isR)
- 976              		.loc 1 268 3 is_stmt 1 view .LVU258
- 977              		.loc 1 268 5 is_stmt 0 view .LVU259
- 978 0072 57B1     		cbz	r7, .L60
- 269:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
- 270:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.R > fadeOutFactor)
- 979              		.loc 1 270 3 is_stmt 1 view .LVU260
- 980              		.loc 1 270 10 is_stmt 0 view .LVU261
- 981 0074 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
- 982              		.loc 1 270 5 view .LVU262
- 983 0078 282B     		cmp	r3, #40
- 984 007a 54D9     		bls	.L61
- 271:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.R -= temp.R/fadeOutFactor;
- 985              		.loc 1 271 4 is_stmt 1 view .LVU263
- 986              		.loc 1 271 20 is_stmt 0 view .LVU264
- 987 007c 344A     		ldr	r2, .L75
- 988 007e A2FB0312 		umull	r1, r2, r2, r3
- 989              		.loc 1 271 11 view .LVU265
- 990 0082 A3EB5213 		sub	r3, r3, r2, lsr #5
- 991 0086 8DF80430 		strb	r3, [sp, #4]
- 992              	.L60:
- 272:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
- 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.R = 0;
- 274:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 275:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 276:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isG)
- 993              		.loc 1 276 3 is_stmt 1 view .LVU266
- 994              		.loc 1 276 5 is_stmt 0 view .LVU267
- 995 008a B8F1000F 		cmp	r8, #0
- 996 008e 0AD0     		beq	.L62
- 277:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
- 278:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.G > fadeOutFactor)
- 997              		.loc 1 278 3 is_stmt 1 view .LVU268
- 998              		.loc 1 278 10 is_stmt 0 view .LVU269
- 999 0090 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
- 1000              		.loc 1 278 5 view .LVU270
- 1001 0094 282B     		cmp	r3, #40
- 1002 0096 4AD9     		bls	.L63
- 279:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.G -= temp.G/fadeOutFactor;
- 1003              		.loc 1 279 4 is_stmt 1 view .LVU271
- 1004              		.loc 1 279 20 is_stmt 0 view .LVU272
- 1005 0098 2D4A     		ldr	r2, .L75
- 1006 009a A2FB0312 		umull	r1, r2, r2, r3
- 1007              		.loc 1 279 11 view .LVU273
- 1008 009e A3EB5213 		sub	r3, r3, r2, lsr #5
- 1009 00a2 8DF80530 		strb	r3, [sp, #5]
- 1010              	.L62:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 26
-
-
- 280:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
- 281:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.G = 0;
- 282:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 283:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 284:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isB)
- 1011              		.loc 1 284 3 is_stmt 1 view .LVU274
- 1012              		.loc 1 284 5 is_stmt 0 view .LVU275
- 1013 00a6 B9F1000F 		cmp	r9, #0
- 1014 00aa 0AD0     		beq	.L64
- 285:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
- 286:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.B > fadeOutFactor)
- 1015              		.loc 1 286 3 is_stmt 1 view .LVU276
- 1016              		.loc 1 286 10 is_stmt 0 view .LVU277
- 1017 00ac 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
- 1018              		.loc 1 286 5 view .LVU278
- 1019 00b0 282B     		cmp	r3, #40
- 1020 00b2 40D9     		bls	.L65
- 287:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.B -= temp.B/fadeOutFactor;
- 1021              		.loc 1 287 4 is_stmt 1 view .LVU279
- 1022              		.loc 1 287 20 is_stmt 0 view .LVU280
- 1023 00b4 264A     		ldr	r2, .L75
- 1024 00b6 A2FB0312 		umull	r1, r2, r2, r3
- 1025              		.loc 1 287 11 view .LVU281
- 1026 00ba A3EB5213 		sub	r3, r3, r2, lsr #5
- 1027 00be 8DF80630 		strb	r3, [sp, #6]
- 1028              	.L64:
- 288:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
- 289:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.B = 0;
- 290:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 291:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 292:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_WS2812B_Strip_SetPixelByPixelColor(strip,i,temp);
- 1029              		.loc 1 292 9 is_stmt 1 discriminator 2 view .LVU282
- 1030 00c2 019A     		ldr	r2, [sp, #4]
- 1031 00c4 2146     		mov	r1, r4
- 1032 00c6 2846     		mov	r0, r5
- 1033 00c8 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixelByPixelColor
- 1034              	.LVL81:
- 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 1035              		.loc 1 244 38 discriminator 2 view .LVU283
- 1036 00cc 0134     		adds	r4, r4, #1
- 1037              	.LVL82:
- 1038              	.L56:
- 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 1039              		.loc 1 244 16 discriminator 1 view .LVU284
- 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 1040              		.loc 1 244 23 is_stmt 0 discriminator 1 view .LVU285
- 1041 00ce AB68     		ldr	r3, [r5, #8]
- 244:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
- 1042              		.loc 1 244 16 discriminator 1 view .LVU286
- 1043 00d0 A342     		cmp	r3, r4
- 1044 00d2 34D9     		bls	.L74
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
- 1045              		.loc 1 246 9 is_stmt 1 view .LVU287
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
- 1046              		.loc 1 246 23 is_stmt 0 view .LVU288
- 1047 00d4 6968     		ldr	r1, [r5, #4]
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 27
-
-
- 1048              		.loc 1 246 31 view .LVU289
- 1049 00d6 04EB4402 		add	r2, r4, r4, lsl #1
- 1050 00da 8B18     		adds	r3, r1, r2
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
- 1051              		.loc 1 246 34 view .LVU290
- 1052 00dc 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
- 246:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
- 1053              		.loc 1 246 16 view .LVU291
- 1054 00de 8DF80420 		strb	r2, [sp, #4]
- 247:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
- 1055              		.loc 1 247 9 is_stmt 1 view .LVU292
- 247:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
- 1056              		.loc 1 247 34 is_stmt 0 view .LVU293
- 1057 00e2 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
- 247:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
- 1058              		.loc 1 247 16 view .LVU294
- 1059 00e4 8DF80520 		strb	r2, [sp, #5]
- 248:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 1060              		.loc 1 248 9 is_stmt 1 view .LVU295
- 248:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 1061              		.loc 1 248 34 is_stmt 0 view .LVU296
- 1062 00e8 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
- 248:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 1063              		.loc 1 248 16 view .LVU297
- 1064 00ea 8DF80630 		strb	r3, [sp, #6]
- 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
- 1065              		.loc 1 250 3 is_stmt 1 view .LVU298
- 1066              	.LBB3:
- 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
- 1067              		.loc 1 250 6 is_stmt 0 view .LVU299
- 1068 00ee FFF7FEFF 		bl	rand
- 1069              	.LVL83:
- 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
- 1070              		.loc 1 250 13 view .LVU300
- 1071 00f2 184B     		ldr	r3, .L75+4
- 1072 00f4 A3FB0023 		umull	r2, r3, r3, r0
- 1073 00f8 1B09     		lsrs	r3, r3, #4
- 1074 00fa 3222     		movs	r2, #50
- 1075 00fc 02FB1303 		mls	r3, r2, r3, r0
- 250:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
- 1076              		.loc 1 250 5 view .LVU301
- 1077 0100 002B     		cmp	r3, #0
- 1078 0102 B6D1     		bne	.L57
- 252:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1079              		.loc 1 252 4 is_stmt 1 view .LVU302
- 252:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1080              		.loc 1 252 6 is_stmt 0 view .LVU303
- 1081 0104 17B1     		cbz	r7, .L58
- 254:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1082              		.loc 1 254 5 is_stmt 1 view .LVU304
- 254:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1083              		.loc 1 254 12 is_stmt 0 view .LVU305
- 1084 0106 FF23     		movs	r3, #255
- 1085 0108 8DF80430 		strb	r3, [sp, #4]
- 1086              	.L58:
- 257:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1087              		.loc 1 257 4 is_stmt 1 view .LVU306
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 28
-
-
- 257:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1088              		.loc 1 257 6 is_stmt 0 view .LVU307
- 1089 010c B8F1000F 		cmp	r8, #0
- 1090 0110 02D0     		beq	.L59
- 259:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1091              		.loc 1 259 5 is_stmt 1 view .LVU308
- 259:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1092              		.loc 1 259 12 is_stmt 0 view .LVU309
- 1093 0112 FF23     		movs	r3, #255
- 1094 0114 8DF80530 		strb	r3, [sp, #5]
- 1095              	.L59:
- 262:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1096              		.loc 1 262 4 is_stmt 1 view .LVU310
- 262:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
- 1097              		.loc 1 262 6 is_stmt 0 view .LVU311
- 1098 0118 B9F1000F 		cmp	r9, #0
- 1099 011c A9D0     		beq	.L57
- 264:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1100              		.loc 1 264 5 is_stmt 1 view .LVU312
- 264:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
- 1101              		.loc 1 264 12 is_stmt 0 view .LVU313
- 1102 011e FF23     		movs	r3, #255
- 1103 0120 8DF80630 		strb	r3, [sp, #6]
- 1104 0124 A5E7     		b	.L57
- 1105              	.L61:
- 1106              	.LBE3:
- 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1107              		.loc 1 273 4 is_stmt 1 view .LVU314
- 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1108              		.loc 1 273 11 is_stmt 0 view .LVU315
- 1109 0126 0023     		movs	r3, #0
- 1110 0128 8DF80430 		strb	r3, [sp, #4]
- 1111 012c ADE7     		b	.L60
- 1112              	.L63:
- 281:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1113              		.loc 1 281 4 is_stmt 1 view .LVU316
- 281:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1114              		.loc 1 281 11 is_stmt 0 view .LVU317
- 1115 012e 0023     		movs	r3, #0
- 1116 0130 8DF80530 		strb	r3, [sp, #5]
- 1117 0134 B7E7     		b	.L62
- 1118              	.L65:
+ 1072 0060 35E0     		b	.L63
+ 1073              	.LVL81:
+ 1074              	.L78:
+ 243:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 1075              		.loc 1 243 7 view .LVU277
+ 1076 0062 0127     		movs	r7, #1
+ 1077 0064 EFE7     		b	.L60
+ 1078              	.LVL82:
+ 1079              	.L79:
+ 252:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 1080              		.loc 1 252 7 view .LVU278
+ 1081 0066 4FF00108 		mov	r8, #1
+ 1082 006a F2E7     		b	.L61
+ 1083              	.LVL83:
+ 1084              	.L80:
+ 260:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 1085              		.loc 1 260 7 view .LVU279
+ 1086 006c 4FF00109 		mov	r9, #1
+ 1087 0070 F5E7     		b	.L62
+ 1088              	.LVL84:
+ 1089              	.L64:
+ 268:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.R = strip->pixels[i].R;
+ 270:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 271:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
+ 272:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(rand() % random == 0)
+ 274:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
+ 275:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isR)
+ 276:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 277:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.R = 255;
+ 278:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 279:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			
+ 280:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isG)
+ 281:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 282:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.G = 255;
+ 283:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 284:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 285:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			if(isB)
+ 286:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 287:Core/Src/NOS_WS2812B_Strip_Effects.c **** 				temp.B = 255;
+ 288:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
  289:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1119              		.loc 1 289 4 is_stmt 1 view .LVU318
- 289:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
- 1120              		.loc 1 289 11 is_stmt 0 view .LVU319
- 1121 0136 0023     		movs	r3, #0
- 1122 0138 8DF80630 		strb	r3, [sp, #6]
- 1123 013c C1E7     		b	.L64
- 1124              	.L74:
- 293:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
- 294:Core/Src/NOS_WS2812B_Strip_Effects.c ****     effect->timer = 0;
- 1125              		.loc 1 294 5 is_stmt 1 view .LVU320
- 1126              		.loc 1 294 19 is_stmt 0 view .LVU321
- 1127 013e 0023     		movs	r3, #0
- 1128 0140 3383     		strh	r3, [r6, #24]	@ movhi
- 1129              	.LVL84:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 29
+ 290:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 291:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isR)
+ 1090              		.loc 1 291 3 is_stmt 1 view .LVU280
+ 1091              		.loc 1 291 5 is_stmt 0 view .LVU281
+ 1092 0072 57B1     		cbz	r7, .L67
+ 292:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
+ 293:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.R > fadeOutFactor)
+ 1093              		.loc 1 293 3 is_stmt 1 view .LVU282
+ 1094              		.loc 1 293 10 is_stmt 0 view .LVU283
+ 1095 0074 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 1096              		.loc 1 293 5 view .LVU284
+ 1097 0078 282B     		cmp	r3, #40
+ 1098 007a 54D9     		bls	.L68
+ 294:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.R -= temp.R/fadeOutFactor;
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 28
 
 
- 1130              	.L52:
- 295:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
- 296:Core/Src/NOS_WS2812B_Strip_Effects.c **** effect->timer++;
- 1131              		.loc 1 296 1 is_stmt 1 view .LVU322
- 1132              		.loc 1 296 7 is_stmt 0 view .LVU323
- 1133 0142 338B     		ldrh	r3, [r6, #24]
- 1134              		.loc 1 296 14 view .LVU324
- 1135 0144 0133     		adds	r3, r3, #1
- 1136 0146 3383     		strh	r3, [r6, #24]	@ movhi
- 297:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
- 1137              		.loc 1 297 1 view .LVU325
- 1138 0148 03B0     		add	sp, sp, #12
- 1139              		.cfi_def_cfa_offset 28
- 1140              		@ sp needed
- 1141 014a BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 1142              	.LVL85:
- 1143              	.L76:
- 1144              		.loc 1 297 1 view .LVU326
- 1145 014e 00BF     		.align	2
- 1146              	.L75:
- 1147 0150 CDCCCCCC 		.word	-858993459
- 1148 0154 1F85EB51 		.word	1374389535
- 1149              		.cfi_endproc
- 1150              	.LFE72:
- 1152              		.section	.text.NOS_WS2812B_Strip_Effects_Handler,"ax",%progbits
- 1153              		.align	1
- 1154              		.global	NOS_WS2812B_Strip_Effects_Handler
- 1155              		.syntax unified
- 1156              		.thumb
- 1157              		.thumb_func
- 1159              	NOS_WS2812B_Strip_Effects_Handler:
- 1160              	.LVL86:
- 1161              	.LFB66:
+ 1099              		.loc 1 294 4 is_stmt 1 view .LVU285
+ 1100              		.loc 1 294 20 is_stmt 0 view .LVU286
+ 1101 007c 344A     		ldr	r2, .L82
+ 1102 007e A2FB0312 		umull	r1, r2, r2, r3
+ 1103              		.loc 1 294 11 view .LVU287
+ 1104 0082 A3EB5213 		sub	r3, r3, r2, lsr #5
+ 1105 0086 8DF80430 		strb	r3, [sp, #4]
+ 1106              	.L67:
+ 295:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
+ 296:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.R = 0;
+ 297:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 298:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 299:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isG)
+ 1107              		.loc 1 299 3 is_stmt 1 view .LVU288
+ 1108              		.loc 1 299 5 is_stmt 0 view .LVU289
+ 1109 008a B8F1000F 		cmp	r8, #0
+ 1110 008e 0AD0     		beq	.L69
+ 300:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
+ 301:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.G > fadeOutFactor)
+ 1111              		.loc 1 301 3 is_stmt 1 view .LVU290
+ 1112              		.loc 1 301 10 is_stmt 0 view .LVU291
+ 1113 0090 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 1114              		.loc 1 301 5 view .LVU292
+ 1115 0094 282B     		cmp	r3, #40
+ 1116 0096 4AD9     		bls	.L70
+ 302:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.G -= temp.G/fadeOutFactor;
+ 1117              		.loc 1 302 4 is_stmt 1 view .LVU293
+ 1118              		.loc 1 302 20 is_stmt 0 view .LVU294
+ 1119 0098 2D4A     		ldr	r2, .L82
+ 1120 009a A2FB0312 		umull	r1, r2, r2, r3
+ 1121              		.loc 1 302 11 view .LVU295
+ 1122 009e A3EB5213 		sub	r3, r3, r2, lsr #5
+ 1123 00a2 8DF80530 		strb	r3, [sp, #5]
+ 1124              	.L69:
+ 303:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
+ 304:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.G = 0;
+ 305:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 306:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 307:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(isB)
+ 1125              		.loc 1 307 3 is_stmt 1 view .LVU296
+ 1126              		.loc 1 307 5 is_stmt 0 view .LVU297
+ 1127 00a6 B9F1000F 		cmp	r9, #0
+ 1128 00aa 0AD0     		beq	.L71
+ 308:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{
+ 309:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		if(temp.B > fadeOutFactor)
+ 1129              		.loc 1 309 3 is_stmt 1 view .LVU298
+ 1130              		.loc 1 309 10 is_stmt 0 view .LVU299
+ 1131 00ac 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 1132              		.loc 1 309 5 view .LVU300
+ 1133 00b0 282B     		cmp	r3, #40
+ 1134 00b2 40D9     		bls	.L72
+ 310:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.B -= temp.B/fadeOutFactor;
+ 1135              		.loc 1 310 4 is_stmt 1 view .LVU301
+ 1136              		.loc 1 310 20 is_stmt 0 view .LVU302
+ 1137 00b4 264A     		ldr	r2, .L82
+ 1138 00b6 A2FB0312 		umull	r1, r2, r2, r3
+ 1139              		.loc 1 310 11 view .LVU303
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 29
+
+
+ 1140 00ba A3EB5213 		sub	r3, r3, r2, lsr #5
+ 1141 00be 8DF80630 		strb	r3, [sp, #6]
+ 1142              	.L71:
+ 311:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		else
+ 312:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			temp.B = 0;
+ 313:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 314:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 315:Core/Src/NOS_WS2812B_Strip_Effects.c ****         NOS_WS2812B_Strip_SetPixelByPixelColor(strip,i,temp);
+ 1143              		.loc 1 315 9 is_stmt 1 discriminator 2 view .LVU304
+ 1144 00c2 019A     		ldr	r2, [sp, #4]
+ 1145 00c4 2146     		mov	r1, r4
+ 1146 00c6 2846     		mov	r0, r5
+ 1147 00c8 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 1148              	.LVL85:
+ 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 1149              		.loc 1 267 38 discriminator 2 view .LVU305
+ 1150 00cc 0134     		adds	r4, r4, #1
+ 1151              	.LVL86:
+ 1152              	.L63:
+ 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 1153              		.loc 1 267 16 discriminator 1 view .LVU306
+ 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 1154              		.loc 1 267 23 is_stmt 0 discriminator 1 view .LVU307
+ 1155 00ce AB68     		ldr	r3, [r5, #8]
+ 267:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	{
+ 1156              		.loc 1 267 16 discriminator 1 view .LVU308
+ 1157 00d0 A342     		cmp	r3, r4
+ 1158 00d2 34D9     		bls	.L81
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 1159              		.loc 1 269 9 is_stmt 1 view .LVU309
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 1160              		.loc 1 269 23 is_stmt 0 view .LVU310
+ 1161 00d4 6968     		ldr	r1, [r5, #4]
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 1162              		.loc 1 269 31 view .LVU311
+ 1163 00d6 04EB4402 		add	r2, r4, r4, lsl #1
+ 1164 00da 8B18     		adds	r3, r1, r2
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 1165              		.loc 1 269 34 view .LVU312
+ 1166 00dc 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
+ 269:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.G = strip->pixels[i].G;
+ 1167              		.loc 1 269 16 view .LVU313
+ 1168 00de 8DF80420 		strb	r2, [sp, #4]
+ 270:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
+ 1169              		.loc 1 270 9 is_stmt 1 view .LVU314
+ 270:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
+ 1170              		.loc 1 270 34 is_stmt 0 view .LVU315
+ 1171 00e2 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 270:Core/Src/NOS_WS2812B_Strip_Effects.c ****         temp.B = strip->pixels[i].B;
+ 1172              		.loc 1 270 16 view .LVU316
+ 1173 00e4 8DF80520 		strb	r2, [sp, #5]
+ 271:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 1174              		.loc 1 271 9 is_stmt 1 view .LVU317
+ 271:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ 1175              		.loc 1 271 34 is_stmt 0 view .LVU318
+ 1176 00e8 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 271:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 30
+
+
+ 1177              		.loc 1 271 16 view .LVU319
+ 1178 00ea 8DF80630 		strb	r3, [sp, #6]
+ 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
+ 1179              		.loc 1 273 3 is_stmt 1 view .LVU320
+ 1180              	.LBB3:
+ 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
+ 1181              		.loc 1 273 6 is_stmt 0 view .LVU321
+ 1182 00ee FFF7FEFF 		bl	rand
+ 1183              	.LVL87:
+ 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
+ 1184              		.loc 1 273 13 view .LVU322
+ 1185 00f2 184B     		ldr	r3, .L82+4
+ 1186 00f4 A3FB0023 		umull	r2, r3, r3, r0
+ 1187 00f8 1B09     		lsrs	r3, r3, #4
+ 1188 00fa 3222     		movs	r2, #50
+ 1189 00fc 02FB1303 		mls	r3, r2, r3, r0
+ 273:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		{	
+ 1190              		.loc 1 273 5 view .LVU323
+ 1191 0100 002B     		cmp	r3, #0
+ 1192 0102 B6D1     		bne	.L64
+ 275:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1193              		.loc 1 275 4 is_stmt 1 view .LVU324
+ 275:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1194              		.loc 1 275 6 is_stmt 0 view .LVU325
+ 1195 0104 17B1     		cbz	r7, .L65
+ 277:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1196              		.loc 1 277 5 is_stmt 1 view .LVU326
+ 277:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1197              		.loc 1 277 12 is_stmt 0 view .LVU327
+ 1198 0106 FF23     		movs	r3, #255
+ 1199 0108 8DF80430 		strb	r3, [sp, #4]
+ 1200              	.L65:
+ 280:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1201              		.loc 1 280 4 is_stmt 1 view .LVU328
+ 280:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1202              		.loc 1 280 6 is_stmt 0 view .LVU329
+ 1203 010c B8F1000F 		cmp	r8, #0
+ 1204 0110 02D0     		beq	.L66
+ 282:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1205              		.loc 1 282 5 is_stmt 1 view .LVU330
+ 282:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1206              		.loc 1 282 12 is_stmt 0 view .LVU331
+ 1207 0112 FF23     		movs	r3, #255
+ 1208 0114 8DF80530 		strb	r3, [sp, #5]
+ 1209              	.L66:
+ 285:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1210              		.loc 1 285 4 is_stmt 1 view .LVU332
+ 285:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			{
+ 1211              		.loc 1 285 6 is_stmt 0 view .LVU333
+ 1212 0118 B9F1000F 		cmp	r9, #0
+ 1213 011c A9D0     		beq	.L64
+ 287:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1214              		.loc 1 287 5 is_stmt 1 view .LVU334
+ 287:Core/Src/NOS_WS2812B_Strip_Effects.c **** 			}
+ 1215              		.loc 1 287 12 is_stmt 0 view .LVU335
+ 1216 011e FF23     		movs	r3, #255
+ 1217 0120 8DF80630 		strb	r3, [sp, #6]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 31
+
+
+ 1218 0124 A5E7     		b	.L64
+ 1219              	.L68:
+ 1220              	.LBE3:
+ 296:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1221              		.loc 1 296 4 is_stmt 1 view .LVU336
+ 296:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1222              		.loc 1 296 11 is_stmt 0 view .LVU337
+ 1223 0126 0023     		movs	r3, #0
+ 1224 0128 8DF80430 		strb	r3, [sp, #4]
+ 1225 012c ADE7     		b	.L67
+ 1226              	.L70:
+ 304:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1227              		.loc 1 304 4 is_stmt 1 view .LVU338
+ 304:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1228              		.loc 1 304 11 is_stmt 0 view .LVU339
+ 1229 012e 0023     		movs	r3, #0
+ 1230 0130 8DF80530 		strb	r3, [sp, #5]
+ 1231 0134 B7E7     		b	.L69
+ 1232              	.L72:
+ 312:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1233              		.loc 1 312 4 is_stmt 1 view .LVU340
+ 312:Core/Src/NOS_WS2812B_Strip_Effects.c **** 		}
+ 1234              		.loc 1 312 11 is_stmt 0 view .LVU341
+ 1235 0136 0023     		movs	r3, #0
+ 1236 0138 8DF80630 		strb	r3, [sp, #6]
+ 1237 013c C1E7     		b	.L71
+ 1238              	.L81:
+ 316:Core/Src/NOS_WS2812B_Strip_Effects.c **** 	}
+ 317:Core/Src/NOS_WS2812B_Strip_Effects.c ****     effect->timer = 0;
+ 1239              		.loc 1 317 5 is_stmt 1 view .LVU342
+ 1240              		.loc 1 317 19 is_stmt 0 view .LVU343
+ 1241 013e 0023     		movs	r3, #0
+ 1242 0140 3383     		strh	r3, [r6, #24]	@ movhi
+ 1243              	.LVL88:
+ 1244              	.L59:
+ 318:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 319:Core/Src/NOS_WS2812B_Strip_Effects.c **** effect->timer++;
+ 1245              		.loc 1 319 1 is_stmt 1 view .LVU344
+ 1246              		.loc 1 319 7 is_stmt 0 view .LVU345
+ 1247 0142 338B     		ldrh	r3, [r6, #24]
+ 1248              		.loc 1 319 14 view .LVU346
+ 1249 0144 0133     		adds	r3, r3, #1
+ 1250 0146 3383     		strh	r3, [r6, #24]	@ movhi
+ 320:Core/Src/NOS_WS2812B_Strip_Effects.c **** }
+ 1251              		.loc 1 320 1 view .LVU347
+ 1252 0148 03B0     		add	sp, sp, #12
+ 1253              		.cfi_def_cfa_offset 28
+ 1254              		@ sp needed
+ 1255 014a BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 1256              	.LVL89:
+ 1257              	.L83:
+ 1258              		.loc 1 320 1 view .LVU348
+ 1259 014e 00BF     		.align	2
+ 1260              	.L82:
+ 1261 0150 CDCCCCCC 		.word	-858993459
+ 1262 0154 1F85EB51 		.word	1374389535
+ 1263              		.cfi_endproc
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 32
+
+
+ 1264              	.LFE73:
+ 1266              		.section	.text.NOS_WS2812B_Strip_Effects_Handler,"ax",%progbits
+ 1267              		.align	1
+ 1268              		.global	NOS_WS2812B_Strip_Effects_Handler
+ 1269              		.syntax unified
+ 1270              		.thumb
+ 1271              		.thumb_func
+ 1273              	NOS_WS2812B_Strip_Effects_Handler:
+ 1274              	.LVL90:
+ 1275              	.LFB66:
   26:Core/Src/NOS_WS2812B_Strip_Effects.c ****     for(int i = 0; i < strip->effectsCounter; i++)
- 1162              		.loc 1 26 1 is_stmt 1 view -0
- 1163              		.cfi_startproc
- 1164              		@ args = 0, pretend = 0, frame = 0
- 1165              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1276              		.loc 1 26 1 is_stmt 1 view -0
+ 1277              		.cfi_startproc
+ 1278              		@ args = 0, pretend = 0, frame = 0
+ 1279              		@ frame_needed = 0, uses_anonymous_args = 0
   26:Core/Src/NOS_WS2812B_Strip_Effects.c ****     for(int i = 0; i < strip->effectsCounter; i++)
- 1166              		.loc 1 26 1 is_stmt 0 view .LVU328
- 1167 0000 38B5     		push	{r3, r4, r5, lr}
- 1168              		.cfi_def_cfa_offset 16
- 1169              		.cfi_offset 3, -16
- 1170              		.cfi_offset 4, -12
- 1171              		.cfi_offset 5, -8
- 1172              		.cfi_offset 14, -4
- 1173 0002 0546     		mov	r5, r0
+ 1280              		.loc 1 26 1 is_stmt 0 view .LVU350
+ 1281 0000 38B5     		push	{r3, r4, r5, lr}
+ 1282              		.cfi_def_cfa_offset 16
+ 1283              		.cfi_offset 3, -16
+ 1284              		.cfi_offset 4, -12
+ 1285              		.cfi_offset 5, -8
+ 1286              		.cfi_offset 14, -4
+ 1287 0002 0546     		mov	r5, r0
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1174              		.loc 1 27 5 is_stmt 1 view .LVU329
- 1175              	.LBB4:
+ 1288              		.loc 1 27 5 is_stmt 1 view .LVU351
+ 1289              	.LBB4:
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1176              		.loc 1 27 9 view .LVU330
- 1177              	.LVL87:
+ 1290              		.loc 1 27 9 view .LVU352
+ 1291              	.LVL91:
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1178              		.loc 1 27 13 is_stmt 0 view .LVU331
- 1179 0004 0024     		movs	r4, #0
+ 1292              		.loc 1 27 13 is_stmt 0 view .LVU353
+ 1293 0004 0024     		movs	r4, #0
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 30
-
-
- 1180              		.loc 1 27 5 view .LVU332
- 1181 0006 08E0     		b	.L78
- 1182              	.LVL88:
- 1183              	.L79:
+ 1294              		.loc 1 27 5 view .LVU354
+ 1295 0006 08E0     		b	.L85
+ 1296              	.LVL92:
+ 1297              	.L86:
   35:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 1184              		.loc 1 35 17 is_stmt 1 view .LVU333
- 1185 0008 04EBC401 		add	r1, r4, r4, lsl #3
- 1186 000c 8900     		lsls	r1, r1, #2
- 1187 000e 1031     		adds	r1, r1, #16
- 1188 0010 2944     		add	r1, r1, r5
- 1189 0012 2846     		mov	r0, r5
- 1190 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Handler
- 1191              	.LVL89:
+ 1298              		.loc 1 35 17 is_stmt 1 view .LVU355
+ 1299 0008 04EBC401 		add	r1, r4, r4, lsl #3
+ 1300 000c 8900     		lsls	r1, r1, #2
+ 1301 000e 1031     		adds	r1, r1, #16
+ 1302 0010 2944     		add	r1, r1, r5
+ 1303 0012 2846     		mov	r0, r5
+ 1304 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Rainbow_Handler
+ 1305              	.LVL93:
   36:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x22:
- 1192              		.loc 1 36 17 view .LVU334
- 1193              	.L81:
+ 1306              		.loc 1 36 17 view .LVU356
+ 1307              	.L88:
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1194              		.loc 1 27 48 discriminator 2 view .LVU335
- 1195 0018 0134     		adds	r4, r4, #1
- 1196              	.LVL90:
- 1197              	.L78:
+ 1308              		.loc 1 27 48 discriminator 2 view .LVU357
+ 1309 0018 0134     		adds	r4, r4, #1
+ 1310              	.LVL94:
+ 1311              	.L85:
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1198              		.loc 1 27 22 discriminator 1 view .LVU336
+ 1312              		.loc 1 27 22 discriminator 1 view .LVU358
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 33
+
+
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1199              		.loc 1 27 29 is_stmt 0 discriminator 1 view .LVU337
- 1200 001a 95F87831 		ldrb	r3, [r5, #376]	@ zero_extendqisi2
+ 1313              		.loc 1 27 29 is_stmt 0 discriminator 1 view .LVU359
+ 1314 001a 95F87831 		ldrb	r3, [r5, #376]	@ zero_extendqisi2
   27:Core/Src/NOS_WS2812B_Strip_Effects.c ****     {
- 1201              		.loc 1 27 22 discriminator 1 view .LVU338
- 1202 001e A342     		cmp	r3, r4
- 1203 0020 1DDD     		ble	.L84
+ 1315              		.loc 1 27 22 discriminator 1 view .LVU360
+ 1316 001e A342     		cmp	r3, r4
+ 1317 0020 1DDD     		ble	.L91
   29:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 1204              		.loc 1 29 9 is_stmt 1 view .LVU339
+ 1318              		.loc 1 29 9 is_stmt 1 view .LVU361
   29:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 1205              		.loc 1 29 33 is_stmt 0 view .LVU340
- 1206 0022 04EBC403 		add	r3, r4, r4, lsl #3
- 1207 0026 05EB8303 		add	r3, r5, r3, lsl #2
- 1208 002a 93F83230 		ldrb	r3, [r3, #50]	@ zero_extendqisi2
+ 1319              		.loc 1 29 33 is_stmt 0 view .LVU362
+ 1320 0022 04EBC403 		add	r3, r4, r4, lsl #3
+ 1321 0026 05EB8303 		add	r3, r5, r3, lsl #2
+ 1322 002a 93F83230 		ldrb	r3, [r3, #50]	@ zero_extendqisi2
   29:Core/Src/NOS_WS2812B_Strip_Effects.c ****         {
- 1209              		.loc 1 29 9 view .LVU341
- 1210 002e 212B     		cmp	r3, #33
- 1211 0030 EAD0     		beq	.L79
- 1212 0032 222B     		cmp	r3, #34
- 1213 0034 0AD0     		beq	.L80
- 1214 0036 202B     		cmp	r3, #32
- 1215 0038 EED1     		bne	.L81
+ 1323              		.loc 1 29 9 view .LVU363
+ 1324 002e 212B     		cmp	r3, #33
+ 1325 0030 EAD0     		beq	.L86
+ 1326 0032 222B     		cmp	r3, #34
+ 1327 0034 0AD0     		beq	.L87
+ 1328 0036 202B     		cmp	r3, #32
+ 1329 0038 EED1     		bne	.L88
   32:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 1216              		.loc 1 32 17 is_stmt 1 view .LVU342
- 1217 003a 04EBC401 		add	r1, r4, r4, lsl #3
- 1218 003e 8900     		lsls	r1, r1, #2
- 1219 0040 1031     		adds	r1, r1, #16
- 1220 0042 2944     		add	r1, r1, r5
- 1221 0044 2846     		mov	r0, r5
- 1222 0046 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Handler
- 1223              	.LVL91:
+ 1330              		.loc 1 32 17 is_stmt 1 view .LVU364
+ 1331 003a 04EBC401 		add	r1, r4, r4, lsl #3
+ 1332 003e 8900     		lsls	r1, r1, #2
+ 1333 0040 1031     		adds	r1, r1, #16
+ 1334 0042 2944     		add	r1, r1, r5
+ 1335 0044 2846     		mov	r0, r5
+ 1336 0046 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Breathe_Handler
+ 1337              	.LVL95:
   33:Core/Src/NOS_WS2812B_Strip_Effects.c ****             case 0x21:
- 1224              		.loc 1 33 17 view .LVU343
- 1225 004a E5E7     		b	.L81
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 31
-
-
- 1226              	.L80:
+ 1338              		.loc 1 33 17 view .LVU365
+ 1339 004a E5E7     		b	.L88
+ 1340              	.L87:
   38:Core/Src/NOS_WS2812B_Strip_Effects.c ****                 break;
- 1227              		.loc 1 38 17 view .LVU344
- 1228 004c 04EBC401 		add	r1, r4, r4, lsl #3
- 1229 0050 8900     		lsls	r1, r1, #2
- 1230 0052 1031     		adds	r1, r1, #16
- 1231 0054 2944     		add	r1, r1, r5
- 1232 0056 2846     		mov	r0, r5
- 1233 0058 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Dots_Handler
- 1234              	.LVL92:
+ 1341              		.loc 1 38 17 view .LVU366
+ 1342 004c 04EBC401 		add	r1, r4, r4, lsl #3
+ 1343 0050 8900     		lsls	r1, r1, #2
+ 1344 0052 1031     		adds	r1, r1, #16
+ 1345 0054 2944     		add	r1, r1, r5
+ 1346 0056 2846     		mov	r0, r5
+ 1347 0058 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Dots_Handler
+ 1348              	.LVL96:
   39:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 1235              		.loc 1 39 17 view .LVU345
- 1236 005c DCE7     		b	.L81
- 1237              	.L84:
+ 1349              		.loc 1 39 17 view .LVU367
+ 1350 005c DCE7     		b	.L88
+ 1351              	.L91:
   39:Core/Src/NOS_WS2812B_Strip_Effects.c ****         }
- 1238              		.loc 1 39 17 is_stmt 0 view .LVU346
- 1239              	.LBE4:
+ 1352              		.loc 1 39 17 is_stmt 0 view .LVU368
+ 1353              	.LBE4:
   42:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 1240              		.loc 1 42 1 view .LVU347
- 1241 005e 38BD     		pop	{r3, r4, r5, pc}
+ 1354              		.loc 1 42 1 view .LVU369
+ 1355 005e 38BD     		pop	{r3, r4, r5, pc}
   42:Core/Src/NOS_WS2812B_Strip_Effects.c **** 
- 1242              		.loc 1 42 1 view .LVU348
- 1243              		.cfi_endproc
- 1244              	.LFE66:
- 1246              		.text
- 1247              	.Letext0:
- 1248              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1249              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1250              		.file 4 "Core/Inc/NOS_Typedefs.h"
- 1251              		.file 5 "Core/Inc/NOS_BaseColors.h"
- 1252              		.file 6 "Core/Inc/NOS_WS2812B_Strip.h"
- 1253              		.file 7 "Core/Inc/NOS_Math.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccirGt77.s 			page 32
+ 1356              		.loc 1 42 1 view .LVU370
+ 1357              		.cfi_endproc
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 34
+
+
+ 1358              	.LFE66:
+ 1360              		.text
+ 1361              	.Letext0:
+ 1362              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1363              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1364              		.file 4 "Core/Inc/NOS_Typedefs.h"
+ 1365              		.file 5 "Core/Inc/NOS_BaseColors.h"
+ 1366              		.file 6 "Core/Inc/NOS_WS2812B_Strip.h"
+ 1367              		.file 7 "Core/Inc/NOS_Math.h"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s 			page 35
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_WS2812B_Strip_Effects.c
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:19     .text.NOS_WS2812B_Strip_Effect_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:25     .text.NOS_WS2812B_Strip_Effect_Init:00000000 NOS_WS2812B_Strip_Effect_Init
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:92     .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:98     .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 NOS_WS2812B_Strip_Effects_AddEffect
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:217    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:223    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 NOS_WS2812B_Strip_Effects_UpdateEffect
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:337    .text.NOS_WS2812B_Strip_Effect_Copy:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:343    .text.NOS_WS2812B_Strip_Effect_Copy:00000000 NOS_WS2812B_Strip_Effect_Copy
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:403    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:409    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 NOS_WS2812B_Strip_Effect_Breathe_Handler
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:490    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:496    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 NOS_WS2812B_Strip_Effect_Rainbow_Handler
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:594    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000066 $d
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:606    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000072 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:854    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:0000020c $d
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:860    .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:866    .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000000 NOS_WS2812B_Strip_Effect_Dots_Handler
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:1147   .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000150 $d
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:1153   .text.NOS_WS2812B_Strip_Effects_Handler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccirGt77.s:1159   .text.NOS_WS2812B_Strip_Effects_Handler:00000000 NOS_WS2812B_Strip_Effects_Handler
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:19     .text.NOS_WS2812B_Strip_Effects_Check_Conflicts:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:25     .text.NOS_WS2812B_Strip_Effects_Check_Conflicts:00000000 NOS_WS2812B_Strip_Effects_Check_Conflicts
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:111    .text.NOS_WS2812B_Strip_Effect_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:117    .text.NOS_WS2812B_Strip_Effect_Init:00000000 NOS_WS2812B_Strip_Effect_Init
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:184    .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:190    .text.NOS_WS2812B_Strip_Effects_AddEffect:00000000 NOS_WS2812B_Strip_Effects_AddEffect
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:315    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:321    .text.NOS_WS2812B_Strip_Effects_UpdateEffect:00000000 NOS_WS2812B_Strip_Effects_UpdateEffect
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:451    .text.NOS_WS2812B_Strip_Effect_Copy:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:457    .text.NOS_WS2812B_Strip_Effect_Copy:00000000 NOS_WS2812B_Strip_Effect_Copy
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:517    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:523    .text.NOS_WS2812B_Strip_Effect_Breathe_Handler:00000000 NOS_WS2812B_Strip_Effect_Breathe_Handler
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:604    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:610    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000000 NOS_WS2812B_Strip_Effect_Rainbow_Handler
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:708    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000066 $d
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:720    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:00000072 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:968    .text.NOS_WS2812B_Strip_Effect_Rainbow_Handler:0000020c $d
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:974    .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:980    .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000000 NOS_WS2812B_Strip_Effect_Dots_Handler
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:1261   .text.NOS_WS2812B_Strip_Effect_Dots_Handler:00000150 $d
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:1267   .text.NOS_WS2812B_Strip_Effects_Handler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccy3DT8g.s:1273   .text.NOS_WS2812B_Strip_Effects_Handler:00000000 NOS_WS2812B_Strip_Effects_Handler
 
 UNDEFINED SYMBOLS
+NOS_WS2812B_Strip_ColorFill
 NOS_Math_SinValue_Init
 NOS_PixelColor_SetColor
 NOS_Math_SinValue_Handler
@@ -1867,6 +2027,5 @@ NOS_WS2812B_Strip_SetBright
 NOS_WS2812B_Strip_Update
 NOS_Math_GetSinValue
 NOS_GetBaseColor
-NOS_WS2812B_Strip_ColorFill
 NOS_WS2812B_Strip_SetPixelByPixelColor
 rand
