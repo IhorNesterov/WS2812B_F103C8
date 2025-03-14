@@ -18,7 +18,7 @@ typedef union Float_t //float data wrap
     float data;
 } NOS_Float;
 
-typedef union Long_t
+typedef union Long_t //ulong data wrap
 {
   uint8_t bytes[4];
   uint32_t data;
@@ -29,13 +29,24 @@ typedef union Long_t
 /* Structures begin */
 
 /*WS2812B Matrix*/
+
+/**
+  * @brief  Point structure.
+  * @param x uint16_t x point
+  * @param y uint16_t y point 
+  */
 typedef struct Point_t
 {
   uint16_t x;
   uint16_t y;
 }Point;
 
-
+/**
+  * @brief  Color structure.
+  * @param R uint8_t Red value(0-255)
+  * @param G uint8_t Green value(0-255)
+  * @param B uint8_t Blue value(0-255)
+  */
 typedef struct PixelColor_t
 {
    uint8_t R;
@@ -148,10 +159,15 @@ typedef struct Effect_Struct_t
   SinValue value;
   NOS_Short speed;
   NOS_Short step;
-  uint16_t timer;
 
+  uint16_t timer;
   uint16_t minValue;
   uint16_t maxValue;
+
+  uint16_t param1;
+  uint16_t param2;
+  uint16_t param3;
+  uint16_t param4;
 
   PixelColor color;
 
@@ -186,7 +202,7 @@ typedef struct NOS_WS2812B_STRIP_t
     int pixelCount;
     int bright;
 
-    Effect_Struct effects[10];
+    Effect_Struct effects[5];
     uint8_t effectsCounter;
 }WS2812B_Strip;
 
@@ -198,7 +214,7 @@ typedef struct NOS_Flash_Chunk_t
   size_t size;
 }NOS_Flash_Chunk;
 
-#define FLASH_CHUNKS_MAX_COUNTER 32
+#define FLASH_CHUNKS_MAX_COUNTER 8
 
 typedef struct NOS_Flash_Memory_Struct_t
 {
@@ -207,6 +223,16 @@ typedef struct NOS_Flash_Memory_Struct_t
   uint32_t chunksCounter;
   size_t totalSize;
 }NOS_Flash_Memory_Struct;
+
+typedef struct NOS_WS2812B_Strips_Array_t
+{
+  WS2812B_Strip* stripA;
+  WS2812B_Strip* stripB;
+  WS2812B_Strip* stripC;
+  WS2812B_Strip* stripD;
+
+
+}NOS_WS2812B_Strips_Array;
 
 /* STM32 Core structures begin*/
 

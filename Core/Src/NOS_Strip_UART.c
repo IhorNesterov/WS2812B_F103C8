@@ -7,10 +7,25 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
     NOS_Short tempShort;
     Effect_Struct tempEffect = {0};
     PixelColor color = NOS_GetBaseColor(GREEN);
-    NOS_WS2812B_Strip_Effect_Init(&tempEffect,&color,0,0,0,0,0,0);
+    NOS_WS2812B_Strip_Effect_Init(&tempEffect,&color,0,0,0,0,0,0,0,0,0,0);
 
     switch (message->command.data)
     {
+        case SET_STRIP_PIXEL_COUNT:
+
+        tempShort.bytes[1] = message->data[currPos++];
+        tempShort.bytes[0] = message->data[currPos++];
+
+
+        if(tempShort.data > 0 && tempShort.data <= 512)
+        {
+            NOS_WS2812B_Strip_Clear(strip);
+            strip->pixelCount = tempShort.data;
+        }
+        
+        return true;
+        break;
+
     case SET_BREATHE_EFFECT_COMMAND:
 
             if(message->data[currPos++] == EFFECT_BREATHE_ID)
@@ -47,7 +62,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             tempEffect.color.G = message->data[currPos++];
             tempEffect.color.B = message->data[currPos++];
 
-            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,tempEffect.effectId,tempEffect.enabled);
+            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,tempEffect.effectId,tempEffect.enabled);
             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
 
             return true;       
@@ -89,7 +104,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             tempEffect.color.G = message->data[currPos++];
             tempEffect.color.B = message->data[currPos++];
 
-            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,tempEffect.effectId,tempEffect.enabled);
+            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,tempEffect.effectId,tempEffect.enabled);
             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
             return true;
             break;
@@ -130,7 +145,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             tempEffect.color.G = message->data[currPos++];
             tempEffect.color.B = message->data[currPos++];
 
-            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,tempEffect.effectId,tempEffect.enabled);
+            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,tempEffect.effectId,tempEffect.enabled);
             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
 
             return true;       

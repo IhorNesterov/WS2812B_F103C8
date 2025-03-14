@@ -45,10 +45,10 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-extern uint8_t frameBufferA[3 * 128];
-extern uint8_t frameBufferB[3 * 128];
-extern uint8_t frameBufferC[3 * 128];
-extern uint8_t frameBufferD[3 * 128];
+extern uint8_t frameBufferA[3 * 512];
+extern uint8_t frameBufferB[3 * 512];
+extern uint8_t frameBufferC[3 * 512];
+extern uint8_t frameBufferD[3 * 512];
 
 NOS_TimeEvent screenUpdateEvent = {0};
 
@@ -57,18 +57,14 @@ WS2812B_Strip stripB = {0};
 WS2812B_Strip stripC = {0};
 WS2812B_Strip stripD = {0};
 
-PixelColor pixelsA[128];
-PixelColor pixelsB[128];
-PixelColor pixelsC[128];
-PixelColor pixelsD[128];
+PixelColor pixelsA[512];
+PixelColor pixelsB[512];
+PixelColor pixelsC[512];
+PixelColor pixelsD[512];
 
 NOS_UART_Struct UART2;
 
 int receiveTime = 0;
-
-SinValue bright = {0};
-
-NOS_Button button = {0};
 
 int uartPixelCount = 0;
 
@@ -78,22 +74,19 @@ int buttonDelay = 0;
 Effect_Struct breatheA = {0};
 Effect_Struct rainbowA = {0};
 Effect_Struct dotsA = {0};
+Effect_Struct walkingPixelA = {0};
 
 NOS_Short value;
 
 UART_Message lastMessage;
 
-NOS_Flash_Chunk breatheChunk = {0};
-NOS_Flash_Chunk rainbowChunk = {0};
+NOS_Flash_Chunk tempInitChunk = {0};
 
 NOS_Flash_Memory_Struct flashMemoryStruct = {0};
 
-uint8_t* checkData[16];
-
-NOS_RAM_Struct ramStruct = {0};
-
 PixelColor nullColor = {0,0,0};
-PixelColor white = {255,0,255};
+PixelColor white = {255,0,0};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -117,7 +110,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart) {
 bool tick = false;
 bool screenUpdate = false;
 /* USER CODE END 0 */
-
+//#define FLASH_REBUILD
 /**
   * @brief  The application entry point.
   * @retval int
@@ -151,6 +144,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_UART_Receive_IT(&huart2,UART2.rx_buff,1);
+
   HAL_UART_Transmit(&huart2,"HELLO",sizeof("HELLO"),1000);
   visInit();
 
@@ -161,30 +155,42 @@ int main(void)
 
   NOS_TimeEvent_Init(&screenUpdateEvent, 20);
 
-  NOS_Math_SinValue_Init(&bright,65,75,1);
-
   NOS_UART_ReceiveAbort(&UART2,&huart2);
 
   NOS_FlashMemory_Struct_Init(&flashMemoryStruct,FLASH_STORAGE_A);
-  NOS_Flash_Chunk_Init(&breatheChunk,&breatheA,sizeof(Effect_Struct));
-  NOS_Flash_Chunk_Init(&rainbowChunk,&rainbowA,sizeof(Effect_Struct));
 
-  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&breatheChunk);
-  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&rainbowChunk);
+  NOS_Flash_Chunk_Init(&tempInitChunk,&breatheA,sizeof(Effect_Struct));
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
+
+  NOS_Flash_Chunk_Init(&tempInitChunk,&rainbowA,sizeof(Effect_Struct));
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
+
+  NOS_Flash_Chunk_Init(&tempInitChunk,&dotsA,sizeof(Effect_Struct));
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
+
+  NOS_Flash_Chunk_Init(&tempInitChunk,&walkingPixelA,sizeof(Effect_Struct));
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
   
+  #ifndef FLASH_REBUILD
   if(NOS_FlashMemory_Struct_Validate(&flashMemoryStruct))
   {
     NOS_Flash_Memory_Struct_Load(&flashMemoryStruct);
   }
   else
   {
-    NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID,true);
-    NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,0,0,0,0,EFFECT_BREATHE_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,0,0,0,0,EFFECT_DOTS_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,1000,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,true);
   }
+  #endif
 
-  NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,EFFECT_BREATHE_ID,true);
-  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,EFFECT_RAINBOW_ID,true);
-  NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,EFFECT_DOTS_ID,true);
+  #ifdef FLASH_REBUILD
+  NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,0,0,0,0,EFFECT_BREATHE_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,0,0,0,0,EFFECT_DOTS_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,100,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,true);
+  #endif
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripB,breatheA);
@@ -196,12 +202,17 @@ int main(void)
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,rainbowA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripD,rainbowA);
 
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripA,dotsA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripB,dotsA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,dotsA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripD,dotsA);
+
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripC,walkingPixelA);
   
-  NOS_WS2812B_Strip_ColorFill(&stripA,NOS_GetBaseColor(RED));
-  NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
+  //NOS_WS2812B_Strip_ColorFill(&stripA,NOS_GetBaseColor(RED));
+  //NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
   //NOS_WS2812B_Strip_ColorFill(&stripC,NOS_GetBaseColor(RED));  
-  NOS_WS2812B_Strip_ColorFill(&stripD,NOS_GetBaseColor(RED));  
+  //NOS_WS2812B_Strip_ColorFill(&stripD,NOS_GetBaseColor(RED));  
 
   NOS_WS2812B_Strip_Update(&stripA);
   NOS_WS2812B_Strip_Update(&stripB);
@@ -209,6 +220,14 @@ int main(void)
   NOS_WS2812B_Strip_Update(&stripD);
 
   stripC.bright = 100;
+
+  stripA.effects[1].enabled = true;
+  stripB.effects[1].enabled = true;
+  stripC.effects[1].enabled = true;
+  stripA.effects[2].enabled = false;
+  stripB.effects[2].enabled = false;
+  stripC.effects[2].enabled = false;
+
   /* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -245,6 +264,8 @@ int main(void)
 
           NOS_WS2812B_Strip_Effect_Copy(&breatheA,&stripA.effects[0]);
           NOS_WS2812B_Strip_Effect_Copy(&rainbowA,&stripA.effects[1]);
+          NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripA.effects[2]);
+
           NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
 
         break;
@@ -253,13 +274,17 @@ int main(void)
         case 0x02:
 
           NOS_Strip_UART_ParseCommand(&stripA,&lastMessage);
-        
+          NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripA.effects[2]);
+          NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
+
         break;
 
         //stripB commands
         case 0x03:
 
           NOS_Strip_UART_ParseCommand(&stripB,&lastMessage);
+          NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripB.effects[2]);
+          NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
               
         break;
 
@@ -267,14 +292,18 @@ int main(void)
         case 0x04:
 
           NOS_Strip_UART_ParseCommand(&stripC,&lastMessage);
-      
+          NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripC.effects[2]);
+          NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
+
         break;
 
         //stripD commands
         case 0x05:
 
           NOS_Strip_UART_ParseCommand(&stripD,&lastMessage);
-            
+          NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripD.effects[2]);
+          NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
+
         break;
 
           default:
@@ -297,13 +326,14 @@ int main(void)
 
     if (NOS_TimeEvent_Check(&screenUpdateEvent))
     {
+
       NOS_WS2812B_Strip_Update(&stripA);
       NOS_WS2812B_Strip_Update(&stripB);
       NOS_WS2812B_Strip_Update(&stripC);
       NOS_WS2812B_Strip_Update(&stripD);
+
       visHandle();
       
-
       NOS_TimeEvent_FinishEvent(&screenUpdateEvent);
     }
     /* USER CODE END WHILE */

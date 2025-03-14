@@ -36,6 +36,7 @@ void NOS_WS2812B_Strip_Clear(WS2812B_Strip* strip)
     for(int i = 0; i < strip->pixelCount; i++)
     {
         NOS_WS2812B_Strip_SetPixel(strip,i,0,0,0);
+        NOS_WS2812B_Strip_CoreSetPixel(strip,i,0,0,0);
     }
 }
 

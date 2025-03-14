@@ -20,10 +20,10 @@
 
 extern WS2812_Struct ws2812b;
 // RGB Framebuffers
-uint8_t frameBufferA[3*128];
-uint8_t frameBufferB[3*128];
-uint8_t frameBufferC[3*128];
-uint8_t frameBufferD[3*128];
+uint8_t frameBufferA[3*512];
+uint8_t frameBufferB[3*512];
+uint8_t frameBufferC[3*512];
+uint8_t frameBufferD[3*512];
 
 // Helper defines
 #define newColor(r, g, b) (((uint32_t)(r) << 16) | ((uint32_t)(g) <<  8) | (b))

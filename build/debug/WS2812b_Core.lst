@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
   30:Core/Src/WS2812b_Core.c ****     2,  3,  3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  5,  5,  5,
   31:Core/Src/WS2812b_Core.c ****     5,  6,  6,  6,  6,  7,  7,  7,  7,  8,  8,  8,  9,  9,  9, 10,
   32:Core/Src/WS2812b_Core.c ****    10, 10, 11, 11, 11, 12, 12, 13, 13, 13, 14, 14, 15, 15, 16, 16,
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 2
 
 
   33:Core/Src/WS2812b_Core.c ****    17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 24, 24, 25,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
   87:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
   88:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.Prescaler         = 0;
   89:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 3
 
 
   90:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.CounterMode       = TIM_COUNTERMODE_UP;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  144:Core/Src/WS2812b_Core.c **** 
  145:Core/Src/WS2812b_Core.c **** 
  146:Core/Src/WS2812b_Core.c **** 	// TIM2 CC1 event
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 4
 
 
  147:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Direction = DMA_MEMORY_TO_PERIPH;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  201:Core/Src/WS2812b_Core.c **** void DMA1_Channel7_IRQHandler(void)
  202:Core/Src/WS2812b_Core.c **** {
  203:Core/Src/WS2812b_Core.c ****   // Check the interrupt and clear flag
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 5
 
 
  204:Core/Src/WS2812b_Core.c ****   HAL_DMA_IRQHandler(&dmaCC2);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  258:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_UPDATE);
  259:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC1);
  260:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC2);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 6
 
 
  261:Core/Src/WS2812b_Core.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  315:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaUpdate);
  316:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaCC1);
  317:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaCC2);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 7
 
 
  318:Core/Src/WS2812b_Core.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  372:Core/Src/WS2812b_Core.c **** 
  373:Core/Src/WS2812b_Core.c **** static void ws2812b_set_pixel(uint8_t row, uint16_t column, uint8_t red, uint8_t green, uint8_t blu
  374:Core/Src/WS2812b_Core.c **** {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 8
 
 
   27              		.loc 1 374 1 view -0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  386:Core/Src/WS2812b_Core.c **** 
  387:Core/Src/WS2812b_Core.c **** 
  388:Core/Src/WS2812b_Core.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 9
 
 
  389:Core/Src/WS2812b_Core.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  443:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+16+3)] |= (((((invBlue)<<3) & 0x80)>>7)<<row);
  444:Core/Src/WS2812b_Core.c **** 
  445:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+4)] |= (((((invGreen)<<4) & 0x80)>>7)<<row);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 10
 
 
  446:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+8+4)] |= (((((invRed)<<4) & 0x80)>>7)<<row);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  470:Core/Src/WS2812b_Core.c **** 
  471:Core/Src/WS2812b_Core.c **** 	*bitBand = (invGreen >> 5);
  100              		.loc 1 471 2 view .LVU30
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 11
 
 
  101              		.loc 1 471 23 is_stmt 0 view .LVU31
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  139              	.LVL20:
  488:Core/Src/WS2812b_Core.c **** 
  489:Core/Src/WS2812b_Core.c **** 	// RED
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 12
 
 
  490:Core/Src/WS2812b_Core.c **** 	*bitBand =  (invRed >> 7);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  178              		.loc 1 505 11 view .LVU75
  179 007a C3F84013 		str	r1, [r3, #832]
  506:Core/Src/WS2812b_Core.c **** 	bitBand+=16;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 13
 
 
  180              		.loc 1 506 2 is_stmt 1 view .LVU76
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  216              		.loc 1 524 22 is_stmt 0 view .LVU97
  217 009a 1109     		lsrs	r1, r2, #4
  218              		.loc 1 524 11 view .LVU98
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 14
 
 
  219 009c C3F8C014 		str	r1, [r3, #1216]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  550:Core/Src/WS2812b_Core.c **** #define WS212_ALL_CHANNELS_SAME_LENGTH  0
  551:Core/Src/WS2812b_Core.c **** 
  552:Core/Src/WS2812b_Core.c **** /*
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 15
 
 
  553:Core/Src/WS2812b_Core.c ****  * We support up to 16 LED channels (that is, up to 16 distinct strips of LEDs.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  607:Core/Src/WS2812b_Core.c ****                                                     \
  608:Core/Src/WS2812b_Core.c ****     "ubfx   r0, %[ch_val], #0, #1 \n"               \
  609:Core/Src/WS2812b_Core.c ****     "bfi    %[cur7], r0,   #" #gpio_num ", 1  \n"   \
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 16
 
 
  610:Core/Src/WS2812b_Core.c ****                                                     \
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  250              		.cfi_restore 6
  251              		.cfi_restore 5
  252              		.cfi_restore 4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 17
 
 
  253              		.cfi_def_cfa_offset 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  300 000e A61C     		adds	r6, r4, #2
  301 0010 8660     		str	r6, [r0, #8]
  213:Core/Src/WS2812b_Core.c **** 	uint32_t b = bItem->frameBufferPointer[bItem->frameBufferCounter++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 18
 
 
  302              		.loc 1 213 40 view .LVU126
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  344              	.LFE71:
  346              		.section	.text.DMA_TransferCompleteHandler,"ax",%progbits
  347              		.align	1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 19
 
 
  348              		.global	DMA_TransferCompleteHandler
@@ -1107,7 +1107,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  367              		.loc 1 307 2 is_stmt 1 view .LVU143
  307:Core/Src/WS2812b_Core.c **** 	{
  368              		.loc 1 307 4 is_stmt 0 view .LVU144
- 369 0008 B3F5807F 		cmp	r3, #256
+ 369 0008 B3F5806F 		cmp	r3, #1024
  370 000c 02D0     		beq	.L17
  300:Core/Src/WS2812b_Core.c **** 	#if defined(LED5_PORT)
  371              		.loc 1 300 1 view .LVU145
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  392 001c 1168     		ldr	r1, [r2]
  393 001e CB68     		ldr	r3, [r1, #12]
  394 0020 43F00103 		orr	r3, r3, #1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 20
 
 
  395 0024 CB60     		str	r3, [r1, #12]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  440              	.LBB3:
  332:Core/Src/WS2812b_Core.c **** 		}
  441              		.loc 1 332 4 is_stmt 1 discriminator 3 view .LVU159
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 21
 
 
  442 006e 0121     		movs	r1, #1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  491              		.loc 1 227 27 is_stmt 0 view .LVU166
  492 0002 0025     		movs	r5, #0
  493 0004 284B     		ldr	r3, .L24
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 22
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 22
 
 
  494 0006 83F84050 		strb	r5, [r3, #64]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  245:Core/Src/WS2812b_Core.c **** 	dmaCC1.Instance->CNDTR = BUFFER_SIZE;
  535              		.loc 1 245 11 is_stmt 0 view .LVU180
  536 003c 1C4B     		ldr	r3, .L24+8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 23
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 23
 
 
  537 003e 1B68     		ldr	r3, [r3]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  578 007e DA60     		str	r2, [r3, #12]
  259:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC2);
  579              		.loc 1 259 2 view .LVU194
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 24
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 24
 
 
  580 0080 DA68     		ldr	r2, [r3, #12]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  628              		.loc 1 273 1 is_stmt 0 view .LVU202
  629 0000 10B5     		push	{r4, lr}
  630              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 25
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 25
 
 
  631              		.cfi_offset 4, -8
@@ -1449,1289 +1449,1290 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 1
  635              		.loc 1 279 2 is_stmt 1 view .LVU203
  279:Core/Src/WS2812b_Core.c **** 	{
  636              		.loc 1 279 12 is_stmt 0 view .LVU204
- 637 0004 0C4B     		ldr	r3, .L35
- 638 0006 9B6C     		ldr	r3, [r3, #72]
+ 637 0004 0D4B     		ldr	r3, .L35
+ 638 0006 9A6C     		ldr	r2, [r3, #72]
  279:Core/Src/WS2812b_Core.c **** 	{
  639              		.loc 1 279 4 view .LVU205
- 640 0008 FF2B     		cmp	r3, #255
- 641 000a 0CD0     		beq	.L34
- 642              	.LBB4:
+ 640 0008 40F2FF33 		movw	r3, #1023
+ 641 000c 9A42     		cmp	r2, r3
+ 642 000e 0CD0     		beq	.L34
+ 643              	.LBB4:
  283:Core/Src/WS2812b_Core.c **** 		{
- 643              		.loc 1 283 10 view .LVU206
- 644 000c 0024     		movs	r4, #0
- 645 000e 06E0     		b	.L27
- 646              	.LVL58:
- 647              	.L29:
+ 644              		.loc 1 283 10 view .LVU206
+ 645 0010 0024     		movs	r4, #0
+ 646 0012 06E0     		b	.L27
+ 647              	.LVL58:
+ 648              	.L29:
  285:Core/Src/WS2812b_Core.c **** 		}
- 648              		.loc 1 285 4 is_stmt 1 discriminator 3 view .LVU207
- 649 0010 0021     		movs	r1, #0
- 650 0012 0948     		ldr	r0, .L35
- 651 0014 00EB0410 		add	r0, r0, r4, lsl #4
- 652 0018 FFF7FEFF 		bl	loadNextFramebufferData
- 653              	.LVL59:
+ 649              		.loc 1 285 4 is_stmt 1 discriminator 3 view .LVU207
+ 650 0014 0021     		movs	r1, #0
+ 651 0016 0948     		ldr	r0, .L35
+ 652 0018 00EB0410 		add	r0, r0, r4, lsl #4
+ 653 001c FFF7FEFF 		bl	loadNextFramebufferData
+ 654              	.LVL59:
  283:Core/Src/WS2812b_Core.c **** 		{
- 654              		.loc 1 283 41 discriminator 3 view .LVU208
- 655 001c 0134     		adds	r4, r4, #1
- 656              	.LVL60:
- 657              	.L27:
+ 655              		.loc 1 283 41 discriminator 3 view .LVU208
+ 656 0020 0134     		adds	r4, r4, #1
+ 657              	.LVL60:
+ 658              	.L27:
  283:Core/Src/WS2812b_Core.c **** 		{
- 658              		.loc 1 283 17 discriminator 1 view .LVU209
- 659 001e 032C     		cmp	r4, #3
- 660 0020 F6D9     		bls	.L29
- 661              	.LVL61:
- 662              	.L26:
+ 659              		.loc 1 283 17 discriminator 1 view .LVU209
+ 660 0022 032C     		cmp	r4, #3
+ 661 0024 F6D9     		bls	.L29
+ 662              	.LVL61:
+ 663              	.L26:
  283:Core/Src/WS2812b_Core.c **** 		{
- 663              		.loc 1 283 17 is_stmt 0 discriminator 1 view .LVU210
- 664              	.LBE4:
+ 664              		.loc 1 283 17 is_stmt 0 discriminator 1 view .LVU210
+ 665              	.LBE4:
  297:Core/Src/WS2812b_Core.c **** 
- 665              		.loc 1 297 1 view .LVU211
- 666 0022 02B0     		add	sp, sp, #8
- 667              		.cfi_remember_state
- 668              		.cfi_def_cfa_offset 8
- 669              		@ sp needed
- 670 0024 10BD     		pop	{r4, pc}
- 671              	.LVL62:
- 672              	.L34:
- 673              		.cfi_restore_state
+ 666              		.loc 1 297 1 view .LVU211
+ 667 0026 02B0     		add	sp, sp, #8
+ 668              		.cfi_remember_state
+ 669              		.cfi_def_cfa_offset 8
+ 670              		@ sp needed
+ 671 0028 10BD     		pop	{r4, pc}
+ 672              	.LVL62:
+ 673              	.L34:
+ 674              		.cfi_restore_state
  291:Core/Src/WS2812b_Core.c **** 	}
- 674              		.loc 1 291 3 is_stmt 1 view .LVU212
- 675 0026 0020     		movs	r0, #0
- 676              	.LVL63:
- 291:Core/Src/WS2812b_Core.c **** 	}
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 26
+ 675              		.loc 1 291 3 is_stmt 1 view .LVU212
+ 676 002a 0020     		movs	r0, #0
+ 677              	.LVL63:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 26
 
 
- 677              		.loc 1 291 3 is_stmt 0 view .LVU213
- 678 0028 0090     		str	r0, [sp]
- 679 002a 0346     		mov	r3, r0
- 680 002c 0246     		mov	r2, r0
- 681 002e 0146     		mov	r1, r0
- 682 0030 FFF7FEFF 		bl	ws2812b_set_pixel
- 683              	.LVL64:
+ 291:Core/Src/WS2812b_Core.c **** 	}
+ 678              		.loc 1 291 3 is_stmt 0 view .LVU213
+ 679 002c 0090     		str	r0, [sp]
+ 680 002e 0346     		mov	r3, r0
+ 681 0030 0246     		mov	r2, r0
+ 682 0032 0146     		mov	r1, r0
+ 683 0034 FFF7FEFF 		bl	ws2812b_set_pixel
+ 684              	.LVL64:
  297:Core/Src/WS2812b_Core.c **** 
- 684              		.loc 1 297 1 view .LVU214
- 685 0034 F5E7     		b	.L26
- 686              	.L36:
- 687 0036 00BF     		.align	2
- 688              	.L35:
- 689 0038 00000000 		.word	ws2812b
- 690              		.cfi_endproc
- 691              	.LFE73:
- 693              		.section	.text.ws2812b_gpio_init,"ax",%progbits
- 694              		.align	1
- 695              		.syntax unified
- 696              		.thumb
- 697              		.thumb_func
- 699              	ws2812b_gpio_init:
- 700              	.LFB65:
+ 685              		.loc 1 297 1 view .LVU214
+ 686 0038 F5E7     		b	.L26
+ 687              	.L36:
+ 688 003a 00BF     		.align	2
+ 689              	.L35:
+ 690 003c 00000000 		.word	ws2812b
+ 691              		.cfi_endproc
+ 692              	.LFE73:
+ 694              		.section	.text.ws2812b_gpio_init,"ax",%progbits
+ 695              		.align	1
+ 696              		.syntax unified
+ 697              		.thumb
+ 698              		.thumb_func
+ 700              	ws2812b_gpio_init:
+ 701              	.LFB65:
   45:Core/Src/WS2812b_Core.c **** 	// WS2812B outputs
- 701              		.loc 1 45 1 is_stmt 1 view -0
- 702              		.cfi_startproc
- 703              		@ args = 0, pretend = 0, frame = 24
- 704              		@ frame_needed = 0, uses_anonymous_args = 0
- 705 0000 00B5     		push	{lr}
- 706              		.cfi_def_cfa_offset 4
- 707              		.cfi_offset 14, -4
- 708 0002 87B0     		sub	sp, sp, #28
- 709              		.cfi_def_cfa_offset 32
+ 702              		.loc 1 45 1 is_stmt 1 view -0
+ 703              		.cfi_startproc
+ 704              		@ args = 0, pretend = 0, frame = 24
+ 705              		@ frame_needed = 0, uses_anonymous_args = 0
+ 706 0000 00B5     		push	{lr}
+ 707              		.cfi_def_cfa_offset 4
+ 708              		.cfi_offset 14, -4
+ 709 0002 87B0     		sub	sp, sp, #28
+ 710              		.cfi_def_cfa_offset 32
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 710              		.loc 1 47 2 view .LVU216
- 711              	.LBB5:
+ 711              		.loc 1 47 2 view .LVU216
+ 712              	.LBB5:
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 712              		.loc 1 47 2 view .LVU217
+ 713              		.loc 1 47 2 view .LVU217
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 713              		.loc 1 47 2 view .LVU218
- 714 0004 0C4B     		ldr	r3, .L39
- 715 0006 9A69     		ldr	r2, [r3, #24]
- 716 0008 42F00402 		orr	r2, r2, #4
- 717 000c 9A61     		str	r2, [r3, #24]
+ 714              		.loc 1 47 2 view .LVU218
+ 715 0004 0C4B     		ldr	r3, .L39
+ 716 0006 9A69     		ldr	r2, [r3, #24]
+ 717 0008 42F00402 		orr	r2, r2, #4
+ 718 000c 9A61     		str	r2, [r3, #24]
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 718              		.loc 1 47 2 view .LVU219
- 719 000e 9B69     		ldr	r3, [r3, #24]
- 720 0010 03F00403 		and	r3, r3, #4
- 721 0014 0193     		str	r3, [sp, #4]
+ 719              		.loc 1 47 2 view .LVU219
+ 720 000e 9B69     		ldr	r3, [r3, #24]
+ 721 0010 03F00403 		and	r3, r3, #4
+ 722 0014 0193     		str	r3, [sp, #4]
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 722              		.loc 1 47 2 view .LVU220
- 723 0016 019B     		ldr	r3, [sp, #4]
- 724              	.LBE5:
+ 723              		.loc 1 47 2 view .LVU220
+ 724 0016 019B     		ldr	r3, [sp, #4]
+ 725              	.LBE5:
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
- 725              		.loc 1 47 2 view .LVU221
+ 726              		.loc 1 47 2 view .LVU221
   48:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Pin       = WS2812B_PINS;
- 726              		.loc 1 48 2 view .LVU222
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 27
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 27
 
 
+ 727              		.loc 1 48 2 view .LVU222
   49:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Mode      = GPIO_MODE_OUTPUT_PP;
- 727              		.loc 1 49 2 view .LVU223
+ 728              		.loc 1 49 2 view .LVU223
   49:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Mode      = GPIO_MODE_OUTPUT_PP;
- 728              		.loc 1 49 28 is_stmt 0 view .LVU224
- 729 0018 F023     		movs	r3, #240
- 730 001a 0293     		str	r3, [sp, #8]
+ 729              		.loc 1 49 28 is_stmt 0 view .LVU224
+ 730 0018 F023     		movs	r3, #240
+ 731 001a 0293     		str	r3, [sp, #8]
   50:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Pull      = GPIO_NOPULL;
- 731              		.loc 1 50 2 is_stmt 1 view .LVU225
+ 732              		.loc 1 50 2 is_stmt 1 view .LVU225
   50:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Pull      = GPIO_NOPULL;
- 732              		.loc 1 50 28 is_stmt 0 view .LVU226
- 733 001c 0123     		movs	r3, #1
- 734 001e 0393     		str	r3, [sp, #12]
+ 733              		.loc 1 50 28 is_stmt 0 view .LVU226
+ 734 001c 0123     		movs	r3, #1
+ 735 001e 0393     		str	r3, [sp, #12]
   51:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Speed     = GPIO_SPEED_FREQ_LOW;
- 735              		.loc 1 51 2 is_stmt 1 view .LVU227
+ 736              		.loc 1 51 2 is_stmt 1 view .LVU227
   51:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Speed     = GPIO_SPEED_FREQ_LOW;
- 736              		.loc 1 51 28 is_stmt 0 view .LVU228
- 737 0020 0023     		movs	r3, #0
- 738 0022 0493     		str	r3, [sp, #16]
+ 737              		.loc 1 51 28 is_stmt 0 view .LVU228
+ 738 0020 0023     		movs	r3, #0
+ 739 0022 0493     		str	r3, [sp, #16]
   52:Core/Src/WS2812b_Core.c **** 	HAL_GPIO_Init(WS2812B_PORT, &GPIO_InitStruct);
- 739              		.loc 1 52 2 is_stmt 1 view .LVU229
+ 740              		.loc 1 52 2 is_stmt 1 view .LVU229
   52:Core/Src/WS2812b_Core.c **** 	HAL_GPIO_Init(WS2812B_PORT, &GPIO_InitStruct);
- 740              		.loc 1 52 28 is_stmt 0 view .LVU230
- 741 0024 0223     		movs	r3, #2
- 742 0026 0593     		str	r3, [sp, #20]
+ 741              		.loc 1 52 28 is_stmt 0 view .LVU230
+ 742 0024 0223     		movs	r3, #2
+ 743 0026 0593     		str	r3, [sp, #20]
   53:Core/Src/WS2812b_Core.c **** 
- 743              		.loc 1 53 2 is_stmt 1 view .LVU231
- 744 0028 02A9     		add	r1, sp, #8
- 745 002a 0448     		ldr	r0, .L39+4
- 746 002c FFF7FEFF 		bl	HAL_GPIO_Init
- 747              	.LVL65:
+ 744              		.loc 1 53 2 is_stmt 1 view .LVU231
+ 745 0028 02A9     		add	r1, sp, #8
+ 746 002a 0448     		ldr	r0, .L39+4
+ 747 002c FFF7FEFF 		bl	HAL_GPIO_Init
+ 748              	.LVL65:
   66:Core/Src/WS2812b_Core.c **** 
- 748              		.loc 1 66 1 is_stmt 0 view .LVU232
- 749 0030 07B0     		add	sp, sp, #28
- 750              		.cfi_def_cfa_offset 4
- 751              		@ sp needed
- 752 0032 5DF804FB 		ldr	pc, [sp], #4
- 753              	.L40:
- 754 0036 00BF     		.align	2
- 755              	.L39:
- 756 0038 00100240 		.word	1073876992
- 757 003c 00080140 		.word	1073809408
- 758              		.cfi_endproc
- 759              	.LFE65:
- 761              		.section	.text.DMA_init,"ax",%progbits
- 762              		.align	1
- 763              		.syntax unified
- 764              		.thumb
- 765              		.thumb_func
- 767              	DMA_init:
- 768              	.LFB67:
+ 749              		.loc 1 66 1 is_stmt 0 view .LVU232
+ 750 0030 07B0     		add	sp, sp, #28
+ 751              		.cfi_def_cfa_offset 4
+ 752              		@ sp needed
+ 753 0032 5DF804FB 		ldr	pc, [sp], #4
+ 754              	.L40:
+ 755 0036 00BF     		.align	2
+ 756              	.L39:
+ 757 0038 00100240 		.word	1073876992
+ 758 003c 00080140 		.word	1073809408
+ 759              		.cfi_endproc
+ 760              	.LFE65:
+ 762              		.section	.text.DMA_init,"ax",%progbits
+ 763              		.align	1
+ 764              		.syntax unified
+ 765              		.thumb
+ 766              		.thumb_func
+ 768              	DMA_init:
+ 769              	.LFB67:
  126:Core/Src/WS2812b_Core.c **** 
- 769              		.loc 1 126 1 is_stmt 1 view -0
- 770              		.cfi_startproc
- 771              		@ args = 0, pretend = 0, frame = 8
- 772              		@ frame_needed = 0, uses_anonymous_args = 0
- 773 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 774              		.cfi_def_cfa_offset 36
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 28
+ 770              		.loc 1 126 1 is_stmt 1 view -0
+ 771              		.cfi_startproc
+ 772              		@ args = 0, pretend = 0, frame = 8
+ 773              		@ frame_needed = 0, uses_anonymous_args = 0
+ 774 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 28
 
 
- 775              		.cfi_offset 4, -36
- 776              		.cfi_offset 5, -32
- 777              		.cfi_offset 6, -28
- 778              		.cfi_offset 7, -24
- 779              		.cfi_offset 8, -20
- 780              		.cfi_offset 9, -16
- 781              		.cfi_offset 10, -12
- 782              		.cfi_offset 11, -8
- 783              		.cfi_offset 14, -4
- 784 0004 83B0     		sub	sp, sp, #12
- 785              		.cfi_def_cfa_offset 48
+ 775              		.cfi_def_cfa_offset 36
+ 776              		.cfi_offset 4, -36
+ 777              		.cfi_offset 5, -32
+ 778              		.cfi_offset 6, -28
+ 779              		.cfi_offset 7, -24
+ 780              		.cfi_offset 8, -20
+ 781              		.cfi_offset 9, -16
+ 782              		.cfi_offset 10, -12
+ 783              		.cfi_offset 11, -8
+ 784              		.cfi_offset 14, -4
+ 785 0004 83B0     		sub	sp, sp, #12
+ 786              		.cfi_def_cfa_offset 48
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 786              		.loc 1 129 2 view .LVU234
- 787              	.LBB6:
+ 787              		.loc 1 129 2 view .LVU234
+ 788              	.LBB6:
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 788              		.loc 1 129 2 view .LVU235
+ 789              		.loc 1 129 2 view .LVU235
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 789              		.loc 1 129 2 view .LVU236
- 790 0006 344B     		ldr	r3, .L43
- 791 0008 5A69     		ldr	r2, [r3, #20]
- 792 000a 42F00102 		orr	r2, r2, #1
- 793 000e 5A61     		str	r2, [r3, #20]
+ 790              		.loc 1 129 2 view .LVU236
+ 791 0006 344B     		ldr	r3, .L43
+ 792 0008 5A69     		ldr	r2, [r3, #20]
+ 793 000a 42F00102 		orr	r2, r2, #1
+ 794 000e 5A61     		str	r2, [r3, #20]
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 794              		.loc 1 129 2 view .LVU237
- 795 0010 5B69     		ldr	r3, [r3, #20]
- 796 0012 03F00103 		and	r3, r3, #1
- 797 0016 0193     		str	r3, [sp, #4]
+ 795              		.loc 1 129 2 view .LVU237
+ 796 0010 5B69     		ldr	r3, [r3, #20]
+ 797 0012 03F00103 		and	r3, r3, #1
+ 798 0016 0193     		str	r3, [sp, #4]
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 798              		.loc 1 129 2 view .LVU238
- 799 0018 019B     		ldr	r3, [sp, #4]
- 800              	.LBE6:
+ 799              		.loc 1 129 2 view .LVU238
+ 800 0018 019B     		ldr	r3, [sp, #4]
+ 801              	.LBE6:
  129:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Direction = DMA_MEMORY_TO_PERIPH;
- 801              		.loc 1 129 2 view .LVU239
+ 802              		.loc 1 129 2 view .LVU239
  130:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.PeriphInc = DMA_PINC_DISABLE;
- 802              		.loc 1 130 2 view .LVU240
+ 803              		.loc 1 130 2 view .LVU240
  130:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.PeriphInc = DMA_PINC_DISABLE;
- 803              		.loc 1 130 27 is_stmt 0 view .LVU241
- 804 001a 304C     		ldr	r4, .L43+4
- 805 001c 4FF01009 		mov	r9, #16
- 806 0020 C4F80490 		str	r9, [r4, #4]
+ 804              		.loc 1 130 27 is_stmt 0 view .LVU241
+ 805 001a 304C     		ldr	r4, .L43+4
+ 806 001c 4FF01009 		mov	r9, #16
+ 807 0020 C4F80490 		str	r9, [r4, #4]
  131:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.MemInc = DMA_MINC_DISABLE;
- 807              		.loc 1 131 2 is_stmt 1 view .LVU242
+ 808              		.loc 1 131 2 is_stmt 1 view .LVU242
  131:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.MemInc = DMA_MINC_DISABLE;
- 808              		.loc 1 131 27 is_stmt 0 view .LVU243
- 809 0024 0025     		movs	r5, #0
- 810 0026 A560     		str	r5, [r4, #8]
+ 809              		.loc 1 131 27 is_stmt 0 view .LVU243
+ 810 0024 0025     		movs	r5, #0
+ 811 0026 A560     		str	r5, [r4, #8]
  132:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 811              		.loc 1 132 2 is_stmt 1 view .LVU244
+ 812              		.loc 1 132 2 is_stmt 1 view .LVU244
  132:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 812              		.loc 1 132 24 is_stmt 0 view .LVU245
- 813 0028 E560     		str	r5, [r4, #12]
+ 813              		.loc 1 132 24 is_stmt 0 view .LVU245
+ 814 0028 E560     		str	r5, [r4, #12]
  133:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
- 814              		.loc 1 133 2 is_stmt 1 view .LVU246
+ 815              		.loc 1 133 2 is_stmt 1 view .LVU246
  133:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
- 815              		.loc 1 133 37 is_stmt 0 view .LVU247
- 816 002a 4FF40078 		mov	r8, #512
- 817 002e C4F81080 		str	r8, [r4, #16]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 29
+ 816              		.loc 1 133 37 is_stmt 0 view .LVU247
+ 817 002a 4FF40078 		mov	r8, #512
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 29
 
 
+ 818 002e C4F81080 		str	r8, [r4, #16]
  134:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Mode = DMA_CIRCULAR;
- 818              		.loc 1 134 2 is_stmt 1 view .LVU248
+ 819              		.loc 1 134 2 is_stmt 1 view .LVU248
  134:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Mode = DMA_CIRCULAR;
- 819              		.loc 1 134 34 is_stmt 0 view .LVU249
- 820 0032 4FF4006B 		mov	fp, #2048
- 821 0036 C4F814B0 		str	fp, [r4, #20]
+ 820              		.loc 1 134 34 is_stmt 0 view .LVU249
+ 821 0032 4FF4006B 		mov	fp, #2048
+ 822 0036 C4F814B0 		str	fp, [r4, #20]
  135:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 822              		.loc 1 135 2 is_stmt 1 view .LVU250
+ 823              		.loc 1 135 2 is_stmt 1 view .LVU250
  135:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 823              		.loc 1 135 22 is_stmt 0 view .LVU251
- 824 003a 2027     		movs	r7, #32
- 825 003c A761     		str	r7, [r4, #24]
+ 824              		.loc 1 135 22 is_stmt 0 view .LVU251
+ 825 003a 2027     		movs	r7, #32
+ 826 003c A761     		str	r7, [r4, #24]
  136:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Instance = DMA1_Channel2;
- 826              		.loc 1 136 2 is_stmt 1 view .LVU252
+ 827              		.loc 1 136 2 is_stmt 1 view .LVU252
  136:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Instance = DMA1_Channel2;
- 827              		.loc 1 136 26 is_stmt 0 view .LVU253
- 828 003e 4FF44056 		mov	r6, #12288
- 829 0042 E661     		str	r6, [r4, #28]
+ 828              		.loc 1 136 26 is_stmt 0 view .LVU253
+ 829 003e 4FF44056 		mov	r6, #12288
+ 830 0042 E661     		str	r6, [r4, #28]
  137:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferCpltCallback  = TransferComplete;
- 830              		.loc 1 137 2 is_stmt 1 view .LVU254
+ 831              		.loc 1 137 2 is_stmt 1 view .LVU254
  137:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferCpltCallback  = TransferComplete;
- 831              		.loc 1 137 21 is_stmt 0 view .LVU255
- 832 0044 264B     		ldr	r3, .L43+8
- 833 0046 2360     		str	r3, [r4]
+ 832              		.loc 1 137 21 is_stmt 0 view .LVU255
+ 833 0044 264B     		ldr	r3, .L43+8
+ 834 0046 2360     		str	r3, [r4]
  140:Core/Src/WS2812b_Core.c **** 	//HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 0, 0);
- 834              		.loc 1 140 2 is_stmt 1 view .LVU256
- 835 0048 2046     		mov	r0, r4
- 836 004a FFF7FEFF 		bl	HAL_DMA_Init
- 837              	.LVL66:
+ 835              		.loc 1 140 2 is_stmt 1 view .LVU256
+ 836 0048 2046     		mov	r0, r4
+ 837 004a FFF7FEFF 		bl	HAL_DMA_Init
+ 838              	.LVL66:
  143:Core/Src/WS2812b_Core.c **** 
- 838              		.loc 1 143 2 view .LVU257
- 839 004e DFF894A0 		ldr	r10, .L43+12
- 840 0052 3023     		movs	r3, #48
- 841 0054 5246     		mov	r2, r10
- 842 0056 2449     		ldr	r1, .L43+16
- 843 0058 2046     		mov	r0, r4
- 844 005a FFF7FEFF 		bl	HAL_DMA_Start
- 845              	.LVL67:
+ 839              		.loc 1 143 2 view .LVU257
+ 840 004e DFF894A0 		ldr	r10, .L43+12
+ 841 0052 3023     		movs	r3, #48
+ 842 0054 5246     		mov	r2, r10
+ 843 0056 2449     		ldr	r1, .L43+16
+ 844 0058 2046     		mov	r0, r4
+ 845 005a FFF7FEFF 		bl	HAL_DMA_Start
+ 846              	.LVL67:
  147:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.PeriphInc = DMA_PINC_DISABLE;
- 846              		.loc 1 147 2 view .LVU258
+ 847              		.loc 1 147 2 view .LVU258
  147:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.PeriphInc = DMA_PINC_DISABLE;
- 847              		.loc 1 147 24 is_stmt 0 view .LVU259
- 848 005e 234C     		ldr	r4, .L43+20
- 849 0060 C4F80490 		str	r9, [r4, #4]
+ 848              		.loc 1 147 24 is_stmt 0 view .LVU259
+ 849 005e 234C     		ldr	r4, .L43+20
+ 850 0060 C4F80490 		str	r9, [r4, #4]
  148:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.MemInc = DMA_MINC_ENABLE;
- 850              		.loc 1 148 2 is_stmt 1 view .LVU260
+ 851              		.loc 1 148 2 is_stmt 1 view .LVU260
  148:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.MemInc = DMA_MINC_ENABLE;
- 851              		.loc 1 148 24 is_stmt 0 view .LVU261
- 852 0064 A560     		str	r5, [r4, #8]
+ 852              		.loc 1 148 24 is_stmt 0 view .LVU261
+ 853 0064 A560     		str	r5, [r4, #8]
  149:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 853              		.loc 1 149 2 is_stmt 1 view .LVU262
+ 854              		.loc 1 149 2 is_stmt 1 view .LVU262
  149:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 854              		.loc 1 149 21 is_stmt 0 view .LVU263
- 855 0066 8023     		movs	r3, #128
- 856 0068 E360     		str	r3, [r4, #12]
+ 855              		.loc 1 149 21 is_stmt 0 view .LVU263
+ 856 0066 8023     		movs	r3, #128
+ 857 0068 E360     		str	r3, [r4, #12]
  150:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
- 857              		.loc 1 150 2 is_stmt 1 view .LVU264
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 30
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 30
 
 
+ 858              		.loc 1 150 2 is_stmt 1 view .LVU264
  150:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
- 858              		.loc 1 150 34 is_stmt 0 view .LVU265
- 859 006a C4F81080 		str	r8, [r4, #16]
+ 859              		.loc 1 150 34 is_stmt 0 view .LVU265
+ 860 006a C4F81080 		str	r8, [r4, #16]
  151:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Mode = DMA_CIRCULAR;
- 860              		.loc 1 151 2 is_stmt 1 view .LVU266
+ 861              		.loc 1 151 2 is_stmt 1 view .LVU266
  151:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Mode = DMA_CIRCULAR;
- 861              		.loc 1 151 31 is_stmt 0 view .LVU267
- 862 006e 4FF48063 		mov	r3, #1024
- 863 0072 6361     		str	r3, [r4, #20]
+ 862              		.loc 1 151 31 is_stmt 0 view .LVU267
+ 863 006e 4FF48063 		mov	r3, #1024
+ 864 0072 6361     		str	r3, [r4, #20]
  152:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 864              		.loc 1 152 2 is_stmt 1 view .LVU268
+ 865              		.loc 1 152 2 is_stmt 1 view .LVU268
  152:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 865              		.loc 1 152 19 is_stmt 0 view .LVU269
- 866 0074 A761     		str	r7, [r4, #24]
+ 866              		.loc 1 152 19 is_stmt 0 view .LVU269
+ 867 0074 A761     		str	r7, [r4, #24]
  153:Core/Src/WS2812b_Core.c **** 	dmaCC1.Instance = DMA1_Channel5;
- 867              		.loc 1 153 2 is_stmt 1 view .LVU270
+ 868              		.loc 1 153 2 is_stmt 1 view .LVU270
  153:Core/Src/WS2812b_Core.c **** 	dmaCC1.Instance = DMA1_Channel5;
- 868              		.loc 1 153 23 is_stmt 0 view .LVU271
- 869 0076 E661     		str	r6, [r4, #28]
+ 869              		.loc 1 153 23 is_stmt 0 view .LVU271
+ 870 0076 E661     		str	r6, [r4, #28]
  154:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferCpltCallback  = TransferComplete;
- 870              		.loc 1 154 2 is_stmt 1 view .LVU272
+ 871              		.loc 1 154 2 is_stmt 1 view .LVU272
  154:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferCpltCallback  = TransferComplete;
- 871              		.loc 1 154 18 is_stmt 0 view .LVU273
- 872 0078 1D4B     		ldr	r3, .L43+24
- 873 007a 2360     		str	r3, [r4]
+ 872              		.loc 1 154 18 is_stmt 0 view .LVU273
+ 873 0078 1D4B     		ldr	r3, .L43+24
+ 874 007a 2360     		str	r3, [r4]
  160:Core/Src/WS2812b_Core.c **** 	HAL_DMA_Start(&dmaCC1, (uint32_t)ws2812bDmaBitBuffer, (uint32_t)&WS2812B_PORT->BRR, BUFFER_SIZE);
- 874              		.loc 1 160 2 is_stmt 1 view .LVU274
- 875 007c 2046     		mov	r0, r4
- 876 007e FFF7FEFF 		bl	HAL_DMA_Init
- 877              	.LVL68:
+ 875              		.loc 1 160 2 is_stmt 1 view .LVU274
+ 876 007c 2046     		mov	r0, r4
+ 877 007e FFF7FEFF 		bl	HAL_DMA_Init
+ 878              	.LVL68:
  161:Core/Src/WS2812b_Core.c **** 
- 878              		.loc 1 161 2 view .LVU275
- 879 0082 3023     		movs	r3, #48
- 880 0084 1B4A     		ldr	r2, .L43+28
- 881 0086 1C49     		ldr	r1, .L43+32
- 882 0088 2046     		mov	r0, r4
- 883 008a FFF7FEFF 		bl	HAL_DMA_Start
- 884              	.LVL69:
+ 879              		.loc 1 161 2 view .LVU275
+ 880 0082 3023     		movs	r3, #48
+ 881 0084 1B4A     		ldr	r2, .L43+28
+ 882 0086 1C49     		ldr	r1, .L43+32
+ 883 0088 2046     		mov	r0, r4
+ 884 008a FFF7FEFF 		bl	HAL_DMA_Start
+ 885              	.LVL69:
  165:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.PeriphInc = DMA_PINC_DISABLE;
- 885              		.loc 1 165 2 view .LVU276
+ 886              		.loc 1 165 2 view .LVU276
  165:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.PeriphInc = DMA_PINC_DISABLE;
- 886              		.loc 1 165 24 is_stmt 0 view .LVU277
- 887 008e 1B4C     		ldr	r4, .L43+36
- 888 0090 C4F80490 		str	r9, [r4, #4]
+ 887              		.loc 1 165 24 is_stmt 0 view .LVU277
+ 888 008e 1B4C     		ldr	r4, .L43+36
+ 889 0090 C4F80490 		str	r9, [r4, #4]
  166:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemInc = DMA_MINC_DISABLE;
- 889              		.loc 1 166 2 is_stmt 1 view .LVU278
+ 890              		.loc 1 166 2 is_stmt 1 view .LVU278
  166:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemInc = DMA_MINC_DISABLE;
- 890              		.loc 1 166 24 is_stmt 0 view .LVU279
- 891 0094 A560     		str	r5, [r4, #8]
+ 891              		.loc 1 166 24 is_stmt 0 view .LVU279
+ 892 0094 A560     		str	r5, [r4, #8]
  167:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 892              		.loc 1 167 2 is_stmt 1 view .LVU280
+ 893              		.loc 1 167 2 is_stmt 1 view .LVU280
  167:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
- 893              		.loc 1 167 21 is_stmt 0 view .LVU281
- 894 0096 E560     		str	r5, [r4, #12]
+ 894              		.loc 1 167 21 is_stmt 0 view .LVU281
+ 895 0096 E560     		str	r5, [r4, #12]
  168:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
- 895              		.loc 1 168 2 is_stmt 1 view .LVU282
- 168:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 31
+ 896              		.loc 1 168 2 is_stmt 1 view .LVU282
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 31
 
 
- 896              		.loc 1 168 34 is_stmt 0 view .LVU283
- 897 0098 C4F81080 		str	r8, [r4, #16]
+ 168:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+ 897              		.loc 1 168 34 is_stmt 0 view .LVU283
+ 898 0098 C4F81080 		str	r8, [r4, #16]
  169:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.Mode = DMA_CIRCULAR;
- 898              		.loc 1 169 2 is_stmt 1 view .LVU284
+ 899              		.loc 1 169 2 is_stmt 1 view .LVU284
  169:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.Mode = DMA_CIRCULAR;
- 899              		.loc 1 169 31 is_stmt 0 view .LVU285
- 900 009c C4F814B0 		str	fp, [r4, #20]
+ 900              		.loc 1 169 31 is_stmt 0 view .LVU285
+ 901 009c C4F814B0 		str	fp, [r4, #20]
  170:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 901              		.loc 1 170 2 is_stmt 1 view .LVU286
+ 902              		.loc 1 170 2 is_stmt 1 view .LVU286
  170:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.Priority = DMA_PRIORITY_VERY_HIGH;
- 902              		.loc 1 170 19 is_stmt 0 view .LVU287
- 903 00a0 A761     		str	r7, [r4, #24]
+ 903              		.loc 1 170 19 is_stmt 0 view .LVU287
+ 904 00a0 A761     		str	r7, [r4, #24]
  171:Core/Src/WS2812b_Core.c **** 	dmaCC2.Instance = DMA1_Channel7;
- 904              		.loc 1 171 2 is_stmt 1 view .LVU288
+ 905              		.loc 1 171 2 is_stmt 1 view .LVU288
  171:Core/Src/WS2812b_Core.c **** 	dmaCC2.Instance = DMA1_Channel7;
- 905              		.loc 1 171 23 is_stmt 0 view .LVU289
- 906 00a2 E661     		str	r6, [r4, #28]
+ 906              		.loc 1 171 23 is_stmt 0 view .LVU289
+ 907 00a2 E661     		str	r6, [r4, #28]
  172:Core/Src/WS2812b_Core.c **** 
- 907              		.loc 1 172 2 is_stmt 1 view .LVU290
+ 908              		.loc 1 172 2 is_stmt 1 view .LVU290
  172:Core/Src/WS2812b_Core.c **** 
- 908              		.loc 1 172 18 is_stmt 0 view .LVU291
- 909 00a4 164B     		ldr	r3, .L43+40
- 910 00a6 2360     		str	r3, [r4]
+ 909              		.loc 1 172 18 is_stmt 0 view .LVU291
+ 910 00a4 164B     		ldr	r3, .L43+40
+ 911 00a6 2360     		str	r3, [r4]
  175:Core/Src/WS2812b_Core.c **** 
- 911              		.loc 1 175 2 is_stmt 1 view .LVU292
- 912 00a8 2046     		mov	r0, r4
- 913 00aa FFF7FEFF 		bl	HAL_DMA_Init
- 914              	.LVL70:
+ 912              		.loc 1 175 2 is_stmt 1 view .LVU292
+ 913 00a8 2046     		mov	r0, r4
+ 914 00aa FFF7FEFF 		bl	HAL_DMA_Init
+ 915              	.LVL70:
  178:Core/Src/WS2812b_Core.c **** 	dmaCC2.XferHalfCpltCallback = DMA_TransferHalfHandler;
- 915              		.loc 1 178 2 view .LVU293
+ 916              		.loc 1 178 2 view .LVU293
  178:Core/Src/WS2812b_Core.c **** 	dmaCC2.XferHalfCpltCallback = DMA_TransferHalfHandler;
- 916              		.loc 1 178 27 is_stmt 0 view .LVU294
- 917 00ae 154B     		ldr	r3, .L43+44
- 918 00b0 A362     		str	r3, [r4, #40]
+ 917              		.loc 1 178 27 is_stmt 0 view .LVU294
+ 918 00ae 154B     		ldr	r3, .L43+44
+ 919 00b0 A362     		str	r3, [r4, #40]
  179:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferErrorCallback = TransferError;
- 919              		.loc 1 179 2 is_stmt 1 view .LVU295
+ 920              		.loc 1 179 2 is_stmt 1 view .LVU295
  179:Core/Src/WS2812b_Core.c **** 	//dmaUpdate.XferErrorCallback = TransferError;
- 920              		.loc 1 179 30 is_stmt 0 view .LVU296
- 921 00b2 154B     		ldr	r3, .L43+48
- 922 00b4 E362     		str	r3, [r4, #44]
+ 921              		.loc 1 179 30 is_stmt 0 view .LVU296
+ 922 00b2 154B     		ldr	r3, .L43+48
+ 923 00b4 E362     		str	r3, [r4, #44]
  182:Core/Src/WS2812b_Core.c **** 	HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
- 923              		.loc 1 182 2 is_stmt 1 view .LVU297
- 924 00b6 2A46     		mov	r2, r5
- 925 00b8 2946     		mov	r1, r5
- 926 00ba 1120     		movs	r0, #17
- 927 00bc FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 928              	.LVL71:
+ 924              		.loc 1 182 2 is_stmt 1 view .LVU297
+ 925 00b6 2A46     		mov	r2, r5
+ 926 00b8 2946     		mov	r1, r5
+ 927 00ba 1120     		movs	r0, #17
+ 928 00bc FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 929              	.LVL71:
  183:Core/Src/WS2812b_Core.c **** 	HAL_DMA_Start_IT(&dmaCC2, (uint32_t)WS2812_IO_Low, (uint32_t)&WS2812B_PORT->BSRR, BUFFER_SIZE);
- 929              		.loc 1 183 2 view .LVU298
- 930 00c0 1120     		movs	r0, #17
- 931 00c2 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
- 932              	.LVL72:
+ 930              		.loc 1 183 2 view .LVU298
+ 931 00c0 1120     		movs	r0, #17
+ 932 00c2 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 933              	.LVL72:
  184:Core/Src/WS2812b_Core.c **** 
- 933              		.loc 1 184 2 view .LVU299
- 934 00c6 3023     		movs	r3, #48
- 935 00c8 5246     		mov	r2, r10
- 936 00ca 1049     		ldr	r1, .L43+52
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 32
+ 934              		.loc 1 184 2 view .LVU299
+ 935 00c6 3023     		movs	r3, #48
+ 936 00c8 5246     		mov	r2, r10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 32
 
 
- 937 00cc 2046     		mov	r0, r4
- 938 00ce FFF7FEFF 		bl	HAL_DMA_Start_IT
- 939              	.LVL73:
+ 937 00ca 1049     		ldr	r1, .L43+52
+ 938 00cc 2046     		mov	r0, r4
+ 939 00ce FFF7FEFF 		bl	HAL_DMA_Start_IT
+ 940              	.LVL73:
  186:Core/Src/WS2812b_Core.c **** 
- 940              		.loc 1 186 1 is_stmt 0 view .LVU300
- 941 00d2 03B0     		add	sp, sp, #12
- 942              		.cfi_def_cfa_offset 36
- 943              		@ sp needed
- 944 00d4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 945              	.L44:
- 946              		.align	2
- 947              	.L43:
- 948 00d8 00100240 		.word	1073876992
- 949 00dc 00000000 		.word	dmaUpdate
- 950 00e0 1C000240 		.word	1073872924
- 951 00e4 10080140 		.word	1073809424
- 952 00e8 00000000 		.word	WS2812_IO_High
- 953 00ec 00000000 		.word	dmaCC1
- 954 00f0 58000240 		.word	1073872984
- 955 00f4 14080140 		.word	1073809428
- 956 00f8 00000000 		.word	ws2812bDmaBitBuffer
- 957 00fc 00000000 		.word	dmaCC2
- 958 0100 80000240 		.word	1073873024
- 959 0104 00000000 		.word	DMA_TransferCompleteHandler
- 960 0108 00000000 		.word	DMA_TransferHalfHandler
- 961 010c 00000000 		.word	WS2812_IO_Low
- 962              		.cfi_endproc
- 963              	.LFE67:
- 965              		.section	.text.TIM2_init,"ax",%progbits
- 966              		.align	1
- 967              		.syntax unified
- 968              		.thumb
- 969              		.thumb_func
- 971              	TIM2_init:
- 972              	.LFB66:
+ 941              		.loc 1 186 1 is_stmt 0 view .LVU300
+ 942 00d2 03B0     		add	sp, sp, #12
+ 943              		.cfi_def_cfa_offset 36
+ 944              		@ sp needed
+ 945 00d4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 946              	.L44:
+ 947              		.align	2
+ 948              	.L43:
+ 949 00d8 00100240 		.word	1073876992
+ 950 00dc 00000000 		.word	dmaUpdate
+ 951 00e0 1C000240 		.word	1073872924
+ 952 00e4 10080140 		.word	1073809424
+ 953 00e8 00000000 		.word	WS2812_IO_High
+ 954 00ec 00000000 		.word	dmaCC1
+ 955 00f0 58000240 		.word	1073872984
+ 956 00f4 14080140 		.word	1073809428
+ 957 00f8 00000000 		.word	ws2812bDmaBitBuffer
+ 958 00fc 00000000 		.word	dmaCC2
+ 959 0100 80000240 		.word	1073873024
+ 960 0104 00000000 		.word	DMA_TransferCompleteHandler
+ 961 0108 00000000 		.word	DMA_TransferHalfHandler
+ 962 010c 00000000 		.word	WS2812_IO_Low
+ 963              		.cfi_endproc
+ 964              	.LFE67:
+ 966              		.section	.text.TIM2_init,"ax",%progbits
+ 967              		.align	1
+ 968              		.syntax unified
+ 969              		.thumb
+ 970              		.thumb_func
+ 972              	TIM2_init:
+ 973              	.LFB66:
   74:Core/Src/WS2812b_Core.c **** 	// TIM2 Periph clock enable
- 973              		.loc 1 74 1 is_stmt 1 view -0
- 974              		.cfi_startproc
- 975              		@ args = 0, pretend = 0, frame = 8
- 976              		@ frame_needed = 0, uses_anonymous_args = 0
- 977 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 978              		.cfi_def_cfa_offset 24
- 979              		.cfi_offset 4, -24
- 980              		.cfi_offset 5, -20
- 981              		.cfi_offset 6, -16
- 982              		.cfi_offset 7, -12
- 983              		.cfi_offset 8, -8
- 984              		.cfi_offset 14, -4
- 985 0004 82B0     		sub	sp, sp, #8
- 986              		.cfi_def_cfa_offset 32
+ 974              		.loc 1 74 1 is_stmt 1 view -0
+ 975              		.cfi_startproc
+ 976              		@ args = 0, pretend = 0, frame = 8
+ 977              		@ frame_needed = 0, uses_anonymous_args = 0
+ 978 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 979              		.cfi_def_cfa_offset 24
+ 980              		.cfi_offset 4, -24
+ 981              		.cfi_offset 5, -20
+ 982              		.cfi_offset 6, -16
+ 983              		.cfi_offset 7, -12
+ 984              		.cfi_offset 8, -8
+ 985              		.cfi_offset 14, -4
+ 986 0004 82B0     		sub	sp, sp, #8
+ 987              		.cfi_def_cfa_offset 32
   76:Core/Src/WS2812b_Core.c **** 
- 987              		.loc 1 76 2 view .LVU302
- 988              	.LBB7:
+ 988              		.loc 1 76 2 view .LVU302
+ 989              	.LBB7:
   76:Core/Src/WS2812b_Core.c **** 
- 989              		.loc 1 76 2 view .LVU303
+ 990              		.loc 1 76 2 view .LVU303
   76:Core/Src/WS2812b_Core.c **** 
- 990              		.loc 1 76 2 view .LVU304
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 33
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 33
 
 
- 991 0006 2B4B     		ldr	r3, .L47
- 992 0008 DA69     		ldr	r2, [r3, #28]
- 993 000a 42F00102 		orr	r2, r2, #1
- 994 000e DA61     		str	r2, [r3, #28]
+ 991              		.loc 1 76 2 view .LVU304
+ 992 0006 2B4B     		ldr	r3, .L47
+ 993 0008 DA69     		ldr	r2, [r3, #28]
+ 994 000a 42F00102 		orr	r2, r2, #1
+ 995 000e DA61     		str	r2, [r3, #28]
   76:Core/Src/WS2812b_Core.c **** 
- 995              		.loc 1 76 2 view .LVU305
- 996 0010 DB69     		ldr	r3, [r3, #28]
- 997 0012 03F00103 		and	r3, r3, #1
- 998 0016 0193     		str	r3, [sp, #4]
+ 996              		.loc 1 76 2 view .LVU305
+ 997 0010 DB69     		ldr	r3, [r3, #28]
+ 998 0012 03F00103 		and	r3, r3, #1
+ 999 0016 0193     		str	r3, [sp, #4]
   76:Core/Src/WS2812b_Core.c **** 
- 999              		.loc 1 76 2 view .LVU306
- 1000 0018 019B     		ldr	r3, [sp, #4]
- 1001              	.LBE7:
+ 1000              		.loc 1 76 2 view .LVU306
+ 1001 0018 019B     		ldr	r3, [sp, #4]
+ 1002              	.LBE7:
   76:Core/Src/WS2812b_Core.c **** 
- 1002              		.loc 1 76 2 view .LVU307
+ 1003              		.loc 1 76 2 view .LVU307
   80:Core/Src/WS2812b_Core.c **** 	uint32_t cc1 = (10 * tim_period) / 36;
- 1003              		.loc 1 80 2 view .LVU308
+ 1004              		.loc 1 80 2 view .LVU308
   80:Core/Src/WS2812b_Core.c **** 	uint32_t cc1 = (10 * tim_period) / 36;
- 1004              		.loc 1 80 32 is_stmt 0 view .LVU309
- 1005 001a 274B     		ldr	r3, .L47+4
- 1006 001c 1B68     		ldr	r3, [r3]
- 1007 001e 1B0A     		lsrs	r3, r3, #8
- 1008 0020 264A     		ldr	r2, .L47+8
- 1009 0022 A2FB0323 		umull	r2, r3, r2, r3
- 1010 0026 1B09     		lsrs	r3, r3, #4
+ 1005              		.loc 1 80 32 is_stmt 0 view .LVU309
+ 1006 001a 274B     		ldr	r3, .L47+4
+ 1007 001c 1B68     		ldr	r3, [r3]
+ 1008 001e 1B0A     		lsrs	r3, r3, #8
+ 1009 0020 264A     		ldr	r2, .L47+8
+ 1010 0022 A2FB0323 		umull	r2, r3, r2, r3
+ 1011 0026 1B09     		lsrs	r3, r3, #4
   80:Core/Src/WS2812b_Core.c **** 	uint32_t cc1 = (10 * tim_period) / 36;
- 1011              		.loc 1 80 13 view .LVU310
- 1012 0028 254A     		ldr	r2, .L47+12
- 1013 002a 1360     		str	r3, [r2]
+ 1012              		.loc 1 80 13 view .LVU310
+ 1013 0028 254A     		ldr	r2, .L47+12
+ 1014 002a 1360     		str	r3, [r2]
   81:Core/Src/WS2812b_Core.c **** 	uint32_t cc2 = (10 * tim_period) / 15;
- 1014              		.loc 1 81 2 is_stmt 1 view .LVU311
+ 1015              		.loc 1 81 2 is_stmt 1 view .LVU311
   81:Core/Src/WS2812b_Core.c **** 	uint32_t cc2 = (10 * tim_period) / 15;
- 1015              		.loc 1 81 21 is_stmt 0 view .LVU312
- 1016 002c 03EB8301 		add	r1, r3, r3, lsl #2
- 1017 0030 4A00     		lsls	r2, r1, #1
+ 1016              		.loc 1 81 21 is_stmt 0 view .LVU312
+ 1017 002c 03EB8301 		add	r1, r3, r3, lsl #2
+ 1018 0030 4A00     		lsls	r2, r1, #1
   81:Core/Src/WS2812b_Core.c **** 	uint32_t cc2 = (10 * tim_period) / 15;
- 1018              		.loc 1 81 11 view .LVU313
- 1019 0032 244F     		ldr	r7, .L47+16
- 1020 0034 A7FB0217 		umull	r1, r7, r7, r2
- 1021 0038 FF08     		lsrs	r7, r7, #3
- 1022              	.LVL74:
+ 1019              		.loc 1 81 11 view .LVU313
+ 1020 0032 244F     		ldr	r7, .L47+16
+ 1021 0034 A7FB0217 		umull	r1, r7, r7, r2
+ 1022 0038 FF08     		lsrs	r7, r7, #3
+ 1023              	.LVL74:
   82:Core/Src/WS2812b_Core.c **** 
- 1023              		.loc 1 82 2 is_stmt 1 view .LVU314
+ 1024              		.loc 1 82 2 is_stmt 1 view .LVU314
   82:Core/Src/WS2812b_Core.c **** 
- 1024              		.loc 1 82 11 is_stmt 0 view .LVU315
- 1025 003a 2349     		ldr	r1, .L47+20
- 1026 003c A1FB0212 		umull	r1, r2, r1, r2
- 1027 0040 D608     		lsrs	r6, r2, #3
- 1028              	.LVL75:
+ 1025              		.loc 1 82 11 is_stmt 0 view .LVU315
+ 1026 003a 2349     		ldr	r1, .L47+20
+ 1027 003c A1FB0212 		umull	r1, r2, r1, r2
+ 1028 0040 D608     		lsrs	r6, r2, #3
+ 1029              	.LVL75:
   84:Core/Src/WS2812b_Core.c **** 
- 1029              		.loc 1 84 2 is_stmt 1 view .LVU316
+ 1030              		.loc 1 84 2 is_stmt 1 view .LVU316
   84:Core/Src/WS2812b_Core.c **** 
- 1030              		.loc 1 84 22 is_stmt 0 view .LVU317
- 1031 0042 224D     		ldr	r5, .L47+24
- 1032 0044 4FF08042 		mov	r2, #1073741824
- 1033 0048 2A60     		str	r2, [r5]
-  86:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 34
+ 1031              		.loc 1 84 22 is_stmt 0 view .LVU317
+ 1032 0042 224D     		ldr	r5, .L47+24
+ 1033 0044 4FF08042 		mov	r2, #1073741824
+ 1034 0048 2A60     		str	r2, [r5]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 34
 
 
- 1034              		.loc 1 86 2 is_stmt 1 view .LVU318
   86:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
- 1035              		.loc 1 86 36 is_stmt 0 view .LVU319
- 1036 004a EB60     		str	r3, [r5, #12]
+ 1035              		.loc 1 86 2 is_stmt 1 view .LVU318
+  86:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
+ 1036              		.loc 1 86 36 is_stmt 0 view .LVU319
+ 1037 004a EB60     		str	r3, [r5, #12]
   87:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.Prescaler         = 0;
- 1037              		.loc 1 87 2 is_stmt 1 view .LVU320
+ 1038              		.loc 1 87 2 is_stmt 1 view .LVU320
   87:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.Prescaler         = 0;
- 1038              		.loc 1 87 36 is_stmt 0 view .LVU321
- 1039 004c 0024     		movs	r4, #0
- 1040 004e 6C61     		str	r4, [r5, #20]
+ 1039              		.loc 1 87 36 is_stmt 0 view .LVU321
+ 1040 004c 0024     		movs	r4, #0
+ 1041 004e 6C61     		str	r4, [r5, #20]
   88:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
- 1041              		.loc 1 88 2 is_stmt 1 view .LVU322
+ 1042              		.loc 1 88 2 is_stmt 1 view .LVU322
   88:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
- 1042              		.loc 1 88 36 is_stmt 0 view .LVU323
- 1043 0050 6C60     		str	r4, [r5, #4]
+ 1043              		.loc 1 88 36 is_stmt 0 view .LVU323
+ 1044 0050 6C60     		str	r4, [r5, #4]
   89:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.CounterMode       = TIM_COUNTERMODE_UP;
- 1044              		.loc 1 89 2 is_stmt 1 view .LVU324
+ 1045              		.loc 1 89 2 is_stmt 1 view .LVU324
   89:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.CounterMode       = TIM_COUNTERMODE_UP;
- 1045              		.loc 1 89 36 is_stmt 0 view .LVU325
- 1046 0052 2C61     		str	r4, [r5, #16]
+ 1046              		.loc 1 89 36 is_stmt 0 view .LVU325
+ 1047 0052 2C61     		str	r4, [r5, #16]
   90:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_Init(&Tim2Handle);
- 1047              		.loc 1 90 2 is_stmt 1 view .LVU326
+ 1048              		.loc 1 90 2 is_stmt 1 view .LVU326
   90:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_Init(&Tim2Handle);
- 1048              		.loc 1 90 36 is_stmt 0 view .LVU327
- 1049 0054 AC60     		str	r4, [r5, #8]
+ 1049              		.loc 1 90 36 is_stmt 0 view .LVU327
+ 1050 0054 AC60     		str	r4, [r5, #8]
   91:Core/Src/WS2812b_Core.c **** 
- 1050              		.loc 1 91 2 is_stmt 1 view .LVU328
- 1051 0056 2846     		mov	r0, r5
- 1052 0058 FFF7FEFF 		bl	HAL_TIM_PWM_Init
- 1053              	.LVL76:
+ 1051              		.loc 1 91 2 is_stmt 1 view .LVU328
+ 1052 0056 2846     		mov	r0, r5
+ 1053 0058 FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 1054              	.LVL76:
   93:Core/Src/WS2812b_Core.c **** 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
- 1054              		.loc 1 93 2 view .LVU329
- 1055 005c 2246     		mov	r2, r4
- 1056 005e 2146     		mov	r1, r4
- 1057 0060 1C20     		movs	r0, #28
- 1058 0062 FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 1059              	.LVL77:
+ 1055              		.loc 1 93 2 view .LVU329
+ 1056 005c 2246     		mov	r2, r4
+ 1057 005e 2146     		mov	r1, r4
+ 1058 0060 1C20     		movs	r0, #28
+ 1059 0062 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 1060              	.LVL77:
   94:Core/Src/WS2812b_Core.c **** 
- 1060              		.loc 1 94 2 view .LVU330
- 1061 0066 1C20     		movs	r0, #28
- 1062 0068 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
- 1063              	.LVL78:
+ 1061              		.loc 1 94 2 view .LVU330
+ 1062 0066 1C20     		movs	r0, #28
+ 1063 0068 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 1064              	.LVL78:
   96:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCPolarity   = TIM_OCPOLARITY_HIGH;
- 1064              		.loc 1 96 2 view .LVU331
+ 1065              		.loc 1 96 2 view .LVU331
   96:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCPolarity   = TIM_OCPOLARITY_HIGH;
- 1065              		.loc 1 96 23 is_stmt 0 view .LVU332
- 1066 006c 1849     		ldr	r1, .L47+28
- 1067 006e 4FF06008 		mov	r8, #96
- 1068 0072 C1F80080 		str	r8, [r1]
+ 1066              		.loc 1 96 23 is_stmt 0 view .LVU332
+ 1067 006c 1849     		ldr	r1, .L47+28
+ 1068 006e 4FF06008 		mov	r8, #96
+ 1069 0072 C1F80080 		str	r8, [r1]
   97:Core/Src/WS2812b_Core.c **** 	tim2OC1.Pulse        = cc1;
- 1069              		.loc 1 97 2 is_stmt 1 view .LVU333
+ 1070              		.loc 1 97 2 is_stmt 1 view .LVU333
   97:Core/Src/WS2812b_Core.c **** 	tim2OC1.Pulse        = cc1;
- 1070              		.loc 1 97 23 is_stmt 0 view .LVU334
- 1071 0076 8C60     		str	r4, [r1, #8]
+ 1071              		.loc 1 97 23 is_stmt 0 view .LVU334
+ 1072 0076 8C60     		str	r4, [r1, #8]
   98:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
- 1072              		.loc 1 98 2 is_stmt 1 view .LVU335
-  98:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 35
+ 1073              		.loc 1 98 2 is_stmt 1 view .LVU335
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 35
 
 
- 1073              		.loc 1 98 23 is_stmt 0 view .LVU336
- 1074 0078 4F60     		str	r7, [r1, #4]
+  98:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
+ 1074              		.loc 1 98 23 is_stmt 0 view .LVU336
+ 1075 0078 4F60     		str	r7, [r1, #4]
   99:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCFastMode   = TIM_OCFAST_DISABLE;
- 1075              		.loc 1 99 2 is_stmt 1 view .LVU337
+ 1076              		.loc 1 99 2 is_stmt 1 view .LVU337
   99:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCFastMode   = TIM_OCFAST_DISABLE;
- 1076              		.loc 1 99 23 is_stmt 0 view .LVU338
- 1077 007a CC60     		str	r4, [r1, #12]
+ 1077              		.loc 1 99 23 is_stmt 0 view .LVU338
+ 1078 007a CC60     		str	r4, [r1, #12]
  100:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_ConfigChannel(&Tim2Handle, &tim2OC1, TIM_CHANNEL_1);
- 1078              		.loc 1 100 2 is_stmt 1 view .LVU339
+ 1079              		.loc 1 100 2 is_stmt 1 view .LVU339
  100:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_ConfigChannel(&Tim2Handle, &tim2OC1, TIM_CHANNEL_1);
- 1079              		.loc 1 100 23 is_stmt 0 view .LVU340
- 1080 007c 0C61     		str	r4, [r1, #16]
+ 1080              		.loc 1 100 23 is_stmt 0 view .LVU340
+ 1081 007c 0C61     		str	r4, [r1, #16]
  101:Core/Src/WS2812b_Core.c **** 
- 1081              		.loc 1 101 2 is_stmt 1 view .LVU341
- 1082 007e 2246     		mov	r2, r4
- 1083 0080 2846     		mov	r0, r5
- 1084 0082 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
- 1085              	.LVL79:
+ 1082              		.loc 1 101 2 is_stmt 1 view .LVU341
+ 1083 007e 2246     		mov	r2, r4
+ 1084 0080 2846     		mov	r0, r5
+ 1085 0082 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 1086              	.LVL79:
  105:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCPolarity   = TIM_OCPOLARITY_HIGH;
- 1086              		.loc 1 105 2 view .LVU342
+ 1087              		.loc 1 105 2 view .LVU342
  105:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCPolarity   = TIM_OCPOLARITY_HIGH;
- 1087              		.loc 1 105 23 is_stmt 0 view .LVU343
- 1088 0086 1349     		ldr	r1, .L47+32
- 1089 0088 C1F80080 		str	r8, [r1]
+ 1088              		.loc 1 105 23 is_stmt 0 view .LVU343
+ 1089 0086 1349     		ldr	r1, .L47+32
+ 1090 0088 C1F80080 		str	r8, [r1]
  106:Core/Src/WS2812b_Core.c **** 	tim2OC2.Pulse        = cc2;
- 1090              		.loc 1 106 2 is_stmt 1 view .LVU344
+ 1091              		.loc 1 106 2 is_stmt 1 view .LVU344
  106:Core/Src/WS2812b_Core.c **** 	tim2OC2.Pulse        = cc2;
- 1091              		.loc 1 106 23 is_stmt 0 view .LVU345
- 1092 008c 8C60     		str	r4, [r1, #8]
+ 1092              		.loc 1 106 23 is_stmt 0 view .LVU345
+ 1093 008c 8C60     		str	r4, [r1, #8]
  107:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
- 1093              		.loc 1 107 2 is_stmt 1 view .LVU346
+ 1094              		.loc 1 107 2 is_stmt 1 view .LVU346
  107:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
- 1094              		.loc 1 107 23 is_stmt 0 view .LVU347
- 1095 008e 4E60     		str	r6, [r1, #4]
+ 1095              		.loc 1 107 23 is_stmt 0 view .LVU347
+ 1096 008e 4E60     		str	r6, [r1, #4]
  108:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCFastMode   = TIM_OCFAST_DISABLE;
- 1096              		.loc 1 108 2 is_stmt 1 view .LVU348
+ 1097              		.loc 1 108 2 is_stmt 1 view .LVU348
  108:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCFastMode   = TIM_OCFAST_DISABLE;
- 1097              		.loc 1 108 23 is_stmt 0 view .LVU349
- 1098 0090 CC60     		str	r4, [r1, #12]
+ 1098              		.loc 1 108 23 is_stmt 0 view .LVU349
+ 1099 0090 CC60     		str	r4, [r1, #12]
  109:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCIdleState  = TIM_OCIDLESTATE_RESET;
- 1099              		.loc 1 109 2 is_stmt 1 view .LVU350
+ 1100              		.loc 1 109 2 is_stmt 1 view .LVU350
  109:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCIdleState  = TIM_OCIDLESTATE_RESET;
- 1100              		.loc 1 109 23 is_stmt 0 view .LVU351
- 1101 0092 0C61     		str	r4, [r1, #16]
+ 1101              		.loc 1 109 23 is_stmt 0 view .LVU351
+ 1102 0092 0C61     		str	r4, [r1, #16]
  110:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCNIdleState = TIM_OCNIDLESTATE_RESET;
- 1102              		.loc 1 110 2 is_stmt 1 view .LVU352
+ 1103              		.loc 1 110 2 is_stmt 1 view .LVU352
  110:Core/Src/WS2812b_Core.c **** 	tim2OC2.OCNIdleState = TIM_OCNIDLESTATE_RESET;
- 1103              		.loc 1 110 23 is_stmt 0 view .LVU353
- 1104 0094 4C61     		str	r4, [r1, #20]
+ 1104              		.loc 1 110 23 is_stmt 0 view .LVU353
+ 1105 0094 4C61     		str	r4, [r1, #20]
  111:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_ConfigChannel(&Tim2Handle, &tim2OC2, TIM_CHANNEL_2);
- 1105              		.loc 1 111 2 is_stmt 1 view .LVU354
+ 1106              		.loc 1 111 2 is_stmt 1 view .LVU354
  111:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_ConfigChannel(&Tim2Handle, &tim2OC2, TIM_CHANNEL_2);
- 1106              		.loc 1 111 23 is_stmt 0 view .LVU355
- 1107 0096 8C61     		str	r4, [r1, #24]
+ 1107              		.loc 1 111 23 is_stmt 0 view .LVU355
+ 1108 0096 8C61     		str	r4, [r1, #24]
  112:Core/Src/WS2812b_Core.c **** 
- 1108              		.loc 1 112 2 is_stmt 1 view .LVU356
- 1109 0098 0422     		movs	r2, #4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 36
+ 1109              		.loc 1 112 2 is_stmt 1 view .LVU356
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 36
 
 
- 1110 009a 2846     		mov	r0, r5
- 1111 009c FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
- 1112              	.LVL80:
+ 1110 0098 0422     		movs	r2, #4
+ 1111 009a 2846     		mov	r0, r5
+ 1112 009c FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 1113              	.LVL80:
  114:Core/Src/WS2812b_Core.c **** 	HAL_TIM_PWM_Start(&Tim2Handle, TIM_CHANNEL_1);
- 1113              		.loc 1 114 2 view .LVU357
- 1114 00a0 2846     		mov	r0, r5
- 1115 00a2 FFF7FEFF 		bl	HAL_TIM_Base_Start
- 1116              	.LVL81:
+ 1114              		.loc 1 114 2 view .LVU357
+ 1115 00a0 2846     		mov	r0, r5
+ 1116 00a2 FFF7FEFF 		bl	HAL_TIM_Base_Start
+ 1117              	.LVL81:
  115:Core/Src/WS2812b_Core.c **** 
- 1117              		.loc 1 115 2 view .LVU358
- 1118 00a6 2146     		mov	r1, r4
- 1119 00a8 2846     		mov	r0, r5
- 1120 00aa FFF7FEFF 		bl	HAL_TIM_PWM_Start
- 1121              	.LVL82:
+ 1118              		.loc 1 115 2 view .LVU358
+ 1119 00a6 2146     		mov	r1, r4
+ 1120 00a8 2846     		mov	r0, r5
+ 1121 00aa FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 1122              	.LVL82:
  117:Core/Src/WS2812b_Core.c **** 
- 1122              		.loc 1 117 1 is_stmt 0 view .LVU359
- 1123 00ae 02B0     		add	sp, sp, #8
- 1124              		.cfi_def_cfa_offset 24
- 1125              		@ sp needed
- 1126 00b0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 1127              	.LVL83:
- 1128              	.L48:
+ 1123              		.loc 1 117 1 is_stmt 0 view .LVU359
+ 1124 00ae 02B0     		add	sp, sp, #8
+ 1125              		.cfi_def_cfa_offset 24
+ 1126              		@ sp needed
+ 1127 00b0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1128              	.LVL83:
+ 1129              	.L48:
  117:Core/Src/WS2812b_Core.c **** 
- 1129              		.loc 1 117 1 view .LVU360
- 1130              		.align	2
- 1131              	.L47:
- 1132 00b4 00100240 		.word	1073876992
- 1133 00b8 00000000 		.word	SystemCoreClock
- 1134 00bc 598B4F01 		.word	21990233
- 1135 00c0 00000000 		.word	tim_period
- 1136 00c4 398EE338 		.word	954437177
- 1137 00c8 89888888 		.word	-2004318071
- 1138 00cc 00000000 		.word	Tim2Handle
- 1139 00d0 00000000 		.word	tim2OC1
- 1140 00d4 00000000 		.word	tim2OC2
- 1141              		.cfi_endproc
- 1142              	.LFE66:
- 1144              		.section	.text.DMA1_Channel2_IRQHandler,"ax",%progbits
- 1145              		.align	1
- 1146              		.global	DMA1_Channel2_IRQHandler
- 1147              		.syntax unified
- 1148              		.thumb
- 1149              		.thumb_func
- 1151              	DMA1_Channel2_IRQHandler:
- 1152              	.LFB68:
+ 1130              		.loc 1 117 1 view .LVU360
+ 1131              		.align	2
+ 1132              	.L47:
+ 1133 00b4 00100240 		.word	1073876992
+ 1134 00b8 00000000 		.word	SystemCoreClock
+ 1135 00bc 598B4F01 		.word	21990233
+ 1136 00c0 00000000 		.word	tim_period
+ 1137 00c4 398EE338 		.word	954437177
+ 1138 00c8 89888888 		.word	-2004318071
+ 1139 00cc 00000000 		.word	Tim2Handle
+ 1140 00d0 00000000 		.word	tim2OC1
+ 1141 00d4 00000000 		.word	tim2OC2
+ 1142              		.cfi_endproc
+ 1143              	.LFE66:
+ 1145              		.section	.text.DMA1_Channel2_IRQHandler,"ax",%progbits
+ 1146              		.align	1
+ 1147              		.global	DMA1_Channel2_IRQHandler
+ 1148              		.syntax unified
+ 1149              		.thumb
+ 1150              		.thumb_func
+ 1152              	DMA1_Channel2_IRQHandler:
+ 1153              	.LFB68:
  190:Core/Src/WS2812b_Core.c ****   // Check the interrupt and clear flag
- 1153              		.loc 1 190 1 is_stmt 1 view -0
- 1154              		.cfi_startproc
- 1155              		@ args = 0, pretend = 0, frame = 0
- 1156              		@ frame_needed = 0, uses_anonymous_args = 0
- 1157 0000 08B5     		push	{r3, lr}
- 1158              		.cfi_def_cfa_offset 8
- 1159              		.cfi_offset 3, -8
- 1160              		.cfi_offset 14, -4
+ 1154              		.loc 1 190 1 is_stmt 1 view -0
+ 1155              		.cfi_startproc
+ 1156              		@ args = 0, pretend = 0, frame = 0
+ 1157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1158 0000 08B5     		push	{r3, lr}
+ 1159              		.cfi_def_cfa_offset 8
+ 1160              		.cfi_offset 3, -8
+ 1161              		.cfi_offset 14, -4
  192:Core/Src/WS2812b_Core.c **** }
- 1161              		.loc 1 192 3 view .LVU362
- 1162 0002 0248     		ldr	r0, .L51
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 37
+ 1162              		.loc 1 192 3 view .LVU362
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 37
 
 
- 1163 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 1164              	.LVL84:
+ 1163 0002 0248     		ldr	r0, .L51
+ 1164 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 1165              	.LVL84:
  193:Core/Src/WS2812b_Core.c **** 
- 1165              		.loc 1 193 1 is_stmt 0 view .LVU363
- 1166 0008 08BD     		pop	{r3, pc}
- 1167              	.L52:
- 1168 000a 00BF     		.align	2
- 1169              	.L51:
- 1170 000c 00000000 		.word	dmaUpdate
- 1171              		.cfi_endproc
- 1172              	.LFE68:
- 1174              		.section	.text.DMA1_Channel5_IRQHandler,"ax",%progbits
- 1175              		.align	1
- 1176              		.global	DMA1_Channel5_IRQHandler
- 1177              		.syntax unified
- 1178              		.thumb
- 1179              		.thumb_func
- 1181              	DMA1_Channel5_IRQHandler:
- 1182              	.LFB69:
+ 1166              		.loc 1 193 1 is_stmt 0 view .LVU363
+ 1167 0008 08BD     		pop	{r3, pc}
+ 1168              	.L52:
+ 1169 000a 00BF     		.align	2
+ 1170              	.L51:
+ 1171 000c 00000000 		.word	dmaUpdate
+ 1172              		.cfi_endproc
+ 1173              	.LFE68:
+ 1175              		.section	.text.DMA1_Channel5_IRQHandler,"ax",%progbits
+ 1176              		.align	1
+ 1177              		.global	DMA1_Channel5_IRQHandler
+ 1178              		.syntax unified
+ 1179              		.thumb
+ 1180              		.thumb_func
+ 1182              	DMA1_Channel5_IRQHandler:
+ 1183              	.LFB69:
  196:Core/Src/WS2812b_Core.c ****   // Check the interrupt and clear flag
- 1183              		.loc 1 196 1 is_stmt 1 view -0
- 1184              		.cfi_startproc
- 1185              		@ args = 0, pretend = 0, frame = 0
- 1186              		@ frame_needed = 0, uses_anonymous_args = 0
- 1187 0000 08B5     		push	{r3, lr}
- 1188              		.cfi_def_cfa_offset 8
- 1189              		.cfi_offset 3, -8
- 1190              		.cfi_offset 14, -4
+ 1184              		.loc 1 196 1 is_stmt 1 view -0
+ 1185              		.cfi_startproc
+ 1186              		@ args = 0, pretend = 0, frame = 0
+ 1187              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1188 0000 08B5     		push	{r3, lr}
+ 1189              		.cfi_def_cfa_offset 8
+ 1190              		.cfi_offset 3, -8
+ 1191              		.cfi_offset 14, -4
  198:Core/Src/WS2812b_Core.c **** }
- 1191              		.loc 1 198 3 view .LVU365
- 1192 0002 0248     		ldr	r0, .L55
- 1193 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 1194              	.LVL85:
+ 1192              		.loc 1 198 3 view .LVU365
+ 1193 0002 0248     		ldr	r0, .L55
+ 1194 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 1195              	.LVL85:
  199:Core/Src/WS2812b_Core.c **** 
- 1195              		.loc 1 199 1 is_stmt 0 view .LVU366
- 1196 0008 08BD     		pop	{r3, pc}
- 1197              	.L56:
- 1198 000a 00BF     		.align	2
- 1199              	.L55:
- 1200 000c 00000000 		.word	dmaCC1
- 1201              		.cfi_endproc
- 1202              	.LFE69:
- 1204              		.section	.text.DMA1_Channel7_IRQHandler,"ax",%progbits
- 1205              		.align	1
- 1206              		.global	DMA1_Channel7_IRQHandler
- 1207              		.syntax unified
- 1208              		.thumb
- 1209              		.thumb_func
- 1211              	DMA1_Channel7_IRQHandler:
- 1212              	.LFB70:
+ 1196              		.loc 1 199 1 is_stmt 0 view .LVU366
+ 1197 0008 08BD     		pop	{r3, pc}
+ 1198              	.L56:
+ 1199 000a 00BF     		.align	2
+ 1200              	.L55:
+ 1201 000c 00000000 		.word	dmaCC1
+ 1202              		.cfi_endproc
+ 1203              	.LFE69:
+ 1205              		.section	.text.DMA1_Channel7_IRQHandler,"ax",%progbits
+ 1206              		.align	1
+ 1207              		.global	DMA1_Channel7_IRQHandler
+ 1208              		.syntax unified
+ 1209              		.thumb
+ 1210              		.thumb_func
+ 1212              	DMA1_Channel7_IRQHandler:
+ 1213              	.LFB70:
  202:Core/Src/WS2812b_Core.c ****   // Check the interrupt and clear flag
- 1213              		.loc 1 202 1 is_stmt 1 view -0
- 1214              		.cfi_startproc
- 1215              		@ args = 0, pretend = 0, frame = 0
- 1216              		@ frame_needed = 0, uses_anonymous_args = 0
- 1217 0000 08B5     		push	{r3, lr}
- 1218              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 38
+ 1214              		.loc 1 202 1 is_stmt 1 view -0
+ 1215              		.cfi_startproc
+ 1216              		@ args = 0, pretend = 0, frame = 0
+ 1217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1218 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 38
 
 
- 1219              		.cfi_offset 3, -8
- 1220              		.cfi_offset 14, -4
+ 1219              		.cfi_def_cfa_offset 8
+ 1220              		.cfi_offset 3, -8
+ 1221              		.cfi_offset 14, -4
  204:Core/Src/WS2812b_Core.c **** }
- 1221              		.loc 1 204 3 view .LVU368
- 1222 0002 0248     		ldr	r0, .L59
- 1223 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 1224              	.LVL86:
+ 1222              		.loc 1 204 3 view .LVU368
+ 1223 0002 0248     		ldr	r0, .L59
+ 1224 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 1225              	.LVL86:
  205:Core/Src/WS2812b_Core.c **** 
- 1225              		.loc 1 205 1 is_stmt 0 view .LVU369
- 1226 0008 08BD     		pop	{r3, pc}
- 1227              	.L60:
- 1228 000a 00BF     		.align	2
- 1229              	.L59:
- 1230 000c 00000000 		.word	dmaCC2
- 1231              		.cfi_endproc
- 1232              	.LFE70:
- 1234              		.section	.text.TIM2_IRQHandler,"ax",%progbits
- 1235              		.align	1
- 1236              		.global	TIM2_IRQHandler
- 1237              		.syntax unified
- 1238              		.thumb
- 1239              		.thumb_func
- 1241              	TIM2_IRQHandler:
- 1242              	.LFB75:
+ 1226              		.loc 1 205 1 is_stmt 0 view .LVU369
+ 1227 0008 08BD     		pop	{r3, pc}
+ 1228              	.L60:
+ 1229 000a 00BF     		.align	2
+ 1230              	.L59:
+ 1231 000c 00000000 		.word	dmaCC2
+ 1232              		.cfi_endproc
+ 1233              	.LFE70:
+ 1235              		.section	.text.TIM2_IRQHandler,"ax",%progbits
+ 1236              		.align	1
+ 1237              		.global	TIM2_IRQHandler
+ 1238              		.syntax unified
+ 1239              		.thumb
+ 1240              		.thumb_func
+ 1242              	TIM2_IRQHandler:
+ 1243              	.LFB75:
  344:Core/Src/WS2812b_Core.c **** 	HAL_TIM_IRQHandler(&Tim2Handle);
- 1243              		.loc 1 344 1 is_stmt 1 view -0
- 1244              		.cfi_startproc
- 1245              		@ args = 0, pretend = 0, frame = 0
- 1246              		@ frame_needed = 0, uses_anonymous_args = 0
- 1247 0000 08B5     		push	{r3, lr}
- 1248              		.cfi_def_cfa_offset 8
- 1249              		.cfi_offset 3, -8
- 1250              		.cfi_offset 14, -4
+ 1244              		.loc 1 344 1 is_stmt 1 view -0
+ 1245              		.cfi_startproc
+ 1246              		@ args = 0, pretend = 0, frame = 0
+ 1247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1248 0000 08B5     		push	{r3, lr}
+ 1249              		.cfi_def_cfa_offset 8
+ 1250              		.cfi_offset 3, -8
+ 1251              		.cfi_offset 14, -4
  345:Core/Src/WS2812b_Core.c **** }
- 1251              		.loc 1 345 2 view .LVU371
- 1252 0002 0248     		ldr	r0, .L63
- 1253 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 1254              	.LVL87:
+ 1252              		.loc 1 345 2 view .LVU371
+ 1253 0002 0248     		ldr	r0, .L63
+ 1254 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 1255              	.LVL87:
  346:Core/Src/WS2812b_Core.c **** 
- 1255              		.loc 1 346 1 is_stmt 0 view .LVU372
- 1256 0008 08BD     		pop	{r3, pc}
- 1257              	.L64:
- 1258 000a 00BF     		.align	2
- 1259              	.L63:
- 1260 000c 00000000 		.word	Tim2Handle
- 1261              		.cfi_endproc
- 1262              	.LFE75:
- 1264              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 1265              		.align	1
- 1266              		.global	HAL_TIM_PeriodElapsedCallback
- 1267              		.syntax unified
- 1268              		.thumb
- 1269              		.thumb_func
- 1271              	HAL_TIM_PeriodElapsedCallback:
- 1272              	.LVL88:
- 1273              	.LFB76:
+ 1256              		.loc 1 346 1 is_stmt 0 view .LVU372
+ 1257 0008 08BD     		pop	{r3, pc}
+ 1258              	.L64:
+ 1259 000a 00BF     		.align	2
+ 1260              	.L63:
+ 1261 000c 00000000 		.word	Tim2Handle
+ 1262              		.cfi_endproc
+ 1263              	.LFE75:
+ 1265              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 1266              		.align	1
+ 1267              		.global	HAL_TIM_PeriodElapsedCallback
+ 1268              		.syntax unified
+ 1269              		.thumb
+ 1270              		.thumb_func
+ 1272              	HAL_TIM_PeriodElapsedCallback:
+ 1273              	.LVL88:
+ 1274              	.LFB76:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 39
+
+
  350:Core/Src/WS2812b_Core.c **** 	// I have to wait 50us to generate Treset signal
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 39
-
-
- 1274              		.loc 1 350 1 is_stmt 1 view -0
- 1275              		.cfi_startproc
- 1276              		@ args = 0, pretend = 0, frame = 0
- 1277              		@ frame_needed = 0, uses_anonymous_args = 0
- 1278              		@ link register save eliminated.
+ 1275              		.loc 1 350 1 is_stmt 1 view -0
+ 1276              		.cfi_startproc
+ 1277              		@ args = 0, pretend = 0, frame = 0
+ 1278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1279              		@ link register save eliminated.
  352:Core/Src/WS2812b_Core.c **** 	{
- 1279              		.loc 1 352 2 view .LVU374
+ 1280              		.loc 1 352 2 view .LVU374
  352:Core/Src/WS2812b_Core.c **** 	{
- 1280              		.loc 1 352 13 is_stmt 0 view .LVU375
- 1281 0000 144B     		ldr	r3, .L69
- 1282 0002 5B6C     		ldr	r3, [r3, #68]
+ 1281              		.loc 1 352 13 is_stmt 0 view .LVU375
+ 1282 0000 144B     		ldr	r3, .L69
+ 1283 0002 5B6C     		ldr	r3, [r3, #68]
  352:Core/Src/WS2812b_Core.c **** 	{
- 1283              		.loc 1 352 5 view .LVU376
- 1284 0004 0B2B     		cmp	r3, #11
- 1285 0006 03D8     		bhi	.L66
+ 1284              		.loc 1 352 5 view .LVU376
+ 1285 0004 0B2B     		cmp	r3, #11
+ 1286 0006 03D8     		bhi	.L66
  355:Core/Src/WS2812b_Core.c **** 	}
- 1286              		.loc 1 355 3 is_stmt 1 view .LVU377
+ 1287              		.loc 1 355 3 is_stmt 1 view .LVU377
  355:Core/Src/WS2812b_Core.c **** 	}
- 1287              		.loc 1 355 29 is_stmt 0 view .LVU378
- 1288 0008 0133     		adds	r3, r3, #1
- 1289 000a 124A     		ldr	r2, .L69
- 1290 000c 5364     		str	r3, [r2, #68]
- 1291 000e 7047     		bx	lr
- 1292              	.L66:
+ 1288              		.loc 1 355 29 is_stmt 0 view .LVU378
+ 1289 0008 0133     		adds	r3, r3, #1
+ 1290 000a 124A     		ldr	r2, .L69
+ 1291 000c 5364     		str	r3, [r2, #68]
+ 1292 000e 7047     		bx	lr
+ 1293              	.L66:
  359:Core/Src/WS2812b_Core.c **** 		__HAL_TIM_DISABLE(&Tim2Handle);
- 1293              		.loc 1 359 3 is_stmt 1 view .LVU379
+ 1294              		.loc 1 359 3 is_stmt 1 view .LVU379
  359:Core/Src/WS2812b_Core.c **** 		__HAL_TIM_DISABLE(&Tim2Handle);
- 1294              		.loc 1 359 30 is_stmt 0 view .LVU380
- 1295 0010 104B     		ldr	r3, .L69
- 1296 0012 0022     		movs	r2, #0
- 1297 0014 5A64     		str	r2, [r3, #68]
+ 1295              		.loc 1 359 30 is_stmt 0 view .LVU380
+ 1296 0010 104B     		ldr	r3, .L69
+ 1297 0012 0022     		movs	r2, #0
+ 1298 0014 5A64     		str	r2, [r3, #68]
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
- 1298              		.loc 1 360 3 is_stmt 1 view .LVU381
+ 1299              		.loc 1 360 3 is_stmt 1 view .LVU381
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
- 1299              		.loc 1 360 3 view .LVU382
- 1300 0016 104B     		ldr	r3, .L69+4
- 1301 0018 1B68     		ldr	r3, [r3]
- 1302 001a 196A     		ldr	r1, [r3, #32]
- 1303 001c 41F21112 		movw	r2, #4369
- 1304 0020 1142     		tst	r1, r2
- 1305 0022 08D1     		bne	.L68
+ 1300              		.loc 1 360 3 view .LVU382
+ 1301 0016 104B     		ldr	r3, .L69+4
+ 1302 0018 1B68     		ldr	r3, [r3]
+ 1303 001a 196A     		ldr	r1, [r3, #32]
+ 1304 001c 41F21112 		movw	r2, #4369
+ 1305 0020 1142     		tst	r1, r2
+ 1306 0022 08D1     		bne	.L68
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
- 1306              		.loc 1 360 3 discriminator 1 view .LVU383
- 1307 0024 196A     		ldr	r1, [r3, #32]
- 1308 0026 40F24442 		movw	r2, #1092
- 1309 002a 1142     		tst	r1, r2
- 1310 002c 03D1     		bne	.L68
+ 1307              		.loc 1 360 3 discriminator 1 view .LVU383
+ 1308 0024 196A     		ldr	r1, [r3, #32]
+ 1309 0026 40F24442 		movw	r2, #1092
+ 1310 002a 1142     		tst	r1, r2
+ 1311 002c 03D1     		bne	.L68
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
- 1311              		.loc 1 360 3 discriminator 3 view .LVU384
- 1312 002e 1A68     		ldr	r2, [r3]
- 1313 0030 22F00102 		bic	r2, r2, #1
- 1314 0034 1A60     		str	r2, [r3]
- 1315              	.L68:
+ 1312              		.loc 1 360 3 discriminator 3 view .LVU384
+ 1313 002e 1A68     		ldr	r2, [r3]
+ 1314 0030 22F00102 		bic	r2, r2, #1
+ 1315 0034 1A60     		str	r2, [r3]
+ 1316              	.L68:
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
- 1316              		.loc 1 360 3 discriminator 5 view .LVU385
+ 1317              		.loc 1 360 3 discriminator 5 view .LVU385
  361:Core/Src/WS2812b_Core.c **** 
- 1317              		.loc 1 361 3 discriminator 5 view .LVU386
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 40
 
 
+ 1318              		.loc 1 361 3 discriminator 5 view .LVU386
  361:Core/Src/WS2812b_Core.c **** 
- 1318              		.loc 1 361 13 is_stmt 0 discriminator 5 view .LVU387
- 1319 0036 4FF08043 		mov	r3, #1073741824
- 1320 003a 0022     		movs	r2, #0
- 1321 003c 1A60     		str	r2, [r3]
+ 1319              		.loc 1 361 13 is_stmt 0 discriminator 5 view .LVU387
+ 1320 0036 4FF08043 		mov	r3, #1073741824
+ 1321 003a 0022     		movs	r2, #0
+ 1322 003c 1A60     		str	r2, [r3]
  364:Core/Src/WS2812b_Core.c **** 		// set TransferComplete flag
- 1322              		.loc 1 364 3 is_stmt 1 discriminator 5 view .LVU388
- 1323 003e 064B     		ldr	r3, .L69+4
- 1324 0040 1A68     		ldr	r2, [r3]
- 1325 0042 D368     		ldr	r3, [r2, #12]
- 1326 0044 23F00103 		bic	r3, r3, #1
- 1327 0048 D360     		str	r3, [r2, #12]
+ 1323              		.loc 1 364 3 is_stmt 1 discriminator 5 view .LVU388
+ 1324 003e 064B     		ldr	r3, .L69+4
+ 1325 0040 1A68     		ldr	r2, [r3]
+ 1326 0042 D368     		ldr	r3, [r2, #12]
+ 1327 0044 23F00103 		bic	r3, r3, #1
+ 1328 0048 D360     		str	r3, [r2, #12]
  366:Core/Src/WS2812b_Core.c **** 	}
- 1328              		.loc 1 366 3 discriminator 5 view .LVU389
+ 1329              		.loc 1 366 3 discriminator 5 view .LVU389
  366:Core/Src/WS2812b_Core.c **** 	}
- 1329              		.loc 1 366 28 is_stmt 0 discriminator 5 view .LVU390
- 1330 004a 024B     		ldr	r3, .L69
- 1331 004c 0122     		movs	r2, #1
- 1332 004e 83F84020 		strb	r2, [r3, #64]
+ 1330              		.loc 1 366 28 is_stmt 0 discriminator 5 view .LVU390
+ 1331 004a 024B     		ldr	r3, .L69
+ 1332 004c 0122     		movs	r2, #1
+ 1333 004e 83F84020 		strb	r2, [r3, #64]
  369:Core/Src/WS2812b_Core.c **** 
- 1333              		.loc 1 369 1 discriminator 5 view .LVU391
- 1334 0052 7047     		bx	lr
- 1335              	.L70:
- 1336              		.align	2
- 1337              	.L69:
- 1338 0054 00000000 		.word	ws2812b
- 1339 0058 00000000 		.word	Tim2Handle
- 1340              		.cfi_endproc
- 1341              	.LFE76:
- 1343              		.section	.text.ws2812b_init,"ax",%progbits
- 1344              		.align	1
- 1345              		.global	ws2812b_init
- 1346              		.syntax unified
- 1347              		.thumb
- 1348              		.thumb_func
- 1350              	ws2812b_init:
- 1351              	.LFB78:
+ 1334              		.loc 1 369 1 discriminator 5 view .LVU391
+ 1335 0052 7047     		bx	lr
+ 1336              	.L70:
+ 1337              		.align	2
+ 1338              	.L69:
+ 1339 0054 00000000 		.word	ws2812b
+ 1340 0058 00000000 		.word	Tim2Handle
+ 1341              		.cfi_endproc
+ 1342              	.LFE76:
+ 1344              		.section	.text.ws2812b_init,"ax",%progbits
+ 1345              		.align	1
+ 1346              		.global	ws2812b_init
+ 1347              		.syntax unified
+ 1348              		.thumb
+ 1349              		.thumb_func
+ 1351              	ws2812b_init:
+ 1352              	.LFB78:
  662:Core/Src/WS2812b_Core.c **** 
  663:Core/Src/WS2812b_Core.c **** 
  664:Core/Src/WS2812b_Core.c **** void ws2812b_init()
  665:Core/Src/WS2812b_Core.c **** {
- 1352              		.loc 1 665 1 is_stmt 1 view -0
- 1353              		.cfi_startproc
- 1354              		@ args = 0, pretend = 0, frame = 0
- 1355              		@ frame_needed = 0, uses_anonymous_args = 0
- 1356 0000 08B5     		push	{r3, lr}
- 1357              		.cfi_def_cfa_offset 8
- 1358              		.cfi_offset 3, -8
- 1359              		.cfi_offset 14, -4
+ 1353              		.loc 1 665 1 is_stmt 1 view -0
+ 1354              		.cfi_startproc
+ 1355              		@ args = 0, pretend = 0, frame = 0
+ 1356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1357 0000 08B5     		push	{r3, lr}
+ 1358              		.cfi_def_cfa_offset 8
+ 1359              		.cfi_offset 3, -8
+ 1360              		.cfi_offset 14, -4
  666:Core/Src/WS2812b_Core.c **** 
  667:Core/Src/WS2812b_Core.c **** 	ws2812b_gpio_init();
- 1360              		.loc 1 667 2 view .LVU393
- 1361 0002 FFF7FEFF 		bl	ws2812b_gpio_init
- 1362              	.LVL89:
+ 1361              		.loc 1 667 2 view .LVU393
+ 1362 0002 FFF7FEFF 		bl	ws2812b_gpio_init
+ 1363              	.LVL89:
  668:Core/Src/WS2812b_Core.c **** 	//void ws2812b_set_pixel(uint8_t row, uint16_t column, uint8_t red, uint8_t green, uint8_t blue);
  669:Core/Src/WS2812b_Core.c **** 	DMA_init();
- 1363              		.loc 1 669 2 view .LVU394
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 41
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 41
 
 
- 1364 0006 FFF7FEFF 		bl	DMA_init
- 1365              	.LVL90:
+ 1364              		.loc 1 669 2 view .LVU394
+ 1365 0006 FFF7FEFF 		bl	DMA_init
+ 1366              	.LVL90:
  670:Core/Src/WS2812b_Core.c **** 	TIM2_init();
- 1366              		.loc 1 670 2 view .LVU395
- 1367 000a FFF7FEFF 		bl	TIM2_init
- 1368              	.LVL91:
+ 1367              		.loc 1 670 2 view .LVU395
+ 1368 000a FFF7FEFF 		bl	TIM2_init
+ 1369              	.LVL91:
  671:Core/Src/WS2812b_Core.c **** 	// Need to start the first transfer
  672:Core/Src/WS2812b_Core.c **** 	ws2812b.transferComplete = 1;
- 1369              		.loc 1 672 2 view .LVU396
- 1370              		.loc 1 672 27 is_stmt 0 view .LVU397
- 1371 000e 024B     		ldr	r3, .L73
- 1372 0010 0122     		movs	r2, #1
- 1373 0012 83F84020 		strb	r2, [r3, #64]
+ 1370              		.loc 1 672 2 view .LVU396
+ 1371              		.loc 1 672 27 is_stmt 0 view .LVU397
+ 1372 000e 024B     		ldr	r3, .L73
+ 1373 0010 0122     		movs	r2, #1
+ 1374 0012 83F84020 		strb	r2, [r3, #64]
  673:Core/Src/WS2812b_Core.c **** }
- 1374              		.loc 1 673 1 view .LVU398
- 1375 0016 08BD     		pop	{r3, pc}
- 1376              	.L74:
- 1377              		.align	2
- 1378              	.L73:
- 1379 0018 00000000 		.word	ws2812b
- 1380              		.cfi_endproc
- 1381              	.LFE78:
- 1383              		.section	.text.ws2812b_handle,"ax",%progbits
- 1384              		.align	1
- 1385              		.global	ws2812b_handle
- 1386              		.syntax unified
- 1387              		.thumb
- 1388              		.thumb_func
- 1390              	ws2812b_handle:
- 1391              	.LFB79:
+ 1375              		.loc 1 673 1 view .LVU398
+ 1376 0016 08BD     		pop	{r3, pc}
+ 1377              	.L74:
+ 1378              		.align	2
+ 1379              	.L73:
+ 1380 0018 00000000 		.word	ws2812b
+ 1381              		.cfi_endproc
+ 1382              	.LFE78:
+ 1384              		.section	.text.ws2812b_handle,"ax",%progbits
+ 1385              		.align	1
+ 1386              		.global	ws2812b_handle
+ 1387              		.syntax unified
+ 1388              		.thumb
+ 1389              		.thumb_func
+ 1391              	ws2812b_handle:
+ 1392              	.LFB79:
  674:Core/Src/WS2812b_Core.c **** 
  675:Core/Src/WS2812b_Core.c **** 
  676:Core/Src/WS2812b_Core.c **** void ws2812b_handle()
  677:Core/Src/WS2812b_Core.c **** {
- 1392              		.loc 1 677 1 is_stmt 1 view -0
- 1393              		.cfi_startproc
- 1394              		@ args = 0, pretend = 0, frame = 0
- 1395              		@ frame_needed = 0, uses_anonymous_args = 0
- 1396 0000 08B5     		push	{r3, lr}
- 1397              		.cfi_def_cfa_offset 8
- 1398              		.cfi_offset 3, -8
- 1399              		.cfi_offset 14, -4
+ 1393              		.loc 1 677 1 is_stmt 1 view -0
+ 1394              		.cfi_startproc
+ 1395              		@ args = 0, pretend = 0, frame = 0
+ 1396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1397 0000 08B5     		push	{r3, lr}
+ 1398              		.cfi_def_cfa_offset 8
+ 1399              		.cfi_offset 3, -8
+ 1400              		.cfi_offset 14, -4
  678:Core/Src/WS2812b_Core.c **** 	if(ws2812b.startTransfer) {
- 1400              		.loc 1 678 2 view .LVU400
- 1401              		.loc 1 678 12 is_stmt 0 view .LVU401
- 1402 0002 064B     		ldr	r3, .L79
- 1403 0004 93F84130 		ldrb	r3, [r3, #65]	@ zero_extendqisi2
- 1404              		.loc 1 678 4 view .LVU402
- 1405 0008 03B9     		cbnz	r3, .L78
- 1406              	.L75:
+ 1401              		.loc 1 678 2 view .LVU400
+ 1402              		.loc 1 678 12 is_stmt 0 view .LVU401
+ 1403 0002 064B     		ldr	r3, .L79
+ 1404 0004 93F84130 		ldrb	r3, [r3, #65]	@ zero_extendqisi2
+ 1405              		.loc 1 678 4 view .LVU402
+ 1406 0008 03B9     		cbnz	r3, .L78
+ 1407              	.L75:
  679:Core/Src/WS2812b_Core.c **** 		ws2812b.startTransfer = 0;
  680:Core/Src/WS2812b_Core.c **** 		WS2812_sendbuf();
  681:Core/Src/WS2812b_Core.c **** 	}
  682:Core/Src/WS2812b_Core.c **** 
  683:Core/Src/WS2812b_Core.c **** }
- 1407              		.loc 1 683 1 view .LVU403
- 1408 000a 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 42
+ 1408              		.loc 1 683 1 view .LVU403
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 42
 
 
- 1409              	.L78:
+ 1409 000a 08BD     		pop	{r3, pc}
+ 1410              	.L78:
  679:Core/Src/WS2812b_Core.c **** 		ws2812b.startTransfer = 0;
- 1410              		.loc 1 679 3 is_stmt 1 view .LVU404
+ 1411              		.loc 1 679 3 is_stmt 1 view .LVU404
  679:Core/Src/WS2812b_Core.c **** 		ws2812b.startTransfer = 0;
- 1411              		.loc 1 679 25 is_stmt 0 view .LVU405
- 1412 000c 034B     		ldr	r3, .L79
- 1413 000e 0022     		movs	r2, #0
- 1414 0010 83F84120 		strb	r2, [r3, #65]
+ 1412              		.loc 1 679 25 is_stmt 0 view .LVU405
+ 1413 000c 034B     		ldr	r3, .L79
+ 1414 000e 0022     		movs	r2, #0
+ 1415 0010 83F84120 		strb	r2, [r3, #65]
  680:Core/Src/WS2812b_Core.c **** 	}
- 1415              		.loc 1 680 3 is_stmt 1 view .LVU406
- 1416 0014 FFF7FEFF 		bl	WS2812_sendbuf
- 1417              	.LVL92:
- 1418              		.loc 1 683 1 is_stmt 0 view .LVU407
- 1419 0018 F7E7     		b	.L75
- 1420              	.L80:
- 1421 001a 00BF     		.align	2
- 1422              	.L79:
- 1423 001c 00000000 		.word	ws2812b
- 1424              		.cfi_endproc
- 1425              	.LFE79:
- 1427              		.global	dmaCC2
- 1428              		.section	.bss.dmaCC2,"aw",%nobits
- 1429              		.align	2
- 1432              	dmaCC2:
- 1433 0000 00000000 		.space	68
- 1433      00000000 
- 1433      00000000 
- 1433      00000000 
- 1433      00000000 
- 1434              		.global	dmaCC1
- 1435              		.section	.bss.dmaCC1,"aw",%nobits
- 1436              		.align	2
- 1439              	dmaCC1:
- 1440 0000 00000000 		.space	68
- 1440      00000000 
- 1440      00000000 
- 1440      00000000 
- 1440      00000000 
- 1441              		.global	dmaUpdate
- 1442              		.section	.bss.dmaUpdate,"aw",%nobits
- 1443              		.align	2
- 1446              	dmaUpdate:
- 1447 0000 00000000 		.space	68
- 1447      00000000 
- 1447      00000000 
- 1447      00000000 
- 1447      00000000 
- 1448              		.global	tim_period
- 1449              		.section	.bss.tim_period,"aw",%nobits
- 1450              		.align	2
- 1453              	tim_period:
- 1454 0000 00000000 		.space	4
- 1455              		.global	tim2OC2
- 1456              		.section	.bss.tim2OC2,"aw",%nobits
- 1457              		.align	2
- 1460              	tim2OC2:
- 1461 0000 00000000 		.space	28
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 43
+ 1416              		.loc 1 680 3 is_stmt 1 view .LVU406
+ 1417 0014 FFF7FEFF 		bl	WS2812_sendbuf
+ 1418              	.LVL92:
+ 1419              		.loc 1 683 1 is_stmt 0 view .LVU407
+ 1420 0018 F7E7     		b	.L75
+ 1421              	.L80:
+ 1422 001a 00BF     		.align	2
+ 1423              	.L79:
+ 1424 001c 00000000 		.word	ws2812b
+ 1425              		.cfi_endproc
+ 1426              	.LFE79:
+ 1428              		.global	dmaCC2
+ 1429              		.section	.bss.dmaCC2,"aw",%nobits
+ 1430              		.align	2
+ 1433              	dmaCC2:
+ 1434 0000 00000000 		.space	68
+ 1434      00000000 
+ 1434      00000000 
+ 1434      00000000 
+ 1434      00000000 
+ 1435              		.global	dmaCC1
+ 1436              		.section	.bss.dmaCC1,"aw",%nobits
+ 1437              		.align	2
+ 1440              	dmaCC1:
+ 1441 0000 00000000 		.space	68
+ 1441      00000000 
+ 1441      00000000 
+ 1441      00000000 
+ 1441      00000000 
+ 1442              		.global	dmaUpdate
+ 1443              		.section	.bss.dmaUpdate,"aw",%nobits
+ 1444              		.align	2
+ 1447              	dmaUpdate:
+ 1448 0000 00000000 		.space	68
+ 1448      00000000 
+ 1448      00000000 
+ 1448      00000000 
+ 1448      00000000 
+ 1449              		.global	tim_period
+ 1450              		.section	.bss.tim_period,"aw",%nobits
+ 1451              		.align	2
+ 1454              	tim_period:
+ 1455 0000 00000000 		.space	4
+ 1456              		.global	tim2OC2
+ 1457              		.section	.bss.tim2OC2,"aw",%nobits
+ 1458              		.align	2
+ 1461              	tim2OC2:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 43
 
 
- 1461      00000000 
- 1461      00000000 
- 1461      00000000 
- 1461      00000000 
- 1462              		.global	tim2OC1
- 1463              		.section	.bss.tim2OC1,"aw",%nobits
- 1464              		.align	2
- 1467              	tim2OC1:
- 1468 0000 00000000 		.space	28
- 1468      00000000 
- 1468      00000000 
- 1468      00000000 
- 1468      00000000 
- 1469              		.global	Tim2Handle
- 1470              		.section	.bss.Tim2Handle,"aw",%nobits
- 1471              		.align	2
- 1474              	Tim2Handle:
- 1475 0000 00000000 		.space	72
- 1475      00000000 
- 1475      00000000 
- 1475      00000000 
- 1475      00000000 
- 1476              		.global	gammaTable
- 1477              		.section	.rodata.gammaTable,"a"
- 1478              		.align	2
- 1481              	gammaTable:
- 1482 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 1482      00000000 
- 1482      00000000 
- 1482      00
- 1483 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1462 0000 00000000 		.space	28
+ 1462      00000000 
+ 1462      00000000 
+ 1462      00000000 
+ 1462      00000000 
+ 1463              		.global	tim2OC1
+ 1464              		.section	.bss.tim2OC1,"aw",%nobits
+ 1465              		.align	2
+ 1468              	tim2OC1:
+ 1469 0000 00000000 		.space	28
+ 1469      00000000 
+ 1469      00000000 
+ 1469      00000000 
+ 1469      00000000 
+ 1470              		.global	Tim2Handle
+ 1471              		.section	.bss.Tim2Handle,"aw",%nobits
+ 1472              		.align	2
+ 1475              	Tim2Handle:
+ 1476 0000 00000000 		.space	72
+ 1476      00000000 
+ 1476      00000000 
+ 1476      00000000 
+ 1476      00000000 
+ 1477              		.global	gammaTable
+ 1478              		.section	.rodata.gammaTable,"a"
+ 1479              		.align	2
+ 1482              	gammaTable:
+ 1483 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  1483      00000000 
  1483      00000000 
  1483      00
- 1484 001a 00000101 		.ascii	"\000\000\001\001\001\001\001\001\001\001\001\001\001"
- 1484      01010101 
- 1484      01010101 
- 1484      01
- 1485 0027 01010202 		.ascii	"\001\001\002\002\002\002\002\002\002\002\003\003\003"
- 1485      02020202 
- 1485      02020303 
- 1485      03
- 1486 0034 03030303 		.ascii	"\003\003\003\003\004\004\004\004\004\005\005\005\005"
- 1486      04040404 
- 1486      04050505 
- 1486      05
- 1487 0041 06060606 		.ascii	"\006\006\006\006\007\007\007\007\010\010\010\011\011"
- 1487      07070707 
- 1487      08080809 
- 1487      09
- 1488 004e 090A0A0A 		.ascii	"\011\012\012\012\013\013\013\014\014\015\015\015\016"
- 1488      0B0B0B0C 
- 1488      0C0D0D0D 
- 1488      0E
- 1489 005b 0E0F0F10 		.ascii	"\016\017\017\020\020\021\021\022\022\023\023\024\024"
- 1489      10111112 
- 1489      12131314 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 44
+ 1484 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1484      00000000 
+ 1484      00000000 
+ 1484      00
+ 1485 001a 00000101 		.ascii	"\000\000\001\001\001\001\001\001\001\001\001\001\001"
+ 1485      01010101 
+ 1485      01010101 
+ 1485      01
+ 1486 0027 01010202 		.ascii	"\001\001\002\002\002\002\002\002\002\002\003\003\003"
+ 1486      02020202 
+ 1486      02020303 
+ 1486      03
+ 1487 0034 03030303 		.ascii	"\003\003\003\003\004\004\004\004\004\005\005\005\005"
+ 1487      04040404 
+ 1487      04050505 
+ 1487      05
+ 1488 0041 06060606 		.ascii	"\006\006\006\006\007\007\007\007\010\010\010\011\011"
+ 1488      07070707 
+ 1488      08080809 
+ 1488      09
+ 1489 004e 090A0A0A 		.ascii	"\011\012\012\012\013\013\013\014\014\015\015\015\016"
+ 1489      0B0B0B0C 
+ 1489      0C0D0D0D 
+ 1489      0E
+ 1490 005b 0E0F0F10 		.ascii	"\016\017\017\020\020\021\021\022\022\023\023\024\024"
+ 1490      10111112 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 44
 
 
- 1489      14
- 1490 0068 15151616 		.ascii	"\025\025\026\026\027\030\030\031\031\032\033\033\034"
- 1490      17181819 
- 1490      191A1B1B 
- 1490      1C
- 1491 0075 1D1D1E1F 		.ascii	"\035\035\036\037  !\"##$%&''()*+,-./0122346789:;<=>"
- 1491      20202122 
- 1491      23232425 
- 1491      26272728 
- 1491      292A2B2C 
- 1492 009b 3F404243 		.ascii	"?@BCDEFHIJKMNOQRSUVWYZ\\]_`bcefhikmnprsuwxz|~\177\201"
- 1492      44454648 
- 1492      494A4B4D 
- 1492      4E4F5152 
- 1492      53555657 
- 1493 00c9 83858789 		.ascii	"\203\205\207\211\212\214\216\220\222\224\226\230\232"
- 1493      8A8C8E90 
- 1493      92949698 
- 1493      9A
- 1494 00d6 9C9EA0A2 		.ascii	"\234\236\240\242\244\247\251\253\255\257\261\264\266"
- 1494      A4A7A9AB 
- 1494      ADAFB1B4 
- 1494      B6
- 1495 00e3 B8BABDBF 		.ascii	"\270\272\275\277\301\304\306\310\313\315\320\322\325"
- 1495      C1C4C6C8 
- 1495      CBCDD0D2 
- 1495      D5
- 1496 00f0 D7DADCDF 		.ascii	"\327\332\334\337\341\344\347\351\354\357\361\364\367"
- 1496      E1E4E7E9 
- 1496      ECEFF1F4 
- 1496      F7
- 1497 00fd F9FCFF   		.ascii	"\371\374\377"
- 1498              		.global	ws2812bDmaBitBuffer
- 1499              		.section	.bss.ws2812bDmaBitBuffer,"aw",%nobits
- 1500              		.align	2
- 1503              	ws2812bDmaBitBuffer:
- 1504 0000 00000000 		.space	96
- 1504      00000000 
- 1504      00000000 
- 1504      00000000 
- 1504      00000000 
- 1505              		.global	WS2812_IO_Low
- 1506              		.section	.data.WS2812_IO_Low,"aw"
- 1507              		.align	2
- 1510              	WS2812_IO_Low:
- 1511 0000 0000F000 		.word	15728640
- 1512              		.global	WS2812_IO_High
- 1513              		.section	.data.WS2812_IO_High,"aw"
- 1514              		.align	2
- 1517              	WS2812_IO_High:
- 1518 0000 F0000000 		.word	240
- 1519              		.global	ws2812b
- 1520              		.section	.bss.ws2812b,"aw",%nobits
- 1521              		.align	2
- 1524              	ws2812b:
- 1525 0000 00000000 		.space	76
- 1525      00000000 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 45
+ 1490      12131314 
+ 1490      14
+ 1491 0068 15151616 		.ascii	"\025\025\026\026\027\030\030\031\031\032\033\033\034"
+ 1491      17181819 
+ 1491      191A1B1B 
+ 1491      1C
+ 1492 0075 1D1D1E1F 		.ascii	"\035\035\036\037  !\"##$%&''()*+,-./0122346789:;<=>"
+ 1492      20202122 
+ 1492      23232425 
+ 1492      26272728 
+ 1492      292A2B2C 
+ 1493 009b 3F404243 		.ascii	"?@BCDEFHIJKMNOQRSUVWYZ\\]_`bcefhikmnprsuwxz|~\177\201"
+ 1493      44454648 
+ 1493      494A4B4D 
+ 1493      4E4F5152 
+ 1493      53555657 
+ 1494 00c9 83858789 		.ascii	"\203\205\207\211\212\214\216\220\222\224\226\230\232"
+ 1494      8A8C8E90 
+ 1494      92949698 
+ 1494      9A
+ 1495 00d6 9C9EA0A2 		.ascii	"\234\236\240\242\244\247\251\253\255\257\261\264\266"
+ 1495      A4A7A9AB 
+ 1495      ADAFB1B4 
+ 1495      B6
+ 1496 00e3 B8BABDBF 		.ascii	"\270\272\275\277\301\304\306\310\313\315\320\322\325"
+ 1496      C1C4C6C8 
+ 1496      CBCDD0D2 
+ 1496      D5
+ 1497 00f0 D7DADCDF 		.ascii	"\327\332\334\337\341\344\347\351\354\357\361\364\367"
+ 1497      E1E4E7E9 
+ 1497      ECEFF1F4 
+ 1497      F7
+ 1498 00fd F9FCFF   		.ascii	"\371\374\377"
+ 1499              		.global	ws2812bDmaBitBuffer
+ 1500              		.section	.bss.ws2812bDmaBitBuffer,"aw",%nobits
+ 1501              		.align	2
+ 1504              	ws2812bDmaBitBuffer:
+ 1505 0000 00000000 		.space	96
+ 1505      00000000 
+ 1505      00000000 
+ 1505      00000000 
+ 1505      00000000 
+ 1506              		.global	WS2812_IO_Low
+ 1507              		.section	.data.WS2812_IO_Low,"aw"
+ 1508              		.align	2
+ 1511              	WS2812_IO_Low:
+ 1512 0000 0000F000 		.word	15728640
+ 1513              		.global	WS2812_IO_High
+ 1514              		.section	.data.WS2812_IO_High,"aw"
+ 1515              		.align	2
+ 1518              	WS2812_IO_High:
+ 1519 0000 F0000000 		.word	240
+ 1520              		.global	ws2812b
+ 1521              		.section	.bss.ws2812b,"aw",%nobits
+ 1522              		.align	2
+ 1525              	ws2812b:
+ 1526 0000 00000000 		.space	76
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 45
 
 
- 1525      00000000 
- 1525      00000000 
- 1525      00000000 
- 1526              		.text
- 1527              	.Letext0:
- 1528              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1529              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 1530              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 1531              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 1532              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 1533              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 1534              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 1535              		.file 9 "Core/Inc/WS2812B_Core.h"
- 1536              		.file 10 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 1537              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 46
+ 1526      00000000 
+ 1526      00000000 
+ 1526      00000000 
+ 1526      00000000 
+ 1527              		.text
+ 1528              	.Letext0:
+ 1529              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1530              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1531              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1532              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1533              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1534              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1535              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1536              		.file 9 "Core/Inc/WS2812B_Core.h"
+ 1537              		.file 10 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1538              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 WS2812b_Core.c
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:19     .text.ws2812b_set_pixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:24     .text.ws2812b_set_pixel:00000000 ws2812b_set_pixel
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:260    .text.ws2812b_set_pixel:000000bc $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1481   .rodata.gammaTable:00000000 gammaTable
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1503   .bss.ws2812bDmaBitBuffer:00000000 ws2812bDmaBitBuffer
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:266    .text.loadNextFramebufferData:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:271    .text.loadNextFramebufferData:00000000 loadNextFramebufferData
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:347    .text.DMA_TransferCompleteHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:353    .text.DMA_TransferCompleteHandler:00000000 DMA_TransferCompleteHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:462    .text.DMA_TransferCompleteHandler:00000084 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1524   .bss.ws2812b:00000000 ws2812b
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1474   .bss.Tim2Handle:00000000 Tim2Handle
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1446   .bss.dmaUpdate:00000000 dmaUpdate
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1439   .bss.dmaCC1:00000000 dmaCC1
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1432   .bss.dmaCC2:00000000 dmaCC2
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1510   .data.WS2812_IO_Low:00000000 WS2812_IO_Low
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:473    .text.WS2812_sendbuf:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:478    .text.WS2812_sendbuf:00000000 WS2812_sendbuf
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:604    .text.WS2812_sendbuf:000000a8 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1453   .bss.tim_period:00000000 tim_period
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:615    .text.DMA_TransferHalfHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:621    .text.DMA_TransferHalfHandler:00000000 DMA_TransferHalfHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:689    .text.DMA_TransferHalfHandler:00000038 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:694    .text.ws2812b_gpio_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:699    .text.ws2812b_gpio_init:00000000 ws2812b_gpio_init
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:756    .text.ws2812b_gpio_init:00000038 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:762    .text.DMA_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:767    .text.DMA_init:00000000 DMA_init
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:948    .text.DMA_init:000000d8 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1517   .data.WS2812_IO_High:00000000 WS2812_IO_High
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:966    .text.TIM2_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:971    .text.TIM2_init:00000000 TIM2_init
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1132   .text.TIM2_init:000000b4 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1467   .bss.tim2OC1:00000000 tim2OC1
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1460   .bss.tim2OC2:00000000 tim2OC2
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1145   .text.DMA1_Channel2_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1151   .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1170   .text.DMA1_Channel2_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1175   .text.DMA1_Channel5_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1181   .text.DMA1_Channel5_IRQHandler:00000000 DMA1_Channel5_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1200   .text.DMA1_Channel5_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1205   .text.DMA1_Channel7_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1211   .text.DMA1_Channel7_IRQHandler:00000000 DMA1_Channel7_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1230   .text.DMA1_Channel7_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1235   .text.TIM2_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1241   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1260   .text.TIM2_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1265   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1271   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1338   .text.HAL_TIM_PeriodElapsedCallback:00000054 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1344   .text.ws2812b_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1350   .text.ws2812b_init:00000000 ws2812b_init
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1379   .text.ws2812b_init:00000018 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1384   .text.ws2812b_handle:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1390   .text.ws2812b_handle:00000000 ws2812b_handle
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s 			page 47
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:19     .text.ws2812b_set_pixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:24     .text.ws2812b_set_pixel:00000000 ws2812b_set_pixel
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:260    .text.ws2812b_set_pixel:000000bc $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1482   .rodata.gammaTable:00000000 gammaTable
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1504   .bss.ws2812bDmaBitBuffer:00000000 ws2812bDmaBitBuffer
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:266    .text.loadNextFramebufferData:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:271    .text.loadNextFramebufferData:00000000 loadNextFramebufferData
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:347    .text.DMA_TransferCompleteHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:353    .text.DMA_TransferCompleteHandler:00000000 DMA_TransferCompleteHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:462    .text.DMA_TransferCompleteHandler:00000084 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1525   .bss.ws2812b:00000000 ws2812b
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1475   .bss.Tim2Handle:00000000 Tim2Handle
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1447   .bss.dmaUpdate:00000000 dmaUpdate
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1440   .bss.dmaCC1:00000000 dmaCC1
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1433   .bss.dmaCC2:00000000 dmaCC2
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1511   .data.WS2812_IO_Low:00000000 WS2812_IO_Low
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:473    .text.WS2812_sendbuf:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:478    .text.WS2812_sendbuf:00000000 WS2812_sendbuf
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:604    .text.WS2812_sendbuf:000000a8 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1454   .bss.tim_period:00000000 tim_period
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:615    .text.DMA_TransferHalfHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:621    .text.DMA_TransferHalfHandler:00000000 DMA_TransferHalfHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:690    .text.DMA_TransferHalfHandler:0000003c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:695    .text.ws2812b_gpio_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:700    .text.ws2812b_gpio_init:00000000 ws2812b_gpio_init
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:757    .text.ws2812b_gpio_init:00000038 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:763    .text.DMA_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:768    .text.DMA_init:00000000 DMA_init
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:949    .text.DMA_init:000000d8 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1518   .data.WS2812_IO_High:00000000 WS2812_IO_High
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:967    .text.TIM2_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:972    .text.TIM2_init:00000000 TIM2_init
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1133   .text.TIM2_init:000000b4 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1468   .bss.tim2OC1:00000000 tim2OC1
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1461   .bss.tim2OC2:00000000 tim2OC2
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1146   .text.DMA1_Channel2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1152   .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1171   .text.DMA1_Channel2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1176   .text.DMA1_Channel5_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1182   .text.DMA1_Channel5_IRQHandler:00000000 DMA1_Channel5_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1201   .text.DMA1_Channel5_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1206   .text.DMA1_Channel7_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1212   .text.DMA1_Channel7_IRQHandler:00000000 DMA1_Channel7_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1231   .text.DMA1_Channel7_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1236   .text.TIM2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1242   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1261   .text.TIM2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1266   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1272   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1339   .text.HAL_TIM_PeriodElapsedCallback:00000054 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1345   .text.ws2812b_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1351   .text.ws2812b_init:00000000 ws2812b_init
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1380   .text.ws2812b_init:00000018 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1385   .text.ws2812b_handle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1391   .text.ws2812b_handle:00000000 ws2812b_handle
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 47
 
 
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1423   .text.ws2812b_handle:0000001c $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1429   .bss.dmaCC2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1436   .bss.dmaCC1:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1443   .bss.dmaUpdate:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1450   .bss.tim_period:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1457   .bss.tim2OC2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1464   .bss.tim2OC1:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1471   .bss.Tim2Handle:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1478   .rodata.gammaTable:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1500   .bss.ws2812bDmaBitBuffer:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1507   .data.WS2812_IO_Low:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1514   .data.WS2812_IO_High:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccU4VXWS.s:1521   .bss.ws2812b:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1424   .text.ws2812b_handle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1430   .bss.dmaCC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1437   .bss.dmaCC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1444   .bss.dmaUpdate:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1451   .bss.tim_period:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1458   .bss.tim2OC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1465   .bss.tim2OC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1472   .bss.Tim2Handle:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1479   .rodata.gammaTable:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1501   .bss.ws2812bDmaBitBuffer:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1508   .data.WS2812_IO_Low:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1515   .data.WS2812_IO_High:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1522   .bss.ws2812b:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

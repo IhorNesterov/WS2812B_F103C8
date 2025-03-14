@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,13 +58,13 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
   46              		.loc 1 10 19 view .LVU9
   47 0008 C360     		str	r3, [r0, #12]
   11:Core/Src/NOS_WS2812B_Strip.c ****     strip->effectsCounter = 0;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 2
 
 
   48              		.loc 1 11 5 is_stmt 1 view .LVU10
   49              		.loc 1 11 27 is_stmt 0 view .LVU11
   50 000a 0023     		movs	r3, #0
-  51 000c 80F87831 		strb	r3, [r0, #376]
+  51 000c 80F8EC30 		strb	r3, [r0, #236]
   12:Core/Src/NOS_WS2812B_Strip.c **** }
   52              		.loc 1 12 1 view .LVU12
   53 0010 7047     		bx	lr
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
   96              	.LVL4:
   97              		.loc 1 19 46 view .LVU25
   98 0018 A354     		strb	r3, [r4, r2]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 3
 
 
   20:Core/Src/NOS_WS2812B_Strip.c ****         strip->frameBuffer[pixelPos * 3 + 2] = b;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
  148 000a 8C45     		cmp	ip, r1
  149 000c 0ADB     		blt	.L5
   27:Core/Src/NOS_WS2812B_Strip.c ****     {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 4
 
 
   28:Core/Src/NOS_WS2812B_Strip.c ****         strip->pixels[pixelPos].R = r;
@@ -238,591 +238,602 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 1
  198              		.cfi_startproc
  199              		@ args = 0, pretend = 0, frame = 0
  200              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 5
 
 
  201              		.loc 1 35 1 is_stmt 0 view .LVU54
- 202 0000 30B5     		push	{r4, r5, lr}
- 203              		.cfi_def_cfa_offset 12
- 204              		.cfi_offset 4, -12
- 205              		.cfi_offset 5, -8
- 206              		.cfi_offset 14, -4
- 207 0002 83B0     		sub	sp, sp, #12
- 208              		.cfi_def_cfa_offset 24
- 209 0004 0546     		mov	r5, r0
+ 202 0000 70B5     		push	{r4, r5, r6, lr}
+ 203              		.cfi_def_cfa_offset 16
+ 204              		.cfi_offset 4, -16
+ 205              		.cfi_offset 5, -12
+ 206              		.cfi_offset 6, -8
+ 207              		.cfi_offset 14, -4
+ 208 0002 82B0     		sub	sp, sp, #8
+ 209              		.cfi_def_cfa_offset 24
+ 210 0004 0646     		mov	r6, r0
   36:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 210              		.loc 1 36 5 is_stmt 1 view .LVU55
- 211              	.LBB2:
- 212              		.loc 1 36 9 view .LVU56
- 213              	.LVL17:
- 214              		.loc 1 36 13 is_stmt 0 view .LVU57
- 215 0006 0024     		movs	r4, #0
- 216              		.loc 1 36 5 view .LVU58
- 217 0008 07E0     		b	.L9
- 218              	.LVL18:
- 219              	.L10:
+ 211              		.loc 1 36 5 is_stmt 1 view .LVU55
+ 212              	.LBB2:
+ 213              		.loc 1 36 9 view .LVU56
+ 214              	.LVL17:
+ 215              		.loc 1 36 13 is_stmt 0 view .LVU57
+ 216 0006 0025     		movs	r5, #0
+ 217              		.loc 1 36 5 view .LVU58
+ 218 0008 0FE0     		b	.L9
+ 219              	.LVL18:
+ 220              	.L10:
   37:Core/Src/NOS_WS2812B_Strip.c ****     {
   38:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixel(strip,i,0,0,0);
- 220              		.loc 1 38 9 is_stmt 1 discriminator 3 view .LVU59
- 221 000a 0022     		movs	r2, #0
- 222 000c 0092     		str	r2, [sp]
- 223 000e 1346     		mov	r3, r2
- 224 0010 2146     		mov	r1, r4
- 225 0012 2846     		mov	r0, r5
- 226 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 227              	.LVL19:
+ 221              		.loc 1 38 9 is_stmt 1 discriminator 3 view .LVU59
+ 222 000a 0024     		movs	r4, #0
+ 223 000c 0094     		str	r4, [sp]
+ 224 000e 2346     		mov	r3, r4
+ 225 0010 2246     		mov	r2, r4
+ 226 0012 2946     		mov	r1, r5
+ 227 0014 3046     		mov	r0, r6
+ 228 0016 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 229              	.LVL19:
+  39:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_CoreSetPixel(strip,i,0,0,0);
+ 230              		.loc 1 39 9 discriminator 3 view .LVU60
+ 231 001a 0094     		str	r4, [sp]
+ 232 001c 2346     		mov	r3, r4
+ 233 001e 2246     		mov	r2, r4
+ 234 0020 2946     		mov	r1, r5
+ 235 0022 3046     		mov	r0, r6
+ 236 0024 FFF7FEFF 		bl	NOS_WS2812B_Strip_CoreSetPixel
+ 237              	.LVL20:
   36:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 228              		.loc 1 36 44 discriminator 3 view .LVU60
- 229 0018 0134     		adds	r4, r4, #1
- 230              	.LVL20:
- 231              	.L9:
+ 238              		.loc 1 36 44 discriminator 3 view .LVU61
+ 239 0028 0135     		adds	r5, r5, #1
+ 240              	.LVL21:
+ 241              	.L9:
   36:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 232              		.loc 1 36 22 discriminator 1 view .LVU61
+ 242              		.loc 1 36 22 discriminator 1 view .LVU62
   36:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 233              		.loc 1 36 29 is_stmt 0 discriminator 1 view .LVU62
- 234 001a AB68     		ldr	r3, [r5, #8]
+ 243              		.loc 1 36 29 is_stmt 0 discriminator 1 view .LVU63
+ 244 002a B368     		ldr	r3, [r6, #8]
   36:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 235              		.loc 1 36 22 discriminator 1 view .LVU63
- 236 001c A342     		cmp	r3, r4
- 237 001e F4DC     		bgt	.L10
- 238              	.LBE2:
-  39:Core/Src/NOS_WS2812B_Strip.c ****     }
-  40:Core/Src/NOS_WS2812B_Strip.c **** }
- 239              		.loc 1 40 1 view .LVU64
- 240 0020 03B0     		add	sp, sp, #12
- 241              		.cfi_def_cfa_offset 12
- 242              		@ sp needed
- 243 0022 30BD     		pop	{r4, r5, pc}
- 244              		.loc 1 40 1 view .LVU65
- 245              		.cfi_endproc
- 246              	.LFE68:
- 248              		.global	__aeabi_i2f
- 249              		.global	__aeabi_fdiv
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 6
+ 245              		.loc 1 36 22 discriminator 1 view .LVU64
+ 246 002c AB42     		cmp	r3, r5
+ 247 002e ECDC     		bgt	.L10
+ 248              	.LBE2:
+  40:Core/Src/NOS_WS2812B_Strip.c ****     }
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 6
 
 
- 250              		.global	__aeabi_ui2f
- 251              		.global	__aeabi_fmul
- 252              		.global	__aeabi_f2uiz
- 253              		.section	.text.NOS_WS2812B_Strip_Update,"ax",%progbits
- 254              		.align	1
- 255              		.global	NOS_WS2812B_Strip_Update
- 256              		.syntax unified
- 257              		.thumb
- 258              		.thumb_func
- 260              	NOS_WS2812B_Strip_Update:
- 261              	.LVL21:
- 262              	.LFB69:
-  41:Core/Src/NOS_WS2812B_Strip.c **** 
-  42:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_Update(WS2812B_Strip* strip)
-  43:Core/Src/NOS_WS2812B_Strip.c **** {
- 263              		.loc 1 43 1 is_stmt 1 view -0
- 264              		.cfi_startproc
- 265              		@ args = 0, pretend = 0, frame = 0
- 266              		@ frame_needed = 0, uses_anonymous_args = 0
- 267              		.loc 1 43 1 is_stmt 0 view .LVU67
- 268 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 269              		.cfi_def_cfa_offset 28
- 270              		.cfi_offset 4, -28
- 271              		.cfi_offset 5, -24
- 272              		.cfi_offset 6, -20
- 273              		.cfi_offset 7, -16
- 274              		.cfi_offset 8, -12
- 275              		.cfi_offset 9, -8
- 276              		.cfi_offset 14, -4
- 277 0004 83B0     		sub	sp, sp, #12
- 278              		.cfi_def_cfa_offset 40
- 279 0006 0746     		mov	r7, r0
-  44:Core/Src/NOS_WS2812B_Strip.c ****     float coef = (float)strip->bright / 100;
- 280              		.loc 1 44 5 is_stmt 1 view .LVU68
- 281              		.loc 1 44 18 is_stmt 0 view .LVU69
- 282 0008 C068     		ldr	r0, [r0, #12]
- 283              	.LVL22:
- 284              		.loc 1 44 18 view .LVU70
- 285 000a FFF7FEFF 		bl	__aeabi_i2f
- 286              	.LVL23:
- 287              		.loc 1 44 11 view .LVU71
- 288 000e 1B49     		ldr	r1, .L16
- 289 0010 FFF7FEFF 		bl	__aeabi_fdiv
- 290              	.LVL24:
- 291 0014 8046     		mov	r8, r0
- 292              	.LVL25:
-  45:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 293              		.loc 1 45 5 is_stmt 1 view .LVU72
- 294              	.LBB3:
- 295              		.loc 1 45 9 view .LVU73
- 296              		.loc 1 45 13 is_stmt 0 view .LVU74
- 297 0016 0024     		movs	r4, #0
- 298              		.loc 1 45 5 view .LVU75
- 299 0018 29E0     		b	.L13
- 300              	.LVL26:
- 301              	.L14:
- 302              	.LBB4:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 7
+  41:Core/Src/NOS_WS2812B_Strip.c **** }
+ 249              		.loc 1 41 1 view .LVU65
+ 250 0030 02B0     		add	sp, sp, #8
+ 251              		.cfi_def_cfa_offset 16
+ 252              		@ sp needed
+ 253 0032 70BD     		pop	{r4, r5, r6, pc}
+ 254              		.loc 1 41 1 view .LVU66
+ 255              		.cfi_endproc
+ 256              	.LFE68:
+ 258              		.global	__aeabi_i2f
+ 259              		.global	__aeabi_fdiv
+ 260              		.global	__aeabi_ui2f
+ 261              		.global	__aeabi_fmul
+ 262              		.global	__aeabi_f2uiz
+ 263              		.section	.text.NOS_WS2812B_Strip_Update,"ax",%progbits
+ 264              		.align	1
+ 265              		.global	NOS_WS2812B_Strip_Update
+ 266              		.syntax unified
+ 267              		.thumb
+ 268              		.thumb_func
+ 270              	NOS_WS2812B_Strip_Update:
+ 271              	.LVL22:
+ 272              	.LFB69:
+  42:Core/Src/NOS_WS2812B_Strip.c **** 
+  43:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_Update(WS2812B_Strip* strip)
+  44:Core/Src/NOS_WS2812B_Strip.c **** {
+ 273              		.loc 1 44 1 is_stmt 1 view -0
+ 274              		.cfi_startproc
+ 275              		@ args = 0, pretend = 0, frame = 0
+ 276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 277              		.loc 1 44 1 is_stmt 0 view .LVU68
+ 278 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 279              		.cfi_def_cfa_offset 28
+ 280              		.cfi_offset 4, -28
+ 281              		.cfi_offset 5, -24
+ 282              		.cfi_offset 6, -20
+ 283              		.cfi_offset 7, -16
+ 284              		.cfi_offset 8, -12
+ 285              		.cfi_offset 9, -8
+ 286              		.cfi_offset 14, -4
+ 287 0004 83B0     		sub	sp, sp, #12
+ 288              		.cfi_def_cfa_offset 40
+ 289 0006 0746     		mov	r7, r0
+  45:Core/Src/NOS_WS2812B_Strip.c ****     float coef = (float)strip->bright / 100;
+ 290              		.loc 1 45 5 is_stmt 1 view .LVU69
+ 291              		.loc 1 45 18 is_stmt 0 view .LVU70
+ 292 0008 C068     		ldr	r0, [r0, #12]
+ 293              	.LVL23:
+ 294              		.loc 1 45 18 view .LVU71
+ 295 000a FFF7FEFF 		bl	__aeabi_i2f
+ 296              	.LVL24:
+ 297              		.loc 1 45 11 view .LVU72
+ 298 000e 1B49     		ldr	r1, .L16
+ 299 0010 FFF7FEFF 		bl	__aeabi_fdiv
+ 300              	.LVL25:
+ 301 0014 8046     		mov	r8, r0
+ 302              	.LVL26:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 7
 
 
+  46:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 303              		.loc 1 46 5 is_stmt 1 view .LVU73
+ 304              	.LBB3:
+ 305              		.loc 1 46 9 view .LVU74
+ 306              		.loc 1 46 13 is_stmt 0 view .LVU75
+ 307 0016 0024     		movs	r4, #0
+ 308              		.loc 1 46 5 view .LVU76
+ 309 0018 29E0     		b	.L13
+ 310              	.LVL27:
+ 311              	.L14:
+ 312              	.LBB4:
+  47:Core/Src/NOS_WS2812B_Strip.c ****     {
+  48:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currR = (float)strip->pixels[i].R * coef;
+ 313              		.loc 1 48 9 is_stmt 1 discriminator 3 view .LVU77
+ 314              		.loc 1 48 37 is_stmt 0 discriminator 3 view .LVU78
+ 315 001a 7A68     		ldr	r2, [r7, #4]
+ 316              		.loc 1 48 45 discriminator 3 view .LVU79
+ 317 001c 04EB4403 		add	r3, r4, r4, lsl #1
+ 318 0020 02EB0309 		add	r9, r2, r3
+ 319              		.loc 1 48 25 discriminator 3 view .LVU80
+ 320 0024 D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
+ 321 0026 FFF7FEFF 		bl	__aeabi_ui2f
+ 322              	.LVL28:
+ 323              		.loc 1 48 51 discriminator 3 view .LVU81
+ 324 002a 4146     		mov	r1, r8
+ 325 002c FFF7FEFF 		bl	__aeabi_fmul
+ 326              	.LVL29:
+ 327              		.loc 1 48 17 discriminator 3 view .LVU82
+ 328 0030 FFF7FEFF 		bl	__aeabi_f2uiz
+ 329              	.LVL30:
+ 330 0034 C5B2     		uxtb	r5, r0
+ 331              	.LVL31:
+  49:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currG = (float)strip->pixels[i].G * coef;
+ 332              		.loc 1 49 9 is_stmt 1 discriminator 3 view .LVU83
+ 333              		.loc 1 49 25 is_stmt 0 discriminator 3 view .LVU84
+ 334 0036 99F80100 		ldrb	r0, [r9, #1]	@ zero_extendqisi2
+ 335 003a FFF7FEFF 		bl	__aeabi_ui2f
+ 336              	.LVL32:
+ 337              		.loc 1 49 51 discriminator 3 view .LVU85
+ 338 003e 4146     		mov	r1, r8
+ 339 0040 FFF7FEFF 		bl	__aeabi_fmul
+ 340              	.LVL33:
+ 341              		.loc 1 49 17 discriminator 3 view .LVU86
+ 342 0044 FFF7FEFF 		bl	__aeabi_f2uiz
+ 343              	.LVL34:
+ 344 0048 C6B2     		uxtb	r6, r0
+ 345              	.LVL35:
+  50:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currB = (float)strip->pixels[i].B * coef;
+ 346              		.loc 1 50 9 is_stmt 1 discriminator 3 view .LVU87
+ 347              		.loc 1 50 25 is_stmt 0 discriminator 3 view .LVU88
+ 348 004a 99F80200 		ldrb	r0, [r9, #2]	@ zero_extendqisi2
+ 349 004e FFF7FEFF 		bl	__aeabi_ui2f
+ 350              	.LVL36:
+ 351              		.loc 1 50 51 discriminator 3 view .LVU89
+ 352 0052 4146     		mov	r1, r8
+ 353 0054 FFF7FEFF 		bl	__aeabi_fmul
+ 354              	.LVL37:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 8
+
+
+ 355              		.loc 1 50 17 discriminator 3 view .LVU90
+ 356 0058 FFF7FEFF 		bl	__aeabi_f2uiz
+ 357              	.LVL38:
+ 358 005c C0B2     		uxtb	r0, r0
+ 359              	.LVL39:
+  51:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_CoreSetPixel(strip,i,currR,currG,currB);
+ 360              		.loc 1 51 9 is_stmt 1 discriminator 3 view .LVU91
+ 361 005e 0090     		str	r0, [sp]
+ 362 0060 3346     		mov	r3, r6
+ 363 0062 2A46     		mov	r2, r5
+ 364 0064 2146     		mov	r1, r4
+ 365 0066 3846     		mov	r0, r7
+ 366              	.LVL40:
+ 367              		.loc 1 51 9 is_stmt 0 discriminator 3 view .LVU92
+ 368 0068 FFF7FEFF 		bl	NOS_WS2812B_Strip_CoreSetPixel
+ 369              	.LVL41:
+ 370              		.loc 1 51 9 discriminator 3 view .LVU93
+ 371              	.LBE4:
   46:Core/Src/NOS_WS2812B_Strip.c ****     {
-  47:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currR = (float)strip->pixels[i].R * coef;
- 303              		.loc 1 47 9 is_stmt 1 discriminator 3 view .LVU76
- 304              		.loc 1 47 37 is_stmt 0 discriminator 3 view .LVU77
- 305 001a 7A68     		ldr	r2, [r7, #4]
- 306              		.loc 1 47 45 discriminator 3 view .LVU78
- 307 001c 04EB4403 		add	r3, r4, r4, lsl #1
- 308 0020 02EB0309 		add	r9, r2, r3
- 309              		.loc 1 47 25 discriminator 3 view .LVU79
- 310 0024 D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
- 311 0026 FFF7FEFF 		bl	__aeabi_ui2f
- 312              	.LVL27:
- 313              		.loc 1 47 51 discriminator 3 view .LVU80
- 314 002a 4146     		mov	r1, r8
- 315 002c FFF7FEFF 		bl	__aeabi_fmul
- 316              	.LVL28:
- 317              		.loc 1 47 17 discriminator 3 view .LVU81
- 318 0030 FFF7FEFF 		bl	__aeabi_f2uiz
- 319              	.LVL29:
- 320 0034 C5B2     		uxtb	r5, r0
- 321              	.LVL30:
-  48:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currG = (float)strip->pixels[i].G * coef;
- 322              		.loc 1 48 9 is_stmt 1 discriminator 3 view .LVU82
- 323              		.loc 1 48 25 is_stmt 0 discriminator 3 view .LVU83
- 324 0036 99F80100 		ldrb	r0, [r9, #1]	@ zero_extendqisi2
- 325 003a FFF7FEFF 		bl	__aeabi_ui2f
- 326              	.LVL31:
- 327              		.loc 1 48 51 discriminator 3 view .LVU84
- 328 003e 4146     		mov	r1, r8
- 329 0040 FFF7FEFF 		bl	__aeabi_fmul
- 330              	.LVL32:
- 331              		.loc 1 48 17 discriminator 3 view .LVU85
- 332 0044 FFF7FEFF 		bl	__aeabi_f2uiz
- 333              	.LVL33:
- 334 0048 C6B2     		uxtb	r6, r0
- 335              	.LVL34:
-  49:Core/Src/NOS_WS2812B_Strip.c ****         uint8_t currB = (float)strip->pixels[i].B * coef;
- 336              		.loc 1 49 9 is_stmt 1 discriminator 3 view .LVU86
- 337              		.loc 1 49 25 is_stmt 0 discriminator 3 view .LVU87
- 338 004a 99F80200 		ldrb	r0, [r9, #2]	@ zero_extendqisi2
- 339 004e FFF7FEFF 		bl	__aeabi_ui2f
- 340              	.LVL35:
- 341              		.loc 1 49 51 discriminator 3 view .LVU88
- 342 0052 4146     		mov	r1, r8
- 343 0054 FFF7FEFF 		bl	__aeabi_fmul
- 344              	.LVL36:
- 345              		.loc 1 49 17 discriminator 3 view .LVU89
- 346 0058 FFF7FEFF 		bl	__aeabi_f2uiz
- 347              	.LVL37:
- 348 005c C0B2     		uxtb	r0, r0
- 349              	.LVL38:
-  50:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_CoreSetPixel(strip,i,currR,currG,currB);
- 350              		.loc 1 50 9 is_stmt 1 discriminator 3 view .LVU90
- 351 005e 0090     		str	r0, [sp]
- 352 0060 3346     		mov	r3, r6
- 353 0062 2A46     		mov	r2, r5
- 354 0064 2146     		mov	r1, r4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 8
+ 372              		.loc 1 46 44 is_stmt 1 discriminator 3 view .LVU94
+ 373 006c 0134     		adds	r4, r4, #1
+ 374              	.LVL42:
+ 375              	.L13:
+  46:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 376              		.loc 1 46 22 discriminator 1 view .LVU95
+  46:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 377              		.loc 1 46 29 is_stmt 0 discriminator 1 view .LVU96
+ 378 006e BB68     		ldr	r3, [r7, #8]
+  46:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 379              		.loc 1 46 22 discriminator 1 view .LVU97
+ 380 0070 A342     		cmp	r3, r4
+ 381 0072 D2DC     		bgt	.L14
+ 382              	.LBE3:
+  52:Core/Src/NOS_WS2812B_Strip.c ****     }
+  53:Core/Src/NOS_WS2812B_Strip.c **** 
+  54:Core/Src/NOS_WS2812B_Strip.c **** }
+ 383              		.loc 1 54 1 view .LVU98
+ 384 0074 03B0     		add	sp, sp, #12
+ 385              		.cfi_def_cfa_offset 28
+ 386              		@ sp needed
+ 387 0076 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 388              	.LVL43:
+ 389              	.L17:
+ 390              		.loc 1 54 1 view .LVU99
+ 391 007a 00BF     		.align	2
+ 392              	.L16:
+ 393 007c 0000C842 		.word	1120403456
+ 394              		.cfi_endproc
+ 395              	.LFE69:
+ 397              		.section	.text.NOS_WS2812B_Strip_ColorFill,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	NOS_WS2812B_Strip_ColorFill
+ 400              		.syntax unified
+ 401              		.thumb
+ 402              		.thumb_func
+ 404              	NOS_WS2812B_Strip_ColorFill:
+ 405              	.LVL44:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 9
 
 
- 355 0066 3846     		mov	r0, r7
- 356              	.LVL39:
- 357              		.loc 1 50 9 is_stmt 0 discriminator 3 view .LVU91
- 358 0068 FFF7FEFF 		bl	NOS_WS2812B_Strip_CoreSetPixel
- 359              	.LVL40:
- 360              		.loc 1 50 9 discriminator 3 view .LVU92
- 361              	.LBE4:
-  45:Core/Src/NOS_WS2812B_Strip.c ****     {
- 362              		.loc 1 45 44 is_stmt 1 discriminator 3 view .LVU93
- 363 006c 0134     		adds	r4, r4, #1
- 364              	.LVL41:
- 365              	.L13:
-  45:Core/Src/NOS_WS2812B_Strip.c ****     {
- 366              		.loc 1 45 22 discriminator 1 view .LVU94
-  45:Core/Src/NOS_WS2812B_Strip.c ****     {
- 367              		.loc 1 45 29 is_stmt 0 discriminator 1 view .LVU95
- 368 006e BB68     		ldr	r3, [r7, #8]
-  45:Core/Src/NOS_WS2812B_Strip.c ****     {
- 369              		.loc 1 45 22 discriminator 1 view .LVU96
- 370 0070 A342     		cmp	r3, r4
- 371 0072 D2DC     		bgt	.L14
- 372              	.LBE3:
-  51:Core/Src/NOS_WS2812B_Strip.c ****     }
-  52:Core/Src/NOS_WS2812B_Strip.c **** 
-  53:Core/Src/NOS_WS2812B_Strip.c **** }
- 373              		.loc 1 53 1 view .LVU97
- 374 0074 03B0     		add	sp, sp, #12
- 375              		.cfi_def_cfa_offset 28
- 376              		@ sp needed
- 377 0076 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 378              	.LVL42:
- 379              	.L17:
- 380              		.loc 1 53 1 view .LVU98
- 381 007a 00BF     		.align	2
- 382              	.L16:
- 383 007c 0000C842 		.word	1120403456
- 384              		.cfi_endproc
- 385              	.LFE69:
- 387              		.section	.text.NOS_WS2812B_Strip_ColorFill,"ax",%progbits
- 388              		.align	1
- 389              		.global	NOS_WS2812B_Strip_ColorFill
- 390              		.syntax unified
- 391              		.thumb
- 392              		.thumb_func
- 394              	NOS_WS2812B_Strip_ColorFill:
- 395              	.LVL43:
- 396              	.LFB71:
-  54:Core/Src/NOS_WS2812B_Strip.c **** 
-  55:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_TestFill(WS2812B_Strip* strip)
-  56:Core/Src/NOS_WS2812B_Strip.c **** {
-  57:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
-  58:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
-  59:Core/Src/NOS_WS2812B_Strip.c ****     
-  60:Core/Src/NOS_WS2812B_Strip.c ****     while(currPixel < strip->pixelCount)
-  61:Core/Src/NOS_WS2812B_Strip.c ****     {
-  62:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixelByPixelColor(strip,currPixel,NOS_GetBaseColor(currColor));
-  63:Core/Src/NOS_WS2812B_Strip.c ****         
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 9
-
-
-  64:Core/Src/NOS_WS2812B_Strip.c ****         currColor++;
-  65:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
-  66:Core/Src/NOS_WS2812B_Strip.c ****         {
-  67:Core/Src/NOS_WS2812B_Strip.c ****             currColor = 0;
-  68:Core/Src/NOS_WS2812B_Strip.c ****         }
-  69:Core/Src/NOS_WS2812B_Strip.c **** 
-  70:Core/Src/NOS_WS2812B_Strip.c ****         currPixel++;
-  71:Core/Src/NOS_WS2812B_Strip.c ****     }
-  72:Core/Src/NOS_WS2812B_Strip.c **** }
-  73:Core/Src/NOS_WS2812B_Strip.c **** 
-  74:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_ColorFill(WS2812B_Strip* strip,PixelColor color)
-  75:Core/Src/NOS_WS2812B_Strip.c **** {
- 397              		.loc 1 75 1 is_stmt 1 view -0
- 398              		.cfi_startproc
- 399              		@ args = 0, pretend = 0, frame = 8
- 400              		@ frame_needed = 0, uses_anonymous_args = 0
- 401              		.loc 1 75 1 is_stmt 0 view .LVU100
- 402 0000 30B5     		push	{r4, r5, lr}
- 403              		.cfi_def_cfa_offset 12
- 404              		.cfi_offset 4, -12
- 405              		.cfi_offset 5, -8
- 406              		.cfi_offset 14, -4
- 407 0002 85B0     		sub	sp, sp, #20
- 408              		.cfi_def_cfa_offset 32
- 409 0004 0546     		mov	r5, r0
- 410 0006 0391     		str	r1, [sp, #12]
-  76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 411              		.loc 1 76 5 is_stmt 1 view .LVU101
- 412              	.LBB5:
- 413              		.loc 1 76 9 view .LVU102
- 414              	.LVL44:
- 415              		.loc 1 76 13 is_stmt 0 view .LVU103
- 416 0008 0024     		movs	r4, #0
- 417              		.loc 1 76 5 view .LVU104
- 418 000a 0BE0     		b	.L19
- 419              	.LVL45:
- 420              	.L20:
-  77:Core/Src/NOS_WS2812B_Strip.c ****     {
-  78:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixel(strip,i,color.R,color.G,color.B);
- 421              		.loc 1 78 9 is_stmt 1 discriminator 3 view .LVU105
- 422 000c 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
- 423 0010 0093     		str	r3, [sp]
- 424 0012 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
- 425 0016 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
- 426 001a 2146     		mov	r1, r4
- 427 001c 2846     		mov	r0, r5
- 428 001e FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 406              	.LFB71:
+  55:Core/Src/NOS_WS2812B_Strip.c **** 
+  56:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_TestFill(WS2812B_Strip* strip)
+  57:Core/Src/NOS_WS2812B_Strip.c **** {
+  58:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
+  59:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
+  60:Core/Src/NOS_WS2812B_Strip.c ****     
+  61:Core/Src/NOS_WS2812B_Strip.c ****     while(currPixel < strip->pixelCount)
+  62:Core/Src/NOS_WS2812B_Strip.c ****     {
+  63:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixelByPixelColor(strip,currPixel,NOS_GetBaseColor(currColor));
+  64:Core/Src/NOS_WS2812B_Strip.c ****         
+  65:Core/Src/NOS_WS2812B_Strip.c ****         currColor++;
+  66:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
+  67:Core/Src/NOS_WS2812B_Strip.c ****         {
+  68:Core/Src/NOS_WS2812B_Strip.c ****             currColor = 0;
+  69:Core/Src/NOS_WS2812B_Strip.c ****         }
+  70:Core/Src/NOS_WS2812B_Strip.c **** 
+  71:Core/Src/NOS_WS2812B_Strip.c ****         currPixel++;
+  72:Core/Src/NOS_WS2812B_Strip.c ****     }
+  73:Core/Src/NOS_WS2812B_Strip.c **** }
+  74:Core/Src/NOS_WS2812B_Strip.c **** 
+  75:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_ColorFill(WS2812B_Strip* strip,PixelColor color)
+  76:Core/Src/NOS_WS2812B_Strip.c **** {
+ 407              		.loc 1 76 1 is_stmt 1 view -0
+ 408              		.cfi_startproc
+ 409              		@ args = 0, pretend = 0, frame = 8
+ 410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 411              		.loc 1 76 1 is_stmt 0 view .LVU101
+ 412 0000 30B5     		push	{r4, r5, lr}
+ 413              		.cfi_def_cfa_offset 12
+ 414              		.cfi_offset 4, -12
+ 415              		.cfi_offset 5, -8
+ 416              		.cfi_offset 14, -4
+ 417 0002 85B0     		sub	sp, sp, #20
+ 418              		.cfi_def_cfa_offset 32
+ 419 0004 0546     		mov	r5, r0
+ 420 0006 0391     		str	r1, [sp, #12]
+  77:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 421              		.loc 1 77 5 is_stmt 1 view .LVU102
+ 422              	.LBB5:
+ 423              		.loc 1 77 9 view .LVU103
+ 424              	.LVL45:
+ 425              		.loc 1 77 13 is_stmt 0 view .LVU104
+ 426 0008 0024     		movs	r4, #0
+ 427              		.loc 1 77 5 view .LVU105
+ 428 000a 0BE0     		b	.L19
  429              	.LVL46:
-  76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 430              		.loc 1 76 44 discriminator 3 view .LVU106
- 431 0022 0134     		adds	r4, r4, #1
- 432              	.LVL47:
- 433              	.L19:
-  76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 434              		.loc 1 76 22 discriminator 1 view .LVU107
-  76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 435              		.loc 1 76 29 is_stmt 0 discriminator 1 view .LVU108
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 10
+ 430              	.L20:
+  78:Core/Src/NOS_WS2812B_Strip.c ****     {
+  79:Core/Src/NOS_WS2812B_Strip.c ****         NOS_WS2812B_Strip_SetPixel(strip,i,color.R,color.G,color.B);
+ 431              		.loc 1 79 9 is_stmt 1 discriminator 3 view .LVU106
+ 432 000c 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
+ 433 0010 0093     		str	r3, [sp]
+ 434 0012 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 435 0016 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+ 436 001a 2146     		mov	r1, r4
+ 437 001c 2846     		mov	r0, r5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 10
 
 
- 436 0024 AB68     		ldr	r3, [r5, #8]
-  76:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
- 437              		.loc 1 76 22 discriminator 1 view .LVU109
- 438 0026 A342     		cmp	r3, r4
- 439 0028 F0DC     		bgt	.L20
- 440              	.LBE5:
-  79:Core/Src/NOS_WS2812B_Strip.c ****     }
-  80:Core/Src/NOS_WS2812B_Strip.c **** }
- 441              		.loc 1 80 1 view .LVU110
- 442 002a 05B0     		add	sp, sp, #20
- 443              		.cfi_def_cfa_offset 12
- 444              		@ sp needed
- 445 002c 30BD     		pop	{r4, r5, pc}
- 446              		.loc 1 80 1 view .LVU111
- 447              		.cfi_endproc
- 448              	.LFE71:
- 450              		.section	.text.NOS_WS2812B_Strip_SetPixelByRGB,"ax",%progbits
- 451              		.align	1
- 452              		.global	NOS_WS2812B_Strip_SetPixelByRGB
- 453              		.syntax unified
- 454              		.thumb
- 455              		.thumb_func
- 457              	NOS_WS2812B_Strip_SetPixelByRGB:
- 458              	.LVL48:
- 459              	.LFB72:
-  81:Core/Src/NOS_WS2812B_Strip.c **** 
-  82:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetPixelByRGB(WS2812B_Strip* strip,int pixelPos,uint32_t rgb)
-  83:Core/Src/NOS_WS2812B_Strip.c **** {
- 460              		.loc 1 83 1 is_stmt 1 view -0
- 461              		.cfi_startproc
- 462              		@ args = 0, pretend = 0, frame = 0
- 463              		@ frame_needed = 0, uses_anonymous_args = 0
- 464              		.loc 1 83 1 is_stmt 0 view .LVU113
- 465 0000 00B5     		push	{lr}
- 466              		.cfi_def_cfa_offset 4
- 467              		.cfi_offset 14, -4
- 468 0002 83B0     		sub	sp, sp, #12
- 469              		.cfi_def_cfa_offset 16
-  84:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t R = (rgb & 0x00FF0000) >> 16;
- 470              		.loc 1 84 5 is_stmt 1 view .LVU114
- 471              	.LVL49:
-  85:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t G = (rgb & 0x0000FF00) >> 8;
- 472              		.loc 1 85 5 view .LVU115
-  86:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t B = rgb & 0x000000FF;
- 473              		.loc 1 86 5 view .LVU116
- 474              		.loc 1 86 13 is_stmt 0 view .LVU117
- 475 0004 D3B2     		uxtb	r3, r2
- 476              	.LVL50:
-  87:Core/Src/NOS_WS2812B_Strip.c **** 
-  88:Core/Src/NOS_WS2812B_Strip.c ****     NOS_WS2812B_Strip_SetPixel(strip,pixelPos,R,G,B);
- 477              		.loc 1 88 5 is_stmt 1 view .LVU118
- 478 0006 0093     		str	r3, [sp]
- 479 0008 C2F30723 		ubfx	r3, r2, #8, #8
- 480              	.LVL51:
- 481              		.loc 1 88 5 is_stmt 0 view .LVU119
- 482 000c C2F30742 		ubfx	r2, r2, #16, #8
- 483              	.LVL52:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 11
+ 438 001e FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 439              	.LVL47:
+  77:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 440              		.loc 1 77 44 discriminator 3 view .LVU107
+ 441 0022 0134     		adds	r4, r4, #1
+ 442              	.LVL48:
+ 443              	.L19:
+  77:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 444              		.loc 1 77 22 discriminator 1 view .LVU108
+  77:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 445              		.loc 1 77 29 is_stmt 0 discriminator 1 view .LVU109
+ 446 0024 AB68     		ldr	r3, [r5, #8]
+  77:Core/Src/NOS_WS2812B_Strip.c ****     for(int i = 0; i < strip->pixelCount; i++)
+ 447              		.loc 1 77 22 discriminator 1 view .LVU110
+ 448 0026 A342     		cmp	r3, r4
+ 449 0028 F0DC     		bgt	.L20
+ 450              	.LBE5:
+  80:Core/Src/NOS_WS2812B_Strip.c ****     }
+  81:Core/Src/NOS_WS2812B_Strip.c **** }
+ 451              		.loc 1 81 1 view .LVU111
+ 452 002a 05B0     		add	sp, sp, #20
+ 453              		.cfi_def_cfa_offset 12
+ 454              		@ sp needed
+ 455 002c 30BD     		pop	{r4, r5, pc}
+ 456              		.loc 1 81 1 view .LVU112
+ 457              		.cfi_endproc
+ 458              	.LFE71:
+ 460              		.section	.text.NOS_WS2812B_Strip_SetPixelByRGB,"ax",%progbits
+ 461              		.align	1
+ 462              		.global	NOS_WS2812B_Strip_SetPixelByRGB
+ 463              		.syntax unified
+ 464              		.thumb
+ 465              		.thumb_func
+ 467              	NOS_WS2812B_Strip_SetPixelByRGB:
+ 468              	.LVL49:
+ 469              	.LFB72:
+  82:Core/Src/NOS_WS2812B_Strip.c **** 
+  83:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetPixelByRGB(WS2812B_Strip* strip,int pixelPos,uint32_t rgb)
+  84:Core/Src/NOS_WS2812B_Strip.c **** {
+ 470              		.loc 1 84 1 is_stmt 1 view -0
+ 471              		.cfi_startproc
+ 472              		@ args = 0, pretend = 0, frame = 0
+ 473              		@ frame_needed = 0, uses_anonymous_args = 0
+ 474              		.loc 1 84 1 is_stmt 0 view .LVU114
+ 475 0000 00B5     		push	{lr}
+ 476              		.cfi_def_cfa_offset 4
+ 477              		.cfi_offset 14, -4
+ 478 0002 83B0     		sub	sp, sp, #12
+ 479              		.cfi_def_cfa_offset 16
+  85:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t R = (rgb & 0x00FF0000) >> 16;
+ 480              		.loc 1 85 5 is_stmt 1 view .LVU115
+ 481              	.LVL50:
+  86:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t G = (rgb & 0x0000FF00) >> 8;
+ 482              		.loc 1 86 5 view .LVU116
+  87:Core/Src/NOS_WS2812B_Strip.c ****     uint8_t B = rgb & 0x000000FF;
+ 483              		.loc 1 87 5 view .LVU117
+ 484              		.loc 1 87 13 is_stmt 0 view .LVU118
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 11
 
 
- 484              		.loc 1 88 5 view .LVU120
- 485 0010 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 486              	.LVL53:
-  89:Core/Src/NOS_WS2812B_Strip.c **** }
- 487              		.loc 1 89 1 view .LVU121
- 488 0014 03B0     		add	sp, sp, #12
- 489              		.cfi_def_cfa_offset 4
- 490              		@ sp needed
- 491 0016 5DF804FB 		ldr	pc, [sp], #4
- 492              		.cfi_endproc
- 493              	.LFE72:
- 495              		.section	.text.NOS_WS2812B_Strip_SetPixelByPixelColor,"ax",%progbits
- 496              		.align	1
- 497              		.global	NOS_WS2812B_Strip_SetPixelByPixelColor
- 498              		.syntax unified
- 499              		.thumb
- 500              		.thumb_func
- 502              	NOS_WS2812B_Strip_SetPixelByPixelColor:
- 503              	.LVL54:
- 504              	.LFB73:
-  90:Core/Src/NOS_WS2812B_Strip.c **** 
-  91:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetPixelByPixelColor(WS2812B_Strip* strip,int pixelPos, PixelColor color)
-  92:Core/Src/NOS_WS2812B_Strip.c **** {
- 505              		.loc 1 92 1 is_stmt 1 view -0
- 506              		.cfi_startproc
- 507              		@ args = 0, pretend = 0, frame = 8
- 508              		@ frame_needed = 0, uses_anonymous_args = 0
- 509              		.loc 1 92 1 is_stmt 0 view .LVU123
- 510 0000 00B5     		push	{lr}
- 511              		.cfi_def_cfa_offset 4
- 512              		.cfi_offset 14, -4
- 513 0002 85B0     		sub	sp, sp, #20
- 514              		.cfi_def_cfa_offset 24
- 515 0004 0392     		str	r2, [sp, #12]
-  93:Core/Src/NOS_WS2812B_Strip.c ****     NOS_WS2812B_Strip_SetPixel(strip,pixelPos,color.R,color.G,color.B);
- 516              		.loc 1 93 5 is_stmt 1 view .LVU124
- 517 0006 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
- 518 000a 0093     		str	r3, [sp]
- 519 000c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
- 520 0010 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
- 521 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 522              	.LVL55:
-  94:Core/Src/NOS_WS2812B_Strip.c **** }
- 523              		.loc 1 94 1 is_stmt 0 view .LVU125
- 524 0018 05B0     		add	sp, sp, #20
- 525              		.cfi_def_cfa_offset 4
- 526              		@ sp needed
- 527 001a 5DF804FB 		ldr	pc, [sp], #4
- 528              		.cfi_endproc
- 529              	.LFE73:
- 531              		.section	.text.NOS_WS2812B_Strip_TestFill,"ax",%progbits
- 532              		.align	1
- 533              		.global	NOS_WS2812B_Strip_TestFill
- 534              		.syntax unified
- 535              		.thumb
- 536              		.thumb_func
- 538              	NOS_WS2812B_Strip_TestFill:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 12
+ 485 0004 D3B2     		uxtb	r3, r2
+ 486              	.LVL51:
+  88:Core/Src/NOS_WS2812B_Strip.c **** 
+  89:Core/Src/NOS_WS2812B_Strip.c ****     NOS_WS2812B_Strip_SetPixel(strip,pixelPos,R,G,B);
+ 487              		.loc 1 89 5 is_stmt 1 view .LVU119
+ 488 0006 0093     		str	r3, [sp]
+ 489 0008 C2F30723 		ubfx	r3, r2, #8, #8
+ 490              	.LVL52:
+ 491              		.loc 1 89 5 is_stmt 0 view .LVU120
+ 492 000c C2F30742 		ubfx	r2, r2, #16, #8
+ 493              	.LVL53:
+ 494              		.loc 1 89 5 view .LVU121
+ 495 0010 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 496              	.LVL54:
+  90:Core/Src/NOS_WS2812B_Strip.c **** }
+ 497              		.loc 1 90 1 view .LVU122
+ 498 0014 03B0     		add	sp, sp, #12
+ 499              		.cfi_def_cfa_offset 4
+ 500              		@ sp needed
+ 501 0016 5DF804FB 		ldr	pc, [sp], #4
+ 502              		.cfi_endproc
+ 503              	.LFE72:
+ 505              		.section	.text.NOS_WS2812B_Strip_SetPixelByPixelColor,"ax",%progbits
+ 506              		.align	1
+ 507              		.global	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 508              		.syntax unified
+ 509              		.thumb
+ 510              		.thumb_func
+ 512              	NOS_WS2812B_Strip_SetPixelByPixelColor:
+ 513              	.LVL55:
+ 514              	.LFB73:
+  91:Core/Src/NOS_WS2812B_Strip.c **** 
+  92:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetPixelByPixelColor(WS2812B_Strip* strip,int pixelPos, PixelColor color)
+  93:Core/Src/NOS_WS2812B_Strip.c **** {
+ 515              		.loc 1 93 1 is_stmt 1 view -0
+ 516              		.cfi_startproc
+ 517              		@ args = 0, pretend = 0, frame = 8
+ 518              		@ frame_needed = 0, uses_anonymous_args = 0
+ 519              		.loc 1 93 1 is_stmt 0 view .LVU124
+ 520 0000 00B5     		push	{lr}
+ 521              		.cfi_def_cfa_offset 4
+ 522              		.cfi_offset 14, -4
+ 523 0002 85B0     		sub	sp, sp, #20
+ 524              		.cfi_def_cfa_offset 24
+ 525 0004 0392     		str	r2, [sp, #12]
+  94:Core/Src/NOS_WS2812B_Strip.c ****     NOS_WS2812B_Strip_SetPixel(strip,pixelPos,color.R,color.G,color.B);
+ 526              		.loc 1 94 5 is_stmt 1 view .LVU125
+ 527 0006 9DF80E30 		ldrb	r3, [sp, #14]	@ zero_extendqisi2
+ 528 000a 0093     		str	r3, [sp]
+ 529 000c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 530 0010 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+ 531 0014 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 532              	.LVL56:
+  95:Core/Src/NOS_WS2812B_Strip.c **** }
+ 533              		.loc 1 95 1 is_stmt 0 view .LVU126
+ 534 0018 05B0     		add	sp, sp, #20
+ 535              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 12
 
 
- 539              	.LVL56:
- 540              	.LFB70:
-  56:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
- 541              		.loc 1 56 1 is_stmt 1 view -0
- 542              		.cfi_startproc
- 543              		@ args = 0, pretend = 0, frame = 8
- 544              		@ frame_needed = 0, uses_anonymous_args = 0
-  56:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
- 545              		.loc 1 56 1 is_stmt 0 view .LVU127
- 546 0000 70B5     		push	{r4, r5, r6, lr}
- 547              		.cfi_def_cfa_offset 16
- 548              		.cfi_offset 4, -16
- 549              		.cfi_offset 5, -12
- 550              		.cfi_offset 6, -8
- 551              		.cfi_offset 14, -4
- 552 0002 82B0     		sub	sp, sp, #8
- 553              		.cfi_def_cfa_offset 24
- 554 0004 0646     		mov	r6, r0
-  57:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
- 555              		.loc 1 57 5 is_stmt 1 view .LVU128
- 556              	.LVL57:
-  58:Core/Src/NOS_WS2812B_Strip.c ****     
- 557              		.loc 1 58 5 view .LVU129
-  60:Core/Src/NOS_WS2812B_Strip.c ****     {
- 558              		.loc 1 60 5 view .LVU130
-  58:Core/Src/NOS_WS2812B_Strip.c ****     
- 559              		.loc 1 58 9 is_stmt 0 view .LVU131
- 560 0006 0024     		movs	r4, #0
-  57:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
- 561              		.loc 1 57 9 view .LVU132
- 562 0008 2546     		mov	r5, r4
-  60:Core/Src/NOS_WS2812B_Strip.c ****     {
- 563              		.loc 1 60 10 view .LVU133
- 564 000a 00E0     		b	.L27
- 565              	.LVL58:
- 566              	.L28:
-  70:Core/Src/NOS_WS2812B_Strip.c ****     }
- 567              		.loc 1 70 9 is_stmt 1 view .LVU134
-  70:Core/Src/NOS_WS2812B_Strip.c ****     }
- 568              		.loc 1 70 18 is_stmt 0 view .LVU135
- 569 000c 0135     		adds	r5, r5, #1
- 570              	.LVL59:
- 571              	.L27:
-  60:Core/Src/NOS_WS2812B_Strip.c ****     {
- 572              		.loc 1 60 21 is_stmt 1 view .LVU136
-  60:Core/Src/NOS_WS2812B_Strip.c ****     {
- 573              		.loc 1 60 28 is_stmt 0 view .LVU137
- 574 000e B368     		ldr	r3, [r6, #8]
-  60:Core/Src/NOS_WS2812B_Strip.c ****     {
- 575              		.loc 1 60 21 view .LVU138
- 576 0010 AB42     		cmp	r3, r5
- 577 0012 16DD     		ble	.L32
-  62:Core/Src/NOS_WS2812B_Strip.c ****         
- 578              		.loc 1 62 9 is_stmt 1 view .LVU139
- 579 0014 E0B2     		uxtb	r0, r4
- 580 0016 FFF7FEFF 		bl	NOS_GetBaseColor
- 581              	.LVL60:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 13
+ 536              		@ sp needed
+ 537 001a 5DF804FB 		ldr	pc, [sp], #4
+ 538              		.cfi_endproc
+ 539              	.LFE73:
+ 541              		.section	.text.NOS_WS2812B_Strip_TestFill,"ax",%progbits
+ 542              		.align	1
+ 543              		.global	NOS_WS2812B_Strip_TestFill
+ 544              		.syntax unified
+ 545              		.thumb
+ 546              		.thumb_func
+ 548              	NOS_WS2812B_Strip_TestFill:
+ 549              	.LVL57:
+ 550              	.LFB70:
+  57:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
+ 551              		.loc 1 57 1 is_stmt 1 view -0
+ 552              		.cfi_startproc
+ 553              		@ args = 0, pretend = 0, frame = 8
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+  57:Core/Src/NOS_WS2812B_Strip.c ****     int currPixel = 0;
+ 555              		.loc 1 57 1 is_stmt 0 view .LVU128
+ 556 0000 70B5     		push	{r4, r5, r6, lr}
+ 557              		.cfi_def_cfa_offset 16
+ 558              		.cfi_offset 4, -16
+ 559              		.cfi_offset 5, -12
+ 560              		.cfi_offset 6, -8
+ 561              		.cfi_offset 14, -4
+ 562 0002 82B0     		sub	sp, sp, #8
+ 563              		.cfi_def_cfa_offset 24
+ 564 0004 0646     		mov	r6, r0
+  58:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
+ 565              		.loc 1 58 5 is_stmt 1 view .LVU129
+ 566              	.LVL58:
+  59:Core/Src/NOS_WS2812B_Strip.c ****     
+ 567              		.loc 1 59 5 view .LVU130
+  61:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 568              		.loc 1 61 5 view .LVU131
+  59:Core/Src/NOS_WS2812B_Strip.c ****     
+ 569              		.loc 1 59 9 is_stmt 0 view .LVU132
+ 570 0006 0024     		movs	r4, #0
+  58:Core/Src/NOS_WS2812B_Strip.c ****     int currColor = 0;
+ 571              		.loc 1 58 9 view .LVU133
+ 572 0008 2546     		mov	r5, r4
+  61:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 573              		.loc 1 61 10 view .LVU134
+ 574 000a 00E0     		b	.L27
+ 575              	.LVL59:
+ 576              	.L28:
+  71:Core/Src/NOS_WS2812B_Strip.c ****     }
+ 577              		.loc 1 71 9 is_stmt 1 view .LVU135
+  71:Core/Src/NOS_WS2812B_Strip.c ****     }
+ 578              		.loc 1 71 18 is_stmt 0 view .LVU136
+ 579 000c 0135     		adds	r5, r5, #1
+ 580              	.LVL60:
+ 581              	.L27:
+  61:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 582              		.loc 1 61 21 is_stmt 1 view .LVU137
+  61:Core/Src/NOS_WS2812B_Strip.c ****     {
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 13
 
 
- 582 001a 8DF80400 		strb	r0, [sp, #4]
- 583 001e C0F30723 		ubfx	r3, r0, #8, #8
- 584 0022 8DF80530 		strb	r3, [sp, #5]
- 585 0026 C0F30740 		ubfx	r0, r0, #16, #8
- 586 002a 8DF80600 		strb	r0, [sp, #6]
- 587 002e 019A     		ldr	r2, [sp, #4]
- 588 0030 2946     		mov	r1, r5
- 589 0032 3046     		mov	r0, r6
- 590 0034 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 583              		.loc 1 61 28 is_stmt 0 view .LVU138
+ 584 000e B368     		ldr	r3, [r6, #8]
+  61:Core/Src/NOS_WS2812B_Strip.c ****     {
+ 585              		.loc 1 61 21 view .LVU139
+ 586 0010 AB42     		cmp	r3, r5
+ 587 0012 16DD     		ble	.L32
+  63:Core/Src/NOS_WS2812B_Strip.c ****         
+ 588              		.loc 1 63 9 is_stmt 1 view .LVU140
+ 589 0014 E0B2     		uxtb	r0, r4
+ 590 0016 FFF7FEFF 		bl	NOS_GetBaseColor
  591              	.LVL61:
-  64:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
- 592              		.loc 1 64 9 view .LVU140
-  64:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
- 593              		.loc 1 64 18 is_stmt 0 view .LVU141
- 594 0038 0134     		adds	r4, r4, #1
- 595              	.LVL62:
-  65:Core/Src/NOS_WS2812B_Strip.c ****         {
- 596              		.loc 1 65 9 is_stmt 1 view .LVU142
-  65:Core/Src/NOS_WS2812B_Strip.c ****         {
- 597              		.loc 1 65 11 is_stmt 0 view .LVU143
- 598 003a 0B2C     		cmp	r4, #11
- 599 003c E6DD     		ble	.L28
-  67:Core/Src/NOS_WS2812B_Strip.c ****         }
- 600              		.loc 1 67 23 view .LVU144
- 601 003e 0024     		movs	r4, #0
- 602              	.LVL63:
-  67:Core/Src/NOS_WS2812B_Strip.c ****         }
- 603              		.loc 1 67 23 view .LVU145
- 604 0040 E4E7     		b	.L28
- 605              	.LVL64:
- 606              	.L32:
-  72:Core/Src/NOS_WS2812B_Strip.c **** 
- 607              		.loc 1 72 1 view .LVU146
- 608 0042 02B0     		add	sp, sp, #8
- 609              		.cfi_def_cfa_offset 16
- 610              		@ sp needed
- 611 0044 70BD     		pop	{r4, r5, r6, pc}
-  72:Core/Src/NOS_WS2812B_Strip.c **** 
- 612              		.loc 1 72 1 view .LVU147
- 613              		.cfi_endproc
- 614              	.LFE70:
- 616              		.section	.text.NOS_WS2812B_Strip_SetBright,"ax",%progbits
- 617              		.align	1
- 618              		.global	NOS_WS2812B_Strip_SetBright
- 619              		.syntax unified
- 620              		.thumb
- 621              		.thumb_func
- 623              	NOS_WS2812B_Strip_SetBright:
- 624              	.LVL65:
- 625              	.LFB74:
-  95:Core/Src/NOS_WS2812B_Strip.c **** 
-  96:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetBright(WS2812B_Strip* strip,uint8_t bright)
-  97:Core/Src/NOS_WS2812B_Strip.c **** {
- 626              		.loc 1 97 1 is_stmt 1 view -0
- 627              		.cfi_startproc
- 628              		@ args = 0, pretend = 0, frame = 0
- 629              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 14
+ 592 001a 8DF80400 		strb	r0, [sp, #4]
+ 593 001e C0F30723 		ubfx	r3, r0, #8, #8
+ 594 0022 8DF80530 		strb	r3, [sp, #5]
+ 595 0026 C0F30740 		ubfx	r0, r0, #16, #8
+ 596 002a 8DF80600 		strb	r0, [sp, #6]
+ 597 002e 019A     		ldr	r2, [sp, #4]
+ 598 0030 2946     		mov	r1, r5
+ 599 0032 3046     		mov	r0, r6
+ 600 0034 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixelByPixelColor
+ 601              	.LVL62:
+  65:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
+ 602              		.loc 1 65 9 view .LVU141
+  65:Core/Src/NOS_WS2812B_Strip.c ****         if(currColor > 11)
+ 603              		.loc 1 65 18 is_stmt 0 view .LVU142
+ 604 0038 0134     		adds	r4, r4, #1
+ 605              	.LVL63:
+  66:Core/Src/NOS_WS2812B_Strip.c ****         {
+ 606              		.loc 1 66 9 is_stmt 1 view .LVU143
+  66:Core/Src/NOS_WS2812B_Strip.c ****         {
+ 607              		.loc 1 66 11 is_stmt 0 view .LVU144
+ 608 003a 0B2C     		cmp	r4, #11
+ 609 003c E6DD     		ble	.L28
+  68:Core/Src/NOS_WS2812B_Strip.c ****         }
+ 610              		.loc 1 68 23 view .LVU145
+ 611 003e 0024     		movs	r4, #0
+ 612              	.LVL64:
+  68:Core/Src/NOS_WS2812B_Strip.c ****         }
+ 613              		.loc 1 68 23 view .LVU146
+ 614 0040 E4E7     		b	.L28
+ 615              	.LVL65:
+ 616              	.L32:
+  73:Core/Src/NOS_WS2812B_Strip.c **** 
+ 617              		.loc 1 73 1 view .LVU147
+ 618 0042 02B0     		add	sp, sp, #8
+ 619              		.cfi_def_cfa_offset 16
+ 620              		@ sp needed
+ 621 0044 70BD     		pop	{r4, r5, r6, pc}
+  73:Core/Src/NOS_WS2812B_Strip.c **** 
+ 622              		.loc 1 73 1 view .LVU148
+ 623              		.cfi_endproc
+ 624              	.LFE70:
+ 626              		.section	.text.NOS_WS2812B_Strip_SetBright,"ax",%progbits
+ 627              		.align	1
+ 628              		.global	NOS_WS2812B_Strip_SetBright
+ 629              		.syntax unified
+ 630              		.thumb
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 14
 
 
- 630              		@ link register save eliminated.
-  98:Core/Src/NOS_WS2812B_Strip.c ****     strip->bright = bright;
- 631              		.loc 1 98 5 view .LVU149
- 632              		.loc 1 98 19 is_stmt 0 view .LVU150
- 633 0000 C160     		str	r1, [r0, #12]
-  99:Core/Src/NOS_WS2812B_Strip.c **** }
- 634              		.loc 1 99 1 view .LVU151
- 635 0002 7047     		bx	lr
- 636              		.cfi_endproc
- 637              	.LFE74:
- 639              		.text
- 640              	.Letext0:
- 641              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 642              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 643              		.file 4 "Core/Inc/NOS_Typedefs.h"
- 644              		.file 5 "Core/Inc/NOS_BaseColors.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s 			page 15
+ 631              		.thumb_func
+ 633              	NOS_WS2812B_Strip_SetBright:
+ 634              	.LVL66:
+ 635              	.LFB74:
+  96:Core/Src/NOS_WS2812B_Strip.c **** 
+  97:Core/Src/NOS_WS2812B_Strip.c **** void NOS_WS2812B_Strip_SetBright(WS2812B_Strip* strip,uint8_t bright)
+  98:Core/Src/NOS_WS2812B_Strip.c **** {
+ 636              		.loc 1 98 1 is_stmt 1 view -0
+ 637              		.cfi_startproc
+ 638              		@ args = 0, pretend = 0, frame = 0
+ 639              		@ frame_needed = 0, uses_anonymous_args = 0
+ 640              		@ link register save eliminated.
+  99:Core/Src/NOS_WS2812B_Strip.c ****     strip->bright = bright;
+ 641              		.loc 1 99 5 view .LVU150
+ 642              		.loc 1 99 19 is_stmt 0 view .LVU151
+ 643 0000 C160     		str	r1, [r0, #12]
+ 100:Core/Src/NOS_WS2812B_Strip.c **** }
+ 644              		.loc 1 100 1 view .LVU152
+ 645 0002 7047     		bx	lr
+ 646              		.cfi_endproc
+ 647              	.LFE74:
+ 649              		.text
+ 650              	.Letext0:
+ 651              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 652              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 653              		.file 4 "Core/Inc/NOS_Typedefs.h"
+ 654              		.file 5 "Core/Inc/NOS_BaseColors.h"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_WS2812B_Strip.c
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:19     .text.NOS_WS2812B_Strip_FullInit:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:25     .text.NOS_WS2812B_Strip_FullInit:00000000 NOS_WS2812B_Strip_FullInit
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:58     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:64     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 NOS_WS2812B_Strip_CoreSetPixel
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:123    .text.NOS_WS2812B_Strip_SetPixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:129    .text.NOS_WS2812B_Strip_SetPixel:00000000 NOS_WS2812B_Strip_SetPixel
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:188    .text.NOS_WS2812B_Strip_Clear:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:194    .text.NOS_WS2812B_Strip_Clear:00000000 NOS_WS2812B_Strip_Clear
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:254    .text.NOS_WS2812B_Strip_Update:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:260    .text.NOS_WS2812B_Strip_Update:00000000 NOS_WS2812B_Strip_Update
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:383    .text.NOS_WS2812B_Strip_Update:0000007c $d
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:388    .text.NOS_WS2812B_Strip_ColorFill:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:394    .text.NOS_WS2812B_Strip_ColorFill:00000000 NOS_WS2812B_Strip_ColorFill
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:451    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:457    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 NOS_WS2812B_Strip_SetPixelByRGB
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:496    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:502    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 NOS_WS2812B_Strip_SetPixelByPixelColor
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:532    .text.NOS_WS2812B_Strip_TestFill:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:538    .text.NOS_WS2812B_Strip_TestFill:00000000 NOS_WS2812B_Strip_TestFill
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:617    .text.NOS_WS2812B_Strip_SetBright:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccn0hSCq.s:623    .text.NOS_WS2812B_Strip_SetBright:00000000 NOS_WS2812B_Strip_SetBright
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:19     .text.NOS_WS2812B_Strip_FullInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:25     .text.NOS_WS2812B_Strip_FullInit:00000000 NOS_WS2812B_Strip_FullInit
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:58     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:64     .text.NOS_WS2812B_Strip_CoreSetPixel:00000000 NOS_WS2812B_Strip_CoreSetPixel
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:123    .text.NOS_WS2812B_Strip_SetPixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:129    .text.NOS_WS2812B_Strip_SetPixel:00000000 NOS_WS2812B_Strip_SetPixel
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:188    .text.NOS_WS2812B_Strip_Clear:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:194    .text.NOS_WS2812B_Strip_Clear:00000000 NOS_WS2812B_Strip_Clear
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:264    .text.NOS_WS2812B_Strip_Update:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:270    .text.NOS_WS2812B_Strip_Update:00000000 NOS_WS2812B_Strip_Update
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:393    .text.NOS_WS2812B_Strip_Update:0000007c $d
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:398    .text.NOS_WS2812B_Strip_ColorFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:404    .text.NOS_WS2812B_Strip_ColorFill:00000000 NOS_WS2812B_Strip_ColorFill
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:461    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:467    .text.NOS_WS2812B_Strip_SetPixelByRGB:00000000 NOS_WS2812B_Strip_SetPixelByRGB
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:506    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:512    .text.NOS_WS2812B_Strip_SetPixelByPixelColor:00000000 NOS_WS2812B_Strip_SetPixelByPixelColor
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:542    .text.NOS_WS2812B_Strip_TestFill:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:548    .text.NOS_WS2812B_Strip_TestFill:00000000 NOS_WS2812B_Strip_TestFill
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:627    .text.NOS_WS2812B_Strip_SetBright:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccI0eeAL.s:633    .text.NOS_WS2812B_Strip_SetBright:00000000 NOS_WS2812B_Strip_SetBright
 
 UNDEFINED SYMBOLS
 __aeabi_i2f

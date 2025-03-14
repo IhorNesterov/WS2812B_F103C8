@@ -24,7 +24,7 @@
 // LED output pins
 #define WS2812B_PINS (GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7)
 // How many LEDs are in the series
-#define WS2812B_NUMBER_OF_LEDS 512
+#define WS2812B_NUMBER_OF_LEDS 2048
 
 // Number of output LED strips. Each has its own buffer.
 #define WS2812_BUFFER_COUNT 4
