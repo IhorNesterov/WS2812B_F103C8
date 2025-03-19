@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
   30:Core/Src/WS2812B_Effects.c **** #define Red(c) ((uint8_t)((c >> 16) & 0xFF))
   31:Core/Src/WS2812B_Effects.c **** #define Green(c) ((uint8_t)((c >> 8) & 0xFF))
   32:Core/Src/WS2812B_Effects.c **** #define Blue(c) ((uint8_t)(c & 0xFF))
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 2
 
 
   33:Core/Src/WS2812B_Effects.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
   66 0024 1962     		str	r1, [r3, #32]
   48:Core/Src/WS2812B_Effects.c **** 	    ws2812b.item[2].frameBufferSize = sizeof(frameBufferC);
   67              		.loc 1 48 6 is_stmt 1 view .LVU17
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 3
 
 
   68              		.loc 1 48 38 is_stmt 0 view .LVU18
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
   59:Core/Src/WS2812B_Effects.c **** 	if(ws2812b.transferComplete)
  114              		.loc 1 59 2 view .LVU28
  115              		.loc 1 59 12 is_stmt 0 view .LVU29
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 4
 
 
  116 0002 064B     		ldr	r3, .L9
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
  155              		.global	frameBufferB
  156              		.section	.bss.frameBufferB,"aw",%nobits
  157              		.align	2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 5
 
 
  160              	frameBufferB:
@@ -261,25 +261,25 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 1
  171              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  172              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  173              		.file 4 "Core/Inc/WS2812B_Core.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 WS2812B_Effects.c
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:19     .text.visInit:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:25     .text.visInit:00000000 visInit
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:89     .text.visInit:0000003c $d
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:167    .bss.frameBufferA:00000000 frameBufferA
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:160    .bss.frameBufferB:00000000 frameBufferB
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:153    .bss.frameBufferC:00000000 frameBufferC
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:146    .bss.frameBufferD:00000000 frameBufferD
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:98     .text.visHandle:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:104    .text.visHandle:00000000 visHandle
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:137    .text.visHandle:0000001c $d
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:143    .bss.frameBufferD:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:150    .bss.frameBufferC:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:157    .bss.frameBufferB:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\ccsuFRNT.s:164    .bss.frameBufferA:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:19     .text.visInit:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:25     .text.visInit:00000000 visInit
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:89     .text.visInit:0000003c $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:167    .bss.frameBufferA:00000000 frameBufferA
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:160    .bss.frameBufferB:00000000 frameBufferB
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:153    .bss.frameBufferC:00000000 frameBufferC
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:146    .bss.frameBufferD:00000000 frameBufferD
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:98     .text.visHandle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:104    .text.visHandle:00000000 visHandle
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:137    .text.visHandle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:143    .bss.frameBufferD:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:150    .bss.frameBufferC:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:157    .bss.frameBufferB:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\ccwhWyeI.s:164    .bss.frameBufferA:00000000 $d
 
 UNDEFINED SYMBOLS
 ws2812b_init

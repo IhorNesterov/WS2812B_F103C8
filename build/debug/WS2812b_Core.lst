@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
   30:Core/Src/WS2812b_Core.c ****     2,  3,  3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  5,  5,  5,
   31:Core/Src/WS2812b_Core.c ****     5,  6,  6,  6,  6,  7,  7,  7,  7,  8,  8,  8,  9,  9,  9, 10,
   32:Core/Src/WS2812b_Core.c ****    10, 10, 11, 11, 11, 12, 12, 13, 13, 13, 14, 14, 15, 15, 16, 16,
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 2
 
 
   33:Core/Src/WS2812b_Core.c ****    17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 24, 24, 25,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
   87:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
   88:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.Prescaler         = 0;
   89:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 3
 
 
   90:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.CounterMode       = TIM_COUNTERMODE_UP;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  144:Core/Src/WS2812b_Core.c **** 
  145:Core/Src/WS2812b_Core.c **** 
  146:Core/Src/WS2812b_Core.c **** 	// TIM2 CC1 event
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 4
 
 
  147:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.Direction = DMA_MEMORY_TO_PERIPH;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  201:Core/Src/WS2812b_Core.c **** void DMA1_Channel7_IRQHandler(void)
  202:Core/Src/WS2812b_Core.c **** {
  203:Core/Src/WS2812b_Core.c ****   // Check the interrupt and clear flag
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 5
 
 
  204:Core/Src/WS2812b_Core.c ****   HAL_DMA_IRQHandler(&dmaCC2);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  258:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_UPDATE);
  259:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC1);
  260:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC2);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 6
 
 
  261:Core/Src/WS2812b_Core.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  315:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaUpdate);
  316:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaCC1);
  317:Core/Src/WS2812b_Core.c **** 		__HAL_DMA_DISABLE(&dmaCC2);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 7
 
 
  318:Core/Src/WS2812b_Core.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  372:Core/Src/WS2812b_Core.c **** 
  373:Core/Src/WS2812b_Core.c **** static void ws2812b_set_pixel(uint8_t row, uint16_t column, uint8_t red, uint8_t green, uint8_t blu
  374:Core/Src/WS2812b_Core.c **** {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 8
 
 
   27              		.loc 1 374 1 view -0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  386:Core/Src/WS2812b_Core.c **** 
  387:Core/Src/WS2812b_Core.c **** 
  388:Core/Src/WS2812b_Core.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 9
 
 
  389:Core/Src/WS2812b_Core.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  443:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+16+3)] |= (((((invBlue)<<3) & 0x80)>>7)<<row);
  444:Core/Src/WS2812b_Core.c **** 
  445:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+4)] |= (((((invGreen)<<4) & 0x80)>>7)<<row);
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 10
 
 
  446:Core/Src/WS2812b_Core.c **** 	ws2812bDmaBitBuffer[(calcCol+8+4)] |= (((((invRed)<<4) & 0x80)>>7)<<row);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  470:Core/Src/WS2812b_Core.c **** 
  471:Core/Src/WS2812b_Core.c **** 	*bitBand = (invGreen >> 5);
  100              		.loc 1 471 2 view .LVU30
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 11
 
 
  101              		.loc 1 471 23 is_stmt 0 view .LVU31
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  139              	.LVL20:
  488:Core/Src/WS2812b_Core.c **** 
  489:Core/Src/WS2812b_Core.c **** 	// RED
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 12
 
 
  490:Core/Src/WS2812b_Core.c **** 	*bitBand =  (invRed >> 7);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  178              		.loc 1 505 11 view .LVU75
  179 007a C3F84013 		str	r1, [r3, #832]
  506:Core/Src/WS2812b_Core.c **** 	bitBand+=16;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 13
 
 
  180              		.loc 1 506 2 is_stmt 1 view .LVU76
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  216              		.loc 1 524 22 is_stmt 0 view .LVU97
  217 009a 1109     		lsrs	r1, r2, #4
  218              		.loc 1 524 11 view .LVU98
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 14
 
 
  219 009c C3F8C014 		str	r1, [r3, #1216]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  550:Core/Src/WS2812b_Core.c **** #define WS212_ALL_CHANNELS_SAME_LENGTH  0
  551:Core/Src/WS2812b_Core.c **** 
  552:Core/Src/WS2812b_Core.c **** /*
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 15
 
 
  553:Core/Src/WS2812b_Core.c ****  * We support up to 16 LED channels (that is, up to 16 distinct strips of LEDs.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  607:Core/Src/WS2812b_Core.c ****                                                     \
  608:Core/Src/WS2812b_Core.c ****     "ubfx   r0, %[ch_val], #0, #1 \n"               \
  609:Core/Src/WS2812b_Core.c ****     "bfi    %[cur7], r0,   #" #gpio_num ", 1  \n"   \
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 16
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 16
 
 
  610:Core/Src/WS2812b_Core.c ****                                                     \
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  250              		.cfi_restore 6
  251              		.cfi_restore 5
  252              		.cfi_restore 4
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 17
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 17
 
 
  253              		.cfi_def_cfa_offset 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  300 000e A61C     		adds	r6, r4, #2
  301 0010 8660     		str	r6, [r0, #8]
  213:Core/Src/WS2812b_Core.c **** 	uint32_t b = bItem->frameBufferPointer[bItem->frameBufferCounter++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 18
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 18
 
 
  302              		.loc 1 213 40 view .LVU126
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  344              	.LFE71:
  346              		.section	.text.DMA_TransferCompleteHandler,"ax",%progbits
  347              		.align	1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 19
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 19
 
 
  348              		.global	DMA_TransferCompleteHandler
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  392 001c 1168     		ldr	r1, [r2]
  393 001e CB68     		ldr	r3, [r1, #12]
  394 0020 43F00103 		orr	r3, r3, #1
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 20
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 20
 
 
  395 0024 CB60     		str	r3, [r1, #12]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  440              	.LBB3:
  332:Core/Src/WS2812b_Core.c **** 		}
  441              		.loc 1 332 4 is_stmt 1 discriminator 3 view .LVU159
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 21
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 21
 
 
  442 006e 0121     		movs	r1, #1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  491              		.loc 1 227 27 is_stmt 0 view .LVU166
  492 0002 0025     		movs	r5, #0
  493 0004 284B     		ldr	r3, .L24
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 22
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 22
 
 
  494 0006 83F84050 		strb	r5, [r3, #64]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  245:Core/Src/WS2812b_Core.c **** 	dmaCC1.Instance->CNDTR = BUFFER_SIZE;
  535              		.loc 1 245 11 is_stmt 0 view .LVU180
  536 003c 1C4B     		ldr	r3, .L24+8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 23
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 23
 
 
  537 003e 1B68     		ldr	r3, [r3]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  578 007e DA60     		str	r2, [r3, #12]
  259:Core/Src/WS2812b_Core.c **** 	__HAL_TIM_ENABLE_DMA(&Tim2Handle, TIM_DMA_CC2);
  579              		.loc 1 259 2 view .LVU194
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 24
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 24
 
 
  580 0080 DA68     		ldr	r2, [r3, #12]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  628              		.loc 1 273 1 is_stmt 0 view .LVU202
  629 0000 10B5     		push	{r4, lr}
  630              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 25
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 25
 
 
  631              		.cfi_offset 4, -8
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  675              		.loc 1 291 3 is_stmt 1 view .LVU212
  676 002a 0020     		movs	r0, #0
  677              	.LVL63:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 26
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 26
 
 
  291:Core/Src/WS2812b_Core.c **** 	}
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
   47:Core/Src/WS2812b_Core.c **** 	GPIO_InitTypeDef  GPIO_InitStruct;
  726              		.loc 1 47 2 view .LVU221
   48:Core/Src/WS2812b_Core.c **** 	GPIO_InitStruct.Pin       = WS2812B_PINS;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 27
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 27
 
 
  727              		.loc 1 48 2 view .LVU222
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  772              		@ args = 0, pretend = 0, frame = 8
  773              		@ frame_needed = 0, uses_anonymous_args = 0
  774 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 28
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 28
 
 
  775              		.cfi_def_cfa_offset 36
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  133:Core/Src/WS2812b_Core.c **** 	dmaUpdate.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
  816              		.loc 1 133 37 is_stmt 0 view .LVU247
  817 002a 4FF40078 		mov	r8, #512
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 29
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 29
 
 
  818 002e C4F81080 		str	r8, [r4, #16]
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  856 0066 8023     		movs	r3, #128
  857 0068 E360     		str	r3, [r4, #12]
  150:Core/Src/WS2812b_Core.c **** 	dmaCC1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 30
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 30
 
 
  858              		.loc 1 150 2 is_stmt 1 view .LVU264
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  895 0096 E560     		str	r5, [r4, #12]
  168:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
  896              		.loc 1 168 2 is_stmt 1 view .LVU282
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 31
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 31
 
 
  168:Core/Src/WS2812b_Core.c **** 	dmaCC2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  934              		.loc 1 184 2 view .LVU299
  935 00c6 3023     		movs	r3, #48
  936 00c8 5246     		mov	r2, r10
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 32
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 32
 
 
  937 00ca 1049     		ldr	r1, .L43+52
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
   76:Core/Src/WS2812b_Core.c **** 
  990              		.loc 1 76 2 view .LVU303
   76:Core/Src/WS2812b_Core.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 33
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 33
 
 
  991              		.loc 1 76 2 view .LVU304
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1032 0042 224D     		ldr	r5, .L47+24
  1033 0044 4FF08042 		mov	r2, #1073741824
  1034 0048 2A60     		str	r2, [r5]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 34
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 34
 
 
   86:Core/Src/WS2812b_Core.c **** 	Tim2Handle.Init.RepetitionCounter = 0;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1072 0076 8C60     		str	r4, [r1, #8]
   98:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
  1073              		.loc 1 98 2 is_stmt 1 view .LVU335
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 35
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 35
 
 
   98:Core/Src/WS2812b_Core.c **** 	tim2OC1.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1108 0096 8C61     		str	r4, [r1, #24]
  112:Core/Src/WS2812b_Core.c **** 
  1109              		.loc 1 112 2 is_stmt 1 view .LVU356
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 36
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 36
 
 
  1110 0098 0422     		movs	r2, #4
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1161              		.cfi_offset 14, -4
  192:Core/Src/WS2812b_Core.c **** }
  1162              		.loc 1 192 3 view .LVU362
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 37
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 37
 
 
  1163 0002 0248     		ldr	r0, .L51
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1216              		@ args = 0, pretend = 0, frame = 0
  1217              		@ frame_needed = 0, uses_anonymous_args = 0
  1218 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 38
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 38
 
 
  1219              		.cfi_def_cfa_offset 8
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1272              	HAL_TIM_PeriodElapsedCallback:
  1273              	.LVL88:
  1274              	.LFB76:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 39
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 39
 
 
  350:Core/Src/WS2812b_Core.c **** 	// I have to wait 50us to generate Treset signal
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  360:Core/Src/WS2812b_Core.c **** 		TIM2->CR1 = 0; // disable timer
  1317              		.loc 1 360 3 discriminator 5 view .LVU385
  361:Core/Src/WS2812b_Core.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 40
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 40
 
 
  1318              		.loc 1 361 3 discriminator 5 view .LVU386
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1363              	.LVL89:
  668:Core/Src/WS2812b_Core.c **** 	//void ws2812b_set_pixel(uint8_t row, uint16_t column, uint8_t red, uint8_t green, uint8_t blue);
  669:Core/Src/WS2812b_Core.c **** 	DMA_init();
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 41
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 41
 
 
  1364              		.loc 1 669 2 view .LVU394
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  682:Core/Src/WS2812b_Core.c **** 
  683:Core/Src/WS2812b_Core.c **** }
  1408              		.loc 1 683 1 view .LVU403
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 42
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 42
 
 
  1409 000a 08BD     		pop	{r3, pc}
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1457              		.section	.bss.tim2OC2,"aw",%nobits
  1458              		.align	2
  1461              	tim2OC2:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 43
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 43
 
 
  1462 0000 00000000 		.space	28
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1489      0E
  1490 005b 0E0F0F10 		.ascii	"\016\017\017\020\020\021\021\022\022\023\023\024\024"
  1490      10111112 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 44
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 44
 
 
  1490      12131314 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1522              		.align	2
  1525              	ws2812b:
  1526 0000 00000000 		.space	76
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 45
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 45
 
 
  1526      00000000 
@@ -2657,82 +2657,82 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 1
  1536              		.file 9 "Core/Inc/WS2812B_Core.h"
  1537              		.file 10 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
  1538              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 46
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 WS2812b_Core.c
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:19     .text.ws2812b_set_pixel:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:24     .text.ws2812b_set_pixel:00000000 ws2812b_set_pixel
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:260    .text.ws2812b_set_pixel:000000bc $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1482   .rodata.gammaTable:00000000 gammaTable
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1504   .bss.ws2812bDmaBitBuffer:00000000 ws2812bDmaBitBuffer
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:266    .text.loadNextFramebufferData:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:271    .text.loadNextFramebufferData:00000000 loadNextFramebufferData
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:347    .text.DMA_TransferCompleteHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:353    .text.DMA_TransferCompleteHandler:00000000 DMA_TransferCompleteHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:462    .text.DMA_TransferCompleteHandler:00000084 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1525   .bss.ws2812b:00000000 ws2812b
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1475   .bss.Tim2Handle:00000000 Tim2Handle
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1447   .bss.dmaUpdate:00000000 dmaUpdate
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1440   .bss.dmaCC1:00000000 dmaCC1
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1433   .bss.dmaCC2:00000000 dmaCC2
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1511   .data.WS2812_IO_Low:00000000 WS2812_IO_Low
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:473    .text.WS2812_sendbuf:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:478    .text.WS2812_sendbuf:00000000 WS2812_sendbuf
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:604    .text.WS2812_sendbuf:000000a8 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1454   .bss.tim_period:00000000 tim_period
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:615    .text.DMA_TransferHalfHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:621    .text.DMA_TransferHalfHandler:00000000 DMA_TransferHalfHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:690    .text.DMA_TransferHalfHandler:0000003c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:695    .text.ws2812b_gpio_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:700    .text.ws2812b_gpio_init:00000000 ws2812b_gpio_init
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:757    .text.ws2812b_gpio_init:00000038 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:763    .text.DMA_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:768    .text.DMA_init:00000000 DMA_init
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:949    .text.DMA_init:000000d8 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1518   .data.WS2812_IO_High:00000000 WS2812_IO_High
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:967    .text.TIM2_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:972    .text.TIM2_init:00000000 TIM2_init
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1133   .text.TIM2_init:000000b4 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1468   .bss.tim2OC1:00000000 tim2OC1
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1461   .bss.tim2OC2:00000000 tim2OC2
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1146   .text.DMA1_Channel2_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1152   .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1171   .text.DMA1_Channel2_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1176   .text.DMA1_Channel5_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1182   .text.DMA1_Channel5_IRQHandler:00000000 DMA1_Channel5_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1201   .text.DMA1_Channel5_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1206   .text.DMA1_Channel7_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1212   .text.DMA1_Channel7_IRQHandler:00000000 DMA1_Channel7_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1231   .text.DMA1_Channel7_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1236   .text.TIM2_IRQHandler:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1242   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1261   .text.TIM2_IRQHandler:0000000c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1266   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1272   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1339   .text.HAL_TIM_PeriodElapsedCallback:00000054 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1345   .text.ws2812b_init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1351   .text.ws2812b_init:00000000 ws2812b_init
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1380   .text.ws2812b_init:00000018 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1385   .text.ws2812b_handle:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1391   .text.ws2812b_handle:00000000 ws2812b_handle
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s 			page 47
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:19     .text.ws2812b_set_pixel:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:24     .text.ws2812b_set_pixel:00000000 ws2812b_set_pixel
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:260    .text.ws2812b_set_pixel:000000bc $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1482   .rodata.gammaTable:00000000 gammaTable
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1504   .bss.ws2812bDmaBitBuffer:00000000 ws2812bDmaBitBuffer
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:266    .text.loadNextFramebufferData:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:271    .text.loadNextFramebufferData:00000000 loadNextFramebufferData
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:347    .text.DMA_TransferCompleteHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:353    .text.DMA_TransferCompleteHandler:00000000 DMA_TransferCompleteHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:462    .text.DMA_TransferCompleteHandler:00000084 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1525   .bss.ws2812b:00000000 ws2812b
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1475   .bss.Tim2Handle:00000000 Tim2Handle
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1447   .bss.dmaUpdate:00000000 dmaUpdate
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1440   .bss.dmaCC1:00000000 dmaCC1
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1433   .bss.dmaCC2:00000000 dmaCC2
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1511   .data.WS2812_IO_Low:00000000 WS2812_IO_Low
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:473    .text.WS2812_sendbuf:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:478    .text.WS2812_sendbuf:00000000 WS2812_sendbuf
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:604    .text.WS2812_sendbuf:000000a8 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1454   .bss.tim_period:00000000 tim_period
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:615    .text.DMA_TransferHalfHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:621    .text.DMA_TransferHalfHandler:00000000 DMA_TransferHalfHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:690    .text.DMA_TransferHalfHandler:0000003c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:695    .text.ws2812b_gpio_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:700    .text.ws2812b_gpio_init:00000000 ws2812b_gpio_init
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:757    .text.ws2812b_gpio_init:00000038 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:763    .text.DMA_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:768    .text.DMA_init:00000000 DMA_init
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:949    .text.DMA_init:000000d8 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1518   .data.WS2812_IO_High:00000000 WS2812_IO_High
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:967    .text.TIM2_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:972    .text.TIM2_init:00000000 TIM2_init
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1133   .text.TIM2_init:000000b4 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1468   .bss.tim2OC1:00000000 tim2OC1
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1461   .bss.tim2OC2:00000000 tim2OC2
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1146   .text.DMA1_Channel2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1152   .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1171   .text.DMA1_Channel2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1176   .text.DMA1_Channel5_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1182   .text.DMA1_Channel5_IRQHandler:00000000 DMA1_Channel5_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1201   .text.DMA1_Channel5_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1206   .text.DMA1_Channel7_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1212   .text.DMA1_Channel7_IRQHandler:00000000 DMA1_Channel7_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1231   .text.DMA1_Channel7_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1236   .text.TIM2_IRQHandler:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1242   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1261   .text.TIM2_IRQHandler:0000000c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1266   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1272   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1339   .text.HAL_TIM_PeriodElapsedCallback:00000054 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1345   .text.ws2812b_init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1351   .text.ws2812b_init:00000000 ws2812b_init
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1380   .text.ws2812b_init:00000018 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1385   .text.ws2812b_handle:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1391   .text.ws2812b_handle:00000000 ws2812b_handle
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cc020j7O.s 			page 47
 
 
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1424   .text.ws2812b_handle:0000001c $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1430   .bss.dmaCC2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1437   .bss.dmaCC1:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1444   .bss.dmaUpdate:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1451   .bss.tim_period:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1458   .bss.tim2OC2:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1465   .bss.tim2OC1:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1472   .bss.Tim2Handle:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1479   .rodata.gammaTable:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1501   .bss.ws2812bDmaBitBuffer:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1508   .data.WS2812_IO_Low:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1515   .data.WS2812_IO_High:00000000 $d
-C:\Users\igorn\AppData\Local\Temp\cc4P5fHY.s:1522   .bss.ws2812b:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1424   .text.ws2812b_handle:0000001c $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1430   .bss.dmaCC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1437   .bss.dmaCC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1444   .bss.dmaUpdate:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1451   .bss.tim_period:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1458   .bss.tim2OC2:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1465   .bss.tim2OC1:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1472   .bss.Tim2Handle:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1479   .rodata.gammaTable:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1501   .bss.ws2812bDmaBitBuffer:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1508   .data.WS2812_IO_Low:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1515   .data.WS2812_IO_High:00000000 $d
+C:\Users\igorn\AppData\Local\Temp\cc020j7O.s:1522   .bss.ws2812b:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init
