@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -49,1250 +49,1392 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 1
   42 0004 95B0     		sub	sp, sp, #84
   43              		.cfi_def_cfa_offset 112
   44 0006 0646     		mov	r6, r0
-  45 0008 0C46     		mov	r4, r1
+  45 0008 0D46     		mov	r5, r1
+  46 000a 0024     		movs	r4, #0
    6:Core/Src/NOS_Strip_UART.c ****     int currPos = 0;
-  46              		.loc 1 6 5 is_stmt 1 view .LVU2
-  47              	.LVL1:
+  47              		.loc 1 6 5 is_stmt 1 view .LVU2
+  48              	.LVL1:
    7:Core/Src/NOS_Strip_UART.c ****     NOS_Short tempShort;
-  48              		.loc 1 7 5 view .LVU3
+  49              		.loc 1 7 5 view .LVU3
    8:Core/Src/NOS_Strip_UART.c ****     Effect_Struct tempEffect = {0};
-  49              		.loc 1 8 5 view .LVU4
-  50              		.loc 1 8 19 is_stmt 0 view .LVU5
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 2
+  50              		.loc 1 8 5 view .LVU4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 2
 
 
-  51 000a 2C22     		movs	r2, #44
-  52 000c 0021     		movs	r1, #0
-  53              	.LVL2:
-  54              		.loc 1 8 19 view .LVU6
-  55 000e 09A8     		add	r0, sp, #36
-  56              	.LVL3:
-  57              		.loc 1 8 19 view .LVU7
-  58 0010 FFF7FEFF 		bl	memset
-  59              	.LVL4:
+  51              		.loc 1 8 19 is_stmt 0 view .LVU5
+  52 000c 2C22     		movs	r2, #44
+  53 000e 2146     		mov	r1, r4
+  54              	.LVL2:
+  55              		.loc 1 8 19 view .LVU6
+  56 0010 09A8     		add	r0, sp, #36
+  57              	.LVL3:
+  58              		.loc 1 8 19 view .LVU7
+  59 0012 FFF7FEFF 		bl	memset
+  60              	.LVL4:
    9:Core/Src/NOS_Strip_UART.c ****     PixelColor color = NOS_GetBaseColor(GREEN);
-  60              		.loc 1 9 5 is_stmt 1 view .LVU8
-  61              		.loc 1 9 24 is_stmt 0 view .LVU9
-  62 0014 0420     		movs	r0, #4
-  63 0016 FFF7FEFF 		bl	NOS_GetBaseColor
-  64              	.LVL5:
-  65 001a 8DF82000 		strb	r0, [sp, #32]
-  66 001e C0F30723 		ubfx	r3, r0, #8, #8
-  67 0022 8DF82130 		strb	r3, [sp, #33]
-  68 0026 C0F30740 		ubfx	r0, r0, #16, #8
-  69 002a 8DF82200 		strb	r0, [sp, #34]
+  61              		.loc 1 9 5 is_stmt 1 view .LVU8
+  62              		.loc 1 9 24 is_stmt 0 view .LVU9
+  63 0016 0420     		movs	r0, #4
+  64 0018 FFF7FEFF 		bl	NOS_GetBaseColor
+  65              	.LVL5:
+  66 001c 8DF82000 		strb	r0, [sp, #32]
+  67 0020 C0F30723 		ubfx	r3, r0, #8, #8
+  68 0024 8DF82130 		strb	r3, [sp, #33]
+  69 0028 C0F30743 		ubfx	r3, r0, #16, #8
+  70 002c 8DF82230 		strb	r3, [sp, #34]
   10:Core/Src/NOS_Strip_UART.c ****     NOS_WS2812B_Strip_Effect_Init(&tempEffect,&color,0,0,0,0,0,0,0,0,0,0);
-  70              		.loc 1 10 5 is_stmt 1 view .LVU10
-  71 002e 0022     		movs	r2, #0
-  72 0030 0792     		str	r2, [sp, #28]
-  73 0032 0692     		str	r2, [sp, #24]
-  74 0034 0592     		str	r2, [sp, #20]
-  75 0036 0492     		str	r2, [sp, #16]
-  76 0038 0392     		str	r2, [sp, #12]
-  77 003a 0292     		str	r2, [sp, #8]
-  78 003c 0192     		str	r2, [sp, #4]
-  79 003e 0092     		str	r2, [sp]
-  80 0040 1346     		mov	r3, r2
-  81 0042 08A9     		add	r1, sp, #32
-  82 0044 09A8     		add	r0, sp, #36
-  83 0046 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
-  84              	.LVL6:
+  71              		.loc 1 10 5 is_stmt 1 view .LVU10
+  72 0030 0794     		str	r4, [sp, #28]
+  73 0032 0694     		str	r4, [sp, #24]
+  74 0034 0594     		str	r4, [sp, #20]
+  75 0036 0494     		str	r4, [sp, #16]
+  76 0038 0394     		str	r4, [sp, #12]
+  77 003a 0294     		str	r4, [sp, #8]
+  78 003c 0194     		str	r4, [sp, #4]
+  79 003e 0094     		str	r4, [sp]
+  80 0040 2346     		mov	r3, r4
+  81 0042 2246     		mov	r2, r4
+  82 0044 08A9     		add	r1, sp, #32
+  83 0046 09A8     		add	r0, sp, #36
+  84 0048 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+  85              	.LVL6:
   11:Core/Src/NOS_Strip_UART.c **** 
   12:Core/Src/NOS_Strip_UART.c ****     switch (message->command.data)
-  85              		.loc 1 12 5 view .LVU11
-  86              		.loc 1 12 29 is_stmt 0 view .LVU12
-  87 004a E368     		ldr	r3, [r4, #12]
-  88              		.loc 1 12 5 view .LVU13
-  89 004c 102B     		cmp	r3, #16
-  90 004e 30D0     		beq	.L2
-  91 0050 C0F0C581 		bcc	.L27
-  92 0054 522B     		cmp	r3, #82
-  93 0056 00F2C481 		bhi	.L28
-  94 005a 302B     		cmp	r3, #48
-  95 005c C0F0C381 		bcc	.L29
-  96 0060 303B     		subs	r3, r3, #48
-  97 0062 222B     		cmp	r3, #34
-  98 0064 00F2C181 		bhi	.L30
-  99 0068 DFE813F0 		tbh	[pc, r3, lsl #1]
- 100              	.L5:
- 101 006c 4401     		.2byte	(.L11-.L5)/2
- 102 006e 5601     		.2byte	(.L10-.L5)/2
- 103 0070 7901     		.2byte	(.L9-.L5)/2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 3
+  86              		.loc 1 12 5 view .LVU11
+  87              		.loc 1 12 29 is_stmt 0 view .LVU12
+  88 004c EB68     		ldr	r3, [r5, #12]
+  89              		.loc 1 12 5 view .LVU13
+  90 004e 103B     		subs	r3, r3, #16
+  91 0050 432B     		cmp	r3, #67
+  92 0052 00F21982 		bhi	.L31
+  93 0056 DFE813F0 		tbh	[pc, r3, lsl #1]
+  94              	.L4:
+  95 005a 4400     		.2byte	(.L12-.L4)/2
+  96 005c 1702     		.2byte	(.L31-.L4)/2
+  97 005e 1702     		.2byte	(.L31-.L4)/2
+  98 0060 1702     		.2byte	(.L31-.L4)/2
+  99 0062 1702     		.2byte	(.L31-.L4)/2
+ 100 0064 1702     		.2byte	(.L31-.L4)/2
+ 101 0066 1702     		.2byte	(.L31-.L4)/2
+ 102 0068 1702     		.2byte	(.L31-.L4)/2
+ 103 006a 1702     		.2byte	(.L31-.L4)/2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 3
 
 
- 104 0072 BF01     		.2byte	(.L30-.L5)/2
- 105 0074 BF01     		.2byte	(.L30-.L5)/2
- 106 0076 8C01     		.2byte	(.L8-.L5)/2
- 107 0078 BF01     		.2byte	(.L30-.L5)/2
- 108 007a BF01     		.2byte	(.L30-.L5)/2
- 109 007c BF01     		.2byte	(.L30-.L5)/2
- 110 007e BF01     		.2byte	(.L30-.L5)/2
- 111 0080 BF01     		.2byte	(.L30-.L5)/2
- 112 0082 BF01     		.2byte	(.L30-.L5)/2
- 113 0084 BF01     		.2byte	(.L30-.L5)/2
- 114 0086 BF01     		.2byte	(.L30-.L5)/2
- 115 0088 BF01     		.2byte	(.L30-.L5)/2
- 116 008a BF01     		.2byte	(.L30-.L5)/2
- 117 008c BF01     		.2byte	(.L30-.L5)/2
- 118 008e BF01     		.2byte	(.L30-.L5)/2
- 119 0090 BF01     		.2byte	(.L30-.L5)/2
- 120 0092 BF01     		.2byte	(.L30-.L5)/2
- 121 0094 BF01     		.2byte	(.L30-.L5)/2
- 122 0096 BF01     		.2byte	(.L30-.L5)/2
- 123 0098 BF01     		.2byte	(.L30-.L5)/2
- 124 009a BF01     		.2byte	(.L30-.L5)/2
- 125 009c BF01     		.2byte	(.L30-.L5)/2
- 126 009e BF01     		.2byte	(.L30-.L5)/2
- 127 00a0 BF01     		.2byte	(.L30-.L5)/2
- 128 00a2 BF01     		.2byte	(.L30-.L5)/2
- 129 00a4 BF01     		.2byte	(.L30-.L5)/2
- 130 00a6 BF01     		.2byte	(.L30-.L5)/2
- 131 00a8 BF01     		.2byte	(.L30-.L5)/2
- 132 00aa BF01     		.2byte	(.L30-.L5)/2
- 133 00ac 3900     		.2byte	(.L7-.L5)/2
- 134 00ae 9200     		.2byte	(.L6-.L5)/2
- 135 00b0 EB00     		.2byte	(.L4-.L5)/2
- 136              		.p2align 1
- 137              	.L2:
- 138              	.LBB2:
+ 104 006c 1702     		.2byte	(.L31-.L4)/2
+ 105 006e 1702     		.2byte	(.L31-.L4)/2
+ 106 0070 1702     		.2byte	(.L31-.L4)/2
+ 107 0072 1702     		.2byte	(.L31-.L4)/2
+ 108 0074 1702     		.2byte	(.L31-.L4)/2
+ 109 0076 1702     		.2byte	(.L31-.L4)/2
+ 110 0078 1702     		.2byte	(.L31-.L4)/2
+ 111 007a 1702     		.2byte	(.L31-.L4)/2
+ 112 007c 1702     		.2byte	(.L31-.L4)/2
+ 113 007e 1702     		.2byte	(.L31-.L4)/2
+ 114 0080 1702     		.2byte	(.L31-.L4)/2
+ 115 0082 1702     		.2byte	(.L31-.L4)/2
+ 116 0084 1702     		.2byte	(.L31-.L4)/2
+ 117 0086 1702     		.2byte	(.L31-.L4)/2
+ 118 0088 1702     		.2byte	(.L31-.L4)/2
+ 119 008a 1702     		.2byte	(.L31-.L4)/2
+ 120 008c 1702     		.2byte	(.L31-.L4)/2
+ 121 008e 1702     		.2byte	(.L31-.L4)/2
+ 122 0090 1702     		.2byte	(.L31-.L4)/2
+ 123 0092 1702     		.2byte	(.L31-.L4)/2
+ 124 0094 1702     		.2byte	(.L31-.L4)/2
+ 125 0096 1702     		.2byte	(.L31-.L4)/2
+ 126 0098 1702     		.2byte	(.L31-.L4)/2
+ 127 009a A201     		.2byte	(.L11-.L4)/2
+ 128 009c B401     		.2byte	(.L10-.L4)/2
+ 129 009e D701     		.2byte	(.L9-.L4)/2
+ 130 00a0 1702     		.2byte	(.L31-.L4)/2
+ 131 00a2 1702     		.2byte	(.L31-.L4)/2
+ 132 00a4 EA01     		.2byte	(.L8-.L4)/2
+ 133 00a6 1702     		.2byte	(.L31-.L4)/2
+ 134 00a8 1702     		.2byte	(.L31-.L4)/2
+ 135 00aa 1702     		.2byte	(.L31-.L4)/2
+ 136 00ac 1702     		.2byte	(.L31-.L4)/2
+ 137 00ae 1702     		.2byte	(.L31-.L4)/2
+ 138 00b0 1702     		.2byte	(.L31-.L4)/2
+ 139 00b2 1702     		.2byte	(.L31-.L4)/2
+ 140 00b4 1702     		.2byte	(.L31-.L4)/2
+ 141 00b6 1702     		.2byte	(.L31-.L4)/2
+ 142 00b8 1702     		.2byte	(.L31-.L4)/2
+ 143 00ba 1702     		.2byte	(.L31-.L4)/2
+ 144 00bc 1702     		.2byte	(.L31-.L4)/2
+ 145 00be 1702     		.2byte	(.L31-.L4)/2
+ 146 00c0 1702     		.2byte	(.L31-.L4)/2
+ 147 00c2 1702     		.2byte	(.L31-.L4)/2
+ 148 00c4 1702     		.2byte	(.L31-.L4)/2
+ 149 00c6 1702     		.2byte	(.L31-.L4)/2
+ 150 00c8 1702     		.2byte	(.L31-.L4)/2
+ 151 00ca 1702     		.2byte	(.L31-.L4)/2
+ 152 00cc 1702     		.2byte	(.L31-.L4)/2
+ 153 00ce 1702     		.2byte	(.L31-.L4)/2
+ 154 00d0 1702     		.2byte	(.L31-.L4)/2
+ 155 00d2 1702     		.2byte	(.L31-.L4)/2
+ 156 00d4 1702     		.2byte	(.L31-.L4)/2
+ 157 00d6 1702     		.2byte	(.L31-.L4)/2
+ 158 00d8 1702     		.2byte	(.L31-.L4)/2
+ 159 00da 5A00     		.2byte	(.L7-.L4)/2
+ 160 00dc B300     		.2byte	(.L6-.L4)/2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 4
+
+
+ 161 00de 0C01     		.2byte	(.L5-.L4)/2
+ 162 00e0 6501     		.2byte	(.L3-.L4)/2
+ 163              		.p2align 1
+ 164              	.L12:
+ 165              	.LBB2:
   13:Core/Src/NOS_Strip_UART.c ****     {
   14:Core/Src/NOS_Strip_UART.c ****         case SET_STRIP_PIXEL_COUNT:
   15:Core/Src/NOS_Strip_UART.c **** 
   16:Core/Src/NOS_Strip_UART.c ****         tempShort.bytes[1] = message->data[currPos++];
- 139              		.loc 1 16 9 is_stmt 1 view .LVU14
- 140              	.LVL7:
- 141              		.loc 1 16 43 is_stmt 0 view .LVU15
- 142 00b2 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 143              		.loc 1 16 28 view .LVU16
- 144 00b4 4FF00001 		mov	r1, #0	@ movhi
- 145              	.LVL8:
- 146              		.loc 1 16 28 view .LVU17
- 147 00b8 63F30F21 		bfi	r1, r3, #8, #8
- 148              	.LVL9:
+ 166              		.loc 1 16 9 is_stmt 1 view .LVU14
+ 167              	.LVL7:
+ 168              		.loc 1 16 43 is_stmt 0 view .LVU15
+ 169 00e2 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 170              		.loc 1 16 28 view .LVU16
+ 171 00e4 4FF00001 		mov	r1, #0	@ movhi
+ 172              	.LVL8:
+ 173              		.loc 1 16 28 view .LVU17
+ 174 00e8 63F30F21 		bfi	r1, r3, #8, #8
+ 175              	.LVL9:
   17:Core/Src/NOS_Strip_UART.c ****         tempShort.bytes[0] = message->data[currPos++];
- 149              		.loc 1 17 9 is_stmt 1 view .LVU18
- 150              		.loc 1 17 43 is_stmt 0 view .LVU19
- 151 00bc 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 152              		.loc 1 17 28 view .LVU20
- 153 00be 63F30701 		bfi	r1, r3, #0, #8
+ 176              		.loc 1 17 9 is_stmt 1 view .LVU18
+ 177              		.loc 1 17 43 is_stmt 0 view .LVU19
+ 178 00ec 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 179              		.loc 1 17 28 view .LVU20
+ 180 00ee 63F30701 		bfi	r1, r3, #0, #8
   18:Core/Src/NOS_Strip_UART.c **** 
   19:Core/Src/NOS_Strip_UART.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 4
-
-
   20:Core/Src/NOS_Strip_UART.c ****         if(tempShort.data > 0 && tempShort.data <= 512)
- 154              		.loc 1 20 9 is_stmt 1 view .LVU21
- 155              		.loc 1 20 21 is_stmt 0 view .LVU22
- 156 00c2 8CB2     		uxth	r4, r1
- 157              	.LVL10:
- 158              		.loc 1 20 31 view .LVU23
- 159 00c4 631E     		subs	r3, r4, #1
- 160 00c6 9BB2     		uxth	r3, r3
- 161              		.loc 1 20 11 view .LVU24
- 162 00c8 B3F5007F 		cmp	r3, #512
- 163 00cc 01D3     		bcc	.L34
+ 181              		.loc 1 20 9 is_stmt 1 view .LVU21
+ 182              		.loc 1 20 21 is_stmt 0 view .LVU22
+ 183 00f2 8CB2     		uxth	r4, r1
+ 184              		.loc 1 20 31 view .LVU23
+ 185 00f4 631E     		subs	r3, r4, #1
+ 186 00f6 9BB2     		uxth	r3, r3
+ 187              		.loc 1 20 11 view .LVU24
+ 188 00f8 B3F5007F 		cmp	r3, #512
+ 189 00fc 01D3     		bcc	.L35
   21:Core/Src/NOS_Strip_UART.c ****         {
   22:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Clear(strip);
   23:Core/Src/NOS_Strip_UART.c ****             strip->pixelCount = tempShort.data;
   24:Core/Src/NOS_Strip_UART.c ****         }
   25:Core/Src/NOS_Strip_UART.c ****         
   26:Core/Src/NOS_Strip_UART.c ****         return true;
- 164              		.loc 1 26 16 view .LVU25
- 165 00ce 0120     		movs	r0, #1
- 166 00d0 8CE1     		b	.L3
- 167              	.L34:
+ 190              		.loc 1 26 16 view .LVU25
+ 191 00fe 0120     		movs	r0, #1
+ 192 0100 C3E1     		b	.L2
+ 193              	.L35:
   22:Core/Src/NOS_Strip_UART.c ****             strip->pixelCount = tempShort.data;
- 168              		.loc 1 22 13 is_stmt 1 view .LVU26
- 169 00d2 3046     		mov	r0, r6
- 170 00d4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Clear
- 171              	.LVL11:
+ 194              		.loc 1 22 13 is_stmt 1 view .LVU26
+ 195 0102 3046     		mov	r0, r6
+ 196 0104 FFF7FEFF 		bl	NOS_WS2812B_Strip_Clear
+ 197              	.LVL10:
   23:Core/Src/NOS_Strip_UART.c ****         }
- 172              		.loc 1 23 13 view .LVU27
+ 198              		.loc 1 23 13 view .LVU27
   23:Core/Src/NOS_Strip_UART.c ****         }
- 173              		.loc 1 23 31 is_stmt 0 view .LVU28
- 174 00d8 B460     		str	r4, [r6, #8]
- 175              		.loc 1 26 16 view .LVU29
- 176 00da 0120     		movs	r0, #1
- 177 00dc 86E1     		b	.L3
- 178              	.LVL12:
- 179              	.L7:
+ 199              		.loc 1 23 31 is_stmt 0 view .LVU28
+ 200 0108 B460     		str	r4, [r6, #8]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 5
+
+
+ 201              		.loc 1 26 16 view .LVU29
+ 202 010a 0120     		movs	r0, #1
+ 203 010c BDE1     		b	.L2
+ 204              	.LVL11:
+ 205              	.L7:
   27:Core/Src/NOS_Strip_UART.c ****         break;
- 180              		.loc 1 27 9 is_stmt 1 view .LVU30
+ 206              		.loc 1 27 9 is_stmt 1 view .LVU30
   28:Core/Src/NOS_Strip_UART.c **** 
-  29:Core/Src/NOS_Strip_UART.c ****     case SET_BREATHE_EFFECT_COMMAND:
+  29:Core/Src/NOS_Strip_UART.c ****     case SET_EFFECT_BREATHE:
   30:Core/Src/NOS_Strip_UART.c **** 
   31:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == EFFECT_BREATHE_ID)
- 181              		.loc 1 31 13 view .LVU31
- 182              		.loc 1 31 29 is_stmt 0 view .LVU32
- 183 00de 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 184              		.loc 1 31 15 view .LVU33
- 185 00e0 202B     		cmp	r3, #32
- 186 00e2 4ED0     		beq	.L35
- 187              	.L12:
+ 207              		.loc 1 31 13 view .LVU31
+ 208              		.loc 1 31 29 is_stmt 0 view .LVU32
+ 209 010e 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 210              		.loc 1 31 15 view .LVU33
+ 211 0110 202B     		cmp	r3, #32
+ 212 0112 4ED0     		beq	.L36
+ 213              	.L13:
   32:Core/Src/NOS_Strip_UART.c ****             {
   33:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_BREATHE_ID;
   34:Core/Src/NOS_Strip_UART.c ****             }
   35:Core/Src/NOS_Strip_UART.c **** 
   36:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == 0xFF)
- 188              		.loc 1 36 13 is_stmt 1 view .LVU34
- 189              	.LVL13:
- 190              		.loc 1 36 29 is_stmt 0 view .LVU35
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 5
-
-
- 191 00e4 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 192              		.loc 1 36 15 view .LVU36
- 193 00e6 FF2B     		cmp	r3, #255
- 194 00e8 4ED0     		beq	.L36
+ 214              		.loc 1 36 13 is_stmt 1 view .LVU34
+ 215              	.LVL12:
+ 216              		.loc 1 36 29 is_stmt 0 view .LVU35
+ 217 0114 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 218              		.loc 1 36 15 view .LVU36
+ 219 0116 FF2B     		cmp	r3, #255
+ 220 0118 4ED0     		beq	.L37
   37:Core/Src/NOS_Strip_UART.c ****             {
   38:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = true;
   39:Core/Src/NOS_Strip_UART.c ****             }
   40:Core/Src/NOS_Strip_UART.c ****             else
   41:Core/Src/NOS_Strip_UART.c ****             {
   42:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = false;
- 195              		.loc 1 42 17 is_stmt 1 view .LVU37
- 196              		.loc 1 42 36 is_stmt 0 view .LVU38
- 197 00ea 0023     		movs	r3, #0
- 198 00ec 8DF84D30 		strb	r3, [sp, #77]
- 199              	.L14:
+ 221              		.loc 1 42 17 is_stmt 1 view .LVU37
+ 222              		.loc 1 42 36 is_stmt 0 view .LVU38
+ 223 011a 0023     		movs	r3, #0
+ 224 011c 8DF84D30 		strb	r3, [sp, #77]
+ 225              	.L15:
   43:Core/Src/NOS_Strip_UART.c ****             }
   44:Core/Src/NOS_Strip_UART.c **** 
   45:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 200              		.loc 1 45 13 is_stmt 1 view .LVU39
- 201              	.LVL14:
- 202              		.loc 1 45 47 is_stmt 0 view .LVU40
- 203 00f0 A37C     		ldrb	r3, [r4, #18]	@ zero_extendqisi2
- 204              		.loc 1 45 32 view .LVU41
- 205 00f2 4FF00001 		mov	r1, #0	@ movhi
- 206              		.loc 1 45 32 view .LVU42
- 207 00f6 63F30F21 		bfi	r1, r3, #8, #8
- 208              	.LVL15:
+ 226              		.loc 1 45 13 is_stmt 1 view .LVU39
+ 227              	.LVL13:
+ 228              		.loc 1 45 47 is_stmt 0 view .LVU40
+ 229 0120 AB7C     		ldrb	r3, [r5, #18]	@ zero_extendqisi2
+ 230              		.loc 1 45 32 view .LVU41
+ 231 0122 4FF00001 		mov	r1, #0	@ movhi
+ 232              		.loc 1 45 32 view .LVU42
+ 233 0126 63F30F21 		bfi	r1, r3, #8, #8
+ 234              	.LVL14:
   46:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 209              		.loc 1 46 13 is_stmt 1 view .LVU43
- 210              		.loc 1 46 47 is_stmt 0 view .LVU44
- 211 00fa E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
- 212              		.loc 1 46 32 view .LVU45
- 213 00fc 63F30701 		bfi	r1, r3, #0, #8
+ 235              		.loc 1 46 13 is_stmt 1 view .LVU43
+ 236              		.loc 1 46 47 is_stmt 0 view .LVU44
+ 237 012a EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 6
+
+
+ 238              		.loc 1 46 32 view .LVU45
+ 239 012c 63F30701 		bfi	r1, r3, #0, #8
   47:Core/Src/NOS_Strip_UART.c ****             uint16_t speed = tempShort.data;
- 214              		.loc 1 47 13 is_stmt 1 view .LVU46
- 215              		.loc 1 47 22 is_stmt 0 view .LVU47
- 216 0100 8AB2     		uxth	r2, r1
- 217              	.LVL16:
+ 240              		.loc 1 47 13 is_stmt 1 view .LVU46
+ 241              		.loc 1 47 22 is_stmt 0 view .LVU47
+ 242 0130 8AB2     		uxth	r2, r1
+ 243              	.LVL15:
   48:Core/Src/NOS_Strip_UART.c **** 
   49:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 218              		.loc 1 49 13 is_stmt 1 view .LVU48
- 219              		.loc 1 49 47 is_stmt 0 view .LVU49
- 220 0102 237D     		ldrb	r3, [r4, #20]	@ zero_extendqisi2
- 221              		.loc 1 49 32 view .LVU50
- 222 0104 63F30F21 		bfi	r1, r3, #8, #8
- 223              	.LVL17:
+ 244              		.loc 1 49 13 is_stmt 1 view .LVU48
+ 245              		.loc 1 49 47 is_stmt 0 view .LVU49
+ 246 0132 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 247              		.loc 1 49 32 view .LVU50
+ 248 0134 63F30F21 		bfi	r1, r3, #8, #8
+ 249              	.LVL16:
   50:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 224              		.loc 1 50 13 is_stmt 1 view .LVU51
- 225              		.loc 1 50 47 is_stmt 0 view .LVU52
- 226 0108 637D     		ldrb	r3, [r4, #21]	@ zero_extendqisi2
- 227              		.loc 1 50 32 view .LVU53
- 228 010a 63F30701 		bfi	r1, r3, #0, #8
+ 250              		.loc 1 50 13 is_stmt 1 view .LVU51
+ 251              		.loc 1 50 47 is_stmt 0 view .LVU52
+ 252 0138 6B7D     		ldrb	r3, [r5, #21]	@ zero_extendqisi2
+ 253              		.loc 1 50 32 view .LVU53
+ 254 013a 63F30701 		bfi	r1, r3, #0, #8
   51:Core/Src/NOS_Strip_UART.c ****             uint16_t step = tempShort.data;
- 229              		.loc 1 51 13 is_stmt 1 view .LVU54
- 230              		.loc 1 51 22 is_stmt 0 view .LVU55
- 231 010e 8BB2     		uxth	r3, r1
- 232              	.LVL18:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 6
-
-
+ 255              		.loc 1 51 13 is_stmt 1 view .LVU54
+ 256              		.loc 1 51 22 is_stmt 0 view .LVU55
+ 257 013e 8BB2     		uxth	r3, r1
+ 258              	.LVL17:
   52:Core/Src/NOS_Strip_UART.c **** 
   53:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 233              		.loc 1 53 13 is_stmt 1 view .LVU56
- 234              		.loc 1 53 47 is_stmt 0 view .LVU57
- 235 0110 A07D     		ldrb	r0, [r4, #22]	@ zero_extendqisi2
- 236              		.loc 1 53 32 view .LVU58
- 237 0112 60F30F21 		bfi	r1, r0, #8, #8
- 238              	.LVL19:
+ 259              		.loc 1 53 13 is_stmt 1 view .LVU56
+ 260              		.loc 1 53 47 is_stmt 0 view .LVU57
+ 261 0140 A87D     		ldrb	r0, [r5, #22]	@ zero_extendqisi2
+ 262              		.loc 1 53 32 view .LVU58
+ 263 0142 60F30F21 		bfi	r1, r0, #8, #8
+ 264              	.LVL18:
   54:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 239              		.loc 1 54 13 is_stmt 1 view .LVU59
- 240              		.loc 1 54 47 is_stmt 0 view .LVU60
- 241 0116 E07D     		ldrb	r0, [r4, #23]	@ zero_extendqisi2
- 242              		.loc 1 54 32 view .LVU61
- 243 0118 60F30701 		bfi	r1, r0, #0, #8
+ 265              		.loc 1 54 13 is_stmt 1 view .LVU59
+ 266              		.loc 1 54 47 is_stmt 0 view .LVU60
+ 267 0146 E87D     		ldrb	r0, [r5, #23]	@ zero_extendqisi2
+ 268              		.loc 1 54 32 view .LVU61
+ 269 0148 60F30701 		bfi	r1, r0, #0, #8
   55:Core/Src/NOS_Strip_UART.c ****             uint16_t min = tempShort.data;
- 244              		.loc 1 55 13 is_stmt 1 view .LVU62
- 245              		.loc 1 55 22 is_stmt 0 view .LVU63
- 246 011c 8DB2     		uxth	r5, r1
- 247              	.LVL20:
+ 270              		.loc 1 55 13 is_stmt 1 view .LVU62
+ 271              		.loc 1 55 22 is_stmt 0 view .LVU63
+ 272 014c 8CB2     		uxth	r4, r1
+ 273              	.LVL19:
   56:Core/Src/NOS_Strip_UART.c **** 
   57:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 248              		.loc 1 57 13 is_stmt 1 view .LVU64
- 249              		.loc 1 57 47 is_stmt 0 view .LVU65
- 250 011e 207E     		ldrb	r0, [r4, #24]	@ zero_extendqisi2
- 251              		.loc 1 57 32 view .LVU66
- 252 0120 60F30F21 		bfi	r1, r0, #8, #8
- 253              	.LVL21:
+ 274              		.loc 1 57 13 is_stmt 1 view .LVU64
+ 275              		.loc 1 57 47 is_stmt 0 view .LVU65
+ 276 014e 287E     		ldrb	r0, [r5, #24]	@ zero_extendqisi2
+ 277              		.loc 1 57 32 view .LVU66
+ 278 0150 60F30F21 		bfi	r1, r0, #8, #8
+ 279              	.LVL20:
   58:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 254              		.loc 1 58 13 is_stmt 1 view .LVU67
- 255              		.loc 1 58 47 is_stmt 0 view .LVU68
- 256 0124 607E     		ldrb	r0, [r4, #25]	@ zero_extendqisi2
- 257              		.loc 1 58 32 view .LVU69
- 258 0126 60F30701 		bfi	r1, r0, #0, #8
+ 280              		.loc 1 58 13 is_stmt 1 view .LVU67
+ 281              		.loc 1 58 47 is_stmt 0 view .LVU68
+ 282 0154 687E     		ldrb	r0, [r5, #25]	@ zero_extendqisi2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 7
+
+
+ 283              		.loc 1 58 32 view .LVU69
+ 284 0156 60F30701 		bfi	r1, r0, #0, #8
   59:Core/Src/NOS_Strip_UART.c ****             uint16_t max = tempShort.data;
- 259              		.loc 1 59 13 is_stmt 1 view .LVU70
- 260              		.loc 1 59 22 is_stmt 0 view .LVU71
- 261 012a 89B2     		uxth	r1, r1
- 262              	.LVL22:
+ 285              		.loc 1 59 13 is_stmt 1 view .LVU70
+ 286              		.loc 1 59 22 is_stmt 0 view .LVU71
+ 287 015a 89B2     		uxth	r1, r1
+ 288              	.LVL21:
   60:Core/Src/NOS_Strip_UART.c **** 
   61:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.R = message->data[currPos++];
- 263              		.loc 1 61 13 is_stmt 1 view .LVU72
- 264              		.loc 1 61 47 is_stmt 0 view .LVU73
- 265 012c A07E     		ldrb	r0, [r4, #26]	@ zero_extendqisi2
- 266              		.loc 1 61 32 view .LVU74
- 267 012e 8DF84A00 		strb	r0, [sp, #74]
+ 289              		.loc 1 61 13 is_stmt 1 view .LVU72
+ 290              		.loc 1 61 47 is_stmt 0 view .LVU73
+ 291 015c A87E     		ldrb	r0, [r5, #26]	@ zero_extendqisi2
+ 292              		.loc 1 61 32 view .LVU74
+ 293 015e 8DF84A00 		strb	r0, [sp, #74]
   62:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.G = message->data[currPos++];
- 268              		.loc 1 62 13 is_stmt 1 view .LVU75
- 269              	.LVL23:
- 270              		.loc 1 62 47 is_stmt 0 view .LVU76
- 271 0132 E07E     		ldrb	r0, [r4, #27]	@ zero_extendqisi2
- 272              		.loc 1 62 32 view .LVU77
- 273 0134 8DF84B00 		strb	r0, [sp, #75]
+ 294              		.loc 1 62 13 is_stmt 1 view .LVU75
+ 295              	.LVL22:
+ 296              		.loc 1 62 47 is_stmt 0 view .LVU76
+ 297 0162 E87E     		ldrb	r0, [r5, #27]	@ zero_extendqisi2
+ 298              		.loc 1 62 32 view .LVU77
+ 299 0164 8DF84B00 		strb	r0, [sp, #75]
   63:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.B = message->data[currPos++];
- 274              		.loc 1 63 13 is_stmt 1 view .LVU78
- 275              	.LVL24:
- 276              		.loc 1 63 47 is_stmt 0 view .LVU79
- 277 0138 207F     		ldrb	r0, [r4, #28]	@ zero_extendqisi2
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 7
-
-
- 278              		.loc 1 63 32 view .LVU80
- 279 013a 8DF84C00 		strb	r0, [sp, #76]
+ 300              		.loc 1 63 13 is_stmt 1 view .LVU78
+ 301              	.LVL23:
+ 302              		.loc 1 63 47 is_stmt 0 view .LVU79
+ 303 0168 287F     		ldrb	r0, [r5, #28]	@ zero_extendqisi2
+ 304              		.loc 1 63 32 view .LVU80
+ 305 016a 8DF84C00 		strb	r0, [sp, #76]
   64:Core/Src/NOS_Strip_UART.c **** 
   65:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,
- 280              		.loc 1 65 13 is_stmt 1 view .LVU81
- 281 013e 09AF     		add	r7, sp, #36
- 282 0140 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
- 283 0144 0790     		str	r0, [sp, #28]
- 284 0146 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
- 285 014a 0690     		str	r0, [sp, #24]
- 286 014c 0020     		movs	r0, #0
- 287 014e 0590     		str	r0, [sp, #20]
- 288 0150 0490     		str	r0, [sp, #16]
- 289 0152 0390     		str	r0, [sp, #12]
- 290 0154 0290     		str	r0, [sp, #8]
- 291 0156 0191     		str	r1, [sp, #4]
- 292 0158 0095     		str	r5, [sp]
- 293 015a 0DF14A01 		add	r1, sp, #74
- 294              	.LVL25:
- 295              		.loc 1 65 13 is_stmt 0 view .LVU82
- 296 015e 3846     		mov	r0, r7
- 297 0160 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 298              	.LVL26:
+ 306              		.loc 1 65 13 is_stmt 1 view .LVU81
+ 307 016e 09AF     		add	r7, sp, #36
+ 308 0170 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
+ 309 0174 0790     		str	r0, [sp, #28]
+ 310 0176 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
+ 311 017a 0690     		str	r0, [sp, #24]
+ 312 017c 0020     		movs	r0, #0
+ 313 017e 0590     		str	r0, [sp, #20]
+ 314 0180 0490     		str	r0, [sp, #16]
+ 315 0182 0390     		str	r0, [sp, #12]
+ 316 0184 0290     		str	r0, [sp, #8]
+ 317 0186 0191     		str	r1, [sp, #4]
+ 318 0188 0094     		str	r4, [sp]
+ 319 018a 0DF14A01 		add	r1, sp, #74
+ 320              	.LVL24:
+ 321              		.loc 1 65 13 is_stmt 0 view .LVU82
+ 322 018e 3846     		mov	r0, r7
+ 323 0190 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 324              	.LVL25:
   66:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
- 299              		.loc 1 66 13 is_stmt 1 view .LVU83
- 300 0164 6C46     		mov	r4, sp
- 301              	.LVL27:
- 302              		.loc 1 66 13 is_stmt 0 view .LVU84
- 303 0166 0CAD     		add	r5, sp, #48
- 304              	.LVL28:
- 305              		.loc 1 66 13 view .LVU85
- 306 0168 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 307 016a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 308 016c 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 309 0170 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 310 0174 97E80E00 		ldm	r7, {r1, r2, r3}
- 311 0178 3046     		mov	r0, r6
- 312 017a FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
- 313              	.LVL29:
+ 325              		.loc 1 66 13 is_stmt 1 view .LVU83
+ 326 0194 6C46     		mov	r4, sp
+ 327              	.LVL26:
+ 328              		.loc 1 66 13 is_stmt 0 view .LVU84
+ 329 0196 0CAD     		add	r5, sp, #48
+ 330              	.LVL27:
+ 331              		.loc 1 66 13 view .LVU85
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 8
+
+
+ 332 0198 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 333 019a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 334 019c 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 335 01a0 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 336 01a4 97E80E00 		ldm	r7, {r1, r2, r3}
+ 337 01a8 3046     		mov	r0, r6
+ 338 01aa FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 339              	.LVL28:
   67:Core/Src/NOS_Strip_UART.c **** 
   68:Core/Src/NOS_Strip_UART.c ****             return true;       
- 314              		.loc 1 68 13 is_stmt 1 view .LVU86
- 315              		.loc 1 68 20 is_stmt 0 view .LVU87
- 316 017e 0120     		movs	r0, #1
- 317 0180 34E1     		b	.L3
- 318              	.LVL30:
- 319              	.L35:
+ 340              		.loc 1 68 13 is_stmt 1 view .LVU86
+ 341              		.loc 1 68 20 is_stmt 0 view .LVU87
+ 342 01ae 0120     		movs	r0, #1
+ 343 01b0 6BE1     		b	.L2
+ 344              	.LVL29:
+ 345              	.L36:
   33:Core/Src/NOS_Strip_UART.c ****             }
- 320              		.loc 1 33 17 is_stmt 1 view .LVU88
+ 346              		.loc 1 33 17 is_stmt 1 view .LVU88
   33:Core/Src/NOS_Strip_UART.c ****             }
- 321              		.loc 1 33 37 is_stmt 0 view .LVU89
- 322 0182 8DF84E30 		strb	r3, [sp, #78]
- 323 0186 ADE7     		b	.L12
- 324              	.LVL31:
- 325              	.L36:
+ 347              		.loc 1 33 37 is_stmt 0 view .LVU89
+ 348 01b2 8DF84E30 		strb	r3, [sp, #78]
+ 349 01b6 ADE7     		b	.L13
+ 350              	.LVL30:
+ 351              	.L37:
   38:Core/Src/NOS_Strip_UART.c ****             }
- 326              		.loc 1 38 17 is_stmt 1 view .LVU90
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 8
-
-
+ 352              		.loc 1 38 17 is_stmt 1 view .LVU90
   38:Core/Src/NOS_Strip_UART.c ****             }
- 327              		.loc 1 38 36 is_stmt 0 view .LVU91
- 328 0188 0123     		movs	r3, #1
- 329 018a 8DF84D30 		strb	r3, [sp, #77]
- 330 018e AFE7     		b	.L14
- 331              	.LVL32:
- 332              	.L6:
+ 353              		.loc 1 38 36 is_stmt 0 view .LVU91
+ 354 01b8 0123     		movs	r3, #1
+ 355 01ba 8DF84D30 		strb	r3, [sp, #77]
+ 356 01be AFE7     		b	.L15
+ 357              	.LVL31:
+ 358              	.L6:
   69:Core/Src/NOS_Strip_UART.c ****             break;
- 333              		.loc 1 69 13 is_stmt 1 view .LVU92
+ 359              		.loc 1 69 13 is_stmt 1 view .LVU92
   70:Core/Src/NOS_Strip_UART.c ****     
-  71:Core/Src/NOS_Strip_UART.c ****         case SET_RAINBOW_EFFECT_COMMAND:
+  71:Core/Src/NOS_Strip_UART.c ****         case SET_EFFECT_RAINBOW:
   72:Core/Src/NOS_Strip_UART.c **** 
   73:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == EFFECT_RAINBOW_ID)
- 334              		.loc 1 73 13 view .LVU93
- 335              		.loc 1 73 29 is_stmt 0 view .LVU94
- 336 0190 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 337              		.loc 1 73 15 view .LVU95
- 338 0192 212B     		cmp	r3, #33
- 339 0194 4ED0     		beq	.L37
- 340              	.L15:
+ 360              		.loc 1 73 13 view .LVU93
+ 361              		.loc 1 73 29 is_stmt 0 view .LVU94
+ 362 01c0 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 363              		.loc 1 73 15 view .LVU95
+ 364 01c2 212B     		cmp	r3, #33
+ 365 01c4 4ED0     		beq	.L38
+ 366              	.L16:
   74:Core/Src/NOS_Strip_UART.c ****             {
   75:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_RAINBOW_ID;
   76:Core/Src/NOS_Strip_UART.c ****             }
   77:Core/Src/NOS_Strip_UART.c **** 
   78:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == 0xFF)
- 341              		.loc 1 78 13 is_stmt 1 view .LVU96
- 342              	.LVL33:
- 343              		.loc 1 78 29 is_stmt 0 view .LVU97
- 344 0196 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 345              		.loc 1 78 15 view .LVU98
- 346 0198 FF2B     		cmp	r3, #255
- 347 019a 4ED0     		beq	.L38
+ 367              		.loc 1 78 13 is_stmt 1 view .LVU96
+ 368              	.LVL32:
+ 369              		.loc 1 78 29 is_stmt 0 view .LVU97
+ 370 01c6 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 371              		.loc 1 78 15 view .LVU98
+ 372 01c8 FF2B     		cmp	r3, #255
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 9
+
+
+ 373 01ca 4ED0     		beq	.L39
   79:Core/Src/NOS_Strip_UART.c ****             {
   80:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = true;
   81:Core/Src/NOS_Strip_UART.c ****             }
   82:Core/Src/NOS_Strip_UART.c ****             else
   83:Core/Src/NOS_Strip_UART.c ****             {
   84:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = false;
- 348              		.loc 1 84 17 is_stmt 1 view .LVU99
- 349              		.loc 1 84 36 is_stmt 0 view .LVU100
- 350 019c 0023     		movs	r3, #0
- 351 019e 8DF84D30 		strb	r3, [sp, #77]
- 352              	.L17:
+ 374              		.loc 1 84 17 is_stmt 1 view .LVU99
+ 375              		.loc 1 84 36 is_stmt 0 view .LVU100
+ 376 01cc 0023     		movs	r3, #0
+ 377 01ce 8DF84D30 		strb	r3, [sp, #77]
+ 378              	.L18:
   85:Core/Src/NOS_Strip_UART.c ****             }
   86:Core/Src/NOS_Strip_UART.c **** 
   87:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 353              		.loc 1 87 13 is_stmt 1 view .LVU101
- 354              	.LVL34:
- 355              		.loc 1 87 47 is_stmt 0 view .LVU102
- 356 01a2 A37C     		ldrb	r3, [r4, #18]	@ zero_extendqisi2
- 357              		.loc 1 87 32 view .LVU103
- 358 01a4 4FF00001 		mov	r1, #0	@ movhi
- 359              		.loc 1 87 32 view .LVU104
- 360 01a8 63F30F21 		bfi	r1, r3, #8, #8
- 361              	.LVL35:
+ 379              		.loc 1 87 13 is_stmt 1 view .LVU101
+ 380              	.LVL33:
+ 381              		.loc 1 87 47 is_stmt 0 view .LVU102
+ 382 01d2 AB7C     		ldrb	r3, [r5, #18]	@ zero_extendqisi2
+ 383              		.loc 1 87 32 view .LVU103
+ 384 01d4 4FF00001 		mov	r1, #0	@ movhi
+ 385              		.loc 1 87 32 view .LVU104
+ 386 01d8 63F30F21 		bfi	r1, r3, #8, #8
+ 387              	.LVL34:
   88:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 362              		.loc 1 88 13 is_stmt 1 view .LVU105
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 9
-
-
- 363              		.loc 1 88 47 is_stmt 0 view .LVU106
- 364 01ac E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
- 365              		.loc 1 88 32 view .LVU107
- 366 01ae 63F30701 		bfi	r1, r3, #0, #8
+ 388              		.loc 1 88 13 is_stmt 1 view .LVU105
+ 389              		.loc 1 88 47 is_stmt 0 view .LVU106
+ 390 01dc EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ 391              		.loc 1 88 32 view .LVU107
+ 392 01de 63F30701 		bfi	r1, r3, #0, #8
   89:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
- 367              		.loc 1 89 13 is_stmt 1 view .LVU108
- 368              		.loc 1 89 19 is_stmt 0 view .LVU109
- 369 01b2 8AB2     		uxth	r2, r1
- 370              	.LVL36:
+ 393              		.loc 1 89 13 is_stmt 1 view .LVU108
+ 394              		.loc 1 89 19 is_stmt 0 view .LVU109
+ 395 01e2 8AB2     		uxth	r2, r1
+ 396              	.LVL35:
   90:Core/Src/NOS_Strip_UART.c **** 
   91:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 371              		.loc 1 91 13 is_stmt 1 view .LVU110
- 372              		.loc 1 91 47 is_stmt 0 view .LVU111
- 373 01b4 237D     		ldrb	r3, [r4, #20]	@ zero_extendqisi2
- 374              		.loc 1 91 32 view .LVU112
- 375 01b6 63F30F21 		bfi	r1, r3, #8, #8
- 376              	.LVL37:
+ 397              		.loc 1 91 13 is_stmt 1 view .LVU110
+ 398              		.loc 1 91 47 is_stmt 0 view .LVU111
+ 399 01e4 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 400              		.loc 1 91 32 view .LVU112
+ 401 01e6 63F30F21 		bfi	r1, r3, #8, #8
+ 402              	.LVL36:
   92:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 377              		.loc 1 92 13 is_stmt 1 view .LVU113
- 378              		.loc 1 92 47 is_stmt 0 view .LVU114
- 379 01ba 637D     		ldrb	r3, [r4, #21]	@ zero_extendqisi2
- 380              		.loc 1 92 32 view .LVU115
- 381 01bc 63F30701 		bfi	r1, r3, #0, #8
+ 403              		.loc 1 92 13 is_stmt 1 view .LVU113
+ 404              		.loc 1 92 47 is_stmt 0 view .LVU114
+ 405 01ea 6B7D     		ldrb	r3, [r5, #21]	@ zero_extendqisi2
+ 406              		.loc 1 92 32 view .LVU115
+ 407 01ec 63F30701 		bfi	r1, r3, #0, #8
   93:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
- 382              		.loc 1 93 13 is_stmt 1 view .LVU116
- 383              		.loc 1 93 18 is_stmt 0 view .LVU117
- 384 01c0 8BB2     		uxth	r3, r1
- 385              	.LVL38:
+ 408              		.loc 1 93 13 is_stmt 1 view .LVU116
+ 409              		.loc 1 93 18 is_stmt 0 view .LVU117
+ 410 01f0 8BB2     		uxth	r3, r1
+ 411              	.LVL37:
   94:Core/Src/NOS_Strip_UART.c **** 
   95:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 386              		.loc 1 95 13 is_stmt 1 view .LVU118
- 387              		.loc 1 95 47 is_stmt 0 view .LVU119
- 388 01c2 A07D     		ldrb	r0, [r4, #22]	@ zero_extendqisi2
- 389              		.loc 1 95 32 view .LVU120
- 390 01c4 60F30F21 		bfi	r1, r0, #8, #8
- 391              	.LVL39:
+ 412              		.loc 1 95 13 is_stmt 1 view .LVU118
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 10
+
+
+ 413              		.loc 1 95 47 is_stmt 0 view .LVU119
+ 414 01f2 A87D     		ldrb	r0, [r5, #22]	@ zero_extendqisi2
+ 415              		.loc 1 95 32 view .LVU120
+ 416 01f4 60F30F21 		bfi	r1, r0, #8, #8
+ 417              	.LVL38:
   96:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 392              		.loc 1 96 13 is_stmt 1 view .LVU121
- 393              		.loc 1 96 47 is_stmt 0 view .LVU122
- 394 01c8 E07D     		ldrb	r0, [r4, #23]	@ zero_extendqisi2
- 395              		.loc 1 96 32 view .LVU123
- 396 01ca 60F30701 		bfi	r1, r0, #0, #8
+ 418              		.loc 1 96 13 is_stmt 1 view .LVU121
+ 419              		.loc 1 96 47 is_stmt 0 view .LVU122
+ 420 01f8 E87D     		ldrb	r0, [r5, #23]	@ zero_extendqisi2
+ 421              		.loc 1 96 32 view .LVU123
+ 422 01fa 60F30701 		bfi	r1, r0, #0, #8
   97:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
- 397              		.loc 1 97 13 is_stmt 1 view .LVU124
- 398              		.loc 1 97 17 is_stmt 0 view .LVU125
- 399 01ce 8DB2     		uxth	r5, r1
- 400              	.LVL40:
+ 423              		.loc 1 97 13 is_stmt 1 view .LVU124
+ 424              		.loc 1 97 17 is_stmt 0 view .LVU125
+ 425 01fe 8CB2     		uxth	r4, r1
+ 426              	.LVL39:
   98:Core/Src/NOS_Strip_UART.c **** 
   99:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 401              		.loc 1 99 13 is_stmt 1 view .LVU126
- 402              		.loc 1 99 47 is_stmt 0 view .LVU127
- 403 01d0 207E     		ldrb	r0, [r4, #24]	@ zero_extendqisi2
- 404              		.loc 1 99 32 view .LVU128
- 405 01d2 60F30F21 		bfi	r1, r0, #8, #8
- 406              	.LVL41:
+ 427              		.loc 1 99 13 is_stmt 1 view .LVU126
+ 428              		.loc 1 99 47 is_stmt 0 view .LVU127
+ 429 0200 287E     		ldrb	r0, [r5, #24]	@ zero_extendqisi2
+ 430              		.loc 1 99 32 view .LVU128
+ 431 0202 60F30F21 		bfi	r1, r0, #8, #8
+ 432              	.LVL40:
  100:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 407              		.loc 1 100 13 is_stmt 1 view .LVU129
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 10
-
-
- 408              		.loc 1 100 47 is_stmt 0 view .LVU130
- 409 01d6 607E     		ldrb	r0, [r4, #25]	@ zero_extendqisi2
- 410              		.loc 1 100 32 view .LVU131
- 411 01d8 60F30701 		bfi	r1, r0, #0, #8
+ 433              		.loc 1 100 13 is_stmt 1 view .LVU129
+ 434              		.loc 1 100 47 is_stmt 0 view .LVU130
+ 435 0206 687E     		ldrb	r0, [r5, #25]	@ zero_extendqisi2
+ 436              		.loc 1 100 32 view .LVU131
+ 437 0208 60F30701 		bfi	r1, r0, #0, #8
  101:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
- 412              		.loc 1 101 13 is_stmt 1 view .LVU132
- 413              		.loc 1 101 17 is_stmt 0 view .LVU133
- 414 01dc 89B2     		uxth	r1, r1
- 415              	.LVL42:
+ 438              		.loc 1 101 13 is_stmt 1 view .LVU132
+ 439              		.loc 1 101 17 is_stmt 0 view .LVU133
+ 440 020c 89B2     		uxth	r1, r1
+ 441              	.LVL41:
  102:Core/Src/NOS_Strip_UART.c **** 
  103:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.R = message->data[currPos++];
- 416              		.loc 1 103 13 is_stmt 1 view .LVU134
- 417              		.loc 1 103 47 is_stmt 0 view .LVU135
- 418 01de A07E     		ldrb	r0, [r4, #26]	@ zero_extendqisi2
- 419              		.loc 1 103 32 view .LVU136
- 420 01e0 8DF84A00 		strb	r0, [sp, #74]
+ 442              		.loc 1 103 13 is_stmt 1 view .LVU134
+ 443              		.loc 1 103 47 is_stmt 0 view .LVU135
+ 444 020e A87E     		ldrb	r0, [r5, #26]	@ zero_extendqisi2
+ 445              		.loc 1 103 32 view .LVU136
+ 446 0210 8DF84A00 		strb	r0, [sp, #74]
  104:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.G = message->data[currPos++];
- 421              		.loc 1 104 13 is_stmt 1 view .LVU137
- 422              	.LVL43:
- 423              		.loc 1 104 47 is_stmt 0 view .LVU138
- 424 01e4 E07E     		ldrb	r0, [r4, #27]	@ zero_extendqisi2
- 425              		.loc 1 104 32 view .LVU139
- 426 01e6 8DF84B00 		strb	r0, [sp, #75]
+ 447              		.loc 1 104 13 is_stmt 1 view .LVU137
+ 448              	.LVL42:
+ 449              		.loc 1 104 47 is_stmt 0 view .LVU138
+ 450 0214 E87E     		ldrb	r0, [r5, #27]	@ zero_extendqisi2
+ 451              		.loc 1 104 32 view .LVU139
+ 452 0216 8DF84B00 		strb	r0, [sp, #75]
  105:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.B = message->data[currPos++];
- 427              		.loc 1 105 13 is_stmt 1 view .LVU140
- 428              	.LVL44:
- 429              		.loc 1 105 47 is_stmt 0 view .LVU141
- 430 01ea 207F     		ldrb	r0, [r4, #28]	@ zero_extendqisi2
- 431              		.loc 1 105 32 view .LVU142
- 432 01ec 8DF84C00 		strb	r0, [sp, #76]
+ 453              		.loc 1 105 13 is_stmt 1 view .LVU140
+ 454              	.LVL43:
+ 455              		.loc 1 105 47 is_stmt 0 view .LVU141
+ 456 021a 287F     		ldrb	r0, [r5, #28]	@ zero_extendqisi2
+ 457              		.loc 1 105 32 view .LVU142
+ 458 021c 8DF84C00 		strb	r0, [sp, #76]
  106:Core/Src/NOS_Strip_UART.c **** 
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 11
+
+
  107:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,
- 433              		.loc 1 107 13 is_stmt 1 view .LVU143
- 434 01f0 09AF     		add	r7, sp, #36
- 435 01f2 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
- 436 01f6 0790     		str	r0, [sp, #28]
- 437 01f8 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
- 438 01fc 0690     		str	r0, [sp, #24]
- 439 01fe 0020     		movs	r0, #0
- 440 0200 0590     		str	r0, [sp, #20]
- 441 0202 0490     		str	r0, [sp, #16]
- 442 0204 0390     		str	r0, [sp, #12]
- 443 0206 0290     		str	r0, [sp, #8]
- 444 0208 0191     		str	r1, [sp, #4]
- 445 020a 0095     		str	r5, [sp]
- 446 020c 0DF14A01 		add	r1, sp, #74
- 447              	.LVL45:
- 448              		.loc 1 107 13 is_stmt 0 view .LVU144
- 449 0210 3846     		mov	r0, r7
- 450 0212 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 451              	.LVL46:
+ 459              		.loc 1 107 13 is_stmt 1 view .LVU143
+ 460 0220 09AF     		add	r7, sp, #36
+ 461 0222 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
+ 462 0226 0790     		str	r0, [sp, #28]
+ 463 0228 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
+ 464 022c 0690     		str	r0, [sp, #24]
+ 465 022e 0020     		movs	r0, #0
+ 466 0230 0590     		str	r0, [sp, #20]
+ 467 0232 0490     		str	r0, [sp, #16]
+ 468 0234 0390     		str	r0, [sp, #12]
+ 469 0236 0290     		str	r0, [sp, #8]
+ 470 0238 0191     		str	r1, [sp, #4]
+ 471 023a 0094     		str	r4, [sp]
+ 472 023c 0DF14A01 		add	r1, sp, #74
+ 473              	.LVL44:
+ 474              		.loc 1 107 13 is_stmt 0 view .LVU144
+ 475 0240 3846     		mov	r0, r7
+ 476 0242 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 477              	.LVL45:
  108:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
- 452              		.loc 1 108 13 is_stmt 1 view .LVU145
- 453 0216 6C46     		mov	r4, sp
- 454              	.LVL47:
- 455              		.loc 1 108 13 is_stmt 0 view .LVU146
- 456 0218 0CAD     		add	r5, sp, #48
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 11
-
-
- 457              	.LVL48:
- 458              		.loc 1 108 13 view .LVU147
- 459 021a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 460 021c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 461 021e 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 462 0222 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 463 0226 97E80E00 		ldm	r7, {r1, r2, r3}
- 464 022a 3046     		mov	r0, r6
- 465 022c FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
- 466              	.LVL49:
+ 478              		.loc 1 108 13 is_stmt 1 view .LVU145
+ 479 0246 6C46     		mov	r4, sp
+ 480              	.LVL46:
+ 481              		.loc 1 108 13 is_stmt 0 view .LVU146
+ 482 0248 0CAD     		add	r5, sp, #48
+ 483              	.LVL47:
+ 484              		.loc 1 108 13 view .LVU147
+ 485 024a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 486 024c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 487 024e 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 488 0252 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 489 0256 97E80E00 		ldm	r7, {r1, r2, r3}
+ 490 025a 3046     		mov	r0, r6
+ 491 025c FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 492              	.LVL48:
  109:Core/Src/NOS_Strip_UART.c ****             return true;
- 467              		.loc 1 109 13 is_stmt 1 view .LVU148
- 468              		.loc 1 109 20 is_stmt 0 view .LVU149
- 469 0230 0120     		movs	r0, #1
- 470 0232 DBE0     		b	.L3
- 471              	.LVL50:
- 472              	.L37:
+ 493              		.loc 1 109 13 is_stmt 1 view .LVU148
+ 494              		.loc 1 109 20 is_stmt 0 view .LVU149
+ 495 0260 0120     		movs	r0, #1
+ 496 0262 12E1     		b	.L2
+ 497              	.LVL49:
+ 498              	.L38:
   75:Core/Src/NOS_Strip_UART.c ****             }
- 473              		.loc 1 75 17 is_stmt 1 view .LVU150
+ 499              		.loc 1 75 17 is_stmt 1 view .LVU150
   75:Core/Src/NOS_Strip_UART.c ****             }
- 474              		.loc 1 75 37 is_stmt 0 view .LVU151
- 475 0234 8DF84E30 		strb	r3, [sp, #78]
- 476 0238 ADE7     		b	.L15
- 477              	.LVL51:
- 478              	.L38:
+ 500              		.loc 1 75 37 is_stmt 0 view .LVU151
+ 501 0264 8DF84E30 		strb	r3, [sp, #78]
+ 502 0268 ADE7     		b	.L16
+ 503              	.LVL50:
+ 504              	.L39:
   80:Core/Src/NOS_Strip_UART.c ****             }
- 479              		.loc 1 80 17 is_stmt 1 view .LVU152
+ 505              		.loc 1 80 17 is_stmt 1 view .LVU152
   80:Core/Src/NOS_Strip_UART.c ****             }
- 480              		.loc 1 80 36 is_stmt 0 view .LVU153
- 481 023a 0123     		movs	r3, #1
- 482 023c 8DF84D30 		strb	r3, [sp, #77]
- 483 0240 AFE7     		b	.L17
- 484              	.LVL52:
- 485              	.L4:
+ 506              		.loc 1 80 36 is_stmt 0 view .LVU153
+ 507 026a 0123     		movs	r3, #1
+ 508 026c 8DF84D30 		strb	r3, [sp, #77]
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 12
+
+
+ 509 0270 AFE7     		b	.L18
+ 510              	.LVL51:
+ 511              	.L5:
  110:Core/Src/NOS_Strip_UART.c ****             break;
- 486              		.loc 1 110 13 is_stmt 1 view .LVU154
+ 512              		.loc 1 110 13 is_stmt 1 view .LVU154
  111:Core/Src/NOS_Strip_UART.c **** 
- 112:Core/Src/NOS_Strip_UART.c ****         case SET_DOTS_EFFECT_COMMAND:
+ 112:Core/Src/NOS_Strip_UART.c ****         case SET_EFFECT_DOTS:
  113:Core/Src/NOS_Strip_UART.c **** 
  114:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == EFFECT_DOTS_ID)
- 487              		.loc 1 114 13 view .LVU155
- 488              		.loc 1 114 29 is_stmt 0 view .LVU156
- 489 0242 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 490              		.loc 1 114 15 view .LVU157
- 491 0244 222B     		cmp	r3, #34
- 492 0246 4ED0     		beq	.L39
- 493              	.L18:
+ 513              		.loc 1 114 13 view .LVU155
+ 514              		.loc 1 114 29 is_stmt 0 view .LVU156
+ 515 0272 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 516              		.loc 1 114 15 view .LVU157
+ 517 0274 222B     		cmp	r3, #34
+ 518 0276 4ED0     		beq	.L40
+ 519              	.L19:
  115:Core/Src/NOS_Strip_UART.c ****             {
  116:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_DOTS_ID;
  117:Core/Src/NOS_Strip_UART.c ****             }
  118:Core/Src/NOS_Strip_UART.c **** 
  119:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == 0xFF)
- 494              		.loc 1 119 13 is_stmt 1 view .LVU158
- 495              	.LVL53:
- 496              		.loc 1 119 29 is_stmt 0 view .LVU159
- 497 0248 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 498              		.loc 1 119 15 view .LVU160
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 12
-
-
- 499 024a FF2B     		cmp	r3, #255
- 500 024c 4ED0     		beq	.L40
+ 520              		.loc 1 119 13 is_stmt 1 view .LVU158
+ 521              	.LVL52:
+ 522              		.loc 1 119 29 is_stmt 0 view .LVU159
+ 523 0278 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 524              		.loc 1 119 15 view .LVU160
+ 525 027a FF2B     		cmp	r3, #255
+ 526 027c 4ED0     		beq	.L41
  120:Core/Src/NOS_Strip_UART.c ****             {
  121:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = true;
  122:Core/Src/NOS_Strip_UART.c ****             }
  123:Core/Src/NOS_Strip_UART.c ****             else
  124:Core/Src/NOS_Strip_UART.c ****             {
  125:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = false;
- 501              		.loc 1 125 17 is_stmt 1 view .LVU161
- 502              		.loc 1 125 36 is_stmt 0 view .LVU162
- 503 024e 0023     		movs	r3, #0
- 504 0250 8DF84D30 		strb	r3, [sp, #77]
- 505              	.L20:
+ 527              		.loc 1 125 17 is_stmt 1 view .LVU161
+ 528              		.loc 1 125 36 is_stmt 0 view .LVU162
+ 529 027e 0023     		movs	r3, #0
+ 530 0280 8DF84D30 		strb	r3, [sp, #77]
+ 531              	.L21:
  126:Core/Src/NOS_Strip_UART.c ****             }
  127:Core/Src/NOS_Strip_UART.c **** 
  128:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 506              		.loc 1 128 13 is_stmt 1 view .LVU163
- 507              	.LVL54:
- 508              		.loc 1 128 47 is_stmt 0 view .LVU164
- 509 0254 A37C     		ldrb	r3, [r4, #18]	@ zero_extendqisi2
- 510              		.loc 1 128 32 view .LVU165
- 511 0256 4FF00001 		mov	r1, #0	@ movhi
- 512              		.loc 1 128 32 view .LVU166
- 513 025a 63F30F21 		bfi	r1, r3, #8, #8
- 514              	.LVL55:
+ 532              		.loc 1 128 13 is_stmt 1 view .LVU163
+ 533              	.LVL53:
+ 534              		.loc 1 128 47 is_stmt 0 view .LVU164
+ 535 0284 AB7C     		ldrb	r3, [r5, #18]	@ zero_extendqisi2
+ 536              		.loc 1 128 32 view .LVU165
+ 537 0286 4FF00001 		mov	r1, #0	@ movhi
+ 538              		.loc 1 128 32 view .LVU166
+ 539 028a 63F30F21 		bfi	r1, r3, #8, #8
+ 540              	.LVL54:
  129:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 515              		.loc 1 129 13 is_stmt 1 view .LVU167
- 516              		.loc 1 129 47 is_stmt 0 view .LVU168
- 517 025e E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
- 518              		.loc 1 129 32 view .LVU169
- 519 0260 63F30701 		bfi	r1, r3, #0, #8
+ 541              		.loc 1 129 13 is_stmt 1 view .LVU167
+ 542              		.loc 1 129 47 is_stmt 0 view .LVU168
+ 543 028e EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ 544              		.loc 1 129 32 view .LVU169
+ 545 0290 63F30701 		bfi	r1, r3, #0, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 13
+
+
  130:Core/Src/NOS_Strip_UART.c ****             speed = tempShort.data;
- 520              		.loc 1 130 13 is_stmt 1 view .LVU170
- 521              		.loc 1 130 19 is_stmt 0 view .LVU171
- 522 0264 8AB2     		uxth	r2, r1
- 523              	.LVL56:
+ 546              		.loc 1 130 13 is_stmt 1 view .LVU170
+ 547              		.loc 1 130 19 is_stmt 0 view .LVU171
+ 548 0294 8AB2     		uxth	r2, r1
+ 549              	.LVL55:
  131:Core/Src/NOS_Strip_UART.c **** 
  132:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 524              		.loc 1 132 13 is_stmt 1 view .LVU172
- 525              		.loc 1 132 47 is_stmt 0 view .LVU173
- 526 0266 237D     		ldrb	r3, [r4, #20]	@ zero_extendqisi2
- 527              		.loc 1 132 32 view .LVU174
- 528 0268 63F30F21 		bfi	r1, r3, #8, #8
- 529              	.LVL57:
+ 550              		.loc 1 132 13 is_stmt 1 view .LVU172
+ 551              		.loc 1 132 47 is_stmt 0 view .LVU173
+ 552 0296 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 553              		.loc 1 132 32 view .LVU174
+ 554 0298 63F30F21 		bfi	r1, r3, #8, #8
+ 555              	.LVL56:
  133:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 530              		.loc 1 133 13 is_stmt 1 view .LVU175
- 531              		.loc 1 133 47 is_stmt 0 view .LVU176
- 532 026c 637D     		ldrb	r3, [r4, #21]	@ zero_extendqisi2
- 533              		.loc 1 133 32 view .LVU177
- 534 026e 63F30701 		bfi	r1, r3, #0, #8
+ 556              		.loc 1 133 13 is_stmt 1 view .LVU175
+ 557              		.loc 1 133 47 is_stmt 0 view .LVU176
+ 558 029c 6B7D     		ldrb	r3, [r5, #21]	@ zero_extendqisi2
+ 559              		.loc 1 133 32 view .LVU177
+ 560 029e 63F30701 		bfi	r1, r3, #0, #8
  134:Core/Src/NOS_Strip_UART.c ****             step = tempShort.data;
- 535              		.loc 1 134 13 is_stmt 1 view .LVU178
- 536              		.loc 1 134 18 is_stmt 0 view .LVU179
- 537 0272 8BB2     		uxth	r3, r1
- 538              	.LVL58:
+ 561              		.loc 1 134 13 is_stmt 1 view .LVU178
+ 562              		.loc 1 134 18 is_stmt 0 view .LVU179
+ 563 02a2 8BB2     		uxth	r3, r1
+ 564              	.LVL57:
  135:Core/Src/NOS_Strip_UART.c **** 
  136:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 13
-
-
- 539              		.loc 1 136 13 is_stmt 1 view .LVU180
- 540              		.loc 1 136 47 is_stmt 0 view .LVU181
- 541 0274 A07D     		ldrb	r0, [r4, #22]	@ zero_extendqisi2
- 542              		.loc 1 136 32 view .LVU182
- 543 0276 60F30F21 		bfi	r1, r0, #8, #8
- 544              	.LVL59:
+ 565              		.loc 1 136 13 is_stmt 1 view .LVU180
+ 566              		.loc 1 136 47 is_stmt 0 view .LVU181
+ 567 02a4 A87D     		ldrb	r0, [r5, #22]	@ zero_extendqisi2
+ 568              		.loc 1 136 32 view .LVU182
+ 569 02a6 60F30F21 		bfi	r1, r0, #8, #8
+ 570              	.LVL58:
  137:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 545              		.loc 1 137 13 is_stmt 1 view .LVU183
- 546              		.loc 1 137 47 is_stmt 0 view .LVU184
- 547 027a E07D     		ldrb	r0, [r4, #23]	@ zero_extendqisi2
- 548              		.loc 1 137 32 view .LVU185
- 549 027c 60F30701 		bfi	r1, r0, #0, #8
+ 571              		.loc 1 137 13 is_stmt 1 view .LVU183
+ 572              		.loc 1 137 47 is_stmt 0 view .LVU184
+ 573 02aa E87D     		ldrb	r0, [r5, #23]	@ zero_extendqisi2
+ 574              		.loc 1 137 32 view .LVU185
+ 575 02ac 60F30701 		bfi	r1, r0, #0, #8
  138:Core/Src/NOS_Strip_UART.c ****             min = tempShort.data;
- 550              		.loc 1 138 13 is_stmt 1 view .LVU186
- 551              		.loc 1 138 17 is_stmt 0 view .LVU187
- 552 0280 8DB2     		uxth	r5, r1
- 553              	.LVL60:
+ 576              		.loc 1 138 13 is_stmt 1 view .LVU186
+ 577              		.loc 1 138 17 is_stmt 0 view .LVU187
+ 578 02b0 8CB2     		uxth	r4, r1
+ 579              	.LVL59:
  139:Core/Src/NOS_Strip_UART.c **** 
  140:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 554              		.loc 1 140 13 is_stmt 1 view .LVU188
- 555              		.loc 1 140 47 is_stmt 0 view .LVU189
- 556 0282 207E     		ldrb	r0, [r4, #24]	@ zero_extendqisi2
- 557              		.loc 1 140 32 view .LVU190
- 558 0284 60F30F21 		bfi	r1, r0, #8, #8
- 559              	.LVL61:
+ 580              		.loc 1 140 13 is_stmt 1 view .LVU188
+ 581              		.loc 1 140 47 is_stmt 0 view .LVU189
+ 582 02b2 287E     		ldrb	r0, [r5, #24]	@ zero_extendqisi2
+ 583              		.loc 1 140 32 view .LVU190
+ 584 02b4 60F30F21 		bfi	r1, r0, #8, #8
+ 585              	.LVL60:
  141:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 560              		.loc 1 141 13 is_stmt 1 view .LVU191
- 561              		.loc 1 141 47 is_stmt 0 view .LVU192
- 562 0288 607E     		ldrb	r0, [r4, #25]	@ zero_extendqisi2
- 563              		.loc 1 141 32 view .LVU193
- 564 028a 60F30701 		bfi	r1, r0, #0, #8
+ 586              		.loc 1 141 13 is_stmt 1 view .LVU191
+ 587              		.loc 1 141 47 is_stmt 0 view .LVU192
+ 588 02b8 687E     		ldrb	r0, [r5, #25]	@ zero_extendqisi2
+ 589              		.loc 1 141 32 view .LVU193
+ 590 02ba 60F30701 		bfi	r1, r0, #0, #8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 14
+
+
  142:Core/Src/NOS_Strip_UART.c ****             max = tempShort.data;
- 565              		.loc 1 142 13 is_stmt 1 view .LVU194
- 566              		.loc 1 142 17 is_stmt 0 view .LVU195
- 567 028e 89B2     		uxth	r1, r1
- 568              	.LVL62:
+ 591              		.loc 1 142 13 is_stmt 1 view .LVU194
+ 592              		.loc 1 142 17 is_stmt 0 view .LVU195
+ 593 02be 89B2     		uxth	r1, r1
+ 594              	.LVL61:
  143:Core/Src/NOS_Strip_UART.c **** 
  144:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.R = message->data[currPos++];
- 569              		.loc 1 144 13 is_stmt 1 view .LVU196
- 570              		.loc 1 144 47 is_stmt 0 view .LVU197
- 571 0290 A07E     		ldrb	r0, [r4, #26]	@ zero_extendqisi2
- 572              		.loc 1 144 32 view .LVU198
- 573 0292 8DF84A00 		strb	r0, [sp, #74]
+ 595              		.loc 1 144 13 is_stmt 1 view .LVU196
+ 596              		.loc 1 144 47 is_stmt 0 view .LVU197
+ 597 02c0 A87E     		ldrb	r0, [r5, #26]	@ zero_extendqisi2
+ 598              		.loc 1 144 32 view .LVU198
+ 599 02c2 8DF84A00 		strb	r0, [sp, #74]
  145:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.G = message->data[currPos++];
- 574              		.loc 1 145 13 is_stmt 1 view .LVU199
- 575              	.LVL63:
- 576              		.loc 1 145 47 is_stmt 0 view .LVU200
- 577 0296 E07E     		ldrb	r0, [r4, #27]	@ zero_extendqisi2
- 578              		.loc 1 145 32 view .LVU201
- 579 0298 8DF84B00 		strb	r0, [sp, #75]
+ 600              		.loc 1 145 13 is_stmt 1 view .LVU199
+ 601              	.LVL62:
+ 602              		.loc 1 145 47 is_stmt 0 view .LVU200
+ 603 02c6 E87E     		ldrb	r0, [r5, #27]	@ zero_extendqisi2
+ 604              		.loc 1 145 32 view .LVU201
+ 605 02c8 8DF84B00 		strb	r0, [sp, #75]
  146:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.B = message->data[currPos++];
- 580              		.loc 1 146 13 is_stmt 1 view .LVU202
- 581              	.LVL64:
- 582              		.loc 1 146 47 is_stmt 0 view .LVU203
- 583 029c 207F     		ldrb	r0, [r4, #28]	@ zero_extendqisi2
- 584              		.loc 1 146 32 view .LVU204
- 585 029e 8DF84C00 		strb	r0, [sp, #76]
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 14
-
-
+ 606              		.loc 1 146 13 is_stmt 1 view .LVU202
+ 607              	.LVL63:
+ 608              		.loc 1 146 47 is_stmt 0 view .LVU203
+ 609 02cc 287F     		ldrb	r0, [r5, #28]	@ zero_extendqisi2
+ 610              		.loc 1 146 32 view .LVU204
+ 611 02ce 8DF84C00 		strb	r0, [sp, #76]
  147:Core/Src/NOS_Strip_UART.c **** 
  148:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,
- 586              		.loc 1 148 13 is_stmt 1 view .LVU205
- 587 02a2 09AF     		add	r7, sp, #36
- 588 02a4 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
- 589 02a8 0790     		str	r0, [sp, #28]
- 590 02aa 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
- 591 02ae 0690     		str	r0, [sp, #24]
- 592 02b0 0020     		movs	r0, #0
- 593 02b2 0590     		str	r0, [sp, #20]
- 594 02b4 0490     		str	r0, [sp, #16]
- 595 02b6 0390     		str	r0, [sp, #12]
- 596 02b8 0290     		str	r0, [sp, #8]
- 597 02ba 0191     		str	r1, [sp, #4]
- 598 02bc 0095     		str	r5, [sp]
- 599 02be 0DF14A01 		add	r1, sp, #74
- 600              	.LVL65:
- 601              		.loc 1 148 13 is_stmt 0 view .LVU206
- 602 02c2 3846     		mov	r0, r7
- 603 02c4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
- 604              	.LVL66:
+ 612              		.loc 1 148 13 is_stmt 1 view .LVU205
+ 613 02d2 09AF     		add	r7, sp, #36
+ 614 02d4 9DF84D00 		ldrb	r0, [sp, #77]	@ zero_extendqisi2
+ 615 02d8 0790     		str	r0, [sp, #28]
+ 616 02da 9DF84E00 		ldrb	r0, [sp, #78]	@ zero_extendqisi2
+ 617 02de 0690     		str	r0, [sp, #24]
+ 618 02e0 0020     		movs	r0, #0
+ 619 02e2 0590     		str	r0, [sp, #20]
+ 620 02e4 0490     		str	r0, [sp, #16]
+ 621 02e6 0390     		str	r0, [sp, #12]
+ 622 02e8 0290     		str	r0, [sp, #8]
+ 623 02ea 0191     		str	r1, [sp, #4]
+ 624 02ec 0094     		str	r4, [sp]
+ 625 02ee 0DF14A01 		add	r1, sp, #74
+ 626              	.LVL64:
+ 627              		.loc 1 148 13 is_stmt 0 view .LVU206
+ 628 02f2 3846     		mov	r0, r7
+ 629 02f4 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 630              	.LVL65:
  149:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
- 605              		.loc 1 149 13 is_stmt 1 view .LVU207
- 606 02c8 6C46     		mov	r4, sp
- 607              	.LVL67:
- 608              		.loc 1 149 13 is_stmt 0 view .LVU208
- 609 02ca 0CAD     		add	r5, sp, #48
- 610              	.LVL68:
- 611              		.loc 1 149 13 view .LVU209
- 612 02cc 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 613 02ce 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 614 02d0 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 615 02d4 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 616 02d8 97E80E00 		ldm	r7, {r1, r2, r3}
- 617 02dc 3046     		mov	r0, r6
- 618 02de FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
- 619              	.LVL69:
+ 631              		.loc 1 149 13 is_stmt 1 view .LVU207
+ 632 02f8 6C46     		mov	r4, sp
+ 633              	.LVL66:
+ 634              		.loc 1 149 13 is_stmt 0 view .LVU208
+ 635 02fa 0CAD     		add	r5, sp, #48
+ 636              	.LVL67:
+ 637              		.loc 1 149 13 view .LVU209
+ 638 02fc 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 639 02fe 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 15
+
+
+ 640 0300 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 641 0304 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 642 0308 97E80E00 		ldm	r7, {r1, r2, r3}
+ 643 030c 3046     		mov	r0, r6
+ 644 030e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 645              	.LVL68:
  150:Core/Src/NOS_Strip_UART.c **** 
  151:Core/Src/NOS_Strip_UART.c ****             return true;       
- 620              		.loc 1 151 13 is_stmt 1 view .LVU210
- 621              		.loc 1 151 20 is_stmt 0 view .LVU211
- 622 02e2 0120     		movs	r0, #1
- 623 02e4 82E0     		b	.L3
- 624              	.LVL70:
- 625              	.L39:
+ 646              		.loc 1 151 13 is_stmt 1 view .LVU210
+ 647              		.loc 1 151 20 is_stmt 0 view .LVU211
+ 648 0312 0120     		movs	r0, #1
+ 649 0314 B9E0     		b	.L2
+ 650              	.LVL69:
+ 651              	.L40:
  116:Core/Src/NOS_Strip_UART.c ****             }
- 626              		.loc 1 116 17 is_stmt 1 view .LVU212
+ 652              		.loc 1 116 17 is_stmt 1 view .LVU212
  116:Core/Src/NOS_Strip_UART.c ****             }
- 627              		.loc 1 116 37 is_stmt 0 view .LVU213
- 628 02e6 8DF84E30 		strb	r3, [sp, #78]
- 629 02ea ADE7     		b	.L18
- 630              	.LVL71:
- 631              	.L40:
+ 653              		.loc 1 116 37 is_stmt 0 view .LVU213
+ 654 0316 8DF84E30 		strb	r3, [sp, #78]
+ 655 031a ADE7     		b	.L19
+ 656              	.LVL70:
+ 657              	.L41:
  121:Core/Src/NOS_Strip_UART.c ****             }
- 632              		.loc 1 121 17 is_stmt 1 view .LVU214
+ 658              		.loc 1 121 17 is_stmt 1 view .LVU214
  121:Core/Src/NOS_Strip_UART.c ****             }
- 633              		.loc 1 121 36 is_stmt 0 view .LVU215
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 15
-
-
- 634 02ec 0123     		movs	r3, #1
- 635 02ee 8DF84D30 		strb	r3, [sp, #77]
- 636 02f2 AFE7     		b	.L20
- 637              	.LVL72:
- 638              	.L11:
+ 659              		.loc 1 121 36 is_stmt 0 view .LVU215
+ 660 031c 0123     		movs	r3, #1
+ 661 031e 8DF84D30 		strb	r3, [sp, #77]
+ 662 0322 AFE7     		b	.L21
+ 663              	.LVL71:
+ 664              	.L3:
  152:Core/Src/NOS_Strip_UART.c ****             break;
- 639              		.loc 1 152 13 is_stmt 1 view .LVU216
- 153:Core/Src/NOS_Strip_UART.c ****             
- 154:Core/Src/NOS_Strip_UART.c ****         case SET_ONE_PIXEL_COLOR_COMMAND:
- 155:Core/Src/NOS_Strip_UART.c **** 
- 156:Core/Src/NOS_Strip_UART.c ****             //pixelPos 
- 157:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 640              		.loc 1 157 13 view .LVU217
- 641              		.loc 1 157 47 is_stmt 0 view .LVU218
- 642 02f4 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 643              		.loc 1 157 32 view .LVU219
- 644 02f6 4FF00001 		mov	r1, #0	@ movhi
- 645              		.loc 1 157 32 view .LVU220
- 646 02fa 63F30F21 		bfi	r1, r3, #8, #8
- 647              	.LVL73:
- 158:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 648              		.loc 1 158 13 is_stmt 1 view .LVU221
- 649              		.loc 1 158 47 is_stmt 0 view .LVU222
- 650 02fe 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 651              		.loc 1 158 32 view .LVU223
- 652 0300 63F30701 		bfi	r1, r3, #0, #8
- 159:Core/Src/NOS_Strip_UART.c ****             int tempInt1 = tempShort.data;
- 653              		.loc 1 159 13 is_stmt 1 view .LVU224
- 654              	.LVL74:
+ 665              		.loc 1 152 13 is_stmt 1 view .LVU216
+ 153:Core/Src/NOS_Strip_UART.c **** 
+ 154:Core/Src/NOS_Strip_UART.c ****         case SET_EFFECT_WALKING_PIXELS:
+ 155:Core/Src/NOS_Strip_UART.c ****             
+ 156:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == EFFECT_DOTS_ID)
+ 666              		.loc 1 156 13 view .LVU217
+ 667              		.loc 1 156 29 is_stmt 0 view .LVU218
+ 668 0324 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 669              		.loc 1 156 15 view .LVU219
+ 670 0326 222B     		cmp	r3, #34
+ 671 0328 32D0     		beq	.L42
+ 672              	.L22:
+ 157:Core/Src/NOS_Strip_UART.c ****             {
+ 158:Core/Src/NOS_Strip_UART.c ****                 tempEffect.effectId = EFFECT_DOTS_ID;
+ 159:Core/Src/NOS_Strip_UART.c ****             }
  160:Core/Src/NOS_Strip_UART.c **** 
- 161:Core/Src/NOS_Strip_UART.c ****             //color
- 162:Core/Src/NOS_Strip_UART.c ****             uint8_t r = message->data[currPos++];
- 655              		.loc 1 162 13 view .LVU225
- 163:Core/Src/NOS_Strip_UART.c ****             uint8_t g = message->data[currPos++];
- 656              		.loc 1 163 13 view .LVU226
- 164:Core/Src/NOS_Strip_UART.c ****             uint8_t b = message->data[currPos++];
- 657              		.loc 1 164 13 view .LVU227
- 658              		.loc 1 164 21 is_stmt 0 view .LVU228
- 659 0304 237D     		ldrb	r3, [r4, #20]	@ zero_extendqisi2
- 660              	.LVL75:
- 165:Core/Src/NOS_Strip_UART.c **** 
- 166:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_SetPixel(strip,tempInt1,r,g,b);
- 661              		.loc 1 166 13 is_stmt 1 view .LVU229
- 662 0306 0093     		str	r3, [sp]
- 663              	.LVL76:
- 664              		.loc 1 166 13 is_stmt 0 view .LVU230
- 665 0308 E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
- 666              	.LVL77:
- 667              		.loc 1 166 13 view .LVU231
- 668 030a A27C     		ldrb	r2, [r4, #18]	@ zero_extendqisi2
- 669 030c 89B2     		uxth	r1, r1
- 670              	.LVL78:
- 671              		.loc 1 166 13 view .LVU232
- 672 030e 3046     		mov	r0, r6
- 673 0310 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 674              	.LVL79:
- 167:Core/Src/NOS_Strip_UART.c ****             return true;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 16
+ 161:Core/Src/NOS_Strip_UART.c ****             if(message->data[currPos++] == 0xFF)
+ 673              		.loc 1 161 13 is_stmt 1 view .LVU220
+ 674              	.LVL72:
+ 675              		.loc 1 161 29 is_stmt 0 view .LVU221
+ 676 032a 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 677              		.loc 1 161 15 view .LVU222
+ 678 032c FF2B     		cmp	r3, #255
+ 679 032e 32D0     		beq	.L43
+ 162:Core/Src/NOS_Strip_UART.c ****             {
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 16
 
 
- 675              		.loc 1 167 13 is_stmt 1 view .LVU233
- 676              		.loc 1 167 20 is_stmt 0 view .LVU234
- 677 0314 0120     		movs	r0, #1
- 678 0316 69E0     		b	.L3
- 679              	.LVL80:
- 680              	.L10:
- 168:Core/Src/NOS_Strip_UART.c ****             break;
- 681              		.loc 1 168 13 is_stmt 1 view .LVU235
+ 163:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = true;
+ 164:Core/Src/NOS_Strip_UART.c ****             }
+ 165:Core/Src/NOS_Strip_UART.c ****             else
+ 166:Core/Src/NOS_Strip_UART.c ****             {
+ 167:Core/Src/NOS_Strip_UART.c ****                 tempEffect.enabled = false;
+ 680              		.loc 1 167 17 is_stmt 1 view .LVU223
+ 681              		.loc 1 167 36 is_stmt 0 view .LVU224
+ 682 0330 0023     		movs	r3, #0
+ 683 0332 8DF84D30 		strb	r3, [sp, #77]
+ 684              	.L24:
+ 168:Core/Src/NOS_Strip_UART.c ****             }
  169:Core/Src/NOS_Strip_UART.c **** 
- 170:Core/Src/NOS_Strip_UART.c ****         case SET_ROW_PIXEL_COLOR_COMMAND:
- 171:Core/Src/NOS_Strip_UART.c **** 
- 172:Core/Src/NOS_Strip_UART.c ****             //pixelPos
- 173:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 682              		.loc 1 173 13 view .LVU236
- 683              		.loc 1 173 47 is_stmt 0 view .LVU237
- 684 0318 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 685              		.loc 1 173 32 view .LVU238
- 686 031a 4FF00001 		mov	r1, #0	@ movhi
- 687              		.loc 1 173 32 view .LVU239
- 688 031e 63F30F21 		bfi	r1, r3, #8, #8
- 689              	.LVL81:
- 174:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 690              		.loc 1 174 13 is_stmt 1 view .LVU240
- 691              		.loc 1 174 47 is_stmt 0 view .LVU241
- 692 0322 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 693              		.loc 1 174 32 view .LVU242
- 694 0324 63F30701 		bfi	r1, r3, #0, #8
- 175:Core/Src/NOS_Strip_UART.c ****             tempInt1 = tempShort.data;
- 695              		.loc 1 175 13 is_stmt 1 view .LVU243
- 696              		.loc 1 175 33 is_stmt 0 view .LVU244
- 697 0328 1FFA81F9 		uxth	r9, r1
- 698              	.LVL82:
+ 170:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.R = message->data[currPos++];
+ 685              		.loc 1 170 13 is_stmt 1 view .LVU225
+ 686              	.LVL73:
+ 687              		.loc 1 170 47 is_stmt 0 view .LVU226
+ 688 0336 AB7C     		ldrb	r3, [r5, #18]	@ zero_extendqisi2
+ 689              		.loc 1 170 32 view .LVU227
+ 690 0338 8DF84A30 		strb	r3, [sp, #74]
+ 171:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.G = message->data[currPos++];
+ 691              		.loc 1 171 13 is_stmt 1 view .LVU228
+ 692              	.LVL74:
+ 693              		.loc 1 171 47 is_stmt 0 view .LVU229
+ 694 033c EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ 695              		.loc 1 171 32 view .LVU230
+ 696 033e 8DF84B30 		strb	r3, [sp, #75]
+ 172:Core/Src/NOS_Strip_UART.c ****             tempEffect.color.B = message->data[currPos++];
+ 697              		.loc 1 172 13 is_stmt 1 view .LVU231
+ 698              	.LVL75:
+ 699              		.loc 1 172 47 is_stmt 0 view .LVU232
+ 700 0342 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 701              		.loc 1 172 32 view .LVU233
+ 702 0344 8DF84C30 		strb	r3, [sp, #76]
+ 173:Core/Src/NOS_Strip_UART.c **** 
+ 174:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,
+ 703              		.loc 1 174 13 is_stmt 1 view .LVU234
+ 704 0348 09AF     		add	r7, sp, #36
+ 705 034a 9DF84D30 		ldrb	r3, [sp, #77]	@ zero_extendqisi2
+ 706 034e 0793     		str	r3, [sp, #28]
+ 707 0350 9DF84E30 		ldrb	r3, [sp, #78]	@ zero_extendqisi2
+ 708 0354 0693     		str	r3, [sp, #24]
+ 709 0356 0023     		movs	r3, #0
+ 710 0358 0593     		str	r3, [sp, #20]
+ 711 035a 0493     		str	r3, [sp, #16]
+ 712 035c 0393     		str	r3, [sp, #12]
+ 713 035e 0293     		str	r3, [sp, #8]
+ 714 0360 0194     		str	r4, [sp, #4]
+ 715 0362 0094     		str	r4, [sp]
+ 716 0364 2346     		mov	r3, r4
+ 717 0366 2246     		mov	r2, r4
+ 718 0368 0DF14A01 		add	r1, sp, #74
+ 719 036c 3846     		mov	r0, r7
+ 720 036e FFF7FEFF 		bl	NOS_WS2812B_Strip_Effect_Init
+ 721              	.LVL76:
+ 175:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+ 722              		.loc 1 175 13 view .LVU235
+ 723 0372 6C46     		mov	r4, sp
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 17
+
+
+ 724 0374 0CAD     		add	r5, sp, #48
+ 725              	.LVL77:
+ 726              		.loc 1 175 13 is_stmt 0 view .LVU236
+ 727 0376 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 728 0378 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 729 037a 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 730 037e 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 731 0382 97E80E00 		ldm	r7, {r1, r2, r3}
+ 732 0386 3046     		mov	r0, r6
+ 733 0388 FFF7FEFF 		bl	NOS_WS2812B_Strip_Effects_UpdateEffect
+ 734              	.LVL78:
  176:Core/Src/NOS_Strip_UART.c **** 
- 177:Core/Src/NOS_Strip_UART.c ****             //pixelCount
- 178:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
- 699              		.loc 1 178 13 is_stmt 1 view .LVU245
- 700              		.loc 1 178 47 is_stmt 0 view .LVU246
- 701 032c A37C     		ldrb	r3, [r4, #18]	@ zero_extendqisi2
- 702              		.loc 1 178 32 view .LVU247
- 703 032e 63F30F21 		bfi	r1, r3, #8, #8
- 179:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
- 704              		.loc 1 179 13 is_stmt 1 view .LVU248
- 705              	.LVL83:
- 706              		.loc 1 179 47 is_stmt 0 view .LVU249
- 707 0332 E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
- 708              		.loc 1 179 32 view .LVU250
- 709 0334 63F30701 		bfi	r1, r3, #0, #8
- 180:Core/Src/NOS_Strip_UART.c ****             int tempInt2 = tempShort.data;
- 710              		.loc 1 180 13 is_stmt 1 view .LVU251
- 711              		.loc 1 180 37 is_stmt 0 view .LVU252
- 712 0338 8DB2     		uxth	r5, r1
- 713              	.LVL84:
- 181:Core/Src/NOS_Strip_UART.c **** 
- 182:Core/Src/NOS_Strip_UART.c ****             //color
- 183:Core/Src/NOS_Strip_UART.c ****             r = message->data[currPos++];
- 714              		.loc 1 183 13 is_stmt 1 view .LVU253
- 715              		.loc 1 183 15 is_stmt 0 view .LVU254
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 17
+ 177:Core/Src/NOS_Strip_UART.c **** 
+ 178:Core/Src/NOS_Strip_UART.c ****             return true;
+ 735              		.loc 1 178 13 is_stmt 1 view .LVU237
+ 736              		.loc 1 178 20 is_stmt 0 view .LVU238
+ 737 038c 0120     		movs	r0, #1
+ 738 038e 7CE0     		b	.L2
+ 739              	.LVL79:
+ 740              	.L42:
+ 158:Core/Src/NOS_Strip_UART.c ****             }
+ 741              		.loc 1 158 17 is_stmt 1 view .LVU239
+ 158:Core/Src/NOS_Strip_UART.c ****             }
+ 742              		.loc 1 158 37 is_stmt 0 view .LVU240
+ 743 0390 8DF84E30 		strb	r3, [sp, #78]
+ 744 0394 C9E7     		b	.L22
+ 745              	.LVL80:
+ 746              	.L43:
+ 163:Core/Src/NOS_Strip_UART.c ****             }
+ 747              		.loc 1 163 17 is_stmt 1 view .LVU241
+ 163:Core/Src/NOS_Strip_UART.c ****             }
+ 748              		.loc 1 163 36 is_stmt 0 view .LVU242
+ 749 0396 0123     		movs	r3, #1
+ 750 0398 8DF84D30 		strb	r3, [sp, #77]
+ 751 039c CBE7     		b	.L24
+ 752              	.LVL81:
+ 753              	.L11:
+ 179:Core/Src/NOS_Strip_UART.c ****             break;
+ 754              		.loc 1 179 13 is_stmt 1 view .LVU243
+ 180:Core/Src/NOS_Strip_UART.c ****             
+ 181:Core/Src/NOS_Strip_UART.c ****         case SET_ONE_PIXEL_COLOR_COMMAND:
+ 182:Core/Src/NOS_Strip_UART.c **** 
+ 183:Core/Src/NOS_Strip_UART.c ****             //pixelPos 
+ 184:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 755              		.loc 1 184 13 view .LVU244
+ 756              		.loc 1 184 47 is_stmt 0 view .LVU245
+ 757 039e 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 758              		.loc 1 184 32 view .LVU246
+ 759 03a0 4FF00001 		mov	r1, #0	@ movhi
+ 760              		.loc 1 184 32 view .LVU247
+ 761 03a4 63F30F21 		bfi	r1, r3, #8, #8
+ 762              	.LVL82:
+ 185:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 763              		.loc 1 185 13 is_stmt 1 view .LVU248
+ 764              		.loc 1 185 47 is_stmt 0 view .LVU249
+ 765 03a8 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 766              		.loc 1 185 32 view .LVU250
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 18
 
 
- 716 033a 94F81480 		ldrb	r8, [r4, #20]	@ zero_extendqisi2
- 717              	.LVL85:
- 184:Core/Src/NOS_Strip_UART.c ****             g = message->data[currPos++];
- 718              		.loc 1 184 13 is_stmt 1 view .LVU255
- 719              		.loc 1 184 15 is_stmt 0 view .LVU256
- 720 033e 677D     		ldrb	r7, [r4, #21]	@ zero_extendqisi2
- 721              	.LVL86:
- 185:Core/Src/NOS_Strip_UART.c ****             b = message->data[currPos++];
- 722              		.loc 1 185 13 is_stmt 1 view .LVU257
- 723              		.loc 1 185 15 is_stmt 0 view .LVU258
- 724 0340 A47D     		ldrb	r4, [r4, #22]	@ zero_extendqisi2
- 725              	.LVL87:
- 186:Core/Src/NOS_Strip_UART.c **** 
- 187:Core/Src/NOS_Strip_UART.c ****             //fill in row
- 188:Core/Src/NOS_Strip_UART.c ****             for(int i = tempInt1; i < tempInt2; i++)
- 726              		.loc 1 188 13 is_stmt 1 view .LVU259
- 727              	.LBB3:
- 728              		.loc 1 188 17 view .LVU260
- 729              		.loc 1 188 13 is_stmt 0 view .LVU261
- 730 0342 08E0     		b	.L21
- 731              	.LVL88:
- 732              	.L22:
- 189:Core/Src/NOS_Strip_UART.c ****             {
- 190:Core/Src/NOS_Strip_UART.c ****                     NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
- 733              		.loc 1 190 21 is_stmt 1 discriminator 3 view .LVU262
- 734 0344 0094     		str	r4, [sp]
- 735 0346 3B46     		mov	r3, r7
- 736 0348 4246     		mov	r2, r8
- 737 034a 4946     		mov	r1, r9
- 738              	.LVL89:
- 739              		.loc 1 190 21 is_stmt 0 discriminator 3 view .LVU263
- 740 034c 3046     		mov	r0, r6
- 741 034e FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 742              	.LVL90:
- 188:Core/Src/NOS_Strip_UART.c ****             {
- 743              		.loc 1 188 50 is_stmt 1 discriminator 3 view .LVU264
- 744 0352 09F10109 		add	r9, r9, #1
- 745              	.LVL91:
- 746              	.L21:
- 188:Core/Src/NOS_Strip_UART.c ****             {
- 747              		.loc 1 188 37 discriminator 1 view .LVU265
- 748 0356 A945     		cmp	r9, r5
- 749 0358 F4DB     		blt	.L22
- 188:Core/Src/NOS_Strip_UART.c ****             {
- 750              		.loc 1 188 37 is_stmt 0 discriminator 1 view .LVU266
- 751              	.LBE3:
- 191:Core/Src/NOS_Strip_UART.c ****             }
+ 767 03aa 63F30701 		bfi	r1, r3, #0, #8
+ 186:Core/Src/NOS_Strip_UART.c ****             int tempInt1 = tempShort.data;
+ 768              		.loc 1 186 13 is_stmt 1 view .LVU251
+ 769              	.LVL83:
+ 187:Core/Src/NOS_Strip_UART.c **** 
+ 188:Core/Src/NOS_Strip_UART.c ****             //color
+ 189:Core/Src/NOS_Strip_UART.c ****             uint8_t r = message->data[currPos++];
+ 770              		.loc 1 189 13 view .LVU252
+ 190:Core/Src/NOS_Strip_UART.c ****             uint8_t g = message->data[currPos++];
+ 771              		.loc 1 190 13 view .LVU253
+ 191:Core/Src/NOS_Strip_UART.c ****             uint8_t b = message->data[currPos++];
+ 772              		.loc 1 191 13 view .LVU254
+ 773              		.loc 1 191 21 is_stmt 0 view .LVU255
+ 774 03ae 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 775              	.LVL84:
  192:Core/Src/NOS_Strip_UART.c **** 
- 193:Core/Src/NOS_Strip_UART.c ****             return true;
- 752              		.loc 1 193 20 view .LVU267
- 753 035a 0120     		movs	r0, #1
- 754 035c 46E0     		b	.L3
- 755              	.LVL92:
- 756              	.L9:
- 194:Core/Src/NOS_Strip_UART.c ****             break;
- 757              		.loc 1 194 13 is_stmt 1 view .LVU268
- 195:Core/Src/NOS_Strip_UART.c **** 
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 18
+ 193:Core/Src/NOS_Strip_UART.c ****             NOS_WS2812B_Strip_SetPixel(strip,tempInt1,r,g,b);
+ 776              		.loc 1 193 13 is_stmt 1 view .LVU256
+ 777 03b0 0093     		str	r3, [sp]
+ 778              	.LVL85:
+ 779              		.loc 1 193 13 is_stmt 0 view .LVU257
+ 780 03b2 EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ 781              	.LVL86:
+ 782              		.loc 1 193 13 view .LVU258
+ 783 03b4 AA7C     		ldrb	r2, [r5, #18]	@ zero_extendqisi2
+ 784 03b6 89B2     		uxth	r1, r1
+ 785              	.LVL87:
+ 786              		.loc 1 193 13 view .LVU259
+ 787 03b8 3046     		mov	r0, r6
+ 788 03ba FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 789              	.LVL88:
+ 194:Core/Src/NOS_Strip_UART.c ****             return true;
+ 790              		.loc 1 194 13 is_stmt 1 view .LVU260
+ 791              		.loc 1 194 20 is_stmt 0 view .LVU261
+ 792 03be 0120     		movs	r0, #1
+ 793 03c0 63E0     		b	.L2
+ 794              	.LVL89:
+ 795              	.L10:
+ 195:Core/Src/NOS_Strip_UART.c ****             break;
+ 796              		.loc 1 195 13 is_stmt 1 view .LVU262
+ 196:Core/Src/NOS_Strip_UART.c **** 
+ 197:Core/Src/NOS_Strip_UART.c ****         case SET_ROW_PIXEL_COLOR_COMMAND:
+ 198:Core/Src/NOS_Strip_UART.c **** 
+ 199:Core/Src/NOS_Strip_UART.c ****             //pixelPos
+ 200:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 797              		.loc 1 200 13 view .LVU263
+ 798              		.loc 1 200 47 is_stmt 0 view .LVU264
+ 799 03c2 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 800              		.loc 1 200 32 view .LVU265
+ 801 03c4 4FF00001 		mov	r1, #0	@ movhi
+ 802              		.loc 1 200 32 view .LVU266
+ 803 03c8 63F30F21 		bfi	r1, r3, #8, #8
+ 804              	.LVL90:
+ 201:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 805              		.loc 1 201 13 is_stmt 1 view .LVU267
+ 806              		.loc 1 201 47 is_stmt 0 view .LVU268
+ 807 03cc 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 19
 
 
- 196:Core/Src/NOS_Strip_UART.c ****         case SET_ALL_PIXEL_ONE_COLOR_COMMAND:
- 197:Core/Src/NOS_Strip_UART.c **** 
- 198:Core/Src/NOS_Strip_UART.c ****             //color
- 199:Core/Src/NOS_Strip_UART.c ****             r = message->data[currPos++];
- 758              		.loc 1 199 13 view .LVU269
- 759              		.loc 1 199 15 is_stmt 0 view .LVU270
- 760 035e 94F81080 		ldrb	r8, [r4, #16]	@ zero_extendqisi2
- 761              	.LVL93:
- 200:Core/Src/NOS_Strip_UART.c ****             g = message->data[currPos++];
- 762              		.loc 1 200 13 is_stmt 1 view .LVU271
- 763              		.loc 1 200 15 is_stmt 0 view .LVU272
- 764 0362 677C     		ldrb	r7, [r4, #17]	@ zero_extendqisi2
- 765              	.LVL94:
- 201:Core/Src/NOS_Strip_UART.c ****             b = message->data[currPos++];
- 766              		.loc 1 201 13 is_stmt 1 view .LVU273
- 767              		.loc 1 201 15 is_stmt 0 view .LVU274
- 768 0364 A57C     		ldrb	r5, [r4, #18]	@ zero_extendqisi2
- 769              	.LVL95:
- 202:Core/Src/NOS_Strip_UART.c **** 
- 203:Core/Src/NOS_Strip_UART.c ****             //fill all pixels
- 204:Core/Src/NOS_Strip_UART.c ****             for(int i = 0; i < strip->pixelCount; i++)
- 770              		.loc 1 204 13 is_stmt 1 view .LVU275
- 771              	.LBB4:
- 772              		.loc 1 204 17 view .LVU276
- 773              		.loc 1 204 21 is_stmt 0 view .LVU277
- 774 0366 0024     		movs	r4, #0
- 775              	.LVL96:
- 776              		.loc 1 204 13 view .LVU278
- 777 0368 07E0     		b	.L23
- 778              	.LVL97:
- 779              	.L24:
- 205:Core/Src/NOS_Strip_UART.c ****             {
- 206:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
- 780              		.loc 1 206 17 is_stmt 1 discriminator 3 view .LVU279
- 781 036a 0095     		str	r5, [sp]
- 782 036c 3B46     		mov	r3, r7
- 783 036e 4246     		mov	r2, r8
- 784 0370 2146     		mov	r1, r4
- 785 0372 3046     		mov	r0, r6
- 786 0374 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 787              	.LVL98:
- 204:Core/Src/NOS_Strip_UART.c ****             {
- 788              		.loc 1 204 52 discriminator 3 view .LVU280
- 789 0378 0134     		adds	r4, r4, #1
- 790              	.LVL99:
- 791              	.L23:
- 204:Core/Src/NOS_Strip_UART.c ****             {
- 792              		.loc 1 204 30 discriminator 1 view .LVU281
- 204:Core/Src/NOS_Strip_UART.c ****             {
- 793              		.loc 1 204 37 is_stmt 0 discriminator 1 view .LVU282
- 794 037a B368     		ldr	r3, [r6, #8]
- 204:Core/Src/NOS_Strip_UART.c ****             {
- 795              		.loc 1 204 30 discriminator 1 view .LVU283
- 796 037c A342     		cmp	r3, r4
- 797 037e F4DC     		bgt	.L24
- 798              	.LBE4:
- 207:Core/Src/NOS_Strip_UART.c ****             }
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 19
+ 808              		.loc 1 201 32 view .LVU269
+ 809 03ce 63F30701 		bfi	r1, r3, #0, #8
+ 202:Core/Src/NOS_Strip_UART.c ****             tempInt1 = tempShort.data;
+ 810              		.loc 1 202 13 is_stmt 1 view .LVU270
+ 811              		.loc 1 202 33 is_stmt 0 view .LVU271
+ 812 03d2 1FFA81F9 		uxth	r9, r1
+ 813              	.LVL91:
+ 203:Core/Src/NOS_Strip_UART.c **** 
+ 204:Core/Src/NOS_Strip_UART.c ****             //pixelCount
+ 205:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[1] = message->data[currPos++];
+ 814              		.loc 1 205 13 is_stmt 1 view .LVU272
+ 815              		.loc 1 205 47 is_stmt 0 view .LVU273
+ 816 03d6 AB7C     		ldrb	r3, [r5, #18]	@ zero_extendqisi2
+ 817              		.loc 1 205 32 view .LVU274
+ 818 03d8 63F30F21 		bfi	r1, r3, #8, #8
+ 206:Core/Src/NOS_Strip_UART.c ****             tempShort.bytes[0] = message->data[currPos++];
+ 819              		.loc 1 206 13 is_stmt 1 view .LVU275
+ 820              	.LVL92:
+ 821              		.loc 1 206 47 is_stmt 0 view .LVU276
+ 822 03dc EB7C     		ldrb	r3, [r5, #19]	@ zero_extendqisi2
+ 823              		.loc 1 206 32 view .LVU277
+ 824 03de 63F30701 		bfi	r1, r3, #0, #8
+ 207:Core/Src/NOS_Strip_UART.c ****             int tempInt2 = tempShort.data;
+ 825              		.loc 1 207 13 is_stmt 1 view .LVU278
+ 826              		.loc 1 207 37 is_stmt 0 view .LVU279
+ 827 03e2 8CB2     		uxth	r4, r1
+ 828              	.LVL93:
+ 208:Core/Src/NOS_Strip_UART.c **** 
+ 209:Core/Src/NOS_Strip_UART.c ****             //color
+ 210:Core/Src/NOS_Strip_UART.c ****             r = message->data[currPos++];
+ 829              		.loc 1 210 13 is_stmt 1 view .LVU280
+ 830              		.loc 1 210 15 is_stmt 0 view .LVU281
+ 831 03e4 95F81480 		ldrb	r8, [r5, #20]	@ zero_extendqisi2
+ 832              	.LVL94:
+ 211:Core/Src/NOS_Strip_UART.c ****             g = message->data[currPos++];
+ 833              		.loc 1 211 13 is_stmt 1 view .LVU282
+ 834              		.loc 1 211 15 is_stmt 0 view .LVU283
+ 835 03e8 6F7D     		ldrb	r7, [r5, #21]	@ zero_extendqisi2
+ 836              	.LVL95:
+ 212:Core/Src/NOS_Strip_UART.c ****             b = message->data[currPos++];
+ 837              		.loc 1 212 13 is_stmt 1 view .LVU284
+ 838              		.loc 1 212 15 is_stmt 0 view .LVU285
+ 839 03ea AD7D     		ldrb	r5, [r5, #22]	@ zero_extendqisi2
+ 840              	.LVL96:
+ 213:Core/Src/NOS_Strip_UART.c **** 
+ 214:Core/Src/NOS_Strip_UART.c ****             //fill in row
+ 215:Core/Src/NOS_Strip_UART.c ****             for(int i = tempInt1; i < tempInt2; i++)
+ 841              		.loc 1 215 13 is_stmt 1 view .LVU286
+ 842              	.LBB3:
+ 843              		.loc 1 215 17 view .LVU287
+ 844              	.L25:
+ 845              		.loc 1 215 37 discriminator 1 view .LVU288
+ 846 03ec A145     		cmp	r9, r4
+ 847 03ee 09DA     		bge	.L44
+ 216:Core/Src/NOS_Strip_UART.c ****             {
+ 217:Core/Src/NOS_Strip_UART.c ****                     NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+ 848              		.loc 1 217 21 discriminator 3 view .LVU289
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 20
 
 
- 208:Core/Src/NOS_Strip_UART.c ****             return true;
- 799              		.loc 1 208 20 view .LVU284
- 800 0380 0120     		movs	r0, #1
- 801 0382 33E0     		b	.L3
- 802              	.LVL100:
- 803              	.L8:
- 209:Core/Src/NOS_Strip_UART.c ****             break;
- 804              		.loc 1 209 13 is_stmt 1 view .LVU285
- 210:Core/Src/NOS_Strip_UART.c **** 
- 211:Core/Src/NOS_Strip_UART.c ****         case SET_ALL_PIXEL_COMMAND:
- 212:Core/Src/NOS_Strip_UART.c **** 
- 213:Core/Src/NOS_Strip_UART.c ****                 strip->bright = 100;
- 805              		.loc 1 213 17 view .LVU286
- 806              		.loc 1 213 31 is_stmt 0 view .LVU287
- 807 0384 6423     		movs	r3, #100
- 808 0386 F360     		str	r3, [r6, #12]
- 214:Core/Src/NOS_Strip_UART.c ****                 strip->effects[0].enabled = false;
- 809              		.loc 1 214 17 is_stmt 1 view .LVU288
- 810              		.loc 1 214 43 is_stmt 0 view .LVU289
- 811 0388 0023     		movs	r3, #0
- 812 038a 86F83930 		strb	r3, [r6, #57]
- 215:Core/Src/NOS_Strip_UART.c ****                 strip->effects[1].enabled = false;
- 813              		.loc 1 215 17 is_stmt 1 view .LVU290
- 814              		.loc 1 215 43 is_stmt 0 view .LVU291
- 815 038e 86F86530 		strb	r3, [r6, #101]
- 216:Core/Src/NOS_Strip_UART.c ****                 //Pixel count
- 217:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = message->data[currPos++];
- 816              		.loc 1 217 17 is_stmt 1 view .LVU292
- 817              	.LVL101:
- 818              		.loc 1 217 51 is_stmt 0 view .LVU293
- 819 0392 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
- 820              		.loc 1 217 36 view .LVU294
- 821 0394 4FF00001 		mov	r1, #0	@ movhi
- 822              		.loc 1 217 36 view .LVU295
- 823 0398 63F30F21 		bfi	r1, r3, #8, #8
- 824              	.LVL102:
- 218:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = message->data[currPos++];
- 825              		.loc 1 218 17 is_stmt 1 view .LVU296
- 826              		.loc 1 218 51 is_stmt 0 view .LVU297
- 827 039c 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
- 828              		.loc 1 218 36 view .LVU298
- 829 039e 63F30701 		bfi	r1, r3, #0, #8
- 219:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
- 830              		.loc 1 219 17 is_stmt 1 view .LVU299
- 831              		.loc 1 219 37 is_stmt 0 view .LVU300
- 832 03a2 8DB2     		uxth	r5, r1
- 833              	.LVL103:
- 220:Core/Src/NOS_Strip_UART.c **** 
- 221:Core/Src/NOS_Strip_UART.c ****                 if(tempInt1 <= strip->pixelCount)
- 834              		.loc 1 221 17 is_stmt 1 view .LVU301
- 835              		.loc 1 221 37 is_stmt 0 view .LVU302
- 836 03a4 B368     		ldr	r3, [r6, #8]
- 837              		.loc 1 221 19 view .LVU303
- 838 03a6 AB42     		cmp	r3, r5
- 839 03a8 01DA     		bge	.L32
- 222:Core/Src/NOS_Strip_UART.c ****                 {
- 223:Core/Src/NOS_Strip_UART.c ****                     for(int i = 0; i < tempInt1; i++)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 20
+ 849 03f0 0095     		str	r5, [sp]
+ 850 03f2 3B46     		mov	r3, r7
+ 851 03f4 4246     		mov	r2, r8
+ 852 03f6 4946     		mov	r1, r9
+ 853              	.LVL97:
+ 854              		.loc 1 217 21 is_stmt 0 discriminator 3 view .LVU290
+ 855 03f8 3046     		mov	r0, r6
+ 856 03fa FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 857              	.LVL98:
+ 215:Core/Src/NOS_Strip_UART.c ****             {
+ 858              		.loc 1 215 50 is_stmt 1 discriminator 3 view .LVU291
+ 859 03fe 09F10109 		add	r9, r9, #1
+ 860              	.LVL99:
+ 215:Core/Src/NOS_Strip_UART.c ****             {
+ 861              		.loc 1 215 50 is_stmt 0 discriminator 3 view .LVU292
+ 862 0402 F3E7     		b	.L25
+ 863              	.LVL100:
+ 864              	.L44:
+ 215:Core/Src/NOS_Strip_UART.c ****             {
+ 865              		.loc 1 215 50 discriminator 3 view .LVU293
+ 866              	.LBE3:
+ 218:Core/Src/NOS_Strip_UART.c ****             }
+ 219:Core/Src/NOS_Strip_UART.c **** 
+ 220:Core/Src/NOS_Strip_UART.c ****             return true;
+ 867              		.loc 1 220 20 view .LVU294
+ 868 0404 0120     		movs	r0, #1
+ 869 0406 40E0     		b	.L2
+ 870              	.LVL101:
+ 871              	.L9:
+ 221:Core/Src/NOS_Strip_UART.c ****             break;
+ 872              		.loc 1 221 13 is_stmt 1 view .LVU295
+ 222:Core/Src/NOS_Strip_UART.c **** 
+ 223:Core/Src/NOS_Strip_UART.c ****         case SET_ALL_PIXEL_ONE_COLOR_COMMAND:
+ 224:Core/Src/NOS_Strip_UART.c **** 
+ 225:Core/Src/NOS_Strip_UART.c ****             //color
+ 226:Core/Src/NOS_Strip_UART.c ****             r = message->data[currPos++];
+ 873              		.loc 1 226 13 view .LVU296
+ 874              		.loc 1 226 15 is_stmt 0 view .LVU297
+ 875 0408 95F81080 		ldrb	r8, [r5, #16]	@ zero_extendqisi2
+ 876              	.LVL102:
+ 227:Core/Src/NOS_Strip_UART.c ****             g = message->data[currPos++];
+ 877              		.loc 1 227 13 is_stmt 1 view .LVU298
+ 878              		.loc 1 227 15 is_stmt 0 view .LVU299
+ 879 040c 6F7C     		ldrb	r7, [r5, #17]	@ zero_extendqisi2
+ 880              	.LVL103:
+ 228:Core/Src/NOS_Strip_UART.c ****             b = message->data[currPos++];
+ 881              		.loc 1 228 13 is_stmt 1 view .LVU300
+ 882              		.loc 1 228 15 is_stmt 0 view .LVU301
+ 883 040e AD7C     		ldrb	r5, [r5, #18]	@ zero_extendqisi2
+ 884              	.LVL104:
+ 229:Core/Src/NOS_Strip_UART.c **** 
+ 230:Core/Src/NOS_Strip_UART.c ****             //fill all pixels
+ 231:Core/Src/NOS_Strip_UART.c ****             for(int i = 0; i < strip->pixelCount; i++)
+ 885              		.loc 1 231 13 is_stmt 1 view .LVU302
+ 886              	.LBB4:
+ 887              		.loc 1 231 17 view .LVU303
+ 888              		.loc 1 231 21 is_stmt 0 view .LVU304
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 21
 
 
- 224:Core/Src/NOS_Strip_UART.c ****                     {
- 225:Core/Src/NOS_Strip_UART.c ****                         r = message->data[currPos++];
- 226:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
- 227:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
- 228:Core/Src/NOS_Strip_UART.c **** 
- 229:Core/Src/NOS_Strip_UART.c ****                         NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
- 230:Core/Src/NOS_Strip_UART.c ****                     }
- 231:Core/Src/NOS_Strip_UART.c ****                 }
- 232:Core/Src/NOS_Strip_UART.c ****             
- 233:Core/Src/NOS_Strip_UART.c ****             return true;
- 840              		.loc 1 233 20 view .LVU304
- 841 03aa 0120     		movs	r0, #1
- 842 03ac 1EE0     		b	.L3
- 843              	.L32:
- 844              	.LBB5:
- 223:Core/Src/NOS_Strip_UART.c ****                     {
- 845              		.loc 1 223 29 view .LVU305
- 846 03ae 4FF00008 		mov	r8, #0
- 847              	.LBE5:
- 218:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
- 848              		.loc 1 218 59 view .LVU306
- 849 03b2 0227     		movs	r7, #2
- 850              	.LVL104:
- 851              	.L25:
- 852              	.LBB6:
- 223:Core/Src/NOS_Strip_UART.c ****                     {
- 853              		.loc 1 223 38 is_stmt 1 discriminator 1 view .LVU307
- 854 03b4 A845     		cmp	r8, r5
- 855 03b6 10DA     		bge	.L41
- 225:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
- 856              		.loc 1 225 25 discriminator 3 view .LVU308
- 225:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
- 857              		.loc 1 225 50 is_stmt 0 discriminator 3 view .LVU309
- 858 03b8 791C     		adds	r1, r7, #1
- 859              	.LVL105:
- 225:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
- 860              		.loc 1 225 27 discriminator 3 view .LVU310
- 861 03ba E219     		adds	r2, r4, r7
- 862              	.LVL106:
- 226:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
- 863              		.loc 1 226 25 is_stmt 1 discriminator 3 view .LVU311
- 226:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
- 864              		.loc 1 226 50 is_stmt 0 discriminator 3 view .LVU312
- 865 03bc BB1C     		adds	r3, r7, #2
- 866              	.LVL107:
- 226:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
- 867              		.loc 1 226 27 discriminator 3 view .LVU313
- 868 03be 2144     		add	r1, r1, r4
- 869              	.LVL108:
- 227:Core/Src/NOS_Strip_UART.c **** 
- 870              		.loc 1 227 25 is_stmt 1 discriminator 3 view .LVU314
- 227:Core/Src/NOS_Strip_UART.c **** 
- 871              		.loc 1 227 27 is_stmt 0 discriminator 3 view .LVU315
- 872 03c0 2344     		add	r3, r3, r4
- 873 03c2 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
- 874              	.LVL109:
- 229:Core/Src/NOS_Strip_UART.c ****                     }
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 21
+ 889 0410 0024     		movs	r4, #0
+ 890              	.LVL105:
+ 891              	.L27:
+ 892              		.loc 1 231 30 is_stmt 1 discriminator 1 view .LVU305
+ 893              		.loc 1 231 37 is_stmt 0 discriminator 1 view .LVU306
+ 894 0412 B368     		ldr	r3, [r6, #8]
+ 895              		.loc 1 231 30 discriminator 1 view .LVU307
+ 896 0414 A342     		cmp	r3, r4
+ 897 0416 08DD     		ble	.L45
+ 232:Core/Src/NOS_Strip_UART.c ****             {
+ 233:Core/Src/NOS_Strip_UART.c ****                 NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+ 898              		.loc 1 233 17 is_stmt 1 discriminator 3 view .LVU308
+ 899 0418 0095     		str	r5, [sp]
+ 900 041a 3B46     		mov	r3, r7
+ 901 041c 4246     		mov	r2, r8
+ 902 041e 2146     		mov	r1, r4
+ 903 0420 3046     		mov	r0, r6
+ 904 0422 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 905              	.LVL106:
+ 231:Core/Src/NOS_Strip_UART.c ****             {
+ 906              		.loc 1 231 52 discriminator 3 view .LVU309
+ 907 0426 0134     		adds	r4, r4, #1
+ 908              	.LVL107:
+ 231:Core/Src/NOS_Strip_UART.c ****             {
+ 909              		.loc 1 231 52 is_stmt 0 discriminator 3 view .LVU310
+ 910 0428 F3E7     		b	.L27
+ 911              	.L45:
+ 231:Core/Src/NOS_Strip_UART.c ****             {
+ 912              		.loc 1 231 52 discriminator 3 view .LVU311
+ 913              	.LBE4:
+ 234:Core/Src/NOS_Strip_UART.c ****             }
+ 235:Core/Src/NOS_Strip_UART.c ****             return true;
+ 914              		.loc 1 235 20 view .LVU312
+ 915 042a 0120     		movs	r0, #1
+ 916 042c 2DE0     		b	.L2
+ 917              	.LVL108:
+ 918              	.L8:
+ 236:Core/Src/NOS_Strip_UART.c ****             break;
+ 919              		.loc 1 236 13 is_stmt 1 view .LVU313
+ 237:Core/Src/NOS_Strip_UART.c **** 
+ 238:Core/Src/NOS_Strip_UART.c ****         case SET_ALL_PIXEL_COMMAND:
+ 239:Core/Src/NOS_Strip_UART.c **** 
+ 240:Core/Src/NOS_Strip_UART.c ****                 strip->bright = 100;
+ 920              		.loc 1 240 17 view .LVU314
+ 921              		.loc 1 240 31 is_stmt 0 view .LVU315
+ 922 042e 6423     		movs	r3, #100
+ 923 0430 F360     		str	r3, [r6, #12]
+ 241:Core/Src/NOS_Strip_UART.c ****                 strip->effects[0].enabled = false;
+ 924              		.loc 1 241 17 is_stmt 1 view .LVU316
+ 925              		.loc 1 241 43 is_stmt 0 view .LVU317
+ 926 0432 0023     		movs	r3, #0
+ 927 0434 86F83930 		strb	r3, [r6, #57]
+ 242:Core/Src/NOS_Strip_UART.c ****                 strip->effects[1].enabled = false;
+ 928              		.loc 1 242 17 is_stmt 1 view .LVU318
+ 929              		.loc 1 242 43 is_stmt 0 view .LVU319
+ 930 0438 86F86530 		strb	r3, [r6, #101]
+ 243:Core/Src/NOS_Strip_UART.c ****                 //Pixel count
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 22
 
 
- 875              		.loc 1 229 25 is_stmt 1 discriminator 3 view .LVU316
- 876 03c4 0093     		str	r3, [sp]
- 877              	.LVL110:
- 229:Core/Src/NOS_Strip_UART.c ****                     }
- 878              		.loc 1 229 25 is_stmt 0 discriminator 3 view .LVU317
- 879 03c6 0B7C     		ldrb	r3, [r1, #16]	@ zero_extendqisi2
- 880              	.LVL111:
- 229:Core/Src/NOS_Strip_UART.c ****                     }
- 881              		.loc 1 229 25 discriminator 3 view .LVU318
- 882 03c8 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
- 883 03ca 0337     		adds	r7, r7, #3
- 884              	.LVL112:
- 229:Core/Src/NOS_Strip_UART.c ****                     }
- 885              		.loc 1 229 25 discriminator 3 view .LVU319
- 886 03cc 4146     		mov	r1, r8
- 887 03ce 3046     		mov	r0, r6
- 888 03d0 FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
- 889              	.LVL113:
- 223:Core/Src/NOS_Strip_UART.c ****                     {
- 890              		.loc 1 223 51 is_stmt 1 discriminator 3 view .LVU320
- 891 03d4 08F10108 		add	r8, r8, #1
- 892              	.LVL114:
- 223:Core/Src/NOS_Strip_UART.c ****                     {
- 893              		.loc 1 223 51 is_stmt 0 discriminator 3 view .LVU321
- 894 03d8 ECE7     		b	.L25
- 895              	.LVL115:
- 896              	.L41:
- 223:Core/Src/NOS_Strip_UART.c ****                     {
- 897              		.loc 1 223 51 discriminator 3 view .LVU322
- 898              	.LBE6:
- 899              		.loc 1 233 20 view .LVU323
- 900 03da 0120     		movs	r0, #1
- 901              	.LBB7:
- 902 03dc 06E0     		b	.L3
- 903              	.LVL116:
- 904              	.L27:
- 905              		.loc 1 233 20 view .LVU324
- 906              	.LBE7:
- 907              	.LBE2:
+ 244:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[1] = message->data[currPos++];
+ 931              		.loc 1 244 17 is_stmt 1 view .LVU320
+ 932              	.LVL109:
+ 933              		.loc 1 244 51 is_stmt 0 view .LVU321
+ 934 043c 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 935              		.loc 1 244 36 view .LVU322
+ 936 043e 4FF00001 		mov	r1, #0	@ movhi
+ 937              		.loc 1 244 36 view .LVU323
+ 938 0442 63F30F21 		bfi	r1, r3, #8, #8
+ 939              	.LVL110:
+ 245:Core/Src/NOS_Strip_UART.c ****                 tempShort.bytes[0] = message->data[currPos++];
+ 940              		.loc 1 245 17 is_stmt 1 view .LVU324
+ 941              		.loc 1 245 51 is_stmt 0 view .LVU325
+ 942 0446 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 943              		.loc 1 245 36 view .LVU326
+ 944 0448 63F30701 		bfi	r1, r3, #0, #8
+ 246:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
+ 945              		.loc 1 246 17 is_stmt 1 view .LVU327
+ 946              		.loc 1 246 37 is_stmt 0 view .LVU328
+ 947 044c 8CB2     		uxth	r4, r1
+ 948              	.LVL111:
+ 247:Core/Src/NOS_Strip_UART.c **** 
+ 248:Core/Src/NOS_Strip_UART.c ****                 if(tempInt1 <= strip->pixelCount)
+ 949              		.loc 1 248 17 is_stmt 1 view .LVU329
+ 950              		.loc 1 248 37 is_stmt 0 view .LVU330
+ 951 044e B368     		ldr	r3, [r6, #8]
+ 952              		.loc 1 248 19 view .LVU331
+ 953 0450 A342     		cmp	r3, r4
+ 954 0452 01DA     		bge	.L33
+ 249:Core/Src/NOS_Strip_UART.c ****                 {
+ 250:Core/Src/NOS_Strip_UART.c ****                     for(int i = 0; i < tempInt1; i++)
+ 251:Core/Src/NOS_Strip_UART.c ****                     {
+ 252:Core/Src/NOS_Strip_UART.c ****                         r = message->data[currPos++];
+ 253:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
+ 254:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
+ 255:Core/Src/NOS_Strip_UART.c **** 
+ 256:Core/Src/NOS_Strip_UART.c ****                         NOS_WS2812B_Strip_SetPixel(strip,i,r,g,b);
+ 257:Core/Src/NOS_Strip_UART.c ****                     }
+ 258:Core/Src/NOS_Strip_UART.c ****                 }
+ 259:Core/Src/NOS_Strip_UART.c ****             
+ 260:Core/Src/NOS_Strip_UART.c ****             return true;
+ 955              		.loc 1 260 20 view .LVU332
+ 956 0454 0120     		movs	r0, #1
+ 957 0456 18E0     		b	.L2
+ 958              	.L33:
+ 959              	.LBB5:
+ 250:Core/Src/NOS_Strip_UART.c ****                     {
+ 960              		.loc 1 250 29 view .LVU333
+ 961 0458 4FF00008 		mov	r8, #0
+ 962              	.LBE5:
+ 245:Core/Src/NOS_Strip_UART.c ****                 tempInt1 = tempShort.data;
+ 963              		.loc 1 245 59 view .LVU334
+ 964 045c 0227     		movs	r7, #2
+ 965              	.LVL112:
+ 966              	.L29:
+ 967              	.LBB6:
+ 250:Core/Src/NOS_Strip_UART.c ****                     {
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 23
+
+
+ 968              		.loc 1 250 38 is_stmt 1 discriminator 1 view .LVU335
+ 969 045e A045     		cmp	r8, r4
+ 970 0460 10DA     		bge	.L46
+ 252:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
+ 971              		.loc 1 252 25 discriminator 3 view .LVU336
+ 252:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
+ 972              		.loc 1 252 50 is_stmt 0 discriminator 3 view .LVU337
+ 973 0462 791C     		adds	r1, r7, #1
+ 974              	.LVL113:
+ 252:Core/Src/NOS_Strip_UART.c ****                         g = message->data[currPos++];
+ 975              		.loc 1 252 27 discriminator 3 view .LVU338
+ 976 0464 EA19     		adds	r2, r5, r7
+ 977              	.LVL114:
+ 253:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
+ 978              		.loc 1 253 25 is_stmt 1 discriminator 3 view .LVU339
+ 253:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
+ 979              		.loc 1 253 50 is_stmt 0 discriminator 3 view .LVU340
+ 980 0466 BB1C     		adds	r3, r7, #2
+ 981              	.LVL115:
+ 253:Core/Src/NOS_Strip_UART.c ****                         b = message->data[currPos++];
+ 982              		.loc 1 253 27 discriminator 3 view .LVU341
+ 983 0468 2944     		add	r1, r1, r5
+ 984              	.LVL116:
+ 254:Core/Src/NOS_Strip_UART.c **** 
+ 985              		.loc 1 254 25 is_stmt 1 discriminator 3 view .LVU342
+ 254:Core/Src/NOS_Strip_UART.c **** 
+ 986              		.loc 1 254 27 is_stmt 0 discriminator 3 view .LVU343
+ 987 046a 2B44     		add	r3, r3, r5
+ 988 046c 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
+ 989              	.LVL117:
+ 256:Core/Src/NOS_Strip_UART.c ****                     }
+ 990              		.loc 1 256 25 is_stmt 1 discriminator 3 view .LVU344
+ 991 046e 0093     		str	r3, [sp]
+ 992              	.LVL118:
+ 256:Core/Src/NOS_Strip_UART.c ****                     }
+ 993              		.loc 1 256 25 is_stmt 0 discriminator 3 view .LVU345
+ 994 0470 0B7C     		ldrb	r3, [r1, #16]	@ zero_extendqisi2
+ 995              	.LVL119:
+ 256:Core/Src/NOS_Strip_UART.c ****                     }
+ 996              		.loc 1 256 25 discriminator 3 view .LVU346
+ 997 0472 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
+ 998 0474 0337     		adds	r7, r7, #3
+ 999              	.LVL120:
+ 256:Core/Src/NOS_Strip_UART.c ****                     }
+ 1000              		.loc 1 256 25 discriminator 3 view .LVU347
+ 1001 0476 4146     		mov	r1, r8
+ 1002 0478 3046     		mov	r0, r6
+ 1003 047a FFF7FEFF 		bl	NOS_WS2812B_Strip_SetPixel
+ 1004              	.LVL121:
+ 250:Core/Src/NOS_Strip_UART.c ****                     {
+ 1005              		.loc 1 250 51 is_stmt 1 discriminator 3 view .LVU348
+ 1006 047e 08F10108 		add	r8, r8, #1
+ 1007              	.LVL122:
+ 250:Core/Src/NOS_Strip_UART.c ****                     {
+ 1008              		.loc 1 250 51 is_stmt 0 discriminator 3 view .LVU349
+ 1009 0482 ECE7     		b	.L29
+ 1010              	.LVL123:
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 24
+
+
+ 1011              	.L46:
+ 250:Core/Src/NOS_Strip_UART.c ****                     {
+ 1012              		.loc 1 250 51 discriminator 3 view .LVU350
+ 1013              	.LBE6:
+ 1014              		.loc 1 260 20 view .LVU351
+ 1015 0484 0120     		movs	r0, #1
+ 1016              	.LBB7:
+ 1017 0486 00E0     		b	.L2
+ 1018              	.LVL124:
+ 1019              	.L31:
+ 1020              		.loc 1 260 20 view .LVU352
+ 1021              	.LBE7:
+ 1022              	.LBE2:
   12:Core/Src/NOS_Strip_UART.c ****     {
- 908              		.loc 1 12 5 view .LVU325
- 909 03de 0020     		movs	r0, #0
- 910 03e0 04E0     		b	.L3
- 911              	.L28:
- 912 03e2 0020     		movs	r0, #0
- 913 03e4 02E0     		b	.L3
- 914              	.L29:
- 915 03e6 0020     		movs	r0, #0
- 916 03e8 00E0     		b	.L3
- 917              	.L30:
- 918 03ea 0020     		movs	r0, #0
- 919              	.LVL117:
- 920              	.L3:
- 234:Core/Src/NOS_Strip_UART.c ****             break;
- 235:Core/Src/NOS_Strip_UART.c **** 
- 236:Core/Src/NOS_Strip_UART.c **** 
- 237:Core/Src/NOS_Strip_UART.c ****     default:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 22
-
-
- 238:Core/Src/NOS_Strip_UART.c **** 
- 239:Core/Src/NOS_Strip_UART.c ****         break;
- 240:Core/Src/NOS_Strip_UART.c ****     }
- 241:Core/Src/NOS_Strip_UART.c **** 
- 242:Core/Src/NOS_Strip_UART.c ****     return false;
- 243:Core/Src/NOS_Strip_UART.c **** }
- 921              		.loc 1 243 1 view .LVU326
- 922 03ec 15B0     		add	sp, sp, #84
- 923              		.cfi_def_cfa_offset 28
- 924              		@ sp needed
- 925 03ee BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 926              		.loc 1 243 1 view .LVU327
- 927              		.cfi_endproc
- 928              	.LFE65:
- 930              		.text
- 931              	.Letext0:
- 932              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 933              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
- 934              		.file 4 "Core/Inc/NOS_Typedefs.h"
- 935              		.file 5 "Core/Inc/NOS_BaseColors.h"
- 936              		.file 6 "Core/Inc/NOS_WS2812B_Strip.h"
- 937              		.file 7 "Core/Inc/NOS_WS2812B_Strip_Effects.h"
- 938              		.file 8 "<built-in>"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s 			page 23
+ 1023              		.loc 1 12 5 view .LVU353
+ 1024 0488 0020     		movs	r0, #0
+ 1025              	.LVL125:
+ 1026              	.L2:
+ 261:Core/Src/NOS_Strip_UART.c ****             break;
+ 262:Core/Src/NOS_Strip_UART.c **** 
+ 263:Core/Src/NOS_Strip_UART.c **** 
+ 264:Core/Src/NOS_Strip_UART.c ****     default:
+ 265:Core/Src/NOS_Strip_UART.c **** 
+ 266:Core/Src/NOS_Strip_UART.c ****         break;
+ 267:Core/Src/NOS_Strip_UART.c ****     }
+ 268:Core/Src/NOS_Strip_UART.c **** 
+ 269:Core/Src/NOS_Strip_UART.c ****     return false;
+ 270:Core/Src/NOS_Strip_UART.c **** }
+ 1027              		.loc 1 270 1 view .LVU354
+ 1028 048a 15B0     		add	sp, sp, #84
+ 1029              		.cfi_def_cfa_offset 28
+ 1030              		@ sp needed
+ 1031 048c BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 1032              		.loc 1 270 1 view .LVU355
+ 1033              		.cfi_endproc
+ 1034              	.LFE65:
+ 1036              		.text
+ 1037              	.Letext0:
+ 1038              		.file 2 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1039              		.file 3 "c:\\users\\igorn\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 1040              		.file 4 "Core/Inc/NOS_Typedefs.h"
+ 1041              		.file 5 "Core/Inc/NOS_BaseColors.h"
+ 1042              		.file 6 "Core/Inc/NOS_WS2812B_Strip.h"
+ 1043              		.file 7 "Core/Inc/NOS_WS2812B_Strip_Effects.h"
+ 1044              		.file 8 "<built-in>"
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\cchneS0d.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_Strip_UART.c
-C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s:19     .text.NOS_Strip_UART_ParseCommand:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s:25     .text.NOS_Strip_UART_ParseCommand:00000000 NOS_Strip_UART_ParseCommand
-C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s:101    .text.NOS_Strip_UART_ParseCommand:0000006c $d
-C:\Users\igorn\AppData\Local\Temp\ccmd4FvB.s:136    .text.NOS_Strip_UART_ParseCommand:000000b2 $t
+C:\Users\igorn\AppData\Local\Temp\cchneS0d.s:19     .text.NOS_Strip_UART_ParseCommand:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\cchneS0d.s:25     .text.NOS_Strip_UART_ParseCommand:00000000 NOS_Strip_UART_ParseCommand
+C:\Users\igorn\AppData\Local\Temp\cchneS0d.s:95     .text.NOS_Strip_UART_ParseCommand:0000005a $d
+C:\Users\igorn\AppData\Local\Temp\cchneS0d.s:163    .text.NOS_Strip_UART_ParseCommand:000000e2 $t
 
 UNDEFINED SYMBOLS
 memset

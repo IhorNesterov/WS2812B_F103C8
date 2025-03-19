@@ -26,7 +26,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
         return true;
         break;
 
-    case SET_BREATHE_EFFECT_COMMAND:
+    case SET_EFFECT_BREATHE:
 
             if(message->data[currPos++] == EFFECT_BREATHE_ID)
             {
@@ -68,7 +68,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             return true;       
             break;
     
-        case SET_RAINBOW_EFFECT_COMMAND:
+        case SET_EFFECT_RAINBOW:
 
             if(message->data[currPos++] == EFFECT_RAINBOW_ID)
             {
@@ -109,7 +109,7 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             return true;
             break;
 
-        case SET_DOTS_EFFECT_COMMAND:
+        case SET_EFFECT_DOTS:
 
             if(message->data[currPos++] == EFFECT_DOTS_ID)
             {
@@ -149,6 +149,33 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
             NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
 
             return true;       
+            break;
+
+        case SET_EFFECT_WALKING_PIXELS:
+            
+            if(message->data[currPos++] == EFFECT_DOTS_ID)
+            {
+                tempEffect.effectId = EFFECT_DOTS_ID;
+            }
+
+            if(message->data[currPos++] == 0xFF)
+            {
+                tempEffect.enabled = true;
+            }
+            else
+            {
+                tempEffect.enabled = false;
+            }
+
+            tempEffect.color.R = message->data[currPos++];
+            tempEffect.color.G = message->data[currPos++];
+            tempEffect.color.B = message->data[currPos++];
+
+            NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempEffect.color,speed,step,min,max,0,0,0,0,tempEffect.effectId,tempEffect.enabled);
+            NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+
+
+            return true;
             break;
             
         case SET_ONE_PIXEL_COLOR_COMMAND:

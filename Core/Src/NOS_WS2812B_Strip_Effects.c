@@ -7,23 +7,24 @@ void NOS_WS2812B_Strip_Effects_AddEffect(WS2812B_Strip* strip,Effect_Struct effe
     {
         switch(effect.effectId)
         {
-            case 0x20:
+            case EFFECT_BREATHE_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
                 break;
-            case 0x21:
+            case EFFECT_RAINBOW_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
                 break;
-            case 0x22:
+            case EFFECT_DOTS_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
                 break;
-            case 0x23:
+            case EFFECT_WALKING_PIXELS_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+                break;
+            case EFFECT_STEADY_COLOR_ID:
+                NOS_WS2812B_Strip_Effect_Init(&strip->effects[strip->effectsCounter],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
                 break;
         }
 
+        //NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
         strip->effectsCounter++;
     }
 }
@@ -34,17 +35,20 @@ void NOS_WS2812B_Strip_Effects_Handler(WS2812B_Strip* strip)
     {
         switch(strip->effects[i].effectId)
         {
-            case 0x20:
+            case EFFECT_BREATHE_ID:
                 NOS_WS2812B_Strip_Effect_Breathe_Handler(strip,&strip->effects[i]);
                 break;
-            case 0x21:
+            case EFFECT_RAINBOW_ID:
                 NOS_WS2812B_Strip_Effect_Rainbow_Handler(strip,&strip->effects[i]);
                 break;
-            case 0x22:
+            case EFFECT_DOTS_ID:
                 NOS_WS2812B_Strip_Effect_Dots_Handler(strip,&strip->effects[i]);
                 break;
-            case 0x23:
+            case EFFECT_WALKING_PIXELS_ID:
                 NOS_WS2812B_Strip_Effect_Walking_Pixels_Handler(strip,&strip->effects[i]);
+                break;
+            case EFFECT_STEADY_COLOR_ID:
+                NOS_WS2812B_Strip_Effect_Steady_Color_Handler(strip,&strip->effects[i]);
                 break;
         }
     }
@@ -57,22 +61,36 @@ void NOS_WS2812B_Strip_Effects_Check_Conflicts(WS2812B_Strip* strip,Effect_Struc
     {
         case EFFECT_RAINBOW_ID:
 
-            strip->effects[2].enabled = false;
+            NOS_WS2812B_Strip_Effect_Enable(strip,EFFECT_RAINBOW_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_STEADY_COLOR_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_DOTS_ID);
             
             NOS_WS2812B_Strip_ColorFill(strip,color);
         break;
         
         case EFFECT_DOTS_ID:
 
-            strip->effects[1].enabled = false;
+            NOS_WS2812B_Strip_Effect_Enable(strip,EFFECT_DOTS_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_RAINBOW_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_WALKING_PIXELS_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_STEADY_COLOR_ID);
 
             NOS_WS2812B_Strip_ColorFill(strip,color);
-
         break;
 
         case EFFECT_WALKING_PIXELS_ID:
 
-            strip->effects[2].enabled = false;
+            NOS_WS2812B_Strip_Effect_Enable(strip,EFFECT_WALKING_PIXELS_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_DOTS_ID);
+
+            NOS_WS2812B_Strip_ColorFill(strip,color);
+        break;
+
+        case EFFECT_STEADY_COLOR_ID:
+
+            NOS_WS2812B_Strip_Effect_Enable(strip,EFFECT_STEADY_COLOR_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_RAINBOW_ID);
+            NOS_WS2812B_Strip_Effect_Disable(strip,EFFECT_DOTS_ID);
 
             NOS_WS2812B_Strip_ColorFill(strip,color);
         break;
@@ -88,18 +106,19 @@ void NOS_WS2812B_Strip_Effects_UpdateEffect(WS2812B_Strip* strip,Effect_Struct e
                 break;
             case EFFECT_RAINBOW_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[1],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
                 break;
             case EFFECT_DOTS_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[2],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
                 break;
             case EFFECT_WALKING_PIXELS_ID:
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[3],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
-                NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+                break;
+            case EFFECT_STEADY_COLOR_ID:
+                NOS_WS2812B_Strip_Effect_Init(&strip->effects[3],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
                 break;
         }
-    
+
+        NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
 }
 
 void NOS_WS2812B_Strip_Effect_Init(Effect_Struct* effect,PixelColor* color,uint16_t speed,uint16_t step,uint16_t minValue,uint16_t maxValue,uint16_t param1,uint16_t param2,uint16_t param3,uint16_t param4,uint8_t effectID,bool enabled)
@@ -371,5 +390,44 @@ void NOS_WS2812B_Strip_Effect_Walking_Pixels_Handler(WS2812B_Strip* strip,Effect
             effect->timer = 0;
         }
         effect->timer++;
+    }
+}
+
+void NOS_WS2812B_Strip_Effect_Enable(WS2812B_Strip* strip,uint8_t effectId)
+{
+    if(strip != NULL)
+    {
+        for(int i = 0; i < strip->effectsCounter; i++)
+        {
+            if(strip->effects[i].effectId == effectId)
+            {
+                strip->effects[i].enabled = true;
+            }
+        }
+    }
+}
+
+void NOS_WS2812B_Strip_Effect_Disable(WS2812B_Strip* strip,uint8_t effectId)
+{
+    if(strip != NULL)
+    {
+        for(int i = 0; i < strip->effectsCounter; i++)
+        {
+            if(strip->effects[i].effectId == effectId)
+            {
+                strip->effects[i].enabled = false;
+            }
+        }
+    }
+}
+
+void NOS_WS2812B_Strip_Effect_Steady_Color_Handler(WS2812B_Strip* strip,Effect_Struct* effect)
+{
+    if(strip != NULL)
+    {
+        if(effect->enabled)
+        {
+            NOS_WS2812B_Strip_ColorFill(strip,effect->color);
+        }
     }
 }

@@ -75,6 +75,7 @@ Effect_Struct breatheA = {0};
 Effect_Struct rainbowA = {0};
 Effect_Struct dotsA = {0};
 Effect_Struct walkingPixelA = {0};
+Effect_Struct steadyColorA = {0};
 
 NOS_Short value;
 
@@ -85,7 +86,8 @@ NOS_Flash_Chunk tempInitChunk = {0};
 NOS_Flash_Memory_Struct flashMemoryStruct = {0};
 
 PixelColor nullColor = {0,0,0};
-PixelColor white = {255,0,0};
+PixelColor white = {255,255,255};
+
 
 /* USER CODE END PV */
 
@@ -170,6 +172,9 @@ int main(void)
 
   NOS_Flash_Chunk_Init(&tempInitChunk,&walkingPixelA,sizeof(Effect_Struct));
   NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
+
+  NOS_Flash_Chunk_Init(&tempInitChunk,&steadyColorA,sizeof(Effect_Struct));
+  NOS_FlashMemory_Struct_AddChunk(&flashMemoryStruct,&tempInitChunk);
   
   #ifndef FLASH_REBUILD
   if(NOS_FlashMemory_Struct_Validate(&flashMemoryStruct))
@@ -182,6 +187,7 @@ int main(void)
     NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,true);
     NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,0,0,0,0,EFFECT_DOTS_ID,true);
     NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,1000,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,true);
+    NOS_WS2812B_Strip_Effect_Init(&steadyColorA,&white,0,0,0,0,0,0,0,0,EFFECT_STEADY_COLOR_ID,true);
   }
   #endif
 
@@ -190,6 +196,7 @@ int main(void)
   NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,true);
   NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,0,0,0,0,EFFECT_DOTS_ID,true);
   NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,100,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&steadyColorA,&white,0,0,0,0,0,0,0,0,EFFECT_STEADY_COLOR_ID,true);
   #endif
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
@@ -207,26 +214,21 @@ int main(void)
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,dotsA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripD,dotsA);
 
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripA,walkingPixelA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripB,walkingPixelA);
   NOS_WS2812B_Strip_Effects_AddEffect(&stripC,walkingPixelA);
-  
-  //NOS_WS2812B_Strip_ColorFill(&stripA,NOS_GetBaseColor(RED));
-  //NOS_WS2812B_Strip_ColorFill(&stripB,NOS_GetBaseColor(RED));
-  //NOS_WS2812B_Strip_ColorFill(&stripC,NOS_GetBaseColor(RED));  
-  //NOS_WS2812B_Strip_ColorFill(&stripD,NOS_GetBaseColor(RED));  
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripD,walkingPixelA);
 
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripA,steadyColorA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripB,steadyColorA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripC,steadyColorA);
+  NOS_WS2812B_Strip_Effects_AddEffect(&stripD,steadyColorA);
+
+  
   NOS_WS2812B_Strip_Update(&stripA);
   NOS_WS2812B_Strip_Update(&stripB);
   NOS_WS2812B_Strip_Update(&stripC);
   NOS_WS2812B_Strip_Update(&stripD);
-
-  stripC.bright = 100;
-
-  stripA.effects[1].enabled = true;
-  stripB.effects[1].enabled = true;
-  stripC.effects[1].enabled = true;
-  stripA.effects[2].enabled = false;
-  stripB.effects[2].enabled = false;
-  stripC.effects[2].enabled = false;
 
   /* USER CODE END 2 */
   /* Infinite loop */
@@ -265,6 +267,9 @@ int main(void)
           NOS_WS2812B_Strip_Effect_Copy(&breatheA,&stripA.effects[0]);
           NOS_WS2812B_Strip_Effect_Copy(&rainbowA,&stripA.effects[1]);
           NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripA.effects[2]);
+          NOS_WS2812B_Strip_Effect_Copy(&walkingPixelA,&stripA.effects[3]);
+          NOS_WS2812B_Strip_Effect_Copy(&steadyColorA,&stripA.effects[4]);
+
 
           NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
 
