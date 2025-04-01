@@ -4,7 +4,7 @@
 #include "NOS_Includes.h"
 
 #define FLASH_PAGE_SIZE 0x400
-#define FLASH_STORAGE_A 0x08008000
+#define FLASH_STORAGE_A 0x0800A000
 
 /**
   * @brief  Flash chunk init

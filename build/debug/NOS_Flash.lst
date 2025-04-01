@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
   10:Core/Src/NOS_Flash.c **** 	for(int i = 0; i < _size; i++)
   47              		.loc 1 10 2 is_stmt 1 view .LVU7
   48              	.LBB2:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 2
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 2
 
 
   49              		.loc 1 10 6 view .LVU8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
   94              		.section	.text.NOS_Flash_Chunk_Init,"ax",%progbits
   95              		.align	1
   96              		.global	NOS_Flash_Chunk_Init
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 3
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 3
 
 
   97              		.syntax unified
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  142              		.loc 1 31 2 is_stmt 1 view .LVU34
  143              		.loc 1 31 29 is_stmt 0 view .LVU35
  144 0002 0023     		movs	r3, #0
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 4
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 4
 
 
  145 0004 4366     		str	r3, [r0, #100]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
   40:Core/Src/NOS_Flash.c **** 
   41:Core/Src/NOS_Flash.c **** void NOS_FlashMemory_Struct_AddChunk(NOS_Flash_Memory_Struct* flashMemory, NOS_Flash_Chunk* chunk)
   42:Core/Src/NOS_Flash.c **** {
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 5
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 5
 
 
  195              		.loc 1 42 1 is_stmt 1 view -0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  235              		.loc 1 46 96 view .LVU59
  236 0022 8818     		adds	r0, r1, r2
   46:Core/Src/NOS_Flash.c **** 		flashMemory->chunksCounter++;
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 6
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 6
 
 
  237              		.loc 1 46 64 view .LVU60
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  284              		.thumb
  285              		.thumb_func
  287              	NOS_Flash_Memory_Struct_Save:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 7
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 7
 
 
  288              	.LVL20:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  334              	.LVL24:
   64:Core/Src/NOS_Flash.c **** 
   65:Core/Src/NOS_Flash.c **** 	for(int currChunk = 0; currChunk < flashMemory->chunksCounter; currChunk++)
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 8
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 8
 
 
  335              		.loc 1 65 2 is_stmt 1 view .LVU84
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  375              	.L17:
   65:Core/Src/NOS_Flash.c **** 	{
  376              		.loc 1 65 35 discriminator 1 view .LVU99
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 9
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 9
 
 
   65:Core/Src/NOS_Flash.c **** 	{
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
   80:Core/Src/NOS_Flash.c **** 	
   81:Core/Src/NOS_Flash.c **** 	volatile HAL_StatusTypeDef status = HAL_OK;
  414              		.loc 1 81 2 view .LVU114
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 10
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 10
 
 
  415              		.loc 1 81 29 is_stmt 0 view .LVU115
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
   97:Core/Src/NOS_Flash.c **** 			status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address+write_cnt, data_to_flash[index]);
  454              		.loc 1 97 4 is_stmt 1 view .LVU135
  455              		.loc 1 97 13 is_stmt 0 view .LVU136
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 11
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 11
 
 
  456 0090 B969     		ldr	r1, [r7, #24]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  499              		.loc 1 108 1 view .LVU150
  500              		.cfi_endproc
  501              	.LFE71:
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 12
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 12
 
 
  503              		.section	.text.NOS_Flash_Memory_Struct_Load,"ax",%progbits
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  543              		.loc 1 123 4 is_stmt 1 discriminator 3 view .LVU161
  124:Core/Src/NOS_Flash.c **** 			pointer++;
  544              		.loc 1 124 4 discriminator 3 view .LVU162
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 13
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 13
 
 
  119:Core/Src/NOS_Flash.c **** 		{	
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  583              		.loc 1 119 3 view .LVU178
  584              	.LBB13:
  119:Core/Src/NOS_Flash.c **** 		{	
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 14
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 14
 
 
  585              		.loc 1 119 7 view .LVU179
@@ -813,27 +813,27 @@ ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 1
  608              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h"
  609              		.file 7 "Core/Inc/NOS_Typedefs.h"
  610              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h"
-ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s 			page 15
+ARM GAS  C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOS_Flash.c
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:19     .text.NOS_FlashMemory_Struct_Validate:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:25     .text.NOS_FlashMemory_Struct_Validate:00000000 NOS_FlashMemory_Struct_Validate
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:95     .text.NOS_Flash_Chunk_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:101    .text.NOS_Flash_Chunk_Init:00000000 NOS_Flash_Chunk_Init
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:125    .text.NOS_FlashMemory_Struct_Init:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:131    .text.NOS_FlashMemory_Struct_Init:00000000 NOS_FlashMemory_Struct_Init
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:152    .text.NOS_Flash_Chunk_Copy:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:158    .text.NOS_Flash_Chunk_Copy:00000000 NOS_Flash_Chunk_Copy
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:186    .text.NOS_FlashMemory_Struct_AddChunk:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:192    .text.NOS_FlashMemory_Struct_AddChunk:00000000 NOS_FlashMemory_Struct_AddChunk
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:257    .text.NOS_FlashMemory_Struct_GetTotalSize:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:263    .text.NOS_FlashMemory_Struct_GetTotalSize:00000000 NOS_FlashMemory_Struct_GetTotalSize
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:281    .text.NOS_Flash_Memory_Struct_Save:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:287    .text.NOS_Flash_Memory_Struct_Save:00000000 NOS_Flash_Memory_Struct_Save
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:504    .text.NOS_Flash_Memory_Struct_Load:00000000 $t
-C:\Users\igorn\AppData\Local\Temp\ccwZjoHz.s:510    .text.NOS_Flash_Memory_Struct_Load:00000000 NOS_Flash_Memory_Struct_Load
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:19     .text.NOS_FlashMemory_Struct_Validate:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:25     .text.NOS_FlashMemory_Struct_Validate:00000000 NOS_FlashMemory_Struct_Validate
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:95     .text.NOS_Flash_Chunk_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:101    .text.NOS_Flash_Chunk_Init:00000000 NOS_Flash_Chunk_Init
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:125    .text.NOS_FlashMemory_Struct_Init:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:131    .text.NOS_FlashMemory_Struct_Init:00000000 NOS_FlashMemory_Struct_Init
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:152    .text.NOS_Flash_Chunk_Copy:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:158    .text.NOS_Flash_Chunk_Copy:00000000 NOS_Flash_Chunk_Copy
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:186    .text.NOS_FlashMemory_Struct_AddChunk:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:192    .text.NOS_FlashMemory_Struct_AddChunk:00000000 NOS_FlashMemory_Struct_AddChunk
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:257    .text.NOS_FlashMemory_Struct_GetTotalSize:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:263    .text.NOS_FlashMemory_Struct_GetTotalSize:00000000 NOS_FlashMemory_Struct_GetTotalSize
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:281    .text.NOS_Flash_Memory_Struct_Save:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:287    .text.NOS_Flash_Memory_Struct_Save:00000000 NOS_Flash_Memory_Struct_Save
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:504    .text.NOS_Flash_Memory_Struct_Load:00000000 $t
+C:\Users\igorn\AppData\Local\Temp\ccp3HxB0.s:510    .text.NOS_Flash_Memory_Struct_Load:00000000 NOS_Flash_Memory_Struct_Load
 
 UNDEFINED SYMBOLS
 HAL_FLASH_Unlock

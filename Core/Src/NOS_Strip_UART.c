@@ -268,3 +268,564 @@ bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message)
 
     return false;
 }
+
+uint16_t getRainbowStageFromColor(PixelColor color)
+{
+    uint16_t result = 0;
+
+    if(color.R == 0 && color.G == 0 && color.B == 0xFF)
+    {
+        result = 0;
+    }
+
+    if(color.R == 0x0 && color.G == 0x7F && color.B == 0xFF)
+    {
+        result = 127;
+    }
+
+    if(color.R == 0 && color.G == 0xFF && color.B == 0xFF)
+    {
+        result = 254;
+    }
+
+    if(color.R == 0 && color.G == 0xFF && color.B == 0x7F)
+    {
+        result = 381;
+    }
+
+    if(color.R == 0 && color.G == 0xFF && color.B == 0)
+    {
+        result = 508;
+    }
+
+    if(color.R == 0x7F && color.G == 0xFF && color.B == 0)
+    {
+        result = 635;
+    }
+
+    if(color.R == 0xFF && color.G == 0xFF && color.B == 0)
+    {
+        result = 762;
+    }
+
+    if(color.R == 0xFF && color.G == 0x7F && color.B == 0)
+    {
+        result = 889;
+    }
+
+    if(color.R == 0xFF && color.G == 0 && color.B == 0)
+    {
+        result = 1016;
+    }
+
+    if(color.R == 0xFF && color.G == 0 && color.B == 0x7F)
+    {
+        result = 1143;
+    }
+
+    if(color.R == 0xFF && color.G == 0 && color.B == 0xFF)
+    {
+        result = 1270;
+    }
+
+    if(color.R == 0x7F && color.G == 0 && color.B == 0xFF)
+    {
+        result = 1397;
+    }
+    
+    return result;
+}
+
+uint16_t getU16ParamFromString(char* message, int lenght)
+{
+    int power = lenght - 1;
+
+    uint16_t result = 0;
+
+    for (int i = 0; i < lenght; i++)
+    {
+        uint8_t num = message[i] - 48;
+
+        if (num >= 0 && num < 10)
+        {
+            int x = pow(10,power);
+            result += num * x;
+            power--;
+        }
+    }
+
+    return result;
+}
+
+inline uint8_t getDigitFromChar(char c)
+{
+    if (c >= 48 && c <= 57)
+    {
+        return c - 48;
+    }
+
+    if (c >= 97 && c <= 102)
+    {
+        return c - 97 + 10;
+    }
+}
+
+uint8_t getHex(char* hex)
+{
+    uint8_t firstDigit = getDigitFromChar(hex[0]);
+    uint8_t secondDigit = getDigitFromChar(hex[1]);
+
+    uint8_t result = 0;
+
+    result += firstDigit * 16;
+    result += secondDigit;
+
+    return result;
+}
+
+PixelColor getPixelColorFromString(char* message, int lenght)
+{
+    PixelColor result = {0,0,0};
+    char* ptr = message;
+
+    if(lenght == 6)
+    {
+        result.R = getHex(ptr);
+        ptr += 2;
+        result.G = getHex(ptr);
+        ptr += 2;
+        result.B = getHex(ptr);
+    }
+    else
+    {
+        char digit1[3];
+        char digit2[3];
+        char digit3[3];
+        uint8_t subIndex = 0;
+
+        //skip to (
+        while(*ptr != '(')
+        {
+            ptr++;
+        }
+
+        ptr++; //skip (
+
+        while(*ptr != ',')
+        {
+            digit1[subIndex] = *ptr;
+            ptr++;
+            subIndex++;
+        }
+
+        result.R = getU16ParamFromString(digit1,subIndex);
+
+        subIndex = 0;
+        ptr++; //skip ,
+        ptr++; //skip space
+
+        while(*ptr != ',')
+        {
+            digit1[subIndex] = *ptr;
+            ptr++;
+            subIndex++;
+        }
+
+        result.G = getU16ParamFromString(digit1,subIndex);
+
+        subIndex = 0;
+        ptr++; //skip ,
+        ptr++; //skip space
+
+        while(*ptr != ',')
+        {
+            digit1[subIndex] = *ptr;
+            ptr++;
+            subIndex++;
+        }
+
+        result.B = getU16ParamFromString(digit1,subIndex);
+
+    }
+
+    return result;
+}
+
+bool isEqualStrings(char* message,const char* op,int startPos,int lenght)
+{
+    for(int i = 0; i < lenght; i++)
+    {
+        if(message[startPos] == op[i])
+        {
+            startPos++;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+bool NOS_Strip_UART_ParseStringCommand(WS2812B_Strip* strip, const char* message, int lenght)
+{
+    char effectDivider = '&';
+    char paramDivider = '/';
+
+    uint16_t index = 0;
+    uint16_t subIndex = 0;
+
+    uint16_t min,max,speed;
+    PixelColor tempColor = {0,0,0};
+
+    Effect_Struct tempEffect = {0};
+
+    char temp[16];
+
+    while(index < lenght)
+    {
+        if(message[index] == effectDivider)
+        {
+            index++;
+
+            if(paramDivider == message[index])
+            {
+                index++;
+
+                if(message[index] == 'B')
+                {
+                    while(message[index] != paramDivider)
+                    {
+                        index++;
+                    }
+
+                    index++;
+                    
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    min = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    max = getU16ParamFromString(temp,subIndex); 
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    speed = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    bool enabled = false;
+
+                    if(isEqualStrings(temp,"true",0,4))
+                    {
+                        enabled = true;
+                    }
+                    else if(isEqualStrings(temp,"false",0,5))
+                    {
+                        enabled = false;
+                    }
+
+                    NOS_WS2812B_Strip_Effect_Init(&tempEffect,NULL,speed,1,min,max,0,0,0,0,EFFECT_BREATHE_ID,enabled);
+                    NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+                }
+
+                while(message[index] != 'R')
+                {
+                    index++;
+                }
+
+                if(message[index] == 'R')
+                {
+                    while(message[index] != paramDivider)
+                    {
+                        index++;
+                    }
+
+                    index++;
+                    index++;
+                    
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    tempColor = getPixelColorFromString(temp,subIndex);
+
+                    min = getRainbowStageFromColor(tempColor);
+
+                    index++;
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    tempColor = getPixelColorFromString(temp,subIndex);
+
+                    max = getRainbowStageFromColor(tempColor);
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    speed = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    bool enabled = false;
+
+                    if(isEqualStrings(temp,"true",0,4))
+                    {
+                        enabled = true;
+                    }
+                    else if(isEqualStrings(temp,"false",0,5))
+                    {
+                        enabled = false;
+                    }
+
+                    NOS_WS2812B_Strip_Effect_Init(&tempEffect,NULL,speed,1,min,max,0,0,0,0,EFFECT_RAINBOW_ID,enabled);
+                    NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+                }
+
+                while(message[index] != 'D')
+                {
+                    index++;
+                }
+
+                if(message[index] == 'D')
+                {
+                    while(message[index] != paramDivider)
+                    {
+                        index++;
+                    }
+
+                    index++;
+                    index++;
+                    
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    tempColor = getPixelColorFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    speed = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    bool enabled = false;
+
+                    if(isEqualStrings(temp,"true",0,4))
+                    {
+                        enabled = true;
+                    }
+                    else if(isEqualStrings(temp,"false",0,5))
+                    {
+                        enabled = false;
+                    }
+
+                    NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempColor,speed,1,0,0,0,0,0,0,EFFECT_DOTS_ID,enabled);
+                    NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+                }
+
+                while(message[index] != 'W')
+                {
+                    index++;
+                }
+
+                if(message[index] == 'W')
+                {
+                    while(message[index] != paramDivider)
+                    {
+                        index++;
+                    }
+
+                    index++;
+                    index++;
+                    
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    tempColor = getPixelColorFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    min = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    speed = getU16ParamFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    bool enabled = false;
+
+                    if(isEqualStrings(temp,"true",0,4))
+                    {
+                        enabled = true;
+                    }
+                    else if(isEqualStrings(temp,"false",0,5))
+                    {
+                        enabled = false;
+                    }
+
+                    NOS_WS2812B_Strip_Effect_Init(&tempEffect,NULL,speed,1,0,0,min,0,0,0,EFFECT_WALKING_PIXELS_ID,enabled);
+                    NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+                }
+
+                while(message[index] != 'S')
+                {
+                    index++;
+                }
+
+                if(message[index] == 'S')
+                {
+                    while(message[index] != paramDivider)
+                    {
+                        index++;
+                    }
+
+                    index++;
+                    index++;
+                    
+                    subIndex = 0;
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    tempColor = getPixelColorFromString(temp,subIndex);
+
+                    index++;
+                    subIndex = 0;
+
+                    while(message[index] != paramDivider)
+                    {
+                        temp[subIndex] = message[index];
+                        subIndex++;
+                        index++;
+                    }
+
+                    bool enabled = false;
+
+                    if(isEqualStrings(temp,"true",0,4))
+                    {
+                        enabled = true;
+                    }
+                    else if(isEqualStrings(temp,"false",0,5))
+                    {
+                        enabled = false;
+                    }
+
+                    NOS_WS2812B_Strip_Effect_Init(&tempEffect,&tempColor,speed,1,0,0,0,0,0,0,EFFECT_STEADY_COLOR_ID,enabled);
+                    NOS_WS2812B_Strip_Effects_UpdateEffect(strip,tempEffect);
+                }
+
+                
+            }
+        }
+        index++;
+    }
+
+    return true;
+}

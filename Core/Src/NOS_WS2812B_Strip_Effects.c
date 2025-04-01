@@ -114,11 +114,11 @@ void NOS_WS2812B_Strip_Effects_UpdateEffect(WS2812B_Strip* strip,Effect_Struct e
                 NOS_WS2812B_Strip_Effect_Init(&strip->effects[3],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
                 break;
             case EFFECT_STEADY_COLOR_ID:
-                NOS_WS2812B_Strip_Effect_Init(&strip->effects[3],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
+                NOS_WS2812B_Strip_Effect_Init(&strip->effects[4],&effect.color,effect.speed.data,effect.step.data,effect.minValue,effect.maxValue,effect.param1,effect.param2,effect.param3,effect.param4,effect.effectId,effect.enabled);
                 break;
         }
 
-        NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
+        //NOS_WS2812B_Strip_Effects_Check_Conflicts(strip,effect);
 }
 
 void NOS_WS2812B_Strip_Effect_Init(Effect_Struct* effect,PixelColor* color,uint16_t speed,uint16_t step,uint16_t minValue,uint16_t maxValue,uint16_t param1,uint16_t param2,uint16_t param3,uint16_t param4,uint8_t effectID,bool enabled)
@@ -129,7 +129,15 @@ void NOS_WS2812B_Strip_Effect_Init(Effect_Struct* effect,PixelColor* color,uint1
         effect->speed.data = speed;
         effect->step.data = step;
         effect->enabled = enabled;
-        NOS_PixelColor_SetColor(&effect->color,color->R,color->G,color->B);
+        if(color != NULL)
+        {
+            NOS_PixelColor_SetColor(&effect->color,color->R,color->G,color->B);
+        }
+        else
+        {
+            NOS_PixelColor_SetColor(&effect->color,0,0,0);
+        }
+
         effect->effectId = effectID;
         
         effect->param1 = param1;

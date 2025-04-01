@@ -28,4 +28,6 @@
 
 bool NOS_Strip_UART_ParseCommand(WS2812B_Strip* strip,UART_Message* message);
 
+bool NOS_Strip_UART_ParseStringCommand(WS2812B_Strip* strip, const char* message, int lenght);
+
 #endif

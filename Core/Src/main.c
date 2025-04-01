@@ -109,17 +109,25 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-bool receive = false;
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart) {
+  if(huart->Instance == USART2)
+  {  
     NOS_UART_ReceiveHandler(&UART2,huart);
-    receive = true;
+
+  }
+
+  if(huart->Instance == USART1)
+  {
+    NOS_UART_ReceiveHandler(&UART1,huart);
+
+  }
 }
 
 bool tick = false;
 bool screenUpdate = false;
 /* USER CODE END 0 */
-
+//#define FLASH_REBUILD
 /**
   * @brief  The application entry point.
   * @retval int
@@ -157,7 +165,7 @@ int main(void)
   HAL_UART_Receive_IT(&huart1,UART1.rx_buff,1);
   HAL_UART_Receive_IT(&huart2,UART2.rx_buff,1);
 
-  HAL_UART_Transmit(&huart1,"HELLO",sizeof("HELLO"),1000);
+ // HAL_UART_Transmit(&huart1,"HELLO",sizeof("HELLO"),1000);
   HAL_UART_Transmit(&huart2,"HELLO",sizeof("HELLO"),1000);
 
   visInit();
@@ -206,10 +214,10 @@ int main(void)
 
   #ifdef FLASH_REBUILD
   NOS_WS2812B_Strip_Effect_Init(&breatheA,&nullColor,100,1,60,80,0,0,0,0,EFFECT_BREATHE_ID,true);
-  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&rainbowA,&nullColor,1000,1,200,800,0,0,0,0,EFFECT_RAINBOW_ID,false);
   NOS_WS2812B_Strip_Effect_Init(&dotsA,&white,40,1,0,100,0,0,0,0,EFFECT_DOTS_ID,true);
-  NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,100,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,true);
-  NOS_WS2812B_Strip_Effect_Init(&steadyColorA,&white,0,0,0,0,0,0,0,0,EFFECT_STEADY_COLOR_ID,true);
+  NOS_WS2812B_Strip_Effect_Init(&walkingPixelA,&white,100,1,0,48,3,0,0,0,EFFECT_WALKING_PIXELS_ID,false);
+  NOS_WS2812B_Strip_Effect_Init(&steadyColorA,&white,0,0,0,0,0,0,0,0,EFFECT_STEADY_COLOR_ID,false);
   #endif
 
   NOS_WS2812B_Strip_Effects_AddEffect(&stripA,breatheA);
@@ -243,6 +251,7 @@ int main(void)
   NOS_WS2812B_Strip_Update(&stripC);
   NOS_WS2812B_Strip_Update(&stripD);
 
+  //NOS_Strip_UART_ParseStringCommand(&stripC,"&/Breathe/70/80/20/true/&/Rainbow/#0000ff/#7f00ff/60/false/&/Dots/#ff00ff/60/true/&/Walking/#ffff00/5/70/false/&/Steady/#00ff00/false/&",136);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -262,6 +271,39 @@ int main(void)
           NOS_WS2812B_Strip_Effects_Handler(&stripC);
           NOS_WS2812B_Strip_Effects_Handler(&stripD);
           tick = false;
+    }
+
+    if(NOS_UART_CheckReceive(&UART1))
+    {
+      if(NOS_Strip_UART_ParseStringCommand(&stripA,UART1.rx_buff,UART1.lastMessageSize))
+      {
+        NOS_Strip_UART_ParseStringCommand(&stripB,UART1.rx_buff,UART1.lastMessageSize);
+        NOS_Strip_UART_ParseStringCommand(&stripC,UART1.rx_buff,UART1.lastMessageSize);
+        NOS_Strip_UART_ParseStringCommand(&stripD,UART1.rx_buff,UART1.lastMessageSize);
+           
+        NOS_WS2812B_Strip_Effect_Copy(&breatheA,&stripA.effects[0]);
+        NOS_WS2812B_Strip_Effect_Copy(&rainbowA,&stripA.effects[1]);
+        NOS_WS2812B_Strip_Effect_Copy(&dotsA,&stripA.effects[2]);
+        NOS_WS2812B_Strip_Effect_Copy(&walkingPixelA,&stripA.effects[3]);
+        NOS_WS2812B_Strip_Effect_Copy(&steadyColorA,&stripA.effects[4]);
+
+        NOS_Flash_Memory_Struct_Save(&flashMemoryStruct);
+      }
+
+      NOS_UART_EndReceive(&UART1);
+      HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+      
+      NOS_WS2812B_Strip_Clear(&stripA);
+      NOS_WS2812B_Strip_Clear(&stripB);
+      NOS_WS2812B_Strip_Clear(&stripC);
+      NOS_WS2812B_Strip_Clear(&stripD);
+
+      NOS_WS2812B_Strip_Update(&stripA);
+      NOS_WS2812B_Strip_Update(&stripB);
+      NOS_WS2812B_Strip_Update(&stripC);
+      NOS_WS2812B_Strip_Update(&stripD);
+      visHandle();
+
     }
 
     if(NOS_UART_CheckReceive(&UART2))
@@ -346,7 +388,7 @@ int main(void)
 
     if (NOS_TimeEvent_Check(&screenUpdateEvent))
     {
-
+      
       NOS_WS2812B_Strip_Update(&stripA);
       NOS_WS2812B_Strip_Update(&stripB);
       NOS_WS2812B_Strip_Update(&stripC);
@@ -536,7 +578,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 460800;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
